@@ -1,0 +1,54 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+parts:
+  - caption: Overview
+    chapters:
+    - file: 01-introduction
+  - caption: Preliminary Tasks 
+    chapters: 
+    - file: 02-01-pre-requisites
+      sections:
+        - file: 02-02-pre-training-tasks
+        - file: 02-03-toolkit
+  - caption: Basics
+    chapters:
+    - file: 04-concepts
+    - file: 05-data-citations-and-das
+    - file: 06-basic-flow
+    - file: 07-basic-assessing-reproducibility
+    - file: 08-details-replication-report
+  - caption: AEA-specific training
+    chapters:
+    - file: 11-jira-workflow-training
+    - file: 12-jira-revision-guidance
+    - file: 13-approving-issues
+    - file: 20-Pending_ICPSR
+    - file: 30-jira-prepare-publication
+    - file: 40-Instructions-PandP-Checks
+  - caption: Appendix
+    chapters:
+    - file: 91-setup-checklist
+    - file: 92-Privacy
+    - file: 93-Communication
+    - file: 94-00-downloading-data
+      sections:
+      - file: 94-01-how-to-use-openICPSR-backend
+      - file: 94-02-alternate-downloads
+      - file: 94-03-private-data
+      - file: 94-04-Updating_Materials
+    - file: 95_Access_to_computers
+      sections:
+      - file: 95-02-codeocean
+      - file: 95-03-wholetale
+      - file: 95-04-codespaces
+    - file: 96-00-using-Stata
+      sections:
+      - file: 96-01-using-config-stata
+      - file: 96-02-running-stata-code
+      - file: 96-03-stata-scan-packages
+    - file: 97-00-authentication
+    - file: 97-01-Bitbucket-authentication
+    - file: 99-References
