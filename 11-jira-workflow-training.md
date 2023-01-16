@@ -84,9 +84,9 @@ The first thing you must do is to advance the ticket from `Open` to `In Progress
 - This lets us know that you have started working on replication.
 
 
-:::{warning}
+```{warning}
 Is the current Jira issue an **original report** (first time we see the manuscript) or **is it a revision** (we've seen the manuscript before)?
-:::
+```
 
 - [ ] Check the `MCStatus` field: 
   - If it says "`RR`" or "`CA`", then it is an "original report" - proceed.
@@ -123,9 +123,9 @@ We will now ingest the authors' materials, and run a few statistics. Typically, 
 - If at Zenodo or Dataverse, the `Code provenance` will have the DOI of the replication package, `openICPSR alternate URL` and `openICPSR Project Number` will be empty.
 
 
-:::{note}
+```{note}
 This currently works reliably only for openICPSR. This documentation will be updated when it works for Dataverse and Zenodo as well.
-:::
+```
 
 You will now run what is called a *`Bitbucket Pipeline`*. Similar tools on other sites might be called `Continuous integration`, `Github Actions`, etc. If you have encountered these before, this will not be news for you, but it isn't hard even when this new.
 
@@ -180,7 +180,7 @@ In this stage, you will download the code, inspect the authors' README, and shou
 
 
 
-:::{note}
+```{note}
 You now need to decide where you are going to do the data analysis - that should be the place you do the next few steps. Choose one of these environments to customize the instructions:
 
 <div class="w3-bar w3-black">
@@ -189,7 +189,7 @@ You now need to decide where you are going to do the data analysis - that should
 </div>
 
 This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.
-:::{note}
+```
 
 
 
