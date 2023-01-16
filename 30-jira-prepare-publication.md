@@ -1,6 +1,9 @@
+(aea-interfacing-with-the-journal-management-system)=
 # AEA: Interfacing with the Journal Management System
 
-> The AEA uses ScholarOne (also known as Manuscript Central) as its Journal Management System (JMS), but the guidelines below will work for any email-based system. A more integrated approach is probably preferred.
+:::{note}
+The AEA uses ScholarOne (also known as Manuscript Central) as its Journal Management System (JMS), but the guidelines below will work for any email-based system. A more integrated approach is probably preferred.
+:::
 
 ## Basic setup
 

@@ -2,16 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Training Manual For Reproducibility Verification
-author: 
-  - Lars Vilhuber
-  - Michael Darisse
-  - Leonel Borja Plaza
-  - Hyuk Son
-  - Meredith Welch
-  - David Wasser
-
-
-logo: logo.png
+author: Lars Vilhuber, Michael Darisse, Leonel Borja Plaza, Hyuk Son, Meredith Welch, David Wasser
+logo: logo.jpg
 exclude_patterns          : ["*venv*",".git*"]
 
 # Force re-execution of notebooks on each build.
@@ -26,7 +18,8 @@ latex:
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
-  - references.bib
+#  - packages.bib
+  - paper.bib
 
 # Information about where the book exists on the web
 repository:
@@ -63,4 +56,4 @@ html:
 sphinx:
   extra_extensions          :   # A list of extra extensions to load by Sphinx.
   config                    :   # key-value pairs to directly over-ride the Sphinx configuration
-
+    bibtex_reference_style: author_year

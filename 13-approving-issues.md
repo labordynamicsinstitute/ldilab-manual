@@ -129,4 +129,4 @@ Once all review rounds have been completed, the last revision will lead to a rec
 
 - The field `openICPSRDOI` is pre-filled, but should be checked by the AEA publication staff.
 
-See [Preparing for publication](/replicability-training-curriculum/aea-interfacing-with-the-journal-management-system.html) for details.
+See [Preparing for publication](aea-interfacing-with-the-journal-management-system) for details.

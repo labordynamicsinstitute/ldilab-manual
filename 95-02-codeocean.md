@@ -99,11 +99,11 @@ In Jira,
 
 ## Recording edits 
 
-- Once you have finished editing and running the code in Codeocean, you should download the edited code and commit it to the repository. The best way to do this is similar to the [steps taken during a revision](/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html):
+- Once you have finished editing and running the code in Codeocean, you should download the edited code and commit it to the repository. The best way to do this is similar to the [steps taken during a revision](aea-revision-reports-after-author-resubmission):
   - Delete, by hand (**NOT** git rm), the code files as you downloaded them onto your workspace. 
   - Then, place the amended codes into that same directory. 
   - Git `add, commit, push`. 
-  - We should then be able to identify the changes you made to the code in order to run it on Codeocean. See further guidance [here](/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html).
+  - We should then be able to identify the changes you made to the code in order to run it on Codeocean. See further guidance [here](aea-revision-reports-after-author-resubmission).
 
 ## Expert tip
 
