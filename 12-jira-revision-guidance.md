@@ -1,3 +1,4 @@
+(aea-revision-reports-after-author-resubmission)=
 # AEA: Revision reports after author resubmission
 
 Some pre-publication reproducibility checks require revisions from the authors. We will try to assign these revisions to the replicator for the original submission whenever possible.
@@ -40,7 +41,7 @@ becomes
 
 ## Revision Workflow 
 
-You should proceed through the [workflow](/replicability-training-curriculum/aea-jira-workflow-a-guide.html) as you would for an original case with some exceptions:
+You should proceed through the [workflow](aea-jira-workflow-a-guide) as you would for an original case with some exceptions:
 
 - You **should not** create a new Bitbucket repository. 
 - You do not need to fill out a new Data Citation and Information Report.
@@ -96,7 +97,7 @@ At this point, you may want to transition to CISER if you haven't already. You s
 - [ ] Download the updated openICPSR deposit and commit the materials to the **same Bitbucket repo as the original replication**, in the **same directory** (i.e., if the openICPSR deposit is `12345` then all updated materials will again go into the `12345` subdirectory. 
     - Example: if AEAREP-250 is a revision of AEAREP-123, then download the entire openICPSR deposit and commit it to the `aearep-123` repo on Bitbucket.
     - Overwrite any files, if requested. Pay attention to files that might have been deleted (you will have to `git rm` them). 
-    - There are tricks to letting Git do much of the work: **Follow the detailed instructions for the process of updating the replication materials** in the [Appendix: Updating Replication Materials after Revision](/replicability-training-curriculum/updating-replication-materials-after-revisions.html).
+    - There are tricks to letting Git do much of the work: **Follow the detailed instructions for the process of updating the replication materials** in the [Appendix: Updating Replication Materials after Revision](updating-replication-materials-after-revisions).
 
 - [ ] Update the Data Description section of the report.  
    

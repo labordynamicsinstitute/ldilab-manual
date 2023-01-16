@@ -1,3 +1,4 @@
+(updating-replication-materials-after-revisions)=
 # Updating Replication Materials after Revisions
 
 While you move through the [revision workflow](/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html), you will find instructions  to download the updated ICPSR deposit and commit new files to the Bitbucket repository, while removing old files that are no longer present. This appendix will detail the most efficient way of executing this process.

@@ -105,17 +105,16 @@ If neither of the other two methods work, try this method (typically, on CISER)
 
 - [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
 
-```{note}
+:::{note}
 
   ```bash
   git commit -m "My message here"
   git push
   ```
 
-```
+:::
 
 - [ ] Check with `git status` that there are no uncommited files.
-
 
 
 ## Verifying completeness of the README
@@ -163,7 +162,7 @@ For this section, you should list **data sources**.
 - [ ] Fill out the `DataCitationSummary` field indicating how many data citations are in order: `all`, `some`, or `none`. 
 - [ ] Fill out the `Data Provenance` section 
   - Are the data in the openICPSR repository, or are they someplace else? "Various" is a legitimate answer if data are in various locations.
-- [ ] Please refer to [Chapter 9 A guided walk through the Replication Report](a-guided-walk-through-the-replication-report.html) for more details about which data sources to include and how to assess the provided information.
+- [ ] Please refer to [Chapter 9 A guided walk through the Replication Report](a-guided-walk-through-the-replication-report) for more details about which data sources to include and how to assess the provided information.
 
 ## Other information
 

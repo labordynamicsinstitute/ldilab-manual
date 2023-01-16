@@ -13,7 +13,7 @@ Is the current Jira issue an **original report** (first time we see the manuscri
 - [ ] Check the `MCStatus` field: 
   - If it says "`RR`" or "`CA`", then it is an "original report" - proceed.
   - If it says "`CA` `Revision`", then it is ... a revision! 
-    - Follow the instructions at "[Revision reports after author resubmission](/replicability-training-curriculum/aea-revision-reports-after-author-resubmission.html)".
+    - Follow the instructions at "[Revision reports after author resubmission](aea-revision-reports-after-author-resubmission)".
     - In particular, **do NOT create a new repository** - you will re-use the previous repository.
     - In particular, **do NOT create "update" or "new" directories** The current state of the repository should always correspond to the author's structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.
     - When running a second replication on the same archive, please be sure to have the committed "REPLICATION.md" be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.
@@ -21,11 +21,12 @@ Is the current Jira issue an **original report** (first time we see the manuscri
 ## Creating a repository
 
 - [ ] start by [creating a repository using the import method](https://bitbucket.org/repo/import) 
-    - copy-paste from this URL: 
+    - copy-paste from this URL to the URL field (this is also available in the Jira dropdown "Shortcuts")
+
     ```bash
     https://github.com/AEADataEditor/replication-template
     ```
-      to the URL field (this is also available in the Jira dropdown "Shortcuts")
+
     - the repository name should be the name of the JIRA issue (e.g., `aearep-123`)
     - Be sure that `aeaverification` is always the "owner" of the report on Bitbucket. 
     - The Project should be the abbreviation of the journal (e.g. "JEP")
