@@ -1,0 +1,851 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>AEA: Reviewing and (Pre-) Approving Reports &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AEA: Monitoring Pending openICPSR Changes" href="20-Pending_ICPSR.html" />
+    <link rel="prev" title="AEA: Revision reports after author resubmission" href="12-jira-revision-guidance.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-introduction.html">
+   Background
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminary Tasks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02-01-pre-requisites.html">
+   Pre-requisites
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-02-pre-training-tasks.html">
+     Pre-training tasks {#pre-training}
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-03-toolkit.html">
+     Toolkit
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-concepts.html">
+   Basic Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-data-citations-and-das.html">
+   Data citations and data availability statements {#datacitations}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-basic-flow.html">
+   Generic data workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-basic-assessing-reproducibility.html">
+   Assessing computational reproducibility
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-details-replication-report.html">
+   A guided walk through the Replication Report
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  AEA-specific training
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-jira-workflow-training.html">
+   AEA Jira workflow - A guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-jira-revision-guidance.html">
+   AEA: Revision reports after author resubmission
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   AEA: Reviewing and (Pre-) Approving Reports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-Pending_ICPSR.html">
+   AEA: Monitoring Pending openICPSR Changes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="30-jira-prepare-publication.html">
+   AEA: Interfacing with the Journal Management System
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="40-Instructions-PandP-Checks.html">
+   AEA: Instructions for Papers and Proceedings checks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="91-setup-checklist.html">
+   Setup Checklist {#checklist}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="92-Privacy.html">
+   Privacy {#privacy}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="93-Communication.html">
+   Communication
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="94-00-downloading-data.html">
+   Downloading Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">
+     Using openICPSR Projects Prior to Publication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-02-alternate-downloads.html">
+     Alternate sources of data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-03-private-data.html">
+     Accessing privately provided data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-04-Updating_Materials.html">
+     Updating Replication Materials after Revisions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="95_Access_to_computers.html">
+   Access to Computers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-02-codeocean.html">
+     Reproducibility Checks in Codeocean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-03-wholetale.html">
+     Conducting reproducibility checks on WholeTale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-04-codespaces.html">
+     Computing using Github Codespaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="96-00-using-Stata.html">
+   Stata-related procedures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-01-using-config-stata.html">
+     Using config.do in STATA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-02-running-stata-code.html">
+     Running Code in Stata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-03-stata-scan-packages.html">
+     Using scan_packages.do
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="97-00-authentication.html">
+   Authentication-related issues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="97-01-Bitbucket-authentication.html">
+   Bitbucket Authentication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="99-References.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F13-approving-issues.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/13-approving-issues.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generic-guidance">
+   Generic Guidance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preliminary-steps-for-pre-approving-reports">
+   Preliminary Steps for Pre-approving Reports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#original-replication-report">
+   Original Replication Report
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#revision-report">
+   Revision Report
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choosing-a-recommendation">
+   Choosing a Recommendation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#publication">
+   Publication
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>AEA: Reviewing and (Pre-) Approving Reports</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generic-guidance">
+   Generic Guidance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preliminary-steps-for-pre-approving-reports">
+   Preliminary Steps for Pre-approving Reports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#original-replication-report">
+   Original Replication Report
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#revision-report">
+   Revision Report
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choosing-a-recommendation">
+   Choosing a Recommendation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#publication">
+   Publication
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="aea-reviewing-and-pre-approving-reports">
+<h1>AEA: Reviewing and (Pre-) Approving Reports<a class="headerlink" href="#aea-reviewing-and-pre-approving-reports" title="Permalink to this headline">#</a></h1>
+<p>“Approvers” and “Pre-approvers” will review the reports, and finalize the Summary.</p>
+<section id="generic-guidance">
+<h2>Generic Guidance<a class="headerlink" href="#generic-guidance" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Pre-approvals usually can be completed rather quickly and should be prioritized.</p></li>
+<li><p>The pre-approver should not be running any of the code or downloading any of the data unless asked to do so.</p></li>
+<li><p>The language for the <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> tag comments is drawn from the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">Sample Language for Reports</a>. To ensure uniformity across reports, pre-approvers are encouraged to use the phrases verbatim.</p></li>
+</ul>
+</section>
+<section id="preliminary-steps-for-pre-approving-reports">
+<h2>Preliminary Steps for Pre-approving Reports<a class="headerlink" href="#preliminary-steps-for-pre-approving-reports" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>The “Review for pre-approval” transition in Jira requires specific permissions. If you have not been granted this permission, please reach out to your supervisor.</p></li>
+<li><p>Clone the Bitbucket repository of the report that requires pre-approval to the local machine or CISER machine. <strong>Do not download the openICPSR deposit!</strong>  The pre-approver checks and finalizes the report but does not redo the whole replication.</p></li>
+</ol>
+<ul class="simple">
+<li><p>You can also use “Github Codespaces” for this process.</p></li>
+</ul>
+<ol class="simple">
+<li><p>Skim through the report and note if it is an original replication or a revision.  Follow the steps below correspondingly.</p></li>
+</ol>
+</section>
+<section id="original-replication-report">
+<h2>Original Replication Report<a class="headerlink" href="#original-replication-report" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Verify that the replicator has deleted all of the <code class="docutils literal notranslate"><span class="pre">INSTRUCTIONS</span></code> comments of the report; if not, please do so.</p></li>
+<li><p>Verify if the replication requires <strong>IRB approval/RCT registration</strong>.  These are commonly found in papers that utilize randomized experiments, lab experiments, or surveys run by the authors, involving “human participants.”  Ensure that the manuscript contains the necessary approval information (on the title footnote). If absent, insert relevant <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> or <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code> tag comments wherever necessary.</p></li>
+<li><p>Read through the <strong>Data Sources section</strong> of the report and check for completeness.</p>
+<ul class="simple">
+<li><p>Reports sometimes might be missing data sources.  Cross-check (scan) this with the manuscript and the README.  This is usually the most time-intensive part of the pre-approval.</p></li>
+<li><p>You are not expected to redo this section, but you should spot-check to see if it is complete and accurate.</p></li>
+<li><p>When replicators mention “URL does not work” but provide no further information, verify the URL (if less than 5 URLs to check)</p></li>
+<li><p>The report should accurately reflect whether the data source has been cited and whether its location/access modality has been provided.</p></li>
+<li><p>Verify/Insert relevant <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> or <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code> tag comments.</p></li>
+</ul>
+</li>
+<li><p>Check the <strong>Data checks section</strong> for completion.</p>
+<ul class="simple">
+<li><p>Check if the PII scan output is present in the repository.</p></li>
+<li><p>Check if the Package scan output is present in the repository.</p></li>
+<li><p>Verify/Insert relevant <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> or <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code> tag comments.</p></li>
+</ul>
+</li>
+<li><p>Check the <strong>Code checks section</strong> for completion.</p>
+<ul class="simple">
+<li><p>Check if the completed Code check spreadsheet is present in the repository.</p></li>
+<li><p>Verify/ Insert relevant <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> or <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code> tag comments.</p></li>
+</ul>
+</li>
+<li><p>Check the <strong>Stated Requirements</strong> and <strong>Missing requirements</strong> section for completion and insert relevant <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> or <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code> tag comments.</p></li>
+<li><p>Carefully read through the <strong>Replication steps section.</strong></p>
+<ul class="simple">
+<li><p>Ensure that this report section is coherent in its description of the steps the replicator took to perform the entire replication. Can you follow the narrative/list of steps, and from it, do you think you understand what the replicator did?</p></li>
+<li><p>If the replicator noted that the code contains bugs, the error message/error code should be explicitly listed.</p></li>
+<li><p><strong>The pre-approver should not be rerunning any of the code!</strong></p></li>
+<li><p>Communication between the pre-approver and replicator is encouraged so that any confusing/unclear language used in this section can be clarified.</p></li>
+<li><p>Verify/Insert relevant <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> or <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code> tag comments.</p></li>
+</ul>
+</li>
+<li><p>Check the <strong>Computing Environment of the Replicator section</strong> for completeness.</p></li>
+<li><p>Verify: Format the results in the <strong>Findings section</strong> into tables by utilizing the the Excel-to-Markdown Extension in Visual Studio.</p>
+<ul class="simple">
+<li><p>Check if the output/log files have been pushed to the Bitbucket repository.</p></li>
+<li><p>If there are discrepancies between the replicated tables and figures and those of the manuscript, the report should contain images/screenshots to highlight the differences.</p></li>
+<li><p>If there are numerous tables and figures that exhibit discrepancies, these should be put into a .zip file.  This action should be noted in the <strong>Summary section</strong> as well as mentioned in a JIRA comment.</p></li>
+</ul>
+</li>
+<li><p>Ensure the classification of the replication fits the degree of reproducibility.</p></li>
+<li><p>Fill out the <strong>Action Items</strong> of the report.</p>
+<ul class="simple">
+<li><p>These are separated into “Manuscript” and “openICPSR” (these sections are pre-existent in the template)</p></li>
+<li><p>Use a script or manually copy-paste all of the <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> tags to this list.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">[aeareq](https://github.com/AEADataEditor/editor-scripts)</span></code> extracts the <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> tags and places them at the top of the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a></p></li>
+</ul>
+</li>
+<li><p>Split the action items according to where they can be addressed. Some may be addressable in both sections (for instance, correcting figures and tables, and/or data citations). Others belong only into the “Manuscript” part (IRB, RCT), others only into the “openICPSR” (anything related to code)</p></li>
+<li><p>Order them by importance: <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> items first, and within these, the most important at the top (correcting bugs, providing missing files).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code>  items can be at the end of each section.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">[aeareq](https://github.com/AEADataEditor/editor-scripts)</span></code> extracts the <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code>  tags only if provided with the additional argument <code class="docutils literal notranslate"><span class="pre">sug</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Fill out the <strong>Summary section</strong> of the report.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Start with a thank you, and a positive note: Highlight the merits of the replication i.e. how many figures/tables were replicated, if data citations were properly completed, etc.</p></li>
+<li><p>Add a template line with the proposed resolution. These are at the top of the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">sample-language-report.md</a>.</p></li>
+</ul>
+<ol class="simple">
+<li><p>(Re)generate the PDF of the report.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Use MarkdownPDF package if you are using Visual Studio Code</p></li>
+<li><p>Use a script: <a class="reference external" href="https://github.com/AEADataEditor/editor-scripts">aeaready</a> creates the PDF from the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>, crafts the commit message and pushes it to the repository.  It requires additional pieces of software that are noted in the link.</p></li>
+</ul>
+<ol class="simple">
+<li><p>Commit and push all changes to the repository.  Advance the JIRA ticket to “Pre-approved.”  The pre-approval is now complete!</p></li>
+</ol>
+<p><strong>Notes:</strong> The pre-approver should reach out to the original replicator for clarifications should there be any confusions during the course of pre-approving the report.  If bugs in the code seem trivial i.e. missing packages, missing <code class="docutils literal notranslate"><span class="pre">Results</span></code> directory, replicator cannot find output etc., the pre-approver should reach out to the original replicator for further clarification.</p>
+<p>For the majority of the <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> comment tags, it is best to use them verbatim to preserve uniformity across our reports.  However, there are times where a more accurate description can help the author pinpoint what exactly is required of them.</p>
+<p>For example, say we have a scenario where the author did not include code for Table A.6 in the code deposit but everything else has been provided and replicates perfectly.</p>
+<p>Instead of writing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="p">[</span><span class="n">REQUIRED</span><span class="p">]</span> <span class="n">Please</span> <span class="n">provide</span> <span class="n">complete</span> <span class="n">code</span><span class="p">,</span> <span class="n">including</span> <span class="k">for</span> <span class="n">construction</span> <span class="n">of</span> <span class="n">the</span> <span class="n">analysis</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">raw</span> <span class="n">data</span><span class="p">,</span> <span class="ow">and</span> <span class="k">for</span> <span class="n">appendix</span> <span class="n">tables</span> <span class="ow">and</span> <span class="n">figures</span><span class="p">,</span> <span class="ow">and</span> <span class="n">identify</span> <span class="n">source</span> <span class="k">for</span> <span class="n">inline</span> <span class="n">numbers</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>It is clearer to the authors if we write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="p">[</span><span class="n">REQUIRED</span><span class="p">]</span> <span class="n">Please</span> <span class="n">provide</span> <span class="n">complete</span> <span class="n">code</span> <span class="k">for</span> <span class="n">appendix</span> <span class="n">tables</span> <span class="ow">and</span> <span class="n">figures</span><span class="p">,</span> <span class="ow">in</span> <span class="n">particular</span> <span class="n">Table</span> <span class="n">A</span><span class="mf">.6</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="revision-report">
+<h2>Revision Report<a class="headerlink" href="#revision-report" title="Permalink to this headline">#</a></h2>
+<p>The checklist of items to review are roughly the same as above.  In addition:</p>
+<ul class="simple">
+<li><p>The pre-approver should check that <code class="docutils literal notranslate"><span class="pre">[We</span> <span class="pre">REQUESTED]</span></code> tags are used in place of <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> tags.  These tags should be preceded by a “&gt;” to create a comment rather than “-,” which creates a bullet point.</p>
+<ul>
+<li><p>The script <code class="docutils literal notranslate"><span class="pre">[aeareview](https://github.com/AEADataEditor/editor-scripts)</span></code> changes all the <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> to <code class="docutils literal notranslate"><span class="pre">[We</span> <span class="pre">REQUESTED]</span></code>.</p></li>
+</ul>
+</li>
+<li><p>The report should reflect the <strong>current</strong> state of the replication.</p></li>
+<li><p>In the <strong>Summary Section:</strong></p>
+<ul>
+<li><p>Create a new section “<code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">Previously</span></code>” that covers all the action items from the previous round.</p></li>
+<li><p>Create a list of persisting issues that require attention. These should be added as action items to the usual section, in addition to any new items.</p></li>
+<li><p>There is no need to distinguish new from persistent action items: the action item list should simply contain a complete and exhaustive (check)list of items that need to be done.</p></li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### Action Items (Manuscript)</span>
+
+<span class="o">-</span> <span class="p">[</span><span class="n">REQUIRED</span><span class="p">]</span> <span class="n">The</span> <span class="n">data</span> <span class="n">collection</span> <span class="n">reported</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">article</span> <span class="n">had</span> <span class="n">IRB</span> <span class="n">approval</span><span class="o">.</span> <span class="n">Please</span> <span class="n">provide</span> <span class="n">full</span> <span class="n">IRB</span> <span class="n">approval</span> <span class="n">information</span><span class="p">,</span> <span class="n">including</span> <span class="n">protocol</span> <span class="n">number</span> <span class="ow">and</span> <span class="n">home</span> <span class="n">institution</span> <span class="n">of</span> <span class="n">the</span> <span class="n">IRB</span><span class="p">,</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">titlepage</span> <span class="n">footnote</span><span class="o">.</span>
+
+<span class="c1">### Action Items (openICPSR)</span>
+
+<span class="o">...</span>
+
+<span class="c1">### Previously</span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="n">We</span> <span class="n">REQUESTED</span><span class="p">]</span> <span class="n">The</span> <span class="n">data</span> <span class="n">collection</span> <span class="n">reported</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">article</span> <span class="n">had</span> <span class="n">IRB</span> <span class="n">approval</span><span class="o">.</span> <span class="n">Please</span> <span class="n">provide</span> <span class="n">full</span> <span class="n">IRB</span> <span class="n">approval</span> <span class="n">information</span><span class="p">,</span> <span class="n">including</span> <span class="n">protocol</span> <span class="n">number</span> <span class="ow">and</span> <span class="n">home</span> <span class="n">institution</span> <span class="n">of</span> <span class="n">the</span> <span class="n">IRB</span><span class="p">,</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">titlepage</span> <span class="n">footnote</span><span class="o">.</span>
+
+<span class="n">Not</span> <span class="n">done</span><span class="o">.</span> <span class="n">The</span> <span class="n">manuscript</span> <span class="n">still</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">mention</span> <span class="n">the</span> <span class="n">IRB</span> <span class="n">information</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">titlepage</span> <span class="n">footnote</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="choosing-a-recommendation">
+<h2>Choosing a Recommendation<a class="headerlink" href="#choosing-a-recommendation" title="Permalink to this headline">#</a></h2>
+<p>Approvers must select/confirm one of the recommendations (field <code class="docutils literal notranslate"><span class="pre">MCRecommendationV2</span></code>):</p>
+<ul class="simple">
+<li><p><strong>Accepted</strong> - the manuscript moves forward in the publishing workflow on Manuscript Central, the Data Editor does not see the manuscript again.</p></li>
+<li><p><strong>Accepted with changes</strong> - same, but some conditions may be imposed. However, the Data Editor does not need to see the manuscript again.</p></li>
+<li><p><strong>Revisions requested - manuscript ready</strong> - Some revisions need to be made, and the Data Editor needs to see the authors’ response. However, the manuscript can move forward in the publishing workflow. This is rarely used, but opens up the possibility that the managing editors can pull out a manuscript from this category to move forward, depending on the backlog for publication.</p></li>
+<li><p><strong>Conditional Acceptance</strong> - the Data Editor expects to see a response from the authors to the report.</p></li>
+<li><p><strong>Revise and resubmit</strong> - the Data Editor has detected a serious problem which needs to go back to the “Revise and resubmit” phase of the publishing workflow. This is only invoked if there are significant concerns as to the validity of the manuscript’s conclusions based on the reproduction attempt. Rarely used.</p></li>
+</ul>
+</section>
+<section id="publication">
+<h2>Publication<a class="headerlink" href="#publication" title="Permalink to this headline">#</a></h2>
+<p>Once all review rounds have been completed, the last revision will lead to a recommendation of “Accepted”. The Data Editor’s staff prepares the openICPSR deposit for final publication. In general, this means that a note is added to the “Project Communications Log” on openICPSR, denoting the acceptance of the deposit. The AEA publication staff can subsequently move this issue forward to “Published” when the supplement has been published on openICPSR.</p>
+<ul class="simple">
+<li><p>The field <code class="docutils literal notranslate"><span class="pre">openICPSRDOI</span></code> is pre-filled, but should be checked by the AEA publication staff.</p></li>
+</ul>
+<p>See <span class="xref myst">Preparing for publication</span> for details.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="12-jira-revision-guidance.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">AEA: Revision reports after author resubmission</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="20-Pending_ICPSR.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AEA: Monitoring Pending openICPSR Changes</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,1294 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Data citations and data availability statements {#datacitations} &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Generic data workflow" href="06-basic-flow.html" />
+    <link rel="prev" title="Basic Concepts" href="04-concepts.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-introduction.html">
+   Background
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminary Tasks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02-01-pre-requisites.html">
+   Pre-requisites
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-02-pre-training-tasks.html">
+     Pre-training tasks {#pre-training}
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-03-toolkit.html">
+     Toolkit
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-concepts.html">
+   Basic Concepts
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Data citations and data availability statements {#datacitations}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-basic-flow.html">
+   Generic data workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-basic-assessing-reproducibility.html">
+   Assessing computational reproducibility
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-details-replication-report.html">
+   A guided walk through the Replication Report
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  AEA-specific training
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-jira-workflow-training.html">
+   AEA Jira workflow - A guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-jira-revision-guidance.html">
+   AEA: Revision reports after author resubmission
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-approving-issues.html">
+   AEA: Reviewing and (Pre-) Approving Reports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-Pending_ICPSR.html">
+   AEA: Monitoring Pending openICPSR Changes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="30-jira-prepare-publication.html">
+   AEA: Interfacing with the Journal Management System
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="40-Instructions-PandP-Checks.html">
+   AEA: Instructions for Papers and Proceedings checks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="91-setup-checklist.html">
+   Setup Checklist {#checklist}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="92-Privacy.html">
+   Privacy {#privacy}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="93-Communication.html">
+   Communication
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="94-00-downloading-data.html">
+   Downloading Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">
+     Using openICPSR Projects Prior to Publication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-02-alternate-downloads.html">
+     Alternate sources of data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-03-private-data.html">
+     Accessing privately provided data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-04-Updating_Materials.html">
+     Updating Replication Materials after Revisions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="95_Access_to_computers.html">
+   Access to Computers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-02-codeocean.html">
+     Reproducibility Checks in Codeocean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-03-wholetale.html">
+     Conducting reproducibility checks on WholeTale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-04-codespaces.html">
+     Computing using Github Codespaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="96-00-using-Stata.html">
+   Stata-related procedures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-01-using-config-stata.html">
+     Using config.do in STATA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-02-running-stata-code.html">
+     Running Code in Stata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-03-stata-scan-packages.html">
+     Using scan_packages.do
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="97-00-authentication.html">
+   Authentication-related issues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="97-01-Bitbucket-authentication.html">
+   Bitbucket Authentication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="99-References.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F05-data-citations-and-das.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/05-data-citations-and-das.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-very-short-history-of-data-citations">
+   A very short history of data citations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-do-you-create-a-data-citation">
+   How do you create a data citation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-imperfect-real-example">
+     An imperfect real example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-ideal-data-citation">
+     An ideal (?) data citation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-citation-template">
+     Data citation template
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-not-quite-serious-example">
+     A not quite serious example
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#better">
+       Better
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-distributed-as-supplementary-data">
+     Data distributed as supplementary data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#producer">
+     Producer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distributor">
+     Distributor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dates">
+     Dates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#offline-access-mechanism">
+     Offline access mechanism
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confidential-databases">
+     Confidential databases
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#confidential-data-with-doi">
+       Confidential data with DOI
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-formal-access-mechanism">
+     No formal access mechanism
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unknown-or-confidential-author">
+     Unknown or confidential author
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-to-cite">
+     Where to cite
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-availability-statements-dasmaster">
+   Data availability statements {#dasmaster}
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-examples-of-das">
+     Some examples of DAS
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-public-use-data-included-in-data-archive">
+       Example for public use data included in data archive:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-public-use-data-not-included-in-data-archive">
+       Example for public use data not included in data archive:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-public-use-data-with-required-permission">
+       Example for public use data with required permission:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-confidential-data">
+       Example for confidential data:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-government-registers">
+       Example for Government registers
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#s-p-500">
+       S&amp;P 500
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data citations and data availability statements {#datacitations}</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-very-short-history-of-data-citations">
+   A very short history of data citations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-do-you-create-a-data-citation">
+   How do you create a data citation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-imperfect-real-example">
+     An imperfect real example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-ideal-data-citation">
+     An ideal (?) data citation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-citation-template">
+     Data citation template
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-not-quite-serious-example">
+     A not quite serious example
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#better">
+       Better
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-distributed-as-supplementary-data">
+     Data distributed as supplementary data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#producer">
+     Producer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distributor">
+     Distributor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dates">
+     Dates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#offline-access-mechanism">
+     Offline access mechanism
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#confidential-databases">
+     Confidential databases
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#confidential-data-with-doi">
+       Confidential data with DOI
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#no-formal-access-mechanism">
+     No formal access mechanism
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unknown-or-confidential-author">
+     Unknown or confidential author
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-to-cite">
+     Where to cite
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-availability-statements-dasmaster">
+   Data availability statements {#dasmaster}
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-examples-of-das">
+     Some examples of DAS
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-public-use-data-included-in-data-archive">
+       Example for public use data included in data archive:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-public-use-data-not-included-in-data-archive">
+       Example for public use data not included in data archive:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-public-use-data-with-required-permission">
+       Example for public use data with required permission:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-confidential-data">
+       Example for confidential data:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-for-government-registers">
+       Example for Government registers
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#s-p-500">
+       S&amp;P 500
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="data-citations-and-data-availability-statements-datacitations">
+<h1>Data citations and data availability statements {#datacitations}<a class="headerlink" href="#data-citations-and-data-availability-statements-datacitations" title="Permalink to this headline">#</a></h1>
+<p>Most students and researchers have been trained to cite their sources. Mostly, this is meant to be literature sources, but the basic idea applies just as much to data: If you use somebody else’s data, you should acknowledge that.</p>
+<section id="a-very-short-history-of-data-citations">
+<h2>A very short history of data citations<a class="headerlink" href="#a-very-short-history-of-data-citations" title="Permalink to this headline">#</a></h2>
+<p>The almost complete absence of data citations from the literature has lead to issues when data creators and data providers attempt to assess their impact on science. Typically, they revert to manually or algorithmically scouring the literature, trying to find instances where their data is used.</p>
+<p><img alt="FAIR" src="_images/fair-crop.png" /></p>
+<p>In 2016, a number of scientists and publishers from many domains got together and issued the FAIR Data principles [&#64;FORCE11FAIRDATAPRINCIPLES]. “FAIR” is an acronym for</p>
+<ul class="simple">
+<li><p>Findable,</p></li>
+<li><p>Accessible,</p></li>
+<li><p>Interoperable, and</p></li>
+<li><p>Re-usable</p></li>
+</ul>
+<p>These are principles which help the furthering of increased reproducibility - by making data accessible, reproducibility checks can be conducted. By making them interoperable and re-usable, others can reproduce, replicate, and expand on the original research. Findability remains an issue: how do you discover data that is hidden in a ZIP file on a journal website as part of an (otherwise) perfectly reproducible package?</p>
+<p>In fact, the same group had previously laid the groundwork to that. In 2014, they issued the “<a class="reference external" href="https://doi.org/10.25490/a97f-egyk">Data Citation Principles</a>  (DCP)” [&#64;force11declaration]. These laid out the ethical need for such citations, the content such citations should have, and some desirable attributes of data citations. Both the DCP as well as  FAIR  suggest that data be assigned unique identifiers, allowing them to be clearly referenced, and found. The most common identifier in the social sciences is the Digital Object Identifier (DOI), but others exist, in particular in the biological or physical sciences.</p>
+<p><img alt="DCPrinciples" src="_images/data-citation-principles.png" /></p>
+<p>The DCC note that (emphasis added):</p>
+<blockquote>
+<div><p>Sound, reproducible scholarship rests upon a foundation of robust, accessible data. For this to be so in practice as well as theory, data must be accorded due importance in the practice of scholarship and in the enduring scholarly record. In other words, data should be considered legitimate, <strong>citable products of research</strong>. Data citation, <strong>like the citation of other evidence and sources</strong>, is good research practice and is part of the scholarly ecosystem supporting data reuse.</p>
+</div></blockquote>
+<p>Data citation increases the findability, accessibility, interoperability, and re-usability of research data (<a class="reference external" href="https://www.go-fair.org/fair-principles/">FAIR</a>).  Through data citations, data providers can link to articles (<a class="reference external" href="https://www.crossref.org/services/event-data/">sometimes automatically</a>), allowing them to show the academic value of the data and continue providing the services around data creation. Finally, data citations open a new path to finding relevant science, by reaching the linked articles through data search interfaces, like <a class="reference external" href="https://www.openicpsr.org/openicpsr/search/aea/studies">openICPSR</a>, <a class="reference external" href="http://www.data-pass.org/">Data-Pass</a>, and <a class="reference external" href="https://toolbox.google.com/datasetsearch">Google Dataset Search</a>.</p>
+<p>These principles are imperfectly implemented even today. Many data providers, including some of the biggest statistical agencies, do not provide unique identifiers to a particular data file. Some might uniquely identify a data series. Others may heuristically refer to certain versions (“V2”). Few have robust archival quality unique identifiers.</p>
+<p>Journals’ stylistic considerations also reduce the impact of the DCC. Citations - in the sense of appearing in a bibliography at the end of the document - do not provide much sense of any access method other than a download. The AEA follows the Chicago Manual of Style (CMOS), with several <a class="reference external" href="https://www.aeaweb.org/journals/policies/sample-references">additions on the AEA website</a>.</p>
+<p><img alt="BLS citation at AEA" src="_images/bls-citation.png" /></p>
+<p>As the <a class="reference external" href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch14/psec014.html">CMOS states</a>, one of the criteria for a useful citation is conveying authority and permanence:</p>
+<blockquote>
+<div><p>Electronic content presented without formal ties to a publisher or sponsoring body has the authority equivalent to that of unpublished or self-published material in other media.</p>
+</div></blockquote>
+<p>FAIR data helps convey such information, but often, assessing what “publisher” or “sponsoring body” is reputable or reliable is tricky. And the citation fails to convey many important facets of data access. What if the cited resource requires a login, even if it is free? What if payment is required? What if a long-winding application process is required? Citations do not communicate that amount of detail.  As we shall see <a class="reference external" href="#dasmaster">later</a>, there are ways to augment data citations with the needed information.</p>
+</section>
+<section id="how-do-you-create-a-data-citation">
+<h2>How do you create a data citation<a class="headerlink" href="#how-do-you-create-a-data-citation" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://www.icpsr.umich.edu/web/pages/datamanagement/citations.html">ICPSR</a> [&#64;icpsr_citing_nodate] notes that a citation should include the following items:</p>
+<ul class="simple">
+<li><p>Author</p></li>
+<li><p>Title</p></li>
+<li><p>Distributor</p></li>
+<li><p>Date</p></li>
+<li><p>Version</p></li>
+<li><p>Persistent identifier</p></li>
+</ul>
+<p>where any data source has the first five elements, and the ideal FAIR curated data source also has a persistent identifier.</p>
+<section id="an-imperfect-real-example">
+<h3>An imperfect real example<a class="headerlink" href="#an-imperfect-real-example" title="Permalink to this headline">#</a></h3>
+<p>Consider the BLS citation shown earlier:</p>
+<blockquote>
+<div><p>Bureau of Labor Statistics. 2000–2010. “Current Employment Statistics: Colorado, Total Nonfarm, Seasonally adjusted - SMS08000000000000001.” United States Department of Labor. <a class="reference external" href="http://data.bls.gov/cgi-bin/surveymost?sm+08">http://data.bls.gov/cgi-bin/surveymost?sm+08</a> (accessed February 9, 2011).</p>
+</div></blockquote>
+<p>The <em>author</em> or creator is clearly <code class="docutils literal notranslate"><span class="pre">Bureau</span> <span class="pre">of</span> <span class="pre">Labor</span> <span class="pre">Statistics</span></code>. The <em>distributor</em> here is <code class="docutils literal notranslate"><span class="pre">United</span> <span class="pre">States</span> <span class="pre">Department</span> <span class="pre">of</span> <span class="pre">Labor</span></code>, which happens to be the government department housing the BLS. <em>Title</em> is arguably <code class="docutils literal notranslate"><span class="pre">Current</span> <span class="pre">Employment</span> <span class="pre">Statistics:</span> <span class="pre">Colorado,</span> <span class="pre">Total</span> <span class="pre">Nonfarm,</span> <span class="pre">Seasonally</span> <span class="pre">adjusted</span></code>, though some might argue that state, coverage, and seasonal adjustment identify <em>versions</em> of the survey. <em>Date</em> are the (original) dates of publication, or here, approximated by the date range covered by the series. But generally, <em>versions</em> relates to a chronologically released version - which is less clear in this case, and only captured by <code class="docutils literal notranslate"><span class="pre">(accessed</span> <span class="pre">February</span> <span class="pre">9,</span> <span class="pre">2011)</span></code>. There is no clear <em>persistent identifier</em>, the closest approximation is provided by a combination of the series identifier <code class="docutils literal notranslate"><span class="pre">SMS08000000000000001</span></code>, the URL <code class="docutils literal notranslate"><span class="pre">http://data.bls.gov/cgi-bin/surveymost?sm+08</span></code>, and the date accessed <code class="docutils literal notranslate"><span class="pre">(accessed</span> <span class="pre">February</span> <span class="pre">9,</span> <span class="pre">2011)</span></code>. Note that this is imperfect, because, unless you can time-travel, you cannot obtain the same dataset a second time.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Attribute</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><em>Author</em>:</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Bureau</span> <span class="pre">of</span> <span class="pre">Labor</span> <span class="pre">Statistics</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><em>Title</em>:</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Current</span> <span class="pre">Employment</span> <span class="pre">Statistics:</span> <span class="pre">Colorado,</span> <span class="pre">Total</span> <span class="pre">Nonfarm,</span> <span class="pre">Seasonally</span> <span class="pre">adjusted</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><em>Distributor</em>:</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">United</span> <span class="pre">States</span> <span class="pre">Department</span> <span class="pre">of</span> <span class="pre">Labor</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><em>Date</em>:</p></td>
+<td><p>2000-2010</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><em>Version</em>:</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(accessed</span> <span class="pre">February</span> <span class="pre">9,</span> <span class="pre">2011)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><em>Persistent identifier</em>:</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SMS08000000000000001</span></code> +  <code class="docutils literal notranslate"><span class="pre">http://data.bls.gov/cgi-bin/surveymost?sm+08</span></code> + <code class="docutils literal notranslate"><span class="pre">(accessed</span> <span class="pre">February</span> <span class="pre">9,</span> <span class="pre">2011)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="an-ideal-data-citation">
+<h3>An ideal (?) data citation<a class="headerlink" href="#an-ideal-data-citation" title="Permalink to this headline">#</a></h3>
+<p>What should the ideal data citation look like? ICPSR suggests</p>
+<blockquote>
+<div><p>Barnes, Samuel H. Italian Mass Election Survey, 1968. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 1992-02-16. <a class="reference external" href="https://doi.org/10.3886/ICPSR07953.v1">https://doi.org/10.3886/ICPSR07953.v1</a></p>
+</div></blockquote>
+<p>so that</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Attribute</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><em>Author</em>:</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Barnes,</span> <span class="pre">Samuel</span> <span class="pre">H.</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><em>Title</em>:</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Italian</span> <span class="pre">Mass</span> <span class="pre">Election</span> <span class="pre">Survey,</span> <span class="pre">1968</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><em>Distributor</em>:</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Inter-university</span> <span class="pre">Consortium</span> <span class="pre">for</span> <span class="pre">Political</span> <span class="pre">and</span> <span class="pre">Social</span> <span class="pre">Research</span> </code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><em>Date</em>:</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1992-02-16</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><em>Version</em>:</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">V1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><em>Persistent identifier</em>:</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10.3886/ICPSR07953.v1</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Note that the date <code class="docutils literal notranslate"><span class="pre">1968</span></code> describes the survey, but its date of publication was 1992. The version is implicit in the DOI. The persistent identifier is just <code class="docutils literal notranslate"><span class="pre">10.3886/ICPSR07953.v1</span></code>, but the display guidelines for DOI suggest including the full URL that yields a resolution.</p>
+</section>
+<section id="data-citation-template">
+<h3>Data citation template<a class="headerlink" href="#data-citation-template" title="Permalink to this headline">#</a></h3>
+<p>In general, therefore, as long as you can fill out the table</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Attribute</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><em>Author</em>:</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><em>Title</em>:</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><em>Distributor</em>:</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><em>Date</em>:</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><em>Version</em>:</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><em>Persistent identifier</em>:</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>you can create a data citation:</p>
+<blockquote>
+<div><p>[AUTHOR], “[TITLE]”, [DISTRIBUTOR], [DATE], [VERSION] + [Persistent Identifier]</p>
+</div></blockquote>
+</section>
+<section id="a-not-quite-serious-example">
+<h3>A not quite serious example<a class="headerlink" href="#a-not-quite-serious-example" title="Permalink to this headline">#</a></h3>
+<p>Many authors initially neglect to add data citations, or do not know how to add a data citation. Often, we see authors cite papers with supplementary data, but not databases or other data:</p>
+<blockquote>
+<div><p>We use data acquired from the NHL, dates of power outages collected by Tremblay et al (2018), augmented with information on the language and grammar skills of hockey players provided by the Ethnologue database.</p>
+</div></blockquote>
+<p>(note absence of citation for NHL and Ethnologue data). In the above example, three datasets are used, but only one is cited in some fashion.</p>
+<section id="better">
+<h4>Better<a class="headerlink" href="#better" title="Permalink to this headline">#</a></h4>
+<p>The above example can be improved as follows:</p>
+<blockquote>
+<div><p>We use data acquired from the NHL (NHL, 2018), dates of power outages collected by Tremblay et al (2018, 2019), augmented with information on the language and grammar skills of hockey players provided by the Ethnologue database (Eberhard et al, 2019).</p>
+</div></blockquote>
+<p>with the reference list having the following entries:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Eberhard, David M., Gary F. Simons, and Charles D. Fennig (eds.). 2019. <em>Ethnologue: Languages of the World.</em> Twenty-second edition. Dallas, Texas: SIL International. Online version: <a class="reference external" href="http://www.ethnologue.com">http://www.ethnologue.com</a>.</p></li>
+<li><p>National Hockey League. 2018. <em>NHL Game Database 1917-2018</em>. National Hockey League Hall of Fame, Toronto, ON. Accessed February 29, 2019.</p></li>
+<li><p>Tremblay, Réjean, Ken Dryden, and José Theodore. 2018. “The impact of power outages on goal-keeping in the NHL”, <em>Journal of National Hockey Leagues</em>, vol 32, iss. 1.</p></li>
+<li><p>Tremblay, Réjean, Ken Dryden, and José Theodore. 2019. “Power outages during NHL games (updated)”, <em>Canadian Hockey Dataverse</em>, doi:10.1234/nhl.lnh.haha</p></li>
+</ul>
+</div></blockquote>
+<p>Assess why the latter is better.</p>
+</section>
+</section>
+<section id="data-distributed-as-supplementary-data">
+<h3>Data distributed as supplementary data<a class="headerlink" href="#data-distributed-as-supplementary-data" title="Permalink to this headline">#</a></h3>
+<p>The <a class="reference external" href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch14/psec187.html">CMOS provides examples</a> of how to cite supplementary materials that are attached to a specific article:</p>
+<blockquote>
+<div><p>Suárez-Rodríguez, M. and C. Macías Garcia. 2014. “There Is No Such a Thing as a Free Cigarette: Lining Nests with Discarded Butts Brings Short-Term Benefits, but Causes Toxic Damage.” <em>Journal of Evolutionary Biology</em> 27, no. 12 (December 2014): 2719–26, <a class="reference external" href="https://doi.org/10.1111/jeb.12531">https://doi.org/10.1111/jeb.12531</a>, data deposited at Dryad Digital Repository, <a class="reference external" href="https://doi.org/10.5061/dryad.4t5rt">https://doi.org/10.5061/dryad.4t5rt</a>.</p>
+</div></blockquote>
+<p>The <a class="reference external" href="https://www.aeaweb.org/journals/policies/sample-references">AEA guidance</a> used to  provide an example, in which the citation links to the article landing page:</p>
+<blockquote>
+<div><p>Romer, Christina D., and David H. Romer. 2010. “The Macroeconomic Effects of Tax Changes: Estimates Based on a New Measure of Fiscal Shocks: Dataset.” <em>American Economic Review.</em> <a class="reference external" href="https://doi.org/10.1257/aer.100.3.763">https://doi.org/10.1257/aer.100.3.763</a>.</p>
+</div></blockquote>
+<p>Many authors, however, would only cite the article itself, and not the data.
+Note however that modern data citation guidance suggest that both the article and the data used by the article should be cited, and this can lead to confusion. With the 2019 move of the AEA to a data archive, the correct citation for the above supplement would be:</p>
+<blockquote>
+<div><p>Romer, Christina D., and David H. Romer. 2010. “Replication data for: The Macroeconomic Effects of Tax Changes: Estimates Based on a New Measure of Fiscal Shocks.” <em>American Economic Association [publisher]</em>, <em>Inter-university Consortium for Political and Social Research [distributor]</em>, <a class="reference external" href="https://doi.org/10.3886/E112357V1">https://doi.org/10.3886/E112357V1</a></p>
+</div></blockquote>
+<p>with the article also cited as:</p>
+<blockquote>
+<div><p>Romer, Christina D., and David H. Romer. 2010. “The Macroeconomic Effects of Tax Changes: Estimates Based on a New Measure of Fiscal Shocks” <em>American Economic Review.</em> no. 3 (June 2010): 763–801. <a class="reference external" href="https://doi.org/10.1257/aer.100.3.763">https://doi.org/10.1257/aer.100.3.763</a>.</p>
+</div></blockquote>
+</section>
+<section id="producer">
+<h3>Producer<a class="headerlink" href="#producer" title="Permalink to this headline">#</a></h3>
+<p>Often, the creator of a dataset is an organization. The same way that an <a class="reference external" href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch15/psec037.html">organization as a work’s author</a> can be cited:</p>
+<blockquote>
+<div><p>ISO (International Organization for Standardization). 1997. <em>Information and Documentation—Rules for the Abbreviation of Title Words and Titles of Publications</em>. ISO 4:1997. Paris: ISO.</p>
+</div></blockquote>
+<p>an organization can be cited as the creator of a dataset:</p>
+<blockquote>
+<div><p>Standard and Poor’s (S&amp;P). 2017. <em>Compustat-Capital IQ</em>. S&amp;P Global Market Intelligence.</p>
+</div></blockquote>
+</section>
+<section id="distributor">
+<h3>Distributor<a class="headerlink" href="#distributor" title="Permalink to this headline">#</a></h3>
+<p>In many cases, the data are not distributed by the creator. This means the <em>distributor</em> takes on the role of a <em>publisher</em> (of a book, of data). In the BLS example, the two differed only because the (higher-ranking) department counts as the distributor. In the case of Compustat, one might have obtained access through the Wharton Research Data Services, and  cite as</p>
+<blockquote>
+<div><p>Standard and Poor’s (S&amp;P). 2017. <em>Compustat-Capital IQ</em>. Wharton Research Data Services. <a class="reference external" href="https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/sp-global-market-intelligence/">https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/sp-global-market-intelligence/</a></p>
+</div></blockquote>
+<p>If using the S&amp;P 500 data, there may be multiple providers:</p>
+<blockquote>
+<div><p>S&amp;P Dow Jones Indices LLC, <em>S&amp;P 500 [SP500]</em>, retrieved from FRED, Federal Reserve Bank of St. Louis; <a class="reference external" href="https://fred.stlouisfed.org/series/SP500">https://fred.stlouisfed.org/series/SP500</a>, January 24, 2020.</p>
+</div></blockquote>
+<blockquote>
+<div><p>S&amp;P Dow Jones Indices LLC, <em>S&amp;P 500</em>, provided via Haver Analytics Data Subscription, February 24, 2018.</p>
+</div></blockquote>
+<p>with hopefully the same content. Note that often, such data is subject to copyright and redistribution restrictions (see <a class="reference external" href="https://fred.stlouisfed.org/series/SP500">the page at FRED on SP500</a> and discussion in the <a class="reference external" href="#dasmaster">later section</a>).</p>
+</section>
+<section id="dates">
+<h3>Dates<a class="headerlink" href="#dates" title="Permalink to this headline">#</a></h3>
+<p>In some cases, it isn’t clear when the dataset was <em>published</em>, though it may be clear what time period the dataset covers (as in the BLS case). One way to address this may be by <a class="reference external" href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch15/psec050.html">using the “n.d.” abbreviation for the date of publication</a> and including the date of coverage in the title:</p>
+<blockquote>
+<div><p>Standard and Poor’s (S&amp;P). n.d. <em>Compustat-Capital IQ (1982-2017)</em>. Wharton Research Data Services. Accessed April 6, 2018. <a class="reference external" href="https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/sp-global-market-intelligence/">https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/sp-global-market-intelligence/</a></p>
+</div></blockquote>
+<p>A related issue may arise when the dataset is comprised of multiple years, each of which has its own DOI. For instance, when accessing <a class="reference external" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/search/studies?q=american+community+survey">multiple years of American Community Survey data on ICPSR</a>, each  has its own DOI:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>American Community Survey (ACS): Public Use Microdata Sample (PUMS),</p></td>
+<td><p>1998</p></td>
+<td><p>(ICPSR 3888)</p></td>
+<td><p>2008-05-21</p></td>
+</tr>
+<tr class="row-odd"><td><p>American Community Survey (ACS): Public Use Microdata Sample (PUMS),</p></td>
+<td><p>1997</p></td>
+<td><p>(ICPSR 3886)</p></td>
+<td><p>2008-05-21</p></td>
+</tr>
+<tr class="row-even"><td><p>American Community Survey (ACS): Public Use Microdata Sample (PUMS),</p></td>
+<td><p>2003</p></td>
+<td><p>(ICPSR 4117)</p></td>
+<td><p>2009-12-01</p></td>
+</tr>
+<tr class="row-odd"><td><p>American Community Survey (ACS): Public Use Microdata Sample (PUMS),</p></td>
+<td><p>2004</p></td>
+<td><p>(ICPSR 4370)</p></td>
+<td><p>2008-10-14</p></td>
+</tr>
+<tr class="row-even"><td><p>American Community Survey (ACS): Public Use Microdata Sample (PUMS),</p></td>
+<td><p>2009</p></td>
+<td><p>(ICPSR 33802)</p></td>
+<td><p>2013-04-04</p></td>
+</tr>
+<tr class="row-odd"><td><p>American Community Survey (ACS): Public Use Microdata Sample (PUMS),</p></td>
+<td><p>2008</p></td>
+<td><p>(ICPSR 29263)</p></td>
+<td><p>2011-11-08</p></td>
+</tr>
+</tbody>
+</table>
+<p>One approach to this is to create a composite citation, with additional information available in an online data appendix or a Data Availability Statement:</p>
+<blockquote>
+<div><p>Bureau Of The Census. 2009. “American Community Survey (ACS): Public Use Microdata Sample (PUMS), 1997-2009.” <em>United States Department Of Commerce</em> [publisher].  ICPSR - Interuniversity Consortium for Political and Social Research. [distributor] DOIs listed in data appendix.</p>
+</div></blockquote>
+<p>or</p>
+<blockquote>
+<div><p>Bureau Of The Census. 2009. “American Community Survey (ACS): Public Use Microdata Sample (PUMS), 1997-2009.” <em>United States Department Of Commerce</em> [publisher].  ICPSR - Interuniversity Consortium for Political and Social Research. [distributor] <a class="reference external" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/search/studies?q=american+community+survey">https://www.icpsr.umich.edu/icpsrweb/ICPSR/search/studies?q=american+community+survey</a> (accessed November 21, 2019)</p>
+</div></blockquote>
+<p>(and listing of exact DOIs in an appendix table).</p>
+</section>
+<section id="offline-access-mechanism">
+<h3>Offline access mechanism<a class="headerlink" href="#offline-access-mechanism" title="Permalink to this headline">#</a></h3>
+<p>Many datasets are available only under license, memorandum, contract, etc., and do not have a formal online presence. This is quite similar to traditional offline archives, for instance manuscript collections. For such collections, <a class="reference external" href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch15/psec054.html">CMOS suggests</a>:</p>
+<blockquote>
+<div><p>Kallen, Horace. <em>Papers</em>. YIVO Institute for Jewish Research, New York.
+<a class="reference external" href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch14/psec229.html">Merriam, Charles E. <em>Papers</em>. Special Collections Research Center, box 26, folder 17. University of Chicago Library.</a></p>
+</div></blockquote>
+<p>and usage in the text as</p>
+<blockquote>
+<div><p>Alvin Johnson, in a memorandum prepared sometime in 1937 (Kallen Papers, file 36), observed that …</p>
+</div></blockquote>
+<p>Similar citations can be constructed for offline databases:</p>
+<blockquote>
+<div><p>Bloom, Nick. 2019. <em>Confidential survey data on Cameroon business processes</em>. Stanford Secure Access Center (file “cameroon-bloom.zip”). Stanford University.</p>
+</div></blockquote>
+</section>
+<section id="confidential-databases">
+<h3>Confidential databases<a class="headerlink" href="#confidential-databases" title="Permalink to this headline">#</a></h3>
+<p>Similar forms may be used for confidential databases when no DOI exists:</p>
+<blockquote>
+<div><p>Internal Revenue Service. (YEAR). <em>Corporate Income Tax Returns [database]</em>. Department of Treasury, Washington DC, accessed YYYY-MM-DD.</p>
+</div></blockquote>
+<p>where the data, in this case, were accessed via the “Department of Treasury,” acting as a <em>secure</em> distributor (of access, not downloads). If the same data had been accessed via a secure research data center, the reference should have instead noted that access mechanism:</p>
+<blockquote>
+<div><p>Internal Revenue Service. (YEAR). <em>Corporate Income Tax Returns [database]</em>. Federal Research Data Centers, last accessed YYYY-MM-DD.</p>
+</div></blockquote>
+<section id="confidential-data-with-doi">
+<h4>Confidential data with DOI<a class="headerlink" href="#confidential-data-with-doi" title="Permalink to this headline">#</a></h4>
+<p>If a DOI exists, of course,  the formal citation generated from that DOI should be used:</p>
+<blockquote>
+<div><p>Forschungsdatenzentrum der Bundesagentur für Arbeit. 2020. “Betriebs-Historik-Panel (BHP) – Version 7518 v1.” <em>Institut für Arbeitsmarkt- und Berufsforschung (IAB)</em>. <a class="reference external" href="https://doi.org/10.5164/IAB.BHP7518.DE.EN.V1">https://doi.org/10.5164/IAB.BHP7518.DE.EN.V1</a>.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="no-formal-access-mechanism">
+<h3>No formal access mechanism<a class="headerlink" href="#no-formal-access-mechanism" title="Permalink to this headline">#</a></h3>
+<p>In some cases (not infrequently), access to data is through informal means. The <a class="reference external" href="https://www.chicagomanualofstyle.org/book/ed17/part3/ch15/psec053.html">CMOS allows for citation of such information</a>, without inclusion in the references.</p>
+<blockquote>
+<div><p>(A. P. Møller, unpublished data; C. R. Brown and M. B. Brown, unpublished data)</p>
+</div></blockquote>
+<p>We would deviate from that suggestion, ask for inclusion in the reference list, and simply suggest using <em>unpublished data</em> as the locator, similar to a URN, in the reference list:</p>
+<blockquote>
+<div><p>Møller, A. P. n.d. “Data on Crocodile Sightings in Manhattan.” unpublished data. Accessed February 29, 2019.</p>
+</div></blockquote>
+</section>
+<section id="unknown-or-confidential-author">
+<h3>Unknown or confidential author<a class="headerlink" href="#unknown-or-confidential-author" title="Permalink to this headline">#</a></h3>
+<p>In some cases, the authors might not be able to name the data creator, due to a non-disclosure agreement. One suggestion may then be</p>
+<blockquote>
+<div><p>Anonymous Firm, n.d. “Data on financial transactions.” Accessed under Non-disclosure Agreement, extract obtained on January 20, 2016.</p>
+</div></blockquote>
+</section>
+<section id="where-to-cite">
+<h3>Where to cite<a class="headerlink" href="#where-to-cite" title="Permalink to this headline">#</a></h3>
+<p>In all cases, data and code should be cited in the main manuscript. They should also be  referenced in the data availability statement (some journals) or the README (other journals). However, in some cases, data is only used in an online appendix, and it is acceptable to cite the data there as well, and not in the main manuscript’s bibliography.</p>
+<p>Furthermore, as data citation are still a relatively new concept, many authors will have substantially completed their manuscript, without including data citations. Adding them to the README is then acceptable practice (for now).</p>
+</section>
+</section>
+<section id="data-availability-statements-dasmaster">
+<h2>Data availability statements {#dasmaster}<a class="headerlink" href="#data-availability-statements-dasmaster" title="Permalink to this headline">#</a></h2>
+<p>The academic publishing community’s response are “data availability statements (DAS).” While mostly, these are pointers from the journal to where the data can be found. In the case of data supplements, this is almost trivial when the journal has a robust data availability policy, though some journals allow for self-declared but unverified DAS.</p>
+<p>Summarily, a data availability statement describes not just where the data can be obtained from, but also how the data can be obtained, conditions for obtaining it, and any additional restrictions.</p>
+<blockquote>
+<div><p>Some examples are provided by Springer/Nature and Hindawi:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.springernature.com/gp/authors/research-data-policy/data-availability-statements/12330880">Springer</a></p></li>
+<li><p><a class="reference external" href="https://www.hindawi.com/research.data/#statement.templates">Hindawi</a></p></li>
+</ul>
+</div></blockquote>
+<section id="some-examples-of-das">
+<h3>Some examples of DAS<a class="headerlink" href="#some-examples-of-das" title="Permalink to this headline">#</a></h3>
+<section id="example-for-public-use-data-included-in-data-archive">
+<h4>Example for public use data included in data archive:<a class="headerlink" href="#example-for-public-use-data-included-in-data-archive" title="Permalink to this headline">#</a></h4>
+<blockquote>
+<div><p>The paper uses data obtained from IPUMS (Ruggles et al, 2017). IPUMS-CPS does not currently provide the ability to store or reference custom extracts, but allows for redistribution for the purpose of replication. The archive contains the extracted data, codebook in the folder “data/IPUMS”. The data citation in the main article has the full URL.</p>
+</div></blockquote>
+</section>
+<section id="example-for-public-use-data-not-included-in-data-archive">
+<h4>Example for public use data not included in data archive:<a class="headerlink" href="#example-for-public-use-data-not-included-in-data-archive" title="Permalink to this headline">#</a></h4>
+<blockquote>
+<div><p>Data from the Socioeconomic High-resolution Rural Urban Geographic Dataset on India, Version 1.0  (Asher and Novosad, 2019) is used in this paper. The full dataset and documentation can be downloaded from <a class="reference external" href="https://doi.org/10.7910/DVN/DPESAK">https://doi.org/10.7910/DVN/DPESAK</a>.</p>
+</div></blockquote>
+</section>
+<section id="example-for-public-use-data-with-required-permission">
+<h4>Example for public use data with required permission:<a class="headerlink" href="#example-for-public-use-data-with-required-permission" title="Permalink to this headline">#</a></h4>
+<blockquote>
+<div><p>The paper uses IPUMS Terra data. IPUMS-Terra does not allow for redistribution, except for the purpose of replication archives. Permissions as per <a class="reference external" href="https://terra.ipums.org/citation">https://terra.ipums.org/citation</a> have been obtained, and are documented within the “data/IPUMS-terra” folder.</p>
+</div></blockquote>
+</section>
+<section id="example-for-confidential-data">
+<h4>Example for confidential data:<a class="headerlink" href="#example-for-confidential-data" title="Permalink to this headline">#</a></h4>
+<blockquote>
+<div><p>The data for this project are confidential, but may be obtained with Data Use Agreements with the Massachusetts Department of Elementary and Secondary Education (DESE). Researchers interested in access to the data may contact [NAME] at [EMAIL], also see <a class="reference external" href="http://www.doe.mass.edu/research/contact.html">www.doe.mass.edu/research/contact.html</a>. It can take some months to negotiate data use agreements and gain access to the data. The author will assist with any reasonable replication attempts for two years following publication.</p>
+</div></blockquote>
+</section>
+<section id="example-for-government-registers">
+<h4>Example for Government registers<a class="headerlink" href="#example-for-government-registers" title="Permalink to this headline">#</a></h4>
+<p>In some cases, governments have a list of their (named) registers. For instance, Statistics Denmark provides the full list of registers at <a class="reference external" href="http://www.dst.dk/extranet/forskningvariabellister/Oversigt%20over%20registre.html">http://www.dst.dk/extranet/forskningvariabellister/Oversigt%20over%20registre.html</a>. These can be used to craft data citations (see <a class="reference external" href="https://social-science-data-editors.github.io/guidance/addtl-data-citation-guidance.html#government-registers">Data citation guidance</a>). Data availability statements should describe how each such register can be accessed:</p>
+<blockquote>
+<div><p>The information used in the analysis combines several Danish administrative registers (as described in the paper). The data use is subject to the European Union’s General Data Protection Regulation(GDPR) per new Danish regulations from May 2018. The data are physically stored on computers at Statistics Denmark and, due to security considerations, the data may not be transferred to computers outside Statistics Denmark. Researchers interested in obtaining access to the register data employed in this paper are required to submit a written application to gain approval from Statistics Denmark. The application must include a detailed description of the proposed project, its purpose, and its social contribution, as well as a description of the required datasets, variables, and analysis population. Applications can be submitted by researchers who are affiliated with Danish institutions accepted by Statistics Denmark, or by researchers outside of Denmark who collaborate with researchers affiliated with these institutions.</p>
+</div></blockquote>
+<p>(Example taken from <a class="reference external" href="https://www.aeaweb.org/articles?id=10.1257/app.20170604">Fadlon and Nielsen, 2020</a> (forthcoming as of June 2020).</p>
+</section>
+<section id="s-p-500">
+<h4>S&amp;P 500<a class="headerlink" href="#s-p-500" title="Permalink to this headline">#</a></h4>
+<p>The S&amp;P 500 is one of the most widely known stock indexes. And yet, it is subject to copyright, and restrictions on redistribution. Some authors who use the S&amp;P 500 numbers may have downloaded it via FRED <a class="reference external" href="https://fred.stlouisfed.org/series/SP500">https://fred.stlouisfed.org/series/SP500</a>, others through other data services (Haver Analytics, Bloomberg). The FRED website mentions that the data are</p>
+<blockquote>
+<div><p>(C) S&amp;P Dow Jones Indices LLC. Reproduction of S&amp;P 500 in any form is prohibited except with the prior written permission of S&amp;P Dow Jones Indices LLC (“S&amp;P”).</p>
+</div></blockquote>
+<p>If obtained through FRED, the suggested citation is</p>
+<blockquote>
+<div><p>S&amp;P Dow Jones Indices LLC, <em>S&amp;P 500 [SP500]</em>, retrieved from FRED, Federal Reserve Bank of St. Louis; <a class="reference external" href="https://fred.stlouisfed.org/series/SP500">https://fred.stlouisfed.org/series/SP500</a>, January 24, 2020.</p>
+</div></blockquote>
+<p>An analogue if accessing it through, say, Haver Analytics, might be</p>
+<blockquote>
+<div><p>S&amp;P Dow Jones Indices LLC, <em>S&amp;P 500</em>, provided via Haver Analytics, January 24, 2020.</p>
+</div></blockquote>
+<p>Note that both citations do not provide (complete) information on how others might obtain the data, and what restrictions are imposed on the data (unless they visit the site, or read the terms of use of, say, their Haver Analytics description). A tentative  Data Availability Statement might be:</p>
+<blockquote>
+<div><p>S&amp;P 500 data is (C) S&amp;P Dow Jones Indices LLC. Reproduction of S&amp;P 500 in any form is prohibited except with the prior written permission of S&amp;P Dow Jones Indices LLC (“S&amp;P”). It is thus not available as part of the replication archive. Users may access the past 10 years via FRED at <a class="reference external" href="https://fred.stlouisfed.org/series/SP500">https://fred.stlouisfed.org/series/SP500</a>, or purchase longer access via Haver Analytics (<a class="reference external" href="http://www.haver.com/databaseprofiles.html#indicators">http://www.haver.com/databaseprofiles.html#indicators</a>). Note that reproduction of our manuscript’s tables requires data from [YYYY]-[ZZZZ].</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="04-concepts.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Basic Concepts</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="06-basic-flow.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Generic data workflow</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

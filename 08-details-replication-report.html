@@ -1,0 +1,1105 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>A guided walk through the Replication Report &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AEA Jira workflow - A guide" href="11-jira-workflow-training.html" />
+    <link rel="prev" title="Assessing computational reproducibility" href="07-basic-assessing-reproducibility.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-introduction.html">
+   Background
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminary Tasks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02-01-pre-requisites.html">
+   Pre-requisites
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-02-pre-training-tasks.html">
+     Pre-training tasks {#pre-training}
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-03-toolkit.html">
+     Toolkit
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-concepts.html">
+   Basic Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-data-citations-and-das.html">
+   Data citations and data availability statements {#datacitations}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-basic-flow.html">
+   Generic data workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-basic-assessing-reproducibility.html">
+   Assessing computational reproducibility
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   A guided walk through the Replication Report
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  AEA-specific training
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-jira-workflow-training.html">
+   AEA Jira workflow - A guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-jira-revision-guidance.html">
+   AEA: Revision reports after author resubmission
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-approving-issues.html">
+   AEA: Reviewing and (Pre-) Approving Reports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-Pending_ICPSR.html">
+   AEA: Monitoring Pending openICPSR Changes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="30-jira-prepare-publication.html">
+   AEA: Interfacing with the Journal Management System
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="40-Instructions-PandP-Checks.html">
+   AEA: Instructions for Papers and Proceedings checks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="91-setup-checklist.html">
+   Setup Checklist {#checklist}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="92-Privacy.html">
+   Privacy {#privacy}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="93-Communication.html">
+   Communication
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="94-00-downloading-data.html">
+   Downloading Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">
+     Using openICPSR Projects Prior to Publication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-02-alternate-downloads.html">
+     Alternate sources of data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-03-private-data.html">
+     Accessing privately provided data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-04-Updating_Materials.html">
+     Updating Replication Materials after Revisions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="95_Access_to_computers.html">
+   Access to Computers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-02-codeocean.html">
+     Reproducibility Checks in Codeocean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-03-wholetale.html">
+     Conducting reproducibility checks on WholeTale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-04-codespaces.html">
+     Computing using Github Codespaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="96-00-using-Stata.html">
+   Stata-related procedures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-01-using-config-stata.html">
+     Using config.do in STATA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-02-running-stata-code.html">
+     Running Code in Stata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-03-stata-scan-packages.html">
+     Using scan_packages.do
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="97-00-authentication.html">
+   Authentication-related issues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="97-01-Bitbucket-authentication.html">
+   Bitbucket Authentication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="99-References.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F08-details-replication-report.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/08-details-replication-report.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-high-level-concepts">
+   Some high-level concepts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-data-documentation">
+     On data documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-code-documentation">
+     On code documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-come">
+     To come
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-s-in-a-replication-report">
+   What’s in a replication report
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-description">
+     Data description
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-data-need-to-be-described">
+       What data need to be described?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#source-data">
+       Source data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#analysis-data-files">
+       Analysis data files
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metadata-checks-on-deposit">
+     Metadata checks on deposit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-checks">
+     Data checks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-description">
+     Code description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stated-requirements">
+     Stated Requirements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#missing-requirements">
+     Missing Requirements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-environment-of-the-replicator">
+     Computing Environment of the Replicator
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#replication-steps">
+     Replication steps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#findings">
+     Findings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classification">
+     Classification
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-additional-materials">
+   Some additional materials
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>A guided walk through the Replication Report</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-high-level-concepts">
+   Some high-level concepts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-data-documentation">
+     On data documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-code-documentation">
+     On code documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-come">
+     To come
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-s-in-a-replication-report">
+   What’s in a replication report
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-description">
+     Data description
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-data-need-to-be-described">
+       What data need to be described?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#source-data">
+       Source data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#analysis-data-files">
+       Analysis data files
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metadata-checks-on-deposit">
+     Metadata checks on deposit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-checks">
+     Data checks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-description">
+     Code description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stated-requirements">
+     Stated Requirements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#missing-requirements">
+     Missing Requirements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-environment-of-the-replicator">
+     Computing Environment of the Replicator
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#replication-steps">
+     Replication steps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#findings">
+     Findings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classification">
+     Classification
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-additional-materials">
+   Some additional materials
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="a-guided-walk-through-the-replication-report">
+<h1>A guided walk through the Replication Report<a class="headerlink" href="#a-guided-walk-through-the-replication-report" title="Permalink to this headline">#</a></h1>
+<p>In order to work through a replication report, you will need</p>
+<ul class="simple">
+<li><p>[Access to computers](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$replmd</span></code>Access_to_computers.md)</p></li>
+<li><p>Reviewed the [Template REPORT](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$templmd</span></code><a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>)</p></li>
+</ul>
+<!-- Access to computers link does not work-->
+<p>We have examples of various actual reports (slightly anonymized):</p>
+<ul class="simple">
+<li><p>[Example 1](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$replmd</span></code>sample_report.md)</p></li>
+<li><p>[Example 2](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$replmd</span></code><a class="reference external" href="http://REPLICATION-AEAREP278.md">REPLICATION-AEAREP278.md</a>)</p></li>
+<li><p>[Example 3](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$replmd</span></code><a class="reference external" href="http://REPLICATION-AEAREP282.md">REPLICATION-AEAREP282.md</a>) and its [revision](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$replmd</span></code><a class="reference external" href="http://REPLICATION-AEAREP282-revised.md">REPLICATION-AEAREP282-revised.md</a>)</p></li>
+</ul>
+<section id="some-high-level-concepts">
+<h2>Some high-level concepts<a class="headerlink" href="#some-high-level-concepts" title="Permalink to this headline">#</a></h2>
+<section id="on-data-documentation">
+<h3>On data documentation<a class="headerlink" href="#on-data-documentation" title="Permalink to this headline">#</a></h3>
+<p>The <a class="reference external" href="https://social-science-data-editors.github.io/guidance/Requested_information_data.html">Social Science Data Editor’s page on Data documentation</a> provides guidance:</p>
+<ul class="simple">
+<li><p>Identifying all data</p></li>
+<li><p>What is great / good / just-good-enough data documentation</p></li>
+<li><p>Citing data!</p></li>
+</ul>
+</section>
+<section id="on-code-documentation">
+<h3>On code documentation<a class="headerlink" href="#on-code-documentation" title="Permalink to this headline">#</a></h3>
+<p>The <a class="reference external" href="https://social-science-data-editors.github.io/guidance/Requested_information_code.html">Social Science Data Editor’s page on Code and documentation</a> provides guidance:</p>
+<ul class="simple">
+<li><p>What do we consider to be “code”</p></li>
+<li><p>Assessing the quality of the code documentation</p></li>
+</ul>
+</section>
+<section id="to-come">
+<h3>To come<a class="headerlink" href="#to-come" title="Permalink to this headline">#</a></h3>
+<p>How to modify code for replicability/verification</p>
+</section>
+</section>
+<section id="what-s-in-a-replication-report">
+<h2>What’s in a replication report<a class="headerlink" href="#what-s-in-a-replication-report" title="Permalink to this headline">#</a></h2>
+<p>The template used by the Lab can be found on Github [here](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$templmd</span></code><a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>). The table of contents looks like this:</p>
+<ul class="simple">
+<li><p>SUMMARY *</p></li>
+<li><p>Data description *</p></li>
+<li><p>Data checks *</p></li>
+<li><p>Code description *</p></li>
+<li><p>Stated Requirements *</p></li>
+<li><p>Missing Requirements *</p></li>
+<li><p>Computing Environment of the Replicator</p></li>
+<li><p>Replication steps</p></li>
+<li><p>Findings</p></li>
+<li><p>Classification</p></li>
+</ul>
+<p>We note that those sections marked “*” can be completed before ever running any author-provided code, even when data are confidential. They lead to a preliminary report, which is a “dry” assessment of the completeness of the replication package.</p>
+<p>In most sections, when elements are missing, wrong, or do not work, we use a [standardized set of action items](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$templmd</span></code><a class="reference external" href="http://sample-language-report.md">sample-language-report.md</a>) to highlight this.</p>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h3>
+<p>The SUMMARY is intended for a quick glance by journal editor and authors. It should be short and succinct, with a bulleted (unduplicated) list of action items for the authors, drawn from the rest of the report. It is the first thing editors and authors will see.</p>
+<p><img alt="Example report summary" src="_images/report-summary.png" /></p>
+</section>
+<section id="data-description">
+<h3>Data description<a class="headerlink" href="#data-description" title="Permalink to this headline">#</a></h3>
+<p>The data description can require substantial time to complete. The replicator is asked to identify all <code class="docutils literal notranslate"><span class="pre">input</span></code> (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a [useful template](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$acre</span></code>assessment.html#describe-inputs), but any list will suffice here. In addition, we ask replicators to  fill out the “Data Citation and Information report”, to obtain a machine-readable list of data sources and their attributes.</p>
+<p>An essential part in writing the data descrption section is identifying the data used in the analysis. While the dataset used for the main analysis is often explained in the README or in the manuscript, the description of other datasets (e.g. datasets used in the appendix, introduction, or in a figure describing the study settings) are sometimes omitted in the provided documents.</p>
+<p>Once the preparations above are completed, a summary should be written in the “Data Description” section.</p>
+<section id="what-data-need-to-be-described">
+<h4>What data need to be described?<a class="headerlink" href="#what-data-need-to-be-described" title="Permalink to this headline">#</a></h4>
+<p>All “<code class="docutils literal notranslate"><span class="pre">input</span></code> (original) data sources” and “Analysis data files” should be listed.</p>
+<ul class="simple">
+<li><p>Data needs to be listed include:</p>
+<ul>
+<li><p>Any data used to produce tables, figures, and in-text numbers that presents the estimated results, summary statistics, or any other numbers that are calculated from the data</p></li>
+<li><p>Data used to create maps.</p>
+<ul>
+<li><p>The data source of the geographical information is a source data if the map is created by the authors.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Data need not be listed include:</p>
+<ul>
+<li><p>Source data for the numbers or estimates directly quoted from other aritcles</p></li>
+<li><p>Souce data for the parameters used for calibrations, unless they are estimated within the article.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="source-data">
+<h4>Source data<a class="headerlink" href="#source-data" title="Permalink to this headline">#</a></h4>
+<p>For each data source, list</p>
+<ul class="simple">
+<li><p>presence or absence of source data (data files),</p></li>
+<li><p>presence or absence of codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK.</p>
+<ul>
+<li><p>The information of the source location of the data should instruct the replicator how to access the source data.</p></li>
+<li><p>A replicator should validate the provided description of the access information by visiting the link, downloading the dataset from the link, and compare the downloaded dataset with the provided dataset.</p></li>
+</ul>
+</li>
+<li><p>whether the <em>data</em> is cited (see the section on <a class="reference external" href="#datacitations">data citations</a>. Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing.</p></li>
+</ul>
+<p><img alt="Data Description Section" src="_images/report-data-description.png" /></p>
+</section>
+<section id="analysis-data-files">
+<h4>Analysis data files<a class="headerlink" href="#analysis-data-files" title="Permalink to this headline">#</a></h4>
+<p>Analysis data files are the data files from which output tables and figures are produced directly. If any analysis data files are provided and found, they are listed. Analysis data files are produced by code in the deposit from data sources. Not every deposit will have these, and in some cases, there may be ambiguity if a data source is not clearly defined. In some cases, replicators will identify surplus data - data not associated with any source and any program. Authors are then asked to clarify this information.</p>
+</section>
+</section>
+<section id="metadata-checks-on-deposit">
+<h3>Metadata checks on deposit<a class="headerlink" href="#metadata-checks-on-deposit" title="Permalink to this headline">#</a></h3>
+<p>Most replication packages received by the LDI Replication Lab will have been deposited in the AEA Data and Code Repository, but some may be on other trusted repositories (Dataverse, Zenodo, etc.).^[See the Social Science Data Editor website for a list of trusted repositories.] The replicators are asked to verify compliance with an AEA-specific list of required elements:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> JEL Classification (required)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Manuscript Number (required)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Subject Terms (highly recommended)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Geographic coverage (highly recommended)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Time period(s) (highly recommended)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Collection date(s) (suggested)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Universe (suggested)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Data Type(s) (suggested)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Data Source (suggested)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Units of Observation (suggested)</p></li>
+</ul>
+<p>If all required elements are provided, then the deposit passes.
+Many of the recommended elements are not applicable to all data deposits - for instance, a simulation has no “geographic coverage” or “collection date”, but a survey clearly does.</p>
+<p><img alt="ICPSR metadata report" src="_images/report-icpsr-long.png" /></p>
+</section>
+<section id="data-checks">
+<h3>Data checks<a class="headerlink" href="#data-checks" title="Permalink to this headline">#</a></h3>
+<p>When data are present, the replicator will run a few checks. These are not meant to be exhaustive, and are far less comprehensive than those suggested by trusted data curators. We ask for mostly simple checks, but which are known to fail. These are mostly checks that ensure some level of FAIR compliance.</p>
+<ul class="simple">
+<li><p>can data be read (using software indicated by author)?</p>
+<ul>
+<li><p>This is a plausibility check for corrupted data.</p></li>
+</ul>
+</li>
+<li><p>Is data in archive-ready formats (CSV, TXT) or in custom formats (DTA, SAS7BDAT, Rdata)?</p>
+<ul>
+<li><p>Most trusted repositories will strongly suggest archive-ready formats, but there is a wide range of feasible formats. Our heuristic is that a format is “archive-ready” if it can be read by open-source software (not necessarily the original software). For instance, there are robust readers for Stata in R and Python, and so even though Stata formats are a proprietary format associated with commercial software, it is deemed acceptable. Exceptions we have found are files for Numbers (an Apple spreadsheet program that only works on MacOS) and Mathematica data files - neither have open-source readers.</p></li>
+</ul>
+</li>
+<li><p>Do the data files have variable labels and meaningful variable names?</p>
+<ul>
+<li><p>In other words, is it straightforward to understand what the data mean? Alternative, a codebook could be provided, that maps cryptic variable names (<code class="docutils literal notranslate"><span class="pre">Q25S3</span></code>) to meaningful labels.</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p>Note that we do <em>not</em> require that variable <em>values</em> are provided here, nor that a full codebook is present or linked. Ideally, these would be here as well, and in some cases, we will go back to the authors and request them, <em>if</em> we think it is reasonable to do so  - a judgement call by the Data Editor.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Replicators will run a simple check for personally identifiable information, if feasible, using a heuristic developed by J-PAL.^[The Stata version can be found <a class="reference external" href="https://github.com/J-PAL/stata_PII_scan">here</a>.]</p>
+<ul>
+<li><p>This check will have lots of false positives - fields it thinks might be sensitive that are not, in fact, sensitive. While replicators are asked to apply some judgement, the final decision must be made by authors, and the information is reported as such in the report.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Data check report" src="_images/report-data-checks.png" /></p>
+</section>
+<section id="code-description">
+<h3>Code description<a class="headerlink" href="#code-description" title="Permalink to this headline">#</a></h3>
+<p>All deposits should have code. In line with the <a class="reference external" href="#dataflowdiagram">basic data flow</a>, there should be both data cleaning or preparation code, as well as analysis code. The replicator will review the code (but will  not run it yet).</p>
+<ul class="simple">
+<li><p>Identify programs that create “analysis files” (“data preparation code”).</p></li>
+<li><p>Identify programs that create tables and figures.</p></li>
+</ul>
+<p>From the README, the replicator should be able to identify code to create all <strong>figures, tables, and any in-text numbers</strong>. If not listed in the README, comments in the code should enable the replicator to find this. The replicator will create a list, mapping each of figure, table, and in-text number to a particular program and line number within the program. A [template spreadsheet](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$templmd</span></code>code-check.xlsx) is provided. Note that the code description might already observe that setup programs are missing, but most missing code will be identified in the [findings][findings] section.</p>
+</section>
+<section id="stated-requirements">
+<h3>Stated Requirements<a class="headerlink" href="#stated-requirements" title="Permalink to this headline">#</a></h3>
+<p>The authors should have specified specific requirements in terms of software, computer hardware, runtime, add-on packages. The replicator should list them here. This is <strong>different</strong> from the Computing Environment of the Replicator. If all requirements are listed, check the box “Requirements are complete”. This section is important to assess the feasibility of the reproducibility attempt. A reproduction that requires “20,000 core compute hours”, or that “runs for weeks”, or that requires custom software that needs to be acquired, may not be feasible.</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> No requirements specified</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Software Requirements specified as follows:</p>
+<ul>
+<li><p>Software 1</p></li>
+<li><p>Software 2</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Computational Requirements specified as follows:</p>
+<ul>
+<li><p>Cluster size, etc.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Time Requirements specified as follows:</p>
+<ul>
+<li><p>Length of necessary computation (hours, weeks, etc.)</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Requirements are complete.</p></li>
+</ul>
+</section>
+<section id="missing-requirements">
+<h3>Missing Requirements<a class="headerlink" href="#missing-requirements" title="Permalink to this headline">#</a></h3>
+<p>If it turns out that some requirements were not stated or are incomplete (software, packages, operating system), the replicator should  list the <em>complete</em> list of requirements here. This is usually amended as the reproducibility attempt progresses.</p>
+</section>
+<section id="computing-environment-of-the-replicator">
+<h3>Computing Environment of the Replicator<a class="headerlink" href="#computing-environment-of-the-replicator" title="Permalink to this headline">#</a></h3>
+<p>Just as the original authors have a particular computing environment that a replicator needs to know in order to properly implement a reproducibility attempt, the replicator’s own attempt is important. This section should <em>not</em> describe the laptop the replicator uses to write the report - that is irrelevant - but should provide as complete a list of details as possible describing the computer where the computational component of the reproducibility check was conducted. S Some of these details can be found as follows:</p>
+<ul class="simple">
+<li><p>(Windows) by right-clicking on “My PC”</p></li>
+<li><p>(Mac) Apple-menu &gt; “About this Mac”</p></li>
+<li><p>(Linux) see code in <code class="docutils literal notranslate"><span class="pre">tools/linux-system-info.sh</span></code></p></li>
+</ul>
+<p>Examples might include:</p>
+<ul class="simple">
+<li><p>Mac Laptop, MacOS 10.14.6, 8 GB of memory (but only if you ran the analysis on the Mac Laptop!)</p></li>
+<li><p>CISER Shared Windows Server 2016, 256GB, Intel Xeon E5-4669 v3 &#64; 2.10Ghz (3 processors)</p></li>
+<li><p>CISER Virtual Windows Server 2016, 16GB, Intel Haswell 2.19 Ghz (2 processors)</p></li>
+<li><p>BioHPC Linux server, Centos 7.6, 64 cores; 1024GB RAM;</p></li>
+</ul>
+<p>The list should also list the software the replicator used, with the specific version used (even if the author did not list that information). Examples include:</p>
+<ul class="simple">
+<li><p>Stata/MP 16</p></li>
+<li><p>Matlab R2019a</p></li>
+<li><p>Intel Compiler 3.14152</p></li>
+</ul>
+</section>
+<section id="replication-steps">
+<h3>Replication steps<a class="headerlink" href="#replication-steps" title="Permalink to this headline">#</a></h3>
+<p>For every replication or reproducibility attempt, the list of steps a replicator undertakes is important to be listed. In principle, these steps should be specified in the README, but while the README contains instructions, this section should contain what you actually did. It should include details as to under what name the replicator saved a dataset downloaded from a website (if not the suggested name), or what minor edits were made to programs.</p>
+<ul class="simple">
+<li><p>DO not include trivial details (“I downloaded the code and saved on my Desktop”).</p></li>
+<li><p>DO describe actions   that you did  as per instructions (“I added a <a class="reference external" href="http://config.do">config.do</a>”)</p></li>
+<li><p>DO describe any other actions you needed to do (“I had to make changes in multiple programs”), without going into detail (the commit log can provide that information)</p></li>
+</ul>
+<p>The description should allow the Data Editor and the authors to understand that everything was done as instructed. Deviations need to be described with enough detail that somebody else can reproduce the deviation!</p>
+<p><img alt="Steps with errors" src="_images/report-steps-error.png" /></p>
+</section>
+<section id="findings">
+<h3>Findings<a class="headerlink" href="#findings" title="Permalink to this headline">#</a></h3>
+<p>Once everything is put in place, the replicator can report on findings, both positive and negative. This should include enough detail to allow a reader - a Data Editor and the authors - to understand what went wrong when something went wrong. For each <strong>Data Preparation Code, Figure, Table, and any in-text numbers</strong>, the section should provide information on success or failure to reproduce (the previously filled out [code-check.xlsx](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$templmd</span></code>code-check.xlsx) can be re-used to drive the list). When errors happen, the replicator’s description should be as precise as possible. For differences in figures, the replicator should provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran, with differences highlighted. For differences in numbers (in tables or in-text), the replicator should list both the number as reported in the manuscript, as well as the number replicated.</p>
+<p><img alt="Findings with errors" src="_images/report-findings-errors.png" /></p>
+</section>
+<section id="classification">
+<h3>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">#</a></h3>
+<p>The replication report template used by the LDI Replication Lab uses a simplified scheme to summarize the reproducibility of the materials:</p>
+<ul class="contains-task-list simple">
+<li><p>Full replication can include a small number of apparently insignificant changes in the numbers in the table. Full replication also applies when changes to the programs needed to be made, but were successfully implemented.</p></li>
+<li><p>Partial replication means that a significant number (&gt;25%) of programs and/or numbers are different.  Note that if any data is confidential and not available, then at best a partial replication can be achieved.</p></li>
+<li><p>Failure to replicate implies that only a small number of programs ran successfully, or only a small number of numbers were successfully generated (&lt;25%). Most replication packages that rely on confidential data will also be in this category.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> full replication</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> full replication with minor issues</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> partial replication (see above)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> not able to replicate most or all of the results</p></li>
+</ul>
+<p>The Lab does not (yet) use a more refined reproducibility score, such as the one developed as part of the [BITSS ACRE Project](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$acre</span></code>assessment.html#score). The emphasis is on a summary measure, combined with detailed reasons why full reproducibility is not achieved.</p>
+<p>The reasons for not being able to fully reproduce the materials can be multiple, and should be noted in the report (they are captured through a multiple-choice field in the LDI Lab’s JIRA system):</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Discrepancy</span> <span class="pre">in</span> <span class="pre">output</span></code> (either figures or numbers in tables or text differ)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Bugs</span> <span class="pre">in</span> <span class="pre">code</span></code>  that  were fixable by the replicator (but should be fixed in the final deposit)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">missing</span></code>, in particular if it  prevented the replicator from completing the reproducibility check</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">not</span> <span class="pre">functional</span></code> is more severe than a simple bug: it  prevented the replicator from completing the reproducibility check</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">not</span> <span class="pre">available</span> <span class="pre">to</span> <span class="pre">replicator</span></code>  may happen for a variety of reasons, but in particular (a) when the software is commercial, and the replicator does not have access to a licensed copy, or (b) the software is open-source, but a specific version required to conduct the reproducibility check is not available.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Insufficient</span> <span class="pre">time</span> <span class="pre">available</span> <span class="pre">to</span> <span class="pre">replicator</span></code> is applicable when (a) running the code would take weeks or more (b) running the code might take less time if sufficient compute resources were to be brought to bear, but no such resources can be accessed in a timely fashion (c) the replication package is very complex, and following all (manual and scripted) steps would take too long.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">missing</span></code> is marked when data <em>should</em> be available, but was erroneously not provided, or is not accessible via the procedures described in the replication package</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">not</span> <span class="pre">available</span></code> is marked when data requires additional access steps, for instance purchase or application procedure.</p></li>
+</ul>
+<p>Note that absence of full replication is not necessarily a reason to reject the replication package. The AEA regularly accepts replication packages that are not reproducible by the AEA Data Editor because the “data are not available” or because there is “insufficient time”, as long as the replication package could plausibly be reproduced by somebody with extra time or with access to the data. The determination is made by the AEA Data Editor, based on the report.</p>
+<p><img alt="Outcome with non-replication" src="_images/jira-outcomes1.png" /></p>
+<p><img alt="Outcome with full replication" src="_images/jira-outcomes2.png" /></p>
+<p><img alt="Outcome with partial replication" src="_images/jira-outcomes3.png" /></p>
+</section>
+</section>
+<section id="some-additional-materials">
+<h2>Some additional materials<a class="headerlink" href="#some-additional-materials" title="Permalink to this headline">#</a></h2>
+<p>Here’s a collection from older presentations:</p>
+<ul class="simple">
+<li><p><span class="xref myst">Elements of a replication report</span></p></li>
+<li><p><span class="xref myst">Replicator checklist</span></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="07-basic-assessing-reproducibility.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Assessing computational reproducibility</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="11-jira-workflow-training.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AEA Jira workflow - A guide</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

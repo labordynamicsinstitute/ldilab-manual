@@ -1,0 +1,998 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>AEA: Revision reports after author resubmission &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AEA: Reviewing and (Pre-) Approving Reports" href="13-approving-issues.html" />
+    <link rel="prev" title="AEA Jira workflow - A guide" href="11-jira-workflow-training.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-introduction.html">
+   Background
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminary Tasks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02-01-pre-requisites.html">
+   Pre-requisites
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-02-pre-training-tasks.html">
+     Pre-training tasks {#pre-training}
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-03-toolkit.html">
+     Toolkit
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-concepts.html">
+   Basic Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-data-citations-and-das.html">
+   Data citations and data availability statements {#datacitations}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-basic-flow.html">
+   Generic data workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-basic-assessing-reproducibility.html">
+   Assessing computational reproducibility
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-details-replication-report.html">
+   A guided walk through the Replication Report
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  AEA-specific training
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-jira-workflow-training.html">
+   AEA Jira workflow - A guide
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   AEA: Revision reports after author resubmission
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-approving-issues.html">
+   AEA: Reviewing and (Pre-) Approving Reports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-Pending_ICPSR.html">
+   AEA: Monitoring Pending openICPSR Changes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="30-jira-prepare-publication.html">
+   AEA: Interfacing with the Journal Management System
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="40-Instructions-PandP-Checks.html">
+   AEA: Instructions for Papers and Proceedings checks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="91-setup-checklist.html">
+   Setup Checklist {#checklist}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="92-Privacy.html">
+   Privacy {#privacy}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="93-Communication.html">
+   Communication
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="94-00-downloading-data.html">
+   Downloading Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">
+     Using openICPSR Projects Prior to Publication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-02-alternate-downloads.html">
+     Alternate sources of data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-03-private-data.html">
+     Accessing privately provided data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-04-Updating_Materials.html">
+     Updating Replication Materials after Revisions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="95_Access_to_computers.html">
+   Access to Computers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-02-codeocean.html">
+     Reproducibility Checks in Codeocean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-03-wholetale.html">
+     Conducting reproducibility checks on WholeTale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-04-codespaces.html">
+     Computing using Github Codespaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="96-00-using-Stata.html">
+   Stata-related procedures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-01-using-config-stata.html">
+     Using config.do in STATA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-02-running-stata-code.html">
+     Running Code in Stata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-03-stata-scan-packages.html">
+     Using scan_packages.do
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="97-00-authentication.html">
+   Authentication-related issues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="97-01-Bitbucket-authentication.html">
+   Bitbucket Authentication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="99-References.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F12-jira-revision-guidance.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/12-jira-revision-guidance.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generic-guidance">
+   Generic Guidance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-the-revision-report">
+   Writing the Revision Report
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#revision-workflow">
+   Revision Workflow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-progress">
+     In Progress
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code">
+     Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#write-preliminary-report">
+     Write Preliminary report
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-review-or-verification">
+     Code Review or Verification
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#re-running-code">
+       Re-running code
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-report">
+     Writing Report
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-example">
+   An example
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>AEA: Revision reports after author resubmission</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generic-guidance">
+   Generic Guidance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-the-revision-report">
+   Writing the Revision Report
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#revision-workflow">
+   Revision Workflow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-progress">
+     In Progress
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code">
+     Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#write-preliminary-report">
+     Write Preliminary report
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-review-or-verification">
+     Code Review or Verification
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#re-running-code">
+       Re-running code
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-report">
+     Writing Report
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-example">
+   An example
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="aea-revision-reports-after-author-resubmission">
+<h1>AEA: Revision reports after author resubmission<a class="headerlink" href="#aea-revision-reports-after-author-resubmission" title="Permalink to this headline">#</a></h1>
+<p>Some pre-publication reproducibility checks require revisions from the authors. We will try to assign these revisions to the replicator for the original submission whenever possible.</p>
+<section id="generic-guidance">
+<h2>Generic Guidance<a class="headerlink" href="#generic-guidance" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Most revisions will not take you much time, so please try to process them quickly!</p></li>
+<li><p>Revisions do not require you to repeat all of the same steps as the original replication (see below).</p></li>
+<li><p><strong>Do not create a new Bitbucket repo</strong>. You will overwrite the original repo (the original contents will still be available – this is why we use version control software like Bitbucket!)</p></li>
+<li><p>The original <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a> is a contract; if the authors fix what we ask them to fix, then they have completed their part of the agreement.</p>
+<ul>
+<li><p>If new issues turn up as a result of additional materials provided, these are okay to include as [REQUIRED] changes in the revised report.</p></li>
+<li><p>If you are unsure about something, add it to the report. While reviewing your report, we can make a determination about whether or not it can be done after acceptance of the manuscript, be a suggested instead of required change, etc.</p></li>
+</ul>
+</li>
+<li><p>In particular, <strong>do NOT create “update” or “new” directories</strong> The current state of the repository should always correspond to the author’s structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.</p></li>
+<li><p>Please be sure to have the committed “<a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>” be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.</p></li>
+</ul>
+</section>
+<section id="writing-the-revision-report">
+<h2>Writing the Revision Report<a class="headerlink" href="#writing-the-revision-report" title="Permalink to this headline">#</a></h2>
+<p>Please be clear when writing the revision report. The report should make sense without having to refer to the previous report.</p>
+<ul class="simple">
+<li><p>The body of the report should reflect the current status of the deposit.</p>
+<ul>
+<li><p>Example: if authors were missing a setup program before and now provide it, the <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Description</span></code> section of the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a> should be updated to reflect the inclusion of this program.</p></li>
+</ul>
+</li>
+<li><p>Replace all [REQUIRED] and [SUGGESTED] items with [We REQUESTED] and [We SUGGESTED], respectively.</p>
+<ul>
+<li><p>Note: in the summary, these tags are using bullets (<code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[REQUIRED]</span></code>) - those should be changed to “quotes”: <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">[We</span> <span class="pre">REQUESTED]</span></code></p></li>
+</ul>
+</li>
+<li><p>Below each such tag, add a bullet point. Start the paragraph with “Done” if the issue was resolved, or “Not done” if not. Then explain what was done.</p></li>
+</ul>
+<p>An example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; [REQUIRED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
+</pre></div>
+</div>
+<p>becomes</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; [We REQUESTED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
+
+- Done. A setup program has been added to the deposit, which installs all necessary packages. 
+</pre></div>
+</div>
+</section>
+<section id="revision-workflow">
+<h2>Revision Workflow<a class="headerlink" href="#revision-workflow" title="Permalink to this headline">#</a></h2>
+<p>You should proceed through the <span class="xref myst">workflow</span> as you would for an original case with some exceptions:</p>
+<ul class="simple">
+<li><p>You <strong>should not</strong> create a new Bitbucket repository.</p></li>
+<li><p>You do not need to fill out a new Data Citation and Information Report.</p></li>
+<li><p>You <em>may</em> not need to re-run any code.</p></li>
+<li><p>All sections are potentially subject to updates, so pay attention.</p></li>
+</ul>
+<section id="in-progress">
+<h3>In Progress<a class="headerlink" href="#in-progress" title="Permalink to this headline">#</a></h3>
+<p>First, advance the ticket from <code class="docutils literal notranslate"><span class="pre">Assigned</span></code> to <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Progress</span></code>.</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Identify previous issue.</p>
+<ul>
+<li><p>You should see the previous issue listed under <strong>Linked Issues</strong> on JIRA.</p></li>
+<li><p>Use the previous issue, to fill in the following JIRA fields (if not already filled):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">provenance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Journal</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Empirical</span> <span class="pre">Article</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Bitbucket</span> <span class="pre">short</span> <span class="pre">name</span></code>. This should be the name of the original JIRA issue (e.g. <code class="docutils literal notranslate"><span class="pre">aearep-123)</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">project</span> <span class="pre">number</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Download the materials attached to the JIRA issue. This will typically include</p>
+<ul>
+<li><p>an updated copy of the manuscript,</p></li>
+<li><p>a response to the editor addressing the requested changes from the prior replication attempt.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Remove obsolete files. In the root, this should be obvious (old manuscript), in the copy of the code, a bit trickier, but necessary.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Add these to the root of the repository locally, and then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> them to the Bitbucket repository (e.g., <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">PDF_Proof.pdf</span> <span class="pre">readme.pdf</span> <span class="pre">reply_to_editor.pdf</span></code>)</p>
+<ul>
+<li><p>The root of the repository should contain only our files (i.e., <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">code</span><span class="o">-</span><span class="n">check</span><span class="o">.</span><span class="n">xlsx</span>
+<span class="n">config</span><span class="o">.</span><span class="n">do</span>
+<span class="n">PDF_Proof</span><span class="o">.</span><span class="n">PDF</span>
+<span class="n">PII_stata_scan</span><span class="o">.</span><span class="n">do</span>
+<span class="n">readme</span><span class="o">.</span><span class="n">pdf</span>
+<span class="n">REPLICATION</span><span class="o">.</span><span class="n">md</span>
+<span class="n">reply_to_editor</span><span class="o">.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Open <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code> to review the requested changes from the prior replication attempt. Read the reply to the editor, if provided, to get a sense of what changes the authors made. Make a determination if the revision requires re-running code.</p>
+<ul>
+<li><p>If there were [REQUIRED] changes in the Code Description, Replication Steps, or Findings sections of the original report, you will likely have to re-run code.</p></li>
+<li><p>If the only [REQUIRED] changes were data citations or changes to the README, you should not need to re-run code.</p></li>
+</ul>
+</li>
+</ul>
+<p>Change the status from <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Progress</span></code> to <code class="docutils literal notranslate"><span class="pre">Code</span></code>.</p>
+</section>
+<section id="code">
+<h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">#</a></h3>
+<p>At this point, you may want to transition to CISER if you haven’t already. You should <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> to ensure the changes you’ve made are reflected in the local version of the repository on CISER.</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Download the updated openICPSR deposit and commit the materials to the <strong>same Bitbucket repo as the original replication</strong>, in the <strong>same directory</strong> (i.e., if the openICPSR deposit is <code class="docutils literal notranslate"><span class="pre">12345</span></code> then all updated materials will again go into the <code class="docutils literal notranslate"><span class="pre">12345</span></code> subdirectory.</p>
+<ul>
+<li><p>Example: if AEAREP-250 is a revision of AEAREP-123, then download the entire openICPSR deposit and commit it to the <code class="docutils literal notranslate"><span class="pre">aearep-123</span></code> repo on Bitbucket.</p></li>
+<li><p>Overwrite any files, if requested. Pay attention to files that might have been deleted (you will have to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code> them).</p></li>
+<li><p>There are tricks to letting Git do much of the work: <strong>Follow the detailed instructions for the process of updating the replication materials</strong> in the <span class="xref myst">Appendix: Updating Replication Materials after Revision</span>.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Data Description section of the report.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Code Description section of the report.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Fill out the required JIRA fields:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Provenance</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Change the status from <code class="docutils literal notranslate"><span class="pre">Code</span></code> to <code class="docutils literal notranslate"><span class="pre">Data</span></code>.</p>
+</section>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Data Checks section of the report, if new data have been provided.</p></li>
+<li><p>Fill out the required fields in JIRA:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Working</span> <span class="pre">location</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">data</span></code> or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Reason</span> <span class="pre">for</span> <span class="pre">non-accessibility</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Change the status from <code class="docutils literal notranslate"><span class="pre">Data</span></code> to <code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">Preliminary</span> <span class="pre">Report</span></code>.</p>
+</section>
+<section id="write-preliminary-report">
+<h3>Write Preliminary report<a class="headerlink" href="#write-preliminary-report" title="Permalink to this headline">#</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Ensure all sections of the report up to Replication Steps have been updated.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Delete sections of the report.</p></li>
+</ul>
+<p>Change the status from <code class="docutils literal notranslate"><span class="pre">Writing</span> <span class="pre">preliminary</span> <span class="pre">report</span></code> to <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Review</span></code> or <code class="docutils literal notranslate"><span class="pre">Verification</span></code>.</p>
+</section>
+<section id="code-review-or-verification">
+<h3>Code Review or Verification<a class="headerlink" href="#code-review-or-verification" title="Permalink to this headline">#</a></h3>
+<p>If you have previously determined that code needs to be re-run, you should select the  <code class="docutils literal notranslate"><span class="pre">Verification</span></code> stage.</p>
+<p>If you have determined that code does not need to be re-run (or code is unable to be run due to lack of data), select the <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Review</span></code> option.</p>
+<section id="re-running-code">
+<h4>Re-running code<a class="headerlink" href="#re-running-code" title="Permalink to this headline">#</a></h4>
+<ul class="contains-task-list simple">
+<li><p>You <strong>do not</strong> need to re-verify tables/figures that were successfully replicated the first time <em>unless</em> the new code also affects them.</p></li>
+<li><p>If parts of the code take a long time to run and the [REQUIRED] changes do not involve those parts, you do not need to re-run that part of the code.</p></li>
+<li><p><strong>Be careful!</strong> Sometimes the code will produce intermediate outputs along the way that may be needed later on. So if you skip parts of the code and cannot replicate the result(s), go back and check to see if you actually need to run all of the code.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Run relevant parts of code, including the <a class="reference external" href="http://config.do">config.do</a> generating system.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Replication Steps section of the report, accordingly.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the <code class="docutils literal notranslate"><span class="pre">code-check.xlsx</span></code> file.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Findings section of the report.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> any new results to the Bitbucket repository.</p></li>
+</ul>
+<p>Change the status from <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Review</span></code> or <code class="docutils literal notranslate"><span class="pre">Verification</span></code> to <code class="docutils literal notranslate"><span class="pre">Writing</span> <span class="pre">Report</span></code>.</p>
+</section>
+</section>
+<section id="writing-report">
+<h3>Writing Report<a class="headerlink" href="#writing-report" title="Permalink to this headline">#</a></h3>
+<p>In this stage, you will finalize the revision report.</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Ensure all <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> and <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code> items from the original report have been changed to <code class="docutils literal notranslate"><span class="pre">[We</span> <span class="pre">REQUESTED]</span></code> and <code class="docutils literal notranslate"><span class="pre">[We</span> <span class="pre">SUGGESTED]</span></code> in the body of the report.</p>
+<ul>
+<li><p>The resolution (or lack thereof) should be included as a bullet point directly below the request.</p></li>
+<li><p>If using the scripts, you can use the <code class="docutils literal notranslate"><span class="pre">[aearevision](https://github.com/AEADataEditor/editor-scripts)</span></code> to change all the tags</p></li>
+<li><p>If the resolution is incomplete (<code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">done</span></code>  or <code class="docutils literal notranslate"><span class="pre">Partially</span> <span class="pre">done</span></code>), then repeat the usual <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">[REQUIRED]</span></code> tag, as this will become an action item.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Ensure any new issues found are tagged with the appropriate <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">[REQUIRED]</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">[SUGGESTED]</span></code> tags.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Delete/modify any comments of the report template that are no longer true:</p>
+<ul>
+<li><p>e.g. if the previous report stated “Data not cited” and the author has now added citations, then that part should state “Data is cited” or “Data is now cited”.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Delete any parts of the report template that are no longer relevant:</p>
+<ul>
+<li><p>e.g. if no code changes were <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code>, then delete the sections involving code, replication steps, and findings.</p></li>
+<li><p>careful however here, too: authors should only be making changes to parts that we requested changes for, but if they change things elsewhere, then you should, in fact, retain that section, and accurately describe it again. New errors <em>can</em> be introduced!</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Classification.</p>
+<ul>
+<li><p>If you do not need to re-run code for the revision, keep the original classification.</p></li>
+<li><p>If you do need to re-run code for the revision, update the classification appropriately.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Incorporate all old/new requested changes and resolutions in the SUMMARY section of the report:</p>
+<ul>
+<li><p>Create a new sub-section <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">Previously</span></code> and collect the <strong>Unresolved</strong>, and <strong>Resolved</strong> issues.</p>
+<ul>
+<li><p>Leave the existing <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">Action</span> <span class="pre">Items</span> <span class="pre">(manuscript)</span></code> and <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">Action</span> <span class="pre">Items</span> <span class="pre">(openICPSR)</span></code> sections!</p></li>
+</ul>
+</li>
+<li><p>Collect all the <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">[We</span> <span class="pre">REQUESTED]</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">[We</span> <span class="pre">SUGGESTED]</span></code> items from the rest of the report (this should correspond to the previous - [REQUIRED]<code class="docutils literal notranslate"><span class="pre">and</span></code>- [SUGGESTED]` items)</p>
+<ul>
+<li><p>These should go under the <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">Previously</span></code> section, appropriately classified.</p></li>
+<li><p>Below each item, include the same resolution you listed in the body of the report.</p></li>
+</ul>
+</li>
+<li><p>New and any unresolved issues should be collected with their <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[REQUIRED]</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[SUGGESTED]</span></code> tags under the <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">Action</span> <span class="pre">Items</span></code> sections.</p>
+<ul>
+<li><p>If using the scripts, you can use the <code class="docutils literal notranslate"><span class="pre">[aeareq](https://github.com/AEADataEditor/editor-scripts)</span></code> as usual.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="an-example">
+<h2>An example<a class="headerlink" href="#an-example" title="Permalink to this headline">#</a></h2>
+<p>In the example below, the revision found bugs in the code that were not previously present (a <strong>new action item</strong>), and identified the continued lack of data citations (an <strong>unresolved</strong> action item). A setup program that was requested was provided by the authors, and is thus <strong>resolved</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SUMMARY</span>
+<span class="o">-------</span>
+
+<span class="c1">### Action Items (openICPSR)</span>
+
+<span class="o">-</span> <span class="p">[</span><span class="n">REQUIRED</span><span class="p">]</span> <span class="n">Please</span> <span class="n">provide</span> <span class="n">debugged</span> <span class="n">code</span><span class="p">,</span> <span class="n">addressing</span> <span class="n">the</span> <span class="n">issues</span> <span class="n">identified</span> <span class="ow">in</span> 
+  <span class="n">this</span> <span class="n">report</span><span class="o">.</span>
+<span class="o">-</span> <span class="p">[</span><span class="n">REQUIRED</span><span class="p">]</span> <span class="n">Please</span> <span class="n">add</span> <span class="n">data</span> <span class="n">citations</span> <span class="n">to</span> <span class="n">the</span> <span class="n">article</span><span class="o">.</span> 
+  <span class="n">Guidance</span> <span class="n">on</span> <span class="n">how</span> <span class="n">to</span> <span class="n">cite</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">provided</span> <span class="ow">in</span> <span class="n">the</span> 
+  <span class="p">[</span><span class="n">AEA</span> <span class="n">Sample</span> <span class="n">References</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">aeaweb</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">journals</span><span class="o">/</span><span class="n">policies</span><span class="o">/</span><span class="n">sample</span><span class="o">-</span><span class="n">references</span><span class="p">)</span> 
+  <span class="ow">and</span> <span class="ow">in</span> <span class="p">[</span><span class="n">additional</span> <span class="n">guidance</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">social</span><span class="o">-</span><span class="n">science</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">editors</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">guidance</span><span class="o">/</span><span class="n">addtl</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">citation</span><span class="o">-</span><span class="n">guidance</span><span class="o">.</span><span class="n">html</span><span class="c1">#confidential-databases).</span>
+
+<span class="c1">### Previously</span>
+
+<span class="c1">#### Unresolved </span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="n">We</span> <span class="n">REQUESTED</span><span class="p">]</span> <span class="n">Please</span> <span class="n">add</span> <span class="n">data</span> <span class="n">citations</span> <span class="n">to</span> <span class="n">the</span> <span class="n">article</span><span class="o">.</span> 
+  <span class="n">Guidance</span> <span class="n">on</span> <span class="n">how</span> <span class="n">to</span> <span class="n">cite</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">provided</span> <span class="ow">in</span> <span class="n">the</span> 
+  <span class="p">[</span><span class="n">AEA</span> <span class="n">Sample</span> <span class="n">References</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">aeaweb</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">journals</span><span class="o">/</span><span class="n">policies</span><span class="o">/</span><span class="n">sample</span><span class="o">-</span><span class="n">references</span><span class="p">)</span> 
+  <span class="ow">and</span> <span class="ow">in</span> <span class="p">[</span><span class="n">additional</span> <span class="n">guidance</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">social</span><span class="o">-</span><span class="n">science</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">editors</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">guidance</span><span class="o">/</span><span class="n">addtl</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">citation</span><span class="o">-</span><span class="n">guidance</span><span class="o">.</span><span class="n">html</span><span class="c1">#confidential-databases).</span>
+
+<span class="o">-</span> <span class="n">Not</span> <span class="n">done</span><span class="o">.</span> <span class="n">Please</span> <span class="n">add</span> <span class="n">data</span> <span class="n">citations</span> <span class="n">to</span> <span class="n">the</span> <span class="n">manuscript</span> <span class="k">for</span> <span class="n">the</span> 
+  <span class="n">following</span> <span class="n">data</span> <span class="n">sources</span><span class="p">:</span> <span class="n">data</span> <span class="n">source</span> <span class="mi">1</span><span class="p">,</span> <span class="n">data</span> <span class="n">source</span> <span class="mf">2.</span> 
+
+<span class="c1">#### Resolved </span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="n">We</span> <span class="n">REQUESTED</span><span class="p">]</span> <span class="n">Please</span> <span class="n">add</span> <span class="n">a</span> <span class="n">setup</span> <span class="n">program</span> <span class="n">that</span> <span class="n">installs</span> <span class="nb">all</span> 
+  <span class="n">packages</span> <span class="k">as</span> <span class="n">noted</span> <span class="n">above</span><span class="o">.</span> <span class="n">Please</span> <span class="n">specify</span> <span class="nb">all</span> <span class="n">necessary</span> <span class="n">commands</span><span class="o">.</span> 
+  <span class="n">An</span> <span class="n">example</span> <span class="n">of</span> <span class="n">a</span> <span class="n">setup</span> <span class="n">file</span> <span class="n">can</span> <span class="n">be</span> <span class="n">found</span> <span class="n">at</span> 
+  <span class="p">[</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gslab</span><span class="o">-</span><span class="n">econ</span><span class="o">/</span><span class="n">template</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">config_stata</span><span class="o">.</span><span class="n">do</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gslab</span><span class="o">-</span><span class="n">econ</span><span class="o">/</span><span class="n">template</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">config_stata</span><span class="o">.</span><span class="n">do</span><span class="p">)</span>
+
+<span class="o">-</span> <span class="n">Done</span><span class="o">.</span> <span class="n">A</span> <span class="n">setup</span> <span class="n">program</span> <span class="n">has</span> <span class="n">been</span> <span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">deposit</span><span class="p">,</span> <span class="n">which</span> 
+  <span class="n">installs</span> <span class="nb">all</span> <span class="n">necessary</span> <span class="n">packages</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Finally, don’t forget to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> the new report. Then, change the status in JIRA from <code class="docutils literal notranslate"><span class="pre">Writing</span> <span class="pre">Report</span></code> to <code class="docutils literal notranslate"><span class="pre">Report</span> <span class="pre">Under</span> <span class="pre">Review</span></code>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="11-jira-workflow-training.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">AEA Jira workflow - A guide</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="13-approving-issues.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AEA: Reviewing and (Pre-) Approving Reports</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
