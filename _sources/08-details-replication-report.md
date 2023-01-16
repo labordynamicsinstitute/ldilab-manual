@@ -1,3 +1,4 @@
+(a-guided-walk-through-the-replication-report)=
 # A guided walk through the Replication Report
 
 In order to work through a replication report, you will need
@@ -253,5 +254,5 @@ Note that absence of full replication is not necessarily a reason to reject the 
 
 Here's a collection from older presentations:
 
- + [Elements of a replication report](Replication-Report-Overview.pdf)
- + [Replicator checklist](replicator_checklist.pdf)
+ - [Elements of a replication report](Replication-Report-Overview.pdf)
+ - [Replicator checklist](replicator_checklist.pdf)

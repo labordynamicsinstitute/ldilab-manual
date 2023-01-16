@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>AEA: Monitoring Pending openICPSR Changes &#8212; My sample book</title>
+    <title>AEA: Monitoring Pending openICPSR Changes &#8212; Training Manual For Reproducibility Verification</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -94,10 +94,10 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="_static/logo.jpg" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">My sample book</h1>
+      <h1 class="site-logo" id="site-title">Training Manual For Reproducibility Verification</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05-data-citations-and-das.html">
-   Data citations and data availability statements {#datacitations}
+   Data citations and data availability statements
   </a>
  </li>
  <li class="toctree-l1">
@@ -689,7 +689,7 @@ title="Print to PDF"
 <section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
 <p>Many cases which the Lab reviews receive a recommendation ([<code class="docutils literal notranslate"><span class="pre">MCRecommendationV2</span></code>] on Jira) of <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">-</span> <span class="pre">with</span> <span class="pre">Changes.</span></code> What this means is that the changes which are requested do not constitute a complete revision from the authors. Instead of re-submitting a complete revision for review by the Lab, the authors will make any necessary changes to the deposit directly on ICPSR. Separately, any changes to the manuscript/appendix will be made at the copyediting stage by the editorial office, without further interaction with the Lab.</p>
-<p>It is important to understand how the submission process works once the final report has been approved. The RAs responsible for this process are following the instructions in <span class="xref myst">Chapter 13</span>. If you are not yourself involved in that process, please review those instructions. Briefly, cases that are designated as <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">-</span> <span class="pre">with</span> <span class="pre">Changes</span></code> will have the reproducibility report submitted to ScholarOne (aka Manuscript Central (MC)), the Jira ticket will be moved into status <code class="docutils literal notranslate"><span class="pre">Pending</span> <span class="pre">openICPSR</span> <span class="pre">changes</span></code>, and the ICPSR deposit will have been unlocked so that the authors can make changes, with comments to that extent in the “Project Communication Log.”</p>
+<p>It is important to understand how the submission process works once the final report has been approved. The RAs responsible for this process are following the instructions in <a class="reference internal" href="30-jira-prepare-publication.html#aea-interfacing-with-the-journal-management-system"><span class="std std-ref">Chapter 15</span></a>. If you are not yourself involved in that process, please review those instructions. Briefly, cases that are designated as <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">-</span> <span class="pre">with</span> <span class="pre">Changes</span></code> will have the reproducibility report submitted to ScholarOne (aka Manuscript Central (MC)), the Jira ticket will be moved into status <code class="docutils literal notranslate"><span class="pre">Pending</span> <span class="pre">openICPSR</span> <span class="pre">changes</span></code>, and the ICPSR deposit will have been unlocked so that the authors can make changes, with comments to that extent in the “Project Communication Log.”</p>
 <p><img alt="partial process" src="_images/pending_openicpsr.png" /></p>
 <p>The openICPSR deposit is subsequently regularly monitored. Authors may contact the Data Editor as well. When it is clear that edits have been made to the deposit, the Jira issue is moved to <code class="docutils literal notranslate"><span class="pre">Assess</span> <span class="pre">openICPSR</span> <span class="pre">changes</span></code>. The Data Editor then needs to verify that all of the <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> tags have been completed. The RA conducting that check can review the required changes both in the full report on Bitbucket and in the Project Communication Log in ICPSR.</p>
 <p>The evaluation process usually does <strong>NOT</strong> require running any code. In most cases, these are minor changes, such as adding software dependencies or data access instructions to the README. Some cases will involve minor debugging issues, for which the Lab  only checks to see that edits to the code have been made as identified in the report. Unless specifically instructed to do so by the Data Editor, no code needs to be run.</p>
@@ -720,7 +720,7 @@ title="Print to PDF"
 </section>
 <section id="verify-requested-changes">
 <h3>Verify Requested Changes<a class="headerlink" href="#verify-requested-changes" title="Permalink to this headline">#</a></h3>
-<p>You should now open the report, and verify the changes made by the author. How to do this will vary. In some cases, you may be able to simply inspect the deposit, in others, you may need to download the deposit again, and verify the changes made, as you might do for a full revision (see <span class="xref myst">Revision Reports</span>).</p>
+<p>You should now open the report, and verify the changes made by the author. How to do this will vary. In some cases, you may be able to simply inspect the deposit, in others, you may need to download the deposit again, and verify the changes made, as you might do for a full revision (see <a class="reference internal" href="12-jira-revision-guidance.html#aea-revision-reports-after-author-resubmission"><span class="std std-ref">Revision Reports</span></a>).</p>
 <ul class="simple">
 <li><p>Open the report. You can do this by checking out the Bitbucket repo, or by clicking on the [<code class="docutils literal notranslate"><span class="pre">Report</span> <span class="pre">URL</span></code>] field.</p>
 <ul>
@@ -852,7 +852,7 @@ the editorial office, please reach out to the managing editors via <a class="ref
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By The Jupyter Book Community<br/>
+    By Lars Vilhuber, Michael Darisse, Leonel Borja Plaza, Hyuk Son, Meredith Welch, David Wasser<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

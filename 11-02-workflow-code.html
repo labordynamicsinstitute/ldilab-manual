@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Code &#8212; My sample book</title>
+    <title>Code &#8212; Training Manual For Reproducibility Verification</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -94,10 +94,10 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="_static/logo.jpg" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">My sample book</h1>
+      <h1 class="site-logo" id="site-title">Training Manual For Reproducibility Verification</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05-data-citations-and-das.html">
-   Data citations and data availability statements {#datacitations}
+   Data citations and data availability statements
   </a>
  </li>
  <li class="toctree-l1">
@@ -577,6 +577,16 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verifying-completeness-of-the-readme">
+   Verifying completeness of the README
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-of-data-sources">
+   List of Data Sources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#other-information">
    Other information
   </a>
@@ -611,6 +621,16 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verifying-completeness-of-the-readme">
+   Verifying completeness of the README
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-of-data-sources">
+   List of Data Sources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#other-information">
    Other information
   </a>
@@ -641,8 +661,8 @@ title="Print to PDF"
 This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="5621433b-d9e0-41ef-af8c-1084cbe6c7ec" name="9a777f2c-8c21-4b8e-a62f-607e4ff752ca" type="radio">
-</input><label class="sd-tab-label" for="5621433b-d9e0-41ef-af8c-1084cbe6c7ec">
+<input checked="checked" id="3e738ef9-3c94-4813-be65-a212a5a35ed6" name="556eb1cd-5aa1-4c71-8400-0c142096b151" type="radio">
+</input><label class="sd-tab-label" for="3e738ef9-3c94-4813-be65-a212a5a35ed6">
 CISER</label><div class="sd-tab-content docutils">
 <ul class="contains-task-list">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Clone the Bitbucket repository onto the computer you are working on (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://yourname&#64;bitbucket.org/aeaverification/aearep-xxx.git</span></code> )</p></li>
@@ -664,8 +684,8 @@ git<span class="w"> </span>push
 </li>
 </ul>
 </div>
-<input id="0098fda1-aead-45be-a865-a54f33044751" name="9a777f2c-8c21-4b8e-a62f-607e4ff752ca" type="radio">
-</input><label class="sd-tab-label" for="0098fda1-aead-45be-a865-a54f33044751">
+<input id="79760529-760c-4443-85a4-c020e1059bb3" name="556eb1cd-5aa1-4c71-8400-0c142096b151" type="radio">
+</input><label class="sd-tab-label" for="79760529-760c-4443-85a4-c020e1059bb3">
 Github Codespaces (CS) </label><div class="sd-tab-content docutils">
 <p>All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer.</p>
 <ul class="contains-task-list">
@@ -710,8 +730,8 @@ Github Codespaces (CS) </label><div class="sd-tab-content docutils">
 </li>
 </ul>
 </div>
-<input id="92a411a0-d6c5-4d65-948e-88cd6086ddf7" name="9a777f2c-8c21-4b8e-a62f-607e4ff752ca" type="radio">
-</input><label class="sd-tab-label" for="92a411a0-d6c5-4d65-948e-88cd6086ddf7">
+<input id="dc55d3a5-cb93-4dc4-8e04-b3ec9dca52a5" name="556eb1cd-5aa1-4c71-8400-0c142096b151" type="radio">
+</input><label class="sd-tab-label" for="dc55d3a5-cb93-4dc4-8e04-b3ec9dca52a5">
 Manual steps </label><div class="sd-tab-content docutils">
 <p>If neither of the other two methods work, try this method (typically, on CISER)</p>
 <ul class="contains-task-list">
@@ -785,46 +805,56 @@ git<span class="w"> </span>push
 </pre></div>
 </div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-- [ ] Check with `git status` that there are no uncommited files.
-
-
-
-## Verifying completeness of the README
-
-The first section of the Replication report is titled &quot;[General](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#general)&quot;. Here you want to verify how complete the README is. 
-
-- Go through the entire README, and compare both to the [template README](https://social-science-data-editors.github.io/template_README/template-README.html) and the sections in the **General** section. 
-  - Check off the sections for which you appear to have information. 
-  - Leave blank the sections that are either not provided, or that are empty
-- In JIRA, identify the question called &quot;`DCAF_README_compliant`&quot;. 
-  - If all or most of the sections are in the same order, and are filled with meaningful information, then check `Fully`
-  - If information is provided, but in different order, or only mostly, mark &quot;`Content only`&quot;.
-  - If very little of the information is provided, mark it as &quot;`No`&quot;
-
-
-## List of Data Sources
-
-Now you will establish a **list of data sources used**.
-
-- Please check the **Data and Code Availability Form**.
-  - The form should be attached in the JIRA ticket. 
-  - In area 2 of the screen, choose `DCAF`.
-    - Open the **Data and Code Availability Form**, and check if all blanks are filled out.
-    - Once you checked the form, and in particular, if the checkbox next to &quot;README&quot; is checked, choose &quot;`Yes`&quot; from the dropdown menu of `DCAF_README_checked` cell.
-    - If the answer to the following question at the bottom of the form is &quot;Yes&quot;, then, choose &quot;`Yes`&quot; from the dropdown menu of `DCAF_Access_Restrictions`. Otherwise, choose &quot;`No`&quot;.
-      &quot;Is any of the data used in this manuscript subject to access restrictions?&quot;
-  ![jira screen](images/jira-screen.png)
-
-
-```{note}
-What is the difference between a &quot;**data source**&quot; and a &quot;**dataset**&quot; or &quot;data file&quot;? 
-
-- A **data source** is more general. A data source may provide multiple data files. One example is the &quot;Current Population Survey&quot;.
-- A **dataset** or **data file** is a single file that appears in the replication package. An example is &quot;`data_cps.dta`&quot;, which is presumably the data file containing the Current Population Survey. 
-
-For this section, you should list **data sources**.
-</pre></div>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Check with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> that there are no uncommited files.</p></li>
+</ul>
+</section>
+<section id="verifying-completeness-of-the-readme">
+<h2>Verifying completeness of the README<a class="headerlink" href="#verifying-completeness-of-the-readme" title="Permalink to this headline">#</a></h2>
+<p>The first section of the Replication report is titled “<a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#general">General</a>”. Here you want to verify how complete the README is.</p>
+<ul class="simple">
+<li><p>Go through the entire README, and compare both to the <a class="reference external" href="https://social-science-data-editors.github.io/template_README/template-README.html">template README</a> and the sections in the <strong>General</strong> section.</p>
+<ul>
+<li><p>Check off the sections for which you appear to have information.</p></li>
+<li><p>Leave blank the sections that are either not provided, or that are empty</p></li>
+</ul>
+</li>
+<li><p>In JIRA, identify the question called “<code class="docutils literal notranslate"><span class="pre">DCAF_README_compliant</span></code>”.</p>
+<ul>
+<li><p>If all or most of the sections are in the same order, and are filled with meaningful information, then check <code class="docutils literal notranslate"><span class="pre">Fully</span></code></p></li>
+<li><p>If information is provided, but in different order, or only mostly, mark “<code class="docutils literal notranslate"><span class="pre">Content</span> <span class="pre">only</span></code>”.</p></li>
+<li><p>If very little of the information is provided, mark it as “<code class="docutils literal notranslate"><span class="pre">No</span></code>”</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="list-of-data-sources">
+<h2>List of Data Sources<a class="headerlink" href="#list-of-data-sources" title="Permalink to this headline">#</a></h2>
+<p>Now you will establish a <strong>list of data sources used</strong>.</p>
+<ul class="simple">
+<li><p>Please check the <strong>Data and Code Availability Form</strong>.</p>
+<ul>
+<li><p>The form should be attached in the JIRA ticket.</p></li>
+<li><p>In area 2 of the screen, choose <code class="docutils literal notranslate"><span class="pre">DCAF</span></code>.</p>
+<ul>
+<li><p>Open the <strong>Data and Code Availability Form</strong>, and check if all blanks are filled out.</p></li>
+<li><p>Once you checked the form, and in particular, if the checkbox next to “README” is checked, choose “<code class="docutils literal notranslate"><span class="pre">Yes</span></code>” from the dropdown menu of <code class="docutils literal notranslate"><span class="pre">DCAF_README_checked</span></code> cell.</p></li>
+<li><p>If the answer to the following question at the bottom of the form is “Yes”, then, choose “<code class="docutils literal notranslate"><span class="pre">Yes</span></code>” from the dropdown menu of <code class="docutils literal notranslate"><span class="pre">DCAF_Access_Restrictions</span></code>. Otherwise, choose “<code class="docutils literal notranslate"><span class="pre">No</span></code>”.
+“Is any of the data used in this manuscript subject to access restrictions?”
+<img alt="jira screen" src="_images/jira-screen.png" /></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>What is the difference between a “<strong>data source</strong>” and a “<strong>dataset</strong>” or “data file”?</p>
+<ul class="simple">
+<li><p>A <strong>data source</strong> is more general. A data source may provide multiple data files. One example is the “Current Population Survey”.</p></li>
+<li><p>A <strong>dataset</strong> or <strong>data file</strong> is a single file that appears in the replication package. An example is “<code class="docutils literal notranslate"><span class="pre">data_cps.dta</span></code>”, which is presumably the data file containing the Current Population Survey.</p></li>
+</ul>
+<p>For this section, you should list <strong>data sources</strong>.</p>
 </div>
 <ul class="contains-task-list simple">
 <li><p>From the <strong>README</strong> provided by the authors, the <strong>data section of the article itself</strong>, or an <strong>appendix</strong>, establish a list of data sources used in the article. For each data source</p>
@@ -845,7 +875,7 @@ For this section, you should list **data sources**.
 <li><p>Are the data in the openICPSR repository, or are they someplace else? “Various” is a legitimate answer if data are in various locations.</p></li>
 </ul>
 </li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Please refer to <span class="xref myst">Chapter 9 A guided walk through the Replication Report</span> for more details about which data sources to include and how to assess the provided information.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Please refer to <a class="reference internal" href="08-details-replication-report.html#a-guided-walk-through-the-replication-report"><span class="std std-ref">Chapter 9 A guided walk through the Replication Report</span></a> for more details about which data sources to include and how to assess the provided information.</p></li>
 </ul>
 </section>
 <section id="other-information">
@@ -958,7 +988,7 @@ For this section, you should list **data sources**.
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By The Jupyter Book Community<br/>
+    By Lars Vilhuber, Michael Darisse, Leonel Borja Plaza, Hyuk Son, Meredith Welch, David Wasser<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

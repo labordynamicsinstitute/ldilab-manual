@@ -1,3 +1,4 @@
+(aea-jira-workflow-a-guide)=
 # AEA Jira workflow - A guide
 
 For pre-publication verification, we use a Jira-based workflow similar to the post-publication processes described in the [Wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki). For AEA work, that post-publication process can be ignored.
@@ -6,7 +7,7 @@ For pre-publication verification, we use a Jira-based workflow similar to the po
 
 Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see [other document](`r config$url$reploldmd`jira-supervisor-notes.md) for details.
 
-- This workflow **DOES NOT** cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See [Instructions for Papers and Proceedings](/replicability-training-curriculum/aea-instructions-for-papers-and-proceedings-checks.html).
+- This workflow **DOES NOT** cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See [Instructions for Papers and Proceedings](aea-pandp-instructions).
 
 ## Overview
 

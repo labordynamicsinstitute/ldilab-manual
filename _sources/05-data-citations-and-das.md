@@ -1,4 +1,4 @@
-# Data citations and data availability statements {#datacitations}
+# Data citations and data availability statements 
 
 Most students and researchers have been trained to cite their sources. Mostly, this is meant to be literature sources, but the basic idea applies just as much to data: If you use somebody else's data, you should acknowledge that. 
 
@@ -8,7 +8,7 @@ The almost complete absence of data citations from the literature has lead to is
 
 ![FAIR](images/fair-crop.png)
 
-In 2016, a number of scientists and publishers from many domains got together and issued the FAIR Data principles [@FORCE11FAIRDATAPRINCIPLES]. "FAIR" is an acronym for
+In 2016, a number of scientists and publishers from many domains got together and issued the FAIR Data principles {cite:p}`FORCE11FAIRDATAPRINCIPLES`. "FAIR" is an acronym for
 
 - Findable, 
 - Accessible, 
@@ -17,7 +17,7 @@ In 2016, a number of scientists and publishers from many domains got together an
 
 These are principles which help the furthering of increased reproducibility - by making data accessible, reproducibility checks can be conducted. By making them interoperable and re-usable, others can reproduce, replicate, and expand on the original research. Findability remains an issue: how do you discover data that is hidden in a ZIP file on a journal website as part of an (otherwise) perfectly reproducible package? 
 
-In fact, the same group had previously laid the groundwork to that. In 2014, they issued the "[Data Citation Principles](https://doi.org/10.25490/a97f-egyk)  (DCP)" [@force11declaration]. These laid out the ethical need for such citations, the content such citations should have, and some desirable attributes of data citations. Both the DCP as well as  FAIR  suggest that data be assigned unique identifiers, allowing them to be clearly referenced, and found. The most common identifier in the social sciences is the Digital Object Identifier (DOI), but others exist, in particular in the biological or physical sciences.
+In fact, the same group had previously laid the groundwork to that. In 2014, they issued the "[Data Citation Principles](https://doi.org/10.25490/a97f-egyk)  (DCP)" {cite:p}`force11declaration`. These laid out the ethical need for such citations, the content such citations should have, and some desirable attributes of data citations. Both the DCP as well as  FAIR  suggest that data be assigned unique identifiers, allowing them to be clearly referenced, and found. The most common identifier in the social sciences is the Digital Object Identifier (DOI), but others exist, in particular in the biological or physical sciences.
 
 ![DCPrinciples](images/data-citation-principles.png)
 
@@ -41,7 +41,7 @@ FAIR data helps convey such information, but often, assessing what "publisher" o
 
 ## How do you create a data citation
 
-[ICPSR](https://www.icpsr.umich.edu/web/pages/datamanagement/citations.html) [@icpsr_citing_nodate] notes that a citation should include the following items:
+[ICPSR](https://www.icpsr.umich.edu/web/pages/datamanagement/citations.html) {cite:p}`icpsr_citing_nodate` notes that a citation should include the following items:
 
 - Author
 - Title

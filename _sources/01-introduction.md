@@ -1,7 +1,7 @@
 
 # Background
 
-On July 16, 2019, the AEA announced an updated "[Data and Code Availability Policy](https://www.aeaweb.org/journals/policies/data-code)" [@AEA-announcement-July-2019;@10.1257/pandp.110.dcap]. Henceforth, 
+On July 16, 2019, the AEA announced an updated "[Data and Code Availability Policy](https://www.aeaweb.org/journals/policies/data-code)" {cite:p}`AEA-announcement-July-2019,10.1257/pandp.110.dcap`. Henceforth, 
 replication materials were to be made available to the AEA *prior* to acceptance - previously, it was prior to publication, but *after* acceptance. 
 Computer code should be provided for all stages of the data cleaning and data analysis (code for the data cleaning portion was previously optional). 
 Raw data must be uniformly made available, when permissions allow (also for author-collected survey data,   data from experiments). For restricted-access or proprietary data, to the extent permissible, the data must be made available to the AEA Data Editor for verification, even if the data cannot be published by the author.^[We regularly and successfully do so.]

@@ -10,7 +10,7 @@ Keep a log of what you do, what you find, and what does not work, in the `REPLIC
 
 ```{tab-item} CISER 
 
-- If using Stata,  see [Stata related procedures](stata-related-procedures.html).
+- If using Stata,  see [Stata related procedures](stata-related-procedures).
 - If using Matlab, open up Matlab. This might take a while.
 - If using Python, we suggest in general to use `git bash`, but you may also be able to use the Python shell. Consult with your supervisor, or the CISER helpdesk.
 
@@ -24,7 +24,7 @@ Consult the [Replication Wiki](https://github.com/labordynamicsinstitute/replica
 
 ```{tab-item} Github Codespaces (CS) 
 
-- If using Stata,  see [Stata related procedures](stata-related-procedures.html) for how to prepare files. However, you will use the command-line to run Stata.
+- If using Stata,  see [Stata related procedures](stata-related-procedures) for how to prepare files. However, you will use the command-line to run Stata.
   - To run Stata, type `stata-mp -b do main.do` (adjust to account for whatever the program or programs are called). You can do this for every one of the programs. 
 - To run R, type `Rscript program.R` or `R --vanilla < program.R > program.Rlog 2>&1` (which will always create a log file)
 - To run Python code, type `python3 program.py` or whatever the authors specify.

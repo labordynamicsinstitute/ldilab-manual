@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Data citations and data availability statements {#datacitations} &#8212; My sample book</title>
+    <title>Data citations and data availability statements &#8212; Training Manual For Reproducibility Verification</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -94,10 +94,10 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="_static/logo.jpg" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">My sample book</h1>
+      <h1 class="site-logo" id="site-title">Training Manual For Reproducibility Verification</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Data citations and data availability statements {#datacitations}
+   Data citations and data availability statements
   </a>
  </li>
  <li class="toctree-l1">
@@ -715,7 +715,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Data citations and data availability statements {#datacitations}</h1>
+                <h1>Data citations and data availability statements</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -870,14 +870,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="data-citations-and-data-availability-statements-datacitations">
-<h1>Data citations and data availability statements {#datacitations}<a class="headerlink" href="#data-citations-and-data-availability-statements-datacitations" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-citations-and-data-availability-statements">
+<h1>Data citations and data availability statements<a class="headerlink" href="#data-citations-and-data-availability-statements" title="Permalink to this headline">#</a></h1>
 <p>Most students and researchers have been trained to cite their sources. Mostly, this is meant to be literature sources, but the basic idea applies just as much to data: If you use somebody else’s data, you should acknowledge that.</p>
 <section id="a-very-short-history-of-data-citations">
 <h2>A very short history of data citations<a class="headerlink" href="#a-very-short-history-of-data-citations" title="Permalink to this headline">#</a></h2>
 <p>The almost complete absence of data citations from the literature has lead to issues when data creators and data providers attempt to assess their impact on science. Typically, they revert to manually or algorithmically scouring the literature, trying to find instances where their data is used.</p>
 <p><img alt="FAIR" src="_images/fair-crop.png" /></p>
-<p>In 2016, a number of scientists and publishers from many domains got together and issued the FAIR Data principles [&#64;FORCE11FAIRDATAPRINCIPLES]. “FAIR” is an acronym for</p>
+<p>In 2016, a number of scientists and publishers from many domains got together and issued the FAIR Data principles <span id="id1">[<a class="reference internal" href="99-References.html#id59" title="FORCE11. The FAIR data principles. Technical Report, FORCE11, 2016. URL: https://www.force11.org/group/fairgroup/fairprinciples (visited on 2017-05-26).">FORCE11, 2016</a>]</span>. “FAIR” is an acronym for</p>
 <ul class="simple">
 <li><p>Findable,</p></li>
 <li><p>Accessible,</p></li>
@@ -885,7 +885,7 @@ title="Print to PDF"
 <li><p>Re-usable</p></li>
 </ul>
 <p>These are principles which help the furthering of increased reproducibility - by making data accessible, reproducibility checks can be conducted. By making them interoperable and re-usable, others can reproduce, replicate, and expand on the original research. Findability remains an issue: how do you discover data that is hidden in a ZIP file on a journal website as part of an (otherwise) perfectly reproducible package?</p>
-<p>In fact, the same group had previously laid the groundwork to that. In 2014, they issued the “<a class="reference external" href="https://doi.org/10.25490/a97f-egyk">Data Citation Principles</a>  (DCP)” [&#64;force11declaration]. These laid out the ethical need for such citations, the content such citations should have, and some desirable attributes of data citations. Both the DCP as well as  FAIR  suggest that data be assigned unique identifiers, allowing them to be clearly referenced, and found. The most common identifier in the social sciences is the Digital Object Identifier (DOI), but others exist, in particular in the biological or physical sciences.</p>
+<p>In fact, the same group had previously laid the groundwork to that. In 2014, they issued the “<a class="reference external" href="https://doi.org/10.25490/a97f-egyk">Data Citation Principles</a>  (DCP)” <span id="id2">[<a class="reference internal" href="99-References.html#id21" title="M. (ed.) Martone. Data citation synthesis group: joint declaration of data citation principles. 2014. URL: https://doi.org/10.25490/a97f-egyk, doi:10.25490/a97f-egyk.">Martone, 2014</a>]</span>. These laid out the ethical need for such citations, the content such citations should have, and some desirable attributes of data citations. Both the DCP as well as  FAIR  suggest that data be assigned unique identifiers, allowing them to be clearly referenced, and found. The most common identifier in the social sciences is the Digital Object Identifier (DOI), but others exist, in particular in the biological or physical sciences.</p>
 <p><img alt="DCPrinciples" src="_images/data-citation-principles.png" /></p>
 <p>The DCC note that (emphasis added):</p>
 <blockquote>
@@ -903,7 +903,7 @@ title="Print to PDF"
 </section>
 <section id="how-do-you-create-a-data-citation">
 <h2>How do you create a data citation<a class="headerlink" href="#how-do-you-create-a-data-citation" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://www.icpsr.umich.edu/web/pages/datamanagement/citations.html">ICPSR</a> [&#64;icpsr_citing_nodate] notes that a citation should include the following items:</p>
+<p><a class="reference external" href="https://www.icpsr.umich.edu/web/pages/datamanagement/citations.html">ICPSR</a> <span id="id3">[<a class="reference internal" href="99-References.html#id137" title="ICPSR. Citing Data. n.d. URL: https://www.icpsr.umich.edu/web/pages/datamanagement/citations.html (visited on 2020-08-21).">ICPSR, n.d.</a>]</span> notes that a citation should include the following items:</p>
 <ul class="simple">
 <li><p>Author</p></li>
 <li><p>Title</p></li>
@@ -1322,7 +1322,7 @@ Note however that modern data citation guidance suggest that both the article an
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By The Jupyter Book Community<br/>
+    By Lars Vilhuber, Michael Darisse, Leonel Borja Plaza, Hyuk Son, Meredith Welch, David Wasser<br/>
   
       &copy; Copyright 2022.<br/>
 </p>
