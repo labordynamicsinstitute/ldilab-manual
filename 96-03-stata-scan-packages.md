@@ -1,4 +1,4 @@
-## Using scan_packages.do
+# Using scan_packages.do
 
 In "Writing Preliminary Report" stage, we ask you to check the completeness of the information on system requirements. Often, authors do not list out packages they installed that are not default packages in STATA. The authors should list them in the README (even when they provide ado files!), but it does not always happen. To help you identify these packages, we provide an useful tool for this exercise.
 

@@ -1,5 +1,5 @@
 
-### Write Preliminary Report 
+# Write Preliminary Report 
 
 At this stage, you need to fill out the REPLICATION.md up to the "Replication steps" part. 
 

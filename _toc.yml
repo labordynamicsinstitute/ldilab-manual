@@ -58,5 +58,6 @@ parts:
       - file: 96-02-running-stata-code
       - file: 96-03-stata-scan-packages
     - file: 97-00-authentication
-    - file: 97-01-Bitbucket-authentication
+      sections:
+      - file: 97-01-Bitbucket-authentication
     - file: 99-References

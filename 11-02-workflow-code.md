@@ -1,19 +1,19 @@
 
-### Code 
+# Code 
 
 
 In this stage, you will download the code, inspect the authors' README, and should anything have failed in the automated steps above, correct for that manually.
 
-#### Downloading code
+## Downloading code
 
 ```{note}
 You now need to decide where you are going to do the data analysis - that should be the place you do the next few steps. 
 This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.
 ```
 
-````{tab-set}
+::::{tab-set}
 
-```{tab-item} CISER 
+:::{tab-item} CISER 
 
 
 - [ ] Clone the Bitbucket repository onto the computer you are working on (`git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git` )
@@ -26,9 +26,9 @@ This is because the git setup we use does not allow you to include the data file
   git add PDF_Proof.pdf DataCodeAvailability.pdf
   git push
   ```
-```
+:::
 
-```{tab-item} Github Codespaces (CS) 
+:::{tab-item} Github Codespaces (CS) 
 
 All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer.
 
@@ -54,9 +54,9 @@ All actions in Github Codespaces (CS for short) will be performed in Visual Stud
       git add PDF_Proof.pdf; git commit 'Manuscript'; git push
       ```
     - Or use the VSC Git tools
-```
+:::
 
-```{tab-item} Manual steps 
+:::{tab-item} Manual steps 
 
 If neither of the other two methods work, try this method (typically, on CISER)
 
@@ -84,8 +84,9 @@ If neither of the other two methods work, try this method (typically, on CISER)
   - Perform a `git add`: `git add 111234` should do the right thing.
   - Perform `git commit`, `git push` sequence to populate the Bitbucket repo with the authors' replication materials (see above how to handle data).
 
-```
-````
+:::
+
+::::
 
 - [ ] Clean-up: Delete (`git rm`) unused files from the template! 
   - Example: `git rm README.md template-config.R` if the replication archive does not contain any R files (you can do this at any time before writing the **Preliminary Report**)
@@ -117,7 +118,7 @@ If neither of the other two methods work, try this method (typically, on CISER)
 
 
 
-#### Verifying completeness of the README
+## Verifying completeness of the README
 
 The first section of the Replication report is titled "[General](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#general)". Here you want to verify how complete the README is. 
 
@@ -130,7 +131,7 @@ The first section of the Replication report is titled "[General](https://github.
   - If very little of the information is provided, mark it as "`No`"
 
 
-#### List of Data Sources
+## List of Data Sources
 
 Now you will establish a **list of data sources used**.
 
@@ -164,7 +165,7 @@ For this section, you should list **data sources**.
   - Are the data in the openICPSR repository, or are they someplace else? "Various" is a legitimate answer if data are in various locations.
 - [ ] Please refer to [Chapter 9 A guided walk through the Replication Report](a-guided-walk-through-the-replication-report.html) for more details about which data sources to include and how to assess the provided information.
 
-#### Other information
+## Other information
 
 Have a look at the **README** again. 
 
@@ -174,7 +175,7 @@ Have a look at the **README** again.
   - How much memory, or processors, does the code need? 
   - This may tell you if you, or somebody else, will need to run the code, and whether CISER, or someplace else, is a good place to run the code.
 
-#### Review of Code
+## Review of Code
 
 Now do a first pass through the code files provided:
 

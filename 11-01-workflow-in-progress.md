@@ -1,5 +1,5 @@
 
-### In Progress  
+# In Progress  
 
 The first thing you must do is to advance the ticket from `Open` to `In Progress`.
 
@@ -18,7 +18,7 @@ Is the current Jira issue an **original report** (first time we see the manuscri
     - In particular, **do NOT create "update" or "new" directories** The current state of the repository should always correspond to the author's structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.
     - When running a second replication on the same archive, please be sure to have the committed "REPLICATION.md" be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.
 
-#### Creating a repository
+## Creating a repository
 
 - [ ] start by [creating a repository using the import method](https://bitbucket.org/repo/import) 
     - copy-paste from this URL: 
@@ -37,7 +37,7 @@ Is the current Jira issue an **original report** (first time we see the manuscri
 
 - We have now created a Bitbucket repo named something like aearep-123 that has been populated with the latest version of the LDI replication template documents!
 
-#### Ingesting author materials
+## Ingesting author materials
 
 We will now ingest the authors' materials, and run a few statistics. Typically, the materials will be on a (private) openICPSR repository. Sometimes, the materials will be at Dataverse, Zenodo, or elsewhere.
 
@@ -76,7 +76,7 @@ You will now run what is called a *`Bitbucket Pipeline`*. Similar tools on other
 
 ![completed pipeline](images/jira-run-pipeline-finished.png)
 
-#### Collecting information 
+## Collecting information 
 
 At this stage, you are collecting information. 
 

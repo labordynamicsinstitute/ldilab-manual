@@ -1,35 +1,7 @@
---- 
-title: "TRAINING For Reproducibility Verification"
-author: 
-  - "Lars Vilhuber"
-  - "Michael Darisse"
-  - "Leonel Borja Plaza"
-  - "Hyuk Son"
-  - "Meredith Welch"
-  - "David Wasser"
-date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
-output: bookdown::gitbook
-documentclass: book
-bibliography: [paper.bib, packages.bib]
-biblio-style: apalike
-link-citations: yes
-github-repo:  labordynamicsinstitute/replicability-training-curriculum
-description: "We provide training for students who will verify the reproducibility of economics articles."
----
 
 # Introduction
 
 This document is meant to guide the training of students in assessing the reproducibility of articles in the social sciences, and in particular in economics.
-
-```{r setup,include=FALSE}
-#source("_setup.R")
-
-# define a few things
-
-config <- config::get()
-
-```
 
 
 

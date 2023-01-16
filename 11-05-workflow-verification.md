@@ -1,5 +1,5 @@
 
-### Verification
+# Verification
 
 In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The [REPLICATION.md](`r config$url$templmd`REPLICATION.md) is the report.
 

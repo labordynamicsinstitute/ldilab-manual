@@ -1,4 +1,4 @@
-## Alternate sources of data
+# Alternate sources of data
 
 We sometimes encounter replication packages that reference Dataverse or Zotero. Download those as they are found on those sites. Extract them as you would the openICPSR downloads, with the directories named as follows:
 

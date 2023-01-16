@@ -1,9 +1,9 @@
 
-### Data 
+# Data 
 
-````{tab-set}
+::::{tab-set}
 
-```{tab-item} CISER
+:::{tab-item} CISER
 
 - [ ] On CISER, the data will be stored locally.
   - In some cases, you may be asked to use (restricted) data on the S: drive. Follow instructions as you receive them.
@@ -18,9 +18,9 @@
 - [ ] If there is data: Run the PII-checking code, review the output, and record the result in the `REPLICATION.md`.
   - This may already have been generated, check `generated/pii_stata_output.csv` and `generated/PII_stata_scan_summary.txt`.
 
-```
+:::
 
-```{tab-item} Github Codespaces (CS)  {#GHCS .computeloc .invisible}
+:::{tab-item} Github Codespaces (CS)  
 
 
 - [ ] Be sure you still have the Bitbucket repository clone, if not, follow instructions under [Code](#code)
@@ -42,8 +42,8 @@
 - [ ] If there is data: Run the PII-checking code, review the output, and record the result in the `REPLICATION.md`.
     - This may already have been generated, check `generated/pii_stata_output.csv` and `generated/PII_stata_scan_summary.txt`.
 
-```
-````
+:::
+::::
 
 - [ ] You should check the output - it is not automatic.
   - You should use words, and examples, from the output if it looks like there is Personally Identifying Information (PII) like names, addresses, etc. in the output.

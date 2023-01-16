@@ -65,7 +65,8 @@ You should now open the report, and verify the changes made by the author. How t
 
     - with subject line: `AEAREP-xxx Data and Code Deposit Revisions Reminder` (replace with appropriate numbers)
     - with body
-```{block, type="bbox"}
+
+```
 Authors,
 
 Please make the revisions requested to the ICPSR deposit so that we may
@@ -81,6 +82,7 @@ Please process any requested changes as soon as possible.
 
 Thanks!
 ```
+
 - Make a note in the Jira ticket that such a message has been posted.
 - If after an additional **four weeks** still no changes have been made, make a note in the Jira ticket, tagging/ alerting the Data Editor.
 
@@ -90,8 +92,16 @@ Thanks!
 
 - **A note on deposit status**. When an ICPSR deposit has a status of "Submitted" it is locked. This means that the authors will not be able to make any changes. If the deposit status is "Deposit in Progress" or "Revisions Requested" the deposit unlocked and changes may be made. Review the submission instructions above for information on how to unlock a deposit. 
 
-- When authors ask if they need to re-submit the updated manuscript to ScholarOne/Manuscript Central. Paste the following within the acceptance (or reminder) post on ICPSR:
 
-```{block, type="bbox"}
-At this stage, any changes to the manuscript are handled directly with editorial office â another submission to Scholar One is not necessary. If you are not already in contact with the editorial office, please reach out to the managing editors via aejaccept@aeapubs.org or aeraccept@aeapubs.org.
+```{note}
+
+When authors ask if they need to re-submit the updated manuscript to ScholarOne/Manuscript Central. Paste the following within the acceptance (or reminder) post on ICPSR:
+
+```
+At this stage, any changes to the manuscript are handled directly with editorial office and 
+another submission to Scholar One is not necessary. If you are not already in contact with 
+the editorial office, please reach out to the managing editors via aejaccept@aeapubs.org or 
+aeraccept@aeapubs.org.
+```
+
 ```
