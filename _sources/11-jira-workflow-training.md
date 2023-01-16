@@ -84,9 +84,9 @@ The first thing you must do is to advance the ticket from `Open` to `In Progress
 - This lets us know that you have started working on replication.
 
 
-```{block, type='rmdstop'}
-Is the current Jira issue an **original report** (first time we see the manuscript?) or **is it a revision** (we've seen the manuscript before?)?
-```
+:::{warning}
+Is the current Jira issue an **original report** (first time we see the manuscript) or **is it a revision** (we've seen the manuscript before)?
+:::
 
 - [ ] Check the `MCStatus` field: 
   - If it says "`RR`" or "`CA`", then it is an "original report" - proceed.
@@ -99,7 +99,11 @@ Is the current Jira issue an **original report** (first time we see the manuscri
 #### Creating a repository
 
 - [ ] start by [creating a repository using the import method](https://bitbucket.org/repo/import) 
-    - copy-paste from this URL: "[https://github.com/AEADataEditor/replication-template](https://github.com/AEADataEditor/replication-template)" to the URL field (this is also available in the Jira dropdown "Shortcuts")
+    - copy-paste from this URL: 
+    ```bash
+    https://github.com/AEADataEditor/replication-template
+    ```
+      to the URL field (this is also available in the Jira dropdown "Shortcuts")
     - the repository name should be the name of the JIRA issue (e.g., `aearep-123`)
     - Be sure that `aeaverification` is always the "owner" of the report on Bitbucket. 
     - The Project should be the abbreviation of the journal (e.g. "JEP")
@@ -119,9 +123,9 @@ We will now ingest the authors' materials, and run a few statistics. Typically, 
 - If at Zenodo or Dataverse, the `Code provenance` will have the DOI of the replication package, `openICPSR alternate URL` and `openICPSR Project Number` will be empty.
 
 
-```{block, type='rmdcomment'}
+:::{note}
 This currently works reliably only for openICPSR. This documentation will be updated when it works for Dataverse and Zenodo as well.
-```
+:::
 
 You will now run what is called a *`Bitbucket Pipeline`*. Similar tools on other sites might be called `Continuous integration`, `Github Actions`, etc. If you have encountered these before, this will not be news for you, but it isn't hard even when this new.
 
@@ -176,7 +180,7 @@ In this stage, you will download the code, inspect the authors' README, and shou
 
 
 
-```{block, type='rmdcomment'}
+:::{note}
 You now need to decide where you are going to do the data analysis - that should be the place you do the next few steps. Choose one of these environments to customize the instructions:
 
 <div class="w3-bar w3-black">
@@ -185,7 +189,7 @@ You now need to decide where you are going to do the data analysis - that should
 </div>
 
 This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.
-```
+:::{note}
 
 
 
@@ -202,8 +206,12 @@ This is because the git setup we use does not allow you to include the data file
 - [ ] From the JIRA issue, download and add Manuscript, Data and Code Availability Form (DCAF). 
     - Download from Jira issue attachments. The manuscript is often called `PDF_Proof.pdf`. 
 - [ ] Add the manuscript, and any response by the authors (if a revision)
-  - Add them to the Git repo (e.g., `git add PDF_Proof.pdf DataCodeAvailability.pdf`)
+  - Add them to the Git repo 
 - [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
+  ```bash
+  git add PDF_Proof.pdf DataCodeAvailability.pdf
+  git push
+  ```
 
 #### Github Codespaces (CS)  {#GHCS .computeloc .invisible}
 
@@ -211,15 +219,25 @@ All actions in Github Codespaces (CS for short) will be performed in Visual Stud
 
 - [ ] Use the Terminal built into VSC (`Menu` -> `Terminal` -> `New Terminal` )
 - [ ] Populate CS with the Bitbucket repo (yes, this is a bit weird)
-  - Use the LDI short-cut command `aeagit 123` to clone the Bitbucket repository for `aearep-123` onto CS (this executed `git clone (URL)/aearep-123` behind the scenes).
+  - Use the LDI short-cut command 
+    ```bash
+    aeagit 123
+    ```
+    to clone the Bitbucket repository for `aearep-123` onto CS (this executed `git clone (URL)/aearep-123` behind the scenes).
     - If this is the first repository you run on this CS instance, you may need to configure authentication. Follow the instructions from the `aeagit` command.
     - Once the  `aeagit 123 ` has completed, it will open a new VSC windows. **All subsequent actions should be done in that window.**
 - [ ] Add the manuscript, and any response by the authors (if a revision)
   - Copy the manuscript to the CS.    There are two ways to do this:
     - Drag-and-drop the downloaded manuscript into the file pane of VSC. 
-    - Use the `gh` command line tool from a non-VSC terminal (on your local computer): `gh cs cp PDF_Proof.pdf remote:/workspaces/aearep-123` 
+    - Use the `gh` command line tool from a non-VSC terminal (on your local computer): 
+      ```bash
+      gh cs cp PDF_Proof.pdf remote:/workspaces/aearep-123
+      ```
   - Add the manuscript to the Git repo
-    - In the terminal: `git add PDF_Proof.pdf; git commit 'Manuscript'; git push`
+    - In the terminal: 
+      ```bash
+      git add PDF_Proof.pdf; git commit 'Manuscript'; git push
+      ```
     - Or use the VSC Git tools
 
 #### Manual steps {#Manual .computeloc .invisible}
@@ -234,11 +252,18 @@ If neither of the other two methods work, try this method (typically, on CISER)
   - The local repository should now have the relevant LDI replication template materials and the openICPSR ZIP file containing the replication materials provided by the authors.
 - [ ] If uploading to CS, copy the downloaded ZIP file into the CS. There are two ways to do this:
     - Drag-and-drop the downloaded openICPSR ZIP file into the file pane of VSC. 
-    - Use the `gh` command line tool from a non-VSC terminal (on your local computer): `gh cs cp 111234.zip remote:/workspaces/aearep-123` (adjust accordingly)
+    - Use the `gh` command line tool from a non-VSC terminal (on your local computer): 
+      ```bash
+      gh cs cp 111234.zip remote:/workspaces/aearep-123
+      ``` 
+      (adjust accordingly)
 - [ ] Unzip the openICPSR folder under a folder **named for the openICPSR repostory number**. 
     - On Windows, right-click and select "Extract all". When asked, do not overwrite files.
     - On OSX, double-click. When asked, do not overwrite files.
-    - From bash: `unzip -n 111234.zip -d 111234`
+    - From bash: 
+      ```bash
+      unzip -n 111234.zip -d 111234
+      ```
   - The individual files that are part of the replication package should now be in a subdirectory (e.g, `111234`, the openICPSR repository number). 
   - Perform a `git add`: `git add 111234` should do the right thing.
   - Perform `git commit`, `git push` sequence to populate the Bitbucket repo with the authors' replication materials (see above how to handle data).
@@ -374,8 +399,11 @@ You can now proceed to change the status to `Data`. As you select that transitio
   - In some cases, you may be asked to use (restricted) data on the S: drive. Follow instructions as you receive them.
 - [ ] Download the openICPSR data (if not already done in the previous step, and if available). 
   - Manually, see [Manual steps](#Manual) above.
-  - From  Git bash: `python tools/download_openicpsr-private.py 111234`
-  - Then `unzip -n 111234 -d 111234`, which should unpack the data files only, not overwriting anything else.
+    ```bash
+    python tools/download_openicpsr-private.py 111234
+    unzip -n 111234 -d 111234
+    ```
+    which should unpack the data files only, not overwriting anything else.
 - [ ] attempt to download data from various sources indicated by the authors, but ONLY if no sign-up/ application process is involved. 
 - [ ] If there is data: Run the PII-checking code, review the output, and record the result in the `REPLICATION.md`.
   - This may already have been generated, check `generated/pii_stata_output.csv` and `generated/PII_stata_scan_summary.txt`.
@@ -388,10 +416,17 @@ You can now proceed to change the status to `Data`. As you select that transitio
   - `python3 tools/download_openicpsr-private.py 111234`
   - The ZIP file should now be in the same folder as `REPLICATION.md`.
 - [ ] Unzip the openICPSR ZIP file againto a folder **named for the openICPSR repostory number**. 
-    - In the terminal `unzip -n 111234 -d 111234`
+    - In the terminal 
+      ```bash
+      unzip -n 111234 -d 111234
+      ```
 - [ ] Upload data that you obtained from other sources to CS. There are two ways to do this:
     - Drag-and-drop the downloaded data file into the file pane of VSC, into the appropriate location.
-    - Use the `gh` command line tool from a non-VSC terminal (on your local computer): `gh cs cp datafile.dat remote:/workspaces/aearep-123/111234/data/location` (adjust accordingly as per the author's instructions)
+    - Use the `gh` command line tool from a non-VSC terminal (on your local computer): 
+      ```bash
+      gh cs cp datafile.dat remote:/workspaces/aearep-123/111234/data/location
+      ``` 
+      (adjust accordingly as per the author's instructions)
 - [ ] If there is data: Run the PII-checking code, review the output, and record the result in the `REPLICATION.md`.
     - This may already have been generated, check `generated/pii_stata_output.csv` and `generated/PII_stata_scan_summary.txt`.
 
