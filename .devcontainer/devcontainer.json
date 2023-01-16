@@ -1,12 +1,13 @@
 {
     "name": "replication-template",
-    "image": "mcr.microsoft.com/devcontainers/python:3",
-    "initializeCommand": ".devcontainer/init.sh",
+    "build": {
+        // Path is relataive to the devcontainer.json file.
+        "dockerfile": "Dockerfile",
+        "context": "."
+    },
+
     "settings": {
         "workbench.colorTheme": "Visual Studio Light",
         "terminal.integrated.shell.linux": "/bin/bash"
-    },    
-    "remoteEnv": {
-        "DOCKER_BUILDKIT": "1",
-	}
+    }
 }
