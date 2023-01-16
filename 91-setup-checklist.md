@@ -1,4 +1,5 @@
-# Setup Checklist {#checklist}
+(checklist)=
+# Setup Checklist 
 
 ## Accounts you will need to sign up for (action required)
 
@@ -34,7 +35,7 @@
     - [ ] Install Plugins:  [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) will debug your Markdown
 
 
-Other software is optional. You will use statistical software on other computers [that we will get you access to](#Access_to_computers).
+Other software is optional. You will use statistical software on other computers [that we will get you access to](Access_to_computers).
 
 ## Text editor vs. Word processor
 
