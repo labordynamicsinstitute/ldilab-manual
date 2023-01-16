@@ -176,6 +176,7 @@ You can now proceed to change the status to `Code`.
 
 ### Code {.tabset}
 
+
 In this stage, you will download the code, inspect the authors' README, and should anything have failed in the automated steps above, correct for that manually.
 
 
@@ -183,17 +184,17 @@ In this stage, you will download the code, inspect the authors' README, and shou
 ```{note}
 You now need to decide where you are going to do the data analysis - that should be the place you do the next few steps. Choose one of these environments to customize the instructions:
 
-<div class="w3-bar w3-black">
+```{div} w3-bar w3-black
   <button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
   <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button>
-</div>
+```
 
 This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.
 ```
 
 
 
-<div class="w3-bar w3-black">
+```{div} w3-bar w3-black
   <button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
   <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button>
   <button class="w3-bar-item w3-button" onclick="openTab('Manual')">Manual steps</button>
@@ -388,7 +389,7 @@ You can now proceed to change the status to `Data`. As you select that transitio
 ### Data {.tabset}
 
 
-<div class="w3-bar w3-black">
+```{div} w3-bar w3-black
   <button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
   <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button>
 </div> 
@@ -507,7 +508,7 @@ Keep a log of what you do, what you find, and what does not work, in the `REPLIC
   - For codes using STATA, we provide a template of `config.do` in the repository. It creates log files and saves it in the repository. Instructions for using `config.do` is in [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html)
 
 
-<div class="w3-bar w3-black">
+```{div} w3-bar w3-black
   <button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
   <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button>
 </div> 
