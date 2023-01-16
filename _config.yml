@@ -5,7 +5,7 @@ title: Training Manual For Reproducibility Verification
 author: Lars Vilhuber, Michael Darisse, Leonel Borja Plaza, Hyuk Son, Meredith Welch, David Wasser
 logo: logo.jpg
 copyright: 2018-2023
-exclude_patterns          : ["*venv*",".git*"]
+exclude_patterns          : ["*venv*",".git*",".devcontainer"]
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
