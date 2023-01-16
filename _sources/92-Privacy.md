@@ -1,6 +1,5 @@
-
-
-# Privacy {#privacy}
+(privacy)=
+# Privacy 
 
 We need to cover two sorts of privacy: the privacy of those whose materials we verify, and your own privacy. There are limitations to both, but we attempt to protect privacy as much as possible.
 

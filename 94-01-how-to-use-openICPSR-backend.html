@@ -278,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="92-Privacy.html">
-   Privacy {#privacy}
+   Privacy
   </a>
  </li>
  <li class="toctree-l1">
@@ -577,11 +577,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#downloading-a-project">
-   Downloading a project
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reminders">
    Reminders
   </a>
@@ -611,11 +606,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#downloading-a-project">
-   Downloading a project
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reminders">
    Reminders
   </a>
@@ -640,18 +630,55 @@ title="Print to PDF"
 <h2>Basics of openICPSR<a class="headerlink" href="#basics-of-openicpsr" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Authors will create a draft deposit that contains the replication archive for their paper.</p></li>
-<li><p>Each deposit is identified with a six digit number.</p></li>
+<li><p>Each deposit is identified with a six digit number (<code class="docutils literal notranslate"><span class="pre">123456</span></code>)</p></li>
 <li><p>You will download the project and commit the code (but not the data) files to the corresponding Bitbucket repo.</p></li>
 </ul>
-</section>
-<section id="downloading-a-project">
-<h2>Downloading a project<a class="headerlink" href="#downloading-a-project" title="Permalink to this headline">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="711ec43e-beff-4057-9768-c3115ac60fb0" name="f3c9f353-4ce8-4656-9b21-2e3c0cef0273" type="radio">
+</input><label class="sd-tab-label" for="711ec43e-beff-4057-9768-c3115ac60fb0">
+Downloading using a script</label><div class="sd-tab-content docutils">
+<p>The most convenient way to download the information is to use the LDI-specific script <code class="docutils literal notranslate"><span class="pre">tools/download_openicpsr-private.py</span></code>.</p>
+<p><strong>Short version of call to script</strong></p>
+<p>While in your repository directory, open a (Git) Bash shell, and type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>tools/download_openicpsr-private.py<span class="w"> </span><span class="m">123456</span>
+</pre></div>
+</div>
+<p>which will download a file <code class="docutils literal notranslate"><span class="pre">123456.zip</span></code>. If this has not been done before, it will unzip it into a directory <code class="docutils literal notranslate"><span class="pre">123456</span></code>.</p>
+<p>You may need to adjust <code class="docutils literal notranslate"><span class="pre">python3</span></code>  to be <code class="docutils literal notranslate"><span class="pre">python</span></code>, depending on your environment.</p>
+<p><strong>Full options for script</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>tools/download_openicpsr-private.py<span class="w"> </span><span class="m">123456</span><span class="w"> </span>.<span class="w"> </span>mylogin@cornell.edu
+</pre></div>
+</div>
+<p>where</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.</span></code> indicates the directory to download the ZIP file to (here, the current directory)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mylogin&#64;cornell.edu</span></code>  is the login you use on the openICPSR website (typically, <code class="docutils literal notranslate"><span class="pre">netid&#64;cornell.edu</span></code>)</p></li>
+</ul>
+<p><strong>Setup for using the script</strong></p>
+<p>One can use the short form of calling the script with the following (one-time) setup:</p>
+<ul class="simple">
+<li><p>open a (Git) bash shell and type the following:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span>
+<span class="s2"># env for ICPSR</span>
+<span class="s2">export ICPSR_EMAIL=mylogin@cornell.edu</span>
+<span class="s2">export ICPSR_PASS=supersecretpwd</span>
+<span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$HOME</span>/.bashrc
+</pre></div>
+</div>
+<p>This will “prime” the script to use that email and password for downloading the information. Close the bash shell, and upon opening a new one, the short form should work.</p>
+</div>
+<input id="ef14e6dd-45dc-4b97-99dc-b38e5e168ab9" name="f3c9f353-4ce8-4656-9b21-2e3c0cef0273" type="radio">
+</input><label class="sd-tab-label" for="ef14e6dd-45dc-4b97-99dc-b38e5e168ab9">
+Downloading a project manually</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>Log on to the openICPSR website by clicking on the <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">provenance</span></code> link in Jira</p></li>
 <li><p>If you get an error, the project has probably not been shared with you. Contact your supervisor.</p></li>
 <li><p>If successfully logged on, you will be able to download the project from the “more” menu:</p></li>
 </ul>
 <p><img alt="" src="_images/openICPSRexample.png" /></p>
+</div>
+</div>
 </section>
 <section id="reminders">
 <h2>Reminders<a class="headerlink" href="#reminders" title="Permalink to this headline">#</a></h2>
@@ -662,7 +689,7 @@ title="Print to PDF"
 <li><p>Do not share projects with others unless instructed otherwise.</p></li>
 <li><p>Do not share screenshots with others</p></li>
 </ul>
-<p>See [Privacy] section about expectations on privacy.</p>
+<p>See <a class="reference internal" href="92-Privacy.html#privacy"><span class="std std-ref">Privacy</span></a> section about expectations on privacy.</p>
 </section>
 </section>
 
