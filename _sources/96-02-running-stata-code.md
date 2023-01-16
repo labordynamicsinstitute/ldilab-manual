@@ -1,4 +1,4 @@
-## Running Code in Stata
+# Running Code in Stata
 
 Although, there are plenty of ways to run code in Stata, our goal with these instructions is to show the easiest way to do it, by minimizing both the manual steps replicators have to go through and the chance of making a mistake that prevents a successful run.
 
@@ -8,19 +8,19 @@ In essence, these instructions show how to deal with the three most common actio
  2. Installing user-written functions, programs, or packages that are necessary to do computations and produce tables/figures.
  3. Creating .log files (files that record, in this case, Stata output) of the replication attempts.
 
-### Step 1: check for a "master" .do file
+## Step 1: check for a "master" .do file
 
 > **[ACTION]** Check the README or the repository and determine if a master .do file was provided.
 
 A master .do file is a Stata script that will call, in the correct sequence, all the programs necessary to construct analysis datasets, do all computations, and produce figures and tables. If a master do file exists, it should be mentioned in the README. In most cases, running a single master do file is sufficient to complete the reproduction. In general, a master script does not need to be a .do file. However, we will focus on cases where all work done in Stata is reduced to executing a single .do file.
 
 
-#### When a master .do file is provided
+### When a master .do file is provided
 
 If there is a master do file, continue with [Step 2](#Step2).
 
 
-#### When a master .do file is not provided
+### When a master .do file is not provided
 
 If a master .do file is not provided, you should create a one. 
 
@@ -63,7 +63,7 @@ At the end your master .do file may look like this:
 With your master do file done, continue with [Step 2](#Step2).
 
 
-### Step 2: place config.do where the master .do file is located {#Step2}
+## Step 2: place config.do where the master .do file is located {#Step2}
 
 > **[ACTION]** Copy the file [`template-config.do`](https://github.com/AEADataEditor/replication-template/blob/master/template-config.do) and paste it into the folder where the master file is located. Change the name from `template-config.do` to `config.do`
 
@@ -71,7 +71,7 @@ The folder with the code, whether is the root directory or a subfolder, should l
 
 ![Code_Repository](images/code_repo.png)
 
-### Step 3: include config.do in the master .do file
+## Step 3: include config.do in the master .do file
 
 > **[ACTION]** Open the master .do file. In the beginning, add the line:
 
@@ -94,7 +94,7 @@ In summary, `config.do` does 4 things:
 
 A crucial function of `config.do` is that it allows for the local installation of Stata packages, which is important for two reasons. First, it will enable us to check for the completeness of replication materials. Second, when running code in servers, we often do not have the necessary permissions to install Stata packages freely.`config.do` allow us to installed packages in the replication directory.  
 
-### Step 4: modifying paths if necessary
+## Step 4: modifying paths if necessary
 
 > **[ACTION]**
 >
@@ -106,7 +106,7 @@ To run the code, we need to make sure that Stata can access the locally-saved da
 
 However, the typical case will only require one modification, either to the master .do file or to a program called by the master .do file, where you define the path of the location of the replication package. This location is what we refer to as the "root directory". Once this change is made, the code provided (if it follows good practices) will define every other path relative to the root directory.
 
-#### Example
+### Example
 
 In the author's master file, a global variable "maindir" defines the path of the root directory as:
 
@@ -131,7 +131,7 @@ global data "$maindir/data" // path to data folder
 global figures "$maindir/figures" // path to figures folder
 ```
 
-### Step 5: Check the location of the master .do file and modify config.do
+## Step 5: Check the location of the master .do file and modify config.do
 
 > **[ACTION]**
 >
@@ -140,7 +140,7 @@ global figures "$maindir/figures" // path to figures folder
 > - If the replication package includes a folder with Stata packages, add the line  `adopath ++` followed by the path of the location of that folder and save. See [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html) for details.
 > - Add packages that need to be installed to config.do. See [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html) for details.
 
-#### Scenario A
+### Scenario A
 
 A simplified directory structure that correspond with scenario "A" look like this:
 ```
@@ -154,7 +154,7 @@ A simplified directory structure that correspond with scenario "A" look like thi
 
 ```
 
-##### Example
+#### Example
 
 - A Master .do file is  inside a folder and you have placed `config.do` in that same folder. The package `estout` needs to be installed:
 
@@ -169,7 +169,7 @@ local ssc_packages "estout ivreg2"
     // If you need to "net install" packages, go to the very end of this program, and add them there.
 ```
 
-#### Scenario B
+### Scenario B
 
 A simplified directory structure that correspond to scenario "B" looks like this:
 
@@ -183,7 +183,7 @@ A simplified directory structure that correspond to scenario "B" looks like this
              otherdata.dta
 ```
 
-##### Example
+#### Example
 
 
 - A Master .do file is in the main directory, and you have placed `config.do` in the main directory. The package `estout` and `ivreg2` need to be installed:
@@ -199,7 +199,7 @@ local ssc_packages "estout"
     // local ssc_packages "estout boottest"
     // If you need to "net install" packages, go to the very end of this program, and add them there.
 ```
-### Step 6: Run the Code {.tabset}
+## Step 6: Run the Code {.tabset}
 
 
 <div class="w3-bar w3-black">
@@ -207,7 +207,7 @@ local ssc_packages "estout"
   <button class="w3-bar-item w3-button" onclick="openTab('MacLinux')">Mac/Linux</button>
 </div> 
 
-#### Windows {#Windows .computeloc}
+### Windows {#Windows .computeloc}
 
 > **[ACTION]** **Right click** on the master .do file and select the option `Execute (do)`.
 
@@ -215,7 +215,7 @@ local ssc_packages "estout"
 
 This option will set the working directory  to the location where the `master.do` is. It opens Stata and will show the processes in the Stata window.
 
-#### Mac/Linux {#MacLinux .computeloc .invisible}
+### Mac/Linux {#MacLinux .computeloc .invisible}
 
 On Unix-style systems, the preferred way is to use the command line to run Stata code.
 
@@ -236,9 +236,9 @@ Each version is increasingly powerful. Choose the most powerful one installed on
 Then  type "`stata-mp -b do master.do`". 
 
 
-### {-} 
+## {-} 
 
-#### Checking for a complete run, debugging and running the master in pieces
+### Checking for a complete run, debugging and running the master in pieces
 
 After running the code, the log files will need to be checked for a complete run. **Use Visual Studio Code to open and inspect log files**. Any bugs that prevents a complete run will also show up in the log files.
 

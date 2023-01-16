@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction &#8212; My sample book</title>
+    <title>Data &#8212; My sample book</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Background" href="01-introduction.html" />
+    <link rel="next" title="Write Preliminary Report" href="11-04-workflow-write-prelim.html" />
+    <link rel="prev" title="Code" href="11-02-workflow-code.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,7 +88,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="#">
+    <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
@@ -106,8 +107,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
                     Introduction
                 </a>
             </li>
@@ -190,17 +191,17 @@ const thebe_selector_output = ".output, .cell_output"
   AEA-specific training
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="11-00-jira-workflow.html">
    AEA Jira workflow - A guide
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="11-01-workflow-in-progress.html">
      In Progress
@@ -211,8 +212,8 @@ const thebe_selector_output = ".output, .cell_output"
      Code
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="11-03-workflow-data.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Data
     </a>
    </li>
@@ -483,7 +484,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://labordynamicsinstitute.github.io/replicability-training-manual-new//issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."
+        <a href="https://labordynamicsinstitute.github.io/replicability-training-manual-new//issues/new?title=Issue%20on%20page%20%2F11-03-workflow-data.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -511,7 +512,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/index.md"
+        <a href="_sources/11-03-workflow-data.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -548,60 +549,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-read-this-document">
-   How to read this document
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction</h1>
+                <h1>Data</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-read-this-document">
-   How to read this document
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -609,25 +573,120 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
-<p>This document is meant to guide the training of students in assessing the reproducibility of articles in the social sciences, and in particular in economics.</p>
-<p>Content is <a class="reference external" href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="License: CC BY-NC 4.0" src="https://licensebuttons.net/l/by-nc/4.0/80x15.png" /></a>.</p>
-<section id="how-to-read-this-document">
-<h2>How to read this document<a class="headerlink" href="#how-to-read-this-document" title="Permalink to this headline">#</a></h2>
-<p>If you are a casual reader of this document, start with the <a class="reference external" href="#pre-requisites">pre-requisites</a>. If you are a student participating in our training, then start with the <a class="reference external" href="#pre-training">pre-training tasks</a>. Read the rest sequentially.</p>
-<p><img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/labordynamicsinstitute/replicability-training-curriculum.svg?style=flat" /> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/labordynamicsinstitute/replicability-training-curriculum.svg?style=flat" /></p>
-</section>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="data">
+<h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h1>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="80b1aa29-82bb-48d0-ba96-f745d92fe453" name="80b4bb49-d116-4427-ad5d-ca7d86372c3c" type="radio">
+</input><label class="sd-tab-label" for="80b1aa29-82bb-48d0-ba96-f745d92fe453">
+CISER</label><div class="sd-tab-content docutils">
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> On CISER, the data will be stored locally.</p>
+<ul class="simple">
+<li><p>In some cases, you may be asked to use (restricted) data on the S: drive. Follow instructions as you receive them.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Download the openICPSR data (if not already done in the previous step, and if available).</p>
+<ul>
+<li><p>Manually, see <a class="reference external" href="#Manual">Manual steps</a> above.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>tools/download_openicpsr-private.py<span class="w"> </span><span class="m">111234</span>
+unzip<span class="w"> </span>-n<span class="w"> </span><span class="m">111234</span><span class="w"> </span>-d<span class="w"> </span><span class="m">111234</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
+<p>which should unpack the data files only, not overwriting anything else.</p>
+</li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> attempt to download data from various sources indicated by the authors, but ONLY if no sign-up/ application process is involved.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> If there is data: Run the PII-checking code, review the output, and record the result in the <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>.</p>
+<ul class="simple">
+<li><p>This may already have been generated, check <code class="docutils literal notranslate"><span class="pre">generated/pii_stata_output.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">generated/PII_stata_scan_summary.txt</span></code>.</p></li>
+</ul>
+</li>
+</ul>
 </div>
-<div class="toctree-wrapper compound">
+<input id="399be74f-fcbe-4e2a-b2ca-9f6797d6513b" name="80b4bb49-d116-4427-ad5d-ca7d86372c3c" type="radio">
+</input><label class="sd-tab-label" for="399be74f-fcbe-4e2a-b2ca-9f6797d6513b">
+Github Codespaces (CS)  </label><div class="sd-tab-content docutils">
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Be sure you still have the Bitbucket repository clone, if not, follow instructions under <a class="reference external" href="#code">Code</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Download the openICPSR deposit using the LDI short-cut command</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">tools/download_openicpsr-private.py</span> <span class="pre">111234</span></code></p></li>
+<li><p>The ZIP file should now be in the same folder as <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Unzip the openICPSR ZIP file againto a folder <strong>named for the openICPSR repostory number</strong>.</p>
+<ul>
+<li><p>In the terminal</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip<span class="w"> </span>-n<span class="w"> </span><span class="m">111234</span><span class="w"> </span>-d<span class="w"> </span><span class="m">111234</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
+</li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Upload data that you obtained from other sources to CS. There are two ways to do this:</p>
+<ul>
+<li><p>Drag-and-drop the downloaded data file into the file pane of VSC, into the appropriate location.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">gh</span></code> command line tool from a non-VSC terminal (on your local computer):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>cs<span class="w"> </span>cp<span class="w"> </span>datafile.dat<span class="w"> </span>remote:/workspaces/aearep-123/111234/data/location
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
+<p>(adjust accordingly as per the author’s instructions)</p>
+</li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> If there is data: Run the PII-checking code, review the output, and record the result in the <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>.</p>
+<ul class="simple">
+<li><p>This may already have been generated, check <code class="docutils literal notranslate"><span class="pre">generated/pii_stata_output.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">generated/PII_stata_scan_summary.txt</span></code>.</p></li>
+</ul>
+</li>
+</ul>
 </div>
+</div>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> You should check the output - it is not automatic.</p>
+<ul>
+<li><p>You should use words, and examples, from the output if it looks like there is Personally Identifying Information (PII) like names, addresses, etc. in the output.</p></li>
+<li><p>The author will NOT see the output from the program unless you copy <strong>relevant</strong> parts of it into the report.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Describe the data</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> do relevant variables have labels?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Is the data readable?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Is the data in archive-ready formats (<code class="docutils literal notranslate"><span class="pre">csv</span></code> or <code class="docutils literal notranslate"><span class="pre">txt</span></code> are the preferred formats by librarians, but <code class="docutils literal notranslate"><span class="pre">dta</span></code> or <code class="docutils literal notranslate"><span class="pre">spss</span></code> are also OK; <code class="docutils literal notranslate"><span class="pre">mat</span></code> files are discouraged)</p></li>
+</ul>
+</li>
+</ul>
+<p>Fill out the following Jira fields:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">DATA</span> <span class="pre">PROVENANCE</span></code> Where, specifically, are you accessing the data? Typically this is the openICPSR repo URL (same as <code class="docutils literal notranslate"><span class="pre">CODE</span> <span class="pre">PROVENANCE</span></code>), but may be a user-provided URL or DOI.</p>
+<ul>
+<li><p>if the data is in multiple places, enter “Multiple” here, and record the details in the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a></p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">WORKING</span> <span class="pre">LOCATION</span> <span class="pre">OF</span> <span class="pre">THE</span> <span class="pre">DATA</span></code> Where did you put the data? Examples: CISER, laptop, or Git LFS, or somewhere else</p></li>
+</ul>
+<p>You can now proceed to change the status to <code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">Preliminary</span> <span class="pre">Report</span></code>. You will be asked to provide additional information:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">DATASETSINCLUDED</span></code> Are all datasets included as part of the replication package (on openICPSR or, if not using openICPSR, on the other repository)?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">DATAAVAILABILITYACESS</span></code> Do the data require users to apply for access, purchase, or otherwise sign or enter into agreements to access the data? This could be a license agreement, or even a click-through acknowledgement. (This should be mentioned in the Readme PDF or in the article)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">DATAAVAILABILITYEXCLUSIVE</span></code> Are there data that are <strong>only</strong> accessible to the author (nobody else)?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">REASON</span> <span class="pre">FOR</span> <span class="pre">NON-ACCESSIBILITY</span> <span class="pre">OF</span> <span class="pre">DATA</span></code> Fill this out for <strong>any</strong> data that is not accessible/ not included as part of this archive; check <strong>all</strong> that apply. This should be clear from the authors’ descriptions (in the README)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Too</span> <span class="pre">big</span></code>: The data can be accessed elsewhere, but they are too big for this replication package</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Application</span> <span class="pre">process</span></code>: In order to access the data, an application needs to be made to an institution (not a purchase).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cost</span></code>: It costs money to obtain the data. This may be because it has to be purchased, or because there is a fee for the application process.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Confidential</span> <span class="pre">data</span></code>: The data are sensitive / confidential and are therefore not made available in this replication package. They can be available elsewhere, subject to conditions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Proprietary</span> <span class="pre">data</span></code>: The data “belong” to somebody - a company, or in rare cases, a specific author, and cannot be redistributed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Licensed</span> <span class="pre">data</span></code>: A license must be obtained. This can be different than an application process (generally, less complicated).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Redistribution</span> <span class="pre">not</span> <span class="pre">authorized</span></code>: Often, even if data are not confidential, not proprietary, etc., there may be redistribution restrictions. An example are some IPUMS data, as well as many others.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Other</span> <span class="pre">download</span> <span class="pre">site</span> <span class="pre">provided</span></code>: When data can be downloaded elsewhere, possibly due to <code class="docutils literal notranslate"><span class="pre">licenses</span></code> or <code class="docutils literal notranslate"><span class="pre">application</span> <span class="pre">process</span></code>. In other cases, even if they could be provided, they may already be archived elsewhere, and are not included here.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">found</span></code>: This should be checked when data cannot be found as per the instructions by the author. This is rarely a final finding for pre-publication verification.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">NUMBEROFDATASETS</span></code> How many datasets are used in the article (whether or not they are included in the replication package you downloaded)? This is meant to include datasets that you are asked to download, or that you were given access to via the “S:” drive, or “CRADC”, or some other secure mechanism.</p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -657,10 +716,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="01-introduction.html" title="next page">
+    <a class='left-prev' id="prev-link" href="11-02-workflow-code.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Code</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="11-04-workflow-write-prelim.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Background</p>
+        <p class="prev-next-title">Write Preliminary Report</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

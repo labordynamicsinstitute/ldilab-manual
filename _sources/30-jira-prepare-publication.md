@@ -6,8 +6,9 @@
 
 In the JMS, the Data Editor is set up as a reviewer who can be assigned during the conditional accept stage. Assignment is via email to a pre-configured email address. Once the Data Editor has finalized the replication report, a manual upload is required to submit the report. If the report requires a revision, a note may need to be posted on the openICPSR deposit as well. If the report requires no revisions, a note is made on the openICPSR deposit to confirm that everything is in order.
 
-```{block, type='AEA'}
-## Permissions {-}
+```{note}
+
+**Permissions**
 
 
 - submitters needs password to ScholarOne (Lars shares via LastPass)
@@ -45,7 +46,7 @@ In the JMS, the Data Editor is set up as a reviewer who can be assigned during t
    6. Copy-paste the "Summary" part from `REPLICATION.md` into the field `Comments to the Author`. 
       - If not already present, add "Details are in the full report."
       - If not already present, add
-   ```{block, type="bbox"}
+   ```
    > [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
    ```
    7. Select and upload the `REPLICATION.pdf`, click on `For author and  editor`.
@@ -83,11 +84,11 @@ To do so, proceed as follows:
   - in the pop-up, paste and submit the following lines: 
 
 
-```{block, type='rmdcomment'}
+```{admonition} We call this the
 "Request-revisions-RR" message.
 ```
 
-```{block, type="bbox"}
+```
 Revisions requested. Details in the full report, which you will receive via ScholarOne shortly.
 
 > [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
@@ -122,11 +123,11 @@ Revisions requested. Details in the full report, which you will receive via Scho
          - then the following lines
 
 
-```{block, type='rmdcomment'}
+```{admonition} We call this the
 "Request-revisions-CA" message when `Deposit in Progress` is shown.
 ```
          
-```{block, type="bbox"}
+```
 Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
 
 Once all changes have been made, please change the status of your deposit to "Submit to AEA".
@@ -143,11 +144,11 @@ Once all changes have been made, please change the status of your deposit to "Su
     - then the following lines: 
 
 
-```{block, type='rmdcomment'}
+```{admonition} We call this the
 "Request-revisions-CA" message when `Submitted` is shown.
 ```
 
-```{block, type="bbox"}
+```
 Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
 
 > [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
@@ -172,11 +173,11 @@ Details in the full report, which you will receive via ScholarOne shortly. Pleas
       - with body
 
 
-```{block, type='rmdcomment'}
+```{admonition} We call this the
 "Sign-off" message when author needs to `Submit`.
 ```
       
-```{block2, type="bbox"}
+```
 This data and code deposit is accepted.
 
 Action items:
@@ -191,11 +192,11 @@ Action items:
       - with body
 
 
-```{block, type='rmdcomment'}
+```{admonition} We call this the
 "Sign-off" message when author has `Submit`ted.
 ```
 
-```{block2, type="bbox"}
+```
 This data and code deposit is accepted.
 
 Action items:

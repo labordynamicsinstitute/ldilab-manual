@@ -192,10 +192,52 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="11-jira-workflow-training.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="11-00-jira-workflow.html">
    AEA Jira workflow - A guide
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-01-workflow-in-progress.html">
+     In Progress
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-02-workflow-code.html">
+     Code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-03-workflow-data.html">
+     Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-04-workflow-write-prelim.html">
+     Write Preliminary Report
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-05-workflow-verification.html">
+     Verification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-06-workflow-code-review.html">
+     Code Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-07-workflow-writing-report.html">
+     Writing Report
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="12-jira-revision-guidance.html">
@@ -248,8 +290,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="94-00-downloading-data.html">
    Downloading Data
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -280,8 +322,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="95_Access_to_computers.html">
    Access to Computers
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -307,8 +349,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="96-00-using-Stata.html">
    Stata-related procedures
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -330,15 +372,22 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="97-00-authentication.html">
    Authentication-related issues
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="97-01-Bitbucket-authentication.html">
-   Bitbucket Authentication
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="97-01-Bitbucket-authentication.html">
+     Bitbucket Authentication
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="99-References.html">
@@ -418,7 +467,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://labordynamicsinstitute.github.io/replicability-training-manual-new/"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -435,7 +484,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F95-02-codeocean.html&body=Your%20issue%20content%20here."
+        <a href="https://labordynamicsinstitute.github.io/replicability-training-manual-new//issues/new?title=Issue%20on%20page%20%2F95-02-codeocean.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -566,13 +615,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#recording-edits">
    Recording edits
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expert-tip">
-     Expert tip
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expert-tip">
+   Expert tip
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recording-results">
@@ -642,13 +689,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#recording-edits">
    Recording edits
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expert-tip">
-     Expert tip
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expert-tip">
+   Expert tip
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recording-results">
@@ -665,7 +710,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="reproducibility-checks-in-codeocean">
+  <section class="tex2jax_ignore mathjax_ignore" id="reproducibility-checks-in-codeocean">
 <h1>Reproducibility Checks in Codeocean<a class="headerlink" href="#reproducibility-checks-in-codeocean" title="Permalink to this headline">#</a></h1>
 <p>The workflow should be the same up until the verification stage, at which point you will use <a class="reference external" href="https://codeocean.com">Codeocean</a> to run the reproducibility check. You can access Codeocean from your personal computer or on CISER.</p>
 <section id="create-a-capsule">
@@ -716,6 +761,13 @@ Example: <code class="docutils literal notranslate"><span class="pre">Stata(16)<
 <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&quot;D:\Dropbox\Data</span> <span class="pre">for</span> <span class="pre">paper\x.dta&quot;</span></code> becomes <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&quot;$data/x.dta&quot;</span></code>.</p></li>
 <li><p>Modify the standard <code class="docutils literal notranslate"><span class="pre">config.do</span></code> as follows:</p></li>
 </ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">local</span><span class="w"> </span>scenario<span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="w">                      </span>//<span class="w"> </span>line<span class="w"> </span><span class="m">35</span>
+global<span class="w"> </span>logdir<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">rootdir</span><span class="si">}</span><span class="s2">/results/logs&quot;</span><span class="w"> </span>//<span class="w"> </span>line<span class="w"> </span><span class="m">59</span>
+//<span class="w"> </span>....<span class="w"> </span>go<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>very<span class="w"> </span>end<span class="w"> </span>
+global<span class="w"> </span>data<span class="w">    </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">rootdir</span><span class="si">}</span><span class="s2">/data</span>
+<span class="s2">global results &quot;</span><span class="si">${</span><span class="nv">rootdir</span><span class="si">}</span>/results
+</pre></div>
+</div>
 <p>Occasionally, other changes are also necessary, for instance, creating new directories.</p>
 </li>
 <li><p>Upload the code  to the <code class="docutils literal notranslate"><span class="pre">/code</span></code> and the data files to the <code class="docutils literal notranslate"><span class="pre">/data</span></code> directories in Codeocean.</p></li>
@@ -729,7 +781,7 @@ Example: <code class="docutils literal notranslate"><span class="pre">Stata(16)<
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span> <span class="o">-</span><span class="n">ex</span>
 
-<span class="c1">## This is the master script for the capsule. When you click &quot;Reproducible Run&quot;, the code in this file will execute.</span>
+<span class="c1"># This is the master script for the capsule. When you click &quot;Reproducible Run&quot;, the code in this file will execute.</span>
 <span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="n">master</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
 </pre></div>
 </div>
@@ -739,7 +791,7 @@ Example: <code class="docutils literal notranslate"><span class="pre">Stata(16)<
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span> <span class="o">-</span><span class="n">ex</span>
 
-<span class="c1">## This is the master script for the capsule. When you click &quot;Reproducible Run&quot;, the code in this file will execute.</span>
+<span class="c1"># This is the master script for the capsule. When you click &quot;Reproducible Run&quot;, the code in this file will execute.</span>
 <span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">01</span><span class="n">_step1</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
 <span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">02</span><span class="n">_step2</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
 <span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">03</span><span class="n">_step3</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
@@ -790,8 +842,9 @@ Example: <code class="docutils literal notranslate"><span class="pre">Stata(16)<
 </ul>
 </li>
 </ul>
+</section>
 <section id="expert-tip">
-<h3>Expert tip<a class="headerlink" href="#expert-tip" title="Permalink to this headline">#</a></h3>
+<h2>Expert tip<a class="headerlink" href="#expert-tip" title="Permalink to this headline">#</a></h2>
 <p>Instead of manually downloading CodeOcean results, in a (git) bash shell on your laptop or CISER, cd to the base directory of the reproducibility check (e.g., “aearep-xxxxx”), and run</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tools</span><span class="o">/</span><span class="n">sync</span><span class="o">-</span><span class="n">codeocean</span><span class="o">.</span><span class="n">sh</span> <span class="n">nnnnn</span>
 </pre></div>
@@ -799,7 +852,6 @@ Example: <code class="docutils literal notranslate"><span class="pre">Stata(16)<
 <p>where <code class="docutils literal notranslate"><span class="pre">nnnnn</span></code> is the numerical capsule identifier from the CodeOcean URL: <code class="docutils literal notranslate"><span class="pre">https://codeocean.com/capsule/</span></code> <strong>nnnnnn</strong> <code class="docutils literal notranslate"><span class="pre">/tree</span></code>. You will be asked to authenticate using your CodeOcean (not Bitbucket!) login and password!</p>
 <p>This will create two directories in your workspace: <code class="docutils literal notranslate"><span class="pre">codeocean-nnnnn-live</span></code> and <code class="docutils literal notranslate"><span class="pre">codeocean-nnnn</span></code>. The former will be “ignored”, but the latter will be refreshed each time you run the <code class="docutils literal notranslate"><span class="pre">sync-codeocean.sh</span></code> command, and will be committed to the Bitbucket repository. This is a convenient way to synchronize the two.</p>
 <p>Don’t forget to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add;</span> <span class="pre">git</span> <span class="pre">commit;</span> <span class="pre">git</span> <span class="pre">push</span></code> afterwards. This command can be run multiple times, as changes are made on CodeOcean.</p>
-</section>
 </section>
 <section id="recording-results">
 <h2>Recording results<a class="headerlink" href="#recording-results" title="Permalink to this headline">#</a></h2>

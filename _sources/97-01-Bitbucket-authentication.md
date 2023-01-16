@@ -1,9 +1,9 @@
-## Bitbucket Authentication
+# Bitbucket Authentication
 
 Any user who created a Bitbucket account after Semptember 13, 2021 may encounter the following error when attempting to git clone (or push) using Internet Explorer.
   ![Internet Explorer Error](images/Bitbucket_Error.png)
 
-### Temporary Solution
+## Temporary Solution
 
 1. Make Firefox (or Edge) your default browswer. 
 2. Sign into Bitbucket on your browswer and then attempt the git action once again. You may then receive an error like below:
@@ -12,7 +12,7 @@ Any user who created a Bitbucket account after Semptember 13, 2021 may encounter
   
 3. Attempt the git action again.
 
-### Long-Term Solution
+## Long-Term Solution
 
 The long-term solution is to create an [App Password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/).
 

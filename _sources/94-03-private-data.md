@@ -1,10 +1,10 @@
-## Accessing privately provided data
+# Accessing privately provided data
 
-### When there is privately provided data
+## When there is privately provided data
 
 In some cases, authors will provide us privately with data we cannot publish.
 
-```{block, type='rmdcomment'}
+```{warning}
 VERY IMPORTANT: You must treat these data as confidential, never remove them from CISER!
 ```
 
@@ -17,7 +17,7 @@ You should then look into the "`Data`" tab for the field `Working location of re
 ![JIRA field for location: S:\LDILab\aearep-3756-nda_Implicit](/images/jira-field-restricted-data.png)
 
 
-### How to prepare privately provided data
+## How to prepare privately provided data
 
 - Log into CISER as usual. You should never need to run code elsewhere when data are restricted/privately provided.
 - Open the File Explorer
@@ -28,7 +28,7 @@ You should then look into the "`Data`" tab for the field `Working location of re
 - If there is a ZIP file (looks like a folder, but is not), right-click and choose `Extract All` before working in the folder
 - Remember the full location. This should correspond to what is entered in to the JIRA field, e.g., `S:\LDILab\aearep-3756-nda_Implicit`.
 
-### How to use the data in this folder
+## How to use the data in this folder
 
 There are two situations. 
 

@@ -1,0 +1,979 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Code &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data" href="11-03-workflow-data.html" />
+    <link rel="prev" title="In Progress" href="11-01-workflow-in-progress.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-introduction.html">
+   Background
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminary Tasks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02-01-pre-requisites.html">
+   Pre-requisites
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-02-pre-training-tasks.html">
+     Pre-training tasks {#pre-training}
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-03-toolkit.html">
+     Toolkit
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-concepts.html">
+   Basic Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-data-citations-and-das.html">
+   Data citations and data availability statements {#datacitations}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-basic-flow.html">
+   Generic data workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-basic-assessing-reproducibility.html">
+   Assessing computational reproducibility
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-details-replication-report.html">
+   A guided walk through the Replication Report
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  AEA-specific training
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="11-00-jira-workflow.html">
+   AEA Jira workflow - A guide
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-01-workflow-in-progress.html">
+     In Progress
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-03-workflow-data.html">
+     Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-04-workflow-write-prelim.html">
+     Write Preliminary Report
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-05-workflow-verification.html">
+     Verification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-06-workflow-code-review.html">
+     Code Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-07-workflow-writing-report.html">
+     Writing Report
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-jira-revision-guidance.html">
+   AEA: Revision reports after author resubmission
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-approving-issues.html">
+   AEA: Reviewing and (Pre-) Approving Reports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-Pending_ICPSR.html">
+   AEA: Monitoring Pending openICPSR Changes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="30-jira-prepare-publication.html">
+   AEA: Interfacing with the Journal Management System
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="40-Instructions-PandP-Checks.html">
+   AEA: Instructions for Papers and Proceedings checks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="91-setup-checklist.html">
+   Setup Checklist {#checklist}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="92-Privacy.html">
+   Privacy {#privacy}
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="93-Communication.html">
+   Communication
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="94-00-downloading-data.html">
+   Downloading Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">
+     Using openICPSR Projects Prior to Publication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-02-alternate-downloads.html">
+     Alternate sources of data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-03-private-data.html">
+     Accessing privately provided data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="94-04-Updating_Materials.html">
+     Updating Replication Materials after Revisions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="95_Access_to_computers.html">
+   Access to Computers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-02-codeocean.html">
+     Reproducibility Checks in Codeocean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-03-wholetale.html">
+     Conducting reproducibility checks on WholeTale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-04-codespaces.html">
+     Computing using Github Codespaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="96-00-using-Stata.html">
+   Stata-related procedures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-01-using-config-stata.html">
+     Using config.do in STATA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-02-running-stata-code.html">
+     Running Code in Stata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="96-03-stata-scan-packages.html">
+     Using scan_packages.do
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="97-00-authentication.html">
+   Authentication-related issues
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="97-01-Bitbucket-authentication.html">
+     Bitbucket Authentication
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="99-References.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://labordynamicsinstitute.github.io/replicability-training-manual-new/"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://labordynamicsinstitute.github.io/replicability-training-manual-new//issues/new?title=Issue%20on%20page%20%2F11-02-workflow-code.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/11-02-workflow-code.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloading-code">
+   Downloading code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-information">
+   Other information
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-of-code">
+   Review of Code
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Code</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloading-code">
+   Downloading code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-information">
+   Other information
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-of-code">
+   Review of Code
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="code">
+<h1>Code<a class="headerlink" href="#code" title="Permalink to this headline">#</a></h1>
+<p>In this stage, you will download the code, inspect the authors’ README, and should anything have failed in the automated steps above, correct for that manually.</p>
+<section id="downloading-code">
+<h2>Downloading code<a class="headerlink" href="#downloading-code" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You now need to decide where you are going to do the data analysis - that should be the place you do the next few steps.
+This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.</p>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="5621433b-d9e0-41ef-af8c-1084cbe6c7ec" name="9a777f2c-8c21-4b8e-a62f-607e4ff752ca" type="radio">
+</input><label class="sd-tab-label" for="5621433b-d9e0-41ef-af8c-1084cbe6c7ec">
+CISER</label><div class="sd-tab-content docutils">
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Clone the Bitbucket repository onto the computer you are working on (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://yourname&#64;bitbucket.org/aeaverification/aearep-xxx.git</span></code> )</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> From the JIRA issue, download and add Manuscript, Data and Code Availability Form (DCAF).</p>
+<ul class="simple">
+<li><p>Download from Jira issue attachments. The manuscript is often called <code class="docutils literal notranslate"><span class="pre">PDF_Proof.pdf</span></code>.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Add the manuscript, and any response by the authors (if a revision)</p>
+<ul class="simple">
+<li><p>Add them to the Git repo</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Be sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> it all to Bitbucket, with a meaningful commit message.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>PDF_Proof.pdf<span class="w"> </span>DataCodeAvailability.pdf
+git<span class="w"> </span>push
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<input id="0098fda1-aead-45be-a865-a54f33044751" name="9a777f2c-8c21-4b8e-a62f-607e4ff752ca" type="radio">
+</input><label class="sd-tab-label" for="0098fda1-aead-45be-a865-a54f33044751">
+Github Codespaces (CS) </label><div class="sd-tab-content docutils">
+<p>All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer.</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Use the Terminal built into VSC (<code class="docutils literal notranslate"><span class="pre">Menu</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Terminal</span></code> )</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Populate CS with the Bitbucket repo (yes, this is a bit weird)</p>
+<ul>
+<li><p>Use the LDI short-cut command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aeagit<span class="w"> </span><span class="m">123</span>
+</pre></div>
+</div>
+<p>to clone the Bitbucket repository for <code class="docutils literal notranslate"><span class="pre">aearep-123</span></code> onto CS (this executed <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">(URL)/aearep-123</span></code> behind the scenes).</p>
+<ul class="simple">
+<li><p>If this is the first repository you run on this CS instance, you may need to configure authentication. Follow the instructions from the <code class="docutils literal notranslate"><span class="pre">aeagit</span></code> command.</p></li>
+<li><p>Once the  <code class="docutils literal notranslate"><span class="pre">aeagit</span> <span class="pre">123</span> </code> has completed, it will open a new VSC windows. <strong>All subsequent actions should be done in that window.</strong></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Add the manuscript, and any response by the authors (if a revision)</p>
+<ul>
+<li><p>Copy the manuscript to the CS.    There are two ways to do this:</p>
+<ul>
+<li><p>Drag-and-drop the downloaded manuscript into the file pane of VSC.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">gh</span></code> command line tool from a non-VSC terminal (on your local computer):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>cs<span class="w"> </span>cp<span class="w"> </span>PDF_Proof.pdf<span class="w"> </span>remote:/workspaces/aearep-123
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Add the manuscript to the Git repo</p>
+<ul>
+<li><p>In the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>PDF_Proof.pdf<span class="p">;</span><span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span><span class="s1">&#39;Manuscript&#39;</span><span class="p">;</span><span class="w"> </span>git<span class="w"> </span>push
+</pre></div>
+</div>
+</li>
+<li><p>Or use the VSC Git tools</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<input id="92a411a0-d6c5-4d65-948e-88cd6086ddf7" name="9a777f2c-8c21-4b8e-a62f-607e4ff752ca" type="radio">
+</input><label class="sd-tab-label" for="92a411a0-d6c5-4d65-948e-88cd6086ddf7">
+Manual steps </label><div class="sd-tab-content docutils">
+<p>If neither of the other two methods work, try this method (typically, on CISER)</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Download the code (and data) from openICPSR (typicaly for most cases). See [openICPSR repositories](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$reploldmd</span></code>openICPSR_training.md) for instructions on downloading these materials. Typically called <code class="docutils literal notranslate"><span class="pre">111234.zip</span></code>.
+<img alt="icpsr screen" src="_images/icpsr-download.png" /></p>
+<ul class="simple">
+<li><p>Copy/paste the downloaded openICPSR ZIP file into the local copy of the <code class="docutils literal notranslate"><span class="pre">aearep-123</span></code> repository</p>
+<ul>
+<li><p>The ZIP file should be called something like <code class="docutils literal notranslate"><span class="pre">111234.zip</span></code>. Note: it might <em>look</em> like a folder, but it is not! (on Windows)</p></li>
+<li><p>The ZIP file will be wherever your browser downloads materials - probably your <code class="docutils literal notranslate"><span class="pre">Download</span></code> folder.</p></li>
+</ul>
+</li>
+<li><p>The local repository should now have the relevant LDI replication template materials and the openICPSR ZIP file containing the replication materials provided by the authors.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> If uploading to CS, copy the downloaded ZIP file into the CS. There are two ways to do this:</p>
+<ul>
+<li><p>Drag-and-drop the downloaded openICPSR ZIP file into the file pane of VSC.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">gh</span></code> command line tool from a non-VSC terminal (on your local computer):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>cs<span class="w"> </span>cp<span class="w"> </span><span class="m">111234</span>.zip<span class="w"> </span>remote:/workspaces/aearep-123
+</pre></div>
+</div>
+<p>(adjust accordingly)</p>
+</li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Unzip the openICPSR folder under a folder <strong>named for the openICPSR repostory number</strong>.</p>
+<ul>
+<li><p>On Windows, right-click and select “Extract all”. When asked, do not overwrite files.</p></li>
+<li><p>On OSX, double-click. When asked, do not overwrite files.</p></li>
+<li><p>From bash:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip<span class="w"> </span>-n<span class="w"> </span><span class="m">111234</span>.zip<span class="w"> </span>-d<span class="w"> </span><span class="m">111234</span>
+</pre></div>
+</div>
+</li>
+<li><p>The individual files that are part of the replication package should now be in a subdirectory (e.g, <code class="docutils literal notranslate"><span class="pre">111234</span></code>, the openICPSR repository number).</p></li>
+<li><p>Perform a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">111234</span></code> should do the right thing.</p></li>
+<li><p>Perform <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> sequence to populate the Bitbucket repo with the authors’ replication materials (see above how to handle data).</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Clean-up: Delete (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code>) unused files from the template!</p>
+<ul class="simple">
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">README.md</span> <span class="pre">template-config.R</span></code> if the replication archive does not contain any R files (you can do this at any time before writing the <strong>Preliminary Report</strong>)</p></li>
+</ul>
+</li>
+<li><p>The root of the repository should contain only our files (i.e., <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>, etc.), the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket), and the code.</p>
+<ul>
+<li><p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">111234</span><span class="o">/</span>
+<span class="n">code</span><span class="o">-</span><span class="n">check</span><span class="o">.</span><span class="n">xlsx</span>
+<span class="n">config</span><span class="o">.</span><span class="n">do</span>
+<span class="n">PDF_Proof</span><span class="o">.</span><span class="n">PDF</span>
+<span class="n">PII_stata_scan</span><span class="o">.</span><span class="n">do</span>
+<span class="n">DataCodeAvailability</span><span class="o">.</span><span class="n">pdf</span>
+<span class="n">REPLICATION</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Be sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> it all to Bitbucket, with a meaningful commit message.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;My message here&quot;</span>
+git<span class="w"> </span>push
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+- [ ] Check with `git status` that there are no uncommited files.
+
+
+
+## Verifying completeness of the README
+
+The first section of the Replication report is titled &quot;[General](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#general)&quot;. Here you want to verify how complete the README is. 
+
+- Go through the entire README, and compare both to the [template README](https://social-science-data-editors.github.io/template_README/template-README.html) and the sections in the **General** section. 
+  - Check off the sections for which you appear to have information. 
+  - Leave blank the sections that are either not provided, or that are empty
+- In JIRA, identify the question called &quot;`DCAF_README_compliant`&quot;. 
+  - If all or most of the sections are in the same order, and are filled with meaningful information, then check `Fully`
+  - If information is provided, but in different order, or only mostly, mark &quot;`Content only`&quot;.
+  - If very little of the information is provided, mark it as &quot;`No`&quot;
+
+
+## List of Data Sources
+
+Now you will establish a **list of data sources used**.
+
+- Please check the **Data and Code Availability Form**.
+  - The form should be attached in the JIRA ticket. 
+  - In area 2 of the screen, choose `DCAF`.
+    - Open the **Data and Code Availability Form**, and check if all blanks are filled out.
+    - Once you checked the form, and in particular, if the checkbox next to &quot;README&quot; is checked, choose &quot;`Yes`&quot; from the dropdown menu of `DCAF_README_checked` cell.
+    - If the answer to the following question at the bottom of the form is &quot;Yes&quot;, then, choose &quot;`Yes`&quot; from the dropdown menu of `DCAF_Access_Restrictions`. Otherwise, choose &quot;`No`&quot;.
+      &quot;Is any of the data used in this manuscript subject to access restrictions?&quot;
+  ![jira screen](images/jira-screen.png)
+
+
+```{note}
+What is the difference between a &quot;**data source**&quot; and a &quot;**dataset**&quot; or &quot;data file&quot;? 
+
+- A **data source** is more general. A data source may provide multiple data files. One example is the &quot;Current Population Survey&quot;.
+- A **dataset** or **data file** is a single file that appears in the replication package. An example is &quot;`data_cps.dta`&quot;, which is presumably the data file containing the Current Population Survey. 
+
+For this section, you should list **data sources**.
+</pre></div>
+</div>
+<ul class="contains-task-list simple">
+<li><p>From the <strong>README</strong> provided by the authors, the <strong>data section of the article itself</strong>, or an <strong>appendix</strong>, establish a list of data sources used in the article. For each data source</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> write the corresponding <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">description</span></code> section of <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>. This should provide detail about the datasets</p>
+<ul>
+<li><p>If data are cited, copy and past the citation to the replication report, clarify which one you are referring to. Be sure to check  <a class="reference external" href="https://www.aeaweb.org/journals/policies/sample-references">AEA Sample References</a> and the <a class="reference external" href="https://social-science-data-editors.github.io/guidance/addtl-data-citation-guidance.html">additional guidance</a> to be sure it is a <strong>data citation</strong>, and not a citation to an article or a document describing the data!</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> check any provided URL, and verify if there is a <strong>“Data Use Agreement”, “Citation requirement”, “License”</strong> on the web page. Check any such data use agreement for conditions. These may require that the authors cite a particular paper, or cite the data in a particular way (check this), or that the authors may not actually redistribute (provide) the data (check this!). If you have doubts, check with your supervisor.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Check that there is enough information to obtain the data in the README. Based on the README, you should be able to find, on the linked website, the data that you would need. (Ignore at this point that the data might be provided)</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Add the list of data sources to the repository by committing the preliminary version of the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a> (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Fill out the <code class="docutils literal notranslate"><span class="pre">DataCitationSummary</span></code> field indicating how many data citations are in order: <code class="docutils literal notranslate"><span class="pre">all</span></code>, <code class="docutils literal notranslate"><span class="pre">some</span></code>, or <code class="docutils literal notranslate"><span class="pre">none</span></code>.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Fill out the <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Provenance</span></code> section</p>
+<ul>
+<li><p>Are the data in the openICPSR repository, or are they someplace else? “Various” is a legitimate answer if data are in various locations.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Please refer to <span class="xref myst">Chapter 9 A guided walk through the Replication Report</span> for more details about which data sources to include and how to assess the provided information.</p></li>
+</ul>
+</section>
+<section id="other-information">
+<h2>Other information<a class="headerlink" href="#other-information" title="Permalink to this headline">#</a></h2>
+<p>Have a look at the <strong>README</strong> again.</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Is there information about <strong>Requirements</strong>?</p>
+<ul>
+<li><p>Is there information about the <strong>software</strong>?</p></li>
+<li><p>How long does the author say the code will run?</p></li>
+<li><p>How much memory, or processors, does the code need?</p></li>
+<li><p>This may tell you if you, or somebody else, will need to run the code, and whether CISER, or someplace else, is a good place to run the code.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="review-of-code">
+<h2>Review of Code<a class="headerlink" href="#review-of-code" title="Permalink to this headline">#</a></h2>
+<p>Now do a first pass through the code files provided:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do NOT run any code!</p>
+</div>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> review the code in detail.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> In the template, you will find <em><a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">code-check.xlsx</a></em>.</p>
+<ul>
+<li><p>Use this to create a list of all Tables and Figures in the paper, and use this to guide you in <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">REPLICATION.md</a>.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Fill out the “Code Description” section of the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a></p>
+<ul>
+<li><p>Provide some information about the program files (are there 3 Stata files? Are there 5 Matlab programs?). You will use this information to fill out the <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">Used</span></code> later as well, but provide details here.</p>
+<ul>
+<li><p>You can use the file “<code class="docutils literal notranslate"><span class="pre">generated/programs-list.txt</span></code> to help you here.</p></li>
+</ul>
+</li>
+<li><p>Did you have difficulty aligning the README with the files? Does the sequence suggested by the programs differ from what’s written in the README?</p></li>
+<li><p>Are there files in the archive not explained in the README?</p></li>
+<li><p>Copy-and-paste the <em>code-check.xlsx</em> into the code description part, listing the programs. Omit the “Reproduced?” Column in doing so. Use the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode.</p>
+<ul>
+<li><p>This table will be pasted in under “Findings” again, with “Reproduced?” column, once code has been run.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Next fill out the following fields in the Jira ticket:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">BITBUCKET</span> <span class="pre">SHORT</span> <span class="pre">NAME</span></code> - if not already done earlier</p></li>
+</ul>
+<blockquote>
+<div><p>Commit!</p>
+</div></blockquote>
+<p>You can now proceed to change the status to <code class="docutils literal notranslate"><span class="pre">Data</span></code>. As you select that transition, you will be asked various questions:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">Used</span></code> Start typing the name of the software program you will use for the replication. Software that have been used in the past will show up as  options (e.g. start typing “Stata” and you will see it pop up).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">PROGRAMSEQUENCE</span></code> Does the README tell you the correct sequence for running the code?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">PROGRAMSDOCUMENTATION</span></code> Are the provided programs well commented? Are they documented in the README?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">PROGRAMSSTRUCTUREMANUAL</span></code> Does the README note any manual changes that you need to make to the code in order for it to run?</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="11-01-workflow-in-progress.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">In Progress</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="11-03-workflow-data.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

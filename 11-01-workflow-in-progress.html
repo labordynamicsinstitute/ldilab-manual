@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction &#8212; My sample book</title>
+    <title>In Progress &#8212; My sample book</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Background" href="01-introduction.html" />
+    <link rel="next" title="Code" href="11-02-workflow-code.html" />
+    <link rel="prev" title="AEA Jira workflow - A guide" href="11-00-jira-workflow.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,7 +88,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="#">
+    <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
@@ -106,8 +107,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
                     Introduction
                 </a>
             </li>
@@ -190,19 +191,19 @@ const thebe_selector_output = ".output, .cell_output"
   AEA-specific training
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="11-00-jira-workflow.html">
    AEA Jira workflow - A guide
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="11-01-workflow-in-progress.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      In Progress
     </a>
    </li>
@@ -483,7 +484,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://labordynamicsinstitute.github.io/replicability-training-manual-new//issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."
+        <a href="https://labordynamicsinstitute.github.io/replicability-training-manual-new//issues/new?title=Issue%20on%20page%20%2F11-01-workflow-in-progress.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -511,7 +512,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/index.md"
+        <a href="_sources/11-01-workflow-in-progress.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -571,8 +572,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-read-this-document">
-   How to read this document
+  <a class="reference internal nav-link" href="#creating-a-repository">
+   Creating a repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ingesting-author-materials">
+   Ingesting author materials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collecting-information">
+   Collecting information
   </a>
  </li>
 </ul>
@@ -584,7 +595,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction</h1>
+                <h1>In Progress</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -595,8 +606,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-read-this-document">
-   How to read this document
+  <a class="reference internal nav-link" href="#creating-a-repository">
+   Creating a repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ingesting-author-materials">
+   Ingesting author materials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collecting-information">
+   Collecting information
   </a>
  </li>
 </ul>
@@ -609,25 +630,138 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
-<p>This document is meant to guide the training of students in assessing the reproducibility of articles in the social sciences, and in particular in economics.</p>
-<p>Content is <a class="reference external" href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="License: CC BY-NC 4.0" src="https://licensebuttons.net/l/by-nc/4.0/80x15.png" /></a>.</p>
-<section id="how-to-read-this-document">
-<h2>How to read this document<a class="headerlink" href="#how-to-read-this-document" title="Permalink to this headline">#</a></h2>
-<p>If you are a casual reader of this document, start with the <a class="reference external" href="#pre-requisites">pre-requisites</a>. If you are a student participating in our training, then start with the <a class="reference external" href="#pre-training">pre-training tasks</a>. Read the rest sequentially.</p>
-<p><img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/labordynamicsinstitute/replicability-training-curriculum.svg?style=flat" /> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/labordynamicsinstitute/replicability-training-curriculum.svg?style=flat" /></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="in-progress">
+<h1>In Progress<a class="headerlink" href="#in-progress" title="Permalink to this headline">#</a></h1>
+<p>The first thing you must do is to advance the ticket from <code class="docutils literal notranslate"><span class="pre">Open</span></code> to <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Progress</span></code>.</p>
+<ul class="simple">
+<li><p>This lets us know that you have started working on replication.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Is the current Jira issue an <strong>original report</strong> (first time we see the manuscript) or <strong>is it a revision</strong> (we’ve seen the manuscript before)?</p>
+</div>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Check the <code class="docutils literal notranslate"><span class="pre">MCStatus</span></code> field:</p>
+<ul>
+<li><p>If it says “<code class="docutils literal notranslate"><span class="pre">RR</span></code>” or “<code class="docutils literal notranslate"><span class="pre">CA</span></code>”, then it is an “original report” - proceed.</p></li>
+<li><p>If it says “<code class="docutils literal notranslate"><span class="pre">CA</span></code> <code class="docutils literal notranslate"><span class="pre">Revision</span></code>”, then it is … a revision!</p>
+<ul>
+<li><p>Follow the instructions at “<span class="xref myst">Revision reports after author resubmission</span>”.</p></li>
+<li><p>In particular, <strong>do NOT create a new repository</strong> - you will re-use the previous repository.</p></li>
+<li><p>In particular, <strong>do NOT create “update” or “new” directories</strong> The current state of the repository should always correspond to the author’s structure. Overwrite files, delete files. The previous state is preserved in Git. This will also tell you what files have changed.</p></li>
+<li><p>When running a second replication on the same archive, please be sure to have the committed “<a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>” be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<section id="creating-a-repository">
+<h2>Creating a repository<a class="headerlink" href="#creating-a-repository" title="Permalink to this headline">#</a></h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> start by <a class="reference external" href="https://bitbucket.org/repo/import">creating a repository using the import method</a></p>
+<ul class="simple">
+<li><p>copy-paste from this URL:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://github.com/AEADataEditor/replication-template
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>to the URL field (this is also available in the Jira dropdown &quot;Shortcuts&quot;)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>the repository name should be the name of the JIRA issue (e.g., <code class="docutils literal notranslate"><span class="pre">aearep-123</span></code>)</p></li>
+<li><p>Be sure that <code class="docutils literal notranslate"><span class="pre">aeaverification</span></code> is always the “owner” of the report on Bitbucket.</p></li>
+<li><p>The Project should be the abbreviation of the journal (e.g. “JEP”)</p></li>
+<li><p>Keep the other settings (in particular, keep this a <strong>private</strong> repository).</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Repository</span></code></p></li>
+<li><p>Keep this tab open!</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_images/bitbucket_import_blank_2022.png" /></p>
+<ul class="simple">
+<li><p>We have now created a Bitbucket repo named something like aearep-123 that has been populated with the latest version of the LDI replication template documents!</p></li>
+</ul>
 </section>
-<div class="toctree-wrapper compound">
+<section id="ingesting-author-materials">
+<h2>Ingesting author materials<a class="headerlink" href="#ingesting-author-materials" title="Permalink to this headline">#</a></h2>
+<p>We will now ingest the authors’ materials, and run a few statistics. Typically, the materials will be on a (private) openICPSR repository. Sometimes, the materials will be at Dataverse, Zenodo, or elsewhere.</p>
+<ul class="simple">
+<li><p>If at openICPSR, the fields <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">provenance</span></code>, <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">alternate</span> <span class="pre">URL</span></code>, and <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">Project</span> <span class="pre">Number</span></code> will be filled.</p></li>
+<li><p>If at Zenodo or Dataverse, the <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">provenance</span></code> will have the DOI of the replication package, <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">alternate</span> <span class="pre">URL</span></code> and <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">Project</span> <span class="pre">Number</span></code> will be empty.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This currently works reliably only for openICPSR. This documentation will be updated when it works for Dataverse and Zenodo as well.</p>
 </div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
+<p>You will now run what is called a <em><code class="docutils literal notranslate"><span class="pre">Bitbucket</span> <span class="pre">Pipeline</span></code></em>. Similar tools on other sites might be called <code class="docutils literal notranslate"><span class="pre">Continuous</span> <span class="pre">integration</span></code>, <code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Actions</span></code>, etc. If you have encountered these before, this will not be news for you, but it isn’t hard even when this new.</p>
+<ul class="simple">
+<li><p>First, in the repository you just created, navigate to the <code class="docutils literal notranslate"><span class="pre">Pipelines</span></code> tab</p></li>
+</ul>
+<p><img alt="" src="_images/jira-find-pipelines.png" /></p>
+<ul class="simple">
+<li><p>Because this is new, you will see the “Run initial pipeline” page. Click on <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">initial</span> <span class="pre">pipeline</span></code>.</p></li>
+</ul>
+<p><img alt="first-time-run" src="_images/jira-run-first-pipeline.png" /></p>
+<ul class="simple">
+<li><p>You will now need to select a “pipeline” to run.</p></li>
+</ul>
+<p><img alt="select pipeline" src="_images/jira-select-pipeline.png" /></p>
+<ul class="simple">
+<li><p>Choose “<code class="docutils literal notranslate"><span class="pre">populate</span> <span class="pre">from</span> <span class="pre">ICPSR</span></code>” (might change in the future), and fill in the ID for the relevant source of the replication package (here: openICPSR ID = <code class="docutils literal notranslate"><span class="pre">123456</span></code>), and hit <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</p></li>
+</ul>
+<p><img alt="select pipeline" src="_images/jira-run-pipeline-icpsr.png" /></p>
+<ul class="simple">
+<li><p>Your pipeline will start, working through various steps. This might take a while! Do the next step (<a class="reference external" href="#collecting-information">Collecting Information</a>) then come back here.</p></li>
+</ul>
+<p><img alt="running pipeline" src="_images/jira-run-pipeline-running.png" /></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Once your pipeline is done, check that it is green.</p>
+<ul>
+<li><p>If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You may then need to do <a class="reference external" href="#Manual">the manual steps later</a>.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="completed pipeline" src="_images/jira-run-pipeline-finished.png" /></p>
+</section>
+<section id="collecting-information">
+<h2>Collecting information<a class="headerlink" href="#collecting-information" title="Permalink to this headline">#</a></h2>
+<p>At this stage, you are collecting information.</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Fill out the following fields in the Jira ticket (some may be pre-populated):</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">provenance</span></code> In almost all cases, this is the openICPSR repo for which you will have received a notification email.</p>
+<ul>
+<li><p>If code and/or data are provided by email, <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">provenance</span></code> should be filled out with  “<a class="reference external" href="https://email">https://email</a>”, otherwise with a DOI or URL.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Journal</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Manuscript</span> <span class="pre">Central</span> <span class="pre">identifier</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Bitbucket</span> <span class="pre">short</span> <span class="pre">name</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">aearep-123</span></code>)</p>
+<ul>
+<li><p>this should then auto-fill  <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">working</span> <span class="pre">location</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>The following fields, located in the <strong>REPL. INFO</strong> tab area 2 of the screen, must also be filled out:
+<img alt="Replication Info" src="_images/jira-screen.png" /></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Empirical</span> <span class="pre">Article</span></code>: “Does the article contain empirical work, simulations, or experimental work?”</p>
+<ul>
+<li><p>typically the answer should be “Yes”. You should answer “No” only if you read the article and find that it is entirely theoretical, no simulations or empirical work at all.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">RCT</span></code>: Is the paper about a randomized control trial? This should be immediately obvious from the abstract.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">RCT</span> <span class="pre">NUMBER</span></code>: If it is an RCT, fill in the associated RCT registration number (typically in the title page footnote)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>You can now proceed to change the status to <code class="docutils literal notranslate"><span class="pre">Code</span></code>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -657,10 +791,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="01-introduction.html" title="next page">
+    <a class='left-prev' id="prev-link" href="11-00-jira-workflow.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">AEA Jira workflow - A guide</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="11-02-workflow-code.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Background</p>
+        <p class="prev-next-title">Code</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
