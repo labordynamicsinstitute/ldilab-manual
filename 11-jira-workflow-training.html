@@ -1215,6 +1215,20 @@ until a resolution can be found.</p>
 <section id="code-tabset">
 <h3>Code {.tabset}<a class="headerlink" href="#code-tabset" title="Permalink to this headline">#</a></h3>
 <p>In this stage, you will download the code, inspect the authors’ README, and should anything have failed in the automated steps above, correct for that manually.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You now need to decide where you are going to do the data analysis - that should be the place you do the next few steps. Choose one of these environments to customize the instructions:</p>
+<div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
+  <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button>
+</div>
+<p>This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.</p>
+</div>
+<div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
+  <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button>
+  <button class="w3-bar-item w3-button" onclick="openTab('Manual')">Manual steps</button>
+</div> 
 <section id="ciser-ciser-computeloc">
 <h4>CISER {#CISER .computeloc}<a class="headerlink" href="#ciser-ciser-computeloc" title="Permalink to this headline">#</a></h4>
 <ul class="contains-task-list">
@@ -1325,23 +1339,6 @@ git<span class="w"> </span>push
 </li>
 </ul>
 </section>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You now need to decide where you are going to do the data analysis - that should be the place you do the next few steps. Choose one of these environments to customize the instructions:</p>
-<div class="w3-bar w3-black">
-  <button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
-  <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button>
-</div>
-<p>This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<div class="w3-bar w3-black">
-  <button class="w3-bar-item w3-button" onclick="openTab('CISER')">CISER</button>
-  <button class="w3-bar-item w3-button" onclick="openTab('GHCS')">Github Codespaces</button>
-  <button class="w3-bar-item w3-button" onclick="openTab('Manual')">Manual steps</button>
-</div> 
-</div>
-</div>
 </section>
 <section id="id1">
 <h3>{-}<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
