@@ -7,11 +7,17 @@
 
 - [ ] On CISER, the data will be stored locally.
   - In some cases, you may be asked to use (restricted) data on the S: drive. Follow instructions as you receive them.
+- [ ] Ensure that you have set up scripts:
+  - Install relevant Python packages: Go to any repository, and then type `pip install -r requirements.txt` 
 - [ ] Download the openICPSR data (if not already done in the previous step, and if available). 
   - Manually, see [Manual steps](#Manual) above.
     ```bash
-    python tools/download_openicpsr-private.py 111234
+    python tools/download_openicpsr-private.py 111234 . netid@cornell.edu
     unzip -n 111234 -d 111234
+    ```
+    or the short version (first do [this additional setup])
+    ```
+    python tools/download_openicpsr-private.py 111234
     ```
     which should unpack the data files only, not overwriting anything else.
 - [ ] attempt to download data from various sources indicated by the authors, but ONLY if no sign-up/ application process is involved. 
