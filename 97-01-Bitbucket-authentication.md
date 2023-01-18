@@ -17,6 +17,9 @@ Any user who created a Bitbucket account after Semptember 13, 2021 may encounter
 The long-term solution is to create an [App Password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/).
 
 1. Follow the steps to create an App Password. 
+2. You want to give it ONLY permissions to `repository read + write`
+
+![Screenshot of permissions](images/Bitbucket-App-password-permissions.png)
 
 Some important points about app passwords:
 
