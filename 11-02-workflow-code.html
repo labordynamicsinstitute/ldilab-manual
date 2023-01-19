@@ -143,7 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02-02-pre-training-tasks.html">
-     Pre-training tasks {#pre-training}
+     Pre-training tasks
     </a>
    </li>
    <li class="toctree-l2">
@@ -298,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">
-     Using openICPSR Projects Prior to Publication
+     Using pre-publication openICPSR Projects
     </a>
    </li>
    <li class="toctree-l2">
@@ -328,6 +328,11 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-01-setup-bash.html">
+     Setting up your Bash environment
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="95-02-codeocean.html">
      Reproducibility Checks in Codeocean
@@ -661,11 +666,15 @@ title="Print to PDF"
 This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2b17f5e5-7ad7-47d5-85f3-1632a5c6351a" name="3ed37213-8efd-4d5b-9b79-285efdfe1504" type="radio">
-</input><label class="sd-tab-label" for="2b17f5e5-7ad7-47d5-85f3-1632a5c6351a">
+<input checked="checked" id="8528117d-43f1-4da4-8b08-b7c062b995d5" name="d0f53fa5-8579-40d7-ac11-c87c16571123" type="radio">
+</input><label class="sd-tab-label" for="8528117d-43f1-4da4-8b08-b7c062b995d5">
 CISER</label><div class="sd-tab-content docutils">
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Clone the Bitbucket repository onto the computer you are working on (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://yourname&#64;bitbucket.org/aeaverification/aearep-xxx.git</span></code> )</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Clone the Bitbucket repository onto the computer you are working on</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">yourname</span><span class="nd">@bitbucket</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">aeaverification</span><span class="o">/</span><span class="n">aearep</span><span class="o">-</span><span class="n">xxx</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> From the JIRA issue, download and add Manuscript, Data and Code Availability Form (DCAF).</p>
 <ul class="simple">
 <li><p>Download from Jira issue attachments. The manuscript is often called <code class="docutils literal notranslate"><span class="pre">PDF_Proof.pdf</span></code>.</p></li>
@@ -684,8 +693,8 @@ git<span class="w"> </span>push
 </li>
 </ul>
 </div>
-<input id="b520b3c8-9be1-4144-93f3-11c9e6dd0378" name="3ed37213-8efd-4d5b-9b79-285efdfe1504" type="radio">
-</input><label class="sd-tab-label" for="b520b3c8-9be1-4144-93f3-11c9e6dd0378">
+<input id="59d0b681-cb61-44fe-9c9f-ac3950229e58" name="d0f53fa5-8579-40d7-ac11-c87c16571123" type="radio">
+</input><label class="sd-tab-label" for="59d0b681-cb61-44fe-9c9f-ac3950229e58">
 Github Codespaces (CS) </label><div class="sd-tab-content docutils">
 <p>All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer.</p>
 <ul class="contains-task-list">
@@ -730,8 +739,8 @@ Github Codespaces (CS) </label><div class="sd-tab-content docutils">
 </li>
 </ul>
 </div>
-<input id="31390786-813a-4e40-b0ad-7fb6e7670d16" name="3ed37213-8efd-4d5b-9b79-285efdfe1504" type="radio">
-</input><label class="sd-tab-label" for="31390786-813a-4e40-b0ad-7fb6e7670d16">
+<input id="a6162193-55e8-40a2-a5bf-04e30466afe8" name="d0f53fa5-8579-40d7-ac11-c87c16571123" type="radio">
+</input><label class="sd-tab-label" for="a6162193-55e8-40a2-a5bf-04e30466afe8">
 Manual steps </label><div class="sd-tab-content docutils">
 <p>If neither of the other two methods work, try this method (typically, on CISER)</p>
 <ul class="contains-task-list">

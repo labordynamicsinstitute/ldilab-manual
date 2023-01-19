@@ -1,4 +1,4 @@
-# Using openICPSR Projects Prior to Publication
+# Using pre-publication openICPSR Projects 
 
 Typically the AEA Data Editor team will access code and data provided by authors that is stored on [openICPSR](https://www.openicpsr.org/openicpsr/aea). 
 
@@ -39,22 +39,7 @@ where
  - `.` indicates the directory to download the ZIP file to (here, the current directory)
  - `mylogin@cornell.edu`  is the login you use on the openICPSR website (typically, `netid@cornell.edu`)
 
-**Setup for using the script**
-
-One can use the short form of calling the script with the following (one-time) setup:
-
-- open a (Git) bash shell and type the following:
-
-```bash
-echo "
-# env for ICPSR
-export ICPSR_EMAIL=mylogin@cornell.edu
-export ICPSR_PASS=supersecretpwd
-" >> $HOME/.bashrc
-```
-
-This will "prime" the script to use that email and password for downloading the information. Close the bash shell, and upon opening a new one, the short form should work.
-
+See [appendix](setup-bash) on how to set up the environment to make the script simpler (i.e., allow the short form to run).
 
 :::
 

@@ -143,7 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02-02-pre-training-tasks.html">
-     Pre-training tasks {#pre-training}
+     Pre-training tasks
     </a>
    </li>
    <li class="toctree-l2">
@@ -298,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">
-     Using openICPSR Projects Prior to Publication
+     Using pre-publication openICPSR Projects
     </a>
    </li>
    <li class="toctree-l2">
@@ -328,6 +328,11 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-01-setup-bash.html">
+     Setting up your Bash environment
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="95-02-codeocean.html">
      Reproducibility Checks in Codeocean
@@ -577,7 +582,7 @@ title="Print to PDF"
 <h1>Write Preliminary Report<a class="headerlink" href="#write-preliminary-report" title="Permalink to this headline">#</a></h1>
 <p>At this stage, you need to fill out the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a> up to the “Replication steps” part.</p>
 <ul class="contains-task-list simple">
-<li><p>There is sample language for commonly encountered problems in the [<a class="reference external" href="http://sample-language-report.md">sample-language-report.md</a>](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$templmd</span></code><a class="reference external" href="http://sample-language-report.md">sample-language-report.md</a>), which is part of the replication package.</p>
+<li><p>There is sample language for commonly encountered problems in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">sample-language-report.md</a>, which is part of the replication package.</p>
 <ul>
 <li><p>Select an appropriate tag, and copy-paste into the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a></p></li>
 </ul>
@@ -590,7 +595,7 @@ title="Print to PDF"
 <li><p>You might also have concerns about the REQUIREMENTS - the code might require software that you do not know how to use, or that is not available.</p></li>
 <li><p>The authors might have identified computational requirements that you do not have access to, or do not have the time to run (“compute cluster with 100 nodes”, “Fortran compiler”).</p>
 <ul>
-<li><p>You may want to identify packages that needs to be installed. To help you with this task, we provide a tool called “scan_packages.do” for STATA programs. Instruction for using this dofile is in <a class="reference external" href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-scan-packages-do.html">Appendix G</a>.</p></li>
+<li><p>You may want to identify packages that needs to be installed. There should already be output in the repository called “<code class="docutils literal notranslate"><span class="pre">candidatepackages.xlsx</span></code>”, and a note in the <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>. If not, refer to instructions in the  <a class="reference internal" href="96-03-stata-scan-packages.html#using-scan-packages"><span class="std std-ref">Appendix</span></a>.</p></li>
 </ul>
 </li>
 </ul>

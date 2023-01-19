@@ -143,7 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02-02-pre-training-tasks.html">
-     Pre-training tasks {#pre-training}
+     Pre-training tasks
     </a>
    </li>
    <li class="toctree-l2">
@@ -298,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">
-     Using openICPSR Projects Prior to Publication
+     Using pre-publication openICPSR Projects
     </a>
    </li>
    <li class="toctree-l2">
@@ -328,6 +328,11 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-01-setup-bash.html">
+     Setting up your Bash environment
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="95-02-codeocean.html">
      Reproducibility Checks in Codeocean
@@ -576,18 +581,14 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="data">
 <h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h1>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="7ade3dec-863c-4dfa-bf85-cf939ac19522" name="406ef14e-0136-4671-a6c5-481c5a1dd8e3" type="radio">
-</input><label class="sd-tab-label" for="7ade3dec-863c-4dfa-bf85-cf939ac19522">
-CISER</label><div class="sd-tab-content docutils">
+<input checked="checked" id="d09f5d5c-332a-48bf-a7c3-8a34ba692c12" name="f4d77940-470e-4749-b8b8-14c480c8d82d" type="radio">
+</input><label class="sd-tab-label" for="d09f5d5c-332a-48bf-a7c3-8a34ba692c12">
+CCSS-RS (CISER)</label><div class="sd-tab-content docutils">
 <ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Ensure that you have set up your CCSS-RS environment (see <a class="reference internal" href="95-01-setup-bash.html#setup-bash"><span class="std std-ref">appendix</span></a>)</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> On CISER, the data will be stored locally.</p>
 <ul class="simple">
 <li><p>In some cases, you may be asked to use (restricted) data on the S: drive. Follow instructions as you receive them.</p></li>
-</ul>
-</li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Ensure that you have set up scripts:</p>
-<ul class="simple">
-<li><p>Install relevant Python packages: Go to any repository, and then type <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p></li>
 </ul>
 </li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Download the openICPSR data (if not already done in the previous step, and if available).</p>
@@ -597,7 +598,7 @@ CISER</label><div class="sd-tab-content docutils">
 unzip<span class="w"> </span>-n<span class="w"> </span><span class="m">111234</span><span class="w"> </span>-d<span class="w"> </span><span class="m">111234</span>
 </pre></div>
 </div>
-<p>or the short version (first do [this additional setup])</p>
+<p>or the short version (first do <a class="reference internal" href="95-01-setup-bash.html#setup-bash"><span class="std std-ref">this additional setup</span></a>)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">tools</span><span class="o">/</span><span class="n">download_openicpsr</span><span class="o">-</span><span class="n">private</span><span class="o">.</span><span class="n">py</span> <span class="mi">111234</span>
 </pre></div>
 </div>
@@ -613,8 +614,8 @@ unzip<span class="w"> </span>-n<span class="w"> </span><span class="m">111234</s
 </li>
 </ul>
 </div>
-<input id="d3e17571-4fd4-48cc-b1ee-0e08739d3266" name="406ef14e-0136-4671-a6c5-481c5a1dd8e3" type="radio">
-</input><label class="sd-tab-label" for="d3e17571-4fd4-48cc-b1ee-0e08739d3266">
+<input id="dfd99623-f37a-4703-8543-804a6e93a797" name="f4d77940-470e-4749-b8b8-14c480c8d82d" type="radio">
+</input><label class="sd-tab-label" for="dfd99623-f37a-4703-8543-804a6e93a797">
 Github Codespaces (CS)  </label><div class="sd-tab-content docutils">
 <ul class="contains-task-list">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Be sure you still have the Bitbucket repository clone, if not, follow instructions under <a class="reference external" href="#code">Code</a></p></li>

@@ -3,7 +3,7 @@
 
 At this stage, you need to fill out the REPLICATION.md up to the "Replication steps" part. 
 
-- There is sample language for commonly encountered problems in the [sample-language-report.md](`r config$url$templmd`sample-language-report.md), which is part of the replication package.
+- There is sample language for commonly encountered problems in the [sample-language-report.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md), which is part of the replication package.
   - Select an appropriate tag, and copy-paste into the REPLICATION.md
 - [ ] Commit this preliminary report to the Bitbucket repository.
 
@@ -13,7 +13,7 @@ This stage allows for earlier identification of  issues that might warrant chang
 - This is the stage where you might have identified that some, but not all data are not provided, and we can undertake steps there.
 - You might also have concerns about the REQUIREMENTS - the code might require software that you do not know how to use, or that is not available.
 - The authors might have identified computational requirements that you do not have access to, or do not have the time to run ("compute cluster with 100 nodes", "Fortran compiler").
-  - You may want to identify packages that needs to be installed. To help you with this task, we provide a tool called "scan_packages.do" for STATA programs. Instruction for using this dofile is in [Appendix G](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-scan-packages-do.html).
+  - You may want to identify packages that needs to be installed. There should already be output in the repository called "`candidatepackages.xlsx`", and a note in the `REPLICATION.md`. If not, refer to instructions in the  [Appendix](using-scan-packages).
 
 
 > Commit!

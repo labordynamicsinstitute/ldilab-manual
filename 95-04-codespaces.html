@@ -143,7 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02-02-pre-training-tasks.html">
-     Pre-training tasks {#pre-training}
+     Pre-training tasks
     </a>
    </li>
    <li class="toctree-l2">
@@ -298,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">
-     Using openICPSR Projects Prior to Publication
+     Using pre-publication openICPSR Projects
     </a>
    </li>
    <li class="toctree-l2">
@@ -328,6 +328,11 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-01-setup-bash.html">
+     Setting up your Bash environment
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="95-02-codeocean.html">
      Reproducibility Checks in Codeocean
@@ -549,12 +554,56 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#start-an-environment-on-github-codespaces">
+   Start an environment on Github Codespaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connect-to-local-vs-code-optional-but-useful">
+   Connect to local VS Code (optional but useful)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#processing-cases">
+   Processing cases
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#administrator-instructions">
+   Administrator instructions
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -566,6 +615,39 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#start-an-environment-on-github-codespaces">
+   Start an environment on Github Codespaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connect-to-local-vs-code-optional-but-useful">
+   Connect to local VS Code (optional but useful)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#processing-cases">
+   Processing cases
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#administrator-instructions">
+   Administrator instructions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -575,7 +657,55 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="computing-using-github-codespaces">
 <h1>Computing using Github Codespaces<a class="headerlink" href="#computing-using-github-codespaces" title="Permalink to this headline">#</a></h1>
-<p>(coming, for now, see <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/draft-codespaces.md">https://github.com/labordynamicsinstitute/replicability-training/blob/master/draft-codespaces.md</a>)</p>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Go to your <a class="reference external" href="https://github.com/settings/codespaces">personal Codespace settings on Github</a></p></li>
+<li><p>Add the following <code class="docutils literal notranslate"><span class="pre">Codespaces</span> <span class="pre">secrets</span></code> by choosing <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">secret</span></code>:</p></li>
+</ul>
+<p><img alt="Codespaces secrets needed" src="_images/codespaces-secrets.png" /></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">P_BITBUCKET_PAT</span></code>: Your personal access token from Bitbucket (see <a class="reference internal" href="97-01-Bitbucket-authentication.html#bitbucket-authentication"><span class="std std-ref">here</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P_BITBUCKET_USERNAME</span></code>: Your login on Bitbucket</p></li>
+</ul>
+<p>The others are only needed in specific circumstancs.</p>
+</section>
+<section id="start-an-environment-on-github-codespaces">
+<h2>Start an environment on Github Codespaces<a class="headerlink" href="#start-an-environment-on-github-codespaces" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Go to <a class="reference external" href="https://github.com/labordynamicsinstitute/codespaces-stata-skeleton">https://github.com/labordynamicsinstitute/codespaces-stata-skeleton</a> and select “Code -&gt; Codespaces -&gt; Start new”</p></li>
+<li><p>When you have one running, you can re-use the previous one.</p></li>
+</ul>
+<p>Alternate:</p>
+<ul class="simple">
+<li><p>Go to [<a class="reference external" href="https://github.com/codespaces">https://github.com/codespaces</a>] and select <code class="docutils literal notranslate"><span class="pre">labordynamicsinstitute/codespaces-stata-skeleton</span></code> from the dropdown menu.</p></li>
+</ul>
+<p>If neither of those options appear, contact the LDI Lab Administrator.</p>
+</section>
+<section id="connect-to-local-vs-code-optional-but-useful">
+<h2>Connect to local VS Code (optional but useful)<a class="headerlink" href="#connect-to-local-vs-code-optional-but-useful" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Click on the green <code class="docutils literal notranslate"><span class="pre">Codespaces</span></code> button on the bottom left, choose “Open in VS Code” from menu that appears at top center.</p></li>
+<li><p>This will open a local VS Code instance with the same content. Your main window in the browser may or may not stay open.</p></li>
+</ul>
+</section>
+<section id="processing-cases">
+<h2>Processing cases<a class="headerlink" href="#processing-cases" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Open a terminal (top menu, Terminal, New Terminal, or shortcut `shift-ctrl-``.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> to be in <code class="docutils literal notranslate"><span class="pre">/workspaces</span></code></p></li>
+<li><p>You can clone a Bitbucket case as usual.</p>
+<ul>
+<li><p>special command available: <code class="docutils literal notranslate"><span class="pre">aeagit</span> <span class="pre">[NNNN]</span> <span class="pre">http</span></code> where <code class="docutils literal notranslate"><span class="pre">[NNN]</span></code> is the <code class="docutils literal notranslate"><span class="pre">AEAREP-NNNN</span></code> number. The command should open a new VS Code instance, with the cloned repository in the file pane.</p></li>
+</ul>
+</li>
+<li><p>All command line git functions should work, as should command line Stata.</p></li>
+</ul>
+</section>
+<section id="administrator-instructions">
+<h2>Administrator instructions<a class="headerlink" href="#administrator-instructions" title="Permalink to this headline">#</a></h2>
+<p>In order to enable a replicator to use this repository for Codespaces, they must be “collaborators”. Apparently, that requires write access (to be verified).</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

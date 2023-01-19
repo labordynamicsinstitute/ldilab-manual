@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Using openICPSR Projects Prior to Publication &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Using pre-publication openICPSR Projects &#8212; Training Manual For Reproducibility Verification</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -143,7 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02-02-pre-training-tasks.html">
-     Pre-training tasks {#pre-training}
+     Pre-training tasks
     </a>
    </li>
    <li class="toctree-l2">
@@ -298,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Using openICPSR Projects Prior to Publication
+     Using pre-publication openICPSR Projects
     </a>
    </li>
    <li class="toctree-l2">
@@ -328,6 +328,11 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-01-setup-bash.html">
+     Setting up your Bash environment
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="95-02-codeocean.html">
      Reproducibility Checks in Codeocean
@@ -590,7 +595,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Using openICPSR Projects Prior to Publication</h1>
+                <h1>Using pre-publication openICPSR Projects</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -620,8 +625,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="using-openicpsr-projects-prior-to-publication">
-<h1>Using openICPSR Projects Prior to Publication<a class="headerlink" href="#using-openicpsr-projects-prior-to-publication" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="using-pre-publication-openicpsr-projects">
+<h1>Using pre-publication openICPSR Projects<a class="headerlink" href="#using-pre-publication-openicpsr-projects" title="Permalink to this headline">#</a></h1>
 <p>Typically the AEA Data Editor team will access code and data provided by authors that is stored on <a class="reference external" href="https://www.openicpsr.org/openicpsr/aea">openICPSR</a>.</p>
 <blockquote>
 <div><p>Cornell replicators: You will need to set up an openICPSR account using your Cornell email.</p>
@@ -634,8 +639,8 @@ title="Print to PDF"
 <li><p>You will download the project and commit the code (but not the data) files to the corresponding Bitbucket repo.</p></li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="f8511b56-7043-47cf-a277-287934ded3d0" name="2623e905-3f86-43c4-921a-dad1bd962004" type="radio">
-</input><label class="sd-tab-label" for="f8511b56-7043-47cf-a277-287934ded3d0">
+<input checked="checked" id="3fd166c8-0f8e-4714-a17f-5ae68a1e800c" name="f16583af-adee-42e6-b45e-e0c18f0cb3b5" type="radio">
+</input><label class="sd-tab-label" for="3fd166c8-0f8e-4714-a17f-5ae68a1e800c">
 Downloading using a script</label><div class="sd-tab-content docutils">
 <p>The most convenient way to download the information is to use the LDI-specific script <code class="docutils literal notranslate"><span class="pre">tools/download_openicpsr-private.py</span></code>.</p>
 <p><strong>Short version of call to script</strong></p>
@@ -654,22 +659,10 @@ Downloading using a script</label><div class="sd-tab-content docutils">
 <li><p><code class="docutils literal notranslate"><span class="pre">.</span></code> indicates the directory to download the ZIP file to (here, the current directory)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mylogin&#64;cornell.edu</span></code>  is the login you use on the openICPSR website (typically, <code class="docutils literal notranslate"><span class="pre">netid&#64;cornell.edu</span></code>)</p></li>
 </ul>
-<p><strong>Setup for using the script</strong></p>
-<p>One can use the short form of calling the script with the following (one-time) setup:</p>
-<ul class="simple">
-<li><p>open a (Git) bash shell and type the following:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span>
-<span class="s2"># env for ICPSR</span>
-<span class="s2">export ICPSR_EMAIL=mylogin@cornell.edu</span>
-<span class="s2">export ICPSR_PASS=supersecretpwd</span>
-<span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$HOME</span>/.bashrc
-</pre></div>
+<p>See <a class="reference internal" href="95-01-setup-bash.html#setup-bash"><span class="std std-ref">appendix</span></a> on how to set up the environment to make the script simpler (i.e., allow the short form to run).</p>
 </div>
-<p>This will “prime” the script to use that email and password for downloading the information. Close the bash shell, and upon opening a new one, the short form should work.</p>
-</div>
-<input id="f5e644a7-973a-45ed-b1f2-cefb499c1f7b" name="2623e905-3f86-43c4-921a-dad1bd962004" type="radio">
-</input><label class="sd-tab-label" for="f5e644a7-973a-45ed-b1f2-cefb499c1f7b">
+<input id="524b0348-becd-455f-ae50-e75758dc4770" name="f16583af-adee-42e6-b45e-e0c18f0cb3b5" type="radio">
+</input><label class="sd-tab-label" for="524b0348-becd-455f-ae50-e75758dc4770">
 Downloading a project manually</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>Log on to the openICPSR website by clicking on the <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">provenance</span></code> link in Jira</p></li>

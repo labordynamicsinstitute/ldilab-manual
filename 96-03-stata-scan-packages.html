@@ -143,7 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02-02-pre-training-tasks.html">
-     Pre-training tasks {#pre-training}
+     Pre-training tasks
     </a>
    </li>
    <li class="toctree-l2">
@@ -298,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">
-     Using openICPSR Projects Prior to Publication
+     Using pre-publication openICPSR Projects
     </a>
    </li>
    <li class="toctree-l2">
@@ -328,6 +328,11 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="95-01-setup-bash.html">
+     Setting up your Bash environment
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="95-02-codeocean.html">
      Reproducibility Checks in Codeocean
@@ -574,16 +579,20 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="using-scan-packages-do">
-<h1>Using scan_packages.do<a class="headerlink" href="#using-scan-packages-do" title="Permalink to this headline">#</a></h1>
+<span id="using-scan-packages"></span><h1>Using scan_packages.do<a class="headerlink" href="#using-scan-packages-do" title="Permalink to this headline">#</a></h1>
 <p>In “Writing Preliminary Report” stage, we ask you to check the completeness of the information on system requirements. Often, authors do not list out packages they installed that are not default packages in STATA. The authors should list them in the README (even when they provide ado files!), but it does not always happen. To help you identify these packages, we provide an useful tool for this exercise.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As of Jan 2023, this will already have been run by the Pipelines, with output in <code class="docutils literal notranslate"><span class="pre">generated/</span></code></p>
+</div>
 <ul>
 <li><p>Locate a directory named “tools/Stata_scan_code/”.</p></li>
 <li><p>Change the following command in line 11 with your system information:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">codedir</span> <span class="s2">&quot;XXXCODEDIRXXX&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>global<span class="w"> </span>codedir<span class="w"> </span><span class="s2">&quot;XXXCODEDIRXXX&quot;</span>
 </pre></div>
 </div>
 <p>You should locate the directory where the codes are (typically <code class="docutils literal notranslate"><span class="pre">112233</span></code>, the openICPSR space number):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">codedir</span> <span class="s2">&quot;../../112233&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>global<span class="w"> </span>codedir<span class="w"> </span><span class="s2">&quot;../../112233&quot;</span>
 </pre></div>
 </div>
 <p>This will be the directory where the output excel file will be saved.</p>

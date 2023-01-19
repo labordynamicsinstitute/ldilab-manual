@@ -5,7 +5,8 @@ For pre-publication verification, we use a Jira-based workflow similar to the po
 
 ## Scope
 
-Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see [other document](`r config$url$reploldmd`jira-supervisor-notes.md) for details.
+
+Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see [other document](https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-supervisor-notes.md) for details.
 
 - This workflow **DOES NOT** cover simple metadata assessment of openICPSR deposits, for instance for AEA Papers and Proceedings deposits. See [Instructions for Papers and Proceedings](aea-pandp-instructions).
 
