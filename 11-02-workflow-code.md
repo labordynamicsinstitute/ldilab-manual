@@ -16,7 +16,10 @@ This is because the git setup we use does not allow you to include the data file
 :::{tab-item} CISER 
 
 
-- [ ] Clone the Bitbucket repository onto the computer you are working on (`git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git` )
+- [ ] Clone the Bitbucket repository onto the computer you are working on
+  ```
+  git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git
+  ```
 - [ ] From the JIRA issue, download and add Manuscript, Data and Code Availability Form (DCAF). 
     - Download from Jira issue attachments. The manuscript is often called `PDF_Proof.pdf`. 
 - [ ] Add the manuscript, and any response by the authors (if a revision)

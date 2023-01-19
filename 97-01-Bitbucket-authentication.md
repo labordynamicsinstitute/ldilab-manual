@@ -1,3 +1,4 @@
+(bitbucket-authentication)=
 # Bitbucket Authentication
 
 Any user who created a Bitbucket account after Semptember 13, 2021 may encounter the following error when attempting to git clone (or push) using Internet Explorer.

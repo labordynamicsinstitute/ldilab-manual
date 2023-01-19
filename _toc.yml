@@ -49,6 +49,7 @@ parts:
       - file: 94-04-Updating_Materials
     - file: 95_Access_to_computers
       sections:
+      - file: 95-01-setup-bash
       - file: 95-02-codeocean
       - file: 95-03-wholetale
       - file: 95-04-codespaces

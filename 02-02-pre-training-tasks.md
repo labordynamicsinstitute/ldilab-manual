@@ -1,4 +1,5 @@
-# Pre-training tasks {#pre-training}
+(pre-training)=
+# Pre-training tasks 
 
 We ask that trainees accomplish a few tasks prior to the first training session. Please do the following:
 
@@ -17,7 +18,7 @@ We ask that trainees accomplish a few tasks prior to the first training session.
 ## Install
 
 
-- Go through our [Setup Checklist](#checklist) and install necessary software
+- Go through our [Setup Checklist](checklist) and install necessary software
 
 ### Try-out
 
