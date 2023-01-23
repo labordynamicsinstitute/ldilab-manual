@@ -61,10 +61,16 @@ Once the form PDF has been added to the issue, you should first return to the op
 #### On openICPSR
 
 - Write a "Project communication log" entry. After clicking on "+ add entry", copy the following to the relevant cell. Update AEAREP number accordingly.
-  - *Subject line:* AEAREP-xxx Data and Code Deposit for P&P submission accepted
-  - *Content*: Thank you for uploading your code and data. This
-         deposit is accepted. No computational verification was
-         conducted, only compliance with required metadata was checked.
+  - *Subject line:* 
+    ```
+    AEAREP-xxx Data and Code Deposit for P&P submission accepted
+    ```
+  - *Content*: 
+    ```
+    Thank you for uploading your code and data. This
+    deposit is accepted. No computational verification was
+    conducted, only compliance with required metadata was checked.
+    ```
 
 #### Back in Jira
 
@@ -82,7 +88,7 @@ Once the form PDF has been added to the issue, you should first return to the op
 - Write a "Project communication log" entry
   - *Subject line:* 
     ```
-    AEAREP-XXX Modifications to make to your P&P    deposit
+    AEAREP-XXX Modifications to make to your P&P deposit
     ```
   - *Content:* 
     ```
