@@ -47,14 +47,40 @@ parse:
   myst_dmath_double_inline: true  # Allow display math ($$) within an inline context
 
 
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+#######################################################################################
+# HTML-specific settings
 html:
-  use_issues_button: true
-  use_repository_button: true
+  favicon                   : ""  # A path to a favicon image
+  use_edit_page_button      : true  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  use_repository_button     : true  # Whether to add a link to your repository button
+  use_issues_button         : true  # Whether to add an "open an issue" button
+  use_multitoc_numbering    : true   # Continuous numbering across parts/chapters
+  extra_navbar              : <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/">Link to old documentation</a>  # Will be displayed underneath the left navbar.
+  extra_footer              : ""  # Will be displayed underneath the footer.
+  google_analytics_id       : ""  # A GA id that can be used to track book views.
+  home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
+  baseurl                   : "https://labordynamicsinstitute.github.io/replicability-training-manual-new/"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  comments:
+    hypothesis              : false
+    utterances              : false
+  announcement              : "This is not yet " # A banner announcement at the top of the site.
+
 
 # Advanced and power-user settings
 sphinx:
   extra_extensions          :   # A list of extra extensions to load by Sphinx.
   config                    :   # key-value pairs to directly over-ride the Sphinx configuration
     bibtex_reference_style: author_year
+
+# Custom data
+data:
+  pandp:
+  # For instructions to set up, see Lab Assistant Setup document
+  # This is the URL of the Google Folder
+  - googlefolderurl: "https://drive.google.com/drive/u/1/folders/1BhqECqYdBQJecRcDaJf_Jl2NoyiyrYzl"
+  # This is the google Form URL that the replicator/ assessor accesses.
+  - googleformurl: "https://docs.google.com/forms/d/e/1FAIpQLSdUUZiGw3Rsv7RDimEhmQT4G1T7ZBWUR0Td_lNmAdKs5UGB0w/viewform?usp=sf_link"
+
+# This will need to be integrated using GLUE, see https://jupyterbook.org/en/stable/content/executable/output-insert.html
+# - at setup, read in _config.yml, make glue variables
+# - able to reference anywhere in the document.

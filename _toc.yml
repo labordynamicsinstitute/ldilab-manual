@@ -35,7 +35,14 @@ parts:
     - file: 13-approving-issues
     - file: 20-Pending_ICPSR
     - file: 30-jira-prepare-publication
+      sections:
+      - file: 31-jira-openicpsr-setup
+      - file: 32-jira-submitting
+      - file: 33-openicpsr-preparing
     - file: 40-Instructions-PandP-Checks
+    - file: 50-openicpsr-related-tasks
+      sections:
+      - file: 51-openicpsr-publishing-deposit
   - caption: Appendix
     chapters:
     - file: 91-setup-checklist
