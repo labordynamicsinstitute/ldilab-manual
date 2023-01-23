@@ -19,7 +19,7 @@ Additionally, certain steps below (i.e. transitioning to "Pending Publication") 
 
 :::{note}
 
-Here's the [guidance document](https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea-guidance.html)
+Here's the [guidance document](https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea.html).
 
 :::
 
@@ -80,11 +80,17 @@ Once the form PDF has been added to the issue, you should first return to the op
 1) If `Deposit Status` = `Deposit in Progress`
 
 - Write a "Project communication log" entry
-  - *Subject line:* AEAREP-XXX Modifications to make to your P&P    deposit
-  - *Content:* Thank you for uploading your code and data. We have
-         checked the deposit for compliance with the required metadata
-        elements. Please see the attached form for modifications to
-         make.
+  - *Subject line:* 
+    ```
+    AEAREP-XXX Modifications to make to your P&P    deposit
+    ```
+  - *Content:* 
+    ```
+    Thank you for uploading your code and data. We have
+    checked the deposit for compliance with the required metadata
+    elements. Please see the attached form for modifications to
+    make.
+    ```
   - Attach the PDF from the issue to the communication log.
 
 2) If `Deposit Status` = `Submitted`, 
@@ -92,12 +98,17 @@ Once the form PDF has been added to the issue, you should first return to the op
 - Change the status of the deposit to "Request Revisions" with the note:
   - Please see the attached form for modifications to make.
 - Write a "Project communication log" entry
-  - *Subject line:* AEAREP-XXX Modifications to make to your P&P
-        deposit
-  - *Content:* Thank you for uploading your code and data. We have
-         checked the deposit for compliance with the required metadata
-        elements. Please see the attached form for modifications to
-         make.
+  - *Subject line:* 
+    ```
+    AEAREP-XXX Modifications to make to your P&P deposit
+    ```
+  - *Content:* 
+    ```
+    Thank you for uploading your code and data. We have
+    checked the deposit for compliance with the required metadata
+    elements. Please see the attached form for modifications to
+    make.
+    ```
   - Attach the PDF from the issue to the communication log.
 
 
