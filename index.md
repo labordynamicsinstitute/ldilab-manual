@@ -16,4 +16,4 @@ If you are a casual reader of this document, start with the [pre-requisites](#pr
 
 
 
-![GitHub issues](https://img.shields.io/github/issues-raw/labordynamicsinstitute/replicability-training-curriculum.svg?style=flat) ![GitHub last commit](https://img.shields.io/github/last-commit/labordynamicsinstitute/replicability-training-curriculum.svg?style=flat) 
+![GitHub issues](https://img.shields.io/github/issues-raw/labordynamicsinstitute/replicability-training-manual-new.svg?style=flat) ![GitHub last commit](https://img.shields.io/github/last-commit/labordynamicsinstitute/replicability-training-manual-new.svg?style=flat) 
