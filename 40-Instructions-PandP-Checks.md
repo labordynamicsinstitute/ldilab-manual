@@ -33,7 +33,7 @@ You should now do the following:
     
 <!-- -->
 
-- Open the form: [link here](https://docs.google.com/forms/d/e/1FAIpQLSfgcBTGA9JVH_90pjLpoASn_tKFtRuQdi0Ge-UCLL3Kx6toLg/viewform?usp=sf_link)
+- Open the form: [link here](https://docs.google.com/forms/d/e/1FAIpQLSdUUZiGw3Rsv7RDimEhmQT4G1T7ZBWUR0Td_lNmAdKs5UGB0w/viewform?usp=sf_link)
 
 - Assess the openICPSR repository, filling out the form as you go along
 
@@ -43,7 +43,7 @@ You should now do the following:
 
 - Close the form after each issue, and open it again for the next one.
 
-- Navigate to the "PandP Docs" Google Drive folder [here](https://drive.google.com/drive/folders/1TJ7e-0Zq1wAvmCoY0PUrFGjo2rV-nSn-), locate the PDF with the Jira ticket of the case you are working on (PDF format: `Report-PandP-AEAREP-xxxx.pdf`), and download the file. This is the PDF version of the checklist form using the information you entered.
+- Navigate to the "PandP Docs" Google Drive folder [here](https://drive.google.com/drive/u/1/folders/1BhqECqYdBQJecRcDaJf_Jl2NoyiyrYzl), locate the PDF with the Jira ticket of the case you are working on (PDF format: `Report-PandP-AEAREP-xxxx.pdf`), and download the file. This is the PDF version of the checklist form using the information you entered.
 
 In Jira:
 
