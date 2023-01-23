@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/replicability-training-manual-new/11-03-workflow-data.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Write Preliminary Report" href="11-04-workflow-write-prelim.html" />
@@ -73,7 +74,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">This is not yet </div>
 <div class="header header-item noprint"></div>
 
     
@@ -254,15 +255,54 @@ const thebe_selector_output = ".output, .cell_output"
    AEA: Monitoring Pending openICPSR Changes
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="30-jira-prepare-publication.html">
    AEA: Interfacing with the Journal Management System
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="31-jira-openicpsr-setup.html">
+     Basic setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="32-jira-submitting.html">
+     Submitting to the JMS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="33-openicpsr-preparing.html">
+     Preparing openICPSR deposit
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="40-Instructions-PandP-Checks.html">
    AEA: Instructions for Papers and Proceedings checks
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="50-openicpsr-related-tasks.html">
+   AEA: Interfacing with openICPSR
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="51-openicpsr-publishing-deposit.html">
+     AEA: Publishing a deposit
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -290,8 +330,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="94-00-downloading-data.html">
    Downloading Data
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -322,8 +362,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="95_Access_to_computers.html">
    Access to Computers
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -354,8 +394,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="96-00-using-Stata.html">
    Stata-related procedures
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -381,8 +421,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="97-00-authentication.html">
    Authentication-related issues
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -407,7 +447,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/">Link to old documentation</a>
             </div>
             
         </div>
@@ -505,6 +545,23 @@ title="Open an issue"
 
       </li>
       
+      <li>
+        <a href="https://github.com/labordynamicsinstitute/replicability-training-manual-new/edit/main/11-03-workflow-data.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
     </ul>
   </div>
 </div>
@@ -581,8 +638,8 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="data">
 <h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h1>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="127830a6-133c-411a-b27b-a8e30c28c6ce" name="639d4f40-5ac8-4b54-8552-b3dfd73cf9cc" type="radio">
-</input><label class="sd-tab-label" for="127830a6-133c-411a-b27b-a8e30c28c6ce">
+<input checked="checked" id="3205f15f-8320-41cd-8779-56fe8f89ae1a" name="337c0a80-8e9e-4564-8a54-a3b0610d38f2" type="radio">
+</input><label class="sd-tab-label" for="3205f15f-8320-41cd-8779-56fe8f89ae1a">
 CCSS-RS (CISER)</label><div class="sd-tab-content docutils">
 <ul class="contains-task-list">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Ensure that you have set up your CCSS-RS environment (see <a class="reference internal" href="95-01-setup-bash.html#setup-bash"><span class="std std-ref">appendix</span></a>)</p></li>
@@ -614,8 +671,8 @@ unzip<span class="w"> </span>-n<span class="w"> </span><span class="m">111234</s
 </li>
 </ul>
 </div>
-<input id="44c541c0-f309-423a-9ca6-ec6b31b8a46e" name="639d4f40-5ac8-4b54-8552-b3dfd73cf9cc" type="radio">
-</input><label class="sd-tab-label" for="44c541c0-f309-423a-9ca6-ec6b31b8a46e">
+<input id="f64b15e3-2cb4-40a8-b8b6-4d9bd61663bc" name="337c0a80-8e9e-4564-8a54-a3b0610d38f2" type="radio">
+</input><label class="sd-tab-label" for="f64b15e3-2cb4-40a8-b8b6-4d9bd61663bc">
 Github Codespaces (CS)  </label><div class="sd-tab-content docutils">
 <ul class="contains-task-list">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Be sure you still have the Bitbucket repository clone, if not, follow instructions under <a class="reference external" href="#code">Code</a></p></li>

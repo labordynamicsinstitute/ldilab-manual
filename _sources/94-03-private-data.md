@@ -43,3 +43,71 @@ There are two ways to run code using the data in this folder:
   - Run the code in its usual location. When the code encounters (absent) confidential data in the usual location, it will break/stop.
   - Everywhere you encounter references to confidential data in the code, e.g., `use "${datadir}/mysuper.dta"`, modify the code to reference the S-drive: `use "${sdrive}/mysuper.dta`. 
   - commit all code modifications and log files as you normally would.
+
+## Examples
+
+These are *simple* examples. Most situations will be more complex.
+
+### Stata Example 1
+
+Some replication packages make this very straightforward, usually by the inclusion of a global specifically set for a "`confidential`" data folder. It may contain an **original** master file that looks something like this...
+
+#### Original master file
+
+```
+*					Master File							*
+*														*
+*********************************************************
+*********************************************************
+
+******************************************
+*** Set-up the directories and install packages
+******************************************
+
+***set the working directory here:
+global path "C:/Users/author/path"
+
+*** The raw data folder contains two subdirectories, one for the public data and one for the confidential
+global rawdata "$path/data"
+global public "$rawdata/public"
+global confidential "$rawdata/confidential"
+
+global code "$path/code"
+global results "$path/output"
+```
+
+#### Adjusting for LDI specific situation
+
+1. Include the `config.do` in the master file as usual.
+2. In the `config.do`, adjust the (existing) global for the S: drive: `global sdrive "S:/LDILab/aearep-1234-nda_Implicit"`. The global is defined at the very end of the `config.do`.
+3. In the master file, incorporate the `rootdir` from the `config.do` as the main global `path`. This should reflect your workspace on the U: drive.
+4. Incorporate the new global `sdrive` to set the authors' global `confidential`. 
+
+#### Updated master file
+
+```
+*					Master File							*
+*														*
+*********************************************************
+*********************************************************
+
+include "config.do"
+
+******************************************
+*** Set-up the directories and install packages
+******************************************
+
+***set the working directory here:
+global path "$rootdir"
+
+*** The raw data folder contains two subdirectories, one for the public data and one for the confidential
+global rawdata "$path/data"
+global public "$rawdata/public"
+global confidential "$sdrive/confidential"
+
+global code "$path/code"
+global results "$path/output"
+```
+
+
+

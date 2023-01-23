@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/replicability-training-manual-new/94-01-how-to-use-openICPSR-backend.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Alternate sources of data" href="94-02-alternate-downloads.html" />
@@ -73,7 +74,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">This is not yet </div>
 <div class="header header-item noprint"></div>
 
     
@@ -254,15 +255,54 @@ const thebe_selector_output = ".output, .cell_output"
    AEA: Monitoring Pending openICPSR Changes
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="30-jira-prepare-publication.html">
    AEA: Interfacing with the Journal Management System
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="31-jira-openicpsr-setup.html">
+     Basic setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="32-jira-submitting.html">
+     Submitting to the JMS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="33-openicpsr-preparing.html">
+     Preparing openICPSR deposit
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="40-Instructions-PandP-Checks.html">
    AEA: Instructions for Papers and Proceedings checks
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="50-openicpsr-related-tasks.html">
+   AEA: Interfacing with openICPSR
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="51-openicpsr-publishing-deposit.html">
+     AEA: Publishing a deposit
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -290,8 +330,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="94-00-downloading-data.html">
    Downloading Data
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -322,8 +362,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="95_Access_to_computers.html">
    Access to Computers
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -354,8 +394,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="96-00-using-Stata.html">
    Stata-related procedures
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -381,8 +421,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="97-00-authentication.html">
    Authentication-related issues
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -407,7 +447,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            <a href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/">Link to old documentation</a>
             </div>
             
         </div>
@@ -501,6 +541,23 @@ title="Open an issue"
   <i class="fas fa-lightbulb"></i>
   </span>
 <span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/labordynamicsinstitute/replicability-training-manual-new/edit/main/94-01-how-to-use-openICPSR-backend.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
 </a>
 
       </li>
@@ -639,8 +696,8 @@ title="Print to PDF"
 <li><p>You will download the project and commit the code (but not the data) files to the corresponding Bitbucket repo.</p></li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="49e53062-6df7-46a4-b3f7-da9b5a3d0ecd" name="fe41725e-b39e-429f-9bda-e37d1ed89d21" type="radio">
-</input><label class="sd-tab-label" for="49e53062-6df7-46a4-b3f7-da9b5a3d0ecd">
+<input checked="checked" id="913da9c0-c911-4e3c-b073-d20a906e21c3" name="7062a766-2421-4c00-b868-39edbfd11f44" type="radio">
+</input><label class="sd-tab-label" for="913da9c0-c911-4e3c-b073-d20a906e21c3">
 Downloading using a script</label><div class="sd-tab-content docutils">
 <p>The most convenient way to download the information is to use the LDI-specific script <code class="docutils literal notranslate"><span class="pre">tools/download_openicpsr-private.py</span></code>.</p>
 <p><strong>Short version of call to script</strong></p>
@@ -661,8 +718,8 @@ Downloading using a script</label><div class="sd-tab-content docutils">
 </ul>
 <p>See <a class="reference internal" href="95-01-setup-bash.html#setup-bash"><span class="std std-ref">appendix</span></a> on how to set up the environment to make the script simpler (i.e., allow the short form to run).</p>
 </div>
-<input id="3845c22a-1ea7-4165-9b1d-cca89cdd0b00" name="fe41725e-b39e-429f-9bda-e37d1ed89d21" type="radio">
-</input><label class="sd-tab-label" for="3845c22a-1ea7-4165-9b1d-cca89cdd0b00">
+<input id="14cca3e1-1489-4fdd-9e36-e7f141e9735c" name="7062a766-2421-4c00-b868-39edbfd11f44" type="radio">
+</input><label class="sd-tab-label" for="14cca3e1-1489-4fdd-9e36-e7f141e9735c">
 Downloading a project manually</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>Log on to the openICPSR website by clicking on the <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">provenance</span></code> link in Jira</p></li>
