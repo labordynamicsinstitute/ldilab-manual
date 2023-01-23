@@ -43,6 +43,7 @@ parts:
     - file: 50-openicpsr-related-tasks
       sections:
       - file: 51-openicpsr-publishing-deposit
+      - file: 52-openicpsr-add-article-doi
   - caption: Appendix
     chapters:
     - file: 91-setup-checklist
