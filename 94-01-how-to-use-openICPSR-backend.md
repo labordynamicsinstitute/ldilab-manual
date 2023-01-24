@@ -14,7 +14,7 @@ Typically the AEA Data Editor team will access code and data provided by authors
 
 :::{tab-item} Downloading using a script
 
-The most convenient way to download the information is to use the LDI-specific script `tools/download_openicpsr-private.py`. 
+The most convenient way to download the information is to use the LDI-specific script `tools/download_openicpsr-private.py` (be sure to have [set up your environment first](setup-bash)).
 
 **Short version of call to script**
 
