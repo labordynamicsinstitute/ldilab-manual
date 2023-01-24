@@ -3,6 +3,10 @@
 
 The following setup applies to any computer you may be using to run Bash commands.
 
+```{note}
+On Windows, this will be "Git bash". On Linux, you are usually using `bash`, but check with your sysadmin if you are unsure. On MacOS, newer versions have changed the default shell to `zsh`, which should work mostly the same. It is possible to use the `bash` shell there as well. 
+```
+
 ## Configure the openICPSR download script
 
 Run this once in a Bash shell:
