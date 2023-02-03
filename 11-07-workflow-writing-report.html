@@ -616,12 +616,58 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standard-steps">
+   Standard steps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cleaning-up">
+   Cleaning up
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#on-jira">
+   On Jira
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#details">
+   Details
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-tex-files-on-bitbucket">
+     Comparing TeX files on Bitbucket
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -633,6 +679,41 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standard-steps">
+   Standard steps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cleaning-up">
+   Cleaning up
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#on-jira">
+   On Jira
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#details">
+   Details
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-tex-files-on-bitbucket">
+     Comparing TeX files on Bitbucket
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -643,25 +724,105 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="writing-report">
 <h1>Writing Report<a class="headerlink" href="#writing-report" title="Permalink to this headline">#</a></h1>
 <p>At this stage, you will write the final version of the report.</p>
+<section id="standard-steps">
+<h2>Standard steps<a class="headerlink" href="#standard-steps" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>There is sample language for commonly encountered problems at the [Fragments for <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$templmd</span></code><a class="reference external" href="http://sample-language-report.md">sample-language-report.md</a>) link in the tall grey bar</p></li>
-<li><p>Clean up the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a> - it should be factual, objective, and not written in the first person.</p></li>
-<li><p>Copy-and-paste the <em>code-check.xlsx</em>, including the column “Replicated?” and any notes column, into the “Findings” part. Use the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode.</p></li>
-<li><p>Delete all of the instructional lines in <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>  before finishing the report.</p></li>
-<li><p>When there are differences: Include images of figures and screenshots of tables (both paper and as-reproduced) in the report</p></li>
+<li><p>There is sample language for commonly encountered problems at the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">Fragments for REPLICATION.md</a> link in the tall grey bar</p></li>
+<li><p>Compare images and tables</p>
+<ul>
+<li><p>Some of this may involve “squinting” at images…</p></li>
+<li><p>For tables that are output to Excel, you may be able to use some Excel tools (copy the old numbers, create a difference function between all cells). This is hard to provide examples for, as every table differs.</p></li>
+<li><p>For tables that are output as LaTeX (files ending with <code class="docutils literal notranslate"><span class="pre">tex</span></code>) or as  CSV files, <em>and</em> if the authors provided previous versions, you may be able to use Bitbucket to compare them globally, without looking at individual numbers (see <span class="xref myst">details further down</span>).</p></li>
+</ul>
+</li>
+<li><p>When there are differences: Include images of figures and screenshots of tables (both paper and as-reproduced) in the report</p>
+<ul>
+<li><p>For paper images, use a screenshot tool to grab them from the <code class="docutils literal notranslate"><span class="pre">PDF_Proof.PDF</span></code> and save them as PNG.</p></li>
+<li><p>For reproduced images, reference the location within the replication directory.</p></li>
+<li><p>Using an annotation tool on your computer, circle or highlight where you see differences.</p></li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+Figure 5 in the paper:
+
+![Figure 5 in paper](figure5-paper.PNG)
+
+Figure 5 as reproduced:
+
+![Figure 5 reproduced](12345/results/figure5.png)
+
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>Highlight differences:</p>
 <ul>
 <li><p>if only a small number of table entries: mention them by table in the report</p></li>
 <li><p>if a larger number: Highlight on the reproduced images (of figures, screenshots of tables) the differences you have observed</p></li>
 </ul>
 </li>
-<li><p>Check that the <code class="docutils literal notranslate"><span class="pre">DataCitationSummary</span></code> field is filled out indicating how many data citations are in order: all, some, or none.</p></li>
 </ul>
-<p>To complete this stage, enter the direct URL of the report, i.e., in the relevant repository (if not already pre-filled):</p>
-<blockquote>
-<div><p><a class="reference external" href="https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md">https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md</a></p>
-</div></blockquote>
+</section>
+<section id="cleaning-up">
+<h2>Cleaning up<a class="headerlink" href="#cleaning-up" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Clean up the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a> - it should be factual, objective, and not written in the first person.</p></li>
+<li><p>Copy-and-paste from the <em>code-check.xlsx</em>, including the column “Reproduced?” and any notes column, into the “Findings” part. Use the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode.</p></li>
+<li><p>Delete all of the instructional lines in <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>  before finishing the report.</p></li>
+</ul>
+</section>
+<section id="on-jira">
+<h2>On Jira<a class="headerlink" href="#on-jira" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Check that the <code class="docutils literal notranslate"><span class="pre">DataCitationSummary</span></code> field is filled out indicating how many data citations are in order: all, some, or none.</p></li>
+<li><p>Check that the <code class="docutils literal notranslate"><span class="pre">Report</span> <span class="pre">Location</span></code> is filled out.</p>
+<ul>
+<li><p>If it is, do not change it.</p></li>
+<li><p>If for some reason, it is missing, enter the full URL from the repository, e.g., <code class="docutils literal notranslate"><span class="pre">https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md</span></code></p></li>
+</ul>
+</li>
+</ul>
 <p>You can now submit your report for review by changing the status to <code class="docutils literal notranslate"><span class="pre">Under</span> <span class="pre">Review</span></code></p>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">#</a></h2>
+<section id="comparing-tex-files-on-bitbucket">
+<h3>Comparing TeX files on Bitbucket<a class="headerlink" href="#comparing-tex-files-on-bitbucket" title="Permalink to this headline">#</a></h3>
+<p>If the authors provided LaTeX files as part of the replication package, you may be able to leverage Bitbucket or Git to compare them.</p>
+<ul class="simple">
+<li><p>Note first that the typical table when output, if identical, will not register as “modified” with Git.</p>
+<ul>
+<li><p>Check the date stamps - if the date is the date you ran the code, then the files were, in fact, replaced, but are not any different.</p></li>
+<li><p>Alternatively, before you run the code, but after you have written the preliminary report, delete all the TeX files (do not git commit!), then run the code.</p></li>
+<li><p>If the files are reproduced, but git shows no difference, they are identical.</p></li>
+</ul>
+</li>
+<li><p>If for some reason there is a change in platform, git might see a difference, but it is solely the “whitespace” encoding, which differs between Mac, Linux, and Windows. In that case, proceed as follows.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">*tex</span></code> then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> and <code class="docutils literal notranslate"><span class="pre">push</span></code> as usual.</p></li>
+<li><p>Navigate to the Bitbucket repository, and select the tab “<code class="docutils literal notranslate"><span class="pre">Commits</span></code>”. Click on the commit you just made.</p></li>
+<li><p>You should see a list of files. Click on the first of the <code class="docutils literal notranslate"><span class="pre">tex</span></code> files you want to inspect.</p></li>
+<li><p>You might see the following information:</p></li>
+</ul>
+<p><img alt="Diff too big" src="_images/Bitbucket-diff-too-big.png" /></p>
+<ul class="simple">
+<li><p>Click on the “<code class="docutils literal notranslate"><span class="pre">give</span> <span class="pre">it</span> <span class="pre">another</span> <span class="pre">chance</span></code>”. You will now see (or were already seeing) a “git diff”, identifying first the old lines (in red), then the new lines (in green). This list can be long.</p></li>
+</ul>
+<p><img alt="Lots of lines" src="_images/Bitbucket-diff-long.png" /></p>
+<ul class="simple">
+<li><p>Navigate to the right of the screen. Choose from the dotted menu the item “Ignore whitespace” (you only need to select the “whitespace” option for the first file).</p></li>
+</ul>
+<p><img alt="Ignore whitespace" src="_images/Bitbucket-diff-ignore-whitespace.png" /></p>
+<ul class="simple">
+<li><p>The page will recalculate the “diffs”. If you see the “<code class="docutils literal notranslate"><span class="pre">give</span> <span class="pre">it</span> <span class="pre">another</span> <span class="pre">chance</span></code>”, click it again. YOu should now, if the files are truly the same, see the following:</p></li>
+</ul>
+<p><img alt="Files unchanged" src="_images/Bitbucket-diff-ignore-whitespace-unchanged.png" /></p>
+<ul class="simple">
+<li><p>Do this for all <code class="docutils literal notranslate"><span class="pre">tex</span></code> files (you only need to select the “whitespace” option for the first file). If you scroll up to the summary again, you should see a count next to the file. This shows the number of lines changed, taking into account the “whitespace” option.</p></li>
+</ul>
+<p><img alt="0 lines changes" src="_images/Bitbucket-diff-ignore-whitespace-summary.png" /></p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
