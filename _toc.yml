@@ -44,6 +44,9 @@ parts:
       sections:
       - file: 51-openicpsr-publishing-deposit
       - file: 52-openicpsr-add-article-doi
+  - caption: Sundry other guidance
+    chapters:
+    - file: 71-External-reproducibility-checks
   - caption: Appendix
     chapters:
     - file: 91-setup-checklist
@@ -69,4 +72,11 @@ parts:
     - file: 97-00-authentication
       sections:
       - file: 97-01-Bitbucket-authentication
+    - file: 98-00-sundry-correspondence
+      sections:
+      - file: 98-01-correspondence-legacy-updates
+      - file: 98-02-correspondence-ipums-beta-request
+      - file: 98-03-correspondence-requesting-restricted-access-data
+      - file: 98-04-correspondence-external-reproducibility-check
+    - file: LDI-Replication-Lab-Code-of-Conduct
     - file: 99-References
