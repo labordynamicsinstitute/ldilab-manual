@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Authentication-related issues &#8212; Training Manual For Reproducibility Verification</title>
+    <title>External reproducibility checks &#8212; Training Manual For Reproducibility Verification</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,11 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/replicability-training-manual-new/97-00-authentication.html" />
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/replicability-training-manual-new/71-External-reproducibility-checks.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Bitbucket Authentication" href="97-01-Bitbucket-authentication.html" />
-    <link rel="prev" title="Using scan_packages.do" href="96-03-stata-scan-packages.html" />
+    <link rel="next" title="Setup Checklist" href="91-setup-checklist.html" />
+    <link rel="prev" title="Adding the article DOI to the openICPSR deposit metadata" href="52-openicpsr-add-article-doi.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -315,9 +315,9 @@ const thebe_selector_output = ".output, .cell_output"
   Sundry other guidance
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="71-External-reproducibility-checks.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    External reproducibility checks
   </a>
  </li>
@@ -327,7 +327,7 @@ const thebe_selector_output = ".output, .cell_output"
   Appendix
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="91-setup-checklist.html">
    Setup Checklist
@@ -434,11 +434,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="97-00-authentication.html">
    Authentication-related issues
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
@@ -583,7 +583,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/labordynamicsinstitute/replicability-training-manual-new/issues/new?title=Issue%20on%20page%20%2F97-00-authentication.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/labordynamicsinstitute/replicability-training-manual-new/issues/new?title=Issue%20on%20page%20%2F71-External-reproducibility-checks.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -600,7 +600,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/labordynamicsinstitute/replicability-training-manual-new/edit/main/97-00-authentication.md"
+        <a href="https://github.com/labordynamicsinstitute/replicability-training-manual-new/edit/main/71-External-reproducibility-checks.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -628,7 +628,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/97-00-authentication.md"
+        <a href="_sources/71-External-reproducibility-checks.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -665,23 +665,180 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-manuscript-and-code-are-confidential-at-this-stage">
+   The manuscript and code are confidential at this stage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-a-separate-environment-to-run-the-code-where-possible">
+   Use a separate environment to run the code where possible
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-git">
+   Use Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#follow-the-procedures-in-the-authors-readme">
+   Follow the procedures in the authors’ README
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#replication-procedures">
+   Replication procedures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#log-everything">
+   Log everything
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-everything">
+   Document everything
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commit-all-logs-outputs-etc-to-git">
+   Commit all logs, outputs, etc. to Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compile-a-report">
+   Compile a report
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#send-a-report">
+   Send a report
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-confirmation">
+   Final confirmation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrap-up-delete-all-code-and-data">
+   Wrap-up: Delete all code and data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Authentication-related issues</h1>
+                <h1>External reproducibility checks</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-manuscript-and-code-are-confidential-at-this-stage">
+   The manuscript and code are confidential at this stage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-a-separate-environment-to-run-the-code-where-possible">
+   Use a separate environment to run the code where possible
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-git">
+   Use Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#follow-the-procedures-in-the-authors-readme">
+   Follow the procedures in the authors’ README
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#replication-procedures">
+   Replication procedures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#log-everything">
+   Log everything
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-everything">
+   Document everything
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commit-all-logs-outputs-etc-to-git">
+   Commit all logs, outputs, etc. to Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compile-a-report">
+   Compile a report
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#send-a-report">
+   Send a report
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-confirmation">
+   Final confirmation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrap-up-delete-all-code-and-data">
+   Wrap-up: Delete all code and data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -689,11 +846,212 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="authentication-related-issues">
-<h1>Authentication-related issues<a class="headerlink" href="#authentication-related-issues" title="Permalink to this headline">#</a></h1>
-<p>For CISER-related authentication or logon questions, see <a class="reference external" href="https://socialsciences.cornell.edu/research-support/login-instructions#passwords">CCSS-RS pages</a>.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="external-reproducibility-checks">
+<h1>External reproducibility checks<a class="headerlink" href="#external-reproducibility-checks" title="Permalink to this headline">#</a></h1>
+<p>If you have agreed to provide us with an external reproducibility check, we kindly ask that you follow these instructions.</p>
+<section id="the-manuscript-and-code-are-confidential-at-this-stage">
+<h2>The manuscript and code are confidential at this stage<a class="headerlink" href="#the-manuscript-and-code-are-confidential-at-this-stage" title="Permalink to this headline">#</a></h2>
+<p>Do not post them to any public place. Use the resources we provide you with, or those that your institution provides you with. While we may provide you with Github or Bitbucket repositories, those are to remain private, i.e., require a login for access.</p>
+<p>Once you have completed the task, and committed all changes to the Git repo we provide you with, or sent us the report from a secure system, delete all data and code when told to do so (don’t do this immediately, as we may have clarifying questions).</p>
+</section>
+<section id="use-a-separate-environment-to-run-the-code-where-possible">
+<h2>Use a separate environment to run the code where possible<a class="headerlink" href="#use-a-separate-environment-to-run-the-code-where-possible" title="Permalink to this headline">#</a></h2>
+<p>While you <em>can</em> use your laptop, you should follow certain procedures to both not affect the reproducibility check nor affect your usual working environment. Notes below.</p>
+</section>
+<section id="use-git">
+<h2>Use Git<a class="headerlink" href="#use-git" title="Permalink to this headline">#</a></h2>
+<p>We will provide you with the code in a Git repository (the data will be separate). If you have questions on how to use Git, please let us know, and we will help and guide you.</p>
+<blockquote>
+<div><p>You should NOT use the file upload capability of the web-based interface (i.e., <a class="reference external" href="http://Github.com">Github.com</a>, <a class="reference external" href="http://Bitbucket.com">Bitbucket.com</a>) if you can avoid it.</p>
+</div></blockquote>
+</section>
+<section id="follow-the-procedures-in-the-authors-readme">
+<h2>Follow the procedures in the authors’ README<a class="headerlink" href="#follow-the-procedures-in-the-authors-readme" title="Permalink to this headline">#</a></h2>
+<p>You should follow instructions as closely as possible. However,</p>
+<ul class="simple">
+<li><p>you are not required to do extremely tedious or time-intensive manual steps.</p></li>
+<li><p>you are not required to “bog down” your personal laptop (see resources)</p></li>
+<li><p>you should lightly improve on the procedures, by following our replication procedures (below)</p></li>
+<li><p>you are not required to install software or packages that might mess up your own research</p></li>
+</ul>
+</section>
+<section id="replication-procedures">
+<h2>Replication procedures<a class="headerlink" href="#replication-procedures" title="Permalink to this headline">#</a></h2>
+<p>In addition to any setup instructions from authors, a few things to take into account</p>
+<ul class="simple">
+<li><p>Use the resources we provide you with, where possible</p></li>
+<li><p>Use the procedures to use “<a class="reference external" href="http://config.do">config.do</a>” or similar files.</p>
+<ul>
+<li><p>This is always possible for Stata. See <a class="reference external" href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/stata-related-procedures.html#running-code-in-stata">instructions</a>.</p></li>
+<li><p>Similar procedures are possible for Python and Julia (use <code class="docutils literal notranslate"><span class="pre">environments</span></code>)</p></li>
+<li><p>Similar procedures are available, to some extent, for R (use separate libraries, if possible, or the <code class="docutils literal notranslate"><span class="pre">renv</span></code> or similar packages)</p></li>
+<li><p>Matlab and SAS will always use whatever is installed system-wide - this is a known caveat.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="log-everything">
+<h2>Log everything<a class="headerlink" href="#log-everything" title="Permalink to this headline">#</a></h2>
+<p>Create a log file, if possible, for every run.</p>
+<ul class="simple">
+<li><p>For Stata, our <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/template-config.do">template config.do file</a> will handle this, if used correctly.</p></li>
+<li><p>For R, use “R CMD BATCH” to run code, even when using Rstudio (use the Terminal tab ).</p></li>
+<li><p>For Matlab, where possible, use “<code class="docutils literal notranslate"><span class="pre">sink</span></code>”, but note that it might interfere with some programs.</p></li>
+<li><p>For Julia and Python, we have no good solutions other than to use the command line where possible, and capture the output.</p></li>
+</ul>
+<p>Once you have a log file, commit it.</p>
+</section>
+<section id="document-everything">
+<h2>Document everything<a class="headerlink" href="#document-everything" title="Permalink to this headline">#</a></h2>
+<p>Keep a journal of what you are doing. You should be able to point to the journal, together with a log file or screenshots, to document problems, and how you solve them.</p>
+<p>An example:</p>
+<blockquote>
+<div><ol class="simple">
+<li><p>Downloaded code and data from openICPSR</p></li>
+<li><p>Added line to use <code class="docutils literal notranslate"><span class="pre">config.do</span></code></p></li>
+<li><p>Ran <code class="docutils literal notranslate"><span class="pre">main.do</span></code>  as instructed by the author</p></li>
+</ol>
+<ul class="simple">
+<li><p>I used the “right-click” method on Windows</p></li>
+</ul>
+<ol class="simple">
+<li><p>Code stopped at the third step, looking for package <code class="docutils literal notranslate"><span class="pre">xyz</span></code></p></li>
+<li><p>Added the package to the relevant section in <code class="docutils literal notranslate"><span class="pre">config.do</span></code> so it would get installed, and ran the entire <code class="docutils literal notranslate"><span class="pre">main.do</span></code> again</p></li>
+<li><p>Programs finished but no figures were output. Inspection of the code showed that they only display on-screen. Added <code class="docutils literal notranslate"><span class="pre">graph</span> <span class="pre">export</span></code> as PNG files at all relevant parts, then ran entire <code class="docutils literal notranslate"><span class="pre">main.do</span></code> again.</p></li>
+</ol>
+</div></blockquote>
+<p>If the authors’ instructions say to “view” something interactively, investigate native methods (<code class="docutils literal notranslate"><span class="pre">graph</span> <span class="pre">export</span></code>) to capture the information. Otherwise, use screenshot to capture the information. Make a note of that, too.</p>
+</section>
+<section id="commit-all-logs-outputs-etc-to-git">
+<h2>Commit all logs, outputs, etc. to Git<a class="headerlink" href="#commit-all-logs-outputs-etc-to-git" title="Permalink to this headline">#</a></h2>
+<p>All logs and outputs, but not data, should be committed to Git.</p>
+</section>
+<section id="compile-a-report">
+<h2>Compile a report<a class="headerlink" href="#compile-a-report" title="Permalink to this headline">#</a></h2>
+<p>Our standard report template is included. You do not need to do the sections on Data Provenance unless explicitly asked to. You can start at the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/a530d6d5a906646e015ca62fdd78a774dd793e7a/REPLICATION.md?plain=1#L162">Code description</a>.</p>
+<ul class="simple">
+<li><p>Don’t forget to report your computer and software configuration</p></li>
+<li><p>The report should be committed to git as well. There is no need to convert it to PDF.</p></li>
+</ul>
+</section>
+<section id="send-a-report">
+<h2>Send a report<a class="headerlink" href="#send-a-report" title="Permalink to this headline">#</a></h2>
+<p>Reports should be committed to git (<strong>not</strong> sent by email). An email notification that all is complete is sufficient.</p>
+<blockquote>
+<div><p>Please “reply-all” to the email you received.</p>
+</div></blockquote>
+</section>
+<section id="final-confirmation">
+<h2>Final confirmation<a class="headerlink" href="#final-confirmation" title="Permalink to this headline">#</a></h2>
+<p>We will confirm to you when we have exhausted all our questions, at which point we will ask you to delete all code and data.</p>
+</section>
+<section id="wrap-up-delete-all-code-and-data">
+<h2>Wrap-up: Delete all code and data<a class="headerlink" href="#wrap-up-delete-all-code-and-data" title="Permalink to this headline">#</a></h2>
+<p>Once you have completed the task, and committed all changes to the Git repo we provide you with, or sent us the report from a secure system, AND have answered all of our clarifying quesitons, please delete all data and code.</p>
+</section>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
+<p>You can have access to all the resources we regularly use:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ciser.cornell.edu/computing/computing-help/how-to-login/">CCSS (“CISER”) compute nodes</a>. If you do not have an account, request a Research account with “lv39” as sponsor. Do not use the restricted data access!</p></li>
+<li><p><a class="reference external" href="https://biohpc.cornell.edu/lab/lab.aspx">BioHPC compute cluster</a>. If you do not have an account, request one. Even if you have an account, request to be added to the “lv39” lab.</p></li>
+<li><p><a class="reference external" href="https://www.codeocean.com">CodeOcean</a> - Don’t forget to share with “<a class="reference external" href="mailto:dataeditor&#37;&#52;&#48;aeapubs&#46;org">dataeditor<span>&#64;</span>aeapubs<span>&#46;</span>org</a>”. Instructions are <a class="reference external" href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/access-to-computers.html#reproducibility-checks-in-codeocean">here</a></p></li>
+<li><p><a class="reference external" href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/access-to-computers.html#conducting-reproducibility-checks-on-wholetale">WholeTale</a></p></li>
+<li><p><a class="reference external" href="https://github.com/codespaces">Github Codespaces</a> - with some caveats, talk to us</p></li>
+<li><p>Your laptop</p></li>
+</ul>
+<p>Matrix (tentative)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Environment</p></th>
+<th class="head"><p>Long-running</p></th>
+<th class="head"><p>Big data</p></th>
+<th class="head"><p>HPC</p></th>
+<th class="head"><p>Stata</p></th>
+<th class="head"><p>Matlab</p></th>
+<th class="head"><p>Julia</p></th>
+<th class="head"><p>Python</p></th>
+<th class="head"><p>R</p></th>
+<th class="head"><p>Docker</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CCSS</p></td>
+<td><p>Max 3.5 weeks</p></td>
+<td><p>M</p></td>
+<td><p>–</p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p>?</p></td>
+<td><p>M</p></td>
+<td><p>M</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>BioHPC</p></td>
+<td><p>Any length</p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p><strong>Y</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>CodeOcean</p></td>
+<td><p>Any length</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>WholeTale</p></td>
+<td><p>Any length</p></td>
+<td><p>M</p></td>
+<td><p>–</p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p>M</p></td>
+<td><p>M</p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>Github CS</p></td>
+<td><p>Max 12 h</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>Y*</p></td>
+<td><p>–</p></td>
+<td><p>Y*</p></td>
+<td><p><strong>Y</strong></p></td>
+<td><p>Y*</p></td>
+<td><p><strong>Y</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Laptop</p></td>
+<td><p>Any length?</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+</tr>
+</tbody>
+</table>
+<p>Key:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Y</span></code> Unqualified “Yes” - good support</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Y*</span></code> When using Docker images</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M</span></code> Medium - some caveats</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code> No - not recommended</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -723,17 +1081,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="96-03-stata-scan-packages.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="52-openicpsr-add-article-doi.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Using scan_packages.do</p>
+            <p class="prev-next-title">Adding the article DOI to the openICPSR deposit metadata</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="97-01-Bitbucket-authentication.html" title="next page">
+    <a class='right-next' id="next-link" href="91-setup-checklist.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bitbucket Authentication</p>
+        <p class="prev-next-title">Setup Checklist</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

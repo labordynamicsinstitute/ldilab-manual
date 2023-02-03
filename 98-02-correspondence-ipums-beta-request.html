@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Authentication-related issues &#8212; Training Manual For Reproducibility Verification</title>
+    <title>IPUMS Beta API request &#8212; Training Manual For Reproducibility Verification</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,11 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/replicability-training-manual-new/97-00-authentication.html" />
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/replicability-training-manual-new/98-02-correspondence-ipums-beta-request.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Bitbucket Authentication" href="97-01-Bitbucket-authentication.html" />
-    <link rel="prev" title="Using scan_packages.do" href="96-03-stata-scan-packages.html" />
+    <link rel="next" title="Requesting Restricted-Access Data from Authors" href="98-03-correspondence-requesting-restricted-access-data.html" />
+    <link rel="prev" title="Preparing a Legacy Deposit for Updates by Authors" href="98-01-correspondence-legacy-updates.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -434,11 +434,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="97-00-authentication.html">
    Authentication-related issues
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
@@ -451,23 +451,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="98-00-sundry-correspondence.html">
    Various templates for correspondence by AEA Data Editor team members
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="98-01-correspondence-legacy-updates.html">
      Preparing a Legacy Deposit for Updates by Authors
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="98-02-correspondence-ipums-beta-request.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      IPUMS Beta API request
     </a>
    </li>
@@ -583,7 +583,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/labordynamicsinstitute/replicability-training-manual-new/issues/new?title=Issue%20on%20page%20%2F97-00-authentication.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/labordynamicsinstitute/replicability-training-manual-new/issues/new?title=Issue%20on%20page%20%2F98-02-correspondence-ipums-beta-request.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -600,7 +600,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/labordynamicsinstitute/replicability-training-manual-new/edit/main/97-00-authentication.md"
+        <a href="https://github.com/labordynamicsinstitute/replicability-training-manual-new/edit/main/98-02-correspondence-ipums-beta-request.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -628,7 +628,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/97-00-authentication.md"
+        <a href="_sources/98-02-correspondence-ipums-beta-request.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -677,7 +677,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Authentication-related issues</h1>
+                <h1>IPUMS Beta API request</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -689,10 +689,29 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="authentication-related-issues">
-<h1>Authentication-related issues<a class="headerlink" href="#authentication-related-issues" title="Permalink to this headline">#</a></h1>
-<p>For CISER-related authentication or logon questions, see <a class="reference external" href="https://socialsciences.cornell.edu/research-support/login-instructions#passwords">CCSS-RS pages</a>.</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="ipums-beta-api-request">
+<h1>IPUMS Beta API request<a class="headerlink" href="#ipums-beta-api-request" title="Permalink to this headline">#</a></h1>
+<p>If the author uses IPUMS data, request access to the IPUMS API extract.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Your</span> <span class="n">replication</span> <span class="n">package</span> <span class="n">uses</span> <span class="n">IPUMS</span> <span class="n">data</span><span class="o">.</span> <span class="n">Provision</span> <span class="n">of</span> <span class="n">extracts</span> <span class="ow">is</span> <span class="n">required</span> <span class="k">for</span> <span class="n">sample</span> 
+<span class="p">(</span><span class="ow">not</span> <span class="n">full</span><span class="o">-</span><span class="n">count</span><span class="p">)</span> <span class="n">files</span><span class="p">,</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">compliant</span> <span class="k">with</span> <span class="n">IPUMS</span> <span class="n">Terms</span> <span class="n">of</span> <span class="n">Use</span><span class="o">.</span> 
+
+<span class="n">For</span> <span class="n">the</span> <span class="n">extracts</span> <span class="n">you</span> <span class="n">generated</span><span class="p">,</span> <span class="n">you</span> <span class="n">should</span> <span class="n">provide</span>
+
+<span class="o">-</span> <span class="n">the</span> <span class="n">dofile</span> <span class="k">for</span> <span class="n">read</span><span class="o">-</span><span class="ow">in</span> <span class="s2">&quot;usa_0028.do&quot;</span> <span class="ow">and</span> <span class="n">dct</span> <span class="n">files</span>
+<span class="o">-</span> <span class="k">for</span> <span class="n">sample</span> <span class="n">files</span><span class="p">,</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">extract</span> <span class="p">(</span><span class="n">dat</span> <span class="ow">or</span> <span class="n">dta</span> <span class="n">files</span><span class="p">)</span>
+
+<span class="n">However</span><span class="p">,</span> <span class="n">IPUMS</span> <span class="ow">is</span> <span class="n">trialling</span> <span class="n">an</span> <span class="n">API</span> <span class="k">for</span> <span class="n">extracts</span><span class="p">,</span> <span class="n">which</span> <span class="n">allows</span> <span class="n">a</span> <span class="n">user</span> <span class="n">to</span> <span class="n">export</span> <span class="n">the</span> <span class="n">extract</span> 
+<span class="n">specification</span><span class="p">,</span> <span class="ow">and</span> <span class="k">for</span> <span class="n">a</span> <span class="n">replicator</span> <span class="n">to</span> <span class="n">re</span><span class="o">-</span><span class="n">use</span> <span class="n">the</span> <span class="n">extract</span> <span class="n">specification</span> <span class="n">programmatically</span><span class="o">.</span> 
+<span class="n">We</span> <span class="n">are</span> <span class="n">able</span> <span class="n">to</span> <span class="n">convert</span> <span class="n">your</span> <span class="n">stored</span> <span class="n">extract</span> <span class="n">specification</span> <span class="n">into</span> <span class="n">a</span> <span class="n">downloadable</span> <span class="n">file</span><span class="o">.</span> 
+<span class="n">There</span> <span class="n">are</span> <span class="n">two</span> <span class="n">ways</span> <span class="n">forward</span> <span class="k">for</span> <span class="n">this</span><span class="p">:</span>
+
+<span class="o">-</span>  <span class="n">you</span> <span class="n">sign</span> <span class="n">up</span> <span class="k">for</span> <span class="n">the</span> <span class="n">beta</span> <span class="p">(</span><span class="n">write</span> <span class="n">to</span> <span class="n">ipums</span><span class="o">+</span><span class="n">api</span><span class="nd">@umn</span><span class="o">.</span><span class="n">edu</span> <span class="ow">and</span> <span class="n">tell</span> <span class="n">them</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">participate</span> 
+<span class="ow">in</span> <span class="n">the</span> <span class="n">beta</span><span class="p">,</span> <span class="ow">and</span> <span class="n">that</span> <span class="n">the</span> <span class="n">AEA</span> <span class="n">Data</span> <span class="n">Editor</span> <span class="n">sent</span> <span class="n">you</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">alternatively</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="n">give</span> <span class="n">us</span> <span class="n">permission</span> <span class="n">to</span> <span class="n">access</span> <span class="n">your</span> <span class="n">data</span> <span class="n">extracts</span><span class="o">.</span> <span class="n">We</span> <span class="n">will</span> <span class="n">then</span> <span class="n">handle</span> 
+<span class="n">converting</span> <span class="n">the</span> <span class="n">extract</span> <span class="ow">and</span> <span class="n">adding</span> <span class="n">the</span> <span class="n">files</span> <span class="n">to</span> <span class="n">your</span> <span class="n">replication</span> <span class="n">package</span><span class="o">.</span>
+
+<span class="n">Please</span> <span class="n">contact</span> <span class="n">the</span> <span class="n">Data</span> <span class="n">Editor</span> <span class="p">(</span><span class="n">dataeditor</span><span class="nd">@aeapubs</span><span class="o">.</span><span class="n">org</span><span class="p">)</span> <span class="n">to</span> <span class="n">let</span> <span class="n">us</span> <span class="n">know</span> <span class="n">your</span> <span class="n">choice</span> <span class="n">of</span> <span class="n">action</span><span class="o">.</span>
+</pre></div>
 </div>
 </section>
 
@@ -723,17 +742,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="96-03-stata-scan-packages.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="98-01-correspondence-legacy-updates.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Using scan_packages.do</p>
+            <p class="prev-next-title">Preparing a Legacy Deposit for Updates by Authors</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="97-01-Bitbucket-authentication.html" title="next page">
+    <a class='right-next' id="next-link" href="98-03-correspondence-requesting-restricted-access-data.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bitbucket Authentication</p>
+        <p class="prev-next-title">Requesting Restricted-Access Data from Authors</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

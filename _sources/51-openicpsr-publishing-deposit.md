@@ -1,4 +1,3 @@
-(interfacing-with-openicpsr)=
 # AEA: Publishing a deposit
 
 ## Responsibilities
