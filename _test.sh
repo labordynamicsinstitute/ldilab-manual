@@ -1,4 +1,6 @@
 #!/bin/bash
 
-source venv-3.8/bin/activate
+[[ -z $1 ]] && VERSION=3 || VERSION=$1
+
+source venv-$VERSION/bin/activate
 jupyter-book build .
