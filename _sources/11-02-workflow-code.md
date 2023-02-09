@@ -61,35 +61,50 @@ All actions in Github Codespaces (CS for short) will be performed in Visual Stud
 
 :::{tab-item} Manual steps 
 
-If neither of the other two methods work, try this method (typically, on CISER)
+If the automated population of the author's code directory did not work, you will need to manually download the replication package. Try to do this first using scripts.
 
-- [ ] Download the code (and data) from openICPSR (typicaly for most cases). See [openICPSR repositories](`r config$url$reploldmd`openICPSR_training.md) for instructions on downloading these materials. Typically called `111234.zip`.
+**Downloading using scripts**
+
+See [the details in the appendix](using-pre-pub-openicpsr). You can do this on CCSS or on Github CS. 
+
+**Downloading using a browser**
+
+If you are still unsuccesful at this point, try this manual method (typically, on CCSS)
+
+- [ ] Download the code (and data) from openICPSR (typicaly for most cases). See [details in the appendix](using-pre-pub-openicpsr) for instructions on downloading these materials. Typically called `111234.zip`.
   ![icpsr screen](images/icpsr-download.png)
   - Copy/paste the downloaded openICPSR ZIP file into the local copy of the `aearep-123` repository
     - The ZIP file should be called something like `111234.zip`. Note: it might *look* like a folder, but it is not! (on Windows) 
     - The ZIP file will be wherever your browser downloads materials - probably your `Download` folder.
-  - The local repository should now have the relevant LDI replication template materials and the openICPSR ZIP file containing the replication materials provided by the authors.
+
+**Next manual steps**
+
+The local repository should now have the relevant LDI replication template materials and the openICPSR ZIP file containing the replication materials provided by the authors.
+
 - [ ] If uploading to CS, copy the downloaded ZIP file into the CS. There are two ways to do this:
-    - Drag-and-drop the downloaded openICPSR ZIP file into the file pane of VSC. 
-    - Use the `gh` command line tool from a non-VSC terminal (on your local computer): 
-      ```bash
-      gh cs cp 111234.zip remote:/workspaces/aearep-123
-      ``` 
-      (adjust accordingly)
+  - Drag-and-drop the downloaded openICPSR ZIP file into the file pane of VSC. 
+  - Use the `gh` command line tool from a non-VSC terminal (on your local computer): 
+    ```bash
+    gh cs cp 111234.zip remote:/workspaces/aearep-123
+    ``` 
+    (adjust accordingly)
 - [ ] Unzip the openICPSR folder under a folder **named for the openICPSR repostory number**. 
-    - On Windows, right-click and select "Extract all". When asked, do not overwrite files.
-    - On OSX, double-click. When asked, do not overwrite files.
-    - From bash: 
-      ```bash
-      unzip -n 111234.zip -d 111234
-      ```
+  - From bash: 
+    ```bash
+    unzip -n 111234.zip -d 111234
+    ```
+  - On Windows, right-click and select "Extract all". When asked, do not overwrite files.
+  - On OSX, double-click. When asked, do not overwrite files.
   - The individual files that are part of the replication package should now be in a subdirectory (e.g, `111234`, the openICPSR repository number). 
   - Perform a `git add`: `git add 111234` should do the right thing.
-  - Perform `git commit`, `git push` sequence to populate the Bitbucket repo with the authors' replication materials (see above how to handle data).
+- [ ] Add the manuscript, and any response by the authors (if a revision)
+  - Add them to the Git repo 
+- [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
+  ```bash
+  git add PDF_Proof.pdf DataCodeAvailability.pdf
+  git push
+  ```
 
-:::
-
-::::
 
 - [ ] Clean-up: Delete (`git rm`) unused files from the template! 
   - Example: `git rm README.md template-config.R` if the replication archive does not contain any R files (you can do this at any time before writing the **Preliminary Report**)
@@ -105,6 +120,9 @@ If neither of the other two methods work, try this method (typically, on CISER)
     DataCodeAvailability.pdf
     REPLICATION.md
     ```
+:::
+
+::::
 
 - [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
 
@@ -116,6 +134,7 @@ If neither of the other two methods work, try this method (typically, on CISER)
   ```
 
 :::
+
 
 - [ ] Check with `git status` that there are no uncommited files.
 

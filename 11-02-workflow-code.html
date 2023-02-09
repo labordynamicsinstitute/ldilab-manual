@@ -777,8 +777,8 @@ title="Print to PDF"
 This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="0518cb78-7102-4d65-9902-ef95f54b57ac" name="a6583bc6-1675-4d28-a44a-cf227a62954b" type="radio">
-</input><label class="sd-tab-label" for="0518cb78-7102-4d65-9902-ef95f54b57ac">
+<input checked="checked" id="cf053433-b4ff-4041-a8a8-42bdb2de31fc" name="1478d1c6-d297-4512-870c-2a2d4479220e" type="radio">
+</input><label class="sd-tab-label" for="cf053433-b4ff-4041-a8a8-42bdb2de31fc">
 CISER</label><div class="sd-tab-content docutils">
 <ul class="contains-task-list">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Clone the Bitbucket repository onto the computer you are working on</p>
@@ -804,8 +804,8 @@ git<span class="w"> </span>push
 </li>
 </ul>
 </div>
-<input id="1d93fb89-584b-4b88-a5de-4beecfd98c2c" name="a6583bc6-1675-4d28-a44a-cf227a62954b" type="radio">
-</input><label class="sd-tab-label" for="1d93fb89-584b-4b88-a5de-4beecfd98c2c">
+<input id="2694c5eb-1df7-44d4-98e5-638810e1cdc4" name="1478d1c6-d297-4512-870c-2a2d4479220e" type="radio">
+</input><label class="sd-tab-label" for="2694c5eb-1df7-44d4-98e5-638810e1cdc4">
 Github Codespaces (CS) </label><div class="sd-tab-content docutils">
 <p>All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer.</p>
 <ul class="contains-task-list">
@@ -850,23 +850,30 @@ Github Codespaces (CS) </label><div class="sd-tab-content docutils">
 </li>
 </ul>
 </div>
-<input id="cd6c853e-838e-47f7-995b-dfeca907e092" name="a6583bc6-1675-4d28-a44a-cf227a62954b" type="radio">
-</input><label class="sd-tab-label" for="cd6c853e-838e-47f7-995b-dfeca907e092">
+<input id="be4ae700-d27b-4579-a83c-3f6641759b55" name="1478d1c6-d297-4512-870c-2a2d4479220e" type="radio">
+</input><label class="sd-tab-label" for="be4ae700-d27b-4579-a83c-3f6641759b55">
 Manual steps </label><div class="sd-tab-content docutils">
-<p>If neither of the other two methods work, try this method (typically, on CISER)</p>
-<ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Download the code (and data) from openICPSR (typicaly for most cases). See [openICPSR repositories](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$reploldmd</span></code>openICPSR_training.md) for instructions on downloading these materials. Typically called <code class="docutils literal notranslate"><span class="pre">111234.zip</span></code>.
+<p>If the automated population of the author’s code directory did not work, you will need to manually download the replication package. Try to do this first using scripts.</p>
+<p><strong>Downloading using scripts</strong></p>
+<p>See <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html#using-pre-pub-openicpsr"><span class="std std-ref">the details in the appendix</span></a>. You can do this on CCSS or on Github CS.</p>
+<p><strong>Downloading using a browser</strong></p>
+<p>If you are still unsuccesful at this point, try this manual method (typically, on CCSS)</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Download the code (and data) from openICPSR (typicaly for most cases). See <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html#using-pre-pub-openicpsr"><span class="std std-ref">details in the appendix</span></a> for instructions on downloading these materials. Typically called <code class="docutils literal notranslate"><span class="pre">111234.zip</span></code>.
 <img alt="icpsr screen" src="_images/icpsr-download.png" /></p>
-<ul class="simple">
+<ul>
 <li><p>Copy/paste the downloaded openICPSR ZIP file into the local copy of the <code class="docutils literal notranslate"><span class="pre">aearep-123</span></code> repository</p>
 <ul>
 <li><p>The ZIP file should be called something like <code class="docutils literal notranslate"><span class="pre">111234.zip</span></code>. Note: it might <em>look</em> like a folder, but it is not! (on Windows)</p></li>
 <li><p>The ZIP file will be wherever your browser downloads materials - probably your <code class="docutils literal notranslate"><span class="pre">Download</span></code> folder.</p></li>
 </ul>
 </li>
-<li><p>The local repository should now have the relevant LDI replication template materials and the openICPSR ZIP file containing the replication materials provided by the authors.</p></li>
 </ul>
 </li>
+</ul>
+<p><strong>Next manual steps</strong></p>
+<p>The local repository should now have the relevant LDI replication template materials and the openICPSR ZIP file containing the replication materials provided by the authors.</p>
+<ul class="contains-task-list">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> If uploading to CS, copy the downloaded ZIP file into the CS. There are two ways to do this:</p>
 <ul>
 <li><p>Drag-and-drop the downloaded openICPSR ZIP file into the file pane of VSC.</p></li>
@@ -880,22 +887,28 @@ Manual steps </label><div class="sd-tab-content docutils">
 </li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Unzip the openICPSR folder under a folder <strong>named for the openICPSR repostory number</strong>.</p>
 <ul>
-<li><p>On Windows, right-click and select “Extract all”. When asked, do not overwrite files.</p></li>
-<li><p>On OSX, double-click. When asked, do not overwrite files.</p></li>
 <li><p>From bash:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip<span class="w"> </span>-n<span class="w"> </span><span class="m">111234</span>.zip<span class="w"> </span>-d<span class="w"> </span><span class="m">111234</span>
 </pre></div>
 </div>
 </li>
+<li><p>On Windows, right-click and select “Extract all”. When asked, do not overwrite files.</p></li>
+<li><p>On OSX, double-click. When asked, do not overwrite files.</p></li>
 <li><p>The individual files that are part of the replication package should now be in a subdirectory (e.g, <code class="docutils literal notranslate"><span class="pre">111234</span></code>, the openICPSR repository number).</p></li>
 <li><p>Perform a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">111234</span></code> should do the right thing.</p></li>
-<li><p>Perform <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> sequence to populate the Bitbucket repo with the authors’ replication materials (see above how to handle data).</p></li>
 </ul>
 </li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Add the manuscript, and any response by the authors (if a revision)</p>
+<ul class="simple">
+<li><p>Add them to the Git repo</p></li>
 </ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Be sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> it all to Bitbucket, with a meaningful commit message.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>PDF_Proof.pdf<span class="w"> </span>DataCodeAvailability.pdf
+git<span class="w"> </span>push
+</pre></div>
 </div>
-</div>
-<ul class="contains-task-list">
+</li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Clean-up: Delete (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code>) unused files from the template!</p>
 <ul class="simple">
 <li><p>Example: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">README.md</span> <span class="pre">template-config.R</span></code> if the replication archive does not contain any R files (you can do this at any time before writing the <strong>Preliminary Report</strong>)</p></li>
@@ -916,6 +929,10 @@ Manual steps </label><div class="sd-tab-content docutils">
 </li>
 </ul>
 </li>
+</ul>
+</div>
+</div>
+<ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Be sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> it all to Bitbucket, with a meaningful commit message.</p></li>
 </ul>
 <div class="admonition note">
@@ -1072,7 +1089,7 @@ git<span class="w"> </span>push
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true

@@ -50,6 +50,7 @@ You can now submit your report for review by changing the status to `Under Revie
 
 ## Details
 
+(bitbucket-diff)=
 ### Comparing TeX files on Bitbucket
 
 If the authors provided LaTeX files as part of the replication package, you may be able to leverage Bitbucket or Git to compare them. 

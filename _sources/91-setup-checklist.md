@@ -3,7 +3,7 @@
 
 ## Accounts you will need to sign up for (action required)
 
-- [ ] CCSS-RS account (for computing access) - [Select "Apply for Research account" and list Lars as a sponsor.](hhttps://socialsciences.cornell.edu/research-support/compute-infrastructure) Do not select "*Request Secure Data Services account*". If prompted about using sensitive or restricted data, please select "*No*". Otherwise, this will take you to a window to sign up for a CRADC account instead, which is not necessary. If you encounter this issue, please email the [CISER help desk](https://socialsciences.cornell.edu/help-center#Helpdesk) asking them cancel the CRADC account request. 
+- [ ] CCSS-RS account (for computing access) - [Select "Apply for Research account" and list Lars as a sponsor.](https://socialsciences.cornell.edu/research-support/compute-infrastructure) Do not select "*Request Secure Data Services account*". If prompted about using sensitive or restricted data, please select "*No*". Otherwise, this will take you to a window to sign up for a CRADC account instead, which is not necessary. If you encounter this issue, please email the [CISER help desk](https://socialsciences.cornell.edu/help-center#Helpdesk) asking them cancel the CRADC account request. 
     - (no installation necessary on Windows, as it is pre-installed)
     - If using a Mac and if "*Microsoft Remote Desktop*"  is not already installed on Mac, install [Remote Desktop Software from iTunes](https://itunes.apple.com/us/app/microsoft-remote-desktop-10/id1295203466) 
     - Once an account is set up, learn [How to log on to CCSS-RS](https://socialsciences.cornell.edu/research-support/login-instructions) (also includes download links).

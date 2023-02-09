@@ -781,7 +781,7 @@ title="Print to PDF"
 <ul>
 <li><p>Some of this may involve “squinting” at images…</p></li>
 <li><p>For tables that are output to Excel, you may be able to use some Excel tools (copy the old numbers, create a difference function between all cells). This is hard to provide examples for, as every table differs.</p></li>
-<li><p>For tables that are output as LaTeX (files ending with <code class="docutils literal notranslate"><span class="pre">tex</span></code>) or as  CSV files, <em>and</em> if the authors provided previous versions, you may be able to use Bitbucket to compare them globally, without looking at individual numbers (see <span class="xref myst">details further down</span>).</p></li>
+<li><p>For tables that are output as LaTeX (files ending with <code class="docutils literal notranslate"><span class="pre">tex</span></code>) or as  CSV files, <em>and</em> if the authors provided previous versions, you may be able to use Bitbucket to compare them globally, without looking at individual numbers (see <a class="reference internal" href="#bitbucket-diff"><span class="std std-ref">details further down</span></a>).</p></li>
 </ul>
 </li>
 <li><p>When there are differences: Include images of figures and screenshots of tables (both paper and as-reproduced) in the report</p>
@@ -837,7 +837,7 @@ Figure 5 as reproduced:
 <section id="details">
 <h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">#</a></h2>
 <section id="comparing-tex-files-on-bitbucket">
-<h3>Comparing TeX files on Bitbucket<a class="headerlink" href="#comparing-tex-files-on-bitbucket" title="Permalink to this headline">#</a></h3>
+<span id="bitbucket-diff"></span><h3>Comparing TeX files on Bitbucket<a class="headerlink" href="#comparing-tex-files-on-bitbucket" title="Permalink to this headline">#</a></h3>
 <p>If the authors provided LaTeX files as part of the replication package, you may be able to leverage Bitbucket or Git to compare them.</p>
 <ul class="simple">
 <li><p>Note first that the typical table when output, if identical, will not register as “modified” with Git.</p>
@@ -886,7 +886,7 @@ Figure 5 as reproduced:
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true

@@ -693,6 +693,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloading-from-openicpsr">
+   Downloading from openICPSR
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reminders">
    Reminders
   </a>
@@ -722,6 +727,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloading-from-openicpsr">
+   Downloading from openICPSR
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reminders">
    Reminders
   </a>
@@ -737,7 +747,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="using-pre-publication-openicpsr-projects">
-<h1>Using pre-publication openICPSR Projects<a class="headerlink" href="#using-pre-publication-openicpsr-projects" title="Permalink to this headline">#</a></h1>
+<span id="using-pre-pub-openicpsr"></span><h1>Using pre-publication openICPSR Projects<a class="headerlink" href="#using-pre-publication-openicpsr-projects" title="Permalink to this headline">#</a></h1>
 <p>Typically the AEA Data Editor team will access code and data provided by authors that is stored on <a class="reference external" href="https://www.openicpsr.org/openicpsr/aea">openICPSR</a>.</p>
 <blockquote>
 <div><p>Cornell replicators: You will need to set up an openICPSR account using your Cornell email.</p>
@@ -749,9 +759,12 @@ title="Print to PDF"
 <li><p>Each deposit is identified with a six digit number (<code class="docutils literal notranslate"><span class="pre">123456</span></code>)</p></li>
 <li><p>You will download the project and commit the code (but not the data) files to the corresponding Bitbucket repo.</p></li>
 </ul>
+</section>
+<section id="downloading-from-openicpsr">
+<span id="downloading-with-script"></span><h2>Downloading from openICPSR<a class="headerlink" href="#downloading-from-openicpsr" title="Permalink to this headline">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="5cea5436-d411-42f4-bfea-5347812a55f4" name="a678e16c-4117-49c3-8c85-ed193d10e769" type="radio">
-</input><label class="sd-tab-label" for="5cea5436-d411-42f4-bfea-5347812a55f4">
+<input checked="checked" id="a38d05f5-56c0-413e-a44c-575126fd8c0a" name="e4edb545-69f4-41d1-9d12-8dec8e49bdc1" type="radio">
+</input><label class="sd-tab-label" for="a38d05f5-56c0-413e-a44c-575126fd8c0a">
 Downloading using a script</label><div class="sd-tab-content docutils">
 <p>The most convenient way to download the information is to use the LDI-specific script <code class="docutils literal notranslate"><span class="pre">tools/download_openicpsr-private.py</span></code> (be sure to have <a class="reference internal" href="95-01-setup-bash.html#setup-bash"><span class="std std-ref">set up your environment first</span></a>).</p>
 <p><strong>Short version of call to script</strong></p>
@@ -772,8 +785,8 @@ Downloading using a script</label><div class="sd-tab-content docutils">
 </ul>
 <p>See <a class="reference internal" href="95-01-setup-bash.html#setup-bash"><span class="std std-ref">appendix</span></a> on how to set up the environment to make the script simpler (i.e., allow the short form to run).</p>
 </div>
-<input id="9194d230-2434-4d2e-adb4-047fb70d50a0" name="a678e16c-4117-49c3-8c85-ed193d10e769" type="radio">
-</input><label class="sd-tab-label" for="9194d230-2434-4d2e-adb4-047fb70d50a0">
+<input id="13fc5de3-5619-43bf-9050-be960fc15586" name="e4edb545-69f4-41d1-9d12-8dec8e49bdc1" type="radio">
+</input><label class="sd-tab-label" for="13fc5de3-5619-43bf-9050-be960fc15586">
 Downloading a project manually</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>Log on to the openICPSR website by clicking on the <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">provenance</span></code> link in Jira</p></li>
@@ -809,7 +822,7 @@ Downloading a project manually</label><div class="sd-tab-content docutils">
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true

@@ -22,8 +22,17 @@ You will be working on a variety of computers
 
 :::{tab-item} CCSS-RS
 
-- You should synchronize your VSCode settings with your *normal* computer. This will bring over any settings and extensions! Very useful.
+- You should synchronize your VSCode settings with your *normal* computer. This will bring over any settings and extensions! Very useful. See the [VS Code Settings Sync page](https://code.visualstudio.com/docs/editor/settings-sync).
 - You should do additional setup for your Git bash shell: this includes making downloads from openICPSR simpler. See [appendix](setup-bash).
+
+:::
+
+:::{tab-item} Github CS
+
+- You should synchronize your VSCode settings with your *normal* computer. This will bring over any settings and extensions! Very useful. See the [VS Code Settings Sync page](https://code.visualstudio.com/docs/editor/settings-sync).
+- TO COME: setting up person-specific variables.
+
+:::
 
 ### What can you do where
 
@@ -41,9 +50,9 @@ If you actually have the software on your laptop, you should feel free to run co
 
 Some software is not available on CCSS-RS. If you encounter the following, you should check with your supervisor:
 
-| Software | CCSS-RS |
+| Software | Computing environment |
 |----------|--------------------|
-| Dynare   | Red Cloud Windows node |
+| Dynare   | Red Cloud Windows node, CCSS|
 | Fortran compiler | BioHPC linux cluster |
 | C compiler  | BioHPC linux cluster |
 | Eviews | Not currently available |
