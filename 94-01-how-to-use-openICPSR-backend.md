@@ -1,3 +1,4 @@
+(using-pre-pub-openicpsr)=
 # Using pre-publication openICPSR Projects 
 
 Typically the AEA Data Editor team will access code and data provided by authors that is stored on [openICPSR](https://www.openicpsr.org/openicpsr/aea). 
@@ -9,6 +10,9 @@ Typically the AEA Data Editor team will access code and data provided by authors
 - Authors will create a draft deposit that contains the replication archive for their paper.
 - Each deposit is identified with a six digit number (`123456`)
 - You will download the project and commit the code (but not the data) files to the corresponding Bitbucket repo.
+
+(downloading-with-script)=
+## Downloading from openICPSR
 
 ::::{tab-set}
 
