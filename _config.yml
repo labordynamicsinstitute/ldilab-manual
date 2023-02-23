@@ -81,6 +81,20 @@ data:
   # This is the google Form URL that the replicator/ assessor accesses.
   - googleformurl: "https://docs.google.com/forms/d/e/1FAIpQLSdUUZiGw3Rsv7RDimEhmQT4G1T7ZBWUR0Td_lNmAdKs5UGB0w/viewform?usp=sf_link"
 
+
 # This will need to be integrated using GLUE, see https://jupyterbook.org/en/stable/content/executable/output-insert.html
 # - at setup, read in _config.yml, make glue variables
 # - able to reference anywhere in the document.
+
+url:
+  acre: https://bitss.github.io/ACRE/
+  replraw: https://github.com/labordynamicsinstitute/replicability-training/raw/master/
+  replmd: https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/
+  reploldmd: https://github.com/labordynamicsinstitute/replicability-training/blob/master/
+  templmd: https://github.com/AEADataEditor/replication-template/blob/master/
+  pandp:
+  # For instructions to set up, see Lab Assistant Setup document
+  # This is the URL of the Google Folder
+  - googlefolderurl: "https://drive.google.com/drive/u/1/folders/1BhqECqYdBQJecRcDaJf_Jl2NoyiyrYzl"
+  # This is the google Form URL that the replicator/ assessor accesses.
+  - googleformurl: "https://docs.google.com/forms/d/e/1FAIpQLSdUUZiGw3Rsv7RDimEhmQT4G1T7ZBWUR0Td_lNmAdKs5UGB0w/viewform?usp=sf_link"
