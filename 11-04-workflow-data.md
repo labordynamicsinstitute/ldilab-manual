@@ -1,6 +1,13 @@
 
 # Data 
 
+When assessing the data, please take care to distinguish
+
+- data that is part of the openICPSR deposit
+- data that the README tells you to download or otherwise access
+- data that you are provided on the S-Drive, which is typically provided under an agreement with the authors, and cannot be redistributed.
+
+
 ::::{tab-set}
 
 :::{tab-item} CCSS-RS (CISER)
@@ -8,8 +15,8 @@
 - [ ] Ensure that you have set up your CCSS-RS environment (see [appendix](setup-bash))
 - [ ] On CISER, the data will be stored locally.
   - In some cases, you may be asked to use (restricted) data on the S: drive. Follow instructions as you receive them.
-- [ ] Download the openICPSR data (if not already done in the previous step, and if available). 
-  - Manually, see [Manual steps](#Manual) above.
+- [ ] Download the openICPSR data (**if not already done in the previous step**, and if available). 
+  - Try to do this first using scripts. See [the details in the appendix](using-pre-pub-openicpsr). 
     ```bash
     python tools/download_openicpsr-private.py 111234 . netid@cornell.edu
     unzip -n 111234 -d 111234
@@ -18,10 +25,8 @@
     ```
     python tools/download_openicpsr-private.py 111234
     ```
-    which should unpack the data files only, not overwriting anything else.
+    which should unpack the data files only, not overwriting anything else. **If this fails, do the "Manual steps,"** then come back here.
 - [ ] attempt to download data from various sources indicated by the authors, but ONLY if no sign-up/ application process is involved. 
-- [ ] If there is data: Run the PII-checking code, review the output, and record the result in the `REPLICATION.md`.
-  - This may already have been generated, check `generated/pii_stata_output.csv` and `generated/PII_stata_scan_summary.txt`.
 
 :::
 
@@ -29,7 +34,7 @@
 
 
 - [ ] Be sure you still have the Bitbucket repository clone, if not, follow instructions under [Code](#code)
-- [ ] Download the openICPSR deposit using the LDI short-cut command
+- [ ] Download the openICPSR deposit using the LDI short-cut command.  See [the details in the appendix](using-pre-pub-openicpsr). 
   - `python3 tools/download_openicpsr-private.py 111234`
   - The ZIP file should now be in the same folder as `REPLICATION.md`.
 - [ ] Unzip the openICPSR ZIP file againto a folder **named for the openICPSR repostory number**. 
@@ -37,6 +42,7 @@
       ```bash
       unzip -n 111234 -d 111234
       ```
+    - If this fails, switch to the "**Manual steps**" and follow instructions there.
 - [ ] Upload data that you obtained from other sources to CS. There are two ways to do this:
     - Drag-and-drop the downloaded data file into the file pane of VSC, into the appropriate location.
     - Use the `gh` command line tool from a non-VSC terminal (on your local computer): 
@@ -44,12 +50,36 @@
       gh cs cp datafile.dat remote:/workspaces/aearep-123/111234/data/location
       ``` 
       (adjust accordingly as per the author's instructions)
-- [ ] If there is data: Run the PII-checking code, review the output, and record the result in the `REPLICATION.md`.
-    - This may already have been generated, check `generated/pii_stata_output.csv` and `generated/PII_stata_scan_summary.txt`.
 
 :::
+
+
+:::{tab-item} Manual steps 
+
+If the scripts did not work, you will need to manually download the replication package,  using a browser (typically, on CCSS).
+
+- [ ] Download the data (and code) from openICPSR (typicaly for most cases). Typically called `111234.zip`.
+  ![icpsr screen](images/icpsr-download.png)
+  - Copy/paste the downloaded openICPSR ZIP file into the local copy of the `aearep-123` repository
+    - The ZIP file should be called something like `111234.zip`. Note: it might *look* like a folder, but it is not! (on Windows) 
+    - The ZIP file will be wherever your browser downloads materials - probably your `Download` folder.
+
+- [ ] Unzip the openICPSR file on top the folder **named for the openICPSR repostory number**. Be careful not to overwrite anything - that is what the commands below ensure.
+  - From bash (**preferred**)
+    ```bash
+    unzip -n 111234.zip -d 111234
+    ```
+  - On Windows, right-click and select "Extract all". When asked, do not overwrite files.
+  - On OSX, double-click. When asked, do not overwrite files.
+
+You should now have the data merged with the pre-existing code files. Return to the tab that corresponds to where you were working before.
+
+::: 
+
 ::::
 
+- [ ] If there is data: Run the PII-checking code, review the output, and record the result in the `REPLICATION.md`.
+    - This may already have been generated, check `generated/pii_stata_output.csv` and `generated/PII_stata_scan_summary.txt`.
 - [ ] You should check the output - it is not automatic.
   - You should use words, and examples, from the output if it looks like there is Personally Identifying Information (PII) like names, addresses, etc. in the output.
   - The author will NOT see the output from the program unless you copy **relevant** parts of it into the report.

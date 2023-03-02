@@ -25,12 +25,13 @@ parts:
     - file: 11-00-jira-workflow
       sections:
       - file: 11-01-workflow-in-progress
-      - file: 11-02-workflow-code
-      - file: 11-03-workflow-data
-      - file: 11-04-workflow-write-prelim
-      - file: 11-05-workflow-verification
-      - file: 11-06-workflow-code-review
-      - file: 11-07-workflow-writing-report
+      - file: 11-02-workflow-prepare
+      - file: 11-03-workflow-code
+      - file: 11-04-workflow-data
+      - file: 11-05-workflow-write-prelim
+      - file: 11-06-workflow-verification
+      - file: 11-07-workflow-code-review
+      - file: 11-08-workflow-writing-report
     - file: 12-jira-revision-guidance
     - file: 13-approving-issues
     - file: 20-Pending_ICPSR
