@@ -1,4 +1,4 @@
-
+(Manual1)=
 # Prepare the working area 
 
 Before we can verify code, data, and documentation, we need to get the code and data onto your "working area". 
@@ -58,7 +58,6 @@ All actions in Github Codespaces (CS for short) will be performed in Visual Stud
     - Or use the VSC Git tools
 :::
 
-(Manual1)=
 :::{tab-item} Manual steps 
 
 If the automated population of the author's code directory did not work, you will need to manually download the replication package. Try to do this first using scripts.
