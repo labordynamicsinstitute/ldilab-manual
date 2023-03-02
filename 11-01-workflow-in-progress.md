@@ -74,10 +74,11 @@ You will now run what is called a *`Bitbucket Pipeline`*. Similar tools on other
 ![running pipeline](images/jira-run-pipeline-running.png)
 
 - [ ] Once your pipeline is done, check that it is green.
-  - If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You may then need to do [the manual steps later](#Manual).
+  - If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You may then need to do [the manual steps later](#Manual1).
 
 ![completed pipeline](images/jira-run-pipeline-finished.png)
 
+(collecting-information)=
 ## Collecting information 
 
 At this stage, you are collecting information. 

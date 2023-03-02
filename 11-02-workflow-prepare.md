@@ -58,6 +58,7 @@ All actions in Github Codespaces (CS for short) will be performed in Visual Stud
     - Or use the VSC Git tools
 :::
 
+(Manual1)=
 :::{tab-item} Manual steps 
 
 If the automated population of the author's code directory did not work, you will need to manually download the replication package. Try to do this first using scripts.
