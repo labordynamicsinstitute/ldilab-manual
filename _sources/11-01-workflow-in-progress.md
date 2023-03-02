@@ -69,12 +69,12 @@ You will now run what is called a *`Bitbucket Pipeline`*. Similar tools on other
 
 ![select pipeline](images/jira-run-pipeline-icpsr.png)
 
-- Your pipeline will start, working through various steps. This might take a while! Do the next step ([Collecting Information](#collecting-information)) then come back here.
+- Your pipeline will start, working through various steps. This might take a while! Do the next step ([Collecting Information](collecting-information)) then come back here.
 
 ![running pipeline](images/jira-run-pipeline-running.png)
 
 - [ ] Once your pipeline is done, check that it is green.
-  - If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You may then need to do [the manual steps later](#Manual1).
+  - If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You may then need to do [the manual steps later](Manual1).
 
 ![completed pipeline](images/jira-run-pipeline-finished.png)
 

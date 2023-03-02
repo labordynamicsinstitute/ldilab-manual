@@ -2,7 +2,7 @@
 
 # Code of Conduct (Summary View)
 
-Below is a summary of LDI Replication Lab Code of Conduct. Continue reading for a [more detailed description of the CoC](#code-of-conduct-detailed-view).
+Below is a summary of LDI Replication Lab Code of Conduct. Continue reading for a [more detailed description of the CoC](code-of-conduct-detailed-view).
 
 > All team members of the LDI Replication Lab are subject to Cornell University [Code of Academic Integrity](https://theuniversityfaculty.cornell.edu/dean/academic-integrity/code-of-academic-integrity/)  and  [Policy 6.4](https://titleix.cornell.edu/policy-6-4-prohibited-bias-discrimination-harassment-and-sexual-and-related-misconduct/) on "Prohibited Bias, Discrimination, Harassment, and Sexual and Related Misconduct." For all reporting procedures, please consult those websites.
 
@@ -16,6 +16,7 @@ We are dedicated to providing a welcoming and supportive environment for all peo
 
 If you believe someone is violating the Code of Conduct, we ask that you report it to Cornell University, who will take the appropriate action to address the situation.
 
+(code-of-conduct-detailed-view)=
 # Code of Conduct (Detailed View)
 
 Part 1. Introduction 

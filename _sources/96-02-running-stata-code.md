@@ -17,7 +17,7 @@ A master .do file is a Stata script that will call, in the correct sequence, all
 
 ### When a master .do file is provided
 
-If there is a master do file, continue with [Step 2](#Step2).
+If there is a master do file, continue with [Step 2](Step2).
 
 
 ### When a master .do file is not provided
@@ -62,7 +62,7 @@ At the end your master .do file may look like this:
 
 With your master do file done, continue with [Step 2](#Step2).
 
-
+(Step2)=
 ## Step 2: place config.do where the master .do file is located {#Step2}
 
 > **[ACTION]** Copy the file [`template-config.do`](https://github.com/AEADataEditor/replication-template/blob/master/template-config.do) and paste it into the folder where the master file is located. Change the name from `template-config.do` to `config.do`
