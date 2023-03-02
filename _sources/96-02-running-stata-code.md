@@ -60,10 +60,10 @@ At the end your master .do file may look like this:
 
 ![master](images/master-example.png)
 
-With your master do file done, continue with [Step 2](#Step2).
+With your master do file done, continue with [Step 2](Step2).
 
 (Step2)=
-## Step 2: place config.do where the master .do file is located {#Step2}
+## Step 2: place config.do where the master .do file is located 
 
 > **[ACTION]** Copy the file [`template-config.do`](https://github.com/AEADataEditor/replication-template/blob/master/template-config.do) and paste it into the folder where the master file is located. Change the name from `template-config.do` to `config.do`
 
