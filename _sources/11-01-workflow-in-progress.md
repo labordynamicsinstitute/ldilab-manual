@@ -38,6 +38,7 @@ Is the current Jira issue an **original report** (first time we see the manuscri
 
 - We have now created a Bitbucket repo named something like aearep-123 that has been populated with the latest version of the LDI replication template documents!
 
+(ingesting-author-materials)=
 ## Ingesting author materials
 
 We will now ingest the authors' materials, and run a few statistics. Typically, the materials will be on a (private) openICPSR repository. Sometimes, the materials will be at Dataverse, Zenodo, or elsewhere.
