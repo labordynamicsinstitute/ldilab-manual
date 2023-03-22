@@ -199,15 +199,13 @@ local ssc_packages "estout"
     // local ssc_packages "estout boottest"
     // If you need to "net install" packages, go to the very end of this program, and add them there.
 ```
-## Step 6: Run the Code {.tabset}
+## Step 6: Run the Code
 
 
-<div class="w3-bar w3-black">
-  <button class="w3-bar-item w3-button" onclick="openTab('Windows')">Windows</button>
-  <button class="w3-bar-item w3-button" onclick="openTab('MacLinux')">Mac/Linux</button>
-</div> 
 
-### Windows {#Windows .computeloc}
+::::{tab-set}
+
+:::{tab-item}  Windows 
 
 > **[ACTION]** **Right click** on the master .do file and select the option `Execute (do)`.
 
@@ -215,7 +213,10 @@ local ssc_packages "estout"
 
 This option will set the working directory  to the location where the `master.do` is. It opens Stata and will show the processes in the Stata window.
 
-### Mac/Linux {#MacLinux .computeloc .invisible}
+
+:::
+
+:::{tab-item} Mac/Linux 
 
 On Unix-style systems, the preferred way is to use the command line to run Stata code.
 
@@ -236,7 +237,9 @@ Each version is increasingly powerful. Choose the most powerful one installed on
 Then  type "`stata-mp -b do master.do`". 
 
 
-## {-} 
+::: 
+
+::::
 
 ### Checking for a complete run, debugging and running the master in pieces
 
