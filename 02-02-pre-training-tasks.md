@@ -6,7 +6,7 @@ We ask that trainees accomplish a few tasks prior to the first training session.
 ## Read
 
 - We frequently meet virtually - at least one, and most of the time both of our weekly meetings are on Zoom. Review our [Video Etiquette rules](https://github.com/labordynamicsinstitute/replicability-training/wiki/Videoconferencing-Rules-and-Etiquette) (they are useful beyond our group as well). When training is virtual, these rules apply as well.
-- Review our [Privacy Policy](#privacy), where you will recognize how we handle your privacy, and the privacy of authors. 
+- Review our [Privacy Policy](privacy), where you will recognize how we handle your privacy, and the privacy of authors. 
 
 ## View
 

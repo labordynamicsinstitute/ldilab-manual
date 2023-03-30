@@ -37,7 +37,7 @@ Journals' stylistic considerations also reduce the impact of the DCC. Citations 
 
 > Electronic content presented without formal ties to a publisher or sponsoring body has the authority equivalent to that of unpublished or self-published material in other media.
 
-FAIR data helps convey such information, but often, assessing what "publisher" or "sponsoring body" is reputable or reliable is tricky. And the citation fails to convey many important facets of data access. What if the cited resource requires a login, even if it is free? What if payment is required? What if a long-winding application process is required? Citations do not communicate that amount of detail.  As we shall see [later](#dasmaster), there are ways to augment data citations with the needed information.
+FAIR data helps convey such information, but often, assessing what "publisher" or "sponsoring body" is reputable or reliable is tricky. And the citation fails to convey many important facets of data access. What if the cited resource requires a login, even if it is free? What if payment is required? What if a long-winding application process is required? Citations do not communicate that amount of detail.  As we shall see [later](dasmaster), there are ways to augment data citations with the needed information.
 
 ## How do you create a data citation
 
@@ -172,7 +172,7 @@ If using the S&P 500 data, there may be multiple providers:
 
 > S&P Dow Jones Indices LLC, *S&P 500*, provided via Haver Analytics Data Subscription, February 24, 2018. 
 
-with hopefully the same content. Note that often, such data is subject to copyright and redistribution restrictions (see [the page at FRED on SP500](https://fred.stlouisfed.org/series/SP500) and discussion in the [later section](#dasmaster)). 
+with hopefully the same content. Note that often, such data is subject to copyright and redistribution restrictions (see [the page at FRED on SP500](https://fred.stlouisfed.org/series/SP500) and discussion in the [later section](dasmaster)). 
 
 
 ### Dates
@@ -266,8 +266,8 @@ Furthermore, as data citation are still a relatively new concept, many authors w
 
 
 
-
-## Data availability statements {#dasmaster}
+(dasmaster)=
+## Data availability statements 
 
 The academic publishing community's response are "data availability statements (DAS)." While mostly, these are pointers from the journal to where the data can be found. In the case of data supplements, this is almost trivial when the journal has a robust data availability policy, though some journals allow for self-declared but unverified DAS. 
 
