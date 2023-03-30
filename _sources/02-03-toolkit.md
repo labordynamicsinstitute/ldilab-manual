@@ -118,6 +118,7 @@ You can see in the preview tab again to see how the formatting renders.
 
 
 > ### Exercise: Try Out Markdown
+
 > [Online Markdown Tutorial](https://www.markdowntutorial.com/)
 
 

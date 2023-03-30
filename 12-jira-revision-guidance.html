@@ -468,9 +468,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generic-guidance">Generic Guidance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-the-revision-report">Writing the Revision Report</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-workflow">Revision Workflow</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-progress">In Progress</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-code">Updating code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-other-materials">Updating other materials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-preliminary-report">Write Preliminary report</a></li>
@@ -478,7 +479,10 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#re-running-code">Re-running code</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-report">Writing Report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-report">Writing Report</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#some-notes">Some notes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example">An example</a></li>
@@ -513,33 +517,6 @@ document.write(`
 <li><p>Please be sure to have the committed “<a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>” be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.</p></li>
 </ul>
 </section>
-<section id="writing-the-revision-report">
-<h2>Writing the Revision Report<a class="headerlink" href="#writing-the-revision-report" title="Permalink to this heading">#</a></h2>
-<p>Please be clear when writing the revision report. The report should make sense without having to refer to the previous report.</p>
-<ul class="simple">
-<li><p>The body of the report should reflect the current status of the deposit.</p>
-<ul>
-<li><p>Example: if authors were missing a setup program before and now provide it, the <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Description</span></code> section of the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a> should be updated to reflect the inclusion of this program.</p></li>
-</ul>
-</li>
-<li><p>Replace all [REQUIRED] and [SUGGESTED] items with [We REQUESTED] and [We SUGGESTED], respectively.</p>
-<ul>
-<li><p>Note: in the summary, these tags are using bullets (<code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[REQUIRED]</span></code>) - those should be changed to “quotes”: <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">[We</span> <span class="pre">REQUESTED]</span></code></p></li>
-</ul>
-</li>
-<li><p>Below each such tag, add a bullet point. Start the paragraph with “Done” if the issue was resolved, or “Not done” if not. Then explain what was done.</p></li>
-</ul>
-<p>An example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; [REQUIRED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
-</pre></div>
-</div>
-<p>becomes</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; [We REQUESTED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
-
-- Done. A setup program has been added to the deposit, which installs all necessary packages. 
-</pre></div>
-</div>
-</section>
 <section id="revision-workflow">
 <h2>Revision Workflow<a class="headerlink" href="#revision-workflow" title="Permalink to this heading">#</a></h2>
 <p>You should proceed through the <a class="reference internal" href="11-00-jira-workflow.html#aea-jira-workflow-a-guide"><span class="std std-ref">workflow</span></a> as you would for an original case with some exceptions:</p>
@@ -567,13 +544,60 @@ document.write(`
 </li>
 </ul>
 </li>
+</ul>
+</section>
+<section id="updating-code">
+<h3>Updating code<a class="headerlink" href="#updating-code" title="Permalink to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Bitbucket Pipeline</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>First, you will want to update the tools in this repository. Navigate to the <code class="docutils literal notranslate"><span class="pre">Pipelines</span></code> tab</p></li>
+</ul>
+<p><img alt="" src="_images/jira-find-pipelines.png" /></p>
+<p>If you do not see pipelines run in the past, you will need to <a class="reference internal" href="#revision-code-step"><span class="std std-ref">do this manually later</span></a>.</p>
+<ul class="simple">
+<li><p>You will now need to select a “pipeline” to run.</p></li>
+</ul>
+<p><img alt="select pipeline" src="_images/jira-select-pipeline.png" /></p>
+<ul class="simple">
+<li><p>Choose “<code class="docutils literal notranslate"><span class="pre">refresh-tools</span></code>”. Hit “Run”.</p></li>
+</ul>
+<p><img alt="select pipeline" src="_images/jira-run-pipeline-updatetools.png" /></p>
+<ul class="simple">
+<li><p>Your pipeline will start, working through various steps.</p></li>
+</ul>
+<p><img alt="running pipeline" src="_images/jira-run-pipeline-running.png" /></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Once your pipeline is done, check that it is green.</p>
+<ul>
+<li><p>If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You may then need to <a class="reference internal" href="#revision-code-step"><span class="std std-ref">do this manually later</span></a>.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="completed pipeline" src="_images/jira-run-pipeline-finished.png" /></p>
+<ul class="simple">
+<li><p>Second, run the next pipeline. This one is the same as the one described in <a class="reference internal" href="11-01-workflow-in-progress.html#ingesting-author-materials"><span class="std std-ref">Ingesting Author Materials</span></a>. It will update the code in place, implementing the detailed instructions for the process of updating the replication materials described in the <a class="reference internal" href="94-04-Updating_Materials.html#updating-replication-materials-after-revisions"><span class="std std-ref">Appendix: Updating Replication Materials after Revision</span></a>. You don’t have to do anything except wait! Once that is done, go to the next step.</p></li>
+</ul>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Manually</label><div class="sd-tab-content docutils">
+<p>If you can’t use the Bitbucket pipeline, defer this step to <a class="reference internal" href="#revision-code-step"><span class="std std-ref">later</span></a>.</p>
+</div>
+</div>
+</section>
+<section id="updating-other-materials">
+<h3>Updating other materials<a class="headerlink" href="#updating-other-materials" title="Permalink to this heading">#</a></h3>
+<ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Download the materials attached to the JIRA issue. This will typically include</p>
 <ul>
 <li><p>an updated copy of the manuscript,</p></li>
 <li><p>a response to the editor addressing the requested changes from the prior replication attempt.</p></li>
 </ul>
 </li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Remove obsolete files. In the root, this should be obvious (old manuscript), in the copy of the code, a bit trickier, but necessary.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Remove obsolete files. In the root, this should be obvious (old manuscript).</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Add these to the root of the repository locally, and then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> them to the Bitbucket repository (e.g., <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">PDF_Proof.pdf</span> <span class="pre">readme.pdf</span> <span class="pre">reply_to_editor.pdf</span></code>)</p>
 <ul>
 <li><p>The root of the repository should contain only our files (i.e., <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:</p></li>
@@ -600,8 +624,12 @@ document.write(`
 <p>Change the status from <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Progress</span></code> to <code class="docutils literal notranslate"><span class="pre">Code</span></code>.</p>
 </section>
 <section id="code">
-<h3>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h3>
+<span id="revision-code-step"></span><h3>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h3>
 <p>At this point, you may want to transition to CISER if you haven’t already. You should <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> to ensure the changes you’ve made are reflected in the local version of the repository on CISER.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Manually updating code</label><div class="sd-tab-content docutils">
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Download the updated openICPSR deposit and commit the materials to the <strong>same Bitbucket repo as the original replication</strong>, in the <strong>same directory</strong> (i.e., if the openICPSR deposit is <code class="docutils literal notranslate"><span class="pre">12345</span></code> then all updated materials will again go into the <code class="docutils literal notranslate"><span class="pre">12345</span></code> subdirectory.</p>
 <ul>
@@ -610,6 +638,15 @@ document.write(`
 <li><p>There are tricks to letting Git do much of the work: <strong>Follow the detailed instructions for the process of updating the replication materials</strong> in the <a class="reference internal" href="94-04-Updating_Materials.html#updating-replication-materials-after-revisions"><span class="std std-ref">Appendix: Updating Replication Materials after Revision</span></a>.</p></li>
 </ul>
 </li>
+</ul>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Bitbucket Pipeline</label><div class="sd-tab-content docutils">
+<p>If you already ran the Bitbucket pipeline, your code is already updated.</p>
+</div>
+</div>
+<ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Data Description section of the report.</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Code Description section of the report.</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Fill out the required JIRA fields:</p>
@@ -710,6 +747,33 @@ document.write(`
 </ul>
 </li>
 </ul>
+<section id="some-notes">
+<h4>Some notes<a class="headerlink" href="#some-notes" title="Permalink to this heading">#</a></h4>
+<p>Please be clear when writing the revision report. The report should make sense without having to refer to the previous report.</p>
+<ul class="simple">
+<li><p>The body of the report should reflect the current status of the deposit.</p>
+<ul>
+<li><p>Example: if authors were missing a setup program before and now provide it, the <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Description</span></code> section of the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a> should be updated to reflect the inclusion of this program.</p></li>
+</ul>
+</li>
+<li><p>Replace all [REQUIRED] and [SUGGESTED] items with [We REQUESTED] and [We SUGGESTED], respectively.</p>
+<ul>
+<li><p>Note: in the summary, these tags are using bullets (<code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[REQUIRED]</span></code>) - those should be changed to “quotes”: <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">[We</span> <span class="pre">REQUESTED]</span></code></p></li>
+</ul>
+</li>
+<li><p>Below each such tag, add a bullet point. Start the paragraph with “Done” if the issue was resolved, or “Not done” if not. Then explain what was done.</p></li>
+</ul>
+<p>An example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; [REQUIRED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
+</pre></div>
+</div>
+<p>becomes</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; [We REQUESTED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
+
+- Done. A setup program has been added to the deposit, which installs all necessary packages. 
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 <section id="an-example">
@@ -824,9 +888,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generic-guidance">Generic Guidance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-the-revision-report">Writing the Revision Report</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-workflow">Revision Workflow</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-progress">In Progress</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-code">Updating code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-other-materials">Updating other materials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-preliminary-report">Write Preliminary report</a></li>
@@ -834,7 +899,10 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#re-running-code">Re-running code</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-report">Writing Report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-report">Writing Report</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#some-notes">Some notes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example">An example</a></li>

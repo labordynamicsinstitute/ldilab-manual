@@ -17,28 +17,6 @@ Some pre-publication reproducibility checks require revisions from the authors. 
 
 
 
-## Writing the Revision Report 
-
-Please be clear when writing the revision report. The report should make sense without having to refer to the previous report. 
-
-- The body of the report should reflect the current status of the deposit. 
-    - Example: if authors were missing a setup program before and now provide it, the `Code Description` section of the REPLICATION.md should be updated to reflect the inclusion of this program. 
-- Replace all [REQUIRED] and [SUGGESTED] items with [We REQUESTED] and [We SUGGESTED], respectively. 
-    - Note: in the summary, these tags are using bullets (`- [REQUIRED]`) - those should be changed to "quotes": `> [We REQUESTED]`
-- Below each such tag, add a bullet point. Start the paragraph with "Done" if the issue was resolved, or "Not done" if not. Then explain what was done. 
-
-An example: 
-
-    > [REQUIRED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
-
-becomes 
-
-    > [We REQUESTED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
-
-    - Done. A setup program has been added to the deposit, which installs all necessary packages. 
-
- 
-
 ## Revision Workflow 
 
 You should proceed through the [workflow](aea-jira-workflow-a-guide) as you would for an original case with some exceptions:
@@ -61,13 +39,54 @@ First, advance the ticket from `Assigned` to `In Progress`.
         - `Bitbucket short name`. This should be the name of the original JIRA issue (e.g. `aearep-123)`.
         - `openICPSR project number`
 
-        
+### Updating code
+
+::::{tab-set}
+
+:::{tab-item} Bitbucket Pipeline
+
+- First, you will want to update the tools in this repository. Navigate to the `Pipelines` tab
+
+![](images/jira-find-pipelines.png)
+
+If you do not see pipelines run in the past, you will need to [do this manually later](revision-code-step).
+
+- You will now need to select a "pipeline" to run. 
+
+![select pipeline](images/jira-select-pipeline.png)
+
+- Choose "`refresh-tools`". Hit "Run".
+
+![select pipeline](images/jira-run-pipeline-updatetools.png)
+
+- Your pipeline will start, working through various steps. 
+
+![running pipeline](images/jira-run-pipeline-running.png)
+
+- [ ] Once your pipeline is done, check that it is green.
+  - If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You may then need to [do this manually later](revision-code-step).
+
+![completed pipeline](images/jira-run-pipeline-finished.png)
+
+- Second, run the next pipeline. This one is the same as the one described in [Ingesting Author Materials](ingesting-author-materials). It will update the code in place, implementing the detailed instructions for the process of updating the replication materials described in the [Appendix: Updating Replication Materials after Revision](updating-replication-materials-after-revisions). You don't have to do anything except wait! Once that is done, go to the next step.
+
+:::
+
+:::{tab-item} Manually
+
+If you can't use the Bitbucket pipeline, defer this step to [later](revision-code-step).
+
+:::
+
+::::
+
+### Updating other materials
 
 - [ ] Download the materials attached to the JIRA issue. This will typically include 
   - an updated copy of the manuscript, 
   - a response to the editor addressing the requested changes from the prior replication attempt. 
   
-- [ ] Remove obsolete files. In the root, this should be obvious (old manuscript), in the copy of the code, a bit trickier, but necessary.
+- [ ] Remove obsolete files. In the root, this should be obvious (old manuscript).
 
 - [ ] Add these to the root of the repository locally, and then `git add`, `git commit`, and `git push` them to the Bitbucket repository (e.g., `git add PDF_Proof.pdf readme.pdf reply_to_editor.pdf`)
   - The root of the repository should contain only our files (i.e., REPLICATION.md, etc.) and the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket). Example:
@@ -90,14 +109,33 @@ reply_to_editor.pdf
 
 Change the status from `In Progress` to `Code`. 
 
+(revision-code-step)=
 ### Code 
 
 At this point, you may want to transition to CISER if you haven't already. You should `git pull` to ensure the changes you've made are reflected in the local version of the repository on CISER.  
+
+
+::::{tab-set}
+
+
+:::{tab-item} Manually updating code
+
 
 - [ ] Download the updated openICPSR deposit and commit the materials to the **same Bitbucket repo as the original replication**, in the **same directory** (i.e., if the openICPSR deposit is `12345` then all updated materials will again go into the `12345` subdirectory. 
     - Example: if AEAREP-250 is a revision of AEAREP-123, then download the entire openICPSR deposit and commit it to the `aearep-123` repo on Bitbucket.
     - Overwrite any files, if requested. Pay attention to files that might have been deleted (you will have to `git rm` them). 
     - There are tricks to letting Git do much of the work: **Follow the detailed instructions for the process of updating the replication materials** in the [Appendix: Updating Replication Materials after Revision](updating-replication-materials-after-revisions).
+
+:::
+
+
+:::{tab-item} Bitbucket Pipeline
+
+If you already ran the Bitbucket pipeline, your code is already updated.
+
+:::
+
+::::
 
 - [ ] Update the Data Description section of the report.  
    
@@ -185,6 +223,27 @@ In this stage, you will finalize the revision report.
       - If using the scripts, you can use the `[aeareq](https://github.com/AEADataEditor/editor-scripts)` as usual.
     
 
+#### Some notes
+
+Please be clear when writing the revision report. The report should make sense without having to refer to the previous report. 
+
+- The body of the report should reflect the current status of the deposit. 
+    - Example: if authors were missing a setup program before and now provide it, the `Code Description` section of the REPLICATION.md should be updated to reflect the inclusion of this program. 
+- Replace all [REQUIRED] and [SUGGESTED] items with [We REQUESTED] and [We SUGGESTED], respectively. 
+    - Note: in the summary, these tags are using bullets (`- [REQUIRED]`) - those should be changed to "quotes": `> [We REQUESTED]`
+- Below each such tag, add a bullet point. Start the paragraph with "Done" if the issue was resolved, or "Not done" if not. Then explain what was done. 
+
+An example: 
+
+    > [REQUIRED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
+
+becomes 
+
+    > [We REQUESTED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
+
+    - Done. A setup program has been added to the deposit, which installs all necessary packages. 
+
+ 
 ## An example
 
 In the example below, the revision found bugs in the code that were not previously present (a **new action item**), and identified the continued lack of data citations (an **unresolved** action item). A setup program that was requested was provided by the authors, and is thus **resolved**.
