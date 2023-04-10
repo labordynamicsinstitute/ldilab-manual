@@ -1,4 +1,4 @@
-
+(pre-requisites)=
 # Pre-requisites 
 
 Most students with some **prior experience with statistical software** can effectively reproduce and assess articles. In economics, most articles use either Stata or Matlab. 

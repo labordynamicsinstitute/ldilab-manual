@@ -12,8 +12,8 @@ We ask that trainees accomplish a few tasks prior to the first training session.
 
 - View [my talk on the background of the lab](https://www.youtube.com/watch?v=pj-y3dLDOEA), including what we do, and why we do it. 
 
-<a href="https://www.youtube.com/watch?v=pj-y3dLDOEA"><img alt="Youtube video" src="images/RR_in_Social_Sciences_Statistics_Youtube20200320.png" width="400px"></a>
 
+[![Youtube video](images/RR_in_Social_Sciences_Statistics_Youtube20200320.png)](https://www.youtube.com/watch?v=pj-y3dLDOEA)
 
 ## Install
 
