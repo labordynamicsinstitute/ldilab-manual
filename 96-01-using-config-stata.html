@@ -493,7 +493,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="using-config-do-in-stata">
-<h1>Using <a class="reference external" href="http://config.do">config.do</a> in STATA<a class="headerlink" href="#using-config-do-in-stata" title="Permalink to this heading">#</a></h1>
+<span id="using-config-do"></span><h1>Using <a class="reference external" href="http://config.do">config.do</a> in STATA<a class="headerlink" href="#using-config-do-in-stata" title="Permalink to this heading">#</a></h1>
 <p>In “Verification” stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of STATA. We provide <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code> in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template">template repository</a> you clone which addresses these problems.</p>
 <section id="why-do-we-need-log-files">
 <h2>Why do we need log files?<a class="headerlink" href="#why-do-we-need-log-files" title="Permalink to this heading">#</a></h2>
@@ -501,8 +501,8 @@ document.write(`
 <li><p>Log files record each step of the analysis and its results as a text. It also records error messages if you encounter any error upon running the code.</p></li>
 <li><p>There are other purposes to have log files, but for us, it is to communicate with other team members.</p>
 <ul>
-<li><p>When a replicator submits the report, a preapprover (and an approver) needs to verify how the code ran. It is to ensure that any discrepancies we find is not due to mistakes on our end.</p></li>
-<li><p>Log file is crucial for this verification. Otherwise, preapprovers and approvers have to run the code again to verify which is not an ideal use of time, nor an efficient way to process the case.</p></li>
+<li><p>When a replicator submits the report, a preapprover (and an approver) needs to verify how the code ran. It is to ensure that any discrepancies we find are not due to mistakes on our end.</p></li>
+<li><p>A log file is crucial for this verification. Otherwise, preapprovers and approvers have to run the code again to verify which is not an ideal use of time, nor an efficient way to process the case.</p></li>
 </ul>
 </li>
 </ul>
@@ -510,10 +510,10 @@ document.write(`
 <section id="why-do-we-have-to-install-programs">
 <h2>Why do we have to install programs?<a class="headerlink" href="#why-do-we-have-to-install-programs" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>STATA, or any statistical software, does not provide all the package that enables or facilitates the analysis. Therefore, many user-written programs or extensions are publicly available for downloads.</p></li>
+<li><p>Stata, or any statistical software, does not provide all the packages (or “libraries”, or “modules”) that enable or facilitate the analysis. Therefore, many user-written programs or extensions are publicly available for downloads. For Stata, this is often at the <a class="reference external" href="https://ideas.repec.org/s/boc/bocode.html">SSC</a> (<code class="docutils literal notranslate"><span class="pre">ssc</span> <span class="pre">install</span> <span class="pre">package</span></code>), but sometimes at the <a class="reference external" href="https://www.stata-journal.com/">Stata Journal archives</a> (<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install</span> <span class="pre">sj53</span></code>), and sometimes in authors’ webpages (<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install</span> <span class="pre">package,</span> <span class="pre">using(https://author.com/packages)</span></code>)</p></li>
 <li><p>We differ in installation process from many others in the sense that, we want to install programs in a specified directory that is NOT a system directory.</p>
 <ul>
-<li><p>This is to ensure that the package is complete. A complete replication package should be stand-alone, regardless of packages installed in the machine that program is run.</p></li>
+<li><p>This is to ensure that the set of packages used by replication package is complete. A complete replication package should be stand-alone, regardless of packages installed elsewhere in the machine that program is run on.</p></li>
 </ul>
 </li>
 </ul>
@@ -523,12 +523,18 @@ document.write(`
 <p><img alt="template-config.do" src="_images/stata_config.png" /></p>
 <section id="directory-paths-for-log-files">
 <h3>Directory paths for log files.<a class="headerlink" href="#directory-paths-for-log-files" title="Permalink to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">config.do</span></code> creates a subdirectory and saves log files in the subdirectory. Area 1 sets these directory paths. Let’s say the current working directory path is the following, since Jira issue number is <code class="docutils literal notranslate"><span class="pre">AEAREP-9999</span></code> and openICPSR case number is <code class="docutils literal notranslate"><span class="pre">111111</span></code>
-<code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">U:/Workspace/aearep-9999/111111</span>&#160;&#160;&#160; </code></p>
+<p><code class="docutils literal notranslate"><span class="pre">config.do</span></code> creates a subdirectory and saves log files in the subdirectory. Area 1 sets these directory paths. Let’s say the current working directory path is the following, since Jira issue number is <code class="docutils literal notranslate"><span class="pre">AEAREP-9999</span></code> and openICPSR case number is <code class="docutils literal notranslate"><span class="pre">111111</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">U</span><span class="p">:</span><span class="o">/</span><span class="n">Workspace</span><span class="o">/</span><span class="n">aearep</span><span class="o">-</span><span class="mi">9999</span><span class="o">/</span><span class="mi">111111</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\\<span class="n">networkpath</span>\<span class="n">users</span>\<span class="n">me</span>\<span class="n">Desktop</span>\<span class="n">Workspace</span>\<span class="n">aearep</span><span class="o">-</span><span class="mi">9999</span>\<span class="mi">111111</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p>line 50, <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">rootdir</span> <span class="pre">:</span> <span class="pre">pwd</span></code> sets the current working directory as a root directory, a.k.a. <code class="docutils literal notranslate"><span class="pre">rootdir</span></code>.</p></li>
-<li><p>line 59, <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">logdir</span> <span class="pre">&quot;${rootdir}/logs&quot;</span></code> sets the following direcotry as a directory for log files: U:/Workspace/aearep-9999/111111/logs</p></li>
-<li><p>Notice that there is no such directory exists. Therefore, the do file creates one new directory in line 60.</p>
+<li><p>line 59, <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">logdir</span> <span class="pre">&quot;${rootdir}/logs&quot;</span></code> sets the following directory as a directory for log files: <code class="docutils literal notranslate"><span class="pre">U:/Workspace/aearep-9999/111111/logs</span></code> or the network path equivalent.</p></li>
+<li><p>Notice that  no such directory exists. Therefore, the do file creates a new directory in line 60.</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> is a command to create a directory</p></li>
 </ul>
@@ -537,10 +543,10 @@ document.write(`
 </section>
 <section id="opening-a-log-file-with-current-date-and-time">
 <h3>Opening a log file with current date and time<a class="headerlink" href="#opening-a-log-file-with-current-date-and-time" title="Permalink to this heading">#</a></h3>
-<p>Since we usually run the program several times until we complete the replication, we would like to record all the instances. Therefore, we record the initial time we start running the code and use it in the name of the log file. Area 2 calls current date and time as local macro and open the log file.</p>
+<p>Since we usually run the program several times until the code is completely debugged (!), we would like to record all the runs. Therefore, we record the initial time we start running the code and use it in the name of the log file. Area 2 calls current date and time as local macro and opens the log file.</p>
 <ul class="simple">
 <li><p>line 64-67: calls the current date and time as local macro</p></li>
-<li><p>line 69: start the log file, with an internal name <code class="docutils literal notranslate"><span class="pre">ldi</span></code> which prevents collision with any log files opened by authors.</p></li>
+<li><p>line 69: starts the log file, with an internal name <code class="docutils literal notranslate"><span class="pre">ldi</span></code> which prevents collision with any log files opened by authors.</p></li>
 </ul>
 </section>
 <section id="system-information">
@@ -549,18 +555,20 @@ document.write(`
 </section>
 <section id="package-installation">
 <h3>Package installation<a class="headerlink" href="#package-installation" title="Permalink to this heading">#</a></h3>
-<p>As explained above, we often need to install packages. Even when the packages were installed in other cases before, it should be irrelevant to your current case, since we install those packages within our deposit directory so that we can verify the completeness of the replication packages. Area 4 does this job.</p>
-<ul>
-<li><p>The sysdir commands (in line 89-91) redirects Stata to search for, and install ado files in the directories referenced. It won’t automatically install them.</p>
+<p>As explained above, we often need to install packages. Even when the packages were installed in previous cases, it should be irrelevant to your current case, since we install those packages within our deposit directory so that we can verify the completeness of the replication packages. Area 4 does this job.</p>
 <ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">sysdir</span></code> commands (in line 89-91) redirects Stata to search for, and install ado files in the directories referenced. It won’t automatically install them.</p>
+<ul>
 <li><p>In case where the authors provided the ado files, adding a new command to the end of the <a class="reference external" href="http://config.do">config.do</a> would suffice. For instance, if the authors have provided ado files in the directory <code class="docutils literal notranslate"><span class="pre">packages</span></code>, then</p></li>
+</ul>
+</li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adopath</span> <span class="o">++</span> <span class="s2">&quot;$</span><span class="si">{rootdir}</span><span class="s2">/packages&quot;</span>
 </pre></div>
 </div>
-</li>
-<li><p>Add list of packages in the quotation marks in <strong>line 37</strong></p>
 <ul class="simple">
+<li><p>Add list of packages in the quotation marks in <strong>line 37</strong></p>
+<ul>
 <li><p>line 39 provides an example.</p></li>
 <li><p>line 97-106 installs each package if there are packages listed and these packages do not already exist.</p></li>
 </ul>
@@ -573,21 +581,24 @@ document.write(`
 <h2>How to use <a class="reference external" href="http://config.do">config.do</a><a class="headerlink" href="#how-to-use-config-do" title="Permalink to this heading">#</a></h2>
 <section id="rename-the-config-file">
 <h3>Rename the config file.<a class="headerlink" href="#rename-the-config-file" title="Permalink to this heading">#</a></h3>
-<p>The given name should be <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code>. In order to use it, rename it to <code class="docutils literal notranslate"><span class="pre">config.do</span></code> and move it into the openICPSR folder (e.g. , <code class="docutils literal notranslate"><span class="pre">111111</span></code>).</p>
+<p>The template is called <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code>. In order to use it, rename it to <code class="docutils literal notranslate"><span class="pre">config.do</span></code> and move it into the openICPSR folder (e.g. , <code class="docutils literal notranslate"><span class="pre">111111</span></code>).</p>
 </section>
 <section id="include-config-do">
 <h3>Include <a class="reference external" href="http://config.do">config.do</a><a class="headerlink" href="#include-config-do" title="Permalink to this heading">#</a></h3>
-<ul>
-<li><p>Add the following line at the beginning of each code file:</p>
+<ul class="simple">
+<li><p>If there is a master dofile, you should put the following line at the beginning of the <code class="docutils literal notranslate"><span class="pre">master.do</span></code>:</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="n">config</span><span class="o">.</span><span class="n">do</span>
 </pre></div>
 </div>
-<p>and add the following at the end of each code file:</p>
+<p>and the end of the <code class="docutils literal notranslate"><span class="pre">master.do</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">log</span> <span class="n">close</span> <span class="n">_all</span>
 </pre></div>
 </div>
-</li>
-<li><p>If there is a master do file, you should put the above lines at the beginning and the end of the <code class="docutils literal notranslate"><span class="pre">master.do</span></code> once, and NOT include it in the individual code files.</p></li>
+<p>Do NOT include it in the individual code files.</p>
+<ul class="simple">
+<li><p>If there is no master dofile, you should try to create one (see <a class="reference internal" href="96-02-running-stata-code.html#create-master"><span class="std std-ref">how in the next section</span></a>), starting with the lines above, and ending with the <code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">close</span></code> command.</p></li>
+<li><p>If creating a master dofile is not possible, add the  lines at the beginning and the end, respectively, of <strong>each</strong> code file.</p></li>
 <li><p>There will be cases where authors create their own log files. Do NOT comment out the log file creation here, as the named logfile will not conflict with any author-generated files.</p></li>
 </ul>
 </section>

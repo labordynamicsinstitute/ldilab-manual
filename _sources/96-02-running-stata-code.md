@@ -4,7 +4,7 @@ Although, there are plenty of ways to run code in Stata, our goal with these ins
 
 In essence, these instructions show how to deal with the three most common actions that replicators have to undertake when running Stata code:
 
- 1. Making sure that paths (i.e., something like "Mycomputer/Documents/Workspace/) in the .do files (Stata scripts) reflect the appropriate location of code, data, and output in the computer where the code is run.
+ 1. Making sure that paths (i.e., something like "`Mycomputer/Documents/Workspace/`") in the .do files (Stata scripts) reflect the appropriate location of code, data, and output in the computer where the code is run.
  2. Installing user-written functions, programs, or packages that are necessary to do computations and produce tables/figures.
  3. Creating .log files (files that record, in this case, Stata output) of the replication attempts.
 
@@ -19,7 +19,7 @@ A master .do file is a Stata script that will call, in the correct sequence, all
 
 If there is a master do file, continue with [Step 2](Step2).
 
-
+(create-master)=
 ### When a master .do file is not provided
 
 If a master .do file is not provided, you should create a one. 
@@ -38,7 +38,7 @@ To open the do file editor:
 
 3. In the first line write `include "config.do"`
 
-4. Write the command `do` and the path of each program that needs to be run. Write them in the correct sequence. 
+4. Write the command `do` and the (quoted) path of each program that needs to be run. Write them in the correct sequence. 
 
 Example:
 
@@ -83,7 +83,8 @@ The folder with the code, whether is the root directory or a subfolder, should l
 
 > Save.
 
-More information about `config.do` can be found in [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html) of the training materials.
+More information about `config.do` can be found in "[Using Config.do](using-config-do)".
+.
 
 In summary, `config.do` does 4 things:
 
@@ -183,6 +184,28 @@ A simplified directory structure that correspond to scenario "B" looks like this
              otherdata.dta
 ```
 
+
+### Scenario C
+
+Sometimes, we encounter Scenario C, which adds an additional level. A simplified directory structure that correspond to scenario "C" looks like this:
+
+```
+directory/
+	    step1/
+            scripts/
+                main.do
+                01_dosomething.do
+        step2/
+	        scripts/
+	            othermain.do
+		        01_analysis.do
+        data/
+            data.dta
+            otherdata.dta
+```
+
+Note: you would place the `config.do` in **all** directories that have some sort of `main.do`. 
+
 #### Example
 
 
@@ -194,11 +217,12 @@ A simplified directory structure that correspond to scenario "B" looks like this
 
 local scenario "B"  // around line 30
 *** Add required packages from SSC to this list ***
-local ssc_packages "estout"
+local ssc_packages "estout ivreg2"
     // Example:
     // local ssc_packages "estout boottest"
     // If you need to "net install" packages, go to the very end of this program, and add them there.
 ```
+
 ## Step 6: Run the Code
 
 
@@ -247,8 +271,11 @@ After running the code, the log files will need to be checked for a complete run
 
 If a you find a bug that is simple enough to fix, you can make changes to the do files. Then,  you can right click on the master file and select `Execute (do)` as this option will open Stata, allowing to run the code interactively.
 
-If you decide the code needs to be run in pieces. In the master .do file, you can comment out (using the symbol \*) the programs that are not to be run and save the master. Then, you can right click on the master and select the option ``Execute (do)`.
+If you decide the code needs to be run in pieces (this is NOT ideal)
+
+- In the master .do file, you can comment out (using the symbol \*) the programs that are not to be run and save the master. 
+- Then, you can right click on the master and select the option ``Execute (do)`.
 
 When debugging is complete, you can uncomment all programs in the master and make a clean run, using again `Execute Quietly (run)`.
 
-> Consider how much time a complete run would take before you run everything one last time. If it would take too long, you may want to skip a complete run, but ensure that you have log files for all partial runs.
+> Consider how much time a complete run would take before you run everything one last time. If it would take too long, you may want to skip a complete run, but ensure that you have log files for all partial runs. Make a note of this in the report.
