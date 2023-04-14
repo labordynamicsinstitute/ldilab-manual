@@ -22,7 +22,6 @@ Some pre-publication reproducibility checks require revisions from the authors. 
 You should proceed through the [workflow](aea-jira-workflow-a-guide) as you would for an original case with some exceptions:
 
 - You **should not** create a new Bitbucket repository. 
-- You do not need to fill out a new Data Citation and Information Report.
 - You _may_ not need to re-run any code.  
 - All sections are potentially subject to updates, so pay attention.
 
@@ -80,7 +79,19 @@ If you can't use the Bitbucket pipeline, defer this step to [later](revision-cod
 
 ::::
 
+### Prepare the working area 
+
+Similar to the original workflow, you will need to decide where you will run code and do other manipulations. If you are the original replicator, and this is YOUR revision, this will be the **same** computer where you originally did the verification. If not, refer to the [general guidance](Manual1) on how to choose and set up your working area.
+
+```{admonition} Please note:
+
+If you are **returning** to the previous working area, be sure to run `git pull` in the working area before doing anything else!
+
+```
+
 ### Updating other materials
+
+
 
 - [ ] Download the materials attached to the JIRA issue. This will typically include 
   - an updated copy of the manuscript, 
@@ -118,6 +129,12 @@ At this point, you may want to transition to CISER if you haven't already. You s
 ::::{tab-set}
 
 
+:::{tab-item} Bitbucket Pipeline
+
+If you already ran the Bitbucket pipeline, your code is already updated.
+
+:::
+
 :::{tab-item} Manually updating code
 
 
@@ -128,12 +145,6 @@ At this point, you may want to transition to CISER if you haven't already. You s
 
 :::
 
-
-:::{tab-item} Bitbucket Pipeline
-
-If you already ran the Bitbucket pipeline, your code is already updated.
-
-:::
 
 ::::
 
