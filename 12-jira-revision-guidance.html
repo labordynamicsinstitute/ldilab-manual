@@ -471,6 +471,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-workflow">Revision Workflow</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-progress">In Progress</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-code">Updating code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-working-area">Prepare the working area</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-other-materials">Updating other materials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
@@ -522,7 +523,6 @@ document.write(`
 <p>You should proceed through the <a class="reference internal" href="11-00-jira-workflow.html#aea-jira-workflow-a-guide"><span class="std std-ref">workflow</span></a> as you would for an original case with some exceptions:</p>
 <ul class="simple">
 <li><p>You <strong>should not</strong> create a new Bitbucket repository.</p></li>
-<li><p>You do not need to fill out a new Data Citation and Information Report.</p></li>
 <li><p>You <em>may</em> not need to re-run any code.</p></li>
 <li><p>All sections are potentially subject to updates, so pay attention.</p></li>
 </ul>
@@ -588,6 +588,14 @@ Manually</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </section>
+<section id="prepare-the-working-area">
+<h3>Prepare the working area<a class="headerlink" href="#prepare-the-working-area" title="Permalink to this heading">#</a></h3>
+<p>Similar to the original workflow, you will need to decide where you will run code and do other manipulations. If you are the original replicator, and this is YOUR revision, this will be the <strong>same</strong> computer where you originally did the verification. If not, refer to the <a class="reference internal" href="11-02-workflow-prepare.html#manual1"><span class="std std-ref">general guidance</span></a> on how to choose and set up your working area.</p>
+<div class="admonition-please-note admonition">
+<p class="admonition-title">Please note:</p>
+<p>If you are <strong>returning</strong> to the previous working area, be sure to run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> in the working area before doing anything else!</p>
+</div>
+</section>
 <section id="updating-other-materials">
 <h3>Updating other materials<a class="headerlink" href="#updating-other-materials" title="Permalink to this heading">#</a></h3>
 <ul class="contains-task-list simple">
@@ -629,6 +637,11 @@ Manually</label><div class="sd-tab-content docutils">
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-2">
+Bitbucket Pipeline</label><div class="sd-tab-content docutils">
+<p>If you already ran the Bitbucket pipeline, your code is already updated.</p>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Manually updating code</label><div class="sd-tab-content docutils">
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Download the updated openICPSR deposit and commit the materials to the <strong>same Bitbucket repo as the original replication</strong>, in the <strong>same directory</strong> (i.e., if the openICPSR deposit is <code class="docutils literal notranslate"><span class="pre">12345</span></code> then all updated materials will again go into the <code class="docutils literal notranslate"><span class="pre">12345</span></code> subdirectory.</p>
@@ -639,11 +652,6 @@ Manually updating code</label><div class="sd-tab-content docutils">
 </ul>
 </li>
 </ul>
-</div>
-<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-3">
-Bitbucket Pipeline</label><div class="sd-tab-content docutils">
-<p>If you already ran the Bitbucket pipeline, your code is already updated.</p>
 </div>
 </div>
 <ul class="contains-task-list simple">
@@ -891,6 +899,7 @@ Bitbucket Pipeline</label><div class="sd-tab-content docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-workflow">Revision Workflow</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-progress">In Progress</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-code">Updating code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-working-area">Prepare the working area</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-other-materials">Updating other materials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
