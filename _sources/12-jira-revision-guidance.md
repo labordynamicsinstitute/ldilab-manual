@@ -206,7 +206,7 @@ In this stage, you will finalize the revision report.
 
 - [ ] Ensure all `[REQUIRED]` and `[SUGGESTED]` items from the original report have been changed to `[We REQUESTED]` and `[We SUGGESTED]` in the body of the report. 
     - The resolution (or lack thereof) should be included as a bullet point directly below the request. 
-    - If using the scripts, you can use the `[aearevision](https://github.com/AEADataEditor/editor-scripts)` to change all the tags
+    - If using the scripts, you can use the [`aearevision`](https://github.com/AEADataEditor/editor-scripts) to change all the tags
     - If the resolution is incomplete (`Not done`  or `Partially done`), then repeat the usual `> [REQUIRED]` tag, as this will become an action item.
 
 - [ ] Ensure any new issues found are tagged with the appropriate `> [REQUIRED]` and `> [SUGGESTED]` tags. 
@@ -231,7 +231,7 @@ In this stage, you will finalize the revision report.
       - These should go under the `### Previously` section, appropriately classified.
       - Below each item, include the same resolution you listed in the body of the report. 
     - New and any unresolved issues should be collected with their `- [REQUIRED]` and `- [SUGGESTED]` tags under the `### Action Items` sections. 
-      - If using the scripts, you can use the `[aeareq](https://github.com/AEADataEditor/editor-scripts)` as usual.
+      - If using the scripts, you can use the [`aeareq`](https://github.com/AEADataEditor/editor-scripts) as usual.
     
 
 #### Some notes
@@ -246,13 +246,18 @@ Please be clear when writing the revision report. The report should make sense w
 
 An example: 
 
-    > [REQUIRED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
+    > [REQUIRED] Please add a setup program that installs all packages as noted above. 
+      Please specify all necessary commands. An example of a setup file can be found at 
+      https://github.com/gslab-econ/template/blob/master/config/config_stata.do
 
 becomes 
 
-    > [We REQUESTED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
+    > [We REQUESTED] Please add a setup program that installs all packages as noted above. 
+    Please specify all necessary commands. An example of a setup file can be found at 
+    https://github.com/gslab-econ/template/blob/master/config/config_stata.do
 
-    - Done. A setup program has been added to the deposit, which installs all necessary packages. 
+    - Done. A setup program has been added to the deposit, which installs all necessary 
+    packages. 
 
  
 ## An example

@@ -712,7 +712,7 @@ Manually updating code</label><div class="sd-tab-content docutils">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Ensure all <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> and <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code> items from the original report have been changed to <code class="docutils literal notranslate"><span class="pre">[We</span> <span class="pre">REQUESTED]</span></code> and <code class="docutils literal notranslate"><span class="pre">[We</span> <span class="pre">SUGGESTED]</span></code> in the body of the report.</p>
 <ul>
 <li><p>The resolution (or lack thereof) should be included as a bullet point directly below the request.</p></li>
-<li><p>If using the scripts, you can use the <code class="docutils literal notranslate"><span class="pre">[aearevision](https://github.com/AEADataEditor/editor-scripts)</span></code> to change all the tags</p></li>
+<li><p>If using the scripts, you can use the <a class="reference external" href="https://github.com/AEADataEditor/editor-scripts"><code class="docutils literal notranslate"><span class="pre">aearevision</span></code></a> to change all the tags</p></li>
 <li><p>If the resolution is incomplete (<code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">done</span></code>  or <code class="docutils literal notranslate"><span class="pre">Partially</span> <span class="pre">done</span></code>), then repeat the usual <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">[REQUIRED]</span></code> tag, as this will become an action item.</p></li>
 </ul>
 </li>
@@ -749,7 +749,7 @@ Manually updating code</label><div class="sd-tab-content docutils">
 </li>
 <li><p>New and any unresolved issues should be collected with their <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[REQUIRED]</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[SUGGESTED]</span></code> tags under the <code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">Action</span> <span class="pre">Items</span></code> sections.</p>
 <ul>
-<li><p>If using the scripts, you can use the <code class="docutils literal notranslate"><span class="pre">[aeareq](https://github.com/AEADataEditor/editor-scripts)</span></code> as usual.</p></li>
+<li><p>If using the scripts, you can use the <a class="reference external" href="https://github.com/AEADataEditor/editor-scripts"><code class="docutils literal notranslate"><span class="pre">aeareq</span></code></a> as usual.</p></li>
 </ul>
 </li>
 </ul>
@@ -772,13 +772,18 @@ Manually updating code</label><div class="sd-tab-content docutils">
 <li><p>Below each such tag, add a bullet point. Start the paragraph with “Done” if the issue was resolved, or “Not done” if not. Then explain what was done.</p></li>
 </ul>
 <p>An example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; [REQUIRED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; [REQUIRED] Please add a setup program that installs all packages as noted above. 
+  Please specify all necessary commands. An example of a setup file can be found at 
+  https://github.com/gslab-econ/template/blob/master/config/config_stata.do
 </pre></div>
 </div>
 <p>becomes</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; [We REQUESTED] Please add a setup program that installs all packages as noted above. Please specify all necessary commands. An example of a setup file can be found at [https://github.com/gslab-econ/template/blob/master/config/config_stata.do](https://github.com/gslab-econ/template/blob/master/config/config_stata.do)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; [We REQUESTED] Please add a setup program that installs all packages as noted above. 
+Please specify all necessary commands. An example of a setup file can be found at 
+https://github.com/gslab-econ/template/blob/master/config/config_stata.do
 
-- Done. A setup program has been added to the deposit, which installs all necessary packages. 
+- Done. A setup program has been added to the deposit, which installs all necessary 
+packages. 
 </pre></div>
 </div>
 </section>
