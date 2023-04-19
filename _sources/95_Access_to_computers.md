@@ -6,8 +6,9 @@ You will be working on a variety of computers
 - your laptop (Windows, OS X, Linux) to access the various resources
 - a computer to run the code
   - your laptop (but not necessarily)
-  - a Windows remote desktop at [CCSS-RS](https://socialsciences.cornell.edu/research-support/compute-infrastructure) 
-    - [Login instructions](https://socialsciences.cornell.edu/research-support/login-instructions)
+  - a Windows remote desktop at 
+    - [CCSS-RS](https://socialsciences.cornell.edu/research-support/compute-infrastructure) ([Login instructions](https://socialsciences.cornell.edu/research-support/login-instructions))
+    - (beta) [Cloud CCSS](https://client.wvd.microsoft.com/arm/webclient/) ([Instructions](https://cornellprod-my.sharepoint.com/:f:/g/personal/cd642_cornell_edu/EvxDKmDjZyZBsrQvimUR8xABE4x6TYDenmLOY8ZFMLRjUw))
   - possibly a [Linux cluster](https://biohpc.cornell.edu/lab/lab.aspx)
   - [WholeTale](https://docs.google.com/document/d/1hyXMnEKh52V7uFG7C4sLZUdUzF4gGNIvy6990YHGUwg/edit?usp=sharing) (experimental)
   - [CodeOcean](https://codeocean.com/dashboard)
@@ -30,7 +31,7 @@ You will be working on a variety of computers
 :::{tab-item} Github CS
 
 - You should synchronize your VSCode settings with your *normal* computer. This will bring over any settings and extensions! Very useful. See the [VS Code Settings Sync page](https://code.visualstudio.com/docs/editor/settings-sync).
-- TO COME: setting up person-specific variables.
+- You should do additional setup for your bash shell: this includes making downloads from openICPSR simpler. See [appendix](setup-bash).
 
 :::
 
