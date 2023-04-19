@@ -18,10 +18,47 @@ export ICPSR_EMAIL=mylogin@cornell.edu
 export ICPSR_PASS=supersecretpwd
 " >> $HOME/.bashrc
 ```
+(you should copy-paste this into an empty VS Code window, edit the editable pieces, then copy-paste it into the Git bash shell).
 
 This will "prime" the script to use that email and password for downloading the information. 
 
+## Configure some convenience scripts
 
+We have a bunch of scripts, some of which can make your life easier. See [https://github.com/AEADataEditor/editor-scripts](https://github.com/AEADataEditor/editor-scripts). You can make these available to your Bash shell by running the following command:
+
+### If you do not yet have a `$HOME/bin` directory
+
+Check first if you already have a `$HOME/bin` directory:
+
+```bash
+ls -l $HOME/bin
+```
+
+If that yields an error, then you don't have one. So run the next part:
+
+```bash
+cd $HOME
+git clone https://github.com/AEADataEditor/editor-scripts bin
+```
+
+You should now have access to the various scripts, such as `aeagit`.
+
+### If you already have a `$HOME/bin` directory
+
+If you *do* have a `$HOME/bin` directory, you will need to manually adjust a few more things. Contact your supervisor.
+
+## Configure Bitbucket access
+
+For Bitbucket, you often copy your Bitbucket PAT into the Bash window. The following can streamline that, if using the `aeagit` command above.
+
+```bash
+echo '# adding Bitbucket credentials
+export P_BITBUCKET_PAT="supersecretPAT" 
+export P_BITBUCKET_USERNAME=netid-replace-me
+' >> $HOME/.bashrc
+```
+
+(you should copy-paste this into an empty VS Code window, edit the editable pieces, then copy-paste it into the Git bash shell).
 
 ## Configuring Python defaults
 
