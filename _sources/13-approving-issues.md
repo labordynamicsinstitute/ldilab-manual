@@ -49,17 +49,17 @@
 9. Fill out the **Action Items** of the report.
    - These are separated into "Manuscript" and "openICPSR" (these sections are pre-existent in the template)
    - Use a script or manually copy-paste all of the `[REQUIRED]` tags to this list.
-      - `[aeareq](https://github.com/AEADataEditor/editor-scripts)` extracts the `[REQUIRED]` tags and places them at the top of the REPLICATION.md 
+      - [`aeareq`](https://github.com/AEADataEditor/editor-scripts) extracts the `[REQUIRED]` tags and places them at the top of the REPLICATION.md 
    - Split the action items according to where they can be addressed. Some may be addressable in both sections (for instance, correcting figures and tables, and/or data citations). Others belong only into the "Manuscript" part (IRB, RCT), others only into the "openICPSR" (anything related to code)
    - Order them by importance: `[REQUIRED]` items first, and within these, the most important at the top (correcting bugs, providing missing files).
    - `[SUGGESTED]`  items can be at the end of each section.
-      - `[aeareq](https://github.com/AEADataEditor/editor-scripts)` extracts the `[SUGGESTED]`  tags only if provided with the additional argument `sug`
+      - [`aeareq`](https://github.com/AEADataEditor/editor-scripts) extracts the `[SUGGESTED]`  tags only if provided with the additional argument `sug`
 10. Fill out the **Summary section** of the report.
   - Start with a thank you, and a positive note: Highlight the merits of the replication i.e. how many figures/tables were replicated, if data citations were properly completed, etc. 
   - Add a template line with the proposed resolution. These are at the top of the [sample-language-report.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md).
 11. (Re)generate the PDF of the report.
    - Use MarkdownPDF package if you are using Visual Studio Code
-   - Use a script: [aeaready](https://github.com/AEADataEditor/editor-scripts) creates the PDF from the REPLICATION.md, crafts the commit message and pushes it to the repository.  It requires additional pieces of software that are noted in the link.
+   - Use a script: [`aeaready`](https://github.com/AEADataEditor/editor-scripts) creates the PDF from the REPLICATION.md, crafts the commit message and pushes it to the repository.  It requires additional pieces of software that are noted in the link.
 12. Commit and push all changes to the repository.  Advance the JIRA ticket to "Pre-approved."  The pre-approval is now complete!
 
 **Notes:** The pre-approver should reach out to the original replicator for clarifications should there be any confusions during the course of pre-approving the report.  If bugs in the code seem trivial i.e. missing packages, missing `Results` directory, replicator cannot find output etc., the pre-approver should reach out to the original replicator for further clarification.
@@ -86,7 +86,7 @@ It is clearer to the authors if we write:
 The checklist of items to review are roughly the same as above.  In addition:
 
 - The pre-approver should check that `[We REQUESTED]` tags are used in place of `[REQUIRED]` tags.  These tags should be preceded by a ">" to create a comment rather than "-," which creates a bullet point.
-   - The script `[aeareview](https://github.com/AEADataEditor/editor-scripts)` changes all the `[REQUIRED]` to `[We REQUESTED]`.
+   - The script [`aeareview`](https://github.com/AEADataEditor/editor-scripts) changes all the `[REQUIRED]` to `[We REQUESTED]`.
 - The report should reflect the **current** state of the replication.
 - In the **Summary Section:**
    - Create a new section "`### Previously`" that covers all the action items from the previous round.

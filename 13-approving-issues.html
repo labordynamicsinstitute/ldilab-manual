@@ -559,14 +559,14 @@ document.write(`
 <li><p>These are separated into “Manuscript” and “openICPSR” (these sections are pre-existent in the template)</p></li>
 <li><p>Use a script or manually copy-paste all of the <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> tags to this list.</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">[aeareq](https://github.com/AEADataEditor/editor-scripts)</span></code> extracts the <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> tags and places them at the top of the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a></p></li>
+<li><p><a class="reference external" href="https://github.com/AEADataEditor/editor-scripts"><code class="docutils literal notranslate"><span class="pre">aeareq</span></code></a> extracts the <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> tags and places them at the top of the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a></p></li>
 </ul>
 </li>
 <li><p>Split the action items according to where they can be addressed. Some may be addressable in both sections (for instance, correcting figures and tables, and/or data citations). Others belong only into the “Manuscript” part (IRB, RCT), others only into the “openICPSR” (anything related to code)</p></li>
 <li><p>Order them by importance: <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> items first, and within these, the most important at the top (correcting bugs, providing missing files).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code>  items can be at the end of each section.</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">[aeareq](https://github.com/AEADataEditor/editor-scripts)</span></code> extracts the <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code>  tags only if provided with the additional argument <code class="docutils literal notranslate"><span class="pre">sug</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/AEADataEditor/editor-scripts"><code class="docutils literal notranslate"><span class="pre">aeareq</span></code></a> extracts the <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code>  tags only if provided with the additional argument <code class="docutils literal notranslate"><span class="pre">sug</span></code></p></li>
 </ul>
 </li>
 </ul>
@@ -582,7 +582,7 @@ document.write(`
 </ol>
 <ul class="simple">
 <li><p>Use MarkdownPDF package if you are using Visual Studio Code</p></li>
-<li><p>Use a script: <a class="reference external" href="https://github.com/AEADataEditor/editor-scripts">aeaready</a> creates the PDF from the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>, crafts the commit message and pushes it to the repository.  It requires additional pieces of software that are noted in the link.</p></li>
+<li><p>Use a script: <a class="reference external" href="https://github.com/AEADataEditor/editor-scripts"><code class="docutils literal notranslate"><span class="pre">aeaready</span></code></a> creates the PDF from the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>, crafts the commit message and pushes it to the repository.  It requires additional pieces of software that are noted in the link.</p></li>
 </ul>
 <ol class="arabic simple" start="12">
 <li><p>Commit and push all changes to the repository.  Advance the JIRA ticket to “Pre-approved.”  The pre-approval is now complete!</p></li>
@@ -605,7 +605,7 @@ document.write(`
 <ul class="simple">
 <li><p>The pre-approver should check that <code class="docutils literal notranslate"><span class="pre">[We</span> <span class="pre">REQUESTED]</span></code> tags are used in place of <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> tags.  These tags should be preceded by a “&gt;” to create a comment rather than “-,” which creates a bullet point.</p>
 <ul>
-<li><p>The script <code class="docutils literal notranslate"><span class="pre">[aeareview](https://github.com/AEADataEditor/editor-scripts)</span></code> changes all the <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> to <code class="docutils literal notranslate"><span class="pre">[We</span> <span class="pre">REQUESTED]</span></code>.</p></li>
+<li><p>The script <a class="reference external" href="https://github.com/AEADataEditor/editor-scripts"><code class="docutils literal notranslate"><span class="pre">aeareview</span></code></a> changes all the <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> to <code class="docutils literal notranslate"><span class="pre">[We</span> <span class="pre">REQUESTED]</span></code>.</p></li>
 </ul>
 </li>
 <li><p>The report should reflect the <strong>current</strong> state of the replication.</p></li>
