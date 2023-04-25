@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Reproducibility Checks in Codeocean &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Computing using Github Codespaces &#8212; Training Manual For Reproducibility Verification</title>
   
   
   
@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '95-02-codeocean';</script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/95-02-codeocean.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '95-40-codespaces';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/95-40-codespaces.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Conducting reproducibility checks on WholeTale" href="95-03-wholetale.html" />
-    <link rel="prev" title="Setting up your Bash environment" href="95-01-setup-bash.html" />
+    <link rel="next" title="Stata-related procedures" href="96-00-using-Stata.html" />
+    <link rel="prev" title="Conducting reproducibility checks on WholeTale" href="95-30-wholetale.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -230,9 +230,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="95_Access_to_computers.html">Access to Computers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="95-01-setup-bash.html">Setting up your Bash environment</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Reproducibility Checks in Codeocean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="95-03-wholetale.html">Conducting reproducibility checks on WholeTale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="95-04-codespaces.html">Computing using Github Codespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-20-codeocean.html">Reproducibility Checks in Codeocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-30-wholetale.html">Conducting reproducibility checks on WholeTale</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Computing using Github Codespaces</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -328,7 +328,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/95-02-codeocean.md" target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/95-40-codespaces.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -345,7 +345,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F95-02-codeocean.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F95-40-codespaces.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -375,7 +375,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/95-02-codeocean.md" target="_blank"
+      <li><a href="_sources/95-40-codespaces.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -457,7 +457,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Reproducibility Checks in Codeocean</h1>
+    <h1>Computing using Github Codespaces</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -467,17 +467,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-capsule">Create a Capsule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment">Environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">Metadata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-the-environment-in-jira">Recording the environment in Jira</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files-and-directories">Files and Directories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-files">Log files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-edits">Recording edits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expert-tip">Expert tip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-results">Recording results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-an-environment-on-github-codespaces">Start an environment on Github Codespaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-local-vs-code-optional-but-useful">Connect to local VS Code (optional but useful)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-cases">Processing cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#administrator-instructions">Administrator instructions</a></li>
 </ul>
             </nav>
         </div>
@@ -489,172 +483,56 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="reproducibility-checks-in-codeocean">
-<h1>Reproducibility Checks in Codeocean<a class="headerlink" href="#reproducibility-checks-in-codeocean" title="Permalink to this heading">#</a></h1>
-<p>The workflow should be the same up until the verification stage, at which point you will use <a class="reference external" href="https://codeocean.com">Codeocean</a> to run the reproducibility check. You can access Codeocean from your personal computer or on CISER.</p>
-<section id="create-a-capsule">
-<h2>Create a Capsule<a class="headerlink" href="#create-a-capsule" title="Permalink to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="computing-using-github-codespaces">
+<h1>Computing using Github Codespaces<a class="headerlink" href="#computing-using-github-codespaces" title="Permalink to this heading">#</a></h1>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>First, create your own account on Codeocean using your <a class="reference external" href="http://cornell.edu">cornell.edu</a> email address (it’s free).</p></li>
-<li><p>In Codeocean, create a new capsule. Name the compute capsule as “<code class="docutils literal notranslate"><span class="pre">AEAREP-xxxx</span> <span class="pre">Compute</span> <span class="pre">Capsule</span> <span class="pre">for:</span> <span class="pre">TITLE</span></code>”
-Example:</p></li>
+<li><p>Go to your <a class="reference external" href="https://github.com/settings/codespaces">personal Codespace settings on Github</a></p></li>
+<li><p>Add the following <code class="docutils literal notranslate"><span class="pre">Codespaces</span> <span class="pre">secrets</span></code> by choosing <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">secret</span></code>:</p></li>
 </ul>
-<blockquote>
-<div><p>AEAREP-1974 Compute Capsule for: Waiting to Choose: The Role of Deliberation in Intertemporal Choice</p>
-</div></blockquote>
+<p><img alt="Codespaces secrets needed" src="_images/codespaces-secrets.png" /></p>
 <ul class="simple">
-<li><p>Share your CodeOcean capsule with <code class="docutils literal notranslate"><span class="pre">dataeditor&#64;aeapubs.org</span></code> (make sure to give <code class="docutils literal notranslate"><span class="pre">ownership</span></code> permissions).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P_BITBUCKET_PAT</span></code>: Your personal access token from Bitbucket (see <a class="reference internal" href="97-01-Bitbucket-authentication.html#bitbucket-authentication"><span class="std std-ref">here</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P_BITBUCKET_USERNAME</span></code>: Your login on Bitbucket</p></li>
+</ul>
+<p>The others are only needed in specific circumstancs.</p>
+</section>
+<section id="start-an-environment-on-github-codespaces">
+<h2>Start an environment on Github Codespaces<a class="headerlink" href="#start-an-environment-on-github-codespaces" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Go to <a class="github reference external" href="https://github.com/labordynamicsinstitute/codespaces-stata-skeleton">labordynamicsinstitute/codespaces-stata-skeleton</a> and select “Code -&gt; Codespaces -&gt; Start new”</p></li>
+<li><p>When you have one running, you can re-use the previous one.</p></li>
+</ul>
+<p>Alternate:</p>
+<ul class="simple">
+<li><p>Go to [<a class="github reference external" href="https://github.com/codespaces">codespaces</a>] and select <code class="docutils literal notranslate"><span class="pre">labordynamicsinstitute/codespaces-stata-skeleton</span></code> from the dropdown menu.</p></li>
+</ul>
+<p>If neither of those options appear, contact the LDI Lab Administrator.</p>
+</section>
+<section id="connect-to-local-vs-code-optional-but-useful">
+<h2>Connect to local VS Code (optional but useful)<a class="headerlink" href="#connect-to-local-vs-code-optional-but-useful" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Click on the green <code class="docutils literal notranslate"><span class="pre">Codespaces</span></code> button on the bottom left, choose “Open in VS Code” from menu that appears at top center.</p></li>
+<li><p>This will open a local VS Code instance with the same content. Your main window in the browser may or may not stay open.</p></li>
 </ul>
 </section>
-<section id="environment">
-<h2>Environment<a class="headerlink" href="#environment" title="Permalink to this heading">#</a></h2>
+<section id="processing-cases">
+<h2>Processing cases<a class="headerlink" href="#processing-cases" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Set up the environment specified by the authors. This includes software, version of that software, and any dependencies (packages).
-Example: <code class="docutils literal notranslate"><span class="pre">Stata(16)</span> <span class="pre">with</span> <span class="pre">ssc</span> <span class="pre">packages</span> <span class="pre">estout</span> <span class="pre">and</span> <span class="pre">boottest</span></code></p></li>
-</ul>
-<p><img alt="Environment" src="_images/environment.png" /></p>
-</section>
-<section id="metadata">
-<h2>Metadata<a class="headerlink" href="#metadata" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Add a “Tag” in the metadata with the AEAREP number, and an additional tag with the manuscript number. These tags persist, even when we rename the deposit for publication, and thus allows us to keep track of things.</p></li>
-</ul>
-</section>
-<section id="recording-the-environment-in-jira">
-<h2>Recording the environment in Jira<a class="headerlink" href="#recording-the-environment-in-jira" title="Permalink to this heading">#</a></h2>
-<p>In Jira,</p>
-<ul class="simple">
-<li><p>record the URL for the CodeOcean capsule (e.g., <code class="docutils literal notranslate"><span class="pre">https://codeocean.com/capsule/1665863/tree</span></code>) in the field <code class="docutils literal notranslate"><span class="pre">Computing</span> <span class="pre">URL</span></code> (<code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Info</span></code>  tab)</p></li>
-<li><p>record the use of CodeOcean in the <code class="docutils literal notranslate"><span class="pre">Computing</span> <span class="pre">Environment</span></code> field (<code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Info</span></code> tab) (use the existing word <code class="docutils literal notranslate"><span class="pre">codeocean</span></code>)</p></li>
-<li><p>record the <code class="docutils literal notranslate"><span class="pre">Working</span> <span class="pre">location</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">data</span></code> as “Codeocean”</p></li>
-</ul>
-</section>
-<section id="files-and-directories">
-<h2>Files and Directories<a class="headerlink" href="#files-and-directories" title="Permalink to this heading">#</a></h2>
+<li><p>Open a terminal (top menu, Terminal, New Terminal, or shortcut `shift-ctrl-``.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> to be in <code class="docutils literal notranslate"><span class="pre">/workspaces</span></code></p></li>
+<li><p>You can clone a Bitbucket case as usual.</p>
 <ul>
-<li><p>There are only three directories in the Codeocean environment: <code class="docutils literal notranslate"><span class="pre">/data</span></code>; <code class="docutils literal notranslate"><span class="pre">/code</span></code>; <code class="docutils literal notranslate"><span class="pre">/results</span></code>.</p>
-<ul class="simple">
-<li><p>All paths in the code must refer to one of these directories.</p></li>
-<li><p>If the authors set their own globals, you change the globals to reflect these directories.</p></li>
-<li><p>If the authors do not use globals, you should use the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> (see <span class="xref myst">instructions</span>) to make the code more reproducible by setting globals in the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> and amending the paths in the authors’ code. Example:
-<code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&quot;D:\Dropbox\Data</span> <span class="pre">for</span> <span class="pre">paper\x.dta&quot;</span></code> becomes <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&quot;$data/x.dta&quot;</span></code>.</p></li>
-<li><p>Modify the standard <code class="docutils literal notranslate"><span class="pre">config.do</span></code> as follows:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">local</span><span class="w"> </span>scenario<span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="w">                      </span>//<span class="w"> </span>line<span class="w"> </span><span class="m">35</span>
-global<span class="w"> </span>logdir<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">rootdir</span><span class="si">}</span><span class="s2">/results/logs&quot;</span><span class="w"> </span>//<span class="w"> </span>line<span class="w"> </span><span class="m">59</span>
-//<span class="w"> </span>....<span class="w"> </span>go<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>very<span class="w"> </span>end<span class="w"> </span>
-global<span class="w"> </span>data<span class="w">    </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">rootdir</span><span class="si">}</span><span class="s2">/data</span>
-<span class="s2">global results &quot;</span><span class="si">${</span><span class="nv">rootdir</span><span class="si">}</span>/results
-</pre></div>
-</div>
-<p>Occasionally, other changes are also necessary, for instance, creating new directories.</p>
-</li>
-<li><p>Upload the code  to the <code class="docutils literal notranslate"><span class="pre">/code</span></code> and the data files to the <code class="docutils literal notranslate"><span class="pre">/data</span></code> directories in Codeocean.</p></li>
-<li><p>Define the default <code class="docutils literal notranslate"><span class="pre">run</span></code> file using the right-click menu for the main do file. This will create a new file (called <code class="docutils literal notranslate"><span class="pre">run</span></code>) which is a Bash script that CodeOcean uses to run all of the other code.</p>
-<p><img alt="run" src="_images/run_file.png" /></p>
-</li>
-<li><p>Which file to use for the automatic creation of the <code class="docutils literal notranslate"><span class="pre">run</span></code> file depends on your manuscript:</p>
-<ul class="simple">
-<li><p>If the manuscript has a single master file (e.g., <code class="docutils literal notranslate"><span class="pre">master.do</span></code>), use that. The <code class="docutils literal notranslate"><span class="pre">run</span></code> file will then look like</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
-<span class="nb">set</span> <span class="o">-</span><span class="n">ex</span>
-
-<span class="c1"># This is the master script for the capsule. When you click &quot;Reproducible Run&quot;, the code in this file will execute.</span>
-<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="n">master</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>If the authors provide instructions on a specific order in which to individually execute programs, each program will need to be added to the “run” file in that order. In this case, you should be including the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> at the top of each program instead of only the <code class="docutils literal notranslate"><span class="pre">Master.do</span></code>.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
-<span class="nb">set</span> <span class="o">-</span><span class="n">ex</span>
-
-<span class="c1"># This is the master script for the capsule. When you click &quot;Reproducible Run&quot;, the code in this file will execute.</span>
-<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">01</span><span class="n">_step1</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
-<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">02</span><span class="n">_step2</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
-<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">03</span><span class="n">_step3</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
-<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">04</span><span class="n">_step4</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</section>
-<section id="log-files">
-<h2>Log files<a class="headerlink" href="#log-files" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Any code that generates logfiles (this includes the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>) needs to be amended to write to the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory (i.e. <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">logdir</span> <span class="pre">&quot;${rootdir}/results&quot;</span></code>).</p></li>
-<li><p>Note that CodeOcean automatically generates a capture of all screen output in a file called “<code class="docutils literal notranslate"><span class="pre">output</span></code>” in the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory. In many cases, this will be sufficient.</p></li>
-</ul>
-</section>
-<section id="output">
-<h2>Output<a class="headerlink" href="#output" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Nothing is captured unless it is <em>explicitly</em> exported to the <code class="docutils literal notranslate"><span class="pre">/results</span></code> directory.</p>
-<ul>
-<li><p>For example, you will not see any graphics files saved by the code unless they are saved as something such as <code class="docutils literal notranslate"><span class="pre">${results}/figure1.gph</span></code>.</p></li>
-<li><p>You may not need to do this for intermediate data files. The program(s) should still run as long as the files are successfully created.</p></li>
-<li><p>All tables and figures need to be adjusted to write to “<code class="docutils literal notranslate"><span class="pre">${results}</span></code>”. The best way is to use a global (yet again defined in the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>), e.g. <code class="docutils literal notranslate"><span class="pre">graph</span> <span class="pre">export</span> <span class="pre">&quot;${results}/figure1.pdf&quot;</span></code>.</p></li>
+<li><p>special command available: <code class="docutils literal notranslate"><span class="pre">aeagit</span> <span class="pre">[NNNN]</span> <span class="pre">http</span></code> where <code class="docutils literal notranslate"><span class="pre">[NNN]</span></code> is the <code class="docutils literal notranslate"><span class="pre">AEAREP-NNNN</span></code> number. The command should open a new VS Code instance, with the cloned repository in the file pane.</p></li>
 </ul>
 </li>
+<li><p>All command line git functions should work, as should command line Stata.</p></li>
 </ul>
 </section>
-<section id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Note that some features will not work on CodeOcean if they rely on graphical windows (see LINK TO CODEOCEAN SITE)</p>
-<ul>
-<li><p>A particular feature missing from Stata 16.0 on CodeOcean is the ability to write PNG graphics. Write PDF instead.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="recording-edits">
-<h2>Recording edits<a class="headerlink" href="#recording-edits" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Once you have finished editing and running the code in Codeocean, you should download the edited code and commit it to the repository. The best way to do this is similar to the <a class="reference internal" href="12-jira-revision-guidance.html#aea-revision-reports-after-author-resubmission"><span class="std std-ref">steps taken during a revision</span></a>:</p>
-<ul>
-<li><p>Delete, by hand (<strong>NOT</strong> git rm), the code files as you downloaded them onto your workspace.</p></li>
-<li><p>Then, place the amended codes into that same directory.</p></li>
-<li><p>Git <code class="docutils literal notranslate"><span class="pre">add,</span> <span class="pre">commit,</span> <span class="pre">push</span></code>.</p></li>
-<li><p>We should then be able to identify the changes you made to the code in order to run it on Codeocean. See further guidance <a class="reference internal" href="12-jira-revision-guidance.html#aea-revision-reports-after-author-resubmission"><span class="std std-ref">here</span></a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="expert-tip">
-<h2>Expert tip<a class="headerlink" href="#expert-tip" title="Permalink to this heading">#</a></h2>
-<p>Instead of manually downloading CodeOcean results, in a (git) bash shell on your laptop or CISER, cd to the base directory of the reproducibility check (e.g., “aearep-xxxxx”), and run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tools</span><span class="o">/</span><span class="n">sync</span><span class="o">-</span><span class="n">codeocean</span><span class="o">.</span><span class="n">sh</span> <span class="n">nnnnn</span>
-</pre></div>
-</div>
-<p>where <code class="docutils literal notranslate"><span class="pre">nnnnn</span></code> is the numerical capsule identifier from the CodeOcean URL: <code class="docutils literal notranslate"><span class="pre">https://codeocean.com/capsule/</span></code> <strong>nnnnnn</strong> <code class="docutils literal notranslate"><span class="pre">/tree</span></code>. You will be asked to authenticate using your CodeOcean (not Bitbucket!) login and password!</p>
-<p>This will create two directories in your workspace: <code class="docutils literal notranslate"><span class="pre">codeocean-nnnnn-live</span></code> and <code class="docutils literal notranslate"><span class="pre">codeocean-nnnn</span></code>. The former will be “ignored”, but the latter will be refreshed each time you run the <code class="docutils literal notranslate"><span class="pre">sync-codeocean.sh</span></code> command, and will be committed to the Bitbucket repository. This is a convenient way to synchronize the two.</p>
-<p>Don’t forget to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add;</span> <span class="pre">git</span> <span class="pre">commit;</span> <span class="pre">git</span> <span class="pre">push</span></code> afterwards. This command can be run multiple times, as changes are made on CodeOcean.</p>
-</section>
-<section id="recording-results">
-<h2>Recording results<a class="headerlink" href="#recording-results" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Download the <code class="docutils literal notranslate"><span class="pre">/results</span></code> directory as a ZIP file. Remember the “run” number from the CodeOcean interface (e.g. “Run 1234567”).</p></li>
-<li><p>If not already present, create a “results” directory in the <code class="docutils literal notranslate"><span class="pre">codeocean-nnnnn</span></code> directory.</p></li>
-<li><p>Create a directory for each run with the “run” number.</p></li>
-<li><p>Unzip the ZIP file you just downloaded into the numerical directory you just created.</p></li>
-</ul>
-<p>This should look like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aearep</span><span class="o">-</span><span class="mi">1234</span><span class="o">/</span>
-    <span class="n">codeocean</span><span class="o">-</span><span class="n">nnnnn</span><span class="o">/</span>
-        <span class="n">code</span><span class="o">/</span>
-        <span class="n">metadata</span><span class="o">/</span>
-        <span class="n">results</span><span class="o">/</span>
-            <span class="mi">2931206</span><span class="o">/</span>
-                <span class="n">output</span>
-                <span class="n">logfile_20220201</span><span class="o">-</span><span class="mi">1201</span><span class="o">-</span><span class="n">root</span><span class="o">.</span><span class="n">log</span>
-                <span class="n">figure1</span><span class="o">.</span><span class="n">pdf</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Don’t forget to add all results from the “results” directory, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add;</span> <span class="pre">git</span> <span class="pre">commit;</span> <span class="pre">git</span> <span class="pre">push</span></code>.</p></li>
-</ul>
+<section id="administrator-instructions">
+<h2>Administrator instructions<a class="headerlink" href="#administrator-instructions" title="Permalink to this heading">#</a></h2>
+<p>In order to enable a replicator to use this repository for Codespaces, they must be “collaborators”. Apparently, that requires write access (to be verified).</p>
 </section>
 </section>
 
@@ -687,20 +565,20 @@ global<span class="w"> </span>data<span class="w">    </span><span class="s2">&q
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="95-01-setup-bash.html"
+       href="95-30-wholetale.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Setting up your Bash environment</p>
+        <p class="prev-next-title">Conducting reproducibility checks on WholeTale</p>
       </div>
     </a>
     <a class="right-next"
-       href="95-03-wholetale.html"
+       href="96-00-using-Stata.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Conducting reproducibility checks on WholeTale</p>
+        <p class="prev-next-title">Stata-related procedures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -719,17 +597,11 @@ global<span class="w"> </span>data<span class="w">    </span><span class="s2">&q
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-capsule">Create a Capsule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment">Environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">Metadata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-the-environment-in-jira">Recording the environment in Jira</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files-and-directories">Files and Directories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-files">Log files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-edits">Recording edits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expert-tip">Expert tip</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-results">Recording results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-an-environment-on-github-codespaces">Start an environment on Github Codespaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-local-vs-code-optional-but-useful">Connect to local VS Code (optional but useful)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-cases">Processing cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#administrator-instructions">Administrator instructions</a></li>
 </ul>
   </nav></div>
 
