@@ -15,27 +15,9 @@ You will be working on a variety of computers
   - [Github Codespaces](https://github.com/codespaces) ([experimental instructions](https://github.com/labordynamicsinstitute/replicability-training/blob/master/draft-codespaces.md))
 - [Bitbucket](https://bitbucket.org/account/signup/) 
 
-## General guidelines
+## General considerations
 
-### Additional setup instructions
-
-::::{tab-set}
-
-:::{tab-item} CCSS-RS
-
-- You should synchronize your VSCode settings with your *normal* computer. This will bring over any settings and extensions! Very useful. See the [VS Code Settings Sync page](https://code.visualstudio.com/docs/editor/settings-sync).
-- You should do additional setup for your Git bash shell: this includes making downloads from openICPSR simpler. See [appendix](setup-bash).
-
-:::
-
-:::{tab-item} Github CS
-
-- You should synchronize your VSCode settings with your *normal* computer. This will bring over any settings and extensions! Very useful. See the [VS Code Settings Sync page](https://code.visualstudio.com/docs/editor/settings-sync).
-- You should do additional setup for your bash shell: this includes making downloads from openICPSR simpler. See [appendix](setup-bash).
-
-:::
-
-::::
+You only need to use **one** of them, but which one may depend on the particular circumstances of the project you are working on.
 
 ### What can you do where
 
@@ -51,14 +33,15 @@ By default, you should expect to run the code on , which has a [broad selection 
 
 If you actually have the software on your laptop, you should feel free to run code there, but see the caveat below. We will not purchase software for your personal laptop, and we do not provide you with a computationally capable laptop.
 
-Some software is not available on CCSS-RS. If you encounter the following, you should check with your supervisor:
+Some software is not available or installable on all systemS. If you encounter the following, you should check with your supervisor:
 
 | Software | Computing environment |
 |----------|--------------------|
-| Dynare   | Red Cloud Windows node, CCSS|
-| Fortran compiler | BioHPC linux cluster |
-| C compiler  | BioHPC linux cluster |
+| Dynare   | Red Cloud Windows node, CCSS, CodeOcean|
+| Fortran compiler | BioHPC linux cluster, Docker |
+| C compiler  | BioHPC linux cluster, CodeOcean (depends on compiler) |
 | Eviews | Not currently available |
+| RATS   | Not currently available (trial license for laptop)
 
 Much statistical software loads data into memory. Your laptop has a limited amount of memory (in 2018, between 2GB and 8GB, rarely more). CCSS-RS nodes and BioHPC nodes can have between 256GB and 1024 GB of memory!
 
@@ -71,7 +54,6 @@ One of the advantages of running on the CCSS-RS or BioHPC nodes is that you can 
 See [setup checklist](checklist).
 
 
-### Where can I learn more
+## Details
 
-- For CCSS-RS nodes, see [CCSS-RS](https://socialsciences.cornell.edu/research-support/compute-infrastructure).
-- For special *Red Cloud* nodes, see [here](https://github.com/labordynamicsinstitute/replicability-training/wiki/Connect-to-a-CCSS-RS-Custom-Red-Cloud-Machine)
+The following sections will walk you through the various options. 

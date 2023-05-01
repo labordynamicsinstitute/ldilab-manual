@@ -229,10 +229,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="95_Access_to_computers.html">Access to Computers</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="95-01-setup-bash.html">Setting up your Bash environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-10-windows-remote.html">Connecting to remote Windows servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-20-codeocean.html">Reproducibility Checks in Codeocean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-30-wholetale.html">Conducting reproducibility checks on WholeTale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-40-codespaces.html">Computing using Github Codespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-50-setup-bash.html">Setting up your Bash environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-60-general-setup.html">Additional setup instructions</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -501,7 +503,7 @@ document.write(`
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 Downloading using a script</label><div class="sd-tab-content docutils">
-<p>The most convenient way to download the information is to use the LDI-specific script <code class="docutils literal notranslate"><span class="pre">tools/download_openicpsr-private.py</span></code> (be sure to have <a class="reference internal" href="95-01-setup-bash.html#setup-bash"><span class="std std-ref">set up your environment first</span></a>).</p>
+<p>The most convenient way to download the information is to use the LDI-specific script <code class="docutils literal notranslate"><span class="pre">tools/download_openicpsr-private.py</span></code> (be sure to have <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">set up your environment first</span></a>).</p>
 <p><strong>Short version of call to script</strong></p>
 <p>While in your repository directory, open a (Git) Bash shell, and type</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>tools/download_openicpsr-private.py<span class="w"> </span><span class="m">123456</span>
@@ -518,7 +520,7 @@ Downloading using a script</label><div class="sd-tab-content docutils">
 <li><p><code class="docutils literal notranslate"><span class="pre">.</span></code> indicates the directory to download the ZIP file to (here, the current directory)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mylogin&#64;cornell.edu</span></code>  is the login you use on the openICPSR website (typically, <code class="docutils literal notranslate"><span class="pre">netid&#64;cornell.edu</span></code>)</p></li>
 </ul>
-<p>See <a class="reference internal" href="95-01-setup-bash.html#setup-bash"><span class="std std-ref">appendix</span></a> on how to set up the environment to make the script simpler (i.e., allow the short form to run).</p>
+<p>See <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">appendix</span></a> on how to set up the environment to make the script simpler (i.e., allow the short form to run).</p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">

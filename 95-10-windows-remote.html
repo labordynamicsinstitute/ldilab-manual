@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Setting up your Bash environment &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Connecting to remote Windows servers &#8212; Training Manual For Reproducibility Verification</title>
   
   
   
@@ -61,8 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '95-01-setup-bash';</script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/95-01-setup-bash.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '95-10-windows-remote';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/95-10-windows-remote.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Reproducibility Checks in Codeocean" href="95-20-codeocean.html" />
@@ -229,10 +229,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="95_Access_to_computers.html">Access to Computers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Setting up your Bash environment</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Connecting to remote Windows servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-20-codeocean.html">Reproducibility Checks in Codeocean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-30-wholetale.html">Conducting reproducibility checks on WholeTale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-40-codespaces.html">Computing using Github Codespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-50-setup-bash.html">Setting up your Bash environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-60-general-setup.html">Additional setup instructions</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -328,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/95-01-setup-bash.md" target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/95-10-windows-remote.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -345,7 +347,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F95-01-setup-bash.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F95-10-windows-remote.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -375,7 +377,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/95-01-setup-bash.md" target="_blank"
+      <li><a href="_sources/95-10-windows-remote.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -444,9 +446,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -457,26 +457,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Setting up your Bash environment</h1>
+    <h1>Connecting to remote Windows servers</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-the-openicpsr-download-script">Configure the openICPSR download script</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-some-convenience-scripts">Configure some convenience scripts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-not-yet-have-a-home-bin-directory">If you do not yet have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-already-have-a-home-bin-directory">If you already have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-bitbucket-access">Configure Bitbucket access</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-python-defaults">Configuring Python defaults</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -486,65 +471,45 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="setting-up-your-bash-environment">
-<span id="setup-bash"></span><h1>Setting up your Bash environment<a class="headerlink" href="#setting-up-your-bash-environment" title="Permalink to this heading">#</a></h1>
-<p>The following setup applies to any computer you may be using to run Bash commands.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>On Windows, this will be “Git bash”. On Linux, you are usually using <code class="docutils literal notranslate"><span class="pre">bash</span></code>, but check with your sysadmin if you are unsure. On MacOS, newer versions have changed the default shell to <code class="docutils literal notranslate"><span class="pre">zsh</span></code>, which should work mostly the same. It is possible to use the <code class="docutils literal notranslate"><span class="pre">bash</span></code> shell there as well.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="connecting-to-remote-windows-servers">
+<span id="windows-remote"></span><h1>Connecting to remote Windows servers<a class="headerlink" href="#connecting-to-remote-windows-servers" title="Permalink to this heading">#</a></h1>
+<p>We have access to two sets of remote desktop Windows servers:</p>
+<ul class="simple">
+<li><p>CCSS-RS (classic)</p></li>
+<li><p>Cloud CCSS (beta)</p></li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+CCSS-RS classic</label><div class="sd-tab-content docutils">
+<p>Follow instructions at <a class="reference external" href="https://socialsciences.cornell.edu/research-support/login-instructions">CCSS-RS</a>. Be sure to select the tab that corresponds to your <strong>laptop’s</strong> operating system!</p>
 </div>
-<section id="configure-the-openicpsr-download-script">
-<h2>Configure the openICPSR download script<a class="headerlink" href="#configure-the-openicpsr-download-script" title="Permalink to this heading">#</a></h2>
-<p>Run this once in a Bash shell:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span>
-<span class="s2"># env for ICPSR</span>
-<span class="s2">export ICPSR_EMAIL=mylogin@cornell.edu</span>
-<span class="s2">export ICPSR_PASS=supersecretpwd</span>
-<span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$HOME</span>/.bashrc
-</pre></div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Cloud CCSS</label><div class="sd-tab-content docutils">
+<p>This is still preliminary, so check back often.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cornellprod-my.sharepoint.com/:f:/g/personal/cd642_cornell_edu/EvxDKmDjZyZBsrQvimUR8xABE4x6TYDenmLOY8ZFMLRjUw">Instructions</a></p></li>
+</ul>
+<p>You can connect to CCSS Cloud Computing via a <strong>web browser</strong>:</p>
+<ul class="simple">
+<li><p>Open the latest version of a web browser (Chrome, Safari, Firefox or Edge). · Go to following link: <a class="reference external" href="https://client.wvd.microsoft.com/arm/webclient/">https://client.wvd.microsoft.com/arm/webclient/</a> (V1) or the newer one <a class="reference external" href="https://client.wvd.microsoft.com/arm/webclient/v2/index.html">https://client.wvd.microsoft.com/arm/webclient/v2/index.html</a> (V2)</p></li>
+<li><p>Sign into Microsoft with your regular Cornell University email and password.</p>
+<ul>
+<li><p>Cornell email address. Ex: <a class="reference external" href="mailto:jrg363&#37;&#52;&#48;cornell&#46;edu">jrg363<span>&#64;</span>cornell<span>&#46;</span>edu</a></p></li>
+<li><p>Cornell email password. Ex: Cornell password</p></li>
+</ul>
+</li>
+<li><p>Click on “Research Servers”, and on the pop-up, click on Allow to proceed.</p></li>
+<li><p>Sign in (again) with your regular Cornell University email and password.</p>
+<ul>
+<li><p>Username: Cornell email address. Ex: <a class="reference external" href="mailto:jrg363&#37;&#52;&#48;cornell&#46;edu">jrg363<span>&#64;</span>cornell<span>&#46;</span>edu</a></p></li>
+<li><p>Password: Cornell email password. Ex: Cornell password</p></li>
+</ul>
+</li>
+</ul>
 </div>
-<p>(you should copy-paste this into an empty VS Code window, edit the editable pieces, then copy-paste it into the Git bash shell).</p>
-<p>This will “prime” the script to use that email and password for downloading the information.</p>
-</section>
-<section id="configure-some-convenience-scripts">
-<h2>Configure some convenience scripts<a class="headerlink" href="#configure-some-convenience-scripts" title="Permalink to this heading">#</a></h2>
-<p>We have a bunch of scripts, some of which can make your life easier. See <a class="github reference external" href="https://github.com/AEADataEditor/editor-scripts">AEADataEditor/editor-scripts</a>. You can make these available to your Bash shell by running the following command:</p>
-<section id="if-you-do-not-yet-have-a-home-bin-directory">
-<h3>If you do not yet have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory<a class="headerlink" href="#if-you-do-not-yet-have-a-home-bin-directory" title="Permalink to this heading">#</a></h3>
-<p>Check first if you already have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span><span class="nv">$HOME</span>/bin
-</pre></div>
 </div>
-<p>If that yields an error, then you don’t have one. So run the next part:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AEADataEditor/editor-scripts<span class="w"> </span>bin
-</pre></div>
-</div>
-<p>You should now have access to the various scripts, such as <code class="docutils literal notranslate"><span class="pre">aeagit</span></code>.</p>
-</section>
-<section id="if-you-already-have-a-home-bin-directory">
-<h3>If you already have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory<a class="headerlink" href="#if-you-already-have-a-home-bin-directory" title="Permalink to this heading">#</a></h3>
-<p>If you <em>do</em> have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory, you will need to manually adjust a few more things. Contact your supervisor.</p>
-</section>
-</section>
-<section id="configure-bitbucket-access">
-<h2>Configure Bitbucket access<a class="headerlink" href="#configure-bitbucket-access" title="Permalink to this heading">#</a></h2>
-<p>For Bitbucket, you often copy your Bitbucket PAT into the Bash window. The following can streamline that, if using the <code class="docutils literal notranslate"><span class="pre">aeagit</span></code> command above.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;# adding Bitbucket credentials</span>
-<span class="s1">export P_BITBUCKET_PAT=&quot;supersecretPAT&quot; </span>
-<span class="s1">export P_BITBUCKET_USERNAME=netid-replace-me</span>
-<span class="s1">&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$HOME</span>/.bashrc
-</pre></div>
-</div>
-<p>(you should copy-paste this into an empty VS Code window, edit the editable pieces, then copy-paste it into the Git bash shell).</p>
-</section>
-<section id="configuring-python-defaults">
-<h2>Configuring Python defaults<a class="headerlink" href="#configuring-python-defaults" title="Permalink to this heading">#</a></h2>
-<p>If you are on a machine that has Python installed, run the following command (if it fails with <code class="docutils literal notranslate"><span class="pre">python3</span></code>, replace with <code class="docutils literal notranslate"><span class="pre">python</span></code>). You should do this once, from any recently cloned Bitbucket repository (which will contain a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</pre></div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -599,27 +564,6 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AEADa
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-the-openicpsr-download-script">Configure the openICPSR download script</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-some-convenience-scripts">Configure some convenience scripts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-not-yet-have-a-home-bin-directory">If you do not yet have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-already-have-a-home-bin-directory">If you already have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-bitbucket-access">Configure Bitbucket access</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-python-defaults">Configuring Python defaults</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

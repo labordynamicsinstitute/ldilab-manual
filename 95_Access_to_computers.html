@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/95_Access_to_computers.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Setting up your Bash environment" href="95-01-setup-bash.html" />
+    <link rel="next" title="Connecting to remote Windows servers" href="95-10-windows-remote.html" />
     <link rel="prev" title="Updating Replication Materials after Revisions" href="94-04-Updating_Materials.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -229,10 +229,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Access to Computers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="95-01-setup-bash.html">Setting up your Bash environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-10-windows-remote.html">Connecting to remote Windows servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-20-codeocean.html">Reproducibility Checks in Codeocean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-30-wholetale.html">Conducting reproducibility checks on WholeTale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-40-codespaces.html">Computing using Github Codespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-50-setup-bash.html">Setting up your Bash environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-60-general-setup.html">Additional setup instructions</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -467,16 +469,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General guidelines</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-instructions">Additional setup instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-considerations">General considerations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-can-you-do-where">What can you do where</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-the-data">Where is the data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-software">What software</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-the-code-runs-for-a-long-time-i-need-to-run-to-class-i-need-my-life-twitter-back-on-my-laptop">What if the code runs for a long time / I need to run to class / I need my life = Twitter back on my laptop</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requesting-access">Requesting Access</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-can-i-learn-more">Where can I learn more</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
 </ul>
             </nav>
         </div>
@@ -510,29 +511,9 @@ document.write(`
 </li>
 <li><p><a class="reference external" href="https://bitbucket.org/account/signup/">Bitbucket</a></p></li>
 </ul>
-<section id="general-guidelines">
-<h2>General guidelines<a class="headerlink" href="#general-guidelines" title="Permalink to this heading">#</a></h2>
-<section id="additional-setup-instructions">
-<h3>Additional setup instructions<a class="headerlink" href="#additional-setup-instructions" title="Permalink to this heading">#</a></h3>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
-CCSS-RS</label><div class="sd-tab-content docutils">
-<ul class="simple">
-<li><p>You should synchronize your VSCode settings with your <em>normal</em> computer. This will bring over any settings and extensions! Very useful. See the <a class="reference external" href="https://code.visualstudio.com/docs/editor/settings-sync">VS Code Settings Sync page</a>.</p></li>
-<li><p>You should do additional setup for your Git bash shell: this includes making downloads from openICPSR simpler. See <a class="reference internal" href="95-01-setup-bash.html#setup-bash"><span class="std std-ref">appendix</span></a>.</p></li>
-</ul>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
-Github CS</label><div class="sd-tab-content docutils">
-<ul class="simple">
-<li><p>You should synchronize your VSCode settings with your <em>normal</em> computer. This will bring over any settings and extensions! Very useful. See the <a class="reference external" href="https://code.visualstudio.com/docs/editor/settings-sync">VS Code Settings Sync page</a>.</p></li>
-<li><p>You should do additional setup for your bash shell: this includes making downloads from openICPSR simpler. See <a class="reference internal" href="95-01-setup-bash.html#setup-bash"><span class="std std-ref">appendix</span></a>.</p></li>
-</ul>
-</div>
-</div>
-</section>
+<section id="general-considerations">
+<h2>General considerations<a class="headerlink" href="#general-considerations" title="Permalink to this heading">#</a></h2>
+<p>You only need to use <strong>one</strong> of them, but which one may depend on the particular circumstances of the project you are working on.</p>
 <section id="what-can-you-do-where">
 <h3>What can you do where<a class="headerlink" href="#what-can-you-do-where" title="Permalink to this heading">#</a></h3>
 <p>In principle, assuming you have the necessary software, you can work on any computer. Just remember to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> all changes back to Bitbucket.</p>
@@ -545,7 +526,7 @@ Github CS</label><div class="sd-tab-content docutils">
 <h3>What software<a class="headerlink" href="#what-software" title="Permalink to this heading">#</a></h3>
 <p>By default, you should expect to run the code on , which has a <a class="reference external" href="https://socialsciences.cornell.edu/research-support/software">broad selection of software</a>.</p>
 <p>If you actually have the software on your laptop, you should feel free to run code there, but see the caveat below. We will not purchase software for your personal laptop, and we do not provide you with a computationally capable laptop.</p>
-<p>Some software is not available on CCSS-RS. If you encounter the following, you should check with your supervisor:</p>
+<p>Some software is not available or installable on all systemS. If you encounter the following, you should check with your supervisor:</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Software</p></th>
@@ -554,16 +535,19 @@ Github CS</label><div class="sd-tab-content docutils">
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Dynare</p></td>
-<td><p>Red Cloud Windows node, CCSS</p></td>
+<td><p>Red Cloud Windows node, CCSS, CodeOcean</p></td>
 </tr>
 <tr class="row-odd"><td><p>Fortran compiler</p></td>
-<td><p>BioHPC linux cluster</p></td>
+<td><p>BioHPC linux cluster, Docker</p></td>
 </tr>
 <tr class="row-even"><td><p>C compiler</p></td>
-<td><p>BioHPC linux cluster</p></td>
+<td><p>BioHPC linux cluster, CodeOcean (depends on compiler)</p></td>
 </tr>
 <tr class="row-odd"><td><p>Eviews</p></td>
 <td><p>Not currently available</p></td>
+</tr>
+<tr class="row-even"><td><p>RATS</p></td>
+<td><p>Not currently available (trial license for laptop)</p></td>
 </tr>
 </tbody>
 </table>
@@ -577,13 +561,10 @@ Github CS</label><div class="sd-tab-content docutils">
 <h3>Requesting Access<a class="headerlink" href="#requesting-access" title="Permalink to this heading">#</a></h3>
 <p>See <a class="reference internal" href="91-setup-checklist.html#checklist"><span class="std std-ref">setup checklist</span></a>.</p>
 </section>
-<section id="where-can-i-learn-more">
-<h3>Where can I learn more<a class="headerlink" href="#where-can-i-learn-more" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>For CCSS-RS nodes, see <a class="reference external" href="https://socialsciences.cornell.edu/research-support/compute-infrastructure">CCSS-RS</a>.</p></li>
-<li><p>For special <em>Red Cloud</em> nodes, see <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Connect-to-a-CCSS-RS-Custom-Red-Cloud-Machine">here</a></p></li>
-</ul>
 </section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this heading">#</a></h2>
+<p>The following sections will walk you through the various options.</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -627,11 +608,11 @@ Github CS</label><div class="sd-tab-content docutils">
       </div>
     </a>
     <a class="right-next"
-       href="95-01-setup-bash.html"
+       href="95-10-windows-remote.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Setting up your Bash environment</p>
+        <p class="prev-next-title">Connecting to remote Windows servers</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -650,16 +631,15 @@ Github CS</label><div class="sd-tab-content docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General guidelines</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-instructions">Additional setup instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-considerations">General considerations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-can-you-do-where">What can you do where</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-the-data">Where is the data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-software">What software</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-the-code-runs-for-a-long-time-i-need-to-run-to-class-i-need-my-life-twitter-back-on-my-laptop">What if the code runs for a long time / I need to run to class / I need my life = Twitter back on my laptop</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requesting-access">Requesting Access</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-can-i-learn-more">Where can I learn more</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
 </ul>
   </nav></div>
 

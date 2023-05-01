@@ -10,7 +10,7 @@ This is because the git setup we use does not allow you to include the data file
 
 ::::{tab-set}
 
-:::{tab-item} CISER 
+:::{tab-item} CCSS 
 
 
 - [ ] Clone the Bitbucket repository onto the computer you are working on
