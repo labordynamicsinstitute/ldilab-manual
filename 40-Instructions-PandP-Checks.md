@@ -27,7 +27,7 @@ Here's the [guidance document](https://aeadataeditor.github.io/aea-de-guidance/d
 
 You should now do the following:
 
-- Open the link in (4) on openICPSR
+- Open the link in (4) on openICPSR, (more rarely) Zenodo, or Dataverse 
 
   - If you need to find the openICPSR repository, use [this link](https://www.openicpsr.org/openicpsr/tenant/openicpsr/module/aea/reports)
     
@@ -37,6 +37,8 @@ You should now do the following:
 
 - Assess the openICPSR repository, filling out the form as you go along
 
+(table here)
+
   - It is important that you enter the AEAREP and Manuscript numbers accurately. We suggest copying-and-pasting.
 
 - Submit the form.
@@ -45,7 +47,7 @@ You should now do the following:
 
 - Navigate to the "PandP Docs" Google Drive folder [here](https://drive.google.com/drive/u/1/folders/1BhqECqYdBQJecRcDaJf_Jl2NoyiyrYzl), locate the PDF with the Jira ticket of the case you are working on (PDF format: `Report-PandP-AEAREP-xxxx.pdf`), and download the file. This is the PDF version of the checklist form using the information you entered.
 
-In Jira:
+In **Jira**:
 
 - Move the issue forward by choosing "**Process PandP**" to status
      "*Submitted PandP Form*"
@@ -56,9 +58,12 @@ In Jira:
 
 Once the form PDF has been added to the issue, you should first return to the openICPSR repository, and then come back to Jira. Depending on what's on the form, proceed to do one of the following:
 
-### If the form has all "required" elements checked, you should "sign off":
+### If the form has all "required" elements checked, you should "sign off"
 
-#### On openICPSR
+
+::::{tab-set}
+
+:::{tab-item}  On openICPSR
 
 - Write a "Project communication log" entry. After clicking on "+ add entry", copy the following to the relevant cell. Update AEAREP number accordingly.
   - *Subject line:* 
@@ -72,16 +77,34 @@ Once the form PDF has been added to the issue, you should first return to the op
     conducted, only compliance with required metadata was checked.
     ```
 
-#### Back in Jira
+::: 
+
+:::{tab-item} On Dataverse
+
+TBD
+
+:::
+
+:::{tab-item} On Zenodo
+
+TBD
+
+:::
+
+::::
+
+#### In Jira
 
 - Move it through the workflow
   - Choose "**Prepare for publication**"
   - Resolution: *Evaluation only*
   - MCRecommendationV2: *Accept*
 
-### If the form does not have all "required" elements checked, make the following entry:
+### If the form does not have all "required" elements checked, make the following entry
 
-#### On openICPSR
+::::{tab-set}
+
+:::{tab-item} On openICPSR
 
 1) If `Deposit Status` = `Deposit in Progress`
 
@@ -117,6 +140,22 @@ Once the form PDF has been added to the issue, you should first return to the op
     ```
   - Attach the PDF from the issue to the communication log.
 
+
+::: 
+
+:::{tab-item} On Dataverse
+
+TBD
+
+:::
+
+:::{tab-item} On Zenodo
+
+TBD
+
+:::
+
+::::
 
 #### Back in Jira,
 
