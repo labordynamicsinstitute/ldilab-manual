@@ -61,11 +61,12 @@ parts:
       - file: 94-04-Updating_Materials
     - file: 95_Access_to_computers
       sections:
-      - file: 95-01-setup-bash
       - file: 95-10-windows-remote
       - file: 95-20-codeocean
       - file: 95-30-wholetale
       - file: 95-40-codespaces
+      - file: 95-50-setup-bash
+      - file: 95-60-general-setup
     - file: 96-00-using-Stata
       sections:
       - file: 96-01-using-config-stata

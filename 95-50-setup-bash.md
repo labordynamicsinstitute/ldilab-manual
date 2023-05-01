@@ -1,7 +1,7 @@
 (setup-bash)=
 # Setting up your Bash environment
 
-The following setup applies to any computer you may be using to run Bash commands.
+The following setup applies to any computer you may be using to run Bash commands (except for CodeOcean).
 
 ```{note}
 On Windows, this will be "Git bash". On Linux, you are usually using `bash`, but check with your sysadmin if you are unsure. On MacOS, newer versions have changed the default shell to `zsh`, which should work mostly the same. It is possible to use the `bash` shell there as well. 
