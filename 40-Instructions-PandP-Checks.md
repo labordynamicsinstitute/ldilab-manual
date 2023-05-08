@@ -37,7 +37,26 @@ You should now do the following:
 
 - Assess the openICPSR repository, filling out the form as you go along
 
-(table here)
+| Requirements                     | open ICPSR | Dataverse                                        | Zenodo                                       |
+|----------------------------------|------------|--------------------------------------------------|----------------------------------------------|
+| open ICPSR number                | Applicable | N/A: Use doi number to distinguish                | N/A: Use doi number to distinguish            |
+| Manuscript Number                | Applicable | Applicable                                       | Applicable                                   |
+| Jira Ticket (Internal Reference) | Applicable | Applicable                                       | Applicable                                   |
+| Title                            | Applicable | Applicable                                       | Applicable                                   |
+| Principal Investigators          | Applicable | Applicable: Go to metadata, look for author      | Applicable: Name is right below title        |
+| Summary/Description              | Applicable | Applicable: Go to metadata, look for description | Applicable: Look at description below Author |
+| JEL Classification               | Applicable | N/A                                              | N/A                                          |
+| Manuscript ID                    | Applicable | Applicable                                       | Applicable                                   |
+| No ZIP Files                     | Applicable | Applicable                                       | Applicable                                   |
+| README Format                    | Applicable | Applicable                                       | Applicable                                   |
+| Subject Terms                    | Applicable | N/A                                              | N/A                                          |
+| Geographic Coverage              | Applicable | N/A                                              | N/A                                          |
+| Time Period(s)                   | Applicable | N/A                                              | N/A                                          |
+| Funding Sources                  | Applicable | N/A                                              | N/A                                          |
+| Collection Dates                 | Applicable | N/A                                              | N/A                                          |
+| Data Types                       | Applicable | N/A                                              | N/A                                          |
+| Data Sources                     | Applicable | N/A                                              | N/A                                          |
+| Unit of Observation              | Applicable | N/A                                              | N/A                                          |
 
   - It is important that you enter the AEAREP and Manuscript numbers accurately. We suggest copying-and-pasting.
 
@@ -80,8 +99,25 @@ Once the form PDF has been added to the issue, you should first return to the op
 ::: 
 
 :::{tab-item} On Dataverse
+- Select "Contact Owner"
+![](images/dataverse-contact-form-1.png)
 
-TBD
+From: dataeditor@aeapubs.org
+Subject line:
+
+```
+AEAREP-xxx Data and Code Deposit for P&P submission accepted
+```
+Message:
+
+```
+Thank you for uploading your code and data. This
+deposit is accepted. No computational verification was
+conducted, only compliance with required metadata was checked.
+
+```
+
+![](images/dataverse-contact-form-2.png)
 
 :::
 
@@ -145,13 +181,13 @@ TBD
 
 :::{tab-item} On Dataverse
 
-TBD
+- Tag Assistant to the Data Editor (Sofia) in the Jira ticket that there are noncompliant fields.
 
 :::
 
 :::{tab-item} On Zenodo
 
-TBD
+- Tag Assistant to the Data Editor (Sofia) in the Jira ticket that there are noncompliant fields.
 
 :::
 
