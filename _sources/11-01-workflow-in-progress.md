@@ -20,6 +20,12 @@ Is the current Jira issue an **original report** (first time we see the manuscri
 
 ## Creating a repository
 
+
+```{warning}
+In some instances, somebody else has already created a repository. Always check first if the `Bitbucket short name` is already filled out. If yes, skip this section and go to [Collecting information](collecting-information)!
+```
+
+
 - [ ] start by [creating a repository using the import method](https://bitbucket.org/repo/import) 
     - copy-paste from this URL to the URL field (this is also available in the Jira dropdown "Shortcuts")
 
