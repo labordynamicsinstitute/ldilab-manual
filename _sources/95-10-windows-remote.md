@@ -22,6 +22,8 @@ This is still preliminary, so check back often.
 
 - [Instructions](https://cornellprod-my.sharepoint.com/:f:/g/personal/cd642_cornell_edu/EvxDKmDjZyZBsrQvimUR8xABE4x6TYDenmLOY8ZFMLRjUw)
 
+Please be sure to follow all instructions, in particular the ones about mapping network drives. 
+
 You can connect to CCSS Cloud Computing via a **web browser**:
 
 - Open the latest version of a web browser (Chrome, Safari, Firefox or Edge). · Go to following link: [https://client.wvd.microsoft.com/arm/webclient/](https://client.wvd.microsoft.com/arm/webclient/) (V1) or the newer one [https://client.wvd.microsoft.com/arm/webclient/v2/index.html](https://client.wvd.microsoft.com/arm/webclient/v2/index.html) (V2)
@@ -34,6 +36,12 @@ You can connect to CCSS Cloud Computing via a **web browser**:
 - Sign in (again) with your regular Cornell University email and password. 
   - Username: Cornell email address. Ex: jrg363@cornell.edu
   - Password: Cornell email password. Ex: Cornell password
+
+You should map the following network drive:
+
+- `\\ccssilr.file.core.windows.net\lv39` to drive letter `L:` (you can call it "LDILab Drive")
+
+We will be using that drive letter often (including to replace the `S:` drive from the CCSS classic nodes).
 
 :::
 
