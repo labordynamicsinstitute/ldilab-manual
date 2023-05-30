@@ -4,7 +4,7 @@
 Before we can verify code, data, and documentation, we need to get the code and data onto your "working area". 
 
 ```{note}
-You now need to decide where you are going to do the data analysis - that should be the place you do the next few steps. 
+You now need to decide on what computer you are going to do the data analysis - that should be the place you do the next few steps. See [Access Computer](access-to-computers) for details.
 This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.
 ```
 
@@ -13,7 +13,7 @@ This is because the git setup we use does not allow you to include the data file
 :::{tab-item} CCSS 
 
 
-- [ ] Clone the Bitbucket repository onto the computer you are working on
+- [ ] Clone the Bitbucket repository onto the CCSS server you are working on
   ```
   git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git
   ```
