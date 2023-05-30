@@ -33,7 +33,7 @@ In some instances, somebody else has already created a repository. Always check 
     https://github.com/AEADataEditor/replication-template
     ```
 
-    - the repository name should be the name of the JIRA issue (e.g., `aearep-123`)
+    - the repository name should be the name of the JIRA issue, in **lower case** (e.g., `aearep-123`)
     - Be sure that `aeaverification` is always the "owner" of the report on Bitbucket. 
     - The Project should be the abbreviation of the journal (e.g. "JEP")
     - Keep the other settings (in particular, keep this a **private** repository).
