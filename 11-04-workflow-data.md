@@ -10,10 +10,11 @@ When assessing the data, please take care to distinguish
 
 ::::{tab-set}
 
-:::{tab-item} CCSS-RS (CISER)
+:::{tab-item} CCSS
 
-- [ ] Ensure that you have set up your CCSS-RS environment (see [appendix](setup-bash))
-- [ ] On CISER, the data will be stored locally.
+- [ ] Access the CCSS environment: [shortcut to Cloud](https://client.wvd.microsoft.com/arm/webclient/v2/index.html), for other access, see 
+- [ ] Ensure that you have set up your CCSS environment (see [appendix](setup-bash))
+- [ ] On CCSS, the data will be stored locally.
   - In some cases, you may be asked to use (restricted) data on the S: drive. Follow instructions as you receive them.
 - [ ] Download the openICPSR data (**if not already done in the previous step**, and if available). 
   - Try to do this first using scripts. See [the details in the appendix](using-pre-pub-openicpsr). 
