@@ -10,10 +10,11 @@ When assessing the data, please take care to distinguish
 
 ::::{tab-set}
 
-:::{tab-item} CCSS-RS (CISER)
+:::{tab-item} CCSS
 
-- [ ] Ensure that you have set up your CCSS-RS environment (see [appendix](setup-bash))
-- [ ] On CISER, the data will be stored locally.
+- [ ] Access the CCSS environment: [shortcut to Cloud](https://client.wvd.microsoft.com/arm/webclient/v2/index.html), for other access, see [Appendix](windows-remote).
+- [ ] Ensure that you have set up your CCSS environment (see [appendix](setup-bash))
+- [ ] On CCSS, the data will be stored locally.
   - In some cases, you may be asked to use (restricted) data on the S: drive. Follow instructions as you receive them.
 - [ ] Download the openICPSR data (**if not already done in the previous step**, and if available). 
   - Try to do this first using scripts. See [the details in the appendix](using-pre-pub-openicpsr). 
@@ -32,7 +33,7 @@ When assessing the data, please take care to distinguish
 
 :::{tab-item} Github Codespaces (CS)  
 
-
+- [ ] Access [Github Codespaces](https://github.com/codespaces), see [appendix](computing-using-cs) for more details.
 - [ ] Be sure you still have the Bitbucket repository clone, if not, follow instructions under [Code](#code)
 - [ ] Download the openICPSR deposit using the LDI short-cut command.  See [the details in the appendix](using-pre-pub-openicpsr). 
   - `python3 tools/download_openicpsr-private.py 111234`

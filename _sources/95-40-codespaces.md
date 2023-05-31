@@ -1,3 +1,4 @@
+(computing-using-cs)=
 # Computing using Github Codespaces
 
 ## Setup
