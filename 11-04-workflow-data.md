@@ -33,7 +33,7 @@ When assessing the data, please take care to distinguish
 
 :::{tab-item} Github Codespaces (CS)  
 
-- [ ] Access [Github Codespaces](https://github.com/codespaces)
+- [ ] Access [Github Codespaces](https://github.com/codespaces), see [appendix](computing-using-cs) for more details.
 - [ ] Be sure you still have the Bitbucket repository clone, if not, follow instructions under [Code](#code)
 - [ ] Download the openICPSR deposit using the LDI short-cut command.  See [the details in the appendix](using-pre-pub-openicpsr). 
   - `python3 tools/download_openicpsr-private.py 111234`
