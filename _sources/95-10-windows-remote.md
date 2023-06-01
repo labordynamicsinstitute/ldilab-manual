@@ -24,7 +24,7 @@ This is still preliminary, so check back often.
 
 Please be sure to follow all instructions, in particular the ones about mapping network drives. 
 
-You can connect to CCSS Cloud Computing via a **web browser**:
+You can connect to CCSS Cloud Computing via a **web browser** or via the standard Remote Desktop (RDP) client. Web browser instructions are below. 
 
 - Open the latest version of a web browser (Chrome, Safari, Firefox or Edge). · Go to following link: [https://client.wvd.microsoft.com/arm/webclient/](https://client.wvd.microsoft.com/arm/webclient/) (V1) or the newer one [https://client.wvd.microsoft.com/arm/webclient/v2/index.html](https://client.wvd.microsoft.com/arm/webclient/v2/index.html) (V2)
  
@@ -37,7 +37,7 @@ You can connect to CCSS Cloud Computing via a **web browser**:
   - Username: Cornell email address. Ex: jrg363@cornell.edu
   - Password: Cornell email password. Ex: Cornell password
 
-You should map the following network drive:
+You should map the following network drive, following the **instructions** linked above (see the document "**3. Cloud Storage**")
 
 - `\\ccssilr.file.core.windows.net\lv39` to drive letter `L:` (you can call it "LDILab Drive")
 
