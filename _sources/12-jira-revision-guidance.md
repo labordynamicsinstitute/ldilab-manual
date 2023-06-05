@@ -169,9 +169,9 @@ Change the status from `Data` to `Write Preliminary Report`.
 
 ### Write Preliminary report
 
+- [ ] Change the title of the report to reflect the **new Manuscript Number**. E.g. `# [AERI-2025-0123.R2] [My title here ...` becomes `# [AERI-2025-0123.R3] [My title here ...` (**R2** -> **R3**)
 - [ ] Ensure all sections of the report up to Replication Steps have been updated. 
-
-- [ ] Delete sections of the report. 
+- [ ] Delete sections of the report that are not relevant any more.
 
 
 Change the status from `Writing preliminary report` to `Code Review` or `Verification`. 
