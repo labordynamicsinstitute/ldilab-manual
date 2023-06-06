@@ -15,7 +15,7 @@ Run this once in a Bash shell:
 echo "
 # env for ICPSR
 export ICPSR_EMAIL=mylogin@cornell.edu
-export ICPSR_PASS=supersecretpwd
+export ICPSR_PASS="supersecretpwd"
 " >> $HOME/.bashrc
 ```
 (you should copy-paste this into an empty VS Code window, edit the editable pieces, then copy-paste it into the Git bash shell).
