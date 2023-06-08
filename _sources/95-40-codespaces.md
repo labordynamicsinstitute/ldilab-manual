@@ -15,8 +15,8 @@ The others are only needed in specific circumstancs.
 
 ## Start an environment on Github Codespaces
 
-- Go to [https://github.com/labordynamicsinstitute/codespaces-stata-skeleton](https://github.com/labordynamicsinstitute/codespaces-stata-skeleton) and select "Code -> Codespaces -> Start new"
-- When you have one running, you can re-use the previous one.
+- Go to [https://github.com/labordynamicsinstitute/codespaces-stata-skeleton](https://github.com/labordynamicsinstitute/codespaces-stata-skeleton) and select "Code -> Codespaces -> Create Codespace on main"
+- When you have one running, you can re-use the previous one. It will show in the popup, or on [https://github.com/codespaces](https://github.com/codespaces).
 
 Alternate:
 
