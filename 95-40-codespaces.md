@@ -20,7 +20,7 @@ The others are only needed in specific circumstancs.
 
 Alternate:
 
-- Go to [https://github.com/codespaces] and select `labordynamicsinstitute/codespaces-stata-skeleton` from the dropdown menu. 
+- Go to [https://github.com/codespaces](https://github.com/codespaces) and select `labordynamicsinstitute/codespaces-stata-skeleton` from the dropdown menu (you may need to search).
 
 If neither of those options appear, contact the LDI Lab Administrator.
 
