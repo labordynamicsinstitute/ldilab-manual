@@ -27,8 +27,9 @@ git push
 > !! If you identify any of the elements above that prevent you from completing the issue on time, you should notify your supervisor. DO NOT ADVANCE THE TICKET!!
 
 - Otherwise, advance the ticket to one of three options: `Verification`, `Code Review`, or `Incomplete`
-  - `Verification`: at least some of the data is accessible. In order to progress to this state,
-    - [ ] `Working location of data` has to be filled out
-    - [ ] `Computing environment` has to be selected.
+  - `Verification`: at least some of the data is accessible. In order to progress to this state, the following fields (in the `Data Info` tab) need to be filled out
+    - [ ] `DatasetsInclude` must be either `All` or `Some`
+    - [ ] `Working location of data` should contain the computer system on which you are storing your local copy of the data (e.g., `CCSS Cloud`, `CCSS Classic` or `CISER-RS`, `BioHPC`, etc.)
+    - [ ] `Computing environment` has to be selected (`Repl. Info` tab)
   - `Code Review`: none of the data is accessible
   - `Incomplete`: more information/action is required before you can proceed
