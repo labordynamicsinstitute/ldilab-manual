@@ -64,6 +64,21 @@ You should now open the Bitbucket report, and identify the changes that the auth
 - If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the Data Editor with a comment on the Jira ticket outlining your question. 
 - These cases are not always cut and dry, please err on the side of caution and ask questions before posting a "final acceptance" message on the deposit.
 
+
+### Summary of Steps
+
+1. Open REPLICATION.md on bitbucket
+2. Copy all the items in Action Items (open ICPSR) (disregard the manuscript section since we can't check that at this point)
+3. Paste the Action Items into the Comments section of Jira.
+4. Go through each item and mark 'Done' or 'Incomplete' next to each item. With any relevant details afterwards. For example:
+
+
+*[REQUIRED] As specified in the Policy and the DCAF, the README shall follow the schema provided by the Social Science Data Editors'template README. **Incomplete**- They added computational requirements but are missing Statement About Rights*
+
+
+5. If all items are done, continue with the "For Accept" section of the [Interfacing with the Journal Management System](https://labordynamicsinstitute.github.io/ldilab-manual/30-jira-prepare-publication.html) chapter
+6. If some items are incomplete, tag Data Editor's assistant in Jira
+
 ### No Changes
 
 - If no changes have been made to the deposit **four weeks** after requesting revisions, start a message in the Communication log:
