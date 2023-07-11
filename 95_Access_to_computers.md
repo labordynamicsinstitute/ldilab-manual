@@ -6,13 +6,11 @@ You will be working on a variety of computers
 - your laptop (Windows, OS X, Linux) to access the various resources
 - a computer to run the code
   - your laptop (but not necessarily)
-  - a Windows remote desktop at 
-    - [CCSS-RS](https://socialsciences.cornell.edu/research-support/compute-infrastructure) ([Login instructions](https://socialsciences.cornell.edu/research-support/login-instructions))
-    - (beta) [Cloud CCSS](https://client.wvd.microsoft.com/arm/webclient/) ([Instructions](https://cornellprod-my.sharepoint.com/:f:/g/personal/cd642_cornell_edu/EvxDKmDjZyZBsrQvimUR8xABE4x6TYDenmLOY8ZFMLRjUw))
-  - possibly a [Linux cluster](https://biohpc.cornell.edu/lab/lab.aspx)
-  - [WholeTale](https://docs.google.com/document/d/1hyXMnEKh52V7uFG7C4sLZUdUzF4gGNIvy6990YHGUwg/edit?usp=sharing) (experimental)
-  - [CodeOcean](https://codeocean.com/dashboard)
-  - [Github Codespaces](https://github.com/codespaces) ([experimental instructions](https://github.com/labordynamicsinstitute/replicability-training/blob/master/draft-codespaces.md))
+  - a [Windows remote desktop](windows-remote) 
+  - possibly a [Linux cluster](linux-remote)
+  - [WholeTale](access-wholetale) (experimental)
+  - [CodeOcean](access-codeocean) 
+  - [Github Codespaces](computing-using-cs) 
 - [Bitbucket](https://bitbucket.org/account/signup/) 
 
 ## General considerations
@@ -38,6 +36,7 @@ Some software is not available or installable on all systemS. If you encounter t
 | Software | Computing environment |
 |----------|--------------------|
 | Dynare   | Red Cloud Windows node, CCSS, CodeOcean|
+| ArcGIS   | CCSS |
 | Fortran compiler | BioHPC linux cluster, Docker |
 | C compiler  | BioHPC linux cluster, CodeOcean (depends on compiler) |
 | Eviews | Not currently available |

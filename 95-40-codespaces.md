@@ -41,3 +41,7 @@ If neither of those options appear, contact the LDI Lab Administrator.
 ## Administrator instructions
 
 In order to enable a replicator to use this repository for Codespaces, they must be "collaborators". Apparently, that requires write access (to be verified).
+
+## Older instructions
+
+([experimental instructions](https://github.com/labordynamicsinstitute/replicability-training/blob/master/draft-codespaces.md))

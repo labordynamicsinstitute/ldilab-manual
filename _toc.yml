@@ -62,6 +62,7 @@ parts:
     - file: 95_Access_to_computers
       sections:
       - file: 95-10-windows-remote
+      - file: 95-15-linux-remote
       - file: 95-20-codeocean
       - file: 95-30-wholetale
       - file: 95-40-codespaces
