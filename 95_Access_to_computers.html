@@ -230,6 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Access to Computers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="95-10-windows-remote.html">Connecting to remote Windows servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-15-linux-remote.html">Connecting to remote Linux servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-20-codeocean.html">Reproducibility Checks in Codeocean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-30-wholetale.html">Conducting reproducibility checks on WholeTale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-40-codespaces.html">Computing using Github Codespaces</a></li>
@@ -497,16 +498,11 @@ document.write(`
 <li><p>a computer to run the code</p>
 <ul>
 <li><p>your laptop (but not necessarily)</p></li>
-<li><p>a Windows remote desktop at</p>
-<ul>
-<li><p><a class="reference external" href="https://socialsciences.cornell.edu/research-support/compute-infrastructure">CCSS-RS</a> (<a class="reference external" href="https://socialsciences.cornell.edu/research-support/login-instructions">Login instructions</a>)</p></li>
-<li><p>(beta) <a class="reference external" href="https://client.wvd.microsoft.com/arm/webclient/">Cloud CCSS</a> (<a class="reference external" href="https://cornellprod-my.sharepoint.com/:f:/g/personal/cd642_cornell_edu/EvxDKmDjZyZBsrQvimUR8xABE4x6TYDenmLOY8ZFMLRjUw">Instructions</a>)</p></li>
-</ul>
-</li>
-<li><p>possibly a <a class="reference external" href="https://biohpc.cornell.edu/lab/lab.aspx">Linux cluster</a></p></li>
-<li><p><a class="reference external" href="https://docs.google.com/document/d/1hyXMnEKh52V7uFG7C4sLZUdUzF4gGNIvy6990YHGUwg/edit?usp=sharing">WholeTale</a> (experimental)</p></li>
-<li><p><a class="reference external" href="https://codeocean.com/dashboard">CodeOcean</a></p></li>
-<li><p><a class="reference external" href="https://github.com/codespaces">Github Codespaces</a> (<a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/blob/master/draft-codespaces.md">experimental instructions</a>)</p></li>
+<li><p>a <a class="reference internal" href="95-10-windows-remote.html#windows-remote"><span class="std std-ref">Windows remote desktop</span></a></p></li>
+<li><p>possibly a <a class="reference internal" href="95-15-linux-remote.html#linux-remote"><span class="std std-ref">Linux cluster</span></a></p></li>
+<li><p><a class="reference internal" href="95-30-wholetale.html#access-wholetale"><span class="std std-ref">WholeTale</span></a> (experimental)</p></li>
+<li><p><a class="reference internal" href="95-20-codeocean.html#access-codeocean"><span class="std std-ref">CodeOcean</span></a></p></li>
+<li><p><a class="reference internal" href="95-40-codespaces.html#computing-using-cs"><span class="std std-ref">Github Codespaces</span></a></p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://bitbucket.org/account/signup/">Bitbucket</a></p></li>
@@ -537,16 +533,19 @@ document.write(`
 <tr class="row-even"><td><p>Dynare</p></td>
 <td><p>Red Cloud Windows node, CCSS, CodeOcean</p></td>
 </tr>
-<tr class="row-odd"><td><p>Fortran compiler</p></td>
+<tr class="row-odd"><td><p>ArcGIS</p></td>
+<td><p>CCSS</p></td>
+</tr>
+<tr class="row-even"><td><p>Fortran compiler</p></td>
 <td><p>BioHPC linux cluster, Docker</p></td>
 </tr>
-<tr class="row-even"><td><p>C compiler</p></td>
+<tr class="row-odd"><td><p>C compiler</p></td>
 <td><p>BioHPC linux cluster, CodeOcean (depends on compiler)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Eviews</p></td>
+<tr class="row-even"><td><p>Eviews</p></td>
 <td><p>Not currently available</p></td>
 </tr>
-<tr class="row-even"><td><p>RATS</p></td>
+<tr class="row-odd"><td><p>RATS</p></td>
 <td><p>Not currently available (trial license for laptop)</p></td>
 </tr>
 </tbody>
