@@ -37,11 +37,17 @@ You can connect to CCSS Cloud Computing via a **web browser** or via the standar
   - Username: Cornell email address. Ex: jrg363@cornell.edu
   - Password: Cornell email password. Ex: Cornell password
 
-You should map the following network drive, following the **instructions** linked above (see the document "**3. Cloud Storage**")
+**Mapping Network Drives**
 
-- `\\ccssilr.file.core.windows.net\lv39` to drive letter `L:` (you can call it "LDILab Drive")
+- You should map the following network drive, following the **instructions** linked above (see the document "**3. Cloud Storage**")
+  - `\\ccssilr.file.core.windows.net\lv39` to drive letter `L:` (you can call it "LDILab Drive")
+  - We will be using that drive letter often (including to replace the `S:` drive from the CCSS classic nodes).
 
-We will be using that drive letter often (including to replace the `S:` drive from the CCSS classic nodes).
+- When instructed, you may also need to map the old S-drive:
+  - `\\rschfs2x.ciserrsch.cornell.edu\share\LDIlab`
+  - Select “Connect using different credentials”
+    - CISER username: `ciserrsch\[netID]_RS` (where `[netid]` is replaced by... your NetID!)
+    - Check the box "Reconnect at login" 
 
 :::
 
