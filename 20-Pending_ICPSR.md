@@ -76,7 +76,7 @@ You should now open the Bitbucket report, and identify the changes that the auth
 *[REQUIRED] As specified in the Policy and the DCAF, the README shall follow the schema provided by the Social Science Data Editors'template README. **Incomplete**- They added computational requirements but are missing Statement About Rights*
 
 
-5. If all items are done, continue with the "For Accept" section of the [Interfacing with the Journal Management System](https://labordynamicsinstitute.github.io/ldilab-manual/30-jira-prepare-publication.html) chapter
+5. If all items are done, continue with the "For Accept" section of the [Interfacing with the Journal Management System](https://labordynamicsinstitute.github.io/ldilab-manual/30-jira-prepare-publication.html#for-accept) chapter
 6. If some items are incomplete, tag Data Editor's assistant in Jira
 
 ### No Changes
