@@ -50,6 +50,7 @@ parts:
     - file: 71-External-reproducibility-checks
   - caption: Appendix
     chapters:
+    - file: 90-Glossary
     - file: 91-setup-checklist
     - file: 92-Privacy
     - file: 93-Communication
