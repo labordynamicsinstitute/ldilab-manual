@@ -25,6 +25,7 @@ This is because the git setup we use does not allow you to include the data file
 - [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
   ```bash
   git add PDF_Proof.pdf DataCodeAvailability.pdf
+  git commit -m "added manuscript and DCAF"
   git push
   ```
 :::
@@ -98,9 +99,10 @@ The local repository should now have the relevant LDI replication template mater
   - Perform a `git add`: `git add 111234` should do the right thing.
 - [ ] Add the manuscript, and any response by the authors (if a revision)
   - Add them to the Git repo 
-- [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
+
   ```bash
-  git add PDF_Proof.pdf DataCodeAvailability.pdf
+  git add PDF_Proof.pdf DataCodeAvailability.pdf 111234
+  git commit -m "Adding manuscript, DCAF, and code"
   git push
   ```
 
