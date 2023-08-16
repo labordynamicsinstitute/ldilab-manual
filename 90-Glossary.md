@@ -2,7 +2,7 @@
 
 Example of [Jira](https://aeadataeditors.atlassian.net/jira/dashboards/10100) ticket:
 
-![Example of Jira ticket](images/jira-ticket.png)
+![Example of Jira ticket](images/Jira-ticket.png)
 
 - **Jira ticket number** - The main way to refer to your cases. If you need help, this number is necessary for us to know
 - **MC Number** - (or Manuscript Central Number) This is how we identify the manuscript. Only necessary to know for the replication report header
