@@ -1,6 +1,6 @@
 # Glossary
 
-Example of [Jira](https://aeadataeditors.atlassian.net/jira/dashboards/10100) ticket:
+### Example of [Jira](https://aeadataeditors.atlassian.net/jira/dashboards/10000) ticket:
 
 ![Example of Jira ticket](images/Jira-ticket.png)
 
