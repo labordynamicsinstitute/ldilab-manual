@@ -1,6 +1,9 @@
 (code)=
 # Code 
 
+```{note}
+- Link to JIRA: [https://aeadataeditors.atlassian.net/jira](https://aeadataeditors.atlassian.net/jira) (requires login).
+```
 
 Now that you have pulled everything together, you will inspect the authors' README, and do a first analysis of the code and the necessary data.
 
@@ -67,8 +70,8 @@ Have a look at the **README** again.
 Now do a first pass through the code files provided:
 
 
-```{note}
-Do NOT run any code!
+```{warning}
+Do NOT run any code yet!
 ```
  
 

@@ -8,7 +8,7 @@ In this stage, you are verifying the code by inspecting the completeness of the 
 
 Note that in this stage, "Working location of data" and "Computing environment" section in the report are not relevant, so write N/A for these sections.
 
-The [REPLICATION.md](`r config$url$templmd`REPLICATION.md) is the report.
+The `REPLICATION.md is the report!
 
 
 > Add! Commit! Push!

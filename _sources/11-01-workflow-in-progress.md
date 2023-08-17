@@ -6,6 +6,10 @@ The first thing you must do is to advance the ticket from `Open` to `In Progress
 - This lets us know that you have started working on replication.
 
 
+```{note}
+The link to JIRA is [https://aeadataeditors.atlassian.net/jira](https://aeadataeditors.atlassian.net/jira) (requires login).
+```
+
 ```{warning}
 Is the current Jira issue an **original report** (first time we see the manuscript) or **is it a revision** (we've seen the manuscript before)?
 ```

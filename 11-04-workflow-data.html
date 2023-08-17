@@ -475,6 +475,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data">
 <h1>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Link to JIRA: <a class="reference external" href="https://aeadataeditors.atlassian.net/jira">https://aeadataeditors.atlassian.net/jira</a> (requires login).</p></li>
+<li><p>Computer access: <a class="reference internal" href="95_Access_to_computers.html#access-to-computers"><span class="std std-ref">Access computers</span></a> appendix.</p></li>
+</ul>
+</div>
 <p>When assessing the data, please take care to distinguish</p>
 <ul class="simple">
 <li><p>data that is part of the openICPSR deposit</p></li>
@@ -490,7 +497,7 @@ CCSS</label><div class="sd-tab-content docutils">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Ensure that you have set up your CCSS environment (see <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">appendix</span></a>)</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> On CCSS, the data will be stored locally.</p>
 <ul class="simple">
-<li><p>In some cases, you may be asked to use (restricted) data on the S: drive. Follow instructions as you receive them.</p></li>
+<li><p>In some cases, you may be asked to use (restricted) data on the S: drive or L: drive. Follow instructions as you receive them.</p></li>
 </ul>
 </li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Download the openICPSR data (<strong>if not already done in the previous step</strong>, and if available).</p>
@@ -502,6 +509,7 @@ unzip<span class="w"> </span>-n<span class="w"> </span><span class="m">111234</s
 </div>
 <p>or the short version (first do <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">this additional setup</span></a>)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">tools</span><span class="o">/</span><span class="n">download_openicpsr</span><span class="o">-</span><span class="n">private</span><span class="o">.</span><span class="n">py</span> <span class="mi">111234</span>
+<span class="n">unzip</span> <span class="o">-</span><span class="n">n</span> <span class="mi">111234</span> <span class="o">-</span><span class="n">d</span> <span class="mi">111234</span>
 </pre></div>
 </div>
 <p>which should unpack the data files only, not overwriting anything else. <strong>If this fails, do the “Manual steps,”</strong> then come back here.</p>
@@ -575,10 +583,13 @@ Manual steps </label><div class="sd-tab-content docutils">
 </li>
 </ul>
 <p>You should now have the data merged with the pre-existing code files. Return to the tab that corresponds to where you were working before.</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> If there is data: Run the PII-checking code.</p></li>
+</ul>
 </div>
 </div>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> If there is data: Run the PII-checking code, review the output, and record the result in the <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>.</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> If there is data: Review the PII output, and record the result in the <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>.</p>
 <ul>
 <li><p>This may already have been generated, check <code class="docutils literal notranslate"><span class="pre">generated/pii_stata_output.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">generated/PII_stata_scan_summary.txt</span></code>.</p></li>
 </ul>

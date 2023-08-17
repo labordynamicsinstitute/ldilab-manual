@@ -475,6 +475,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="prepare-the-working-area">
 <span id="manual1"></span><h1>Prepare the working area<a class="headerlink" href="#prepare-the-working-area" title="Permalink to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Link to JIRA: <a class="reference external" href="https://aeadataeditors.atlassian.net/jira">https://aeadataeditors.atlassian.net/jira</a> (requires login).</p></li>
+<li><p>Computer access: <a class="reference internal" href="95_Access_to_computers.html#access-to-computers"><span class="std std-ref">Access computers</span></a> appendix.</p></li>
+</ul>
+</div>
 <p>Before we can verify code, data, and documentation, we need to get the code and data onto your “working area”.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -488,6 +495,11 @@ CCSS</label><div class="sd-tab-content docutils">
 <ul class="contains-task-list">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Clone the Bitbucket repository onto the CCSS server you are working on</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">yourname</span><span class="nd">@bitbucket</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">aeaverification</span><span class="o">/</span><span class="n">aearep</span><span class="o">-</span><span class="n">xxx</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Alternatively: If you have done the full <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">Bash setup</span></a>, you can run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aeagit<span class="w"> </span>xxx
 </pre></div>
 </div>
 </li>
@@ -619,7 +631,12 @@ git<span class="w"> </span>push
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Clean-up: Delete (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code>) unused files from the template!</p>
 <ul class="simple">
 <li><p>Example: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">README.md</span> <span class="pre">template-config.R</span></code> if the replication archive does not contain any R files (you can do this at any time before writing the <strong>Preliminary Report</strong>)</p></li>
+<li><p>Make this a commit:</p></li>
 </ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Deleting unnecessary files&quot;</span>
+git<span class="w"> </span>push
+</pre></div>
+</div>
 </li>
 <li><p>The root of the repository should contain only our files (i.e., <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>, etc.), the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket), and the code.</p>
 <ul>
@@ -640,12 +657,11 @@ git<span class="w"> </span>push
 </div>
 </div>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Be sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> it all to Bitbucket, with a meaningful commit message.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Be sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> it all to Bitbucket.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;My message here&quot;</span>
-git<span class="w"> </span>push
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push
 </pre></div>
 </div>
 </div>
