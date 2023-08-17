@@ -3,6 +3,10 @@
 
 For pre-publication verification, we use a Jira-based workflow similar to the post-publication processes described in the [Wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki). For AEA work, that post-publication process can be ignored.
 
+```{note}
+The link to JIRA is [https://aeadataeditors.atlassian.net/jira](https://aeadataeditors.atlassian.net/jira) (requires login).
+```
+
 ## Scope
 
 
@@ -63,11 +67,11 @@ The following are only relevant for "Publishers"  (if you have not been told you
 
 - In the **Issue form**, please also fill out other fields, as noted.
 - At any point, you can move the issue to `Incomplete`: more information/action is required before you can proceed. You should also notify us of the situation ASAP
-- When committing, **always** use [Smart Commits](https://confluence.atlassian.com/bitbucket/use-smart-commits-298979931.html), e.g.
+- When committing, you can use [Smart Commits](https://confluence.atlassian.com/bitbucket/use-smart-commits-298979931.html), e.g.
 
-> JRA-34 #comment corrected indent issue
+> AEAREP-1234 #comment corrected indent issue
 
-- Use JIRA to communicate with your supervisor as issues arise, including code that takes a long time to run. 
+- Use JIRA comments to communicate with your supervisor as issues arise, including code that takes a long time to run. 
 
 ## Details
 

@@ -6,7 +6,7 @@ At this stage, you will write the final version of the report.
 
 ## Standard steps
 
-- There is sample language for commonly encountered problems at the [Fragments for REPLICATION.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md) link in the tall grey bar
+- There is sample language for commonly encountered problems at the [sample-language-report.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md) link in the tall grey bar
 - Compare images and tables
   - Some of this may involve "squinting" at images...
   - For tables that are output to Excel, you may be able to use some Excel tools (copy the old numbers, create a difference function between all cells). This is hard to provide examples for, as every table differs.
@@ -29,6 +29,7 @@ Figure 5 as reproduced:
 ![Figure 5 reproduced](12345/results/figure5.png)
 
 ```
+
 - Highlight differences:
     - if only a small number of table entries: mention them by table in the report
     - if a larger number: Highlight on the reproduced images (of figures, screenshots of tables) the differences you have observed
@@ -36,7 +37,7 @@ Figure 5 as reproduced:
 ## Cleaning up
 
 - Clean up the REPLICATION.md - it should be factual, objective, and not written in the first person.
-- Copy-and-paste from the *code-check.xlsx*, including the column "Reproduced?" and any notes column, into the "Findings" part. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
+- Copy-and-paste from the `code-check.xlsx`, including the column "Reproduced?" and any notes column, into the "Findings" part. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
 - Delete all of the instructional lines in REPLICATION.md  before finishing the report.
 
 ## On Jira

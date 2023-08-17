@@ -1,6 +1,11 @@
 (Manual1)=
 # Prepare the working area 
 
+```{note}
+- Link to JIRA: [https://aeadataeditors.atlassian.net/jira](https://aeadataeditors.atlassian.net/jira) (requires login).
+- Computer access: [Access computers](Access_to_computers) appendix.
+```
+
 Before we can verify code, data, and documentation, we need to get the code and data onto your "working area". 
 
 ```{note}
@@ -16,6 +21,10 @@ This is because the git setup we use does not allow you to include the data file
 - [ ] Clone the Bitbucket repository onto the CCSS server you are working on
   ```
   git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git
+  ```
+- [ ] Alternatively: If you have done the full [Bash setup](setup-bash), you can run
+  ```bash
+  aeagit xxx
   ```
 - [ ] Verify that the code is present, i.e., that the automated scripts run during the [Code Ingest](ingesting-author-materials) worked. **If they did not, you need to switch to the "Manual steps"!**
 - [ ] From the JIRA issue, download and add Manuscript, Data and Code Availability Form (DCAF). 
@@ -109,6 +118,12 @@ The local repository should now have the relevant LDI replication template mater
 
 - [ ] Clean-up: Delete (`git rm`) unused files from the template! 
   - Example: `git rm README.md template-config.R` if the replication archive does not contain any R files (you can do this at any time before writing the **Preliminary Report**)
+  -  Make this a commit:
+
+  ```bash
+  git commit -m "Deleting unnecessary files"
+  git push
+  ```
 
 - The root of the repository should contain only our files (i.e., REPLICATION.md, etc.), the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket), and the code.
   - Example:
@@ -123,14 +138,14 @@ The local repository should now have the relevant LDI replication template mater
     ```
 :::
 
+
 ::::
 
-- [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
+- [ ] Be sure to `git push` it all to Bitbucket. 
 
 :::{note}
 
   ```bash
-  git commit -m "My message here"
   git push
   ```
 

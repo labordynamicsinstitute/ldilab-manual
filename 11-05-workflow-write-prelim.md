@@ -1,6 +1,12 @@
 
 # Write Preliminary Report 
 
+
+```{note}
+- Link to JIRA: [https://aeadataeditors.atlassian.net/jira](https://aeadataeditors.atlassian.net/jira) (requires login).
+- Computer access: [Access computers](Access_to_computers) appendix.
+```
+
 At this stage, you need to fill out the REPLICATION.md up to the "Replication steps" part. 
 
 - There is sample language for commonly encountered problems in the [sample-language-report.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md), which is part of the replication package.

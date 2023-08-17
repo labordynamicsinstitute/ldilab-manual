@@ -1,6 +1,12 @@
 
 # Data 
 
+
+```{note}
+- Link to JIRA: [https://aeadataeditors.atlassian.net/jira](https://aeadataeditors.atlassian.net/jira) (requires login).
+- Computer access: [Access computers](Access_to_computers) appendix.
+```
+
 When assessing the data, please take care to distinguish
 
 - data that is part of the openICPSR deposit
@@ -15,7 +21,7 @@ When assessing the data, please take care to distinguish
 - [ ] Access the CCSS environment: [shortcut to Cloud](https://client.wvd.microsoft.com/arm/webclient/v2/index.html), for other access, see [Appendix](windows-remote).
 - [ ] Ensure that you have set up your CCSS environment (see [appendix](setup-bash))
 - [ ] On CCSS, the data will be stored locally.
-  - In some cases, you may be asked to use (restricted) data on the S: drive. Follow instructions as you receive them.
+  - In some cases, you may be asked to use (restricted) data on the S: drive or L: drive. Follow instructions as you receive them.
 - [ ] Download the openICPSR data (**if not already done in the previous step**, and if available). 
   - Try to do this first using scripts. See [the details in the appendix](using-pre-pub-openicpsr). 
     ```bash
@@ -25,6 +31,7 @@ When assessing the data, please take care to distinguish
     or the short version (first do [this additional setup](setup-bash))
     ```
     python tools/download_openicpsr-private.py 111234
+    unzip -n 111234 -d 111234
     ```
     which should unpack the data files only, not overwriting anything else. **If this fails, do the "Manual steps,"** then come back here.
 - [ ] attempt to download data from various sources indicated by the authors, but ONLY if no sign-up/ application process is involved. 
@@ -75,11 +82,13 @@ If the scripts did not work, you will need to manually download the replication 
 
 You should now have the data merged with the pre-existing code files. Return to the tab that corresponds to where you were working before.
 
+- [ ] If there is data: Run the PII-checking code.
+
 ::: 
 
 ::::
 
-- [ ] If there is data: Run the PII-checking code, review the output, and record the result in the `REPLICATION.md`.
+- [ ] If there is data: Review the PII output, and record the result in the `REPLICATION.md`.
     - This may already have been generated, check `generated/pii_stata_output.csv` and `generated/PII_stata_scan_summary.txt`.
 - [ ] You should check the output - it is not automatic.
   - You should use words, and examples, from the output if it looks like there is Personally Identifying Information (PII) like names, addresses, etc. in the output.

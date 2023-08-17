@@ -1,22 +1,29 @@
 
 # Verification
 
-In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The [REPLICATION.md](`r config$url$templmd`REPLICATION.md) is the report.
+
+```{note}
+- Link to JIRA: [https://aeadataeditors.atlassian.net/jira](https://aeadataeditors.atlassian.net/jira) (requires login).
+- Computer access: [Access computers](Access_to_computers) appendix.
+```
+
+In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The `REPLICATION.md`  is the report!
 
 Keep a log of what you do, what you find, and what does not work, in the `REPLICATION.md`, under *Findings*.
-  - For codes using STATA, we provide a template of `config.do` in the repository. It creates log files and saves it in the repository. Instructions for using `config.do` is in [Appendix F](https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html)
+  - For codes using STATA, we provide a template of `config.do` in the repository. It creates log files and saves it in the repository. Instructions for using `config.do` is in [Using config.do](using-config-do) in the Appendix.
 
 ::::{tab-set}
 
-:::{tab-item} CISER 
+:::{tab-item} CCSS 
 
 - If using Stata,  see [Stata related procedures](stata-related-procedures).
 - If using Matlab, open up Matlab. This might take a while.
-- If using Python, we suggest in general to use `git bash`, but you may also be able to use the Python shell. Consult with your supervisor, or the CISER helpdesk.
+- If using Python, we suggest in general to use `git bash`, but you may also be able to use the Python shell. Consult with your supervisor, or the CCSS helpdesk.
 
 Consult the [Replication Wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki) for some help in debugging:
 
 - [Stata tips](https://github.com/labordynamicsinstitute/replicability-training/wiki/Stata-Tips)
+- [Matlab tips](https://github.com/labordynamicsinstitute/replicability-training/wiki/Matlab-Tips)
 - [Python tips](https://github.com/labordynamicsinstitute/replicability-training/wiki/Python-Tips)
 - [R tips](https://github.com/labordynamicsinstitute/replicability-training/wiki/R-tips)
 
