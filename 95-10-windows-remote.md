@@ -44,11 +44,37 @@ You can connect to CCSS Cloud Computing via a **web browser** or via the a Remot
     - CISER username: `ciserrsch\[netID]_RS` (where `[netid]` is replaced by... your NetID!)
     - Check the box "Reconnect at login" 
 
+
+**Signing out or disconnecting**
+
+- If you have set a replication package's code to run, **do not sign out/ log off** - disconnect. 
+- If you are done for a few days, and have nothing running, then **sign out**. 
+
+**Disconnecting**
+
+Close the browser tab, or close the application by the usual methods. This will leave your code running!
+
+**Signing out**
+
+-  Open Start Menu
+- Click on the Profile icon of your name on the left.
+- Select 'Sign out'
+
+![Signout](images/windows11-signout.png)
+
 :::
 
 :::{tab-item} CCSS-RS classic
 
 Follow instructions at [CCSS-RS](https://socialsciences.cornell.edu/research-support/login-instructions). Be sure to select the tab that corresponds to your **laptop's** operating system!
+
+
+**Signing out or disconnecting**
+
+- If you have set a replication package's code to run, **do not sign out/ log off** - disconnect. 
+- If you are done for a few days, and have nothing running, then **sign out**. 
+
+Refer to CCSS instructions on how to sign out or disconnect.
 
 :::
 
