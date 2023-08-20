@@ -18,9 +18,13 @@ export ICPSR_EMAIL=mylogin@cornell.edu
 export ICPSR_PASS="supersecretpwd"
 " >> $HOME/.bashrc
 ```
-(you should copy-paste this into an empty VS Code window, edit the editable pieces, then copy-paste it into the Git bash shell).
+(you should copy-paste this into an empty VS Code window, edit the editable pieces, then copy-paste it into the Git bash shell. Keep all the line breaks as shown!).
 
 This will "prime" the script to use that email and password for downloading the information. 
+
+```{warning}
+You may need to log out and back in to make this work; but wait until you have made all the adjustments here!
+```
 
 ## Configure some convenience scripts
 
@@ -58,7 +62,12 @@ export P_BITBUCKET_USERNAME=netid-replace-me
 ' >> $HOME/.bashrc
 ```
 
-(you should copy-paste this into an empty VS Code window, edit the editable pieces, then copy-paste it into the Git bash shell).
+(you should copy-paste this into an empty VS Code window, edit the editable pieces, then copy-paste it into the Git bash shell. Be sure to keep all line breaks and spaces!).
+
+
+```{warning}
+Now might be a good time to log out and back in to make this work.
+```
 
 ## Configuring Python defaults
 
