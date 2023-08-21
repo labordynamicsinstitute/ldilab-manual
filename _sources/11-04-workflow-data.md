@@ -26,11 +26,15 @@ When assessing the data, please take care to distinguish
   - Try to do this first using scripts. See [the details in the appendix](using-pre-pub-openicpsr). 
     ```bash
     python tools/download_openicpsr-private.py 111234 . netid@cornell.edu
+    ```
+    ```bash
     unzip -n 111234 -d 111234
     ```
     or the short version (first do [this additional setup](setup-bash))
     ```
     python tools/download_openicpsr-private.py 111234
+    ```
+    ```bash
     unzip -n 111234 -d 111234
     ```
     which should unpack the data files only, not overwriting anything else. **If this fails, do the "Manual steps,"** then come back here.
