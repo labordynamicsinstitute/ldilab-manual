@@ -5,7 +5,7 @@
 In some cases, authors will provide us privately with data we cannot publish.
 
 ```{warning}
-VERY IMPORTANT: You must treat these data as confidential, never remove them from CISER!
+VERY IMPORTANT: You must treat these data as confidential, never remove them from CCSS!
 ```
 
 You will know where the data are by looking at the JIRA issue. You will often (but not always) see a **subtask** which we use to request the confidential data:
@@ -19,6 +19,11 @@ You should then look into the "`Data`" tab for the field `Working location of re
 
 ## How to prepare privately provided data
 
+::::{tab-set}
+
+
+:::{tab-item} CCSS Classic
+
 - Log into CISER as usual. You should never need to run code elsewhere when data are restricted/privately provided.
 - Open the File Explorer
 - Under "`This PC`", click "`Share (\\rschfs2x.ciserrsch.cornell.edu)`" under `Network Locations`. This location is also available as "`S:`".
@@ -27,6 +32,19 @@ You should then look into the "`Data`" tab for the field `Working location of re
    - If you cannot open the `LDILab` folder, contact the assistant to the Data Editor 
 - If there is a ZIP file (looks like a folder, but is not), right-click and choose `Extract All` before working in the folder
 - Remember the full location. This should correspond to what is entered in to the JIRA field, e.g., `S:\LDILab\aearep-3756-nda_Implicit`.
+
+:::
+
+:::{tab-item} CCSS Cloud
+
+- Log into remote desktop as usual.
+- The restricted access data will be stored in the L drive. If you haven't mapped the L drive, do that first ([instructions here](https://labordynamicsinstitute.github.io/ldilab-manual/95-10-windows-remote.html)).
+- Navigate to the folder `Restricted-Access-Data` and find the corresponding folder that is in the Jira field, e.g., `L:\Restricted-Access-Data\aearep-4400-nda_Implicit`.
+- If there is a ZIP file (looks like a folder, but is not), right-click and choose `Extract All` before working in the folder
+
+:::
+
+::::
 
 ## How to use the data in this folder
 
