@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Training Manual For Reproducibility Verification
-author: Lars Vilhuber, Michael Darisse, Leonel Borja Plaza, Hyuk Son, Meredith Welch, David Wasser
+author: Lars Vilhuber, Michael Darisse, Sofia Encarnación, Leonel Borja Plaza, Hyuk Son, Linda Wang, David Wasser, Meredith Welch
 logo: logo.jpg
 copyright: 2018-2023
 exclude_patterns          : ["*venv*",".git*",".devcontainer"]
