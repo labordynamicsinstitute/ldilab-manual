@@ -60,3 +60,69 @@ Then do the usual [Bash setup](setup-bash). That should work on nearly any Linux
 
 Additional tips-and-tricks can be found on the [LDIlab wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes). These are focused on the BioHPC cluster, but may work on other servers as well.
 
+## Configuring automatic reservation cancellation
+
+If you use the BioHPC reservation system, it helps others if at the end of a long-running job, your reservation is cancelled as soon as possible. One way to do this is to add the following to the scripts you are running:
+
+
+
+
+::::{tab-set}
+
+
+:::{tab-item}  Stata
+
+```stata
+*Use the code below at the bottom of the Stata "main" or "master" script to automatically sign out 
+
+shell /programs/bin/labutils/endres.pl 
+```
+
+
+:::
+
+:::{tab-item} R
+
+```r
+# Add to end of main or last script.
+system("/programs/bin/labutils/endres.pl")
+```
+
+
+:::
+
+:::{tab-item} Matlab
+
+```
+%Use code below at end of MATLAB main script, or last script, to automatically sign out
+
+system("/programs/bin/labutils/endres.pl")
+```
+
+
+:::
+
+:::{tab-item}  Python
+
+```python
+%Use code below at bottom of Python/Anaconda script to automatically sign out
+
+import os
+
+os.system("/programs/bin/labutils/endres.pl")
+```
+
+:::
+
+
+:::{tab-item}  Bash
+
+```bash
+#Use the code below at the bottom of the bash "main" or "master" script to automatically sign out 
+/programs/bin/labutils/endres.pl 
+```
+
+:::
+
+::::
+
