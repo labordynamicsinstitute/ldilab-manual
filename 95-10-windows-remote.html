@@ -533,24 +533,66 @@ Cloud CCSS</label><div class="sd-tab-content docutils">
 </ul>
 <p><strong>Disconnecting</strong></p>
 <p>Close the browser tab, or close the application by the usual methods. This will leave your code running!</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+CCSS-RS classic</label><div class="sd-tab-content docutils">
+<p>Follow instructions at <a class="reference external" href="https://socialsciences.cornell.edu/research-support/login-instructions">CCSS-RS</a>. Be sure to select the tab that corresponds to your <strong>laptop’s</strong> operating system!</p>
+<p><strong>Disconnecting</strong></p>
+<ul class="simple">
+<li><p>If you have set a replication package’s code to run, <strong>do not sign out/ log off</strong> - disconnect.</p></li>
+<li><p>If you are done for a few days, and have nothing running, then <strong>sign out</strong>.</p></li>
+</ul>
+</div>
+</div>
 <p><strong>Signing out</strong></p>
+<p>It is important to sign out when you do NOT have jobs running. However, when you no longer have a job running, it saves everybody resoures. Your data will still be accessible when you sign back on.</p>
+<p><em>Manually</em></p>
 <ul class="simple">
 <li><p>Open Start Menu</p></li>
 <li><p>Click on the Profile icon of your name on the left.</p></li>
 <li><p>Select ‘Sign out’</p></li>
 </ul>
 <p><img alt="Signout" src="_images/windows11-signout.png" /></p>
+<p><em>Automatically</em></p>
+<p>To configure your job to sign out automatically at the end, these are the instructions <a class="reference external" href="https://socialsciences.cornell.edu/computing-and-data/cloud-computing-solutions/account-instructions?toptab=session_tips&amp;contenttab=auto_sign_out_after_code_completes">provided by CCSS</a>:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Stata</label><div class="sd-tab-content docutils">
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">*Use the code below at the bottom of the Stata &quot;main&quot; or &quot;master&quot; script to automatically sign out </span>
+
+<span class="k">shell</span> shutdown <span class="o">-</span>l 
+</pre></div>
 </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
-CCSS-RS classic</label><div class="sd-tab-content docutils">
-<p>Follow instructions at <a class="reference external" href="https://socialsciences.cornell.edu/research-support/login-instructions">CCSS-RS</a>. Be sure to select the tab that corresponds to your <strong>laptop’s</strong> operating system!</p>
-<p><strong>Signing out or disconnecting</strong></p>
-<ul class="simple">
-<li><p>If you have set a replication package’s code to run, <strong>do not sign out/ log off</strong> - disconnect.</p></li>
-<li><p>If you are done for a few days, and have nothing running, then <strong>sign out</strong>.</p></li>
-</ul>
-<p>Refer to CCSS instructions on how to sign out or disconnect.</p>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+R</label><div class="sd-tab-content docutils">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add to end of main or last script.</span>
+<span class="nf">system</span><span class="p">(</span><span class="s">&quot;shutdown  -l&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Matlab</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">Use</span> <span class="n">code</span> <span class="n">below</span> <span class="n">at</span> <span class="n">end</span> <span class="n">of</span> <span class="n">MATLAB</span> <span class="n">main</span> <span class="n">script</span><span class="p">,</span> <span class="ow">or</span> <span class="n">last</span> <span class="n">script</span><span class="p">,</span> <span class="n">to</span> <span class="n">automatically</span> <span class="n">sign</span> <span class="n">out</span>
+
+<span class="n">system</span><span class="p">(</span><span class="s2">&quot;shutdown -l&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">Use</span> <span class="n">code</span> <span class="n">below</span> <span class="n">at</span> <span class="n">bottom</span> <span class="n">of</span> <span class="n">Python</span><span class="o">/</span><span class="n">Anaconda</span> <span class="n">script</span> <span class="n">to</span> <span class="n">automatically</span> <span class="n">sign</span> <span class="n">out</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;shutdown -l&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>

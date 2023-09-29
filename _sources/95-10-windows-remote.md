@@ -54,14 +54,6 @@ You can connect to CCSS Cloud Computing via a **web browser** or via the a Remot
 
 Close the browser tab, or close the application by the usual methods. This will leave your code running!
 
-**Signing out**
-
--  Open Start Menu
-- Click on the Profile icon of your name on the left.
-- Select 'Sign out'
-
-![Signout](images/windows11-signout.png)
-
 :::
 
 :::{tab-item} CCSS-RS classic
@@ -69,12 +61,78 @@ Close the browser tab, or close the application by the usual methods. This will 
 Follow instructions at [CCSS-RS](https://socialsciences.cornell.edu/research-support/login-instructions). Be sure to select the tab that corresponds to your **laptop's** operating system!
 
 
-**Signing out or disconnecting**
+**Disconnecting**
 
 - If you have set a replication package's code to run, **do not sign out/ log off** - disconnect. 
 - If you are done for a few days, and have nothing running, then **sign out**. 
 
-Refer to CCSS instructions on how to sign out or disconnect.
+:::
+
+::::
+
+
+**Signing out**
+
+It is important to sign out when you do NOT have jobs running. However, when you no longer have a job running, it saves everybody resoures. Your data will still be accessible when you sign back on. 
+
+*Manually*
+
+-  Open Start Menu
+- Click on the Profile icon of your name on the left.
+- Select 'Sign out'
+
+![Signout](images/windows11-signout.png)
+
+*Automatically*
+
+To configure your job to sign out automatically at the end, these are the instructions [provided by CCSS](https://socialsciences.cornell.edu/computing-and-data/cloud-computing-solutions/account-instructions?toptab=session_tips&contenttab=auto_sign_out_after_code_completes):
+
+
+
+::::{tab-set}
+
+
+:::{tab-item}  Stata
+
+```stata
+*Use the code below at the bottom of the Stata "main" or "master" script to automatically sign out 
+
+shell shutdown -l 
+```
+
+
+:::
+
+:::{tab-item} R
+
+```r
+# Add to end of main or last script.
+system("shutdown  -l")
+```
+
+
+:::
+
+:::{tab-item} Matlab
+
+```
+%Use code below at end of MATLAB main script, or last script, to automatically sign out
+
+system("shutdown -l")
+```
+
+
+:::
+
+:::{tab-item}  Python
+
+```python
+%Use code below at bottom of Python/Anaconda script to automatically sign out
+
+import os
+
+os.system("shutdown -l")
+```
 
 :::
 
