@@ -3,15 +3,15 @@
 
 In order to work through a replication report, you will need
 
-- [Access to computers](`r config$url$replmd`Access_to_computers.md)
-- Reviewed the [Template REPORT](`r config$url$templmd`REPLICATION.md) 
+- [Access to computers](Access_to_computers)
+- Reviewed the [Template REPORT](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md) 
 <!-- Access to computers link does not work-->
 
 We have examples of various actual reports (slightly anonymized):
 
- + [Example 1](`r config$url$replmd`sample_report.md)
- + [Example 2](`r config$url$replmd`REPLICATION-AEAREP278.md)
- + [Example 3](`r config$url$replmd`REPLICATION-AEAREP282.md) and its [revision](`r config$url$replmd`REPLICATION-AEAREP282-revised.md)
+ + [Example 1](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/sample_report.md)
+ + [Example 2](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/REPLICATION-AEAREP278.md)
+ + [Example 3](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/REPLICATION-AEAREP282.md) and its [revision](https://github.com/labordynamicsinstitute/replicability-training-curriculum/blob/master/REPLICATION-AEAREP282-revised.md)
 
 
 
