@@ -448,7 +448,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -464,6 +466,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principles">Principles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -483,10 +494,20 @@ document.write(`
 </ul>
 </div>
 <p>In this stage, you are verifying the code, by using the provided data, or by inspecting the completeness of the source code. The <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>  is the report!</p>
+<section id="principles">
+<h2>Principles<a class="headerlink" href="#principles" title="Permalink to this heading">#</a></h2>
 <p>Keep a log of what you do, what you find, and what does not work, in the <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>, under <em>Findings</em>.</p>
+<p>You should also run code so that it generates an actual “log file”. How to do this depends on the software:</p>
 <ul class="simple">
 <li><p>For codes using STATA, we provide a template of <code class="docutils literal notranslate"><span class="pre">config.do</span></code> in the repository. It creates log files and saves it in the repository. Instructions for using <code class="docutils literal notranslate"><span class="pre">config.do</span></code> is in <a class="reference internal" href="96-01-using-config-stata.html#using-config-do"><span class="std std-ref">Using config.do</span></a> in the Appendix.</p></li>
+<li><p>For R, you should run using one of the variants of <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">CMD</span> <span class="pre">BATCH</span> <span class="pre">program.R</span></code>, see <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/R-tips#running-r-scripts-on-windows">R tips</a></p></li>
+<li><p>For MATLAB, you should run using the command line version, generically <code class="docutils literal notranslate"><span class="pre">matlab</span> <span class="pre">-nodisplay</span> <span class="pre">-r</span> <span class="pre">&quot;addpath(genpath('.'));</span> <span class="pre">main&quot;</span> <span class="pre">-logfile</span> <span class="pre">matlab.log</span></code>, see <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Matlab-Tips#running-matlab-without-the-desktop-gui">MATLAB tips</a></p></li>
+<li><p>Variants of these methods will also work for Julia and Ox.</p></li>
+<li><p>If the software you need to run does not provide console/terminal output, talk to us!</p></li>
 </ul>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
@@ -513,7 +534,7 @@ Github Codespaces (CS) </label><div class="sd-tab-content docutils">
 <li><p>To run Stata, type <code class="docutils literal notranslate"><span class="pre">stata-mp</span> <span class="pre">-b</span> <span class="pre">do</span> <span class="pre">main.do</span></code> (adjust to account for whatever the program or programs are called). You can do this for every one of the programs.</p></li>
 </ul>
 </li>
-<li><p>To run R, type <code class="docutils literal notranslate"><span class="pre">Rscript</span> <span class="pre">program.R</span></code> or <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">--vanilla</span> <span class="pre">&lt;</span> <span class="pre">program.R</span> <span class="pre">&gt;</span> <span class="pre">program.Rlog</span> <span class="pre">2&gt;&amp;1</span></code> (which will always create a log file)</p></li>
+<li><p>To run R, type <code class="docutils literal notranslate"><span class="pre">Rscript</span> <span class="pre">program.R</span></code> or <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">CMD</span> <span class="pre">BATCH</span> <span class="pre">program.R</span> <span class="pre">&gt;</span> <span class="pre">program.Rlog</span> <span class="pre">2&gt;&amp;1</span></code> (which will always create a log file)</p></li>
 <li><p>To run Python code, type <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">program.py</span></code> or whatever the authors specify.</p></li>
 <li><p>If you need other versions of Stata, R, Python, etc. (e.g. Stata 16), you may need to choose a different CS environment that allows to run Docker. See <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Docker-Tips">Docker tips</a></p></li>
 </ul>
@@ -525,6 +546,7 @@ Github Codespaces (CS) </label><div class="sd-tab-content docutils">
 <div><p>Add (report, modified files)! Commit! Push!</p>
 </div></blockquote>
 <p>You can now proceed to change the status to <code class="docutils literal notranslate"><span class="pre">Writing</span> <span class="pre">Report</span></code>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -579,6 +601,21 @@ Github Codespaces (CS) </label><div class="sd-tab-content docutils">
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principles">Principles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
