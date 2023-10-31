@@ -42,7 +42,7 @@ This is because the git setup we use does not allow you to include the data file
 
 :::{tab-item} BioHPC
 
-All actions on BioHPC will be performed in a terminal. Depending on whether you connect with SSH, VNC, or Visual Studio Code, details may differ. We suggest connecting via SSH or using Visual Studio Code (which uses SSH in the background), for simplicity. It is assumed that you have done [Bash setup](setup-bash). 
+All actions on BioHPC will be performed in a terminal. Depending on whether you connect with SSH, VNC, or Visual Studio Code, details may differ (see [Access Computer](access-to-computers) for details). We suggest connecting via SSH or using Visual Studio Code (which uses SSH in the background), for simplicity. It is assumed that you have done [Bash setup](setup-bash). 
 
 - [ ] We suggest doing all first steps (adding Manuscript, etc.) on CCSS or your laptop. 
 - [ ] If using SSH, you are already at the "terminal". If using VNC, choose it from the application menu. If using [Visual Studio Code to connect to BioHPC], follow instructions from the **Github Codespaces** tab!
