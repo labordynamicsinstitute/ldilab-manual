@@ -39,11 +39,41 @@ This is because the git setup we use does not allow you to include the data file
   ```
 :::
 
+
+:::{tab-item} BioHPC
+
+All actions on BioHPC will be performed in a terminal. Depending on whether you connect with SSH, VNC, or Visual Studio Code, details may differ (see [Access Computer](access-to-computers) for details). We suggest connecting via SSH or using Visual Studio Code (which uses SSH in the background), for simplicity. It is assumed that you have done [Bash setup](setup-bash). 
+
+- [ ] We suggest doing all first steps (adding Manuscript, etc.) on CCSS or your laptop. 
+- [ ] If using SSH, you are already at the "terminal". If using VNC, choose it from the application menu. If using [Visual Studio Code to connect to BioHPC], follow instructions from the **Github Codespaces** tab!
+- [ ] Change directory to the common workarea:
+      ```bash
+      cd /home2/ecco_lv39/Workspace
+      ```
+- [ ] Populate BioHPC with the Bitbucket repo (yes, this is a bit weird)
+  - Use the LDI short-cut command 
+    ```bash
+    aeagit 123 http
+    ```
+    to clone the Bitbucket repository for `aearep-123` onto BioHPC (this executed `git clone (URL)/aearep-123` behind the scenes).
+    - If this is the first repository you run this, you may need to configure authentication. Follow the instructions from the `aeagit` command.
+    - Once the  `aeagit 123 ` has completed, it show a bunch of error messages (maybe), and a command `cd aearep-123`. Copy and paste that command, entering the directory where you just cloned the repo. **All subsequent actions should be done in that window.**
+- [ ] Verify that the code is present, i.e., that the automated scripts run during the [Code Ingest](ingesting-author-materials) worked. If the scripts did not work, run them now:
+  - Download the project from openICPSR, using the script. See [the details in the appendix](using-pre-pub-openicpsr). 
+  - The downloaded ZIP file (`123456.zip`) should have been unzipped automatically (the terminal output will tell you).
+  - Then run the ingest scripts:
+    ```bash
+    ./tools/pipeline-steps1-4.sh 123456
+    git push
+    ```
+- [x] Add the manuscript, and any response by the authors (if a revision) - **you should already have done this as per the CCSS tab!**
+:::
+
 :::{tab-item} Github Codespaces (CS) 
 
-All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer.
+All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer. The particular template you use for CS already has the  [Bash setup](setup-bash) done for you.
 
-- [ ] Use the Terminal built into VSC (`Menu` -> `Terminal` -> `New Terminal` )
+- [ ] Use the Terminal built into VSC (`Menu` -> `Terminal` -> `New Terminal` ). By default, the Terminal should run a `bash` shell.
 - [ ] Populate CS with the Bitbucket repo (yes, this is a bit weird)
   - Use the LDI short-cut command 
     ```bash
@@ -52,7 +82,14 @@ All actions in Github Codespaces (CS for short) will be performed in Visual Stud
     to clone the Bitbucket repository for `aearep-123` onto CS (this executed `git clone (URL)/aearep-123` behind the scenes).
     - If this is the first repository you run on this CS instance, you may need to configure authentication. Follow the instructions from the `aeagit` command.
     - Once the  `aeagit 123 ` has completed, it will open a new VSC windows. **All subsequent actions should be done in that window.**
-- [ ] Verify that the code is present, i.e., that the automated scripts run during the [Code Ingest](ingesting-author-materials) worked. **If they did not, you need to switch to the "Manual steps"!**
+- [ ] Verify that the code is present, i.e., that the automated scripts run during the [Code Ingest](ingesting-author-materials) worked. If the scripts did not work, run them now:
+  - Download the project from openICPSR, using the script. See [the details in the appendix](using-pre-pub-openicpsr). 
+  - The downloaded ZIP file (`123456.zip`) should have been unzipped automatically (the terminal output will tell you).
+  - Then run the ingest scripts:
+    ```bash
+    ./tools/pipeline-steps1-4.sh 123456
+    git push
+    ```
 - [ ] Add the manuscript, and any response by the authors (if a revision)
   - Copy the manuscript to the CS.    There are two ways to do this:
     - Drag-and-drop the downloaded manuscript into the file pane of VSC. 
@@ -74,7 +111,7 @@ If the automated population of the author's code directory did not work, you wil
 
 **Downloading using scripts**
 
-See [the details in the appendix](using-pre-pub-openicpsr). You can do this on CCSS or on Github CS. 
+See [the details in the appendix](using-pre-pub-openicpsr). You can do this on CCSS, BioHPC, or on Github CS. 
 
 **Downloading using a browser**
 
