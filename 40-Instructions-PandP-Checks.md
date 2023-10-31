@@ -13,7 +13,7 @@ Take note of the 4 highlighted fields:
 
 - \(3) the "openICPSR Project Number" (identifier on the ICPSR system)
 
-- \(4) the link for "Code Provenance", which should direct you directly to openICPSR
+- \(4) the link for "Replication package URL", which should direct you directly to openICPSR
 
 Additionally, certain steps below (i.e. transitioning to "Pending Publication") require that you have "Publisher" permission in Jira. If it is unclear whether or not you have that permission, please reach out to a supervisor.  
 

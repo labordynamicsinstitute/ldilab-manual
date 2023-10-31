@@ -49,7 +49,7 @@ See [appendix](setup-bash) on how to set up the environment to make the script s
 
 :::{tab-item} Downloading a project manually
 
-- Log on to the openICPSR website by clicking on the `Code provenance` link in Jira
+- Log on to the openICPSR website by clicking on the `Replication package URL` link in Jira
 - If you get an error, the project has probably not been shared with you. Contact your supervisor.
 - If successfully logged on, you will be able to download the project from the "more" menu:
 

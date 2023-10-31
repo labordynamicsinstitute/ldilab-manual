@@ -104,7 +104,7 @@ You should now have the data merged with the pre-existing code files. Return to 
 
 Fill out the following Jira fields:
 
-  - [ ] `DATA PROVENANCE` Where, specifically, are you accessing the data? Typically this is the openICPSR repo URL (same as `CODE PROVENANCE`), but may be a user-provided URL or DOI. 
+  - [ ] `DATA PROVENANCE` Where, specifically, are you accessing the data? Typically this is the openICPSR repo URL (same as `Replication package URL`), but may be a user-provided URL or DOI. 
     - if the data is in multiple places, enter "Multiple" here, and record the details in the REPLICATION.md
   - [ ] `WORKING LOCATION OF THE DATA` Where did you put the data? Examples: CISER, laptop, or Git LFS, or somewhere else
 
