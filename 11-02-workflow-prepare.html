@@ -525,10 +525,48 @@ git<span class="w"> </span>push
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
-Github Codespaces (CS) </label><div class="sd-tab-content docutils">
-<p>All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer.</p>
+BioHPC</label><div class="sd-tab-content docutils">
+<p>All actions on BioHPC will be performed in a terminal. Depending on whether you connect with SSH, VNC, or Visual Studio Code, details may differ. We suggest connecting via SSH or using Visual Studio Code (which uses SSH in the background), for simplicity. It is assumed that you have done <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">Bash setup</span></a>.</p>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Use the Terminal built into VSC (<code class="docutils literal notranslate"><span class="pre">Menu</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Terminal</span></code> )</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> We suggest doing all first steps (adding Manuscript, etc.) on CCSS or your laptop.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> If using SSH, you are already at the “terminal”. If using VNC, choose it from the application menu. If using [Visual Studio Code to connect to BioHPC], follow instructions from the <strong>Github Codespaces</strong> tab!</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Change directory to the common workarea:
+<code class="docutils literal notranslate"><span class="pre">bash</span>&#160;&#160;&#160;&#160; <span class="pre">cd</span> <span class="pre">/home2/ecco_lv39/Workspace</span>&#160;&#160;&#160;&#160; </code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Populate BioHPC with the Bitbucket repo (yes, this is a bit weird)</p>
+<ul>
+<li><p>Use the LDI short-cut command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aeagit<span class="w"> </span><span class="m">123</span><span class="w"> </span>http
+</pre></div>
+</div>
+<p>to clone the Bitbucket repository for <code class="docutils literal notranslate"><span class="pre">aearep-123</span></code> onto BioHPC (this executed <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">(URL)/aearep-123</span></code> behind the scenes).</p>
+<ul class="simple">
+<li><p>If this is the first repository you run this, you may need to configure authentication. Follow the instructions from the <code class="docutils literal notranslate"><span class="pre">aeagit</span></code> command.</p></li>
+<li><p>Once the  <code class="docutils literal notranslate"><span class="pre">aeagit</span> <span class="pre">123</span> </code> has completed, it show a bunch of error messages (maybe), and a command <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">aearep-123</span></code>. Copy and paste that command, entering the directory where you just cloned the repo. <strong>All subsequent actions should be done in that window.</strong></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Verify that the code is present, i.e., that the automated scripts run during the <a class="reference internal" href="11-01-workflow-in-progress.html#ingesting-author-materials"><span class="std std-ref">Code Ingest</span></a> worked. If the scripts did not work, run them now:</p>
+<ul>
+<li><p>Download the project from openICPSR, using the script. See <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html#using-pre-pub-openicpsr"><span class="std std-ref">the details in the appendix</span></a>.</p></li>
+<li><p>The downloaded ZIP file (<code class="docutils literal notranslate"><span class="pre">123456.zip</span></code>) should have been unzipped automatically (the terminal output will tell you).</p></li>
+<li><p>Then run the ingest scripts:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./tools/pipeline-steps1-4.sh<span class="w"> </span><span class="m">123456</span>
+git<span class="w"> </span>push
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Add the manuscript, and any response by the authors (if a revision) - <strong>you should already have done this as per the CCSS tab!</strong></p></li>
+</ul>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Github Codespaces (CS) </label><div class="sd-tab-content docutils">
+<p>All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer. The particular template you use for CS already has the  <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">Bash setup</span></a> done for you.</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Use the Terminal built into VSC (<code class="docutils literal notranslate"><span class="pre">Menu</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Terminal</span></code> ). By default, the Terminal should run a <code class="docutils literal notranslate"><span class="pre">bash</span></code> shell.</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Populate CS with the Bitbucket repo (yes, this is a bit weird)</p>
 <ul>
 <li><p>Use the LDI short-cut command</p>
@@ -543,7 +581,18 @@ Github Codespaces (CS) </label><div class="sd-tab-content docutils">
 </li>
 </ul>
 </li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Verify that the code is present, i.e., that the automated scripts run during the <a class="reference internal" href="11-01-workflow-in-progress.html#ingesting-author-materials"><span class="std std-ref">Code Ingest</span></a> worked. <strong>If they did not, you need to switch to the “Manual steps”!</strong></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Verify that the code is present, i.e., that the automated scripts run during the <a class="reference internal" href="11-01-workflow-in-progress.html#ingesting-author-materials"><span class="std std-ref">Code Ingest</span></a> worked. If the scripts did not work, run them now:</p>
+<ul>
+<li><p>Download the project from openICPSR, using the script. See <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html#using-pre-pub-openicpsr"><span class="std std-ref">the details in the appendix</span></a>.</p></li>
+<li><p>The downloaded ZIP file (<code class="docutils literal notranslate"><span class="pre">123456.zip</span></code>) should have been unzipped automatically (the terminal output will tell you).</p></li>
+<li><p>Then run the ingest scripts:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./tools/pipeline-steps1-4.sh<span class="w"> </span><span class="m">123456</span>
+git<span class="w"> </span>push
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Add the manuscript, and any response by the authors (if a revision)</p>
 <ul>
 <li><p>Copy the manuscript to the CS.    There are two ways to do this:</p>
@@ -570,12 +619,12 @@ Github Codespaces (CS) </label><div class="sd-tab-content docutils">
 </li>
 </ul>
 </div>
-<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-2">
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Manual steps </label><div class="sd-tab-content docutils">
 <p>If the automated population of the author’s code directory did not work, you will need to manually download the replication package. Try to do this first using scripts.</p>
 <p><strong>Downloading using scripts</strong></p>
-<p>See <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html#using-pre-pub-openicpsr"><span class="std std-ref">the details in the appendix</span></a>. You can do this on CCSS or on Github CS.</p>
+<p>See <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html#using-pre-pub-openicpsr"><span class="std std-ref">the details in the appendix</span></a>. You can do this on CCSS, BioHPC, or on Github CS.</p>
 <p><strong>Downloading using a browser</strong></p>
 <p>If you are still unsuccesful at this point, try this manual method (typically, on CCSS)</p>
 <ul class="contains-task-list simple">
