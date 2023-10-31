@@ -547,8 +547,8 @@ document.write(`
 <span id="id1"></span><h2>Ingesting author materials<a class="headerlink" href="#ingesting-author-materials" title="Permalink to this heading">#</a></h2>
 <p>We will now ingest the authors’ materials, and run a few statistics. Typically, the materials will be on a (private) openICPSR repository. Sometimes, the materials will be at Dataverse, Zenodo, or elsewhere.</p>
 <ul class="simple">
-<li><p>If at openICPSR, the fields <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">provenance</span></code>, <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">alternate</span> <span class="pre">URL</span></code>, and <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">Project</span> <span class="pre">Number</span></code> will be filled.</p></li>
-<li><p>If at Zenodo or Dataverse, the <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">provenance</span></code> will have the DOI of the replication package, <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">alternate</span> <span class="pre">URL</span></code> and <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">Project</span> <span class="pre">Number</span></code> will be empty.</p></li>
+<li><p>If at openICPSR, the fields <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">package</span> <span class="pre">URL</span></code>, <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">alternate</span> <span class="pre">URL</span></code>, and <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">Project</span> <span class="pre">Number</span></code> will be filled.</p></li>
+<li><p>If at Zenodo or Dataverse, the <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">package</span> <span class="pre">URL</span></code> will have the DOI of the replication package, <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">alternate</span> <span class="pre">URL</span></code> and <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">Project</span> <span class="pre">Number</span></code> will be empty.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -590,9 +590,9 @@ document.write(`
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Fill out the following fields in the Jira ticket (some may be pre-populated):</p>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">provenance</span></code> In almost all cases, this is the openICPSR repo for which you will have received a notification email.</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">package</span> <span class="pre">URL</span></code> In almost all cases, this is the openICPSR repo for which you will have received a notification email.</p>
 <ul>
-<li><p>If code and/or data are provided by email, <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">provenance</span></code> should be filled out with  “<a class="reference external" href="https://email">https://email</a>”, otherwise with a DOI or URL.</p></li>
+<li><p>If code and/or data are provided by email, <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">package</span> <span class="pre">URL</span></code> should be filled out with  “<a class="reference external" href="https://email">https://email</a>”, otherwise with a DOI or URL.</p></li>
 </ul>
 </li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Journal</span></code></p></li>

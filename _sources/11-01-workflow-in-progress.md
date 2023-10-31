@@ -53,8 +53,8 @@ In some instances, somebody else has already created a repository. Always check 
 
 We will now ingest the authors' materials, and run a few statistics. Typically, the materials will be on a (private) openICPSR repository. Sometimes, the materials will be at Dataverse, Zenodo, or elsewhere.
 
-- If at openICPSR, the fields `Code provenance`, `openICPSR alternate URL`, and `openICPSR Project Number` will be filled.
-- If at Zenodo or Dataverse, the `Code provenance` will have the DOI of the replication package, `openICPSR alternate URL` and `openICPSR Project Number` will be empty.
+- If at openICPSR, the fields `Replication package URL`, `openICPSR alternate URL`, and `openICPSR Project Number` will be filled.
+- If at Zenodo or Dataverse, the `Replication package URL` will have the DOI of the replication package, `openICPSR alternate URL` and `openICPSR Project Number` will be empty.
 
 
 ```{note}
@@ -94,8 +94,8 @@ You will now run what is called a *`Bitbucket Pipeline`*. Similar tools on other
 At this stage, you are collecting information. 
 
 - [ ] Fill out the following fields in the Jira ticket (some may be pre-populated):
-    - [x] `Code provenance` In almost all cases, this is the openICPSR repo for which you will have received a notification email.
-      - If code and/or data are provided by email, `Code provenance` should be filled out with  "https://email", otherwise with a DOI or URL.
+    - [x] `Replication package URL` In almost all cases, this is the openICPSR repo for which you will have received a notification email.
+      - If code and/or data are provided by email, `Replication package URL` should be filled out with  "https://email", otherwise with a DOI or URL.
     - [x] `Journal` 
     - [x] `Manuscript Central identifier`
     - [ ] `Bitbucket short name` (e.g., `aearep-123`) 

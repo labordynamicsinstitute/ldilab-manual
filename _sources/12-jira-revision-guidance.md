@@ -32,7 +32,7 @@ First, advance the ticket from `Assigned` to `In Progress`.
 - [ ] Identify previous issue. 
     - You should see the previous issue listed under **Linked Issues** on JIRA. 
     - Use the previous issue, to fill in the following JIRA fields (if not already filled): 
-        - `Code provenance` 
+        - `Replication package URL` 
         - `Journal` 
         - `Empirical Article`
         - `Bitbucket short name`. This should be the name of the original JIRA issue (e.g. `aearep-123)`.

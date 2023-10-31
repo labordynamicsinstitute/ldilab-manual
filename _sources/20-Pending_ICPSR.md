@@ -25,7 +25,7 @@ As RA tasked with this, these are the instructions.
 
 ### Verifying if changes have been made
 
-- A good place to start in this process is to go to the openICPSR deposit (fields [`Code Provenance`] or [`openICPSR alternate URL`]) 
+- A good place to start in this process is to go to the openICPSR deposit (fields [`Replication package URL`] or [`openICPSR alternate URL`]) 
 - First, verify the **date** of the last request made to the author, in the "Project Communication Log" area. The Project Communication log always contains our request to the authors, and may contain subsequent responses from the author.
 
 ![Communication Log area](images/pending_openicpsr_com.png)

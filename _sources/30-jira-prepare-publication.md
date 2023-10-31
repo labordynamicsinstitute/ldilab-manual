@@ -79,7 +79,7 @@ In principle, once the report is uploaded, the author will get the report with t
 To do so, proceed as follows:
 
 1. Open the issue on Jira
-2. Right-click on the [`Code Provenance`] field to open the openICPSR deposit.
+2. Right-click on the [`Replication package URL`] field to open the openICPSR deposit.
 3. On openICPSR, 
    - verify what the openICPSR `Deposit Status` is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
    - if  `Deposit Status` = *`Deposit in Progress`*, you are done on openICPSR. Go back to the Jira issue

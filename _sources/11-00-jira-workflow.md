@@ -26,7 +26,7 @@ until a resolution can be found.
 | From         | Transition           | → To           | Condition |
 |:-------------|:---------------------|:---------------|:----------|
 | Assigned     | Start task           | → In Progress  |           |
-| In Progress  | Download code        | → Code         | `Code provenance` have been filled out, `Journal` has been identified, `Empirical Article`=`Yes`, `External validation` != "yes" |
+| In Progress  | Download code        | → Code         | `Replication package URL` have been filled out, `Journal` has been identified, `Empirical Article`=`Yes`, `External validation` != "yes" |
 | Code         | Access data          | → Data         | `Git working location`, `Data provenance` have been filled out. |
 | Data         | Prepare preliminary report | → Write Preliminary Report | |
 | Write Preliminary Report | Some data is accessible   | → Verification  | `DatasetsIncluded` = `Some` or `All`, `Working location of data`, `Computing environment` have been filled out.|

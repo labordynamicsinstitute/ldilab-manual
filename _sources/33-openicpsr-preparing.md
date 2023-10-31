@@ -18,7 +18,7 @@ In principle, once the report is uploaded, the author will get the report with t
 To do so, proceed as follows:
 
 1. Open the issue on Jira
-2. Right-click on the [`Code Provenance`] field to open the openICPSR deposit.
+2. Right-click on the [`Replication package URL`] field to open the openICPSR deposit.
 3. On openICPSR, 
    - verify what the openICPSR `Deposit Status` is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
    - if  `Deposit Status` = *`Deposit in Progress`*, you are done on openICPSR. Go back to the Jira issue
@@ -51,7 +51,7 @@ Revisions requested. Details in the full report, which you will receive via Scho
 2. Click on the `Wait for response on openICPSR` transition to `Pending openICPSR changes`. 
   - In the pop-up, you should have all the necessary information.
      - Note: links in the pop-up window are not clickable: double-click, then use right-click to "Open in New Tab".
-     - If not already done: `Code provenance` should point to openICPSR. If not, go to the final step.
+     - If not already done: `Replication package URL` should point to openICPSR. If not, go to the final step.
      - Make a note of the issue number (in the URL) and the `Manuscript Central identifier` again.
 
 ![Pop-up for transition to Pending openICSPR](images/jira-Wait-for-response-on-ICPSR.png)
@@ -105,7 +105,7 @@ Details in the full report, which you will receive via ScholarOne shortly. Pleas
 2. Click on the `Prepare for publication` transition
 3. In the pop-up, you should have all the necessary information.
    - Note: links in the pop-up window are not clickable: double-click, then use right-click to "Open in New Tab".
-   - If not already done: `Code provenance` should point to openICPSR. If not, go to the final step.
+   - If not already done: `Replication package URL` should point to openICPSR. If not, go to the final step.
    - Make a note of the issue number (in the URL) and the `Manuscript Central identifier` again.
 4. On openICPSR,
    - remove any RAs from the Share list (leave anybody else who is on there!)
