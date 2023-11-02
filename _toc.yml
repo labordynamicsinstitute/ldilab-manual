@@ -78,6 +78,7 @@ parts:
       sections:
       - file: 96-11-using-config-R
       - file: 96-12-running-R-code
+    - file: 96-20-using-matlab
     - file: 97-00-authentication
       sections:
       - file: 97-01-Bitbucket-authentication
