@@ -50,10 +50,17 @@ You should now open the Bitbucket report, and identify the changes that the auth
 
 - Open the report. You can do this by checking out the Bitbucket repo, or by clicking on the [`Report URL`] field.
   - Check the "Summary" (at the top), as well as the "Reason for incomplete reproducibility" (at the bottom, and in the Jira issue)
-- Verify the changes.
-- For each change, you should make a note of what problem was addressed. For instance, if the "Reason for incomplete reproducibiliy" notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box "Bugs in code"
-  - You can find the "Reasons for incomplete reproducibility" in the "Repl.info" tab in the Jira ticket, or in the popup when moving from `Assess openICPSR changes` to `Pending publication` at the end of this process.
-- If you have verified that all the required changes have been made, move forward with the acceptance process, by moving the issue to `Pending publication` (see [**Chapter 13.5.2**](aea-interfacing-with-the-journal-management-system.html#for-accept)).
+- Copy all the items in `Action Items (open ICPSR)` (disregard the manuscript section since we can't check that at this point)
+- Paste the Action Items into the Comments section of Jira.
+- Go through each item and verify the changes by marking 'Done' or 'Incomplete' next to each item. Refer to the summary or the action item for more detail as to why this item was considered incomplete. Add any relevant details. For example:
+
+
+*[REQUIRED] As specified in the Policy and the DCAF, the README shall follow the schema provided by the Social Science Data Editors'template README. **Incomplete**- They added computational requirements but are missing Statement About Rights*
+
+
+  - For each change, you should make a note of what problem was addressed. For instance, if the "Reason for incomplete reproducibility" notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box "Bugs in code"
+  - You can find the "Reasons for incomplete reproducibility" in the "Repl. info" tab in the Jira ticket, or in the popup when moving from `Assess openICPSR changes` to `Pending publication` at the end of this process.
+- **If you have verified that all the required changes have been made**, continue with the "For Accept" section of the [Interfacing with the Journal Management System](https://labordynamicsinstitute.github.io/ldilab-manual/30-jira-prepare-publication.html#for-accept) chapter
   - You have another opportunity to uncheck any boxes here that have been addressed.
   - Check under "Other links" if "Non-compliant"  = yes, if so, **do not proceed** until you find clarification
   - - See if the reason for non-compliance (usually mentioned in the report, and at least in the comments) is resolved, **consult with the Data Editor**, then uncheck that box.
@@ -61,8 +68,23 @@ You should now open the Bitbucket report, and identify the changes that the auth
 
 ### Insufficient Changes
 
-- If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the Data Editor with a comment on the Jira ticket outlining your question. 
+- If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the assistant to the Data Editor with a comment on the Jira ticket outlining your question.
 - These cases are not always cut and dry, please err on the side of caution and ask questions before posting a "final acceptance" message on the deposit.
+- **If you are certain that items are incomplete** and theres 3 or less action items remaining:
+  - Go back into openICPSR and "Change status" -> "Request Revisions". Then input the message:
+  ```
+  Thank your for your revisions. The remaining action items need to be addressed:
+  
+  ```
+
+  - Then paste only the incomplete action items (along with the reason we consider this incomplete).
+- **If you are certain that items are incomplete** and theres more than 3 action items remaining:
+  - Go back into openICPSR and "Change status" -> "Request Revisions". Then input the message:
+  ```
+   Thank your for your revisions. The remaining action items are detailed in the Communication Log
+  
+  ```
+  - Paste the action items in the Communication Log with the Title "Revisions Requested (AEAREP-xxx)" so that it's easier for the author to read the list.
 
 
 ### Summary of Steps
