@@ -85,6 +85,7 @@ You should now open the Bitbucket report, and identify the changes that the auth
   
   ```
   - Paste the action items in the Communication Log with the Title "Revisions Requested (AEAREP-xxx)" so that it's easier for the author to read the list.
+- Then move the Jira ticket back to `Pending openICPSR changes`
 
 
 ### Summary of Steps
