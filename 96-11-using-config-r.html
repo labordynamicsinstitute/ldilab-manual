@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Using config.do in STATA &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Using config.R in R &#8212; Training Manual For Reproducibility Verification</title>
   
   
   
@@ -61,12 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '96-01-using-config-stata';</script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-01-using-config-stata.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '96-11-using-config-r';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-11-using-config-r.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Running Code in Stata" href="96-02-running-stata-code.html" />
-    <link rel="prev" title="Stata-related procedures" href="96-00-using-Stata.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -217,7 +215,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="71-External-reproducibility-checks.html">External reproducibility checks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="90-Glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="91-setup-checklist.html">Setup Checklist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="92-Privacy.html">Privacy</a></li>
@@ -239,8 +237,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="95-60-general-setup.html">Additional setup instructions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Using config.do in STATA</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-01-using-config-stata.html">Using config.do in STATA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-02-running-stata-code.html">Running Code in Stata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-03-stata-scan-packages.html">Using scan_packages.do</a></li>
 </ul>
@@ -332,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-01-using-config-stata.md" target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-11-using-config-r.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -349,7 +347,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-01-using-config-stata.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-11-using-config-r.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +377,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/96-01-using-config-stata.md" target="_blank"
+      <li><a href="_sources/96-11-using-config-r.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -461,7 +459,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Using config.do in STATA</h1>
+    <h1>Using config.R in R</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -471,18 +469,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-log-files">Why do we need log files?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-have-to-install-programs">Why do we have to install programs?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-template-config-do">Explaining template-config.do</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-paths-for-log-files">Directory paths for log files.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-template-config-r">Explaining template-config.R</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-drive-l-drive">S-drive, L-drive</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-paths-for-log-files-libraries-and-other-things">Directory paths for log files, libraries, and other things</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-a-log-file-with-current-date-and-time">Opening a log file with current date and time</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information">System information</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation">Package installation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-do">How to use config.do</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-r">How to use config.R</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-the-config-file">Rename the config file.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-do">Include config.do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-r">Include config.R</a></li>
 </ul>
 </li>
 </ul>
@@ -496,25 +495,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="using-config-do-in-stata">
-<span id="using-config-do"></span><h1>Using <a class="reference external" href="http://config.do">config.do</a> in STATA<a class="headerlink" href="#using-config-do-in-stata" title="Permalink to this heading">#</a></h1>
-<p>In “Verification” stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of STATA. We provide <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code> in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template">template repository</a> you clone which addresses these problems.</p>
-<section id="why-do-we-need-log-files">
-<h2>Why do we need log files?<a class="headerlink" href="#why-do-we-need-log-files" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Log files record each step of the analysis and its results as a text. It also records error messages if you encounter any error upon running the code.</p></li>
-<li><p>There are other purposes to have log files, but for us, it is to communicate with other team members.</p>
-<ul>
-<li><p>When a replicator submits the report, a preapprover (and an approver) needs to verify how the code ran. It is to ensure that any discrepancies we find are not due to mistakes on our end.</p></li>
-<li><p>A log file is crucial for this verification. Otherwise, preapprovers and approvers have to run the code again to verify which is not an ideal use of time, nor an efficient way to process the case.</p></li>
-</ul>
-</li>
-</ul>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="using-config-r-in-r">
+<span id="using-config-r"></span><h1>Using config.R in R<a class="headerlink" href="#using-config-r-in-r" title="Permalink to this heading">#</a></h1>
+<p>In “Verification” stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of R. We provide <code class="docutils literal notranslate"><span class="pre">template-config.R</span></code> in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template">template repository</a> you clone which addresses these problems. In this section, we will walk you through how to update the <code class="docutils literal notranslate"><span class="pre">config.R</span></code>, in the <a class="reference internal" href="96-12-running-r-code.html#running-code-in-r"><span class="std std-ref">next section</span></a> how to run R in a way that generates log files automatically.</p>
 <section id="why-do-we-have-to-install-programs">
 <h2>Why do we have to install programs?<a class="headerlink" href="#why-do-we-have-to-install-programs" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Stata, or any statistical software, does not provide all the packages (or “libraries”, or “modules”) that enable or facilitate the analysis. Therefore, many user-written programs or extensions are publicly available for downloads. For Stata, this is often at the <a class="reference external" href="https://ideas.repec.org/s/boc/bocode.html">SSC</a> (<code class="docutils literal notranslate"><span class="pre">ssc</span> <span class="pre">install</span> <span class="pre">package</span></code>), but sometimes at the <a class="reference external" href="https://www.stata-journal.com/">Stata Journal archives</a> (<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install</span> <span class="pre">sj53</span></code>), and sometimes in authors’ webpages (<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install</span> <span class="pre">package,</span> <span class="pre">using(https://author.com/packages)</span></code>)</p></li>
+<li><p>R, or other statistical software, does not provide all the packages (or “libraries”, or “modules”) that enable or facilitate the analysis. Therefore, many user-written programs or extensions are publicly available for downloads. For R, this is most often comes from <a class="reference external" href="https://cran.r-project.org/">CRAN</a>, but the specific “mirror” of CRAN that is used may vary. You install packages with something like <code class="docutils literal notranslate"><span class="pre">install.packages(&quot;package</span> <span class="pre">name&quot;)</span></code> or multiple packages with <code class="docutils literal notranslate"><span class="pre">install.packages(c(&quot;package1&quot;,&quot;package2&quot;))</span></code>. You might also see the use of <code class="docutils literal notranslate"><span class="pre">remotes::install_github(&quot;r-lib/conflicted&quot;)</span></code> (to install a package from Github) or <code class="docutils literal notranslate"><span class="pre">install_version(&quot;devtools&quot;,</span> <span class="pre">&quot;1.11.0&quot;)</span></code> to install a specific version.</p></li>
 <li><p>We differ in installation process from many others in the sense that, we want to install programs in a specified directory that is NOT a system directory.</p>
 <ul>
 <li><p>This is to ensure that the set of packages used by replication package is complete. A complete replication package should be stand-alone, regardless of packages installed elsewhere in the machine that program is run on.</p></li>
@@ -522,28 +509,45 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="explaining-template-config-do">
-<h2>Explaining <a class="reference external" href="http://template-config.do">template-config.do</a><a class="headerlink" href="#explaining-template-config-do" title="Permalink to this heading">#</a></h2>
-<p><img alt="template-config.do" src="_images/stata_config.png" /></p>
-<section id="directory-paths-for-log-files">
-<h3>Directory paths for log files.<a class="headerlink" href="#directory-paths-for-log-files" title="Permalink to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">config.do</span></code> creates a subdirectory and saves log files in the subdirectory. Area 1 sets these directory paths. Let’s say the current working directory path is the following, since Jira issue number is <code class="docutils literal notranslate"><span class="pre">AEAREP-9999</span></code> and openICPSR case number is <code class="docutils literal notranslate"><span class="pre">111111</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">U</span><span class="p">:</span><span class="o">/</span><span class="n">Workspace</span><span class="o">/</span><span class="n">aearep</span><span class="o">-</span><span class="mi">9999</span><span class="o">/</span><span class="mi">111111</span>
+<section id="explaining-template-config-r">
+<h2>Explaining template-config.R<a class="headerlink" href="#explaining-template-config-r" title="Permalink to this heading">#</a></h2>
+<p>Start by copying the <code class="docutils literal notranslate"><span class="pre">template-config.R</span></code> into the authors’ code directory.</p>
+<section id="installing-packages">
+<h3>Installing packages<a class="headerlink" href="#installing-packages" title="Permalink to this heading">#</a></h3>
+<p>Any libraries identified by the authors should be listed here, unless the authors already provide a setup program, or lines that install these packages.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">global</span><span class="o">.</span><span class="n">libraries</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;foreign&quot;</span><span class="p">,</span><span class="s2">&quot;devtools&quot;</span><span class="p">,</span><span class="s2">&quot;rprojroot&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>or</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\\<span class="n">networkpath</span>\<span class="n">users</span>\<span class="n">me</span>\<span class="n">Desktop</span>\<span class="n">Workspace</span>\<span class="n">aearep</span><span class="o">-</span><span class="mi">9999</span>\<span class="mi">111111</span>
+<p>For instance, if the authors say you need <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> and <code class="docutils literal notranslate"><span class="pre">nonsenseR</span></code>, then add them to this line (and remember to keep case exactly as the authors provide it, so <code class="docutils literal notranslate"><span class="pre">nonsenser</span></code> is not the same as <code class="docutils literal notranslate"><span class="pre">nonsenseR</span></code>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">global</span><span class="o">.</span><span class="n">libraries</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;foreign&quot;</span><span class="p">,</span><span class="s2">&quot;devtools&quot;</span><span class="p">,</span><span class="s2">&quot;rprojroot&quot;</span><span class="p">,</span><span class="s2">&quot;ggplot2&quot;</span><span class="p">,</span><span class="s2">&quot;nonsenseR&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>line 50, <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">rootdir</span> <span class="pre">:</span> <span class="pre">pwd</span></code> sets the current working directory as a root directory, a.k.a. <code class="docutils literal notranslate"><span class="pre">rootdir</span></code>.</p></li>
-<li><p>line 59, <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">logdir</span> <span class="pre">&quot;${rootdir}/logs&quot;</span></code> sets the following directory as a directory for log files: <code class="docutils literal notranslate"><span class="pre">U:/Workspace/aearep-9999/111111/logs</span></code> or the network path equivalent.</p></li>
-<li><p>Notice that  no such directory exists. Therefore, the do file creates a new directory in line 60.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> is a command to create a directory</p></li>
-</ul>
-</li>
-</ul>
+</section>
+<section id="s-drive-l-drive">
+<h3>S-drive, L-drive<a class="headerlink" href="#s-drive-l-drive" title="Permalink to this heading">#</a></h3>
+<p>In some cases, authors provide us privately with data that is not part of the public replication package (the part on openICPSR is generally public). We put this on the L-drive, or what used to be called the S-drive. Put the location of that here, if any:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">-</span><span class="n">drive</span> <span class="o">&lt;-</span> <span class="s2">&quot;L:/Workspace/aearep-9999-implicit-nda&quot;</span>
+</pre></div>
+</div>
+<p>Wherever the author later references the confidential data, you can insert this placeholder, for instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># original author reference</span>
+<span class="c1"># ols.data &lt;- readRDS(&quot;data/confidential/analysis.Rds&quot;)</span>
+<span class="c1"># you change it to</span>
+<span class="n">ols</span><span class="o">.</span><span class="n">data</span> <span class="o">&lt;-</span> <span class="n">readRDS</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">drive</span><span class="p">,</span><span class="s2">&quot;data/confidential/analysis.Rds&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="directory-paths-for-log-files-libraries-and-other-things">
+<h3>Directory paths for log files, libraries, and other things<a class="headerlink" href="#directory-paths-for-log-files-libraries-and-other-things" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">config.R</span></code> creates a subdirectory for log files, but does not automatically create the log file (in contrast to Stata). Here, you should add any additional directories that your debugging identifies as being necessary. Do write any path names with <code class="docutils literal notranslate"><span class="pre">/</span></code>, not <code class="docutils literal notranslate"><span class="pre">\</span></code>, and leave the directory names already listed untouched.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span><span class="o">.</span><span class="n">paths</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;logs&quot;</span><span class="p">,</span><span class="s2">&quot;libraries&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For instance, if the authors state that output should be written to “outputs”, you can add</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span><span class="o">.</span><span class="n">paths</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;logs&quot;</span><span class="p">,</span><span class="s2">&quot;libraries&quot;</span><span class="p">,</span><span class="s2">&quot;outputs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">config.R</span></code> wird</p>
 </section>
 <section id="opening-a-log-file-with-current-date-and-time">
 <h3>Opening a log file with current date and time<a class="headerlink" href="#opening-a-log-file-with-current-date-and-time" title="Permalink to this heading">#</a></h3>
@@ -563,7 +567,7 @@ document.write(`
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">sysdir</span></code> commands (in line 89-91) redirects Stata to search for, and install ado files in the directories referenced. It won’t automatically install them.</p>
 <ul>
-<li><p>In case where the authors provided the ado files, adding a new command to the end of the <a class="reference external" href="http://config.do">config.do</a> would suffice. For instance, if the authors have provided ado files in the directory <code class="docutils literal notranslate"><span class="pre">packages</span></code>, then</p></li>
+<li><p>In case where the authors provided the ado files, adding a new command to the end of the config.R would suffice. For instance, if the authors have provided ado files in the directory <code class="docutils literal notranslate"><span class="pre">packages</span></code>, then</p></li>
 </ul>
 </li>
 </ul>
@@ -581,18 +585,18 @@ document.write(`
 </ul>
 </section>
 </section>
-<section id="how-to-use-config-do">
-<h2>How to use <a class="reference external" href="http://config.do">config.do</a><a class="headerlink" href="#how-to-use-config-do" title="Permalink to this heading">#</a></h2>
+<section id="how-to-use-config-r">
+<h2>How to use config.R<a class="headerlink" href="#how-to-use-config-r" title="Permalink to this heading">#</a></h2>
 <section id="rename-the-config-file">
 <h3>Rename the config file.<a class="headerlink" href="#rename-the-config-file" title="Permalink to this heading">#</a></h3>
-<p>The template is called <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code>. In order to use it, rename it to <code class="docutils literal notranslate"><span class="pre">config.do</span></code> and move it into the openICPSR folder (e.g. , <code class="docutils literal notranslate"><span class="pre">111111</span></code>).</p>
+<p>The template is called <code class="docutils literal notranslate"><span class="pre">template-config.R</span></code>. In order to use it, rename it to <code class="docutils literal notranslate"><span class="pre">config.R</span></code> and move it into the openICPSR folder (e.g. , <code class="docutils literal notranslate"><span class="pre">111111</span></code>).</p>
 </section>
-<section id="include-config-do">
-<h3>Include <a class="reference external" href="http://config.do">config.do</a><a class="headerlink" href="#include-config-do" title="Permalink to this heading">#</a></h3>
+<section id="include-config-r">
+<h3>Include config.R<a class="headerlink" href="#include-config-r" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>If there is a master dofile, you should put the following line at the beginning of the <code class="docutils literal notranslate"><span class="pre">master.do</span></code>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="n">config</span><span class="o">.</span><span class="n">do</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="n">config</span><span class="o">.</span><span class="n">R</span>
 </pre></div>
 </div>
 <p>and the end of the <code class="docutils literal notranslate"><span class="pre">master.do</span></code>:</p>
@@ -637,24 +641,6 @@ document.write(`
                 <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="96-00-using-Stata.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Stata-related procedures</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="96-02-running-stata-code.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Running Code in Stata</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -670,18 +656,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-log-files">Why do we need log files?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-have-to-install-programs">Why do we have to install programs?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-template-config-do">Explaining template-config.do</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-paths-for-log-files">Directory paths for log files.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-template-config-r">Explaining template-config.R</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-drive-l-drive">S-drive, L-drive</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-paths-for-log-files-libraries-and-other-things">Directory paths for log files, libraries, and other things</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-a-log-file-with-current-date-and-time">Opening a log file with current date and time</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information">System information</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation">Package installation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-do">How to use config.do</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-r">How to use config.R</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-the-config-file">Rename the config file.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-do">Include config.do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-r">Include config.R</a></li>
 </ul>
 </li>
 </ul>

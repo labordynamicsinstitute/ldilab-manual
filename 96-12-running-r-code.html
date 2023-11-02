@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Running Code in Stata &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Running Code in R &#8212; Training Manual For Reproducibility Verification</title>
   
   
   
@@ -61,12 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '96-02-running-stata-code';</script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-02-running-stata-code.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '96-12-running-r-code';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-12-running-r-code.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Using scan_packages.do" href="96-03-stata-scan-packages.html" />
-    <link rel="prev" title="Using config.do in STATA" href="96-01-using-config-stata.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -217,7 +215,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="71-External-reproducibility-checks.html">External reproducibility checks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="90-Glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="91-setup-checklist.html">Setup Checklist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="92-Privacy.html">Privacy</a></li>
@@ -239,9 +237,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="95-60-general-setup.html">Additional setup instructions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="96-01-using-config-stata.html">Using config.do in STATA</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Running Code in Stata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-02-running-stata-code.html">Running Code in Stata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-03-stata-scan-packages.html">Using scan_packages.do</a></li>
 </ul>
 </li>
@@ -332,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-02-running-stata-code.md" target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-12-running-r-code.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -349,7 +347,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-02-running-stata-code.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-12-running-r-code.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +377,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/96-02-running-stata-code.md" target="_blank"
+      <li><a href="_sources/96-12-running-r-code.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -461,7 +459,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Running Code in Stata</h1>
+    <h1>Running Code in R</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -471,6 +469,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-log-files">Why do we need log files?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-check-for-a-master-do-file">Step 1: check for a “master” .do file</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-a-master-do-file-is-provided">When a master .do file is provided</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-a-master-do-file-is-not-provided">When a master .do file is not provided</a></li>
@@ -484,12 +483,12 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-check-the-location-of-the-master-do-file-and-modify-config-do">Step 5: Check the location of the master .do file and modify config.do</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-a">Scenario A</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-b">Scenario B</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-c">Scenario C</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Example</a></li>
 </ul>
 </li>
 </ul>
@@ -509,24 +508,36 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="running-code-in-stata">
-<h1>Running Code in Stata<a class="headerlink" href="#running-code-in-stata" title="Permalink to this heading">#</a></h1>
-<p>Although, there are plenty of ways to run code in Stata, our goal with these instructions is to show the easiest way to do it, by minimizing both the manual steps replicators have to go through and the chance of making a mistake that prevents a successful run.</p>
-<p>In essence, these instructions show how to deal with the three most common actions that replicators have to undertake when running Stata code:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="running-code-in-r">
+<span id="id1"></span><h1>Running Code in R<a class="headerlink" href="#running-code-in-r" title="Permalink to this heading">#</a></h1>
+<p>Although, there are plenty of ways to run code in R, our goal with these instructions is to show the easiest way to do it, by minimizing both the manual steps replicators have to go through and the chance of making a mistake that prevents a successful run.</p>
+<section id="why-do-we-need-log-files">
+<h2>Why do we need log files?<a class="headerlink" href="#why-do-we-need-log-files" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Log files record each step of the analysis and its results as a text. It also records error messages if you encounter any error upon running the code.</p></li>
+<li><p>There are other purposes to have log files, but for us, it is to communicate with other team members.</p>
+<ul>
+<li><p>When a replicator submits the report, a preapprover (and an approver) needs to verify how the code ran. It is to ensure that any discrepancies we find are not due to mistakes on our end.</p></li>
+<li><p>A log file is crucial for this verification. Otherwise, preapprovers and approvers have to run the code again to verify which is not an ideal use of time, nor an efficient way to process the case.</p></li>
+</ul>
+</li>
+</ul>
+<p>In essence, these instructions show how to deal with the three most common actions that replicators have to undertake when running R code:</p>
 <ol class="arabic simple">
-<li><p>Making sure that paths (i.e., something like “<code class="docutils literal notranslate"><span class="pre">Mycomputer/Documents/Workspace/</span></code>”) in the .do files (Stata scripts) reflect the appropriate location of code, data, and output in the computer where the code is run.</p></li>
+<li><p>Making sure that paths (i.e., something like “<code class="docutils literal notranslate"><span class="pre">Mycomputer/Documents/Workspace/</span></code>”) in the .do files (R scripts) reflect the appropriate location of code, data, and output in the computer where the code is run.</p></li>
 <li><p>Installing user-written functions, programs, or packages that are necessary to do computations and produce tables/figures.</p></li>
-<li><p>Creating .log files (files that record, in this case, Stata output) of the replication attempts.</p></li>
+<li><p>Creating .log files (files that record, in this case, R output) of the replication attempts.</p></li>
 </ol>
+</section>
 <section id="step-1-check-for-a-master-do-file">
 <h2>Step 1: check for a “master” .do file<a class="headerlink" href="#step-1-check-for-a-master-do-file" title="Permalink to this heading">#</a></h2>
 <blockquote>
 <div><p><strong>[ACTION]</strong> Check the README or the repository and determine if a master .do file was provided.</p>
 </div></blockquote>
-<p>A master .do file is a Stata script that will call, in the correct sequence, all the programs necessary to construct analysis datasets, do all computations, and produce figures and tables. If a master do file exists, it should be mentioned in the README. In most cases, running a single master do file is sufficient to complete the reproduction. In general, a master script does not need to be a .do file. However, we will focus on cases where all work done in Stata is reduced to executing a single .do file.</p>
+<p>A master .do file is a R script that will call, in the correct sequence, all the programs necessary to construct analysis datasets, do all computations, and produce figures and tables. If a master do file exists, it should be mentioned in the README. In most cases, running a single master do file is sufficient to complete the reproduction. In general, a master script does not need to be a .do file. However, we will focus on cases where all work done in R is reduced to executing a single .do file.</p>
 <section id="when-a-master-do-file-is-provided">
 <h3>When a master .do file is provided<a class="headerlink" href="#when-a-master-do-file-is-provided" title="Permalink to this heading">#</a></h3>
-<p>If there is a master do file, continue with <a class="reference internal" href="96-12-running-r-code.html#step2"><span class="std std-ref">Step 2</span></a>.</p>
+<p>If there is a master do file, continue with <a class="reference internal" href="#step2"><span class="std std-ref">Step 2</span></a>.</p>
 </section>
 <section id="when-a-master-do-file-is-not-provided">
 <span id="create-master"></span><h3>When a master .do file is not provided<a class="headerlink" href="#when-a-master-do-file-is-not-provided" title="Permalink to this heading">#</a></h3>
@@ -560,7 +571,7 @@ document.write(`
 </ol>
 <p>At the end your master .do file may look like this:</p>
 <p><img alt="master" src="_images/master-example.png" /></p>
-<p>With your master do file done, continue with <a class="reference internal" href="96-12-running-r-code.html#step2"><span class="std std-ref">Step 2</span></a>.</p>
+<p>With your master do file done, continue with <a class="reference internal" href="#step2"><span class="std std-ref">Step 2</span></a>.</p>
 </section>
 </section>
 <section id="step-2-place-config-do-where-the-master-do-file-is-located">
@@ -593,7 +604,7 @@ document.write(`
 <li><p>Sets a path to save the packages to be installed in the replication repository, and</p></li>
 <li><p>It allows you to install the packages simply by listing their names.</p></li>
 </ul>
-<p>A crucial function of <code class="docutils literal notranslate"><span class="pre">config.do</span></code> is that it allows for the local installation of Stata packages, which is important for two reasons. First, it will enable us to check for the completeness of replication materials. Second, when running code in servers, we often do not have the necessary permissions to install Stata packages freely.<code class="docutils literal notranslate"><span class="pre">config.do</span></code> allow us to installed packages in the replication directory.</p>
+<p>A crucial function of <code class="docutils literal notranslate"><span class="pre">config.do</span></code> is that it allows for the local installation of R packages, which is important for two reasons. First, it will enable us to check for the completeness of replication materials. Second, when running code in servers, we often do not have the necessary permissions to install R packages freely.<code class="docutils literal notranslate"><span class="pre">config.do</span></code> allow us to installed packages in the replication directory.</p>
 </section>
 <section id="step-4-modifying-paths-if-necessary">
 <h2>Step 4: modifying paths if necessary<a class="headerlink" href="#step-4-modifying-paths-if-necessary" title="Permalink to this heading">#</a></h2>
@@ -605,7 +616,7 @@ document.write(`
 <li><p>Save.</p></li>
 </ul>
 </div></blockquote>
-<p>To run the code, we need to make sure that Stata can access the locally-saved data, access the packages that will be installed, and save the output in the computer where you are running the code. To do that, we often need to change some directory paths defined in the .do files provided. This step may vary in each replication package, so you need to look at the README instructions closely. Some packages may not require any change, while others may require a little more work.</p>
+<p>To run the code, we need to make sure that R can access the locally-saved data, access the packages that will be installed, and save the output in the computer where you are running the code. To do that, we often need to change some directory paths defined in the .do files provided. This step may vary in each replication package, so you need to look at the README instructions closely. Some packages may not require any change, while others may require a little more work.</p>
 <p>However, the typical case will only require one modification, either to the master .do file or to a program called by the master .do file, where you define the path of the location of the replication package. This location is what we refer to as the “root directory”. Once this change is made, the code provided (if it follows good practices) will define every other path relative to the root directory.</p>
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
@@ -637,7 +648,7 @@ After the change:</p>
 <ul class="simple">
 <li><p>If the master .do file is directly placed in the root directory, set the parameter <code class="docutils literal notranslate"><span class="pre">scenario</span></code> to be <code class="docutils literal notranslate"><span class="pre">B</span></code> and save.</p></li>
 <li><p>If the master .do file is inside a folder, open <code class="docutils literal notranslate"><span class="pre">config.do</span></code> and set the parameter <code class="docutils literal notranslate"><span class="pre">scenario</span></code> to <code class="docutils literal notranslate"><span class="pre">A</span></code> and save. (This is the default, so really no action is necessary.)</p></li>
-<li><p>If the replication package includes a folder with Stata packages, add the line  <code class="docutils literal notranslate"><span class="pre">adopath</span> <span class="pre">++</span></code> followed by the path of the location of that folder and save. See <a class="reference external" href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html">Appendix F</a> for details.</p></li>
+<li><p>If the replication package includes a folder with R packages, add the line  <code class="docutils literal notranslate"><span class="pre">adopath</span> <span class="pre">++</span></code> followed by the path of the location of that folder and save. See <a class="reference external" href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html">Appendix F</a> for details.</p></li>
 <li><p>Add packages that need to be installed to <a class="reference external" href="http://config.do">config.do</a>. See <a class="reference external" href="https://labordynamicsinstitute.github.io/replicability-training-curriculum/using-config-do-in-stata.html">Appendix F</a> for details.</p></li>
 </ul>
 </div></blockquote>
@@ -654,8 +665,8 @@ After the change:</p>
 
 </pre></div>
 </div>
-<section id="id1">
-<h4>Example<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<section id="id2">
+<h4>Example<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>A Master .do file is  inside a folder and you have placed <code class="docutils literal notranslate"><span class="pre">config.do</span></code> in that same folder. The package <code class="docutils literal notranslate"><span class="pre">estout</span></code> needs to be installed:</p></li>
 </ul>
@@ -702,8 +713,8 @@ After the change:</p>
 </pre></div>
 </div>
 <p>Note: you would place the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> in <strong>all</strong> directories that have some sort of <code class="docutils literal notranslate"><span class="pre">main.do</span></code>.</p>
-<section id="id2">
-<h4>Example<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<section id="id3">
+<h4>Example<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>A Master .do file is in the main directory, and you have placed <code class="docutils literal notranslate"><span class="pre">config.do</span></code> in the main directory. The package <code class="docutils literal notranslate"><span class="pre">estout</span></code> and <code class="docutils literal notranslate"><span class="pre">ivreg2</span></code> need to be installed:</p></li>
 </ul>
@@ -730,17 +741,17 @@ Windows</label><div class="sd-tab-content docutils">
 <div><p><strong>[ACTION]</strong> <strong>Right click</strong> on the master .do file and select the option <code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">(do)</span></code>.</p>
 </div></blockquote>
 <p><img alt="execute do" src="_images/execute-do.png" /></p>
-<p>This option will set the working directory  to the location where the <code class="docutils literal notranslate"><span class="pre">master.do</span></code> is. It opens Stata and will show the processes in the Stata window.</p>
+<p>This option will set the working directory  to the location where the <code class="docutils literal notranslate"><span class="pre">master.do</span></code> is. It opens R and will show the processes in the R window.</p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
 Mac/Linux</label><div class="sd-tab-content docutils">
-<p>On Unix-style systems, the preferred way is to use the command line to run Stata code.</p>
+<p>On Unix-style systems, the preferred way is to use the command line to run R code.</p>
 <blockquote>
-<div><p>Mac-specific one-time setup: Open Stata on your Mac, go to the “Stata” tab at the top of your screen and click “<code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">Terminal</span> <span class="pre">Utility…</span></code>”</p>
+<div><p>Mac-specific one-time setup: Open R on your Mac, go to the “R” tab at the top of your screen and click “<code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">Terminal</span> <span class="pre">Utility…</span></code>”</p>
 </div></blockquote>
 <p>Open up a terminal in the folder where the <code class="docutils literal notranslate"><span class="pre">master.do</span></code> file is located - this may differ depending on your system, and may involve using “<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/code</span></code>” commands. Confirm with “<code class="docutils literal notranslate"><span class="pre">ls</span></code>” that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.</p>
-<p>Identify which Stata version you have installed (some systems have only one, some have multiple):</p>
+<p>Identify which R version you have installed (some systems have only one, some have multiple):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">which</span> <span class="n">stata</span>
 <span class="n">which</span> <span class="n">stata</span><span class="o">-</span><span class="n">se</span>
 <span class="n">which</span> <span class="n">stata</span><span class="o">-</span><span class="n">mp</span>
@@ -753,7 +764,7 @@ Mac/Linux</label><div class="sd-tab-content docutils">
 <section id="checking-for-a-complete-run-debugging-and-running-the-master-in-pieces">
 <h3>Checking for a complete run, debugging and running the master in pieces<a class="headerlink" href="#checking-for-a-complete-run-debugging-and-running-the-master-in-pieces" title="Permalink to this heading">#</a></h3>
 <p>After running the code, the log files will need to be checked for a complete run. <strong>Use Visual Studio Code to open and inspect log files</strong>. Any bugs that prevents a complete run will also show up in the log files.</p>
-<p>If a you find a bug that is simple enough to fix, you can make changes to the do files. Then,  you can right click on the master file and select <code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">(do)</span></code> as this option will open Stata, allowing to run the code interactively.</p>
+<p>If a you find a bug that is simple enough to fix, you can make changes to the do files. Then,  you can right click on the master file and select <code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">(do)</span></code> as this option will open R, allowing to run the code interactively.</p>
 <p>If you decide the code needs to be run in pieces (this is NOT ideal)</p>
 <ul class="simple">
 <li><p>In the master .do file, you can comment out (using the symbol *) the programs that are not to be run and save the master.</p></li>
@@ -795,24 +806,6 @@ Mac/Linux</label><div class="sd-tab-content docutils">
                 <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="96-01-using-config-stata.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Using config.do in STATA</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="96-03-stata-scan-packages.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Using scan_packages.do</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -828,6 +821,7 @@ Mac/Linux</label><div class="sd-tab-content docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-log-files">Why do we need log files?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-check-for-a-master-do-file">Step 1: check for a “master” .do file</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-a-master-do-file-is-provided">When a master .do file is provided</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-a-master-do-file-is-not-provided">When a master .do file is not provided</a></li>
@@ -841,12 +835,12 @@ Mac/Linux</label><div class="sd-tab-content docutils">
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-check-the-location-of-the-master-do-file-and-modify-config-do">Step 5: Check the location of the master .do file and modify config.do</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-a">Scenario A</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-b">Scenario B</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-c">Scenario C</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Example</a></li>
 </ul>
 </li>
 </ul>
