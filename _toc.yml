@@ -76,8 +76,8 @@ parts:
       - file: 96-03-stata-scan-packages
     - file: 96-10-using-R
       sections:
-      - file: 96-11-using-config-R
-      - file: 96-12-running-R-code
+      - file: 96-11-using-config-r
+      - file: 96-12-running-r-code
     - file: 96-20-using-matlab
     - file: 97-00-authentication
       sections:
