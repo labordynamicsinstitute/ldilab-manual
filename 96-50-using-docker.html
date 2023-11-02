@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Connecting to remote Windows servers &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Docker-related procedures &#8212; Training Manual For Reproducibility Verification</title>
   
   
   
@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '95-10-windows-remote';</script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/95-10-windows-remote.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '96-50-using-docker';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-50-using-docker.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Connecting to remote Linux servers" href="95-15-linux-remote.html" />
-    <link rel="prev" title="Access to Computers" href="95_Access_to_computers.html" />
+    <link rel="next" title="Authentication-related issues" href="97-00-authentication.html" />
+    <link rel="prev" title="MATLAB-related procedures" href="96-20-using-matlab.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -229,8 +229,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="94-04-Updating_Materials.html">Updating Replication Materials after Revisions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="95_Access_to_computers.html">Access to Computers</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Connecting to remote Windows servers</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="95_Access_to_computers.html">Access to Computers</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="95-10-windows-remote.html">Connecting to remote Windows servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-15-linux-remote.html">Connecting to remote Linux servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-20-codeocean.html">Reproducibility Checks in Codeocean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-30-wholetale.html">Conducting reproducibility checks on WholeTale</a></li>
@@ -251,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="96-20-using-matlab.html">MATLAB-related procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="96-50-using-docker.html">Docker-related procedures</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Docker-related procedures</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="97-00-authentication.html">Authentication-related issues</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="97-01-Bitbucket-authentication.html">Bitbucket Authentication</a></li>
 </ul>
@@ -339,7 +339,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/95-10-windows-remote.md" target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-50-using-docker.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -356,7 +356,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F95-10-windows-remote.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-50-using-docker.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +386,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/95-10-windows-remote.md" target="_blank"
+      <li><a href="_sources/96-50-using-docker.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -455,7 +455,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -466,11 +468,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Connecting to remote Windows servers</h1>
+    <h1>Docker-related procedures</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist">Checklist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-code">Run the code</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -480,128 +491,47 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="connecting-to-remote-windows-servers">
-<span id="windows-remote"></span><h1>Connecting to remote Windows servers<a class="headerlink" href="#connecting-to-remote-windows-servers" title="Permalink to this heading">#</a></h1>
-<p>We have access to two sets of remote desktop Windows servers:</p>
-<ul class="simple">
-<li><p>CCSS-RS (classic)</p></li>
-<li><p>Cloud CCSS (beta)</p></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="docker-related-procedures">
+<span id="id1"></span><h1>Docker-related procedures<a class="headerlink" href="#docker-related-procedures" title="Permalink to this heading">#</a></h1>
+<p>In this section, we will show you a few things related specifically to running code reproducibly with Docker. For more general debugging tips for Docker and other computer languages, see <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Docker-Tips">our wiki</a>.</p>
+<p>(coming soon)</p>
+<section id="checklist">
+<h2>Checklist<a class="headerlink" href="#checklist" title="Permalink to this heading">#</a></h2>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> If running licensed software (e.g. MATLAB, Stata), know where the license is stored. If you do not, you cannot run the relevant Docker image.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Docker (or equivalent) is installed</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> The replication package’s main directory will be mounted into the Docker container. The precise location will depend on the Docker image. Know where it is.</p></li>
 </ul>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
-Cloud CCSS</label><div class="sd-tab-content docutils">
-<p>This is still preliminary, so check back often.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://cornellprod-my.sharepoint.com/:f:/g/personal/cd642_cornell_edu/EvxDKmDjZyZBsrQvimUR8xABE4x6TYDenmLOY8ZFMLRjUw">Instructions</a></p></li>
-</ul>
-<p>Please be sure to follow all instructions, in particular the ones about mapping network drives.</p>
-<p>You can connect to CCSS Cloud Computing via a <strong>web browser</strong> or via the a Remote Desktop (RDP) client. Note that for some strange reason, Windows users need to use a DIFFERENT RDP client than the one that comes with their system (and used for CCSS classic). See the <a class="reference external" href="https://cornellprod-my.sharepoint.com/:f:/g/personal/cd642_cornell_edu/EvxDKmDjZyZBsrQvimUR8xABE4x6TYDenmLOY8ZFMLRjUw">instructions provided by CCSS</a>. Web browser instructions are below, for convenience.</p>
-<ul class="simple">
-<li><p>Open the latest version of a web browser (Chrome, Safari, Firefox or Edge). · Go to following link: <a class="reference external" href="https://client.wvd.microsoft.com/arm/webclient/">https://client.wvd.microsoft.com/arm/webclient/</a> (V1) or the newer one <a class="reference external" href="https://client.wvd.microsoft.com/arm/webclient/v2/index.html">https://client.wvd.microsoft.com/arm/webclient/v2/index.html</a> (V2)</p></li>
-<li><p>Sign into Microsoft with your regular Cornell University email and password.</p>
-<ul>
-<li><p>Cornell email address. Ex: <a class="reference external" href="mailto:jrg363&#37;&#52;&#48;cornell&#46;edu">jrg363<span>&#64;</span>cornell<span>&#46;</span>edu</a></p></li>
-<li><p>Cornell email password. Ex: Cornell password</p></li>
-</ul>
-</li>
-<li><p>Click on “Research Servers”, and on the pop-up, click on Allow to proceed.</p></li>
-<li><p>Sign in (again) with your regular Cornell University email and password.</p>
-<ul>
-<li><p>Username: Cornell email address. Ex: <a class="reference external" href="mailto:jrg363&#37;&#52;&#48;cornell&#46;edu">jrg363<span>&#64;</span>cornell<span>&#46;</span>edu</a></p></li>
-<li><p>Password: Cornell email password. Ex: Cornell password</p></li>
-</ul>
-</li>
-</ul>
-<p><strong>Mapping Network Drives</strong></p>
-<ul class="simple">
-<li><p>You should map the following network drive, following the <strong>instructions</strong> linked above (see the document “<strong>3. Cloud Storage</strong>”)</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">\\ccssilr.file.core.windows.net\lv39</span></code> to drive letter <code class="docutils literal notranslate"><span class="pre">L:</span></code> (you can call it “LDILab Drive”)</p></li>
-<li><p>We will be using that drive letter often (including to replace the <code class="docutils literal notranslate"><span class="pre">S:</span></code> drive from the CCSS classic nodes).</p></li>
-</ul>
-</li>
-<li><p>When instructed, you may also need to map the old S-drive:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">\\rschfs2x.ciserrsch.cornell.edu\share\LDIlab</span></code></p></li>
-<li><p>Select “Connect using different credentials”</p>
-<ul>
-<li><p>CISER username: <code class="docutils literal notranslate"><span class="pre">ciserrsch\[netID]_RS</span></code> (where <code class="docutils literal notranslate"><span class="pre">[netid]</span></code> is replaced by… your NetID!)</p></li>
-<li><p>Check the box “Reconnect at login”</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>Signing out or disconnecting</strong></p>
-<ul class="simple">
-<li><p>If you have set a replication package’s code to run, <strong>do not sign out/ log off</strong> - disconnect.</p></li>
-<li><p>If you are done for a few days, and have nothing running, then <strong>sign out</strong>.</p></li>
-</ul>
-<p><strong>Disconnecting</strong></p>
-<p>Close the browser tab, or close the application by the usual methods. This will leave your code running!</p>
+Windows</label><div class="sd-tab-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Docker does not run on CCSS Cloud! These instructions may work on a personal laptop.</p>
+</div>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
-CCSS-RS classic</label><div class="sd-tab-content docutils">
-<p>Follow instructions at <a class="reference external" href="https://socialsciences.cornell.edu/research-support/login-instructions">CCSS-RS</a>. Be sure to select the tab that corresponds to your <strong>laptop’s</strong> operating system!</p>
-<p><strong>Disconnecting</strong></p>
-<ul class="simple">
-<li><p>If you have set a replication package’s code to run, <strong>do not sign out/ log off</strong> - disconnect.</p></li>
-<li><p>If you are done for a few days, and have nothing running, then <strong>sign out</strong>.</p></li>
-</ul>
+Mac/generic Linux</label><div class="sd-tab-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mac-specific: In addition to the default Docker client, <a class="reference external" href="https://orbstack.dev/">OrbStack</a> can be used for personal use. We have found it to have less of a computational burden.</p>
 </div>
 </div>
-<p><strong>Signing out</strong></p>
-<p>It is important to sign out when you do NOT have jobs running. However, when you no longer have a job running, it saves everybody resoures. Your data will still be accessible when you sign back on.</p>
-<p><em>Manually</em></p>
-<ul class="simple">
-<li><p>Open Start Menu</p></li>
-<li><p>Click on the Profile icon of your name on the left.</p></li>
-<li><p>Select ‘Sign out’</p></li>
-</ul>
-<p><img alt="Signout" src="_images/windows11-signout.png" /></p>
-<p><em>Automatically</em></p>
-<p>To configure your job to sign out automatically at the end, these are the instructions <a class="reference external" href="https://socialsciences.cornell.edu/computing-and-data/cloud-computing-solutions/account-instructions?toptab=session_tips&amp;contenttab=auto_sign_out_after_code_completes">provided by CCSS</a>:</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-2">
-Stata</label><div class="sd-tab-content docutils">
-<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">*Use the code below at the bottom of the Stata &quot;main&quot; or &quot;master&quot; script to automatically sign out </span>
-
-<span class="k">shell</span> shutdown <span class="o">-</span>l 
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-3">
-R</label><div class="sd-tab-content docutils">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add to end of main or last script.</span>
-<span class="nf">system</span><span class="p">(</span><span class="s">&quot;shutdown  -l&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-4">
-Matlab</label><div class="sd-tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">Use</span> <span class="n">code</span> <span class="n">below</span> <span class="n">at</span> <span class="n">end</span> <span class="n">of</span> <span class="n">MATLAB</span> <span class="n">main</span> <span class="n">script</span><span class="p">,</span> <span class="ow">or</span> <span class="n">last</span> <span class="n">script</span><span class="p">,</span> <span class="n">to</span> <span class="n">automatically</span> <span class="n">sign</span> <span class="n">out</span>
-
-<span class="n">system</span><span class="p">(</span><span class="s2">&quot;shutdown -l&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-5">
-Python</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">Use</span> <span class="n">code</span> <span class="n">below</span> <span class="n">at</span> <span class="n">bottom</span> <span class="n">of</span> <span class="n">Python</span><span class="o">/</span><span class="n">Anaconda</span> <span class="n">script</span> <span class="n">to</span> <span class="n">automatically</span> <span class="n">sign</span> <span class="n">out</span>
-
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;shutdown -l&quot;</span><span class="p">)</span>
-</pre></div>
+BioHPC</label><div class="sd-tab-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>BioHPC procedures differ somewhat. Wherever it says <code class="docutils literal notranslate"><span class="pre">docker</span></code>, <code class="docutils literal notranslate"><span class="pre">docker1</span></code> must be replaced. Read the <a class="reference external" href="https://biohpc.cornell.edu/lab/userguide.aspx?a=software&amp;i=340#c">Quickstart</a> for other things. Where relevant, we will point out differences below.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="run-the-code">
+<h2>Run the code<a class="headerlink" href="#run-the-code" title="Permalink to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -633,20 +563,20 @@ Python</label><div class="sd-tab-content docutils">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="95_Access_to_computers.html"
+       href="96-20-using-matlab.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Access to Computers</p>
+        <p class="prev-next-title">MATLAB-related procedures</p>
       </div>
     </a>
     <a class="right-next"
-       href="95-15-linux-remote.html"
+       href="97-00-authentication.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Connecting to remote Linux servers</p>
+        <p class="prev-next-title">Authentication-related issues</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -656,6 +586,21 @@ Python</label><div class="sd-tab-content docutils">
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist">Checklist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-code">Run the code</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
