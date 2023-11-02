@@ -547,13 +547,15 @@ document.write(`
 <li><p>Check the “Summary” (at the top), as well as the “Reason for incomplete reproducibility” (at the bottom, and in the Jira issue)</p></li>
 </ul>
 </li>
-<li><p>Verify the changes.</p></li>
-<li><p>For each change, you should make a note of what problem was addressed. For instance, if the “Reason for incomplete reproducibiliy” notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box “Bugs in code”</p>
-<ul>
-<li><p>You can find the “Reasons for incomplete reproducibility” in the “<a class="reference external" href="http://Repl.info">Repl.info</a>” tab in the Jira ticket, or in the popup when moving from <code class="docutils literal notranslate"><span class="pre">Assess</span> <span class="pre">openICPSR</span> <span class="pre">changes</span></code> to <code class="docutils literal notranslate"><span class="pre">Pending</span> <span class="pre">publication</span></code> at the end of this process.</p></li>
+<li><p>Copy all the items in <code class="docutils literal notranslate"><span class="pre">Action</span> <span class="pre">Items</span> <span class="pre">(open</span> <span class="pre">ICPSR)</span></code> (disregard the manuscript section since we can’t check that at this point)</p></li>
+<li><p>Paste the Action Items into the Comments section of Jira.</p></li>
+<li><p>Go through each item and verify the changes by marking ‘Done’ or ‘Incomplete’ next to each item. Refer to the summary or the action item for more detail as to why this item was considered incomplete. Add any relevant details. For example:</p></li>
 </ul>
-</li>
-<li><p>If you have verified that all the required changes have been made, move forward with the acceptance process, by moving the issue to <code class="docutils literal notranslate"><span class="pre">Pending</span> <span class="pre">publication</span></code> (see <span class="xref myst"><strong>Chapter 13.5.2</strong></span>).</p>
+<p><em>[REQUIRED] As specified in the Policy and the DCAF, the README shall follow the schema provided by the Social Science Data Editors’template README. <strong>Incomplete</strong>- They added computational requirements but are missing Statement About Rights</em></p>
+<ul class="simple">
+<li><p>For each change, you should make a note of what problem was addressed. For instance, if the “Reason for incomplete reproducibility” notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box “Bugs in code”</p></li>
+<li><p>You can find the “Reasons for incomplete reproducibility” in the “Repl. info” tab in the Jira ticket, or in the popup when moving from <code class="docutils literal notranslate"><span class="pre">Assess</span> <span class="pre">openICPSR</span> <span class="pre">changes</span></code> to <code class="docutils literal notranslate"><span class="pre">Pending</span> <span class="pre">publication</span></code> at the end of this process.</p></li>
+<li><p><strong>If you have verified that all the required changes have been made</strong>, continue with the “For Accept” section of the <a class="reference external" href="https://labordynamicsinstitute.github.io/ldilab-manual/30-jira-prepare-publication.html#for-accept">Interfacing with the Journal Management System</a> chapter</p>
 <ul>
 <li><p>You have another opportunity to uncheck any boxes here that have been addressed.</p></li>
 <li><p>Check under “Other links” if “Non-compliant”  = yes, if so, <strong>do not proceed</strong> until you find clarification</p></li>
@@ -567,9 +569,33 @@ document.write(`
 </section>
 <section id="insufficient-changes">
 <h3>Insufficient Changes<a class="headerlink" href="#insufficient-changes" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the Data Editor with a comment on the Jira ticket outlining your question.</p></li>
+<ul>
+<li><p>If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the assistant to the Data Editor with a comment on the Jira ticket outlining your question.</p></li>
 <li><p>These cases are not always cut and dry, please err on the side of caution and ask questions before posting a “final acceptance” message on the deposit.</p></li>
+<li><p><strong>If you are certain that items are incomplete</strong> and theres 3 or less action items remaining:</p>
+<ul class="simple">
+<li><p>Go back into openICPSR and “Change status” -&gt; “Request Revisions”. Then input the message:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Thank</span> <span class="n">your</span> <span class="k">for</span> <span class="n">your</span> <span class="n">revisions</span><span class="o">.</span> <span class="n">The</span> <span class="n">remaining</span> <span class="n">action</span> <span class="n">items</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">addressed</span><span class="p">:</span>
+
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Then paste only the incomplete action items (along with the reason we consider this incomplete).</p></li>
+</ul>
+</li>
+<li><p><strong>If you are certain that items are incomplete</strong> and theres more than 3 action items remaining:</p>
+<ul class="simple">
+<li><p>Go back into openICPSR and “Change status” -&gt; “Request Revisions”. Then input the message:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">Thank</span> <span class="n">your</span> <span class="k">for</span> <span class="n">your</span> <span class="n">revisions</span><span class="o">.</span> <span class="n">The</span> <span class="n">remaining</span> <span class="n">action</span> <span class="n">items</span> <span class="n">are</span> <span class="n">detailed</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Communication</span> <span class="n">Log</span>
+
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Paste the action items in the Communication Log with the Title “Revisions Requested (AEAREP-xxx)” so that it’s easier for the author to read the list.</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="summary-of-steps">

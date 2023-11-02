@@ -12,9 +12,13 @@ In the JMS, the Data Editor is set up as a reviewer who can be assigned during t
 ```{note}
 
 **Permissions**
+You will also need to set up a LastPass account through Cornell (more info here: ) 
+
+Then you'll need to install the web browser extension for whichever browser you use (Chrome, Firefox, etc).
 
 
-- submitters needs password to ScholarOne (Lars shares via LastPass)
+- submitters needs password to ScholarOne (Lars shares via [LastPass](https://it.cornell.edu/faculty-password-mgmt-staff-students/sign-cornell-lastpass-account))
+   - Then you'll need to install the web browser extension for whichever browser you use ([Chrome](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/), etc).
 - submitters need permissions on openICPSR (Lars requests from openICPSR)
 - submitters need `Publisher` permission on Jira (can be set in Project -> Settings -> People in Jira)
 
