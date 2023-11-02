@@ -243,11 +243,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="96-03-stata-scan-packages.html">Using scan_packages.do</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="97-00-authentication.html">Authentication-related issues</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-10-using-R.html">R-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="96-20-using-matlab.html">MATLAB-related procedures</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="97-00-authentication.html">Authentication-related issues</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="97-01-Bitbucket-authentication.html">Bitbucket Authentication</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="98-00-sundry-correspondence.html">Various templates for correspondence by AEA Data Editor team members</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="98-00-sundry-correspondence.html">Various templates for correspondence by AEA Data Editor team members</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="98-01-correspondence-legacy-updates.html">Preparing a Legacy Deposit for Updates by Authors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="98-02-correspondence-ipums-beta-request.html">IPUMS Beta API request</a></li>
 <li class="toctree-l2"><a class="reference internal" href="98-03-correspondence-requesting-restricted-access-data.html">Requesting Restricted-Access Data from Authors</a></li>
@@ -474,14 +478,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-drive-l-drive">S-drive, L-drive</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-paths-for-log-files-libraries-and-other-things">Directory paths for log files, libraries, and other things</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-a-log-file-with-current-date-and-time">Opening a log file with current date and time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-directory">Base directory.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation-source">Package installation source</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information">System information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation">Package installation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-r">How to use config.R</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-the-config-file">Rename the config file.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-r">Include config.R</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-r-or-create-main-r">Include config.R or create main.R</a></li>
 </ul>
 </li>
 </ul>
@@ -547,68 +551,93 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span><span class="o">.</span><span class="n">paths</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;logs&quot;</span><span class="p">,</span><span class="s2">&quot;libraries&quot;</span><span class="p">,</span><span class="s2">&quot;outputs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">config.R</span></code> wird</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">config.R</span></code> will create these directories if they do not exist, later on.</p>
 </section>
-<section id="opening-a-log-file-with-current-date-and-time">
-<h3>Opening a log file with current date and time<a class="headerlink" href="#opening-a-log-file-with-current-date-and-time" title="Permalink to this heading">#</a></h3>
-<p>Since we usually run the program several times until the code is completely debugged (!), we would like to record all the runs. Therefore, we record the initial time we start running the code and use it in the name of the log file. Area 2 calls current date and time as local macro and opens the log file.</p>
+<section id="base-directory">
+<h3>Base directory.<a class="headerlink" href="#base-directory" title="Permalink to this heading">#</a></h3>
+<p>The base directory (or here, <code class="docutils literal notranslate"><span class="pre">rootdir</span></code>) is the directory that contains the replication package, as intended by the author. How do you figure that out?</p>
+<p><strong>Example 1:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aearep</span><span class="o">-</span><span class="mi">9999</span><span class="o">/</span>
+    <span class="mi">123456</span><span class="o">/</span>
+        <span class="n">Replication</span><span class="o">-</span><span class="n">package</span><span class="o">/</span>
+            <span class="n">code</span><span class="o">/</span>
+            <span class="n">data</span><span class="o">/</span>
+            <span class="n">README</span><span class="o">.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+<p>In this case, the base directory is <code class="docutils literal notranslate"><span class="pre">aearep-9999/123456/Replication-package/</span></code>.</p>
+<p><strong>Example 2:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aearep</span><span class="o">-</span><span class="mi">9999</span><span class="o">/</span>
+    <span class="mi">123456</span><span class="o">/</span>
+        <span class="n">code</span><span class="o">/</span>
+        <span class="n">data</span><span class="o">/</span>
+        <span class="n">README</span><span class="o">.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+<p>In this case, the base directory is <code class="docutils literal notranslate"><span class="pre">aearep-9999/123456/</span></code>.</p>
+<p>You do not actually need to hard-code this in the <code class="docutils literal notranslate"><span class="pre">config.R</span></code> file. We will use a package called <code class="docutils literal notranslate"><span class="pre">here</span></code>, which can detect this automatically, <strong>if</strong> some files are present:</p>
 <ul class="simple">
-<li><p>line 64-67: calls the current date and time as local macro</p></li>
-<li><p>line 69: starts the log file, with an internal name <code class="docutils literal notranslate"><span class="pre">ldi</span></code> which prevents collision with any log files opened by authors.</p></li>
+<li><p>The author has a <code class="docutils literal notranslate"><span class="pre">rproj</span></code>  file - it will take that as the base directory.</p></li>
+<li><p>The (hidden) file <code class="docutils literal notranslate"><span class="pre">.here</span></code> is present - it will take the directory that contains that as the base directory.</p></li>
 </ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">here</span></code> package will get confused by the presence of <strong>our</strong> git setup, so if the two above files are not present, we need to manually create the latter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="m">123456</span>/Replication-package
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="m">123456</span>
+</pre></div>
+</div>
+<p>and then</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>.here
+git<span class="w"> </span>add<span class="w"> </span>.here
+</pre></div>
+</div>
+<p>depending on the case. Now R will set the root directory correctly.</p>
+<p>If for some reason that does not work, simply override the automatic detection, by setting the <code class="docutils literal notranslate"><span class="pre">rootdir</span></code> manually:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rootdir</span> <span class="o">&lt;-</span> <span class="s2">&quot;C:/user/Workspace/aearep-9999/123456/Replication-package&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="package-installation-source">
+<h3>Package installation source<a class="headerlink" href="#package-installation-source" title="Permalink to this heading">#</a></h3>
+<p>As mentioned earlier, there are multiple sources for the R libraries. We generally use the Posit Package Manager (PPM), which provides a snapshot functionality. We pick a date that is close to the date you run this, check whether it is a weekday (because for some reason, PPM does not take snaphshots on weekends), and then configure R to look there for packages. This is both faster and more reliable - mostly. It can sometimes fail.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">posit</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;-</span> <span class="n">Sys</span><span class="o">.</span><span class="n">Date</span><span class="p">()</span> <span class="o">-</span> <span class="mi">31</span>
+<span class="c1"># posit.date &lt;- &quot;2020-01-01&quot; # uncomment and set manually if the above does not work</span>
+</pre></div>
+</div>
+<p>If you have to re-run this multiple times, and add on packages, this might get out of sync with the first time you ran it, so you might adjust the <code class="docutils literal notranslate"><span class="pre">posit.data</span></code> manually.</p>
 </section>
 <section id="system-information">
 <h3>System information<a class="headerlink" href="#system-information" title="Permalink to this heading">#</a></h3>
-<p>We require system information as part of the replication package. This is because some commands are sensitive to the OS, STATA version, machine type, etc. Area 3 calls in that information from the system and displays in the log file.</p>
-</section>
-<section id="package-installation">
-<h3>Package installation<a class="headerlink" href="#package-installation" title="Permalink to this heading">#</a></h3>
-<p>As explained above, we often need to install packages. Even when the packages were installed in previous cases, it should be irrelevant to your current case, since we install those packages within our deposit directory so that we can verify the completeness of the replication packages. Area 4 does this job.</p>
-<ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">sysdir</span></code> commands (in line 89-91) redirects Stata to search for, and install ado files in the directories referenced. It won’t automatically install them.</p>
-<ul>
-<li><p>In case where the authors provided the ado files, adding a new command to the end of the config.R would suffice. For instance, if the authors have provided ado files in the directory <code class="docutils literal notranslate"><span class="pre">packages</span></code>, then</p></li>
-</ul>
-</li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adopath</span> <span class="o">++</span> <span class="s2">&quot;$</span><span class="si">{rootdir}</span><span class="s2">/packages&quot;</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Add list of packages in the quotation marks in <strong>line 37</strong></p>
-<ul>
-<li><p>line 39 provides an example.</p></li>
-<li><p>line 97-106 installs each package if there are packages listed and these packages do not already exist.</p></li>
-</ul>
-</li>
-<li><p>In some cases, the installation would fail since you have to use “<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install..</span></code>” instead of “<code class="docutils literal notranslate"><span class="pre">ssc</span> <span class="pre">install</span></code>”. In this case, write such <code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install</span></code>  commands after line 112, an example is given in line 111.</p></li>
-</ul>
+<p>We require system information as part of the replication package. This is because some commands are sensitive to the OS, R version, machine type, etc. We use the <code class="docutils literal notranslate"><span class="pre">sessionInfo()</span></code> command to get this information.</p>
 </section>
 </section>
 <section id="how-to-use-config-r">
 <h2>How to use config.R<a class="headerlink" href="#how-to-use-config-r" title="Permalink to this heading">#</a></h2>
 <section id="rename-the-config-file">
 <h3>Rename the config file.<a class="headerlink" href="#rename-the-config-file" title="Permalink to this heading">#</a></h3>
-<p>The template is called <code class="docutils literal notranslate"><span class="pre">template-config.R</span></code>. In order to use it, rename it to <code class="docutils literal notranslate"><span class="pre">config.R</span></code> and move it into the openICPSR folder (e.g. , <code class="docutils literal notranslate"><span class="pre">111111</span></code>).</p>
+<p>The template is called <code class="docutils literal notranslate"><span class="pre">template-config.R</span></code>. In order to use it, rename it to <code class="docutils literal notranslate"><span class="pre">config.R</span></code> and move it into the right folder. If there is a <strong>main</strong> file created by the author, put it next to that. If there is NOT a <strong>main</strong> file, put it into the folder that the author says to run the code from.</p>
+<blockquote>
+<div><p><strong>[ACTION]</strong> Check the README or the repository and determine if a master .do file was provided.</p>
+</div></blockquote>
 </section>
-<section id="include-config-r">
-<h3>Include config.R<a class="headerlink" href="#include-config-r" title="Permalink to this heading">#</a></h3>
+<section id="include-config-r-or-create-main-r">
+<h3>Include config.R or create main.R<a class="headerlink" href="#include-config-r-or-create-main-r" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>If there is a master dofile, you should put the following line at the beginning of the <code class="docutils literal notranslate"><span class="pre">master.do</span></code>:</p></li>
+<li><p>If there is a main file (say <code class="docutils literal notranslate"><span class="pre">main.R</span></code>), you should put the following line at the beginning of the <code class="docutils literal notranslate"><span class="pre">main.R</span></code>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="n">config</span><span class="o">.</span><span class="n">R</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span><span class="p">(</span><span class="s2">&quot;config.R&quot;</span><span class="p">,</span> <span class="n">echo</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>and the end of the <code class="docutils literal notranslate"><span class="pre">master.do</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">log</span> <span class="n">close</span> <span class="n">_all</span>
+<ul class="simple">
+<li><p>If there is no main file, rename <code class="docutils literal notranslate"><span class="pre">config.R</span></code> to <code class="docutils literal notranslate"><span class="pre">main.R</span></code>, and add the authors’ code files to the end:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span><span class="p">(</span><span class="s2">&quot;01_data.R&quot;</span><span class="p">,</span> <span class="n">echo</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
+<span class="n">source</span><span class="p">(</span><span class="s2">&quot;02_analysis.R&quot;</span><span class="p">,</span> <span class="n">echo</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
+<span class="n">source</span><span class="p">(</span><span class="s2">&quot;03_figures.R&quot;</span><span class="p">,</span> <span class="n">echo</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Do NOT include it in the individual code files.</p>
-<ul class="simple">
-<li><p>If there is no master dofile, you should try to create one (see <a class="reference internal" href="96-12-running-r-code.html#create-master"><span class="std std-ref">how in the next section</span></a>), starting with the lines above, and ending with the <code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">close</span></code> command.</p></li>
-<li><p>If creating a master dofile is not possible, add the  lines at the beginning and the end, respectively, of <strong>each</strong> code file.</p></li>
-<li><p>There will be cases where authors create their own log files. Do NOT comment out the log file creation here, as the named logfile will not conflict with any author-generated files.</p></li>
-</ul>
 </section>
 </section>
 </section>
@@ -661,14 +690,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-drive-l-drive">S-drive, L-drive</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-paths-for-log-files-libraries-and-other-things">Directory paths for log files, libraries, and other things</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-a-log-file-with-current-date-and-time">Opening a log file with current date and time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-directory">Base directory.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation-source">Package installation source</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information">System information</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation">Package installation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-r">How to use config.R</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-the-config-file">Rename the config file.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-r">Include config.R</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-r-or-create-main-r">Include config.R or create main.R</a></li>
 </ul>
 </li>
 </ul>

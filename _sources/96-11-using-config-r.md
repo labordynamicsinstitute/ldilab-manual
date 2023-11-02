@@ -59,61 +59,111 @@ For instance, if the authors state that output should be written to "outputs", y
 create.paths <- c("logs","libraries","outputs")
 ```
 
-The `config.R` wird 
+The `config.R` will create these directories if they do not exist, later on.
 
-### Opening a log file with current date and time
+### Base directory.
 
-Since we usually run the program several times until the code is completely debugged (!), we would like to record all the runs. Therefore, we record the initial time we start running the code and use it in the name of the log file. Area 2 calls current date and time as local macro and opens the log file.
+The base directory (or here, `rootdir`) is the directory that contains the replication package, as intended by the author. How do you figure that out?
 
-- line 64-67: calls the current date and time as local macro
-- line 69: starts the log file, with an internal name `ldi` which prevents collision with any log files opened by authors.
+**Example 1:**
+
+```
+aearep-9999/
+    123456/
+        Replication-package/
+            code/
+            data/
+            README.pdf
+```
+
+In this case, the base directory is `aearep-9999/123456/Replication-package/`.
+
+**Example 2:**
+
+```
+aearep-9999/
+    123456/
+        code/
+        data/
+        README.pdf
+```
+
+In this case, the base directory is `aearep-9999/123456/`.
+
+You do not actually need to hard-code this in the `config.R` file. We will use a package called `here`, which can detect this automatically, **if** some files are present:
+
+- The author has a `rproj`  file - it will take that as the base directory.
+- The (hidden) file `.here` is present - it will take the directory that contains that as the base directory.
+
+The `here` package will get confused by the presence of **our** git setup, so if the two above files are not present, we need to manually create the latter:
+
+```bash
+cd 123456/Replication-package
+```
+
+or
+
+```bash
+cd 123456
+```
+
+and then
+
+```bash
+touch .here
+git add .here
+```
+
+depending on the case. Now R will set the root directory correctly.
+
+If for some reason that does not work, simply override the automatic detection, by setting the `rootdir` manually:
+
+```
+rootdir <- "C:/user/Workspace/aearep-9999/123456/Replication-package"
+```
+
+
+
+### Package installation source
+
+As mentioned earlier, there are multiple sources for the R libraries. We generally use the Posit Package Manager (PPM), which provides a snapshot functionality. We pick a date that is close to the date you run this, check whether it is a weekday (because for some reason, PPM does not take snaphshots on weekends), and then configure R to look there for packages. This is both faster and more reliable - mostly. It can sometimes fail.
+
+```
+posit.date <- Sys.Date() - 31
+# posit.date <- "2020-01-01" # uncomment and set manually if the above does not work
+```
+
+If you have to re-run this multiple times, and add on packages, this might get out of sync with the first time you ran it, so you might adjust the `posit.data` manually. 
+
+
 
 ### System information
 
-We require system information as part of the replication package. This is because some commands are sensitive to the OS, STATA version, machine type, etc. Area 3 calls in that information from the system and displays in the log file.
-
-### Package installation
-
-As explained above, we often need to install packages. Even when the packages were installed in previous cases, it should be irrelevant to your current case, since we install those packages within our deposit directory so that we can verify the completeness of the replication packages. Area 4 does this job.
-
-- The `sysdir` commands (in line 89-91) redirects Stata to search for, and install ado files in the directories referenced. It won't automatically install them.
-    - In case where the authors provided the ado files, adding a new command to the end of the config.R would suffice. For instance, if the authors have provided ado files in the directory `packages`, then
-
-```
-adopath ++ "${rootdir}/packages"
-```
-
-- Add list of packages in the quotation marks in **line 37**
-    - line 39 provides an example.
-    - line 97-106 installs each package if there are packages listed and these packages do not already exist.
-
-- In some cases, the installation would fail since you have to use "`net install..`" instead of "`ssc install`". In this case, write such `net install`  commands after line 112, an example is given in line 111. 
+We require system information as part of the replication package. This is because some commands are sensitive to the OS, R version, machine type, etc. We use the `sessionInfo()` command to get this information. 
 
 
 ## How to use config.R
 
 ### Rename the config file.
 
-The template is called `template-config.R`. In order to use it, rename it to `config.R` and move it into the openICPSR folder (e.g. , `111111`).
+The template is called `template-config.R`. In order to use it, rename it to `config.R` and move it into the right folder. If there is a **main** file created by the author, put it next to that. If there is NOT a **main** file, put it into the folder that the author says to run the code from.
 
-### Include config.R
+> **[ACTION]** Check the README or the repository and determine if a master .do file was provided.
 
-- If there is a master dofile, you should put the following line at the beginning of the `master.do`:
+### Include config.R or create main.R
 
-
-```
-include config.R
-```
-
-and the end of the `master.do`:
+- If there is a main file (say `main.R`), you should put the following line at the beginning of the `main.R`:
 
 
 ```
-log close _all
+source("config.R", echo = TRUE)
 ```
 
-Do NOT include it in the individual code files.
+- If there is no main file, rename `config.R` to `main.R`, and add the authors' code files to the end:
 
-- If there is no master dofile, you should try to create one (see [how in the next section](create-master)), starting with the lines above, and ending with the `log close` command.
-- If creating a master dofile is not possible, add the  lines at the beginning and the end, respectively, of **each** code file.
-- There will be cases where authors create their own log files. Do NOT comment out the log file creation here, as the named logfile will not conflict with any author-generated files. 
+```
+source("01_data.R", echo = TRUE)
+source("02_analysis.R", echo = TRUE)
+source("03_figures.R", echo = TRUE)
+```
+
