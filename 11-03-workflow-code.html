@@ -621,16 +621,23 @@ document.write(`
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">BITBUCKET</span> <span class="pre">SHORT</span> <span class="pre">NAME</span></code> - if not already done earlier</p></li>
 </ul>
-<blockquote>
-<div><p>Commit!</p>
-</div></blockquote>
-<p>You can now proceed to change the status to <code class="docutils literal notranslate"><span class="pre">Data</span></code>. As you select that transition, you will be asked various questions:</p>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">Used</span></code> Start typing the name of the software program you will use for the replication. Software that have been used in the past will show up as  options (e.g. start typing “Stata” and you will see it pop up).</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">PROGRAMSEQUENCE</span></code> Does the README tell you the correct sequence for running the code?</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">PROGRAMSDOCUMENTATION</span></code> Are the provided programs well commented? Are they documented in the README?</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">PROGRAMSSTRUCTUREMANUAL</span></code> Does the README note any manual changes that you need to make to the code in order for it to run?</p></li>
-</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Commit!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span><span class="s1">&#39;Finished code section&#39;</span>
+git<span class="w"> </span>push
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+You can now proceed to change the status to `Data`. As you select that transition, you will be asked various questions:
+
+  - [ ] `Software Used` Start typing the name of the software program you will use for the replication. Software that have been used in the past will show up as  options (e.g. start typing &quot;Stata&quot; and you will see it pop up).
+  - [ ] `PROGRAMSEQUENCE` Does the README tell you the correct sequence for running the code?
+  - [ ] `PROGRAMSDOCUMENTATION` Are the provided programs well commented? Are they documented in the README?
+  - [ ] `PROGRAMSSTRUCTUREMANUAL` Does the README note any manual changes that you need to make to the code in order for it to run?
+</pre></div>
+</div>
 </section>
 </section>
 

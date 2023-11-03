@@ -90,7 +90,15 @@ Next fill out the following fields in the Jira ticket:
 
   - [ ] `BITBUCKET SHORT NAME` - if not already done earlier
 
-> Commit! 
+```{tip}
+Commit! 
+
+```bash
+git commit 'Finished code section'
+git push
+```
+
+```
 
 You can now proceed to change the status to `Data`. As you select that transition, you will be asked various questions:
 
