@@ -15,4 +15,4 @@ In practice, this quickly becomes more complicated, and requires a multitude of 
 
 At each step, additional information is requested, mostly through in-app fields and questionnaires, but also via some external tools if the Jira app did not provide the functionality. At the end, a report is created by the replicator, identifying all steps taken, which steps succeeded, and the final outcome.
 
-We will first describe the [prototypical report](#proto-report) and its elements, and then walk through the [detailed steps](#detailed-steps) of the replicator's journey through the system. In our live training, replicators will also work on examples to "get the hang of it."
+We will first describe the [prototypical report](a-guided-walk-through-the-replication-report) and its elements, and then walk through the [detailed steps](aea-jira-workflow-a-guide) of the replicator's journey through the system. In our live training, replicators will also work on examples to "get the hang of it."

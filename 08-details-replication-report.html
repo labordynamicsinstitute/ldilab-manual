@@ -504,7 +504,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-additional-materials">Some additional materials</a></li>
 </ul>
             </nav>
         </div>
@@ -556,7 +555,7 @@ document.write(`
 </section>
 <section id="what-s-in-a-replication-report">
 <h2>What’s in a replication report<a class="headerlink" href="#what-s-in-a-replication-report" title="Permalink to this heading">#</a></h2>
-<p>The template used by the Lab can be found on Github [here](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$templmd</span></code><a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>). The table of contents looks like this:</p>
+<p>The template used by the Lab can be found on Github <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md">here</a>. The table of contents looks like this:</p>
 <ul class="simple">
 <li><p>SUMMARY *</p></li>
 <li><p>Data description *</p></li>
@@ -570,7 +569,7 @@ document.write(`
 <li><p>Classification</p></li>
 </ul>
 <p>We note that those sections marked “*” can be completed before ever running any author-provided code, even when data are confidential. They lead to a preliminary report, which is a “dry” assessment of the completeness of the replication package.</p>
-<p>In most sections, when elements are missing, wrong, or do not work, we use a [standardized set of action items](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$templmd</span></code><a class="reference external" href="http://sample-language-report.md">sample-language-report.md</a>) to highlight this.</p>
+<p>In most sections, when elements are missing, wrong, or do not work, we use a <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">standardized set of action items</a> to highlight this. This is present in your default template.</p>
 <section id="summary">
 <h3>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
 <p>The SUMMARY is intended for a quick glance by journal editor and authors. It should be short and succinct, with a bulleted (unduplicated) list of action items for the authors, drawn from the rest of the report. It is the first thing editors and authors will see.</p>
@@ -578,8 +577,8 @@ document.write(`
 </section>
 <section id="data-description">
 <h3>Data description<a class="headerlink" href="#data-description" title="Permalink to this heading">#</a></h3>
-<p>The data description can require substantial time to complete. The replicator is asked to identify all <code class="docutils literal notranslate"><span class="pre">input</span></code> (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a [useful template](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$acre</span></code>assessment.html#describe-inputs), but any list will suffice here. In addition, we ask replicators to  fill out the “Data Citation and Information report”, to obtain a machine-readable list of data sources and their attributes.</p>
-<p>An essential part in writing the data descrption section is identifying the data used in the analysis. While the dataset used for the main analysis is often explained in the README or in the manuscript, the description of other datasets (e.g. datasets used in the appendix, introduction, or in a figure describing the study settings) are sometimes omitted in the provided documents.</p>
+<p>The data description can require substantial time to complete. The replicator is asked to identify all <code class="docutils literal notranslate"><span class="pre">input</span></code> (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a <a class="reference external" href="https://bitss.github.io/ACRE/assessment.html#describe-inputs">useful template</a>, and te <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#example-data">template report</a> has an example.</p>
+<p>An essential part in writing the data description section is identifying the data used in the analysis. While the dataset used for the main analysis is often explained in the README or in the manuscript, the description of other datasets (e.g. datasets used in the appendix, introduction, or in a figure describing the study settings) are sometimes omitted in the provided documents.</p>
 <p>Once the preparations above are completed, a summary should be written in the “Data Description” section.</p>
 <section id="what-data-need-to-be-described">
 <h4>What data need to be described?<a class="headerlink" href="#what-data-need-to-be-described" title="Permalink to this heading">#</a></h4>
@@ -662,9 +661,10 @@ Many of the recommended elements are not applicable to all data deposits - for i
 </ul>
 </li>
 </ul>
-<blockquote>
-<div><p>Note that we do <em>not</em> require that variable <em>values</em> are provided here, nor that a full codebook is present or linked. Ideally, these would be here as well, and in some cases, we will go back to the authors and request them, <em>if</em> we think it is reasonable to do so  - a judgement call by the Data Editor.</p>
-</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that we do <em>not</em> require that variable <em>values</em> are provided here, nor that a full codebook is present or linked. Ideally, these would be here as well, and in some cases, we will go back to the authors and request them, <em>if</em> we think it is reasonable to do so  - a judgement call by the Data Editor.</p>
+</div>
 <ul class="simple">
 <li><p>Replicators will run a simple check for personally identifiable information, if feasible, using a heuristic developed by J-PAL.^[The Stata version can be found <a class="reference external" href="https://github.com/J-PAL/stata_PII_scan">here</a>.]</p>
 <ul>
@@ -676,16 +676,16 @@ Many of the recommended elements are not applicable to all data deposits - for i
 </section>
 <section id="code-description">
 <h3>Code description<a class="headerlink" href="#code-description" title="Permalink to this heading">#</a></h3>
-<p>All deposits should have code. In line with the <span class="xref myst">basic data flow</span>, there should be both data cleaning or preparation code, as well as analysis code. The replicator will review the code (but will  not run it yet).</p>
+<p>All deposits should have code. In line with the <a class="reference internal" href="06-basic-flow.html#dataflowdiagram"><span class="std std-ref">basic data flow</span></a>, there should be both data cleaning or preparation code, as well as analysis code. The replicator will review the code (but will  not run it yet).</p>
 <ul class="simple">
 <li><p>Identify programs that create “analysis files” (“data preparation code”).</p></li>
 <li><p>Identify programs that create tables and figures.</p></li>
 </ul>
-<p>From the README, the replicator should be able to identify code to create all <strong>figures, tables, and any in-text numbers</strong>. If not listed in the README, comments in the code should enable the replicator to find this. The replicator will create a list, mapping each of figure, table, and in-text number to a particular program and line number within the program. A [template spreadsheet](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$templmd</span></code>code-check.xlsx) is provided. Note that the code description might already observe that setup programs are missing, but most missing code will be identified in the [findings][findings] section.</p>
+<p>From the README, the replicator should be able to identify code to create all <strong>figures, tables, and any in-text numbers</strong>. If not listed in the README, comments in the code should enable the replicator to find this. The replicator will create a list, mapping each of figure, table, and in-text number to a particular program and line number within the program. A <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">template spreadsheet</a> is provided. Note that the code description might already observe that setup programs are missing, but most missing code will be identified in the [findings][findings] section.</p>
 </section>
 <section id="stated-requirements">
 <h3>Stated Requirements<a class="headerlink" href="#stated-requirements" title="Permalink to this heading">#</a></h3>
-<p>The authors should have specified specific requirements in terms of software, computer hardware, runtime, add-on packages. The replicator should list them here. This is <strong>different</strong> from the Computing Environment of the Replicator. If all requirements are listed, check the box “Requirements are complete”. This section is important to assess the feasibility of the reproducibility attempt. A reproduction that requires “20,000 core compute hours”, or that “runs for weeks”, or that requires custom software that needs to be acquired, may not be feasible.</p>
+<p>The authors should have specified specific requirements in terms of software, computer hardware, runtime, add-on packages. The replicator should list them here. This is <strong>different</strong> from the <em>Computing Environment of the Replicator</em>, which you will describe later. If all requirements are listed, check the box “Requirements are complete”. This section is important to assess the feasibility of the reproducibility attempt. A reproduction that requires “20,000 core compute hours”, or that “runs for weeks”, or that requires custom software that needs to be acquired, may not be feasible.</p>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> No requirements specified</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Software Requirements specified as follows:</p>
@@ -709,22 +709,28 @@ Many of the recommended elements are not applicable to all data deposits - for i
 </section>
 <section id="missing-requirements">
 <h3>Missing Requirements<a class="headerlink" href="#missing-requirements" title="Permalink to this heading">#</a></h3>
-<p>If it turns out that some requirements were not stated or are incomplete (software, packages, operating system), the replicator should  list the <em>complete</em> list of requirements here. This is usually amended as the reproducibility attempt progresses.</p>
+<p>If it turns out that some requirements were not stated or are incomplete (software, packages, operating system), the replicator should  list the <em>complete</em> list of requirements here. Some of this maybe immediately obvious (e.g., there is no mention at all of what kind of computer you need), in others, you will need to run the programs to find out that things are missing. This is usually amended as the reproducibility attempt progresses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At this point, you <em>still</em> have not run any code, but you have collected everything needed to discuss this case with the group. This is what is called the <strong>Preliminary Report</strong>.</p>
+</div>
 </section>
 <section id="computing-environment-of-the-replicator">
 <h3>Computing Environment of the Replicator<a class="headerlink" href="#computing-environment-of-the-replicator" title="Permalink to this heading">#</a></h3>
-<p>Just as the original authors have a particular computing environment that a replicator needs to know in order to properly implement a reproducibility attempt, the replicator’s own attempt is important. This section should <em>not</em> describe the laptop the replicator uses to write the report - that is irrelevant - but should provide as complete a list of details as possible describing the computer where the computational component of the reproducibility check was conducted. S Some of these details can be found as follows:</p>
+<p>Just as the original authors have a particular computing environment that a replicator needs to know in order to properly implement a reproducibility attempt, the replicator’s own attempt is important. This section should <em>not</em> describe the laptop the replicator uses to write the report =- that is irrelevant if we use the remote resources at the Lab, unless you use the laptop to actually run code! – but should provide as complete a list of details as possible describing the computer where the computational component of the reproducibility check was conducted. Some of these details can be found as follows:</p>
 <ul class="simple">
 <li><p>(Windows) by right-clicking on “My PC”</p></li>
 <li><p>(Mac) Apple-menu &gt; “About this Mac”</p></li>
 <li><p>(Linux) see code in <code class="docutils literal notranslate"><span class="pre">tools/linux-system-info.sh</span></code></p></li>
 </ul>
-<p>Examples might include:</p>
+<p>Examples of <a class="reference internal" href="95_Access_to_computers.html#access-to-computers"><span class="std std-ref">computing environments used at the Lab</span></a> are pre-printed in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#computing-environment-of-the-replicator">template report</a>, but can be amended or augmented.</p>
 <ul class="simple">
-<li><p>Mac Laptop, MacOS 10.14.6, 8 GB of memory (but only if you ran the analysis on the Mac Laptop!)</p></li>
-<li><p>CISER Shared Windows Server 2016, 256GB, Intel Xeon E5-4669 v3 &#64; 2.10Ghz (3 processors)</p></li>
-<li><p>CISER Virtual Windows Server 2016, 16GB, Intel Haswell 2.19 Ghz (2 processors)</p></li>
-<li><p>BioHPC Linux server, Centos 7.6, 64 cores; 1024GB RAM;</p></li>
+<li><p>CCSS Cloud Windows Server AMD EPYC 7763 64-Core Processor 2.44 GHz</p></li>
+<li><p>BioHPC Linux server, Rocky Linux 9.0, AMD Opteron Processor 6380 / 16 cores/ 125 GB memory (adjust as necessary from output of <a class="reference external" href="http://linux-system-info.sh">linux-system-info.sh</a>)</p></li>
+<li><p>WholeTale (describe the environment chosen)</p></li>
+<li><p>CodeOcean (describe the type of capsule chosen) Intel(R) Xeon(R) Platinum 8259CL CPU &#64; 2.50GHz (16 cores), 128 GB Memory</p></li>
+<li><p>Bitbucket Pipelines, “Ubuntu 20.04.2 LTS”, Intel(R) Xeon(R) Platinum 8259CL CPU &#64; 2.50GHz, 8 cores, 9GB memory</p></li>
+<li><p>Codespaces, “Ubuntu 20.04.2 LTS”, Intel(R) Xeon(R) Platinum 8272CL CPU &#64; 2.60GHz, 2 core, 4GB/ 4-core, 8GB/ 8-core, 16 GB/ 16-core, 64GB (choose appropriately)</p></li>
 </ul>
 <p>The list should also list the software the replicator used, with the specific version used (even if the author did not list that information). Examples include:</p>
 <ul class="simple">
@@ -732,21 +738,22 @@ Many of the recommended elements are not applicable to all data deposits - for i
 <li><p>Matlab R2019a</p></li>
 <li><p>Intel Compiler 3.14152</p></li>
 </ul>
+<p>but always check what version you are actually using on the server you are using. For instance, as of Oct 2023, the version of Stata installed on CCSS Cloud is Stata 18, but on BioHPC, the standard version is still Stata 16.</p>
 </section>
 <section id="replication-steps">
 <h3>Replication steps<a class="headerlink" href="#replication-steps" title="Permalink to this heading">#</a></h3>
 <p>For every replication or reproducibility attempt, the list of steps a replicator undertakes is important to be listed. In principle, these steps should be specified in the README, but while the README contains instructions, this section should contain what you actually did. It should include details as to under what name the replicator saved a dataset downloaded from a website (if not the suggested name), or what minor edits were made to programs.</p>
 <ul class="simple">
-<li><p>DO not include trivial details (“I downloaded the code and saved on my Desktop”).</p></li>
-<li><p>DO describe actions   that you did  as per instructions (“I added a <a class="reference external" href="http://config.do">config.do</a>”)</p></li>
-<li><p>DO describe any other actions you needed to do (“I had to make changes in multiple programs”), without going into detail (the commit log can provide that information)</p></li>
+<li><p>DO NOT include trivial details (“I downloaded the code and saved on my Desktop”).</p></li>
+<li><p>DO describe actions   that you did  as per instructions here (“I added a <a class="reference external" href="http://config.do">config.do</a>”) or as per the authors’ README (“Ran <a class="reference external" href="http://main.do">main.do</a> as per the README”)</p></li>
+<li><p>DO describe any other actions you needed to do (“I had to make changes in multiple programs”). It is often helpful to provide additional detail, such as an excerpt of the error message, and the fix applied, allowing the author to read the report and fix the issues. Remember that the author will not have access to our Bitbucket repository, nor to the log files that might contain the errors.</p></li>
 </ul>
 <p>The description should allow the Data Editor and the authors to understand that everything was done as instructed. Deviations need to be described with enough detail that somebody else can reproduce the deviation!</p>
 <p><img alt="Steps with errors" src="_images/report-steps-error.png" /></p>
 </section>
 <section id="findings">
 <h3>Findings<a class="headerlink" href="#findings" title="Permalink to this heading">#</a></h3>
-<p>Once everything is put in place, the replicator can report on findings, both positive and negative. This should include enough detail to allow a reader - a Data Editor and the authors - to understand what went wrong when something went wrong. For each <strong>Data Preparation Code, Figure, Table, and any in-text numbers</strong>, the section should provide information on success or failure to reproduce (the previously filled out [code-check.xlsx](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$templmd</span></code>code-check.xlsx) can be re-used to drive the list). When errors happen, the replicator’s description should be as precise as possible. For differences in figures, the replicator should provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran, with differences highlighted. For differences in numbers (in tables or in-text), the replicator should list both the number as reported in the manuscript, as well as the number replicated.</p>
+<p>Once everything is put in place, the replicator can report on findings, both positive and negative. This should include enough detail to allow a reader - a Data Editor and the authors - to understand what went wrong when something went wrong. For each <strong>Data Preparation Code, Figure, Table, and any in-text numbers</strong>, the section should provide information on success or failure to reproduce (the previously filled out <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx">code-check.xlsx</a> can be re-used to drive the list). When errors happen, the replicator’s description should be as precise as possible. For differences in figures, the replicator should provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran, with differences highlighted. For differences in numbers (in tables or in-text), the replicator should list both the number as reported in the manuscript, as well as the number replicated.</p>
 <p><img alt="Findings with errors" src="_images/report-findings-errors.png" /></p>
 </section>
 <section id="classification">
@@ -761,7 +768,7 @@ Many of the recommended elements are not applicable to all data deposits - for i
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> partial replication (see above)</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> not able to replicate most or all of the results</p></li>
 </ul>
-<p>The Lab does not (yet) use a more refined reproducibility score, such as the one developed as part of the [BITSS ACRE Project](<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">config$url$acre</span></code>assessment.html#score). The emphasis is on a summary measure, combined with detailed reasons why full reproducibility is not achieved.</p>
+<p>The Lab does not (yet) use a more refined reproducibility score, such as the one developed as part of the <a class="reference external" href="https://bitss.github.io/ACRE/assessment.html">BITSS ACRE Project</a>. The emphasis is on a summary measure, combined with detailed reasons why full reproducibility is not achieved.</p>
 <p>The reasons for not being able to fully reproduce the materials can be multiple, and should be noted in the report (they are captured through a multiple-choice field in the LDI Lab’s JIRA system):</p>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">Discrepancy</span> <span class="pre">in</span> <span class="pre">output</span></code> (either figures or numbers in tables or text differ)</p></li>
@@ -778,14 +785,6 @@ Many of the recommended elements are not applicable to all data deposits - for i
 <p><img alt="Outcome with full replication" src="_images/jira-outcomes2.png" /></p>
 <p><img alt="Outcome with partial replication" src="_images/jira-outcomes3.png" /></p>
 </section>
-</section>
-<section id="some-additional-materials">
-<h2>Some additional materials<a class="headerlink" href="#some-additional-materials" title="Permalink to this heading">#</a></h2>
-<p>Here’s a collection from older presentations:</p>
-<ul class="simple">
-<li><p><span class="xref myst">Elements of a replication report</span></p></li>
-<li><p><span class="xref myst">Replicator checklist</span></p></li>
-</ul>
 </section>
 </section>
 
@@ -875,7 +874,6 @@ Many of the recommended elements are not applicable to all data deposits - for i
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-additional-materials">Some additional materials</a></li>
 </ul>
   </nav></div>
 

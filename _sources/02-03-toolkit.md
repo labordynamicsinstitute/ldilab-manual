@@ -105,7 +105,7 @@ You can see in the preview tab again to see how the formatting renders.
 > This is called a **soft line break**.
 >
 > In some cases you may find that **soft line breaks** do introduce a `<br/>`.
-> This can happen when using different [markdown flavors](#markdown-flavours).
+> This can happen when using different [markdown flavors].
 >
 > See for instance:
 > ~~~

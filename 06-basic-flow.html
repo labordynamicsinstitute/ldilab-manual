@@ -479,7 +479,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details-on-data-workflows-dataflowdiagram">Details on data workflows {#dataflowdiagram}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details-on-data-workflows">Details on data workflows</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-example">A simple example</a></li>
 </ul>
             </nav>
@@ -500,9 +500,9 @@ document.write(`
 <li><p>cleaning data (reformatting, standardizing, dropping) to create analysis data</p></li>
 <li><p>analyzing data and reporting results in tables, figures, and in-text numbers.</p></li>
 </ul>
-<section id="details-on-data-workflows-dataflowdiagram">
-<h2>Details on data workflows {#dataflowdiagram}<a class="headerlink" href="#details-on-data-workflows-dataflowdiagram" title="Permalink to this heading">#</a></h2>
-<p>In a reproducible workflow, <em>instructions</em> to perform all of the above are provided. Most of the time, those instructions will be <em>computer code</em>, to be interpreted using statistical software, in some cases to be compiled into executables (C++, Fortran). Sometimes, the data acquisition might also be coded - using software packages or scripts to download, or through computer-assisted surveys or experiments. But more often, acquiring data entails manual actions. For instance, secondary data access might be described in <span class="xref myst">Data Availability Statements</span>, whereas primary data acquisition might be described in survey documentation, field guides, and in experiment instructions.^[Note that when the authors generate or collect primary data, subsequent users of the same data are secondary data users, but replication might also involve re-executing the experiment, or collecting data anew with the same survey instruments.] Once analysis data is created, the analysis programs generate output that is then embedded in the article. Often, that output might be ready-made tables and figures. But sometimes authors will manually transcode output from log files into tables. Modern reproducible documents will capture such output and embed it into a document directly.</p>
+<section id="details-on-data-workflows">
+<span id="dataflowdiagram"></span><h2>Details on data workflows<a class="headerlink" href="#details-on-data-workflows" title="Permalink to this heading">#</a></h2>
+<p>In a reproducible workflow, <em>instructions</em> to perform all of the above are provided. Most of the time, those instructions will be <em>computer code</em>, to be interpreted using statistical software, in some cases to be compiled into executables (C++, Fortran). Sometimes, the data acquisition might also be coded - using software packages or scripts to download, or through computer-assisted surveys or experiments. But more often, acquiring data entails manual actions. For instance, secondary data access might be described in <a class="reference internal" href="05-data-citations-and-das.html#dasmaster"><span class="std std-ref">Data Availability Statements</span></a>, whereas primary data acquisition might be described in survey documentation, field guides, and in experiment instructions.^[Note that when the authors generate or collect primary data, subsequent users of the same data are secondary data users, but replication might also involve re-executing the experiment, or collecting data anew with the same survey instruments.] Once analysis data is created, the analysis programs generate output that is then embedded in the article. Often, that output might be ready-made tables and figures. But sometimes authors will manually transcode output from log files into tables. Modern reproducible documents will capture such output and embed it into a document directly.</p>
 <p>The following diagram illustrates the generic flow:</p>
 <!--
 ```{r mermaid,echo=F,results='asis',eval=F}
@@ -531,9 +531,10 @@ knitr::include_graphics("images/mermaid-data-flow.png")
 <section id="a-simple-example">
 <h2>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this heading">#</a></h2>
 <p>At the Github repository <a class="reference external" href="https://github.com/labordynamicsinstitute/simple-example">labordynamicsinstitute/simple-example</a>, we have prepared a very simple example of a data analysis workflow. It illustrates the concepts above.</p>
-<blockquote>
-<div><p>Read the <a class="reference external" href="https://github.com/labordynamicsinstitute/simple-example/blob/master/README.md">README</a> before going on.</p>
-</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Read the <a class="reference external" href="https://github.com/labordynamicsinstitute/simple-example/blob/master/README.md">README</a> before going on.</p>
+</div>
 <p>We focus on the information provided in the README first:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Source</span></code>: Census of Population and Housing, 2000</p></li>
@@ -549,9 +550,10 @@ knitr::include_graphics("images/mermaid-data-flow.png")
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Analysis</span> <span class="pre">data</span></code>: is verbally described in the README (“clean merged dataset”)</p></li>
 </ul>
-<blockquote>
-<div><p>Note: Could this be improved?</p>
-</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Could this be improved?</p>
+</div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Analysis</span> <span class="pre">program</span></code>: <code class="docutils literal notranslate"><span class="pre">02_table1.do</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Outputs</span></code>: Table 1</p></li>
@@ -638,7 +640,7 @@ graph TD;
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details-on-data-workflows-dataflowdiagram">Details on data workflows {#dataflowdiagram}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details-on-data-workflows">Details on data workflows</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-example">A simple example</a></li>
 </ul>
   </nav></div>
