@@ -93,10 +93,10 @@ Next fill out the following fields in the Jira ticket:
 ```{tip}
 Commit! 
 
-```bash
-git commit 'Finished code section'
-git push
-```
+  ```bash
+  git commit 'Finished code section'
+  git push
+  ```
 
 ```
 

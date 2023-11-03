@@ -43,7 +43,7 @@ How to modify code for replicability/verification
 
 ## What's in a replication report
 
-The template used by the Lab can be found on Github [here](`r config$url$templmd`REPLICATION.md). The table of contents looks like this:
+The template used by the Lab can be found on Github [here](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md). The table of contents looks like this:
 
 - SUMMARY &ast;
 - Data description &ast;
@@ -58,7 +58,7 @@ The template used by the Lab can be found on Github [here](`r config$url$templmd
 
 We note that those sections marked "&ast;" can be completed before ever running any author-provided code, even when data are confidential. They lead to a preliminary report, which is a "dry" assessment of the completeness of the replication package. 
 
-In most sections, when elements are missing, wrong, or do not work, we use a [standardized set of action items](`r config$url$templmd`sample-language-report.md) to highlight this. 
+In most sections, when elements are missing, wrong, or do not work, we use a [standardized set of action items](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md) to highlight this. This is present in your default template.
 
 ### Summary
 
@@ -68,13 +68,14 @@ The SUMMARY is intended for a quick glance by journal editor and authors. It sho
 
 ###  Data description
 
-The data description can require substantial time to complete. The replicator is asked to identify all `input` (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a [useful template](`r config$url$acre`assessment.html#describe-inputs), but any list will suffice here. In addition, we ask replicators to  fill out the "Data Citation and Information report", to obtain a machine-readable list of data sources and their attributes. 
+The data description can require substantial time to complete. The replicator is asked to identify all `input` (original) data sources used by the authors. It sometimes is useful to create a working list (spreadsheet) and commit the list together with the report. The ACRE project has a [useful template](https://bitss.github.io/ACRE/assessment.html#describe-inputs), and te [template report](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#example-data) has an example. 
 
-An essential part in writing the data descrption section is identifying the data used in the analysis. While the dataset used for the main analysis is often explained in the README or in the manuscript, the description of other datasets (e.g. datasets used in the appendix, introduction, or in a figure describing the study settings) are sometimes omitted in the provided documents.
+An essential part in writing the data description section is identifying the data used in the analysis. While the dataset used for the main analysis is often explained in the README or in the manuscript, the description of other datasets (e.g. datasets used in the appendix, introduction, or in a figure describing the study settings) are sometimes omitted in the provided documents.
 
 Once the preparations above are completed, a summary should be written in the "Data Description" section. 
 
 #### What data need to be described?
+
 All "`input` (original) data sources" and "Analysis data files" should be listed. 
    
 - Data needs to be listed include:
@@ -93,7 +94,7 @@ For each data source, list
 - presence or absence of codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK. 
    - The information of the source location of the data should instruct the replicator how to access the source data.
    - A replicator should validate the provided description of the access information by visiting the link, downloading the dataset from the link, and compare the downloaded dataset with the provided dataset.
-- whether the *data* is cited (see the section on [data citations](#datacitations). Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing. 
+- whether the *data* is cited (see the section on [data citations](datacitations). Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing. 
 
 ![Data Description Section](images/report-data-description.png)
 
@@ -133,7 +134,9 @@ When data are present, the replicator will run a few checks. These are not meant
 - Do the data files have variable labels and meaningful variable names? 
    - In other words, is it straightforward to understand what the data mean? Alternative, a codebook could be provided, that maps cryptic variable names (`Q25S3`) to meaningful labels. 
 
-> Note that we do *not* require that variable *values* are provided here, nor that a full codebook is present or linked. Ideally, these would be here as well, and in some cases, we will go back to the authors and request them, *if* we think it is reasonable to do so  - a judgement call by the Data Editor.
+```{note}
+Note that we do *not* require that variable *values* are provided here, nor that a full codebook is present or linked. Ideally, these would be here as well, and in some cases, we will go back to the authors and request them, *if* we think it is reasonable to do so  - a judgement call by the Data Editor.
+```
 
 - Replicators will run a simple check for personally identifiable information, if feasible, using a heuristic developed by J-PAL.^[The Stata version can be found [here](https://github.com/J-PAL/stata_PII_scan).] 
    - This check will have lots of false positives - fields it thinks might be sensitive that are not, in fact, sensitive. While replicators are asked to apply some judgement, the final decision must be made by authors, and the information is reported as such in the report.
@@ -143,18 +146,18 @@ When data are present, the replicator will run a few checks. These are not meant
 
 ###  Code description
 
-All deposits should have code. In line with the [basic data flow](#dataflowdiagram), there should be both data cleaning or preparation code, as well as analysis code. The replicator will review the code (but will  not run it yet). 
+All deposits should have code. In line with the [basic data flow](dataflowdiagram), there should be both data cleaning or preparation code, as well as analysis code. The replicator will review the code (but will  not run it yet). 
 
 - Identify programs that create "analysis files" ("data preparation code"). 
 - Identify programs that create tables and figures. 
 
-From the README, the replicator should be able to identify code to create all **figures, tables, and any in-text numbers**. If not listed in the README, comments in the code should enable the replicator to find this. The replicator will create a list, mapping each of figure, table, and in-text number to a particular program and line number within the program. A [template spreadsheet](`r config$url$templmd`code-check.xlsx) is provided. Note that the code description might already observe that setup programs are missing, but most missing code will be identified in the [findings][findings] section. 
+From the README, the replicator should be able to identify code to create all **figures, tables, and any in-text numbers**. If not listed in the README, comments in the code should enable the replicator to find this. The replicator will create a list, mapping each of figure, table, and in-text number to a particular program and line number within the program. A [template spreadsheet](https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx) is provided. Note that the code description might already observe that setup programs are missing, but most missing code will be identified in the [findings][findings] section. 
 
 
 
 ###  Stated Requirements
 
-The authors should have specified specific requirements in terms of software, computer hardware, runtime, add-on packages. The replicator should list them here. This is **different** from the Computing Environment of the Replicator. If all requirements are listed, check the box "Requirements are complete". This section is important to assess the feasibility of the reproducibility attempt. A reproduction that requires "20,000 core compute hours", or that "runs for weeks", or that requires custom software that needs to be acquired, may not be feasible. 
+The authors should have specified specific requirements in terms of software, computer hardware, runtime, add-on packages. The replicator should list them here. This is **different** from the *Computing Environment of the Replicator*, which you will describe later. If all requirements are listed, check the box "Requirements are complete". This section is important to assess the feasibility of the reproducibility attempt. A reproduction that requires "20,000 core compute hours", or that "runs for weeks", or that requires custom software that needs to be acquired, may not be feasible. 
 
 - [ ] No requirements specified
 - [ ] Software Requirements specified as follows:
@@ -168,25 +171,32 @@ The authors should have specified specific requirements in terms of software, co
 - [ ] Requirements are complete.
 
 
-
 ###  Missing Requirements
 
-If it turns out that some requirements were not stated or are incomplete (software, packages, operating system), the replicator should  list the *complete* list of requirements here. This is usually amended as the reproducibility attempt progresses.
+If it turns out that some requirements were not stated or are incomplete (software, packages, operating system), the replicator should  list the *complete* list of requirements here. Some of this maybe immediately obvious (e.g., there is no mention at all of what kind of computer you need), in others, you will need to run the programs to find out that things are missing. This is usually amended as the reproducibility attempt progresses.
+
+
+```{note}
+At this point, you *still* have not run any code, but you have collected everything needed to discuss this case with the group. This is what is called the **Preliminary Report**. 
+```
+
 
 ###  Computing Environment of the Replicator
 
-Just as the original authors have a particular computing environment that a replicator needs to know in order to properly implement a reproducibility attempt, the replicator's own attempt is important. This section should *not* describe the laptop the replicator uses to write the report - that is irrelevant - but should provide as complete a list of details as possible describing the computer where the computational component of the reproducibility check was conducted. S Some of these details can be found as follows:
+Just as the original authors have a particular computing environment that a replicator needs to know in order to properly implement a reproducibility attempt, the replicator's own attempt is important. This section should *not* describe the laptop the replicator uses to write the report =- that is irrelevant if we use the remote resources at the Lab, unless you use the laptop to actually run code! -- but should provide as complete a list of details as possible describing the computer where the computational component of the reproducibility check was conducted. Some of these details can be found as follows:
 
 - (Windows) by right-clicking on "My PC"
 - (Mac) Apple-menu > "About this Mac"
 - (Linux) see code in `tools/linux-system-info.sh`
 
-Examples might include:
+Examples of [computing environments used at the Lab](Access_to_computers) are pre-printed in the [template report](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#computing-environment-of-the-replicator), but can be amended or augmented.
 
-- Mac Laptop, MacOS 10.14.6, 8 GB of memory (but only if you ran the analysis on the Mac Laptop!)
-- CISER Shared Windows Server 2016, 256GB, Intel Xeon E5-4669 v3 @ 2.10Ghz (3 processors)
-- CISER Virtual Windows Server 2016, 16GB, Intel Haswell 2.19 Ghz (2 processors)
-- BioHPC Linux server, Centos 7.6, 64 cores; 1024GB RAM; 
+- CCSS Cloud Windows Server AMD EPYC 7763 64-Core Processor 2.44 GHz 
+- BioHPC Linux server, Rocky Linux 9.0, AMD Opteron Processor 6380 / 16 cores/ 125 GB memory (adjust as necessary from output of linux-system-info.sh)
+- WholeTale (describe the environment chosen)
+- CodeOcean (describe the type of capsule chosen) Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz (16 cores), 128 GB Memory
+- Bitbucket Pipelines, "Ubuntu 20.04.2 LTS", Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz, 8 cores, 9GB memory
+- Codespaces, "Ubuntu 20.04.2 LTS", Intel(R) Xeon(R) Platinum 8272CL CPU @ 2.60GHz, 2 core, 4GB/ 4-core, 8GB/ 8-core, 16 GB/ 16-core, 64GB (choose appropriately)
 
 The list should also list the software the replicator used, with the specific version used (even if the author did not list that information). Examples include:
 
@@ -194,14 +204,15 @@ The list should also list the software the replicator used, with the specific ve
 - Matlab R2019a
 - Intel Compiler 3.14152
 
+but always check what version you are actually using on the server you are using. For instance, as of Oct 2023, the version of Stata installed on CCSS Cloud is Stata 18, but on BioHPC, the standard version is still Stata 16.
 
 ###  Replication steps
 
 For every replication or reproducibility attempt, the list of steps a replicator undertakes is important to be listed. In principle, these steps should be specified in the README, but while the README contains instructions, this section should contain what you actually did. It should include details as to under what name the replicator saved a dataset downloaded from a website (if not the suggested name), or what minor edits were made to programs. 
 
-- DO not include trivial details ("I downloaded the code and saved on my Desktop"). 
-- DO describe actions   that you did  as per instructions ("I added a config.do")
-- DO describe any other actions you needed to do ("I had to make changes in multiple programs"), without going into detail (the commit log can provide that information)
+- DO NOT include trivial details ("I downloaded the code and saved on my Desktop"). 
+- DO describe actions   that you did  as per instructions here ("I added a config.do") or as per the authors' README ("Ran main.do as per the README")
+- DO describe any other actions you needed to do ("I had to make changes in multiple programs"). It is often helpful to provide additional detail, such as an excerpt of the error message, and the fix applied, allowing the author to read the report and fix the issues. Remember that the author will not have access to our Bitbucket repository, nor to the log files that might contain the errors.
 
 The description should allow the Data Editor and the authors to understand that everything was done as instructed. Deviations need to be described with enough detail that somebody else can reproduce the deviation!
 
@@ -209,7 +220,7 @@ The description should allow the Data Editor and the authors to understand that 
 
 ###  Findings
 
-Once everything is put in place, the replicator can report on findings, both positive and negative. This should include enough detail to allow a reader - a Data Editor and the authors - to understand what went wrong when something went wrong. For each **Data Preparation Code, Figure, Table, and any in-text numbers**, the section should provide information on success or failure to reproduce (the previously filled out [code-check.xlsx](`r config$url$templmd`code-check.xlsx) can be re-used to drive the list). When errors happen, the replicator's description should be as precise as possible. For differences in figures, the replicator should provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran, with differences highlighted. For differences in numbers (in tables or in-text), the replicator should list both the number as reported in the manuscript, as well as the number replicated. 
+Once everything is put in place, the replicator can report on findings, both positive and negative. This should include enough detail to allow a reader - a Data Editor and the authors - to understand what went wrong when something went wrong. For each **Data Preparation Code, Figure, Table, and any in-text numbers**, the section should provide information on success or failure to reproduce (the previously filled out [code-check.xlsx](https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx) can be re-used to drive the list). When errors happen, the replicator's description should be as precise as possible. For differences in figures, the replicator should provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran, with differences highlighted. For differences in numbers (in tables or in-text), the replicator should list both the number as reported in the manuscript, as well as the number replicated. 
 
 ![Findings with errors](images/report-findings-errors.png)
 
@@ -228,7 +239,7 @@ The replication report template used by the LDI Replication Lab uses a simplifie
 - [ ] not able to replicate most or all of the results 
 
 
-The Lab does not (yet) use a more refined reproducibility score, such as the one developed as part of the [BITSS ACRE Project](`r config$url$acre`assessment.html#score). The emphasis is on a summary measure, combined with detailed reasons why full reproducibility is not achieved.
+The Lab does not (yet) use a more refined reproducibility score, such as the one developed as part of the [BITSS ACRE Project](https://bitss.github.io/ACRE/assessment.html). The emphasis is on a summary measure, combined with detailed reasons why full reproducibility is not achieved.
 
 
 The reasons for not being able to fully reproduce the materials can be multiple, and should be noted in the report (they are captured through a multiple-choice field in the LDI Lab's JIRA system):
@@ -249,10 +260,3 @@ Note that absence of full replication is not necessarily a reason to reject the 
 ![Outcome with full replication](images/jira-outcomes2.png)
 
 ![Outcome with partial replication](images/jira-outcomes3.png)
-
-## Some additional materials
-
-Here's a collection from older presentations:
-
- - [Elements of a replication report](Replication-Report-Overview.pdf)
- - [Replicator checklist](replicator_checklist.pdf)

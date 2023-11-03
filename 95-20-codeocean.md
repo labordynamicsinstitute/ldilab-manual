@@ -41,7 +41,7 @@ In Jira,
 - There are only three directories in the Codeocean environment: `/data`; `/code`; `/results`.
     - All paths in the code must refer to one of these directories.
     - If the authors set their own globals, you change the globals to reflect these directories.
-    - If the authors do not use globals, you should use the `config.do` (see [instructions](stata-related-procedures.html#using-config.do-in-stata)) to make the code more reproducible by setting globals in the `config.do` and amending the paths in the authors' code. Example:
+    - If the authors do not use globals, you should use the `config.do` (see [instructions](using-config-do)) to make the code more reproducible by setting globals in the `config.do` and amending the paths in the authors' code. Example:
     `use "D:\Dropbox\Data for paper\x.dta"` becomes `use "$data/x.dta"`.
     - Modify the standard `config.do` as follows:
     ```bash

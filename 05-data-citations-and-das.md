@@ -1,3 +1,4 @@
+(data-citations)=
 # Data citations and data availability statements 
 
 Most students and researchers have been trained to cite their sources. Mostly, this is meant to be literature sources, but the basic idea applies just as much to data: If you use somebody else's data, you should acknowledge that. 
