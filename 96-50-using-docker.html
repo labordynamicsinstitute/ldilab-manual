@@ -529,28 +529,74 @@ BioHPC</label><div class="sd-tab-content docutils">
 </div>
 <ul class="simple">
 <li><p>Ensure you are either connected to the campus network directly or through a VPN. You cannot connect to the compute node without being on campus or connected via VPN. See <a class="reference external" href="https://it.cornell.edu/cuvpn">instruction</a> for CU VPN setup.</p></li>
-<li><p>Login to BioHPC through this <a class="reference external" href="https://biohpc.cornell.edu/login_bio.aspx?ReturnURL=/lab/labresman.aspx">link</a>. If do not have an account yet, click “Request a BioHPC account” below the login palette.</p></li>
-<li><p>Go to “Reservation” under “User” to reserve a node. Select <code class="docutils literal notranslate"><span class="pre">restricted</span></code> for machine class and reserve a server. You need a credit account to reserve a server, you can set one up using the <a class="reference external" href="https://biohpc.cornell.edu/lab/projects.aspx">My Credit Accounts</a> submenu. Click on “New Credit Account”, name it and create.</p>
-<ul>
-<li><p>Skip this step if you are already added to a node.</p></li>
+<li><p>Login to BioHPC through this <a class="reference external" href="https://biohpc.cornell.edu/login_bio.aspx?ReturnURL=/lab/labresman.aspx">link</a>. If do not have an account yet, follow instructions at <a class="reference internal" href="95-15-linux-remote.html#linux-remote"><span class="std std-ref">Linux Remote</span></a></p></li>
+<li><p><a class="reference internal" href="95-15-linux-remote.html#linux-remote"><span class="std std-ref">Reserve a node</span></a></p></li>
+<li><p><a class="reference internal" href="95-15-linux-remote.html#linux-remote"><span class="std std-ref">Access the node</span></a></p></li>
+<li><p>Launch a terminal and change your directory to <code class="docutils literal notranslate"><span class="pre">/home2/ecco_lv39/Workspace</span></code>. Do not work on the home directory which has your NetID. Type <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to check your current directory.</p></li>
+<li><p>Clone your repository into this directory <code class="docutils literal notranslate"><span class="pre">aeagit-###</span></code>.</p></li>
 </ul>
-</li>
-<li><p>Once your have a reserved node, click <a class="reference external" href="https://biohpc.cornell.edu/lab/labresman.aspx">“My Reservation”</a> to mange all your active reservations. Click “Connect VNC” under “Action” and you will have your machine name and port number. To disconnect, click “Cancel VNC” under “Action”.</p></li>
-<li><p>Open VNC Viewer and type in session number in the form of “machine name:port number” given by BioHPC.</p></li>
-<li><p><a class="reference external" href="https://labordynamicsinstitute.github.io/ldilab-manual/95-50-setup-bash.html#configure-bitbucket-access">Set up</a> your bash environment.</p></li>
-<li><p>Launch a terminal and change your directory to /home2/ecco_lv39/Workspace. Do not work on the home directory which has your NetID. Type <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to check your current directory. Clone your repository into this directory <code class="docutils literal notranslate"><span class="pre">aeagit-###</span></code>.</p></li>
+<p><strong>If there is no Docker folder</strong></p>
+<ul class="simple">
+<li><p>Create a folder <code class="docutils literal notranslate"><span class="pre">Docker</span></code> in the same directory as your repository.</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>. A simple example might be (here, to install Ox)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># syntax=docker/dockerfile:1.2</span>
+<span class="c1"># First stage</span>
+FROM<span class="w"> </span>ubuntu:22.04<span class="w"> </span>
+ENV<span class="w"> </span>VERSION<span class="w"> </span><span class="m">9</span>
+ENV<span class="w"> </span>SUBVERSION<span class="w"> </span><span class="m">10</span>
+ENV<span class="w"> </span>MINORVERSION<span class="w"> </span><span class="m">0</span>
+
+RUN<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive<span class="w"> </span>apt-get<span class="w"> </span>upgrade<span class="w"> </span>-y<span class="w">  </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>locales<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>libncurses5<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>libfontconfig1<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>git<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>nano<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>unzip<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>wget<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>localedef<span class="w"> </span>-i<span class="w"> </span>en_US<span class="w"> </span>-c<span class="w"> </span>-f<span class="w"> </span>UTF-8<span class="w"> </span>-A<span class="w"> </span>/usr/share/locale/locale.alias<span class="w"> </span>en_US.UTF-8
+
+<span class="c1"># Set a few more things</span>
+ENV<span class="w"> </span>LANG<span class="w"> </span>en_US.utf8
+
+<span class="c1"># Adding Ox</span>
+RUN<span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>oxconsole.deb<span class="w"> </span>https://www.doornik.com/download/oxmetrics<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>/Ox_Console/oxconsole_<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>.<span class="si">${</span><span class="nv">SUBVERSION</span><span class="si">}</span>-<span class="si">${</span><span class="nv">MINORVERSION</span><span class="si">}</span>_amd64.deb<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>./oxconsole.deb
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>You might also find a <code class="docutils literal notranslate"><span class="pre">build.sh</span></code> script useful:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+
+[[ -z $1 ]] &amp;&amp; TAG=$(date +%F) || TAG=$1
+MYHUBID=aeadataeditor
+MYIMG=aearep-XXXX
+
+DOCKER_BUILDKIT=1 docker1 build   -t ${MYIMG}:$TAG $(pwd)/
+
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Make this file executable: <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">build.sh</span></code></p></li>
+<li><p>Go back to your repository directory (<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">Docker</span></code> and push.</p></li>
+</ul>
+<p><strong>If there is a Docker folder</strong></p>
+<ul class="simple">
 <li><p>Change the directory to your Docker folder and build the image <code class="docutils literal notranslate"><span class="pre">./build.sh</span></code>. Check completion by <code class="docutils literal notranslate"><span class="pre">docker1</span> <span class="pre">images</span></code>.</p></li>
-<li><p>Once the image is built, go to the directory where you want to run your container. Type <code class="docutils literal notranslate"><span class="pre">docker1</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">--rm</span> <span class="pre">-v</span> <span class="pre">&quot;$(pwd)&quot;:/project</span> <span class="pre">-w</span> <span class="pre">/project</span> <span class="pre">biohpc_lv39/aearep-###:TAG</span></code> (modify repository number and TAG as needed).</p>
-<ul>
+<li><p>Once the image is built, go to the directory where you want to run your container. Type</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker1<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>:/project<span class="w"> </span>-w<span class="w"> </span>/project<span class="w"> </span>biohpc_lv39/aearep-###:TAG
+</pre></div>
+</div>
+<p>(modify repository number and TAG as needed).</p>
+<ul class="simple">
 <li><p>In the bash shell inside the Docker container, run any command lines as identified by the authors.</p></li>
-</ul>
-</li>
-<li><p>For Oxl:</p>
-<ul>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">oxl</span> <span class="pre">filename</span> <span class="pre">|</span> <span class="pre">tee</span> <span class="pre">filename.log</span></code> to save the log files.</p></li>
-<li><p>If need to modify files as instructed by the authors, exit the Docker container and type <code class="docutils literal notranslate"><span class="pre">gedit</span> <span class="pre">filename</span></code>.</p></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>

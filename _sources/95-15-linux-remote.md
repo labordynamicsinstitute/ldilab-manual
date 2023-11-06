@@ -22,11 +22,15 @@ Then [contact BioHPC support](https://biohpc.cornell.edu/contact.aspx), requesti
 
 **Reserve a node**
 
-- Go to [BioHPC Reservations page](https://biohpc.cornell.edu/lab/labres.aspx), choose "Restricted", and reserve a node:
+- Go to "User", then  [Reservations page](https://biohpc.cornell.edu/lab/labres.aspx), choose "Restricted", and reserve a node:
   - cbsuecco02: up to 7 days
   - all others: up to 3 days
   - in both cases, renewable
 - Then go to 'My Reservations' and share the reservation with Lars (`lv39`) and others, if necessary.
+
+```{note}
+Skip this step if somebody else added you to their reservation!
+```
 
 **Access a node**
 
@@ -34,6 +38,17 @@ See [Getting Started Guide](https://biohpc.cornell.edu/lab/userguide.aspx?a=quic
 
 Note that, for off-campus access, you will need to use Cornell VPN. Instructions can be found [here](https://it.cornell.edu/cuvpn).
 
+For VNC: 
+
+- Once your have a reserved node, click ["My Reservation"](https://biohpc.cornell.edu/lab/labresman.aspx) to manage all your active reservations. 
+- Choose your reservation. 
+- Click "Connect VNC" under "Action" and you will have your machine name and port number. To disconnect, click "Cancel VNC" under "Action".
+- Open VNC Viewer and type in session number in the form of "machine name:port number" given by BioHPC.
+
+```{tip}
+
+For first-time access,  [set up](https://labordynamicsinstitute.github.io/ldilab-manual/95-50-setup-bash.html#configure-bitbucket-access) your bash environment.
+```
 
 :::
 
