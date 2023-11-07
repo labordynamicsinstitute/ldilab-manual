@@ -141,3 +141,16 @@ os.system("/programs/bin/labutils/endres.pl")
 
 ::::
 
+## Connecting to BioHPC with VSCode
+
+- Check that you have installed the [Remote-SSH extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) on VSCode.
+- Open VSCode and select the Remote-SSH extension from the Command Palette.
+- Enter the host name when prompted. The host name should follow this naming convention: "netid@cbsuecco##.biohpc.cornell.edu".
+- You may be prompted to "Select the platform of the remote host". If so, select the "Linux" option in the drop down menu.
+- Enter your BioHPC account password when prompted.
+- Once connected, open a new terminal using the "Terminal" option in the top menu of VSCode.
+- You should now be able to work in BioHPC via command line.
+
+Some benefits of connecting to BioHPC with VSCode: You can view/edit programs, check log files, and run jobs simultaneously in a given instance of VSCode. Additionally, VSCode recognizes Git, so you can visually navigate through tracked and untracked files via the lefthand side menu.
+
+
