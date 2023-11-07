@@ -34,11 +34,11 @@ Skip this step if somebody else added you to their reservation!
 
 **Access a node**
 
-See [Getting Started Guide](https://biohpc.cornell.edu/lab/userguide.aspx?a=quickstart) and [Remote Access](https://biohpc.cornell.edu/lab/doc/Remote_access.pdf). SSH is the best path (if you don't need graphical applications).
+See [Getting Started Guide](https://biohpc.cornell.edu/lab/userguide.aspx?a=quickstart) and [Remote Access](https://biohpc.cornell.edu/lab/doc/Remote_access.pdf). SSH is the best path (if you don't need graphical applications). See [Access via VSCode](linux-vscode) for a more user-friendly way to use SSH to access the server.
 
 Note that, for off-campus access, you will need to use Cornell VPN. Instructions can be found [here](https://it.cornell.edu/cuvpn).
 
-For VNC: 
+For **VNC**: 
 
 - Once your have a reserved node, click ["My Reservation"](https://biohpc.cornell.edu/lab/labresman.aspx) to manage all your active reservations. 
 - Choose your reservation. 
@@ -54,14 +54,39 @@ For first-time access,  [set up](https://labordynamicsinstitute.github.io/ldilab
 
 :::{tab-item} NBER servers
 
-TBD
+**Request an account**
+
+You need an account with NBER to access their servers. Contact Lars  to get an account.
 
 
 **Access a node**
 
+Access for us is primarily via SSH. See [Access via VSCode](linux-vscode) for a more user-friendly way to use SSH to access the server.
+
 :::
 
 ::::
+
+(linux-vscode)=
+## Accessing Linux nodes with VSCode
+
+- Check that you have installed the [Remote-SSH extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) on VSCode.
+- Open VSCode and select the Remote-SSH extension from the Command Palette.
+- Enter the host name when prompted. The host name should follow this naming convention: 
+  - BioHPC: "netid@cbsuecco##.biohpc.cornell.edu".
+  - NBER: "loginid@nber##.nber.org".
+- You may be prompted to "Select the platform of the remote host". If so, select the "Linux" option in the drop down menu.
+- Enter your account password when prompted.
+- Once connected, 
+  - `Open Folder` and navigate to your working directory.
+  - open a new terminal using the "Terminal" option in the top menu of VSCode (or `Ctrl-\``).
+- You should now be able to work on the Linux server via command line. 
+
+Some benefits of connecting to BioHPC with VSCode: You can view/edit programs, check log files, and run jobs simultaneously in a given instance of VSCode. Note that you should still use [`tmux`](https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes#utilize-tmux) within the VSCode terminal, in case of a disconnect. 
+
+In particular, you can navigate to your working directory and `git clone` the Bitbucket repository (using either the command line, or VSCode prompt to `Clone Repository`). VSCode recognizes Git, so you can visually navigate through tracked and untracked files via the lefthand side menu.
+
+
 
 ## Additional setup and tips-and-tricks
 
@@ -75,7 +100,7 @@ Then do the usual [Bash setup](setup-bash). That should work on nearly any Linux
 
 Additional tips-and-tricks can be found on the [LDIlab wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes). These are focused on the BioHPC cluster, but may work on other servers as well.
 
-## Configuring automatic reservation cancellation
+## Configuring automatic reservation cancellation (BioHPC only)
 
 If you use the BioHPC reservation system, it helps others if at the end of a long-running job, your reservation is cancelled as soon as possible. One way to do this is to add the following to the scripts you are running:
 
@@ -140,17 +165,5 @@ os.system("/programs/bin/labutils/endres.pl")
 :::
 
 ::::
-
-## Connecting to BioHPC with VSCode
-
-- Check that you have installed the [Remote-SSH extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) on VSCode.
-- Open VSCode and select the Remote-SSH extension from the Command Palette.
-- Enter the host name when prompted. The host name should follow this naming convention: "netid@cbsuecco##.biohpc.cornell.edu".
-- You may be prompted to "Select the platform of the remote host". If so, select the "Linux" option in the drop down menu.
-- Enter your BioHPC account password when prompted.
-- Once connected, open a new terminal using the "Terminal" option in the top menu of VSCode.
-- You should now be able to work in BioHPC via command line.
-
-Some benefits of connecting to BioHPC with VSCode: You can view/edit programs, check log files, and run jobs simultaneously in a given instance of VSCode. Additionally, VSCode recognizes Git, so you can visually navigate through tracked and untracked files via the lefthand side menu.
 
 
