@@ -481,6 +481,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-and-tips-and-tricks">Additional setup and tips-and-tricks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation">Configuring automatic reservation cancellation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-biohpc-with-vscode">Connecting to BioHPC with VSCode</a></li>
 </ul>
             </nav>
         </div>
@@ -604,6 +605,19 @@ Bash</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </section>
+<section id="connecting-to-biohpc-with-vscode">
+<h2>Connecting to BioHPC with VSCode<a class="headerlink" href="#connecting-to-biohpc-with-vscode" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Check that you have installed the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote-SSH extension</a> on VSCode.</p></li>
+<li><p>Open VSCode and select the Remote-SSH extension from the Command Palette.</p></li>
+<li><p>Enter the host name when prompted. The host name should follow this naming convention: “netid&#64;cbsuecco##.biohpc.cornell.edu”.</p></li>
+<li><p>You may be prompted to “Select the platform of the remote host”. If so, select the “Linux” option in the drop down menu.</p></li>
+<li><p>Enter your BioHPC account password when prompted.</p></li>
+<li><p>Once connected, open a new terminal using the “Terminal” option in the top menu of VSCode.</p></li>
+<li><p>You should now be able to work in BioHPC via command line.</p></li>
+</ul>
+<p>Some benefits of connecting to BioHPC with VSCode: You can view/edit programs, check log files, and run jobs simultaneously in a given instance of VSCode. Additionally, VSCode recognizes Git, so you can visually navigate through tracked and untracked files via the lefthand side menu.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -669,6 +683,7 @@ Bash</label><div class="sd-tab-content docutils">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-and-tips-and-tricks">Additional setup and tips-and-tricks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation">Configuring automatic reservation cancellation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-biohpc-with-vscode">Connecting to BioHPC with VSCode</a></li>
 </ul>
   </nav></div>
 
