@@ -76,6 +76,11 @@ Access for us is primarily via SSH. See [Access via VSCode](linux-vscode) for a 
   - BioHPC: "netid@cbsuecco##.biohpc.cornell.edu".
   - NBER: "loginid@nber##.nber.org".
 - You may be prompted to "Select the platform of the remote host". If so, select the "Linux" option in the drop down menu.
+
+```{tip}
+For this to work on BioHPC, verify that you have a valid reservation and an active VPN! 
+```
+
 - Enter your account password when prompted.
 - Once connected, 
   - `Open Folder` and navigate to your working directory.
