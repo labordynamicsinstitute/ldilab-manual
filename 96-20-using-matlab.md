@@ -15,14 +15,10 @@ In this section, we will show you a few things related specifically to running c
 See [these instructions](https://www.mathworks.com/matlabcentral/answers/102082-how-do-i-call-matlab-from-the-dos-prompt) for finding the Matlab binary on the system. However, this should work "out of the box" on CCSS-managed systems from the Bash prompt. 
 
 ```
-start matlab -nosplash -nodesktop -minimize -r  "addpath(genpath('.'));main"  -logfile matlab.log
+start matlab -nosplash  -minimize -r  "addpath(genpath('.'));main"  -logfile matlab.log
 ```
 
-where `main.m` is the Matlab program you want to run (you omit the `.m` when calling it). You can remove the `-nodesktop` flag if the code doesn't work, for debugging.
-
-```
-start matlab -nosplash   -r  "addpath(genpath('.'));main"  -logfile matlab.log
-```
+where `main.m` is the Matlab program you want to run (you omit the `.m` when calling it). 
 
 ```{note}
 This will still open a Matlab window in the background (check your taskbar). 
