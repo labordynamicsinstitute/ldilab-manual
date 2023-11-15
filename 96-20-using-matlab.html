@@ -456,7 +456,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -472,6 +474,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-matlab-without-the-desktop-gui-and-with-log-file">Running MATLAB without the desktop GUI and with log file</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -484,7 +494,37 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="matlab-related-procedures">
 <span id="id1"></span><h1>MATLAB-related procedures<a class="headerlink" href="#matlab-related-procedures" title="Permalink to this heading">#</a></h1>
 <p>In this section, we will show you a few things related specifically to running code reproducibly with MATLAB. For more general debugging tips for MATLAB and other computer languages, see <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Matlab-Tips">our wiki</a>.</p>
-<p>(coming soon)</p>
+<section id="running-matlab-without-the-desktop-gui-and-with-log-file">
+<h2>Running MATLAB without the desktop GUI and with log file<a class="headerlink" href="#running-matlab-without-the-desktop-gui-and-with-log-file" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Windows</label><div class="sd-tab-content docutils">
+<p>See <a class="reference external" href="https://www.mathworks.com/matlabcentral/answers/102082-how-do-i-call-matlab-from-the-dos-prompt">these instructions</a> for finding the Matlab binary on the system. However, this should work “out of the box” on CCSS-managed systems from the Bash prompt.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="n">matlab</span> <span class="o">-</span><span class="n">nosplash</span> <span class="o">-</span><span class="n">nodesktop</span> <span class="o">-</span><span class="n">minimize</span> <span class="o">-</span><span class="n">r</span>  <span class="s2">&quot;addpath(genpath(&#39;.&#39;));main&quot;</span>  <span class="o">-</span><span class="n">logfile</span> <span class="n">matlab</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">main.m</span></code> is the Matlab program you want to run (you omit the <code class="docutils literal notranslate"><span class="pre">.m</span></code> when calling it). You can remove the <code class="docutils literal notranslate"><span class="pre">-nodesktop</span></code> flag if the code doesn’t work, for debugging.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="n">matlab</span> <span class="o">-</span><span class="n">nosplash</span>   <span class="o">-</span><span class="n">r</span>  <span class="s2">&quot;addpath(genpath(&#39;.&#39;));main&quot;</span>  <span class="o">-</span><span class="n">logfile</span> <span class="n">matlab</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will still open a Matlab window in the background (check your taskbar).</p>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Linux</label><div class="sd-tab-content docutils">
+<p>Assuming MATLAB is in your path (check with <code class="docutils literal notranslate"><span class="pre">matlab</span></code>), the following will generate a logfile.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matlab</span> <span class="o">-</span><span class="n">nodisplay</span> <span class="o">-</span><span class="n">r</span> <span class="s2">&quot;addpath(genpath(&#39;.&#39;)); main&quot;</span> <span class="o">-</span><span class="n">logfile</span> <span class="n">matlab</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">main.m</span></code> is the Matlab program you want to run (you omit the <code class="docutils literal notranslate"><span class="pre">.m</span></code> when calling it).</p>
+<p>If you do not have <code class="docutils literal notranslate"><span class="pre">matlab</span></code> in your path, check with system admins. For BioHPC, as long as you are on the ECCO nodes, you should have access. See <a class="reference external" href="https://biohpc.cornell.edu/lab/ecco.htm">BioHPC ECCO page</a> for some details.</p>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -539,6 +579,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-matlab-without-the-desktop-gui-and-with-log-file">Running MATLAB without the desktop GUI and with log file</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
