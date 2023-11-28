@@ -53,7 +53,7 @@ If you *do* have a `$HOME/bin` directory, you will need to manually adjust a few
 
 ## Configure Bitbucket access
 
-For Bitbucket, you often copy your Bitbucket PAT into the Bash window. The following can streamline that, if using the `aeagit` command above.
+For Bitbucket, you often copy your [Bitbucket PAT](bitbucket-authentication) into the Bash window. The following can streamline that, if using the `aeagit` command above.
 
 ```bash
 echo '# adding Bitbucket credentials

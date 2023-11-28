@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/97-01-Bitbucket-authentication.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Various templates for correspondence by AEA Data Editor team members" href="98-00-sundry-correspondence.html" />
+    <link rel="next" title="openICPSR Authentication" href="97-02-openicpsr-authentication.html" />
     <link rel="prev" title="Authentication-related issues" href="97-00-authentication.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -255,6 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="96-70-using-mathematica.html">Mathematica-related procedures</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="97-00-authentication.html">Authentication-related issues</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Bitbucket Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="97-02-openicpsr-authentication.html">openICPSR Authentication</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="98-00-sundry-correspondence.html">Various templates for correspondence by AEA Data Editor team members</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -479,8 +480,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temporary-solution">Temporary Solution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-term-solution">Long-Term Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-app-password-or-pat">Creating an App Password (or PAT)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-errors">Possible errors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -494,21 +498,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="bitbucket-authentication">
 <span id="id1"></span><h1>Bitbucket Authentication<a class="headerlink" href="#bitbucket-authentication" title="Permalink to this heading">#</a></h1>
-<p>Any user who created a Bitbucket account after Semptember 13, 2021 may encounter the following error when attempting to git clone (or push) using Internet Explorer.
-<img alt="Internet Explorer Error" src="_images/Bitbucket_Error.png" /></p>
-<section id="temporary-solution">
-<h2>Temporary Solution<a class="headerlink" href="#temporary-solution" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Make Firefox (or Edge) your default browswer.</p></li>
-<li><p>Sign into Bitbucket on your browswer and then attempt the git action once again. You may then receive an error like below:</p></li>
-</ol>
-<p><img alt="Second Error" src="_images/Bitbucket_Error2.png" /></p>
-<ol class="arabic simple" start="3">
-<li><p>Attempt the git action again.</p></li>
-</ol>
-</section>
-<section id="long-term-solution">
-<h2>Long-Term Solution<a class="headerlink" href="#long-term-solution" title="Permalink to this heading">#</a></h2>
+<section id="creating-an-app-password-or-pat">
+<h2>Creating an App Password (or PAT)<a class="headerlink" href="#creating-an-app-password-or-pat" title="Permalink to this heading">#</a></h2>
 <p>The long-term solution is to create an <a class="reference external" href="https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/">App Password</a>.</p>
 <ol class="arabic simple">
 <li><p>Follow the steps to create an App Password.</p></li>
@@ -521,6 +512,22 @@ document.write(`
 <li><p>You <strong>cannot</strong> use them to log in to your Bitbucket account at <a class="reference external" href="http://bitbucket.org">bitbucket.org</a>.</p></li>
 <li><p>You <strong>cannot</strong> use app passwords to manage workspace actions.</p></li>
 </ul>
+</section>
+<section id="possible-errors">
+<h2>Possible errors<a class="headerlink" href="#possible-errors" title="Permalink to this heading">#</a></h2>
+<p>Any user who created a Bitbucket account after Semptember 13, 2021 may encounter the following error when attempting to git clone (or push) using Internet Explorer.
+<img alt="Internet Explorer Error" src="_images/Bitbucket_Error.png" /></p>
+<section id="solution">
+<h3>Solution<a class="headerlink" href="#solution" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Make Firefox (or Edge) your default browswer.</p></li>
+<li><p>Sign into Bitbucket on your browswer and then attempt the git action once again. You may then receive an error like below:</p></li>
+</ol>
+<p><img alt="Second Error" src="_images/Bitbucket_Error2.png" /></p>
+<ol class="arabic simple" start="3">
+<li><p>Attempt the git action again.</p></li>
+</ol>
+</section>
 </section>
 </section>
 
@@ -562,11 +569,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="98-00-sundry-correspondence.html"
+       href="97-02-openicpsr-authentication.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Various templates for correspondence by AEA Data Editor team members</p>
+        <p class="prev-next-title">openICPSR Authentication</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -585,8 +592,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temporary-solution">Temporary Solution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-term-solution">Long-Term Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-app-password-or-pat">Creating an App Password (or PAT)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-errors">Possible errors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
