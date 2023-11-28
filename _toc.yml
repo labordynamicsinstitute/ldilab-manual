@@ -84,6 +84,7 @@ parts:
     - file: 97-00-authentication
       sections:
       - file: 97-01-Bitbucket-authentication
+      - file: 97-02-openicpsr-authentication
     - file: 98-00-sundry-correspondence
       sections:
       - file: 98-01-correspondence-legacy-updates
