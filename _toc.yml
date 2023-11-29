@@ -81,6 +81,7 @@ parts:
     - file: 96-20-using-matlab
     - file: 96-50-using-docker
     - file: 96-70-using-mathematica
+    - file: 96-80-using-ox
     - file: 97-00-authentication
       sections:
       - file: 97-01-Bitbucket-authentication
