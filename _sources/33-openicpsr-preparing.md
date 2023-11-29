@@ -30,7 +30,8 @@ To do so, proceed as follows:
   - in the pop-up, paste and submit the following lines: 
 
 
-```{admonition} We call this the "Request-revisions-RR" message.
+```{admonition}  We call this 
+the **"Request-revisions-RR" message**.
 
 ```
 
@@ -69,8 +70,8 @@ Revisions requested. Details in the full report, which you will receive via Scho
          - then the following lines
 
 
-```{admonition} We call this the "Request-revisions-CA" message 
-when `Deposit in Progress` is shown.
+```{admonition} We call this 
+the **"Request-revisions-CA" message  when `Deposit in Progress`** is shown.
 
 ```
          
@@ -91,8 +92,8 @@ Once all changes have been made, please change the status of your deposit to "Su
     - then the following lines: 
 
 
-```{admonition} We call this the "Request-revisions-CA" message
-when `Submitted` is shown.
+```{admonition} We call this 
+the **"Request-revisions-CA" message when `Submitted` is shown**.
 ```
 
 ```
@@ -120,8 +121,8 @@ Details in the full report, which you will receive via ScholarOne shortly. Pleas
       - with body
 
 
-```{admonition} We call this the "Sign-off" message 
-when author needs to `Submit`.
+```{admonition} We call this 
+the **"Sign-off" message  when author needs to `Submit`**.
 ```
       
 ```
@@ -139,8 +140,8 @@ Action items:
       - with body
 
 
-```{admonition} We call this the "Sign-off" message 
-when author has `Submit`ted.
+```{admonition} We call this 
+the **"Final Sign-off" message**.
 ```
 
 ```
@@ -153,10 +154,12 @@ Action items:
 ```
 
 7. Back in the Jira popup, finalize by clicking `OK`. The issue will be moved to `Pending Publication`.
-8. You are not quite done yet! You will receive an email from openICPSR.  
-   - the email needs to be forwarded to *dataeditor-queue@aeapubs.org* 
+8. You are **not quite done** yet! 
+   - You will receive an email from openICPSR.  
+   - forward the email to *dataeditor-queue@aeapubs.org* , but **don't press send yet!**
    - manually add the **issue number** (AEAREP-xxx) into the subject line
    - delete anything in the body of the email before the "From:" 
+   - Now send the email.
    - This will add the message to the Jira ticket.
 
-> - ICPSR does not always successfully send out a notification email for the posting of the comment. If you don't receive the email, as a last resort, simply copy and paste your ICPSR comment into the Jira ticket so that we have a record.
+> ICPSR does not always successfully send out a notification email for the posting of the comment. If you don't receive the email, as a last resort, simply copy and paste your ICPSR comment into the Jira ticket so that we have a record.
