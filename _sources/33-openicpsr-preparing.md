@@ -2,7 +2,7 @@
 
 ## Decision point?
 
-```{admonition}
+```{note}
 If 
 
   - [`MCStatus`] contains `CA` and [`MCRecommendationV2`] = `Conditional Accept`, or
@@ -30,8 +30,7 @@ To do so, proceed as follows:
   - in the pop-up, paste and submit the following lines: 
 
 
-```{admonition} We call this the
-"Request-revisions-RR" message.
+```{admonition} We call this the "Request-revisions-RR" message.
 ```
 
 ```
@@ -69,8 +68,7 @@ Revisions requested. Details in the full report, which you will receive via Scho
          - then the following lines
 
 
-```{admonition} We call this the
-"Request-revisions-CA" message when `Deposit in Progress` is shown.
+```{admonition} We call this the "Request-revisions-CA" message when `Deposit in Progress` is shown.
 ```
          
 ```
@@ -90,8 +88,7 @@ Once all changes have been made, please change the status of your deposit to "Su
     - then the following lines: 
 
 
-```{admonition} We call this the
-"Request-revisions-CA" message when `Submitted` is shown.
+```{admonition} We call this the "Request-revisions-CA" message when `Submitted` is shown.
 ```
 
 ```

@@ -502,6 +502,17 @@ document.write(`
 <h1>Preparing openICPSR deposit<a class="headerlink" href="#preparing-openicpsr-deposit" title="Permalink to this heading">#</a></h1>
 <section id="decision-point">
 <h2>Decision point?<a class="headerlink" href="#decision-point" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If</p>
+<ul class="simple">
+<li><p>[<code class="docutils literal notranslate"><span class="pre">MCStatus</span></code>] contains <code class="docutils literal notranslate"><span class="pre">CA</span></code> and [<code class="docutils literal notranslate"><span class="pre">MCRecommendationV2</span></code>] = <code class="docutils literal notranslate"><span class="pre">Conditional</span> <span class="pre">Accept</span></code>, or</p></li>
+<li><p>[<code class="docutils literal notranslate"><span class="pre">MCStatus</span></code>] contains <code class="docutils literal notranslate"><span class="pre">RR</span></code></p></li>
+</ul>
+<p>then proceed to <a class="reference internal" href="#request-revisions"><span class="std std-ref">Request revisions</span></a>.</p>
+<p>Otherwise, if  [<code class="docutils literal notranslate"><span class="pre">MCStatus</span></code>] contains <code class="docutils literal notranslate"><span class="pre">CA</span></code> and [<code class="docutils literal notranslate"><span class="pre">MCRecommendationV2</span></code>] = <code class="docutils literal notranslate"><span class="pre">Accept</span></code> or <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">with</span> <span class="pre">changes</span></code>
+then proceed to <a class="reference internal" href="#preparing-deposit-for-publication"><span class="std std-ref">Preparing Deposit for Publication</span></a>.</p>
+</div>
 </section>
 <section id="request-revisions">
 <span id="id1"></span><h2>Request revisions<a class="headerlink" href="#request-revisions" title="Permalink to this heading">#</a></h2>
@@ -525,10 +536,6 @@ To do so, proceed as follows:</p>
 <ul class="simple">
 <li><p>in the pop-up, paste and submit the following lines:</p></li>
 </ul>
-<div class="admonition-we-call-this-the admonition">
-<p class="admonition-title">We call this the</p>
-<p>“Request-revisions-RR” message.</p>
-</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Revisions</span> <span class="n">requested</span><span class="o">.</span> <span class="n">Details</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">full</span> <span class="n">report</span><span class="p">,</span> <span class="n">which</span> <span class="n">you</span> <span class="n">will</span> <span class="n">receive</span> <span class="n">via</span> <span class="n">ScholarOne</span> <span class="n">shortly</span><span class="o">.</span>
 
 <span class="o">&gt;</span> <span class="p">[</span><span class="n">NOTE</span><span class="p">]</span> <span class="n">Starting</span> <span class="n">July</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="n">we</span> <span class="n">will</span> <span class="n">start</span> <span class="n">to</span> <span class="n">publish</span> <span class="n">replication</span> <span class="n">packages</span> <span class="k">as</span> <span class="n">soon</span> <span class="k">as</span> <span class="nb">all</span> <span class="n">requested</span> <span class="n">changes</span> <span class="n">to</span> <span class="n">the</span> <span class="n">deposit</span> <span class="n">have</span> <span class="n">been</span> <span class="n">made</span><span class="o">.</span> <span class="n">Please</span> <span class="n">process</span> <span class="nb">any</span> <span class="n">requested</span> <span class="n">changes</span> <span class="k">as</span> <span class="n">soon</span> <span class="k">as</span> <span class="n">possible</span><span class="o">.</span>
@@ -579,34 +586,26 @@ To do so, proceed as follows:</p>
 </ul>
 </li>
 </ol>
-<div class="admonition-we-call-this-the admonition">
-<p class="admonition-title">We call this the</p>
-<p>“Request-revisions-CA” message when <code class="docutils literal notranslate"><span class="pre">Deposit</span> <span class="pre">in</span> <span class="pre">Progress</span></code> is shown.</p>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Details</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">full</span> <span class="n">report</span><span class="p">,</span> <span class="n">which</span> <span class="n">you</span> <span class="n">will</span> <span class="n">receive</span> <span class="n">via</span> <span class="n">ScholarOne</span> <span class="n">shortly</span><span class="o">.</span> <span class="n">Please</span> <span class="n">provide</span> <span class="n">your</span> <span class="n">response</span> <span class="n">to</span> <span class="n">the</span> <span class="n">items</span> <span class="n">listed</span> <span class="n">above</span> <span class="n">via</span> <span class="n">the</span> <span class="n">openICPSR</span> <span class="n">Project</span> <span class="n">Communication</span> <span class="n">log</span><span class="p">,</span> <span class="n">specifying</span> <span class="n">AEAREP</span><span class="o">-</span><span class="n">xxx</span><span class="o">.</span> <span class="n">Other</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">report</span> <span class="n">may</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">addressed</span> <span class="n">via</span> <span class="n">ScholarOne</span><span class="o">.</span>
-
-<span class="n">Once</span> <span class="nb">all</span> <span class="n">changes</span> <span class="n">have</span> <span class="n">been</span> <span class="n">made</span><span class="p">,</span> <span class="n">please</span> <span class="n">change</span> <span class="n">the</span> <span class="n">status</span> <span class="n">of</span> <span class="n">your</span> <span class="n">deposit</span> <span class="n">to</span> <span class="s2">&quot;Submit to AEA&quot;</span><span class="o">.</span>
-
-
-<span class="o">&gt;</span> <span class="p">[</span><span class="n">NOTE</span><span class="p">]</span> <span class="n">Starting</span> <span class="n">July</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="n">we</span> <span class="n">will</span> <span class="n">start</span> <span class="n">to</span> <span class="n">publish</span> <span class="n">replication</span> <span class="n">packages</span> <span class="k">as</span> <span class="n">soon</span> <span class="k">as</span> <span class="nb">all</span> <span class="n">requested</span> <span class="n">changes</span> <span class="n">to</span> <span class="n">the</span> <span class="n">deposit</span> <span class="n">have</span> <span class="n">been</span> <span class="n">made</span><span class="o">.</span> <span class="n">Please</span> <span class="n">process</span> <span class="nb">any</span> <span class="n">requested</span> <span class="n">changes</span> <span class="k">as</span> <span class="n">soon</span> <span class="k">as</span> <span class="n">possible</span><span class="o">.</span>
+<p>```{admonition} We call this the “Request-revisions-CA” message when <code class="docutils literal notranslate"><span class="pre">Deposit</span> <span class="pre">in</span> <span class="pre">Progress</span></code> is shown.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>         
 </pre></div>
 </div>
-<p>(replace xxx with the issue number)</p>
-<ol class="arabic simple" start="6">
-<li><p>On openICPSR, if <code class="docutils literal notranslate"><span class="pre">Deposit</span> <span class="pre">Status</span></code> = <em><code class="docutils literal notranslate"><span class="pre">Submitted</span></code></em>:</p></li>
-</ol>
-<ul class="simple">
-<li><p>click on <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">Status</span></code>, choose <code class="docutils literal notranslate"><span class="pre">Request</span> <span class="pre">revisions</span></code></p></li>
-<li><p>in the pop-up,</p>
-<ul>
-<li><p>paste the contents of the repository-specific portion of the report after “<code class="docutils literal notranslate"><span class="pre">Action</span> <span class="pre">Items</span> <span class="pre">(openICPSR)</span></code>”</p></li>
-<li><p>then the following lines:</p></li>
-</ul>
-</li>
-</ul>
-<div class="admonition-we-call-this-the admonition">
-<p class="admonition-title">We call this the</p>
-<p>“Request-revisions-CA” message when <code class="docutils literal notranslate"><span class="pre">Submitted</span></code> is shown.</p>
+<p>Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.</p>
+<p>Once all changes have been made, please change the status of your deposit to “Submit to AEA”.</p>
+<blockquote>
+<div><p>[NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(replace xxx with the issue number)
+
+6. On openICPSR, if `Deposit Status` = *`Submitted`*:
+  - click on `Change Status`, choose `Request revisions`
+  - in the pop-up, 
+    - paste the contents of the repository-specific portion of the report after &quot;`Action Items (openICPSR)`&quot;
+    - then the following lines: 
+
+
+```{admonition} We call this the &quot;Request-revisions-CA&quot; message when `Submitted` is shown.
+</pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Details</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">full</span> <span class="n">report</span><span class="p">,</span> <span class="n">which</span> <span class="n">you</span> <span class="n">will</span> <span class="n">receive</span> <span class="n">via</span> <span class="n">ScholarOne</span> <span class="n">shortly</span><span class="o">.</span> <span class="n">Please</span> <span class="n">provide</span> <span class="n">your</span> <span class="n">response</span> <span class="n">to</span> <span class="n">the</span> <span class="n">items</span> <span class="n">listed</span> <span class="n">above</span> <span class="n">via</span> <span class="n">the</span> <span class="n">openICPSR</span> <span class="n">Project</span> <span class="n">Communication</span> <span class="n">log</span><span class="p">,</span> <span class="n">specifying</span> <span class="n">AEAREP</span><span class="o">-</span><span class="n">xxx</span><span class="o">.</span> <span class="n">Other</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">report</span> <span class="n">may</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">addressed</span> <span class="n">via</span> <span class="n">ScholarOne</span><span class="o">.</span>
 
