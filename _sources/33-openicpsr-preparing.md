@@ -31,6 +31,7 @@ To do so, proceed as follows:
 
 
 ```{admonition} We call this the "Request-revisions-RR" message.
+
 ```
 
 ```
@@ -68,7 +69,9 @@ Revisions requested. Details in the full report, which you will receive via Scho
          - then the following lines
 
 
-```{admonition} We call this the "Request-revisions-CA" message when `Deposit in Progress` is shown.
+```{admonition} We call this the "Request-revisions-CA" message 
+when `Deposit in Progress` is shown.
+
 ```
          
 ```
@@ -88,7 +91,8 @@ Once all changes have been made, please change the status of your deposit to "Su
     - then the following lines: 
 
 
-```{admonition} We call this the "Request-revisions-CA" message when `Submitted` is shown.
+```{admonition} We call this the "Request-revisions-CA" message
+when `Submitted` is shown.
 ```
 
 ```
@@ -116,8 +120,8 @@ Details in the full report, which you will receive via ScholarOne shortly. Pleas
       - with body
 
 
-```{admonition} We call this the
-"Sign-off" message when author needs to `Submit`.
+```{admonition} We call this the "Sign-off" message 
+when author needs to `Submit`.
 ```
       
 ```
@@ -135,8 +139,8 @@ Action items:
       - with body
 
 
-```{admonition} We call this the
-"Sign-off" message when author has `Submit`ted.
+```{admonition} We call this the "Sign-off" message 
+when author has `Submit`ted.
 ```
 
 ```
