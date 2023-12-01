@@ -95,6 +95,8 @@ In particular, you can navigate to your working directory and `git clone` the Bi
 
 ## Additional setup and tips-and-tricks
 
+### First-time setup
+
 Run this ONCE the first time you ever access Linux servers:
 
 ```
@@ -103,9 +105,31 @@ echo "umask 007" >> $HOME/.bash_profile
 
 Then do the usual [Bash setup](setup-bash). That should work on nearly any Linux server.
 
-Additional tips-and-tricks can be found on the [LDIlab wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes). These are focused on the BioHPC cluster, but may work on other servers as well.
 
-## Configuring automatic reservation cancellation (BioHPC only)
+### Utilize `tmux`
+
+If the Linux server has `tmux` installed, use it to make a persistent session that survives disconnects. 
+
+```{tip}
+Cheatsheet: https://gist.github.com/MohamedAlaa/2961058
+```
+
+1. Login via SSH
+2. Launch tmux with a session name that makes sense, e.g. `tmux new -s AEAREP-xxxx`
+3. Launch your Matlab, Stata, etc job
+4. Disconnect from tmux: `ctrl-b d`. You don't need to press this both Keyboard shortcut at a time. First press "Ctrl+b" and then press "d".
+5. Log out of SSH
+
+Next time:
+
+1. Login via SSH
+2. Reconnect to your tmux session: `tmux a -t AEAREP-xxxx`
+3. If you forgot what session, `tmux ls`
+
+To save the output of a `tmux` session to a file, see [https://unix.stackexchange.com/questions/26548/write-all-tmux-scrollback-to-a-file](https://unix.stackexchange.com/questions/26548/write-all-tmux-scrollback-to-a-file).
+
+
+### Configuring automatic reservation cancellation (BioHPC only)
 
 If you use the BioHPC reservation system, it helps others if at the end of a long-running job, your reservation is cancelled as soon as possible. One way to do this is to add the following to the scripts you are running:
 
@@ -118,7 +142,8 @@ If you use the BioHPC reservation system, it helps others if at the end of a lon
 :::{tab-item}  Stata
 
 ```stata
-*Use the code below at the bottom of the Stata "main" or "master" script to automatically sign out 
+// Use the code below at the bottom of the Stata "main" or 
+// "master" script to automatically sign out 
 
 shell /programs/bin/labutils/endres.pl 
 ```
@@ -150,7 +175,8 @@ system("/programs/bin/labutils/endres.pl")
 :::{tab-item}  Python
 
 ```python
-%Use code below at bottom of Python/Anaconda script to automatically sign out
+# Use code below at bottom of Python/Anaconda script 
+# to automatically sign out
 
 import os
 
@@ -163,7 +189,8 @@ os.system("/programs/bin/labutils/endres.pl")
 :::{tab-item}  Bash
 
 ```bash
-#Use the code below at the bottom of the bash "main" or "master" script to automatically sign out 
+#Use the code below at the bottom of the bash "main" or 
+# "master" script to automatically sign out 
 /programs/bin/labutils/endres.pl 
 ```
 
@@ -172,3 +199,7 @@ os.system("/programs/bin/labutils/endres.pl")
 ::::
 
 
+
+```{tip}
+Additional tips-and-tricks can be found on the [LDIlab wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes). These are focused on the BioHPC cluster, but may work on other servers as well.
+```
