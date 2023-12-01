@@ -482,8 +482,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-linux-nodes-with-vscode">Accessing Linux nodes with VSCode</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-and-tips-and-tricks">Additional setup and tips-and-tricks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation-biohpc-only">Configuring automatic reservation cancellation (BioHPC only)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-and-tips-and-tricks">Additional setup and tips-and-tricks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilize-tmux">Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation-biohpc-only">Configuring automatic reservation cancellation (BioHPC only)</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -581,21 +585,45 @@ NBER servers</label><div class="sd-tab-content docutils">
 </section>
 <section id="additional-setup-and-tips-and-tricks">
 <h2>Additional setup and tips-and-tricks<a class="headerlink" href="#additional-setup-and-tips-and-tricks" title="Permalink to this heading">#</a></h2>
+<section id="first-time-setup">
+<h3>First-time setup<a class="headerlink" href="#first-time-setup" title="Permalink to this heading">#</a></h3>
 <p>Run this ONCE the first time you ever access Linux servers:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo &quot;umask 007&quot; &gt;&gt; $HOME/.bash_profile
 </pre></div>
 </div>
 <p>Then do the usual <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">Bash setup</span></a>. That should work on nearly any Linux server.</p>
-<p>Additional tips-and-tricks can be found on the <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes">LDIlab wiki</a>. These are focused on the BioHPC cluster, but may work on other servers as well.</p>
+</section>
+<section id="utilize-tmux">
+<h3>Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code><a class="headerlink" href="#utilize-tmux" title="Permalink to this heading">#</a></h3>
+<p>If the Linux server has <code class="docutils literal notranslate"><span class="pre">tmux</span></code> installed, use it to make a persistent session that survives disconnects.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Cheatsheet: <a class="reference external" href="https://gist.github.com/MohamedAlaa/2961058">https://gist.github.com/MohamedAlaa/2961058</a></p>
+</div>
+<ol class="arabic simple">
+<li><p>Login via SSH</p></li>
+<li><p>Launch tmux with a session name that makes sense, e.g. <code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">new</span> <span class="pre">-s</span> <span class="pre">AEAREP-xxxx</span></code></p></li>
+<li><p>Launch your Matlab, Stata, etc job</p></li>
+<li><p>Disconnect from tmux: <code class="docutils literal notranslate"><span class="pre">ctrl-b</span> <span class="pre">d</span></code>. You don’t need to press this both Keyboard shortcut at a time. First press “Ctrl+b” and then press “d”.</p></li>
+<li><p>Log out of SSH</p></li>
+</ol>
+<p>Next time:</p>
+<ol class="arabic simple">
+<li><p>Login via SSH</p></li>
+<li><p>Reconnect to your tmux session: <code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">a</span> <span class="pre">-t</span> <span class="pre">AEAREP-xxxx</span></code></p></li>
+<li><p>If you forgot what session, <code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">ls</span></code></p></li>
+</ol>
+<p>To save the output of a <code class="docutils literal notranslate"><span class="pre">tmux</span></code> session to a file, see <a class="reference external" href="https://unix.stackexchange.com/questions/26548/write-all-tmux-scrollback-to-a-file">https://unix.stackexchange.com/questions/26548/write-all-tmux-scrollback-to-a-file</a>.</p>
 </section>
 <section id="configuring-automatic-reservation-cancellation-biohpc-only">
-<h2>Configuring automatic reservation cancellation (BioHPC only)<a class="headerlink" href="#configuring-automatic-reservation-cancellation-biohpc-only" title="Permalink to this heading">#</a></h2>
+<h3>Configuring automatic reservation cancellation (BioHPC only)<a class="headerlink" href="#configuring-automatic-reservation-cancellation-biohpc-only" title="Permalink to this heading">#</a></h3>
 <p>If you use the BioHPC reservation system, it helps others if at the end of a long-running job, your reservation is cancelled as soon as possible. One way to do this is to add the following to the scripts you are running:</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-2">
 Stata</label><div class="sd-tab-content docutils">
-<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">*Use the code below at the bottom of the Stata &quot;main&quot; or &quot;master&quot; script to automatically sign out </span>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">// Use the code below at the bottom of the Stata &quot;main&quot; or </span>
+<span class="c1">// &quot;master&quot; script to automatically sign out </span>
 
 <span class="k">shell</span> <span class="o">/</span>programs<span class="o">/</span>bin<span class="o">/</span>labutils<span class="o">/</span>endres<span class="m">.</span>pl 
 </pre></div>
@@ -621,7 +649,8 @@ Matlab</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-5">
 Python</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">Use</span> <span class="n">code</span> <span class="n">below</span> <span class="n">at</span> <span class="n">bottom</span> <span class="n">of</span> <span class="n">Python</span><span class="o">/</span><span class="n">Anaconda</span> <span class="n">script</span> <span class="n">to</span> <span class="n">automatically</span> <span class="n">sign</span> <span class="n">out</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use code below at bottom of Python/Anaconda script </span>
+<span class="c1"># to automatically sign out</span>
 
 <span class="kn">import</span> <span class="nn">os</span>
 
@@ -632,12 +661,18 @@ Python</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-6">
 Bash</label><div class="sd-tab-content docutils">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Use the code below at the bottom of the bash &quot;main&quot; or &quot;master&quot; script to automatically sign out </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Use the code below at the bottom of the bash &quot;main&quot; or </span>
+<span class="c1"># &quot;master&quot; script to automatically sign out </span>
 /programs/bin/labutils/endres.pl<span class="w"> </span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Additional tips-and-tricks can be found on the <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes">LDIlab wiki</a>. These are focused on the BioHPC cluster, but may work on other servers as well.</p>
+</div>
+</section>
 </section>
 </section>
 
@@ -703,8 +738,12 @@ Bash</label><div class="sd-tab-content docutils">
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-linux-nodes-with-vscode">Accessing Linux nodes with VSCode</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-and-tips-and-tricks">Additional setup and tips-and-tricks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation-biohpc-only">Configuring automatic reservation cancellation (BioHPC only)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-and-tips-and-tricks">Additional setup and tips-and-tricks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilize-tmux">Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation-biohpc-only">Configuring automatic reservation cancellation (BioHPC only)</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
