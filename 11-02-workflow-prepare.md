@@ -9,7 +9,7 @@
 Before we can verify code, data, and documentation, we need to get the code and data onto your "working area". 
 
 ```{note}
-You now need to decide on what computer you are going to do the data analysis - that should be the place you do the next few steps. See [Access Computer](access-to-computers) for details.
+You now need to decide on what computer you are going to do the data analysis - that should be the place you do the next few steps. See [Access Computer](Access_to_computers) for details.
 This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.
 ```
 
@@ -42,7 +42,7 @@ This is because the git setup we use does not allow you to include the data file
 
 :::{tab-item} BioHPC
 
-All actions on BioHPC will be performed in a terminal. Depending on whether you connect with SSH, VNC, or Visual Studio Code, details may differ (see [Access Computer](Access-to-computers) for details). We suggest connecting via SSH or using Visual Studio Code (which uses SSH in the background), for simplicity. It is assumed that you have done [Bash setup](setup-bash). 
+All actions on BioHPC will be performed in a terminal. Depending on whether you connect with SSH, VNC, or Visual Studio Code, details may differ (see [Access Computer](Access_to_computers) for details). We suggest connecting via SSH or using Visual Studio Code (which uses SSH in the background), for simplicity. It is assumed that you have done [Bash setup](setup-bash). 
 
 - [ ] We suggest doing all first steps (adding Manuscript, etc.) on CCSS or your laptop. 
 - [ ] If using SSH, you are already at the "terminal". If using VNC, choose it from the application menu. If using [Visual Studio Code to connect to BioHPC], follow instructions from the **Github Codespaces** tab!

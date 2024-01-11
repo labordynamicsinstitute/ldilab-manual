@@ -94,7 +94,7 @@ For each data source, list
 - presence or absence of codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK. 
    - The information of the source location of the data should instruct the replicator how to access the source data.
    - A replicator should validate the provided description of the access information by visiting the link, downloading the dataset from the link, and compare the downloaded dataset with the provided dataset.
-- whether the *data* is cited (see the section on [data citations](datacitations). Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing. 
+- whether the *data* is cited (see the section on [data citations](data-citations). Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing. 
 
 ![Data Description Section](images/report-data-description.png)
 

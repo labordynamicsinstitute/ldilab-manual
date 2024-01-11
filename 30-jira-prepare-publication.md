@@ -67,12 +67,12 @@ If
   - [`MCStatus`] contains `CA` and [`MCRecommendationV2`] = `Conditional Accept`, or
   - [`MCStatus`] contains `RR`
 
-then proceed to [Request revisions](request-revisions).
+then proceed to [Request revisions](request-revisions-jira).
 
 Otherwise, if  [`MCStatus`] contains `CA` and [`MCRecommendationV2`] = `Accept` or `Accept with changes`
-then proceed to [Preparing Deposit for Publication](preparing-deposit-for-publication).
+then proceed to [Preparing Deposit for Publication](preparing-deposit-for-publication-jira).
 
-(request-revisions)=
+(request-revisions-jira)=
 ## Request revisions
 
 In principle, once the report is uploaded, the author will get the report with the requested revisions via ScholarOne. However, under the post-August 2020 workflow on openICPSR, the project may need to be unlocked for the author to make changes.
@@ -112,7 +112,7 @@ Revisions requested. Details in the full report, which you will receive via Scho
 
 
 
-(preparing-deposit-for-publication)=
+(preparing-deposit-for-publication-jira)=
 ## Preparing Deposit for Publication
  
 
