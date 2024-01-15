@@ -16,8 +16,10 @@ The link to JIRA is [https://aeadataeditors.atlassian.net/jira](https://aeadatae
 Is the current Jira issue an **original report** (first time we see the manuscript) or **is it a revision** (we've seen the manuscript before)?
 ```
 
+![Is it a revision or not?](images/AEA-Data-Editor-Workflow-V3-20240114-short-123.png)
+
 - [ ] Check the `MCStatus` field: 
-  - If it says "`RR`" or "`CA`", then it is an "original report" - proceed to the **next step** ([Creating a repository](create-repo)).
+  - If it says "`RR`" or "`CA`", then it is an "original report" - proceed to the next step ([`Creating repository`](create-repo)).
   - If it says "`CA` `Revision`", then it is ... a revision! 
     - Follow the instructions at "[Revision reports after author resubmission](aea-revision-reports-after-author-resubmission)".
     - In particular, **do NOT create a new repository** - you will re-use the previous repository. Enter the previous repository "stub" into the `Bitbucket short name` field.

@@ -5,6 +5,12 @@
 - Link to JIRA: [https://aeadataeditors.atlassian.net/jira](https://aeadataeditors.atlassian.net/jira) (requires login).
 ```
 
+## Start the report
+
+To signal that you are starting the report, you will now transition the JIRA subtask to "`Writing Part A`".
+
+![Move to Writing Part A](images/jira-in-progress-parta.png)
+
 ## Prepare your working area
 
 ```{note}
@@ -215,3 +221,9 @@ You can now proceed to change the status to `Preliminary Report complete`. You w
   - [ ] `NUMBEROFDATASETS` How many datasets are used in the article (whether or not they are included in the replication package you downloaded)? This is meant to include datasets that you are asked to download, or that you were given access to via the "L:" drive, or "CRADC", or some other secure mechanism.
 
 
+## Next steps
+
+You should now move the subtask to "`Preliminary Report Complete`" to signal that this part of the processing is done.
+
+
+![Move to Completed](images/jira-in-progress-parta.png)

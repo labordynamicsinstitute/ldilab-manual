@@ -1,6 +1,13 @@
 (prepare-to-run-code)=
 # Preparing to Run Code (Part B)
 
+
+## Signal that you are working on Part B
+
+To signal that you are starting to run the code, you will now transition the JIRA subtask to "`In Progress`".
+
+![Move to Part B to In Progress](images/jira-in-progress-partb-1.png)
+
 (Manual1)=
 ## Prepare your working area
 

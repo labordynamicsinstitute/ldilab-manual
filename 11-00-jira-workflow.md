@@ -1,5 +1,5 @@
 (aea-jira-workflow-a-guide)=
-# AEA Jira workflow - Initial steps
+# AEA Jira workflow 
 
 For pre-publication verification, we use a Jira-based workflow to guide the replicator through the process of filling out the report (called `REPLICATION.md`). 
 

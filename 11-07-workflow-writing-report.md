@@ -3,6 +3,13 @@
 
 At this stage, you will write the final version of the report.
 
+## Signalling where you are
+
+Move the Jira issue to "`Writing report`". 
+
+![Move to Writing report](images/AEA-Data-Editor-Workflow-V3-20240114-short-345-3.png)
+
+
 ## Standard steps
 
 - There is sample language for commonly encountered problems at the [sample-language-report.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md) link in the tall grey bar
@@ -33,25 +40,10 @@ Figure 5 as reproduced:
     - if only a small number of table entries: mention them by table in the report
     - if a larger number: Highlight on the reproduced images (of figures, screenshots of tables) the differences you have observed
 
-## Cleaning up
 
-- Clean up the REPLICATION.md - it should be factual, objective, and not written in the first person.
-- Copy-and-paste from the `code-check.xlsx`, including the column "Reproduced?" and any notes column, into the "Findings" part. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
-- Delete all of the instructional lines in REPLICATION.md  before finishing the report.
 
-## On Jira
-
-- Check that the `DataCitationSummary` field is filled out indicating how many data citations are in order: all, some, or none. 
-- Check that the `Report Location` is filled out. 
-  - If it is, do not change it.
-  - If for some reason, it is missing, enter the full URL from the repository, e.g., `https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md`
-
-You can now submit your report for review by changing the status to `Under Review`
-
-## Details
-
-(bitbucket-diff)=
-### Comparing TeX files on Bitbucket
+:::{admonition} Advanced: Comparing TeX files on Bitbucket
+:class: dropdown
 
 If the authors provided LaTeX files as part of the replication package, you may be able to leverage Bitbucket or Git to compare them. 
 
@@ -82,3 +74,23 @@ If the authors provided LaTeX files as part of the replication package, you may 
 - Do this for all `tex` files (you only need to select the "whitespace" option for the first file). If you scroll up to the summary again, you should see a count next to the file. This shows the number of lines changed, taking into account the "whitespace" option.
 
 ![0 lines changes](/images/Bitbucket-diff-ignore-whitespace-summary.png)
+
+:::
+
+## Cleaning up
+
+- Clean up the REPLICATION.md - it should be factual, objective, and not written in the first person.
+- Copy-and-paste from the `code-check.xlsx`, including the column "Reproduced?" and any notes column, into the "Findings" part. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
+- Delete all of the instructional lines in REPLICATION.md  before finishing the report.
+
+## On Jira
+
+- Check that the `DataCitationSummary` field is filled out indicating how many data citations are in order: all, some, or none. 
+- Check that the `Report Location` is filled out. 
+  - If it is, do not change it.
+  - If for some reason, it is missing, enter the full URL from the repository, e.g., `https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md`
+
+You can now submit your report for review by changing the status to `Under Review`
+
+
+![Move to Under Review](images/AEA-Data-Editor-Workflow-V3-20240114-short-345-4.png)

@@ -31,6 +31,7 @@ parts:
       - file: 11-05-preparing-to-run-code
       - file: 11-06-running-code
       - file: 11-07-workflow-writing-report
+      - file: 11-08-report-completed
     - file: 12-jira-revision-guidance
   - caption: Advanced AEA-related tasks
     chapters:

@@ -1,11 +1,12 @@
 (create-repo)=
-# Creating a repository
+# Creating a repository and running pipeline
 
 
 ```{warning}
 In some instances, somebody else has already created a repository. Always check first if the `Bitbucket short name` is already filled out. If yes, skip this section and go to [Collecting information](collecting-information)!
 ```
 
+## Creating a repository
 
 - [ ] start by [creating a repository using the import method](https://bitbucket.org/repo/import) 
     - copy-paste from this URL to the URL field (this is also available in the Jira dropdown "Shortcuts")
@@ -26,7 +27,7 @@ In some instances, somebody else has already created a repository. Always check 
 - We have now created a Bitbucket repo named something like `aearep-123` that has been populated with the latest version of the LDI replication template documents!
 
 (ingesting-author-materials)=
-## Ingesting author materials
+## Running pipeline to ingest author materials
 
 We will now ingest the authors' materials, and run a few statistics. Typically, the materials will be on a (private) openICPSR repository. Sometimes, the materials will be at Dataverse, Zenodo, or elsewhere.
 
@@ -65,3 +66,6 @@ You will now run what is called a *`Bitbucket Pipeline`*. Similar tools on other
 
 ![completed pipeline](images/jira-run-pipeline-finished.png)
 
+## Next step
+
+![Move to In Progress](images/AEA-Data-Editor-Workflow-V3-20240114-short-23.png)

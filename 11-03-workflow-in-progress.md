@@ -1,12 +1,11 @@
 (in-progress)=
 # In Progress
 
-At this point, the repository exists. 
 
 (collecting-information)=
 ## Collecting information 
 
-At this stage, you are collecting information. 
+At this stage,  the repository exists. You are now collecting information. 
 
 - [ ] Fill out the following fields in the Jira ticket (some may be pre-populated):
     - [x] `Replication package URL` In almost all cases, this is the openICPSR repo for which you will have received a notification email.
@@ -24,7 +23,11 @@ At this stage, you are collecting information.
 
 ## Choosing the next steps
 
-From here, there should be two sub-tasks. There are two possibilities now:
+From here, there should be two sub-tasks. 
+
+![Two subtasks](images/jira-in-progress-subtasks.png)
+
+There are two possibilities now:
 
 ### You complete the subtasks sequentially
 
