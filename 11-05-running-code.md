@@ -1,3 +1,57 @@
+
+## Other information
+
+Have a look at the **README** again. 
+
+- [ ] Is there information about **Requirements**? 
+  - Is there information about the **software**? 
+  - How long does the author say the code will run?
+  - How much memory, or processors, does the code need? 
+  - This may tell you if you, or somebody else, will need to run the code, and whether CISER, or someplace else, is a good place to run the code.
+
+## Review of Code
+
+Now do a first pass through the code files provided:
+
+
+```{warning}
+Do NOT run any code yet!
+```
+ 
+
+- [ ] review the code in detail. 
+- [ ] In the template, you will find *[code-check.xlsx](https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx)*. 
+  - Use this to create a list of all Tables and Figures in the paper, and use this to guide you in [REPLICATION.md](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md).
+- [ ] Fill out the "Code Description" section of the REPLICATION.md
+  - Provide some information about the program files (are there 3 Stata files? Are there 5 Matlab programs?). You will use this information to fill out the `Software Used` later as well, but provide details here.
+    - You can use the file "`generated/programs-list.txt` to help you here.
+  - Did you have difficulty aligning the README with the files? Does the sequence suggested by the programs differ from what's written in the README? 
+  - Are there files in the archive not explained in the README?
+  - Copy-and-paste the *code-check.xlsx* into the code description part, listing the programs. Omit the "Reproduced?" Column in doing so. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
+    - This table will be pasted in under "Findings" again, with "Reproduced?" column, once code has been run.
+
+Next fill out the following fields in the Jira ticket:
+
+  - [ ] `BITBUCKET SHORT NAME` - if not already done earlier
+
+```{tip}
+Commit! 
+
+  ```bash
+  git commit 'Finished code section'
+  git push
+  ```
+
+```
+
+
+## Completing JIRA fields
+
+
+  - [ ] `Software Used` Start typing the name of the software program you will use for the replication. Software that have been used in the past will show up as  options (e.g. start typing "Stata" and you will see it pop up).
+  - [ ] `PROGRAMSEQUENCE` Does the README tell you the correct sequence for running the code?
+  - [ ] `PROGRAMSDOCUMENTATION` Are the provided programs well commented? Are they documented in the README?
+  - [ ] `PROGRAMSSTRUCTUREMANUAL` Does the README note any manual changes that you need to make to the code in order for it to run?
 (Manual1)=
 # Prepare the working area 
 
