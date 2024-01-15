@@ -28,15 +28,15 @@ From here, there should be two sub-tasks. There are two possibilities now:
 
 ### You complete the subtasks sequentially
 
-- [ ] First, complete the `Prepare preliminary report (Part A)` subtask.
-- [ ] Then, `run the code` and complete the Part B report.
+- [ ] First, complete the [`Prepare preliminary report (Part A)`](parta) subtask.
+- [ ] Then, [`run the code` and complete the Part B report](running-code-partb).
 
 ### You and somebody else complete the subtasks in parallel
 
 In some cases, you will be working with somebody else. 
 
-- One person does `Part A`: _____________
-- Another person does `Part B`: ________________
+- One person does [`Part A`](parta): _____________
+- Another person does [`Part B`](running-code-partb): ________________
 
 In general, the person doing `Part A` should then also, once `Part B` is completed, merge in the information from `Part B` and write the final `Findings` section (`Part C`).
 

@@ -27,11 +27,9 @@ parts:
       - file: 11-01-workflow-assigned
       - file: 11-02-workflow-create-repo
       - file: 11-03-workflow-in-progress
-      - file: 11-02-workflow-prepare
-      - file: 11-03-workflow-code
-      - file: 11-04-workflow-data
-      - file: 11-05-workflow-write-prelim
-      - file: 11-06-workflow-verification
+      - file: 11-04-parta
+      - file: 11-05-preparing-to-run-code
+      - file: 11-06-running-code
       - file: 11-07-workflow-code-review
       - file: 11-08-workflow-writing-report
     - file: 12-jira-revision-guidance
@@ -45,12 +43,13 @@ parts:
       - file: 33-openicpsr-preparing
     - file: 50-openicpsr-related-tasks
       sections:
-      - file: 20-Pending_ICPSR
+      - file: 51-openicpsr-monitoring-pending
       - file: 52-openicpsr-publishing-deposit
       - file: 53-openicpsr-add-article-doi
     - file: 40-Instructions-PandP-Checks
   - caption: Running code
     chapters:
+    - file: 96-00-running-code
     - file: 96-00-using-Stata
       sections:
       - file: 96-01-using-config-stata

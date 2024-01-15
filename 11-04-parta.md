@@ -8,7 +8,7 @@
 ## Prepare your working area
 
 ```{note}
-For **Part A**, you do NOT need the data, but you do need the working copy of the repository. It is not important what computer you prepare this part, you can do it on CCSS or your laptop.```
+For **Part A**, you do NOT need the data, but you do need the working copy of the repository. It is not important what computer you prepare this part, you can do it on CCSS or your laptop.
 ```
 
 ## Pull everything together
@@ -182,7 +182,6 @@ At this stage, you go back and review the Part A report again. Identify any acti
 - [ ] Commit this preliminary report to the Bitbucket repository.
 
 
-> Commit!
 
 ```bash
 git add REPLICATION.md
@@ -198,7 +197,7 @@ You are now ready to complete the subtask. In the transition screen, you will be
   - [ ] `DATA PROVENANCE` Where, specifically, are you accessing the data? Typically you can write here "`openICPSR`",  but it may also be a user-provided URL or DOI, or a different source
     - if the data is in multiple places, enter "Multiple" here, and record the details in the REPLICATION.md
 
-You can now proceed to change the status to `Write Preliminary Report`. You will be asked to provide additional information:
+You can now proceed to change the status to `Preliminary Report complete`. You will be asked to provide additional information:
 
   - [ ] `DATASETSINCLUDED` Are all datasets included as part of the replication package (on openICPSR or, if not using openICPSR, on the other repository)?
   - [ ] `DATAAVAILABILITYACESS` Do the data require users to apply for access, purchase, or otherwise sign or enter into agreements to access the data? This could be a license agreement, or even a click-through acknowledgement. (This should be mentioned in the Readme PDF or in the article) 

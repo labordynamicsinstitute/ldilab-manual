@@ -23,7 +23,7 @@ In some instances, somebody else has already created a repository. Always check 
 
 ![](images/bitbucket_import_blank_2022.png)
 
-- We have now created a Bitbucket repo named something like aearep-123 that has been populated with the latest version of the LDI replication template documents!
+- We have now created a Bitbucket repo named something like `aearep-123` that has been populated with the latest version of the LDI replication template documents!
 
 (ingesting-author-materials)=
 ## Ingesting author materials
@@ -61,6 +61,7 @@ You will now run what is called a *`Bitbucket Pipeline`*. Similar tools on other
 ![running pipeline](images/jira-run-pipeline-running.png)
 
 - [ ] Once your pipeline is done, check that it is green.
-  - If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You, or the person assigned to `Part C`, may then need to do [the manual steps later](Manual1).
+  - If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You, or the person assigned to `Part B`, may then need to do [the manual steps later](Manual1).
 
 ![completed pipeline](images/jira-run-pipeline-finished.png)
+
