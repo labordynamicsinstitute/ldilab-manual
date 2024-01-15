@@ -1,14 +1,19 @@
 (aea-jira-workflow-a-guide)=
-# AEA Jira workflow - A guide
+# AEA Jira workflow - Initial steps
 
-For pre-publication verification, we use a Jira-based workflow similar to the post-publication processes described in the [Wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki). For AEA work, that post-publication process can be ignored.
+For pre-publication verification, we use a Jira-based workflow to guide the replicator through the process of filling out the report (called `REPLICATION.md`). 
 
 ```{note}
 The link to JIRA is [https://aeadataeditors.atlassian.net/jira](https://aeadataeditors.atlassian.net/jira) (requires login).
 ```
 
-## Scope
+## New
 
+```{warning}
+For most Jira issues created after 2024-01-14, we use a new workflow. In this, the report is initially split into `REPLICATION-PartA.md` and `REPLICATION-PartB.md`, and subtasks are created for preparing parts A and B. Once both parts are ready, they are merged back into `REPLICATION.md`. 
+```
+
+## Scope
 
 Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see [other document](https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-supervisor-notes.md) for details.
 
@@ -16,12 +21,16 @@ Your supervisor will assign you to this workflow. This workflow covers code and 
 
 ## Overview
 
-![jira image](images/AEADataEditorWorkflow-20191217.png)
+![jira image](images/AEA-Data-Editor-Workflow-V3-20240114-short.png)
 
 The following table illustrates the flow and transitions. The `transition` field identifies the button that will appear in the interface
 that needs to be clicked in order to progress an issue from the `From` state to the `To` state. The `Condition` field identifies
 which form field needs to be filled out in order to be able to make the transition. `Blocked` is always an option, and leads to a "waiting state"
 until a resolution can be found.
+
+```{warning}
+THIS STILL NEEDS UPDATES FOR V3 workflow
+```
 
 | From         | Transition           | → To           | Condition |
 |:-------------|:---------------------|:---------------|:----------|

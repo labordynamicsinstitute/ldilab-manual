@@ -1,4 +1,5 @@
-# Preparing openICPSR deposit
+(submitting-info-via-openicpsr)=
+# Submitting deposit-related information via openICPSR 
 
 ## Decision point?
 

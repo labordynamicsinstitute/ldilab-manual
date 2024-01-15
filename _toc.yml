@@ -20,11 +20,13 @@ parts:
     - file: 06-basic-flow
     - file: 07-basic-assessing-reproducibility
     - file: 08-details-replication-report
-  - caption: AEA-specific training
+  - caption: AEA-specific Jira Workflow
     chapters:
     - file: 11-00-jira-workflow
       sections:
-      - file: 11-01-workflow-in-progress
+      - file: 11-01-workflow-assigned
+      - file: 11-02-workflow-create-repo
+      - file: 11-03-workflow-in-progress
       - file: 11-02-workflow-prepare
       - file: 11-03-workflow-code
       - file: 11-04-workflow-data
@@ -33,18 +35,35 @@ parts:
       - file: 11-07-workflow-code-review
       - file: 11-08-workflow-writing-report
     - file: 12-jira-revision-guidance
+  - caption: Advanced AEA-related tasks
+    chapters:
     - file: 13-approving-issues
-    - file: 20-Pending_ICPSR
     - file: 30-jira-prepare-publication
       sections:
       - file: 31-jira-openicpsr-setup
       - file: 32-jira-submitting
       - file: 33-openicpsr-preparing
-    - file: 40-Instructions-PandP-Checks
     - file: 50-openicpsr-related-tasks
       sections:
-      - file: 51-openicpsr-publishing-deposit
-      - file: 52-openicpsr-add-article-doi
+      - file: 20-Pending_ICPSR
+      - file: 52-openicpsr-publishing-deposit
+      - file: 53-openicpsr-add-article-doi
+    - file: 40-Instructions-PandP-Checks
+  - caption: Running code
+    chapters:
+    - file: 96-00-using-Stata
+      sections:
+      - file: 96-01-using-config-stata
+      - file: 96-02-running-stata-code
+      - file: 96-03-stata-scan-packages
+    - file: 96-10-using-R
+      sections:
+      - file: 96-11-using-config-r
+      - file: 96-12-running-r-code
+    - file: 96-20-using-matlab
+    - file: 96-50-using-docker
+    - file: 96-70-using-mathematica
+    - file: 96-80-using-ox
   - caption: Sundry other guidance
     chapters:
     - file: 71-External-reproducibility-checks
@@ -69,19 +88,6 @@ parts:
       - file: 95-40-codespaces
       - file: 95-50-setup-bash
       - file: 95-60-general-setup
-    - file: 96-00-using-Stata
-      sections:
-      - file: 96-01-using-config-stata
-      - file: 96-02-running-stata-code
-      - file: 96-03-stata-scan-packages
-    - file: 96-10-using-R
-      sections:
-      - file: 96-11-using-config-r
-      - file: 96-12-running-r-code
-    - file: 96-20-using-matlab
-    - file: 96-50-using-docker
-    - file: 96-70-using-mathematica
-    - file: 96-80-using-ox
     - file: 97-00-authentication
       sections:
       - file: 97-01-Bitbucket-authentication

@@ -11,7 +11,7 @@ Many cases which the Lab reviews receive a recommendation ([`MCRecommendationV2`
  
 :::
 
-It is important to understand how the submission process works once the final report has been approved. The RAs responsible for this process are following the instructions in [Chapter 15](aea-interfacing-with-the-journal-management-system). If you are not yourself involved in that process, please review those instructions. Briefly, cases that are designated as `Accept - with Changes` will have the reproducibility report submitted to ScholarOne (aka Manuscript Central (MC)), the Jira ticket will be moved into status `Pending openICPSR changes`, and the ICPSR deposit will have been unlocked so that the authors can make changes, with comments to that extent in the "Project Communication Log." 
+It is important to understand how the submission process works once the final report has been approved. The RAs responsible for this process are following the instructions in [Submitting information back to the Editorial Office and to authors](aea-interfacing-with-the-journal-management-system). If you are not yourself involved in that process, please review those instructions. Briefly, cases that are designated as `Accept - with Changes` will have the reproducibility report submitted to ScholarOne (aka Manuscript Central (MC)), the Jira ticket will be moved into status `Pending openICPSR changes`, and the ICPSR deposit will have been unlocked so that the authors can make changes, with comments to that extent in the "Project Communication Log." 
 
 ![partial process](images/pending_openicpsr.png)
 
@@ -60,7 +60,7 @@ You should now open the Bitbucket report, and identify the changes that the auth
 
   - For each change, you should make a note of what problem was addressed. For instance, if the "Reason for incomplete reproducibility" notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box "Bugs in code"
   - You can find the "Reasons for incomplete reproducibility" in the "Repl. info" tab in the Jira ticket, or in the popup when moving from `Assess openICPSR changes` to `Pending publication` at the end of this process.
-- **If you have verified that all the required changes have been made**, continue with the "For Accept" section of the [Interfacing with the Journal Management System](https://labordynamicsinstitute.github.io/ldilab-manual/30-jira-prepare-publication.html#for-accept) chapter
+- **If you have verified that all the required changes have been made**, continue with the ["For Accept" section](submitting-info-via-openicpsr#for-accept) of [Submitting deposit-related information via openICPSR](submitting-info-via-openicpsr).
   - You have another opportunity to uncheck any boxes here that have been addressed.
   - Check under "Other links" if "Non-compliant"  = yes, if so, **do not proceed** until you find clarification
   - - See if the reason for non-compliance (usually mentioned in the report, and at least in the comments) is resolved, **consult with the Data Editor**, then uncheck that box.
@@ -99,7 +99,7 @@ You should now open the Bitbucket report, and identify the changes that the auth
 *[REQUIRED] As specified in the Policy and the DCAF, the README shall follow the schema provided by the Social Science Data Editors'template README. **Incomplete**- They added computational requirements but are missing Statement About Rights*
 
 
-5. If all items are done, continue with the "For Accept" section of the [Interfacing with the Journal Management System](https://labordynamicsinstitute.github.io/ldilab-manual/30-jira-prepare-publication.html#for-accept) chapter
+5. If all items are done, continue with the "For Accept" section of the  ["For Accept" section](submitting-info-via-openicpsr#for-accept) of [Submitting deposit-related information via openICPSR](submitting-info-via-openicpsr).
 6. If some items are incomplete, tag Data Editor's assistant in Jira
 
 ### No Changes
