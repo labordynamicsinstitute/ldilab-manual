@@ -146,6 +146,7 @@ Then you will skip getting the data and running code, and you are done with **Pa
 
 ```
 
+If there is ANY data at all present, then continue to [get the data](get-the-data).
 
 
 (get-the-data)=
