@@ -103,7 +103,12 @@ Have a look at the **README** again.
   - Is there information about the **software**? 
   - How long does the author say the code will run? Is it a reasonable time, or do we maybe need to run it on a more powerful computer?
   - How much memory, or processors, does the code need? Again, is the computer you intended to choose sufficient, or do we need to get access to a more powerful computer, or even a cluster of computers?
-  - Do you think you know how to run the code in the software mentioned? You may not have the right experience, talk to your supervisor!
+
+Now fill out the **Stated Requirements** section of **Part B** of the report.
+
+```{admonition} Now that you have done that:
+Do you think you know how to run the code in the software mentioned? You may not have the right experience, talk to your supervisor!
+```
 
 ## Prepare the code-check
 
@@ -112,13 +117,33 @@ Now is a good time to understand the code in a bit more detail:
 - [ ] In the template, you will find *[code-check.xlsx](https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx)*. 
   - Use this to create a list of all Tables and Figures in the paper
   - You will use this to guide later to tabulate your findings!
-- [ ] Fill out the "Code Description" section of the REPLICATION.md
-  - Provide some information about the program files (are there 3 Stata files? Are there 5 Matlab programs?). You will use this information to fill out the `Software Used` later as well, but provide details here.
+- [ ] Fill out the "**Code Description**" section of the REPLICATION.md
+  - Provide some information about the program files (are there 3 Stata files? Are there 5 Matlab programs?). You will use this information to fill out the `Software Used` (in the main task) later as well, but provide details here.
     - You can use the file "`generated/programs-list.txt` to help you here.
   - Did you have difficulty aligning the README with the files? Does the sequence suggested by the programs differ from what's written in the README? 
   - Are there files in the archive not explained in the README?
   - Copy-and-paste the *code-check.xlsx* into the code description part, listing the programs. Omit the "Reproduced?" Column in doing so. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
     - This table will be pasted in under "Findings" again, with "Reproduced?" column, once code has been run.
+
+
+(describe-the-data-files)=
+## Describe the provided data
+
+The automated scripts should have filled out the "**All data files provided**" section, but if not, please do so here. 
+
+```{note}
+If the list is VERY long, put it into an appendix, but make a note in this section that there is an appendix with this info.
+```
+
+```{admonition} What if there are no data provided at all? 
+
+For instance, when data are confidential and only available through some computer system at the Census Bureau or in Sweden?
+
+Then you will skip getting the data and running code, and you are done with **Part B**! Go straight to [Part C](partc), writing the **Findings** section
+
+```
+
+
 
 (get-the-data)=
 ## Get the Data 
@@ -129,6 +154,7 @@ When getting the data, please take care to distinguish
 - data that is part of the openICPSR deposit
 - data that the README tells you to download or otherwise access
 - data that you are provided on the L-Drive, which is typically provided under an agreement with the authors, and cannot be redistributed.
+
 
 Here, we will describe the most likely first step: getting the data from openICPSR. Any data you download should also be stored on this computer. We do not explicitly describe this here. **CCSS** is the most likely place where you do this, but double-check with your supervisor.
 
