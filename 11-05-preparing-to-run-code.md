@@ -131,15 +131,18 @@ Now is a good time to understand the code in a bit more detail:
 
 The automated scripts should have filled out the "**All data files provided**" section, but if not, please do so here. 
 
-```{note}
+
 If the list is VERY long, put it into an appendix, but make a note in this section that there is an appendix with this info.
-```
+
 
 ```{admonition} What if there are no data provided at all? 
 
-For instance, when data are confidential and only available through some computer system at the Census Bureau or in Sweden?
+If **there are no data at all**, for instance, when data are confidential and only available through some computer system at the Census Bureau or in Sweden?
 
-Then you will skip getting the data and running code, and you are done with **Part B**! Go straight to [Part C](partc), writing the **Findings** section
+Then you will skip getting the data and running code, and you are done with **Part B**! 
+
+- Move the **subtask** to "Part B is complete",
+- Go straight to [Part C](partc), writing the **Findings** section
 
 ```
 
