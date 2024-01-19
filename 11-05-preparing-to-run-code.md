@@ -11,13 +11,19 @@ To signal that you are starting to run the code, you will now transition the JIR
 (Manual1)=
 ## Prepare your working area
 
-
 Before we can verify code, data, and documentation, we need to  first get the code, then the data into your "working area". Let's start with the **code**.
 
 ```{note}
 You now need to decide on what computer you are going to do the data analysis - that should be the place you do the next few steps. See [Access Computer](Access_to_computers) for details.
 This is because the git setup we use does not allow you to include the data files in the Bitbucket repository, so when you download the replication package from openICPSR or elsewhere, they do not get added to the Bitbucket repository.
 ```
+
+
+```{warning}
+If you already prepared the working area on the computer you choose in [Part A](parta), then skip straight to [the next step](partb-verify)!
+```
+
+
 (get-the-code)=
 ## Get the code via the existing Bitbucket repository
 
@@ -86,6 +92,7 @@ With the first step, you obtained a copy of the Bitbucket repository. You should
 If you do not see a folder like `123456` or `dropbox-xyz` in the repository, then the Bitbucket Pipeline likely did not work. You will then need to populate the code (and data) manually. You will do this AFTER downloading the data, in the next step.
 ```
 
+(partb-verify)=
 ## Verify that you can actually run the code
 
 Before you spend time obtaining the data, now is a good time to assess (again) if you have everything needed to run the code.
