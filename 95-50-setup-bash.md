@@ -77,6 +77,26 @@ Now might be a good time to log out and back in to make this work.
 
 If you are on a machine that has Python installed, run the following command (if it fails with `python3`, replace with `python`). You should do this once, from any recently cloned Bitbucket repository (which will contain a `requirements.txt` file)
 
+::::{tab-set}
+
+:::{tab-item} Windows
+
+When running in Bash, this should work:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+:::
+
+:::{tab-item} Linux/macOS
+
+While the use of `python` might work, using `python3` is more robust:
+
 ```bash
 python3 -m pip install -r requirements.txt
 ```
+
+:::
+
+::::
