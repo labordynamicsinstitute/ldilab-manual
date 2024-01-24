@@ -12,11 +12,15 @@ Move the Jira issue to "`Writing report`".
 
 ## Standard steps
 
-- There is sample language for commonly encountered problems at the [sample-language-report.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md) link in the tall grey bar
 - Compare images and tables
   - Some of this may involve "squinting" at images...
   - For tables that are output to Excel, you may be able to use some Excel tools (copy the old numbers, create a difference function between all cells). This is hard to provide examples for, as every table differs.
   - For tables that are output as LaTeX (files ending with `tex`) or as  CSV files, *and* if the authors provided previous versions, you may be able to use Bitbucket to compare them globally, without looking at individual numbers (see [details further down](bitbucket-diff)).
+
+```{warning}
+We want to learn about ALL differences that you see, even if minor. 
+```
+
 - When there are differences: Include images of figures and screenshots of tables (both paper and as-reproduced) in the report
   - For paper images, use a screenshot tool to grab them from the `PDF_Proof.PDF` and save them as PNG.
   - For reproduced images, reference the location within the replication directory.
@@ -39,6 +43,9 @@ Figure 5 as reproduced:
 - Highlight differences:
     - if only a small number of table entries: mention them by table in the report
     - if a larger number: Highlight on the reproduced images (of figures, screenshots of tables) the differences you have observed
+- If there are **too** many differences, let us know immediately, we may then simply send back to the authors with the raw output, and let them address it. 
+
+- There is sample language for commonly encountered problems at the [sample-language-report.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md) link in the tall grey bar
 
 
 
