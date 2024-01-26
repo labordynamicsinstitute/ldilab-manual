@@ -8,6 +8,12 @@ To signal that you are starting to run the code, you will now transition the JIR
 
 ![Move to Part B to In Progress](images/jira-in-progress-partb-1.png)
 
+```{admonition} If you are the replicator who was previously assigned Part A
+:class: dropdown
+In this case, your working area is already prepared, and you can skip to [Get the data](get-the-data).
+
+```
+
 (Manual1)=
 ## Prepare your working area
 
@@ -268,19 +274,25 @@ The local repository should now have the relevant LDI replication template mater
 
 ::::
 
-## If the Bitbucket Pipeline scripts did not work
+## Did the Bitbucket Pipeline scripts work?
 
 In cases where the package downloaded from openICPSR is too big, or where the data do not come from openICPSR, the automated **Bitbucket Pipeline** scripts will not work. In this case, you will need to run some additional steps to run the automated scripts. **This is best done on BioHPC or CS**.
 
 ::::{tab-set}
 
-:::{tab-item} CCSS
+:::{tab-item} The Pipeline worked!
+
+You don't have to do anything additional, you can move on.
+
+:::
+
+:::{tab-item} Running  on CCSS
 
 Running the automated steps on CCSS has not been fully tested yet.
 
 :::
 
-:::{tab-item} BioHPC
+:::{tab-item} Running on BioHPC
 
 - [ ] Access BioHPC, see [Access Computer](Access_to_computers) for details.
 - [ ] Change directory to the place where you downloaded the repository and the data
@@ -295,7 +307,7 @@ Running the automated steps on CCSS has not been fully tested yet.
     ```
 :::
 
-:::{tab-item} Github Codespaces (CS)
+:::{tab-item} Running on Github Codespaces (CS)
 
 - [ ] Change directory to the place where you downloaded the repository and the data, typically 
       ```bash
