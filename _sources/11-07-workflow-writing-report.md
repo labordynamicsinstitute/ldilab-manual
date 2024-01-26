@@ -9,13 +9,78 @@ Move the Jira issue to "`Writing report`".
 
 ![Move to Writing report](images/AEA-Data-Editor-Workflow-V3-20240114-short-345-3.png)
 
+## Run the Merge Pipeline
+
+At this point, there will be two parts of the report: `REPLICATION-partA.md` and `REPLICATION-partB.md`. To facilitate further editing, we will merge these two parts into a single file, `REPLICATION.md`. This can be done manually, or using the pipeline.
+
+:::::{tab-set}
+
+::::{tab-item} Using the Pipeline
+
+Run the pipeline to merge the two parts.
+
+:::{admonition} Finding the Pipeline menu
+:class: dropdown tip
+
+- First, in the Bitbucket repository for your issue (you can find the link under `Repl.info` -> `Git working location`) , navigate to the `Pipelines` tab
+
+![](images/jira-find-pipelines.png)
+
+- You will now need to select a "pipeline" to run. 
+
+![select pipeline](images/jira-select-pipeline.png)
+
+:::
+
+- Choose "`2-merge-report`" (might change in the future), and hit `Run`.
+
+![select pipeline](images/jira-run-pipeline-merge.png)
+
+- Your pipeline will start. It will be very quick, and update the repository with the merged file.
+
+- Back on your computer, pull the changes from the repository. You should now see a new file, `REPLICATION.md`.
+
+```bash
+git pull
+```
+
+::::
+
+::::{tab-item} Manual Merge
+
+If you want to do this on your own computer, you can use one of two methods:
+
+- Using the command line:
+
+```bash
+cat REPLICATION-partA.md REPLICATION-partB.md > REPLICATION.md
+```
+
+- Manually, using a text editor:
+  - Open the two files `REPLICATION-partA.md` and `REPLICATION-partB.md` in a text editor
+  - Copy the contents of `REPLICATION-partB.md` and paste them at the end of `REPLICATION-partA.md`
+  - Save the file as `REPLICATION.md`
+
+- In both cases, you now need to remove the parts, and add the combined file:
+
+```bash
+git rm REPLICATION-partA.md REPLICATION-partB.md
+git add REPLICATION.md
+git commit -m "Merged parts A and B"
+git push
+```
+
+::::
+
+:::::
+
 
 ## Standard steps
 
 - Compare images and tables
   - Some of this may involve "squinting" at images...
   - For tables that are output to Excel, you may be able to use some Excel tools (copy the old numbers, create a difference function between all cells). This is hard to provide examples for, as every table differs.
-  - For tables that are output as LaTeX (files ending with `tex`) or as  CSV files, *and* if the authors provided previous versions, you may be able to use Bitbucket to compare them globally, without looking at individual numbers (see [details further down](bitbucket-diff)).
+  - For tables that are output as LaTeX (files ending with `tex`) or as  CSV files, *and* if the authors provided previous versions, you may be able to use Bitbucket to compare them globally, without looking at individual numbers (see **Comparing TeX files on Bitbucket**).
 
 ```{warning}
 We want to learn about ALL differences that you see, even if minor. 
@@ -95,7 +160,7 @@ If the authors provided LaTeX files as part of the replication package, you may 
 - Check that the `DataCitationSummary` field is filled out indicating how many data citations are in order: all, some, or none. 
 - Check that the `Report Location` is filled out. 
   - If it is, do not change it.
-  - If for some reason, it is missing, enter the full URL from the repository, e.g., `https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md`
+  - If for some reason, it is missing, enter the full URL from the repository, e.g. `https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md`
 
 You can now submit your report for review by changing the status to `Under Review`
 

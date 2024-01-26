@@ -518,7 +518,7 @@ document.write(`
 <h2>New<a class="headerlink" href="#new" title="Permalink to this heading">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>For most Jira issues created after 2024-01-14, we use a new workflow. In this, the report is initially split into <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartA.md</span></code> and <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartB.md</span></code>, and subtasks are created for preparing parts A and B. Once both parts are ready, they are merged back into <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>.</p>
+<p>For most Jira issues created after 2024-01-30, we use a new workflow. In this, the report is initially split into <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartA.md</span></code> and <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartB.md</span></code>, and subtasks are created for preparing parts A and B. Once both parts are ready, they are merged back into <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>.</p>
 </div>
 </section>
 <section id="scope">
@@ -627,12 +627,48 @@ until a resolution can be found.</p>
 </table>
 <p>It is possible that a Pre-approver or an Administrator move the issue back to <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Progress</span></code> when additional debugging or code runs are necessary.</p>
 <p>Once both parts are complete, the issue can be merged into <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code> and the final report compiled. This is also true once the external report has been received.</p>
-<p>| In Progress  | Write report       | → Writing Report (Part C)        | <code class="docutils literal notranslate"><span class="pre">Report</span> <span class="pre">URL</span></code> is not empty |
-| Waiting for external report | Write report       | → Writing Report (Part C)        | <code class="docutils literal notranslate"><span class="pre">Report</span> <span class="pre">URL</span></code> is not empty |
-| Writing Report  (Part C)     | Submit for review    | → Report Under Review  | <code class="docutils literal notranslate"><span class="pre">Report</span> <span class="pre">URL</span></code> is not empty.|
-| Multiple     | Need information     | → Incomplete   |  when information is missing |
-| Incomplete   | Restart task         | → In Progress  |           |
-| Incomplete   | Prepare report      | → Writing Report (Part C)  |           |</p>
+<p><img alt="Part C" src="_images/AEA-Data-Editor-Workflow-V3-20240114-short-345.png" /></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>From</p></th>
+<th class="head text-left"><p>Transition</p></th>
+<th class="head text-left"><p>→ To</p></th>
+<th class="head text-left"><p>Condition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>In Progress</p></td>
+<td class="text-left"><p>Write report</p></td>
+<td class="text-left"><p>→ Writing Report (Part C)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Report</span> <span class="pre">URL</span></code> is not empty</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Waiting for external report</p></td>
+<td class="text-left"><p>Write report</p></td>
+<td class="text-left"><p>→ Writing Report (Part C)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Report</span> <span class="pre">URL</span></code> is not empty</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Writing Report  (Part C)</p></td>
+<td class="text-left"><p>Submit for review</p></td>
+<td class="text-left"><p>→ Report Under Review</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Report</span> <span class="pre">URL</span></code> is not empty.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Multiple</p></td>
+<td class="text-left"><p>Need information</p></td>
+<td class="text-left"><p>→ Incomplete</p></td>
+<td class="text-left"><p>when information is missing</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Incomplete</p></td>
+<td class="text-left"><p>Restart task</p></td>
+<td class="text-left"><p>→ In Progress</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Incomplete</p></td>
+<td class="text-left"><p>Prepare report</p></td>
+<td class="text-left"><p>→ Writing Report (Part C)</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+</tbody>
+</table>
 <p>The following are only relevant for “Approvers” or “Pre-Approvers” (if you have not been told you are a “(Pre-)Approver”, you are not.)</p>
 <table class="table">
 <thead>

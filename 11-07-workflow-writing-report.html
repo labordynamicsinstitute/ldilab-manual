@@ -490,6 +490,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signalling-where-you-are">Signalling where you are</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-merge-pipeline">Run the Merge Pipeline</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-steps">Standard steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-up">Cleaning up</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-jira">On Jira</a></li>
@@ -512,6 +513,66 @@ document.write(`
 <p>Move the Jira issue to “<code class="docutils literal notranslate"><span class="pre">Writing</span> <span class="pre">report</span></code>”.</p>
 <p><img alt="Move to Writing report" src="_images/AEA-Data-Editor-Workflow-V3-20240114-short-345-3.png" /></p>
 </section>
+<section id="run-the-merge-pipeline">
+<h2>Run the Merge Pipeline<a class="headerlink" href="#run-the-merge-pipeline" title="Permalink to this heading">#</a></h2>
+<p>At this point, there will be two parts of the report: <code class="docutils literal notranslate"><span class="pre">REPLICATION-partA.md</span></code> and <code class="docutils literal notranslate"><span class="pre">REPLICATION-partB.md</span></code>. To facilitate further editing, we will merge these two parts into a single file, <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>. This can be done manually, or using the pipeline.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Using the Pipeline</label><div class="sd-tab-content docutils">
+<p>Run the pipeline to merge the two parts.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Finding the Pipeline menu</p>
+<ul class="simple">
+<li><p>First, in the Bitbucket repository for your issue (you can find the link under <code class="docutils literal notranslate"><span class="pre">Repl.info</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">working</span> <span class="pre">location</span></code>) , navigate to the <code class="docutils literal notranslate"><span class="pre">Pipelines</span></code> tab</p></li>
+</ul>
+<p><img alt="" src="_images/jira-find-pipelines.png" /></p>
+<ul class="simple">
+<li><p>You will now need to select a “pipeline” to run.</p></li>
+</ul>
+<p><img alt="select pipeline" src="_images/jira-select-pipeline.png" /></p>
+</div>
+<ul class="simple">
+<li><p>Choose “<code class="docutils literal notranslate"><span class="pre">2-merge-report</span></code>” (might change in the future), and hit <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</p></li>
+</ul>
+<p><img alt="select pipeline" src="_images/jira-run-pipeline-merge.png" /></p>
+<ul class="simple">
+<li><p>Your pipeline will start. It will be very quick, and update the repository with the merged file.</p></li>
+<li><p>Back on your computer, pull the changes from the repository. You should now see a new file, <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Manual Merge</label><div class="sd-tab-content docutils">
+<p>If you want to do this on your own computer, you can use one of two methods:</p>
+<ul class="simple">
+<li><p>Using the command line:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>REPLICATION-partA.md<span class="w"> </span>REPLICATION-partB.md<span class="w"> </span>&gt;<span class="w"> </span>REPLICATION.md
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Manually, using a text editor:</p>
+<ul>
+<li><p>Open the two files <code class="docutils literal notranslate"><span class="pre">REPLICATION-partA.md</span></code> and <code class="docutils literal notranslate"><span class="pre">REPLICATION-partB.md</span></code> in a text editor</p></li>
+<li><p>Copy the contents of <code class="docutils literal notranslate"><span class="pre">REPLICATION-partB.md</span></code> and paste them at the end of <code class="docutils literal notranslate"><span class="pre">REPLICATION-partA.md</span></code></p></li>
+<li><p>Save the file as <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code></p></li>
+</ul>
+</li>
+<li><p>In both cases, you now need to remove the parts, and add the combined file:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>rm<span class="w"> </span>REPLICATION-partA.md<span class="w"> </span>REPLICATION-partB.md
+git<span class="w"> </span>add<span class="w"> </span>REPLICATION.md
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Merged parts A and B&quot;</span>
+git<span class="w"> </span>push
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="standard-steps">
 <h2>Standard steps<a class="headerlink" href="#standard-steps" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -519,7 +580,7 @@ document.write(`
 <ul>
 <li><p>Some of this may involve “squinting” at images…</p></li>
 <li><p>For tables that are output to Excel, you may be able to use some Excel tools (copy the old numbers, create a difference function between all cells). This is hard to provide examples for, as every table differs.</p></li>
-<li><p>For tables that are output as LaTeX (files ending with <code class="docutils literal notranslate"><span class="pre">tex</span></code>) or as  CSV files, <em>and</em> if the authors provided previous versions, you may be able to use Bitbucket to compare them globally, without looking at individual numbers (see <span class="xref myst">details further down</span>).</p></li>
+<li><p>For tables that are output as LaTeX (files ending with <code class="docutils literal notranslate"><span class="pre">tex</span></code>) or as  CSV files, <em>and</em> if the authors provided previous versions, you may be able to use Bitbucket to compare them globally, without looking at individual numbers (see <strong>Comparing TeX files on Bitbucket</strong>).</p></li>
 </ul>
 </li>
 </ul>
@@ -609,7 +670,7 @@ Figure 5 as reproduced:
 <li><p>Check that the <code class="docutils literal notranslate"><span class="pre">Report</span> <span class="pre">Location</span></code> is filled out.</p>
 <ul>
 <li><p>If it is, do not change it.</p></li>
-<li><p>If for some reason, it is missing, enter the full URL from the repository, e.g., <code class="docutils literal notranslate"><span class="pre">https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md</span></code></p></li>
+<li><p>If for some reason, it is missing, enter the full URL from the repository, e.g. <code class="docutils literal notranslate"><span class="pre">https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md</span></code></p></li>
 </ul>
 </li>
 </ul>
@@ -680,6 +741,7 @@ Figure 5 as reproduced:
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signalling-where-you-are">Signalling where you are</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-merge-pipeline">Run the Merge Pipeline</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-steps">Standard steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-up">Cleaning up</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-jira">On Jira</a></li>
