@@ -1,14 +1,19 @@
 (aea-jira-workflow-a-guide)=
-# AEA Jira workflow - A guide
+# AEA Jira workflow 
 
-For pre-publication verification, we use a Jira-based workflow similar to the post-publication processes described in the [Wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki). For AEA work, that post-publication process can be ignored.
+For pre-publication verification, we use a Jira-based workflow to guide the replicator through the process of filling out the report (called `REPLICATION.md`). 
 
 ```{note}
 The link to JIRA is [https://aeadataeditors.atlassian.net/jira](https://aeadataeditors.atlassian.net/jira) (requires login).
 ```
 
-## Scope
+## New
 
+```{warning}
+For most Jira issues created after 2024-01-14, we use a new workflow. In this, the report is initially split into `REPLICATION-PartA.md` and `REPLICATION-PartB.md`, and subtasks are created for preparing parts A and B. Once both parts are ready, they are merged back into `REPLICATION.md`. 
+```
+
+## Scope
 
 Your supervisor will assign you to this workflow. This workflow covers code and data, even when data may not be accessible. Supervisor, see [other document](https://github.com/labordynamicsinstitute/replicability-training/blob/master/jira-supervisor-notes.md) for details.
 
@@ -16,27 +21,52 @@ Your supervisor will assign you to this workflow. This workflow covers code and 
 
 ## Overview
 
-![jira image](images/AEADataEditorWorkflow-20191217.png)
+![jira image](images/AEA-Data-Editor-Workflow-V3-20240114-short.png)
 
 The following table illustrates the flow and transitions. The `transition` field identifies the button that will appear in the interface
 that needs to be clicked in order to progress an issue from the `From` state to the `To` state. The `Condition` field identifies
 which form field needs to be filled out in order to be able to make the transition. `Blocked` is always an option, and leads to a "waiting state"
 until a resolution can be found.
 
-| From         | Transition           | → To           | Condition |
-|:-------------|:---------------------|:---------------|:----------|
-| Assigned     | Start task           | → In Progress  |           |
-| In Progress  | Download code        | → Code         | `Replication package URL` have been filled out, `Journal` has been identified, `Empirical Article`=`Yes`, `External validation` != "yes" |
-| Code         | Access data          | → Data         | `Git working location`, `Data provenance` have been filled out. |
-| Data         | Prepare preliminary report | → Write Preliminary Report | |
-| Write Preliminary Report | Some data is accessible   | → Verification  | `DatasetsIncluded` = `Some` or `All`, `Working location of data`, `Computing environment` have been filled out.|
-| .            | Data not available   | → Code review   | `Reason for non-accessibility of data` has been filled out.|
-| Verification, Code review  | Prepare report       | →	Report        | |
-| Report       | Submit for review    | → Report Under Review  | `Report URL` has been filled out.|
+```{warning}
+THIS STILL NEEDS UPDATES FOR V3 workflow
+```
+
+| From         | Transition                  | → To                   | Condition |
+|:-------------|:----------------------------|:-----------------------|:----------|
+| Assigned     | Create new repository       | → Creating repository  |  Issue is not a `Revision`         |
+|              | Bypass repository creation  | → In Progress          |  Issue is a `Revision` , `Git working location` has been filled out        |
+| Creating repository | Start Task           | → In Progress          |  `Git working location` has been filled out         |
+| In Progress  | Assign to external replicator | →  Waiting for external report        | `External Replication` = `Yes` |
+
+At this point, there will be two subtasks: `Prepare Part A` and `Run Part B`. The following transitions are available for each of these subtasks, unless the issue has been assigned to an external replicator.
+
+![Part A](images/AEA-Data-Editor-Workflow-V3-partA.png)
+
+| From         | Transition                  | → To                   | Condition |
+|:-------------|:----------------------------|:-----------------------|:----------|
+| Open         | Writing preliminary report  | →  Writing Part A      |  |
+| Writing Part A | Finished Part A           | →  Preliminary Report Complete |  `Part A` has been filled out         |
+
+![Part B](images/AEA-Data-Editor-Workflow-V3-partB.png)
+
+| From         | Transition                  | → To                   | Condition |
+|:-------------|:----------------------------|:-----------------------|:----------|
+| Open         | Prepare to run code         | →  In Progress         | Working area has been prepared |
+| In Progress  | Start running code          | →  Code is Running     | Some data is available |
+| In Progress  | No code can be run          | →  Part B is complete  | No data is available |
+| Code is Running | Code is done running     | →  Part B is complete  |  |
+
+It is possible that a Pre-approver or an Administrator move the issue back to `In Progress` when additional debugging or code runs are necessary.
+
+Once both parts are complete, the issue can be merged into `REPLICATION.md` and the final report compiled. This is also true once the external report has been received.
+
+| In Progress  | Write report       | → Writing Report (Part C)        | `Report URL` is not empty |
+| Waiting for external report | Write report       | → Writing Report (Part C)        | `Report URL` is not empty |
+| Writing Report  (Part C)     | Submit for review    | → Report Under Review  | `Report URL` is not empty.|
 | Multiple     | Need information     | → Incomplete   |  when information is missing |
-| Incomplete   | Restart              | →  Code review |           |
-| .            | Restart verification | → Verification |           |
-| .            | Restart task         | → In Progress  |           |
+| Incomplete   | Restart task         | → In Progress  |           |
+| Incomplete   | Prepare report      | → Writing Report (Part C)  |           |
 
 The following are only relevant for "Approvers" or "Pre-Approvers" (if you have not been told you are a "(Pre-)Approver", you are not.)
 

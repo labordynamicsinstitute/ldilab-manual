@@ -15,10 +15,14 @@ Run this once in a Bash shell:
 echo "
 # env for ICPSR
 export ICPSR_EMAIL=mylogin@cornell.edu
-export ICPSR_PASS="supersecretpwd"
+export ICPSR_PASS='supersecretpwd' 
 " >> $HOME/.bashrc
 ```
 (you should copy-paste this into an empty VS Code window, edit the editable pieces, then copy-paste it into the Git bash shell. Keep all the line breaks as shown!).
+
+```{note}
+You can also use VS Code to open up the file `.bashrc` directly, if you prefer.
+```
 
 This will "prime" the script to use that email and password for downloading the information. 
 
@@ -73,6 +77,26 @@ Now might be a good time to log out and back in to make this work.
 
 If you are on a machine that has Python installed, run the following command (if it fails with `python3`, replace with `python`). You should do this once, from any recently cloned Bitbucket repository (which will contain a `requirements.txt` file)
 
+::::{tab-set}
+
+:::{tab-item} Windows
+
+When running in Bash, this should work:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+:::
+
+:::{tab-item} Linux/macOS
+
+While the use of `python` might work, using `python3` is more robust:
+
 ```bash
 python3 -m pip install -r requirements.txt
 ```
+
+:::
+
+::::

@@ -47,18 +47,24 @@ The template used by the Lab can be found on Github [here](https://github.com/AE
 
 - SUMMARY &ast;
 - Data description &ast;
-- Data checks &ast;
-- Code description &ast;
-- Stated Requirements &ast;
-- Missing Requirements &ast;
+- Data deposit &ast;
+
+- Stated Requirements 
+- Code description 
+- Data files provided
 - Computing Environment of the Replicator
 - Replication steps
+
 - Findings
+  - Missing Requirements 
+  - Data prep, tables, figures, and in-text numbers
 - Classification
 
-We note that those sections marked "&ast;" can be completed before ever running any author-provided code, even when data are confidential. They lead to a preliminary report, which is a "dry" assessment of the completeness of the replication package. 
+The sections marked with &ast; are in "Part A" of the report. They lead to a preliminary report, which is a "dry" assessment of the completeness of the replication package. The remaining sections are in "Part B" of the report, and are filled out as a replicator attempts to run the code. In some cases, it may turn out that after describing the "Stated Requirements", we find that it is not possible to run the code. Finally, "Findings" and "Classification" wrap up the report, once both Part A and B are completed, and involve having a look at what didn't work, was not well documented, what figures or tables are not the same.
 
-In most sections, when elements are missing, wrong, or do not work, we use a [standardized set of action items](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md) to highlight this. This is present in your default template.
+In most sections, when elements are missing, wrong, or do not work, we use a [standardized set of action items](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md) to highlight this. This is present in your default template repository.
+
+## Report Part A
 
 ### Summary
 
@@ -94,7 +100,7 @@ For each data source, list
 - presence or absence of codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK. 
    - The information of the source location of the data should instruct the replicator how to access the source data.
    - A replicator should validate the provided description of the access information by visiting the link, downloading the dataset from the link, and compare the downloaded dataset with the provided dataset.
-- whether the *data* is cited (see the section on [data citations](datacitations). Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing. 
+- whether the *data* is cited (see the section on [data citations](data-citations). Note that when authors cite data supplements, both the article and the data supplement should be cited - often, the latter is missing. 
 
 ![Data Description Section](images/report-data-description.png)
 
@@ -123,35 +129,12 @@ Many of the recommended elements are not applicable to all data deposits - for i
 
 ![ICPSR metadata report](images/report-icpsr-long.png)
 
-###  Data checks
+```{admonition} This completes Part A.
 
-When data are present, the replicator will run a few checks. These are not meant to be exhaustive, and are far less comprehensive than those suggested by trusted data curators. We ask for mostly simple checks, but which are known to fail. These are mostly checks that ensure some level of FAIR compliance.
-
-- can data be read (using software indicated by author)? 
-   - This is a plausibility check for corrupted data.
-- Is data in archive-ready formats (CSV, TXT) or in custom formats (DTA, SAS7BDAT, Rdata)? 
-   - Most trusted repositories will strongly suggest archive-ready formats, but there is a wide range of feasible formats. Our heuristic is that a format is "archive-ready" if it can be read by open-source software (not necessarily the original software). For instance, there are robust readers for Stata in R and Python, and so even though Stata formats are a proprietary format associated with commercial software, it is deemed acceptable. Exceptions we have found are files for Numbers (an Apple spreadsheet program that only works on MacOS) and Mathematica data files - neither have open-source readers. 
-- Do the data files have variable labels and meaningful variable names? 
-   - In other words, is it straightforward to understand what the data mean? Alternative, a codebook could be provided, that maps cryptic variable names (`Q25S3`) to meaningful labels. 
-
-```{note}
-Note that we do *not* require that variable *values* are provided here, nor that a full codebook is present or linked. Ideally, these would be here as well, and in some cases, we will go back to the authors and request them, *if* we think it is reasonable to do so  - a judgement call by the Data Editor.
+Note that no code needed to be run. Yet you will find that this can take considerable time. You may need to verify if links that authors provide actually lead to the relevant information. 
 ```
 
-- Replicators will run a simple check for personally identifiable information, if feasible, using a heuristic developed by J-PAL.^[The Stata version can be found [here](https://github.com/J-PAL/stata_PII_scan).] 
-   - This check will have lots of false positives - fields it thinks might be sensitive that are not, in fact, sensitive. While replicators are asked to apply some judgement, the final decision must be made by authors, and the information is reported as such in the report.
-
-![Data check report](images/report-data-checks.png)
-
-
-###  Code description
-
-All deposits should have code. In line with the [basic data flow](dataflowdiagram), there should be both data cleaning or preparation code, as well as analysis code. The replicator will review the code (but will  not run it yet). 
-
-- Identify programs that create "analysis files" ("data preparation code"). 
-- Identify programs that create tables and figures. 
-
-From the README, the replicator should be able to identify code to create all **figures, tables, and any in-text numbers**. If not listed in the README, comments in the code should enable the replicator to find this. The replicator will create a list, mapping each of figure, table, and in-text number to a particular program and line number within the program. A [template spreadsheet](https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx) is provided. Note that the code description might already observe that setup programs are missing, but most missing code will be identified in the [findings][findings] section. 
+## Report Part B
 
 
 
@@ -170,14 +153,22 @@ The authors should have specified specific requirements in terms of software, co
 
 - [ ] Requirements are complete.
 
+###  Code description
 
-###  Missing Requirements
+All deposits should have code. In line with the [basic data flow](dataflowdiagram), there should be both data cleaning or preparation code, as well as analysis code. The replicator will review the code (but will  not run it yet). 
 
-If it turns out that some requirements were not stated or are incomplete (software, packages, operating system), the replicator should  list the *complete* list of requirements here. Some of this maybe immediately obvious (e.g., there is no mention at all of what kind of computer you need), in others, you will need to run the programs to find out that things are missing. This is usually amended as the reproducibility attempt progresses.
+- Identify programs that create "analysis files" ("data preparation code"). 
+- Identify programs that create tables and figures. 
+
+From the README, the replicator should be able to identify code to create all **figures, tables, and any in-text numbers**. If not listed in the README, comments in the code should enable the replicator to find this. The replicator will create a list, mapping each of figure, table, and in-text number to a particular program and line number within the program. A [template spreadsheet](https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx) is provided. Note that the code description might already observe that setup programs are missing, but most missing code will be identified in the [findings][findings] section. 
+
+### Data files provided
+
+Normally, this simply lists the files that are part of the replication package in the deposit, and should be filled out automatically by scripts. However, in some cases, those scripts will fail. Then, it is the replicator handling Part B who needs to run the necessary scripts manually.
 
 
 ```{note}
-At this point, you *still* have not run any code, but you have collected everything needed to discuss this case with the group. This is what is called the **Preliminary Report**. 
+At this point, you *still* have not run any code, but you have collected everything needed to discuss this case with the group. 
 ```
 
 
@@ -223,6 +214,10 @@ The description should allow the Data Editor and the authors to understand that 
 Once everything is put in place, the replicator can report on findings, both positive and negative. This should include enough detail to allow a reader - a Data Editor and the authors - to understand what went wrong when something went wrong. For each **Data Preparation Code, Figure, Table, and any in-text numbers**, the section should provide information on success or failure to reproduce (the previously filled out [code-check.xlsx](https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx) can be re-used to drive the list). When errors happen, the replicator's description should be as precise as possible. For differences in figures, the replicator should provide both a screenshot of what the manuscript contains, as well as the figure produced by the code you ran, with differences highlighted. For differences in numbers (in tables or in-text), the replicator should list both the number as reported in the manuscript, as well as the number replicated. 
 
 ![Findings with errors](images/report-findings-errors.png)
+
+###  Missing Requirements
+
+If it turns out that some requirements were not stated or are incomplete (software, packages, operating system), the replicator should  list the *complete* list of requirements here. Some of this maybe immediately obvious (e.g., there is no mention at all of what kind of computer you need), in others, you will need to run the programs to find out that things are missing. This is usually amended as the reproducibility attempt progresses.
 
 
 ###  Classification

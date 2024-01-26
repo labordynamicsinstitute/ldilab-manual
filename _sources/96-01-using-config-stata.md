@@ -1,7 +1,7 @@
 (using-config-do)=
 # Using config.do in STATA
 
-In "Verification" stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of STATA. We provide `template-config.do` in the [template repository](https://github.com/AEADataEditor/replication-template) you clone which addresses these problems. 
+When [running code](running-code-partb), we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of STATA. How can you keep track of what is needed, and what was used by the code? We provide `template-config.do` in the [template repository](https://github.com/AEADataEditor/replication-template) you clone which addresses these problems. 
 
 ## Why do we need log files?
 
@@ -12,13 +12,17 @@ In "Verification" stage, we ask you to keep a log of what you do. Moreover, auth
 
 ## Why do we have to install programs?
 
-- Stata, or any statistical software, does not provide all the packages (or "libraries", or "modules") that enable or facilitate the analysis. Therefore, many user-written programs or extensions are publicly available for downloads. For Stata, this is often at the [SSC](https://ideas.repec.org/s/boc/bocode.html) (`ssc install package`), but sometimes at the [Stata Journal archives](https://www.stata-journal.com/) (`net install sj53`), and sometimes in authors' webpages (`net install package, using(https://author.com/packages)`)
+- Stata, or many other statistical software, does not provide all the packages (or "libraries", or "modules") that enable or facilitate the analysis. Therefore, many user-written programs or extensions are publicly available for downloads. For Stata, this is often at the [SSC](https://ideas.repec.org/s/boc/bocode.html) (`ssc install package`), but sometimes at the [Stata Journal archives](https://www.stata-journal.com/) (`net install sj53`), and sometimes in authors' webpages (`net install package, using(https://author.com/packages)`)
 - We differ in installation process from many others in the sense that, we want to install programs in a specified directory that is NOT a system directory.
     - This is to ensure that the set of packages used by replication package is complete. A complete replication package should be stand-alone, regardless of packages installed elsewhere in the machine that program is run on.
 
 ## Explaining template-config.do
 
 ![template-config.do](images/stata_config.png)
+
+```{note}
+In the following text, the line numbers mentioned are approximate. We regularly update the `template-config.do` to improve it, which may shift specific lines.
+```
 
 ### Directory paths for log files.
 
@@ -34,7 +38,16 @@ or
 \\networkpath\users\me\Desktop\Workspace\aearep-9999\111111
 ```
 
-- line 50, `global rootdir : pwd` sets the current working directory as a root directory, a.k.a. `rootdir`.
+- line 50, `global rootdir : pwd` sets the current working directory as a root directory, a.k.a. `rootdir`. It does not explicitly write the directory path, but see [later](right-click-stata) on how to run Stata so that it picks that up **automatically**.
+
+```{warning}
+Many authors of replication package tell you to "write the path where the package is". DO NOT DO THIS. Use `$rootdir` instead, once you have set up the `config.do` file as outlined later.
+```
+
+```{note}
+Any other paths defined or used within the replication package should be relative to `$rootdir`. This is to ensure that the replication package is self-contained, and can be moved to another machine without breaking.
+```
+
 - line 59, `global logdir "${rootdir}/logs"` sets the following directory as a directory for log files: `U:/Workspace/aearep-9999/111111/logs` or the network path equivalent.
 - Notice that  no such directory exists. Therefore, the do file creates a new directory in line 60.
     - `mkdir` is a command to create a directory 
@@ -73,7 +86,7 @@ adopath ++ "${rootdir}/packages"
 
 ### Rename the config file.
 
-The template is called `template-config.do`. In order to use it, rename it to `config.do` and move it into the openICPSR folder (e.g. , `111111`).
+The template is called `template-config.do`. In order to use it, copy it into the openICPSR folder (e.g. , `111111`) next to the author's code, rename it to `config.do`.
 
 ### Include config.do
 

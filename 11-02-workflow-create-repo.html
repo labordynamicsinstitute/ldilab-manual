@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>AEA: Publishing a deposit &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Creating a repository and running pipeline &#8212; Training Manual For Reproducibility Verification</title>
   
   
   
@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '51-openicpsr-publishing-deposit';</script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/51-openicpsr-publishing-deposit.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '11-02-workflow-create-repo';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/11-02-workflow-create-repo.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Adding the article DOI to the openICPSR deposit metadata" href="52-openicpsr-add-article-doi.html" />
-    <link rel="prev" title="AEA: Interfacing with openICPSR" href="50-openicpsr-related-tasks.html" />
+    <link rel="next" title="In Progress" href="11-03-workflow-in-progress.html" />
+    <link rel="prev" title="Assigned" href="11-01-workflow-assigned.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,34 +183,56 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="07-basic-assessing-reproducibility.html">Assessing computational reproducibility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08-details-replication-report.html">A guided walk through the Replication Report</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">AEA-specific training</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">AEA-specific Jira Workflow</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="11-00-jira-workflow.html">AEA Jira workflow - A guide</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="11-01-workflow-in-progress.html">In Progress</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11-02-workflow-prepare.html">Prepare the working area</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11-03-workflow-code.html">Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11-04-workflow-data.html">Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11-05-workflow-write-prelim.html">Write Preliminary Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11-06-workflow-verification.html">Verification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11-07-workflow-code-review.html">Code Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11-08-workflow-writing-report.html">Writing Report</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="11-00-jira-workflow.html">AEA Jira workflow</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="11-01-workflow-assigned.html">Assigned</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Creating a repository and running pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-03-workflow-in-progress.html">In Progress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-04-parta.html">Preparing Part A - Preliminary Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-05-preparing-to-run-code.html">Preparing to Run Code (Part B)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-06-running-code.html">Running Code (Part B)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-07-workflow-writing-report.html">Writing Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-08-report-completed.html">Report completed</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="12-jira-revision-guidance.html">AEA: Revision reports after author resubmission</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced AEA-related tasks</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="13-approving-issues.html">AEA: Reviewing and (Pre-) Approving Reports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20-Pending_ICPSR.html">AEA: Monitoring Pending openICPSR Changes</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="30-jira-prepare-publication.html">AEA: Interfacing with the Journal Management System</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="30-jira-prepare-publication.html">AEA: Submitting information back to the Editorial Office and to authors</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="31-jira-openicpsr-setup.html">Basic setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="32-jira-submitting.html">Submitting to the JMS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33-openicpsr-preparing.html">Preparing openICPSR deposit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33-openicpsr-preparing.html">Submitting deposit-related information via openICPSR</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="50-openicpsr-related-tasks.html">AEA: Interfacing with openICPSR</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="51-openicpsr-monitoring-pending.html">AEA: Monitoring Pending openICPSR Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="52-openicpsr-publishing-deposit.html">AEA: Publishing a deposit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="53-openicpsr-add-article-doi.html">Adding the article DOI to the openICPSR deposit metadata</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="40-Instructions-PandP-Checks.html">AEA: Instructions for Papers and Proceedings checks</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="50-openicpsr-related-tasks.html">AEA: Interfacing with openICPSR</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">AEA: Publishing a deposit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="52-openicpsr-add-article-doi.html">Adding the article DOI to the openICPSR deposit metadata</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Running code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="96-00-running-code.html">Guidelines for running code</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-01-using-config-stata.html">Using config.do in STATA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-02-running-stata-code.html">Running Code in Stata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-03-stata-scan-packages.html">Using scan_packages.do</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-10-using-R.html">R-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-11-using-config-r.html">Using config.R in R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-12-running-r-code.html">Running Code in R</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="96-20-using-matlab.html">MATLAB-related procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="96-50-using-docker.html">Docker-related procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="96-70-using-mathematica.html">Mathematica-related procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="96-80-using-ox.html">Ox-related procedures</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sundry other guidance</span></p>
 <ul class="nav bd-sidenav">
@@ -222,14 +244,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="91-setup-checklist.html">Setup Checklist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="92-Privacy.html">Privacy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="93-Communication.html">Communication</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="94-00-downloading-data.html">Downloading Data</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="94-00-downloading-data.html">Downloading Data</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">Using pre-publication openICPSR Projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="94-02-alternate-downloads.html">Alternate sources of data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="94-03-private-data.html">Accessing privately provided data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="94-04-Updating_Materials.html">Updating Replication Materials after Revisions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="95_Access_to_computers.html">Access to Computers</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="95_Access_to_computers.html">Access to Computers</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="95-10-windows-remote.html">Connecting to remote Windows servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-15-linux-remote.html">Connecting to remote Linux servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-20-codeocean.html">Reproducibility Checks in Codeocean</a></li>
@@ -239,21 +261,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="95-60-general-setup.html">Additional setup instructions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="96-01-using-config-stata.html">Using config.do in STATA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="96-02-running-stata-code.html">Running Code in Stata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="96-03-stata-scan-packages.html">Using scan_packages.do</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="96-10-using-R.html">R-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="96-11-using-config-r.html">Using config.R in R</a></li>
-<li class="toctree-l2"><a class="reference internal" href="96-12-running-r-code.html">Running Code in R</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="96-20-using-matlab.html">MATLAB-related procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="96-50-using-docker.html">Docker-related procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="96-70-using-mathematica.html">Mathematica-related procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="96-80-using-ox.html">Ox-related procedures</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="97-00-authentication.html">Authentication-related issues</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="97-01-Bitbucket-authentication.html">Bitbucket Authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="97-02-openicpsr-authentication.html">openICPSR Authentication</a></li>
@@ -271,6 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="99-References.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99-older-versions.html">Older versions</a></li>
 </ul>
 
     </div>
@@ -342,7 +350,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/51-openicpsr-publishing-deposit.md" target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/11-02-workflow-create-repo.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -359,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F51-openicpsr-publishing-deposit.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F11-02-workflow-create-repo.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -389,7 +397,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/51-openicpsr-publishing-deposit.md" target="_blank"
+      <li><a href="_sources/11-02-workflow-create-repo.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -471,7 +479,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>AEA: Publishing a deposit</h1>
+    <h1>Creating a repository and running pipeline</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -481,9 +489,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#responsibilities">Responsibilities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-requisites-jira">Pre-requisites (JIRA)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#move-to-processing-publication">Move to “Processing Publication”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-repository">Creating a repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-pipeline-to-ingest-author-materials">Running pipeline to ingest author materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-step">Next step</a></li>
 </ul>
             </nav>
         </div>
@@ -495,52 +503,81 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="aea-publishing-a-deposit">
-<h1>AEA: Publishing a deposit<a class="headerlink" href="#aea-publishing-a-deposit" title="Permalink to this heading">#</a></h1>
-<section id="responsibilities">
-<h2>Responsibilities<a class="headerlink" href="#responsibilities" title="Permalink to this heading">#</a></h2>
-<p>The complete general sequence is as follows:</p>
-<ol class="arabic simple">
-<li><p>Publish ICPSR deposit</p></li>
-<li><p>Publish AEA article</p></li>
-<li><p>Update the “related publication” link using the “Import from DOI functionality.”</p></li>
-</ol>
-<p>In general, publication of the deposit is done by the AEA Editorial Office, in synchronization with the publication of a the manuscript.</p>
-<p>In certain circumstances, this may also be done by the AEA Data Editor’s office. This page describes how to proceed.</p>
-<div class="admonition-please-note admonition">
-<p class="admonition-title">Please note:</p>
-<p>Always check with your supervisor before attempting to publish a deposit.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="creating-a-repository-and-running-pipeline">
+<span id="create-repo"></span><h1>Creating a repository and running pipeline<a class="headerlink" href="#creating-a-repository-and-running-pipeline" title="Permalink to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In some instances, somebody else has already created a repository. Always check first if the <code class="docutils literal notranslate"><span class="pre">Bitbucket</span> <span class="pre">short</span> <span class="pre">name</span></code> is already filled out. If yes, skip this section and go to <a class="reference internal" href="11-03-workflow-in-progress.html#collecting-information"><span class="std std-ref">Collecting information</span></a>!</p>
 </div>
+<section id="creating-a-repository">
+<h2>Creating a repository<a class="headerlink" href="#creating-a-repository" title="Permalink to this heading">#</a></h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> start by <a class="reference external" href="https://bitbucket.org/repo/import">creating a repository using the import method</a></p>
+<ul class="simple">
+<li><p>copy-paste from this URL to the URL field (this is also available in the Jira dropdown “Shortcuts”)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://github.com/AEADataEditor/replication-template
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>the repository name should be the name of the JIRA issue, in <strong>lower case</strong> (e.g., <code class="docutils literal notranslate"><span class="pre">aearep-123</span></code>)</p></li>
+<li><p>Be sure that <code class="docutils literal notranslate"><span class="pre">aeaverification</span></code> is always the “owner” of the report on Bitbucket.</p></li>
+<li><p>The Project should be the abbreviation of the journal (e.g. “JEP”)</p></li>
+<li><p>Keep the other settings (in particular, keep this a <strong>private</strong> repository).</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Repository</span></code></p></li>
+<li><p>Keep this tab open!</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_images/bitbucket_import_blank_2022.png" /></p>
+<ul class="simple">
+<li><p>We have now created a Bitbucket repo named something like <code class="docutils literal notranslate"><span class="pre">aearep-123</span></code> that has been populated with the latest version of the LDI replication template documents!</p></li>
+</ul>
 </section>
-<section id="pre-requisites-jira">
-<h2>Pre-requisites (JIRA)<a class="headerlink" href="#pre-requisites-jira" title="Permalink to this heading">#</a></h2>
+<section id="running-pipeline-to-ingest-author-materials">
+<span id="ingesting-author-materials"></span><h2>Running pipeline to ingest author materials<a class="headerlink" href="#running-pipeline-to-ingest-author-materials" title="Permalink to this heading">#</a></h2>
+<p>We will now ingest the authors’ materials, and run a few statistics. Typically, the materials will be on a (private) openICPSR repository. Sometimes, the materials will be at Dataverse, Zenodo, or elsewhere.</p>
+<ul class="simple">
+<li><p>If at openICPSR, the fields <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">package</span> <span class="pre">URL</span></code>, <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">alternate</span> <span class="pre">URL</span></code>, and <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">Project</span> <span class="pre">Number</span></code> will be filled.</p></li>
+<li><p>If at Zenodo or Dataverse, the <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">package</span> <span class="pre">URL</span></code> will have the DOI of the replication package, <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">alternate</span> <span class="pre">URL</span></code> and <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">Project</span> <span class="pre">Number</span></code> will be empty.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This currently works reliably only for openICPSR. This documentation will be updated when it works for Dataverse and Zenodo as well.</p>
+</div>
+<p>You will now run what is called a <em><code class="docutils literal notranslate"><span class="pre">Bitbucket</span> <span class="pre">Pipeline</span></code></em>. Similar tools on other sites might be called <code class="docutils literal notranslate"><span class="pre">Continuous</span> <span class="pre">integration</span></code>, <code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Actions</span></code>, etc. If you have encountered these before, this will not be news for you, but it isn’t hard even when this new.</p>
+<ul class="simple">
+<li><p>First, in the repository you just created, navigate to the <code class="docutils literal notranslate"><span class="pre">Pipelines</span></code> tab</p></li>
+</ul>
+<p><img alt="" src="_images/jira-find-pipelines.png" /></p>
+<ul class="simple">
+<li><p>Because this is new, you will see the “Run initial pipeline” page. Click on <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">initial</span> <span class="pre">pipeline</span></code>.</p></li>
+</ul>
+<p><img alt="first-time-run" src="_images/jira-run-first-pipeline.png" /></p>
+<ul class="simple">
+<li><p>You will now need to select a “pipeline” to run.</p></li>
+</ul>
+<p><img alt="select pipeline" src="_images/jira-select-pipeline.png" /></p>
+<ul class="simple">
+<li><p>Choose “<code class="docutils literal notranslate"><span class="pre">populate</span> <span class="pre">from</span> <span class="pre">ICPSR</span></code>” (might change in the future), and fill in the ID for the relevant source of the replication package (here: openICPSR ID = <code class="docutils literal notranslate"><span class="pre">123456</span></code>), and hit <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</p></li>
+</ul>
+<p><img alt="select pipeline" src="_images/jira-run-pipeline-icpsr.png" /></p>
+<ul class="simple">
+<li><p>Your pipeline will start, working through various steps. This might take a while! Do the next step (<a class="reference internal" href="11-03-workflow-in-progress.html#collecting-information"><span class="std std-ref">Collecting Information</span></a>) then come back here.</p></li>
+</ul>
+<p><img alt="running pipeline" src="_images/jira-run-pipeline-running.png" /></p>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> The openICPSR project number must be filled out.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> The correct <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">version</span></code> number needs to be selected.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> An <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">DOI</span></code> needs to be present (if necessary, run a script).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Once your pipeline is done, check that it is green.</p>
+<ul>
+<li><p>If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You, or the person assigned to <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">B</span></code>, may then need to do <a class="reference internal" href="11-05-preparing-to-run-code.html#manual1"><span class="std std-ref">the manual steps later</span></a>.</p></li>
 </ul>
+</li>
+</ul>
+<p><img alt="completed pipeline" src="_images/jira-run-pipeline-finished.png" /></p>
 </section>
-<section id="move-to-processing-publication">
-<h2>Move to “Processing Publication”<a class="headerlink" href="#move-to-processing-publication" title="Permalink to this heading">#</a></h2>
-<p>Select the transition “<code class="docutils literal notranslate"><span class="pre">Publish</span></code>” to move it to “<code class="docutils literal notranslate"><span class="pre">Processing</span> <span class="pre">Publication</span></code>”. In the popup, verify that all information seems complete.</p>
-<p>In a separate tab, open the deposit. Verify that the usual “ready for publication”  communication entry has been added.</p>
-<ul class="simple">
-<li><p>if not, investigate why</p></li>
-</ul>
-<p>Now move to the next step:</p>
-<blockquote>
-<div><p>Change Status -&gt; Publish</p>
-</div></blockquote>
-<p><img alt="publish step1" src="_images/openICPSR-publish-step1.png" /></p>
-<p>Verify the information again, then “Proceed to publish”.</p>
-<p>Most of the values on the next screen should have been consented to by the authors. However,</p>
-<ul class="simple">
-<li><p>Verify that the data collection is scheduled for “public download.” Only in rare cases will this be for restricted-access.</p></li>
-<li><p>Verify that “<code class="docutils literal notranslate"><span class="pre">Delayed</span> <span class="pre">dissemination</span></code>” = “<code class="docutils literal notranslate"><span class="pre">no</span></code>”. We never use that.</p></li>
-</ul>
-<p><img alt="publish step2" src="_images/openICPSR-publish-modal-part1.png" /></p>
-<p>The remaining options are non-selectable. However, verify that the License is correctly chosen - if there is a license file in the deposit, there should be a “<code class="docutils literal notranslate"><span class="pre">Other</span> <span class="pre">license</span></code>” selected.</p>
-<p>Choose “Publish Project”. The project will go public shortly. You should verify that in fact the deposit is publicly accessible at the DOI. Any failure should be reported to openICPSR.</p>
+<section id="next-step">
+<h2>Next step<a class="headerlink" href="#next-step" title="Permalink to this heading">#</a></h2>
+<p><img alt="Move to In Progress" src="_images/AEA-Data-Editor-Workflow-V3-20240114-short-23.png" /></p>
 </section>
 </section>
 
@@ -573,20 +610,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="50-openicpsr-related-tasks.html"
+       href="11-01-workflow-assigned.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">AEA: Interfacing with openICPSR</p>
+        <p class="prev-next-title">Assigned</p>
       </div>
     </a>
     <a class="right-next"
-       href="52-openicpsr-add-article-doi.html"
+       href="11-03-workflow-in-progress.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Adding the article DOI to the openICPSR deposit metadata</p>
+        <p class="prev-next-title">In Progress</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -605,9 +642,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#responsibilities">Responsibilities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-requisites-jira">Pre-requisites (JIRA)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#move-to-processing-publication">Move to “Processing Publication”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-repository">Creating a repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-pipeline-to-ingest-author-materials">Running pipeline to ingest author materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-step">Next step</a></li>
 </ul>
   </nav></div>
 
