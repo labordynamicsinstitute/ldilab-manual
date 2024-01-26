@@ -10,7 +10,7 @@ The link to JIRA is [https://aeadataeditors.atlassian.net/jira](https://aeadatae
 ## New
 
 ```{warning}
-For most Jira issues created after 2024-01-14, we use a new workflow. In this, the report is initially split into `REPLICATION-PartA.md` and `REPLICATION-PartB.md`, and subtasks are created for preparing parts A and B. Once both parts are ready, they are merged back into `REPLICATION.md`. 
+For most Jira issues created after 2024-01-30, we use a new workflow. In this, the report is initially split into `REPLICATION-PartA.md` and `REPLICATION-PartB.md`, and subtasks are created for preparing parts A and B. Once both parts are ready, they are merged back into `REPLICATION.md`. 
 ```
 
 ## Scope
@@ -61,6 +61,10 @@ It is possible that a Pre-approver or an Administrator move the issue back to `I
 
 Once both parts are complete, the issue can be merged into `REPLICATION.md` and the final report compiled. This is also true once the external report has been received.
 
+![Part C](images/AEA-Data-Editor-Workflow-V3-20240114-short-345.png)
+
+| From         | Transition                  | → To                   | Condition |
+|:-------------|:----------------------------|:-----------------------|:----------|
 | In Progress  | Write report       | → Writing Report (Part C)        | `Report URL` is not empty |
 | Waiting for external report | Write report       | → Writing Report (Part C)        | `Report URL` is not empty |
 | Writing Report  (Part C)     | Submit for review    | → Report Under Review  | `Report URL` is not empty.|
