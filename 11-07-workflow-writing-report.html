@@ -512,6 +512,18 @@ document.write(`
 <h2>Signalling where you are<a class="headerlink" href="#signalling-where-you-are" title="Permalink to this heading">#</a></h2>
 <p>Move the Jira issue to “<code class="docutils literal notranslate"><span class="pre">Writing</span> <span class="pre">report</span></code>”.</p>
 <p><img alt="Move to Writing report" src="_images/AEA-Data-Editor-Workflow-V3-20240114-short-345-3.png" /></p>
+<div class="admonition-in-order-to-do-so admonition">
+<p class="admonition-title">In order to do so:</p>
+<ul class="simple">
+<li><p>Check that both sub-tasks (part A and part B) are marked as “<code class="docutils literal notranslate"><span class="pre">Done</span></code>”.</p></li>
+</ul>
+</div>
+<p>You should now be able to select “<code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">report</span></code>” from the dropdown menu. A pop-up will appear, asking you to fill out the fields and confirm the transition.</p>
+<p><img alt="Write report modal" src="_images/jira-write-report-modal.png" /></p>
+<div class="admonition-important admonition">
+<p class="admonition-title">Important!</p>
+<p>You should choose here the “<code class="docutils literal notranslate"><span class="pre">Resolution</span></code>” that corresponds to the outcome of the replication. This is preliminary - you will be able to adjust it after completing Part C, but based on what you observed in Part B, you may already have a good idea of the outcome. If uncertain at this point, choose <code class="docutils literal notranslate"><span class="pre">x-------x</span></code>.</p>
+</div>
 </section>
 <section id="run-the-merge-pipeline">
 <h2>Run the Merge Pipeline<a class="headerlink" href="#run-the-merge-pipeline" title="Permalink to this heading">#</a></h2>
@@ -521,6 +533,10 @@ document.write(`
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 Using the Pipeline</label><div class="sd-tab-content docutils">
 <p>Run the pipeline to merge the two parts.</p>
+<div class="admonition-important admonition">
+<p class="admonition-title">Important!</p>
+<p>Be sure to have committed and pushed <strong>all</strong> changes to the repository before running the pipeline.</p>
+</div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">Finding the Pipeline menu</p>
 <ul class="simple">
