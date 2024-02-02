@@ -7,7 +7,25 @@ At this stage, you will write the final version of the report.
 
 Move the Jira issue to "`Writing report`". 
 
+
 ![Move to Writing report](images/AEA-Data-Editor-Workflow-V3-20240114-short-345-3.png)
+
+
+:::{admonition} In order to do so:
+
+- Check that both sub-tasks (part A and part B) are marked as "`Done`".
+
+::: 
+
+You should now be able to select "`Write report`" from the dropdown menu. A pop-up will appear, asking you to fill out the fields and confirm the transition. 
+
+![Write report modal](images/jira-write-report-modal.png)
+
+:::{admonition} Important!
+
+You should choose here the "`Resolution`" that corresponds to the outcome of the replication. This is preliminary - you will be able to adjust it after completing Part C, but based on what you observed in Part B, you may already have a good idea of the outcome. If uncertain at this point, choose `x-------x`.
+
+:::
 
 ## Run the Merge Pipeline
 
@@ -17,7 +35,13 @@ At this point, there will be two parts of the report: `REPLICATION-partA.md` and
 
 ::::{tab-item} Using the Pipeline
 
-Run the pipeline to merge the two parts.
+Run the pipeline to merge the two parts. 
+
+:::{admonition} Important!
+
+Be sure to have committed and pushed **all** changes to the repository before running the pipeline.
+
+:::
 
 :::{admonition} Finding the Pipeline menu
 :class: dropdown tip
@@ -161,6 +185,7 @@ If the authors provided LaTeX files as part of the replication package, you may 
 - Check that the `Report Location` is filled out. 
   - If it is, do not change it.
   - If for some reason, it is missing, enter the full URL from the repository, e.g. `https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md`
+
 
 You can now submit your report for review by changing the status to `Under Review`
 
