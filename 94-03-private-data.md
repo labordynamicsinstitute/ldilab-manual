@@ -21,6 +21,14 @@ You should then look into the "`Data`" tab for the field `Working location of re
 
 ::::{tab-set}
 
+:::{tab-item} CCSS Cloud
+
+- Log into remote desktop as usual.
+- The restricted access data will be stored in the L drive. If you haven't mapped the L drive, do that first ([instructions here](https://labordynamicsinstitute.github.io/ldilab-manual/95-10-windows-remote.html)).
+- Navigate to the folder `Restricted-Access-Data` and find the corresponding folder that is in the Jira field, e.g., `L:\Restricted-Access-Data\aearep-4400-nda_Implicit`.
+- If there is a ZIP file (looks like a folder, but is not), right-click and choose `Extract All` before working in the folder
+
+:::
 
 :::{tab-item} CCSS Classic
 
@@ -35,14 +43,6 @@ You should then look into the "`Data`" tab for the field `Working location of re
 
 :::
 
-:::{tab-item} CCSS Cloud
-
-- Log into remote desktop as usual.
-- The restricted access data will be stored in the L drive. If you haven't mapped the L drive, do that first ([instructions here](https://labordynamicsinstitute.github.io/ldilab-manual/95-10-windows-remote.html)).
-- Navigate to the folder `Restricted-Access-Data` and find the corresponding folder that is in the Jira field, e.g., `L:\Restricted-Access-Data\aearep-4400-nda_Implicit`.
-- If there is a ZIP file (looks like a folder, but is not), right-click and choose `Extract All` before working in the folder
-
-:::
 
 ::::
 
@@ -57,9 +57,9 @@ There are two ways to run code using the data in this folder:
 
 1. Run all programs within this folder, do not take the data out of this folder. However, you will need to transfer log files and output back to your regular "cloned" folder (i.e. `aearep-3756`).
 2. More robust, but a bit more work, is to modify the code to reference the confidential data every time it is called.
-  - In the `config.do`, is a line `global sdrive ""`. Modify that line to read `global sdrive "S:/LDILab/aearep-3756-nda_Implicit"`
+  - In the `config.do`, is a line `global sdrive ""`. Modify that line to read `global sdrive "L:\Restricted-Access-Data\aearep-3756-nda_Implicit"`
   - Run the code in its usual location. When the code encounters (absent) confidential data in the usual location, it will break/stop.
-  - Everywhere you encounter references to confidential data in the code, e.g., `use "${datadir}/mysuper.dta"`, modify the code to reference the S-drive: `use "${sdrive}/mysuper.dta`. 
+  - Everywhere you encounter references to confidential data in the code, e.g., `use "${datadir}/mysuper.dta"`, modify the code to reference the L-drive: `use "${sdrive}/mysuper.dta`. 
   - commit all code modifications and log files as you normally would.
 
 ## Examples
@@ -97,7 +97,7 @@ global results "$path/output"
 #### Adjusting for LDI specific situation
 
 1. Include the `config.do` in the master file as usual.
-2. In the `config.do`, adjust the (existing) global for the S: drive: `global sdrive "S:/LDILab/aearep-1234-nda_Implicit"`. The global is defined at the very end of the `config.do`.
+2. In the `config.do`, adjust the (existing) global for the L: drive: `global sdrive "L:\Restricted-Access-Data\aearep-4991-nda_Implicit"`. The global is defined at the very end of the `config.do`.
 3. In the master file, incorporate the `rootdir` from the `config.do` as the main global `path`. This should reflect your workspace on the U: drive.
 4. Incorporate the new global `sdrive` to set the authors' global `confidential`. 
 
