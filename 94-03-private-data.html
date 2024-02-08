@@ -531,6 +531,16 @@ document.write(`
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
+CCSS Cloud</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>Log into remote desktop as usual.</p></li>
+<li><p>The restricted access data will be stored in the L drive. If you haven’t mapped the L drive, do that first (<a class="reference external" href="https://labordynamicsinstitute.github.io/ldilab-manual/95-10-windows-remote.html">instructions here</a>).</p></li>
+<li><p>Navigate to the folder <code class="docutils literal notranslate"><span class="pre">Restricted-Access-Data</span></code> and find the corresponding folder that is in the Jira field, e.g., <code class="docutils literal notranslate"><span class="pre">L:\Restricted-Access-Data\aearep-4400-nda_Implicit</span></code>.</p></li>
+<li><p>If there is a ZIP file (looks like a folder, but is not), right-click and choose <code class="docutils literal notranslate"><span class="pre">Extract</span> <span class="pre">All</span></code> before working in the folder</p></li>
+</ul>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 CCSS Classic</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>Log into CISER as usual. You should never need to run code elsewhere when data are restricted/privately provided.</p></li>
@@ -544,16 +554,6 @@ CCSS Classic</label><div class="sd-tab-content docutils">
 </li>
 <li><p>If there is a ZIP file (looks like a folder, but is not), right-click and choose <code class="docutils literal notranslate"><span class="pre">Extract</span> <span class="pre">All</span></code> before working in the folder</p></li>
 <li><p>Remember the full location. This should correspond to what is entered in to the JIRA field, e.g., <code class="docutils literal notranslate"><span class="pre">S:\LDILab\aearep-3756-nda_Implicit</span></code>.</p></li>
-</ul>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
-CCSS Cloud</label><div class="sd-tab-content docutils">
-<ul class="simple">
-<li><p>Log into remote desktop as usual.</p></li>
-<li><p>The restricted access data will be stored in the L drive. If you haven’t mapped the L drive, do that first (<a class="reference external" href="https://labordynamicsinstitute.github.io/ldilab-manual/95-10-windows-remote.html">instructions here</a>).</p></li>
-<li><p>Navigate to the folder <code class="docutils literal notranslate"><span class="pre">Restricted-Access-Data</span></code> and find the corresponding folder that is in the Jira field, e.g., <code class="docutils literal notranslate"><span class="pre">L:\Restricted-Access-Data\aearep-4400-nda_Implicit</span></code>.</p></li>
-<li><p>If there is a ZIP file (looks like a folder, but is not), right-click and choose <code class="docutils literal notranslate"><span class="pre">Extract</span> <span class="pre">All</span></code> before working in the folder</p></li>
 </ul>
 </div>
 </div>
@@ -571,9 +571,9 @@ CCSS Cloud</label><div class="sd-tab-content docutils">
 <li><p>More robust, but a bit more work, is to modify the code to reference the confidential data every time it is called.</p></li>
 </ol>
 <ul class="simple">
-<li><p>In the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>, is a line <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">sdrive</span> <span class="pre">&quot;&quot;</span></code>. Modify that line to read <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">sdrive</span> <span class="pre">&quot;S:/LDILab/aearep-3756-nda_Implicit&quot;</span></code></p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>, is a line <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">sdrive</span> <span class="pre">&quot;&quot;</span></code>. Modify that line to read <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">sdrive</span> <span class="pre">&quot;L:\Restricted-Access-Data\aearep-3756-nda_Implicit&quot;</span></code></p></li>
 <li><p>Run the code in its usual location. When the code encounters (absent) confidential data in the usual location, it will break/stop.</p></li>
-<li><p>Everywhere you encounter references to confidential data in the code, e.g., <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&quot;${datadir}/mysuper.dta&quot;</span></code>, modify the code to reference the S-drive: <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&quot;${sdrive}/mysuper.dta</span></code>.</p></li>
+<li><p>Everywhere you encounter references to confidential data in the code, e.g., <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&quot;${datadir}/mysuper.dta&quot;</span></code>, modify the code to reference the L-drive: <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&quot;${sdrive}/mysuper.dta</span></code>.</p></li>
 <li><p>commit all code modifications and log files as you normally would.</p></li>
 </ul>
 </section>
@@ -611,7 +611,7 @@ CCSS Cloud</label><div class="sd-tab-content docutils">
 <h4>Adjusting for LDI specific situation<a class="headerlink" href="#adjusting-for-ldi-specific-situation" title="Permalink to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Include the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> in the master file as usual.</p></li>
-<li><p>In the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>, adjust the (existing) global for the S: drive: <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">sdrive</span> <span class="pre">&quot;S:/LDILab/aearep-1234-nda_Implicit&quot;</span></code>. The global is defined at the very end of the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>, adjust the (existing) global for the L: drive: <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">sdrive</span> <span class="pre">&quot;L:\Restricted-Access-Data\aearep-4991-nda_Implicit&quot;</span></code>. The global is defined at the very end of the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>.</p></li>
 <li><p>In the master file, incorporate the <code class="docutils literal notranslate"><span class="pre">rootdir</span></code> from the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> as the main global <code class="docutils literal notranslate"><span class="pre">path</span></code>. This should reflect your workspace on the U: drive.</p></li>
 <li><p>Incorporate the new global <code class="docutils literal notranslate"><span class="pre">sdrive</span></code> to set the authors’ global <code class="docutils literal notranslate"><span class="pre">confidential</span></code>.</p></li>
 </ol>
