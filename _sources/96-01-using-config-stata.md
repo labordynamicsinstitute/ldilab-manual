@@ -92,20 +92,37 @@ The template is called `template-config.do`. In order to use it, copy it into th
 
 - If there is a master dofile, you should put the following line at the beginning of the `master.do`:
 
-
 ```
 include config.do
 ```
 
-and the end of the `master.do`:
+- You should also add to the end of the `master.do`:
 
 
 ```
 log close _all
 ```
 
+:::{note}
+
 Do NOT include it in the individual code files.
 
+:::
+
+#### Notes
+
 - If there is no master dofile, you should try to create one (see [how in the next section](create-master)), starting with the lines above, and ending with the `log close` command.
-- If creating a master dofile is not possible, add the  lines at the beginning and the end, respectively, of **each** code file.
-- There will be cases where authors create their own log files. Do NOT comment out the log file creation here, as the named logfile will not conflict with any author-generated files. 
+- If creating a master dofile is not possible, **and only then**, add the  lines at the beginning and the end, respectively, of **each** code file.
+- There will be cases where authors **create their own log files**. Do NOT comment out the log file creation here, as the named logfile will not conflict with any author-generated files.
+- In some cases, authors will have code at the start of their dofile that does "housekeeping", for example
+
+```{stata}
+	* Housekeeping
+		cap log close		
+		set more off
+		clear all
+		estimates drop _all
+		eststo clear	
+		macro drop _all
+```
+In this case, you should add `include "config.do"` **after** such commands, to avoid problems. Technically, the command `clear all` undoes many of the settings that our `config.do` does.

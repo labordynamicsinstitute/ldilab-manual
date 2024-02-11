@@ -500,7 +500,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-do">How to use config.do</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-the-config-file">Rename the config file.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-do">Include config.do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-do">Include config.do</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -627,16 +630,26 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="n">config</span><span class="o">.</span><span class="n">do</span>
 </pre></div>
 </div>
-<p>and the end of the <code class="docutils literal notranslate"><span class="pre">master.do</span></code>:</p>
+<ul class="simple">
+<li><p>You should also add to the end of the <code class="docutils literal notranslate"><span class="pre">master.do</span></code>:</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">log</span> <span class="n">close</span> <span class="n">_all</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Do NOT include it in the individual code files.</p>
+</div>
+<section id="notes">
+<h4>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>If there is no master dofile, you should try to create one (see <a class="reference internal" href="96-02-running-stata-code.html#create-master"><span class="std std-ref">how in the next section</span></a>), starting with the lines above, and ending with the <code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">close</span></code> command.</p></li>
-<li><p>If creating a master dofile is not possible, add the  lines at the beginning and the end, respectively, of <strong>each</strong> code file.</p></li>
-<li><p>There will be cases where authors create their own log files. Do NOT comment out the log file creation here, as the named logfile will not conflict with any author-generated files.</p></li>
+<li><p>If creating a master dofile is not possible, <strong>and only then</strong>, add the  lines at the beginning and the end, respectively, of <strong>each</strong> code file.</p></li>
+<li><p>There will be cases where authors <strong>create their own log files</strong>. Do NOT comment out the log file creation here, as the named logfile will not conflict with any author-generated files.</p></li>
+<li><p>In some cases, authors will have code at the start of their dofile that does “housekeeping”, for example</p></li>
 </ul>
+<p>In this case, you should add <code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">&quot;config.do&quot;</span></code> <strong>after</strong> such commands, to avoid problems. Technically, the command <code class="docutils literal notranslate"><span class="pre">clear</span> <span class="pre">all</span></code> undoes many of the settings that our <code class="docutils literal notranslate"><span class="pre">config.do</span></code> does.</p>
+</section>
 </section>
 </section>
 </section>
@@ -713,7 +726,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-do">How to use config.do</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-the-config-file">Rename the config file.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-do">Include config.do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-do">Include config.do</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
