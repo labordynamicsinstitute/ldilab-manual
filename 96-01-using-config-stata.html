@@ -648,6 +648,15 @@ document.write(`
 <li><p>There will be cases where authors <strong>create their own log files</strong>. Do NOT comment out the log file creation here, as the named logfile will not conflict with any author-generated files.</p></li>
 <li><p>In some cases, authors will have code at the start of their dofile that does “housekeeping”, for example</p></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>	<span class="o">*</span> <span class="n">Housekeeping</span>
+		<span class="n">cap</span> <span class="n">log</span> <span class="n">close</span>		
+		<span class="nb">set</span> <span class="n">more</span> <span class="n">off</span>
+		<span class="n">clear</span> <span class="nb">all</span>
+		<span class="n">estimates</span> <span class="n">drop</span> <span class="n">_all</span>
+		<span class="n">eststo</span> <span class="n">clear</span>	
+		<span class="n">macro</span> <span class="n">drop</span> <span class="n">_all</span>
+</pre></div>
+</div>
 <p>In this case, you should add <code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">&quot;config.do&quot;</span></code> <strong>after</strong> such commands, to avoid problems. Technically, the command <code class="docutils literal notranslate"><span class="pre">clear</span> <span class="pre">all</span></code> undoes many of the settings that our <code class="docutils literal notranslate"><span class="pre">config.do</span></code> does.</p>
 </section>
 </section>

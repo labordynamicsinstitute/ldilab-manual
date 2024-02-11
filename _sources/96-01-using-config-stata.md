@@ -116,7 +116,7 @@ Do NOT include it in the individual code files.
 - There will be cases where authors **create their own log files**. Do NOT comment out the log file creation here, as the named logfile will not conflict with any author-generated files.
 - In some cases, authors will have code at the start of their dofile that does "housekeeping", for example
 
-```{stata}
+```
 	* Housekeeping
 		cap log close		
 		set more off
