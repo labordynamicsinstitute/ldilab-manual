@@ -489,14 +489,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-the-openicpsr-download-script">Configure the openICPSR download script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-the-openicpsr-download-script-and-bitbucket-access">Configure the openICPSR download script and Bitbucket access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-some-convenience-scripts">Configure some convenience scripts</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-not-yet-have-a-home-bin-directory">If you do not yet have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-already-have-a-home-bin-directory">If you already have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-bitbucket-access">Configure Bitbucket access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-python-defaults">Configuring Python defaults</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-customizations">Optional customizations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-add-git-bash-to-the-windows-terminal">Windows: Add Git Bash to the Windows Terminal</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -515,25 +518,32 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>On Windows, this will be “Git bash”. On Linux, you are usually using <code class="docutils literal notranslate"><span class="pre">bash</span></code>, but check with your sysadmin if you are unsure. On MacOS, newer versions have changed the default shell to <code class="docutils literal notranslate"><span class="pre">zsh</span></code>, which should work mostly the same. It is possible to use the <code class="docutils literal notranslate"><span class="pre">bash</span></code> shell there as well.</p>
 </div>
-<section id="configure-the-openicpsr-download-script">
-<h2>Configure the openICPSR download script<a class="headerlink" href="#configure-the-openicpsr-download-script" title="Permalink to this heading">#</a></h2>
-<p>Run this once in a Bash shell:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span>
-<span class="s2"># env for ICPSR</span>
-<span class="s2">export ICPSR_EMAIL=mylogin@cornell.edu</span>
-<span class="s2">export ICPSR_PASS=&#39;supersecretpwd&#39; </span>
-<span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$HOME</span>/.bashrc
+<section id="configure-the-openicpsr-download-script-and-bitbucket-access">
+<h2>Configure the openICPSR download script and Bitbucket access<a class="headerlink" href="#configure-the-openicpsr-download-script-and-bitbucket-access" title="Permalink to this heading">#</a></h2>
+<p>First, create a <a class="reference internal" href="97-01-Bitbucket-authentication.html#bitbucket-authentication"><span class="std std-ref">Bitbucket PAT</span></a>. Keep it handy, you will need it below.</p>
+<p>Next, find your openICPSR login (should be your NetID + <code class="docutils literal notranslate"><span class="pre">&#64;cornell.edu</span></code>) and your password.</p>
+<p>Then, copy-paste the following code into an empty VS Code window, edit the email and password, then copy-paste it into the Git bash shell. Keep all the line breaks as shown!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1"># env for ICPSR</span>
+<span class="s1">export ICPSR_EMAIL=mylogin@cornell.edu</span>
+<span class="s1">export ICPSR_PASS=&quot;supersecretpwd&quot;</span>
+<span class="s1">export P_BITBUCKET_PAT=&quot;supersecretPAT&quot; </span>
+<span class="s1">export P_BITBUCKET_USERNAME=netid-replace-me</span>
+<span class="s1">&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$HOME</span>/.bashrc
 </pre></div>
 </div>
-<p>(you should copy-paste this into an empty VS Code window, edit the editable pieces, then copy-paste it into the Git bash shell. Keep all the line breaks as shown!).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can also use VS Code to open up the file <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> directly, if you prefer.</p>
 </div>
-<p>This will “prime” the script to use that email and password for downloading the information.</p>
+<p>This will</p>
+<ul class="simple">
+<li><p>allow you to use the <code class="docutils literal notranslate"><span class="pre">aeagit</span></code> shortcut to download a Bitbucket repository to your workspace directly from the Bash command line</p></li>
+<li><p>allow you to use the <code class="docutils literal notranslate"><span class="pre">tools/download_openicpsr_private.py</span></code> script to download replication packages from openICPSR from the Bash command line</p></li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>You may need to log out and back in to make this work; but wait until you have made all the adjustments here!</p>
+<p>Now might be a good time to log out and back in to make this work.</p>
 </div>
 </section>
 <section id="configure-some-convenience-scripts">
@@ -557,24 +567,10 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AEADa
 <p>If you <em>do</em> have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory, you will need to manually adjust a few more things. Contact your supervisor.</p>
 </section>
 </section>
-<section id="configure-bitbucket-access">
-<h2>Configure Bitbucket access<a class="headerlink" href="#configure-bitbucket-access" title="Permalink to this heading">#</a></h2>
-<p>For Bitbucket, you often copy your <a class="reference internal" href="97-01-Bitbucket-authentication.html#bitbucket-authentication"><span class="std std-ref">Bitbucket PAT</span></a> into the Bash window. The following can streamline that, if using the <code class="docutils literal notranslate"><span class="pre">aeagit</span></code> command above.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;# adding Bitbucket credentials</span>
-<span class="s1">export P_BITBUCKET_PAT=&quot;supersecretPAT&quot; </span>
-<span class="s1">export P_BITBUCKET_USERNAME=netid-replace-me</span>
-<span class="s1">&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$HOME</span>/.bashrc
-</pre></div>
-</div>
-<p>(you should copy-paste this into an empty VS Code window, edit the editable pieces, then copy-paste it into the Git bash shell. Be sure to keep all line breaks and spaces!).</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Now might be a good time to log out and back in to make this work.</p>
-</div>
-</section>
 <section id="configuring-python-defaults">
 <h2>Configuring Python defaults<a class="headerlink" href="#configuring-python-defaults" title="Permalink to this heading">#</a></h2>
-<p>If you are on a machine that has Python installed, run the following command (if it fails with <code class="docutils literal notranslate"><span class="pre">python3</span></code>, replace with <code class="docutils literal notranslate"><span class="pre">python</span></code>). You should do this once, from any recently cloned Bitbucket repository (which will contain a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file)</p>
+<p>The last step you do once you have cloned your first repository.</p>
+<p>If you are on a machine that has Python installed, run the following command (if it fails with <code class="docutils literal notranslate"><span class="pre">python3</span></code>, replace with <code class="docutils literal notranslate"><span class="pre">python</span></code>). You should do this once, from any recently cloned Bitbucket repository (which will contain a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file). You do NOT have to do it every time!</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
@@ -593,6 +589,14 @@ Linux/macOS</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
+</section>
+<section id="optional-customizations">
+<h2>Optional customizations<a class="headerlink" href="#optional-customizations" title="Permalink to this heading">#</a></h2>
+<section id="windows-add-git-bash-to-the-windows-terminal">
+<h3>Windows: Add Git Bash to the Windows Terminal<a class="headerlink" href="#windows-add-git-bash-to-the-windows-terminal" title="Permalink to this heading">#</a></h3>
+<p>It can be convenient to add the Git Bash to the Windows Terminal application that is present in Windows 10 and higher (better fonts, etc.).</p>
+<p>Follow instructions at <a class="reference external" href="https://www.commandlinewizardry.com/post/how-to-add-git-bash-to-windows-terminal">https://www.commandlinewizardry.com/post/how-to-add-git-bash-to-windows-terminal</a> to do so.</p>
+</section>
 </section>
 </section>
 
@@ -657,14 +661,17 @@ Linux/macOS</label><div class="sd-tab-content docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-the-openicpsr-download-script">Configure the openICPSR download script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-the-openicpsr-download-script-and-bitbucket-access">Configure the openICPSR download script and Bitbucket access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-some-convenience-scripts">Configure some convenience scripts</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-not-yet-have-a-home-bin-directory">If you do not yet have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-already-have-a-home-bin-directory">If you already have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-bitbucket-access">Configure Bitbucket access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-python-defaults">Configuring Python defaults</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-customizations">Optional customizations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-add-git-bash-to-the-windows-terminal">Windows: Add Git Bash to the Windows Terminal</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
