@@ -32,6 +32,10 @@ Then [contact BioHPC support](https://biohpc.cornell.edu/contact.aspx), requesti
 Skip this step if somebody else added you to their reservation!
 ```
 
+```{note}
+If you do not see an open server, ask on the mailing list (ldi-lab-l@cornell.edu) if somebody has an active reservation that they can add you to!
+```
+
 **Access a node**
 
 See [Getting Started Guide](https://biohpc.cornell.edu/lab/userguide.aspx?a=quickstart) and [Remote Access](https://biohpc.cornell.edu/lab/doc/Remote_access.pdf). SSH is the best path (if you don't need graphical applications). See [Access via VSCode](linux-vscode) for a more user-friendly way to use SSH to access the server.
