@@ -95,7 +95,29 @@ Some benefits of connecting to BioHPC with VSCode: You can view/edit programs, c
 
 In particular, you can navigate to your working directory and `git clone` the Bitbucket repository (using either the command line, or VSCode prompt to `Clone Repository`). VSCode recognizes Git, so you can visually navigate through tracked and untracked files via the lefthand side menu.
 
+## Where to run code
 
+
+
+::::{tab-set}
+
+:::{tab-item} BioHPC
+
+You should use `/home2/ecco_lv39/Workspace` to clone your Bitbucket repository.
+
+```{bash}
+cd /home2/ecco_lv39/Workspace
+```
+
+:::
+
+:::{tab-item} NBER servers
+
+Consult the Jira issue to figure out where you should run the code.
+
+:::
+
+::::
 
 ## Additional setup and tips-and-tricks
 

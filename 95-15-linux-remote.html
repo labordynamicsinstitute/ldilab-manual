@@ -490,6 +490,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-linux-nodes-with-vscode">Accessing Linux nodes with VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-run-code">Where to run code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-and-tips-and-tricks">Additional setup and tips-and-tricks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilize-tmux">Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code></a></li>
@@ -595,6 +596,21 @@ NBER servers</label><div class="sd-tab-content docutils">
 <p>Some benefits of connecting to BioHPC with VSCode: You can view/edit programs, check log files, and run jobs simultaneously in a given instance of VSCode. Note that you should still use <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes#utilize-tmux"><code class="docutils literal notranslate"><span class="pre">tmux</span></code></a> within the VSCode terminal, in case of a disconnect.</p>
 <p>In particular, you can navigate to your working directory and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> the Bitbucket repository (using either the command line, or VSCode prompt to <code class="docutils literal notranslate"><span class="pre">Clone</span> <span class="pre">Repository</span></code>). VSCode recognizes Git, so you can visually navigate through tracked and untracked files via the lefthand side menu.</p>
 </section>
+<section id="where-to-run-code">
+<h2>Where to run code<a class="headerlink" href="#where-to-run-code" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+BioHPC</label><div class="sd-tab-content docutils">
+<p>You should use <code class="docutils literal notranslate"><span class="pre">/home2/ecco_lv39/Workspace</span></code> to clone your Bitbucket repository.</p>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+NBER servers</label><div class="sd-tab-content docutils">
+<p>Consult the Jira issue to figure out where you should run the code.</p>
+</div>
+</div>
+</section>
 <section id="additional-setup-and-tips-and-tricks">
 <h2>Additional setup and tips-and-tricks<a class="headerlink" href="#additional-setup-and-tips-and-tricks" title="Permalink to this heading">#</a></h2>
 <section id="first-time-setup">
@@ -631,8 +647,8 @@ NBER servers</label><div class="sd-tab-content docutils">
 <h3>Configuring automatic reservation cancellation (BioHPC only)<a class="headerlink" href="#configuring-automatic-reservation-cancellation-biohpc-only" title="Permalink to this heading">#</a></h3>
 <p>If you use the BioHPC reservation system, it helps others if at the end of a long-running job, your reservation is cancelled as soon as possible. One way to do this is to add the following to the scripts you are running:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-2">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Stata</label><div class="sd-tab-content docutils">
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">// Use the code below at the bottom of the Stata &quot;main&quot; or </span>
 <span class="c1">// &quot;master&quot; script to automatically sign out </span>
@@ -641,16 +657,16 @@ Stata</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-3">
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 R</label><div class="sd-tab-content docutils">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add to end of main or last script.</span>
 <span class="nf">system</span><span class="p">(</span><span class="s">&quot;/programs/bin/labutils/endres.pl&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-4">
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 Matlab</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">Use</span> <span class="n">code</span> <span class="n">below</span> <span class="n">at</span> <span class="n">end</span> <span class="n">of</span> <span class="n">MATLAB</span> <span class="n">main</span> <span class="n">script</span><span class="p">,</span> <span class="ow">or</span> <span class="n">last</span> <span class="n">script</span><span class="p">,</span> <span class="n">to</span> <span class="n">automatically</span> <span class="n">sign</span> <span class="n">out</span>
 
@@ -658,8 +674,8 @@ Matlab</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-5">
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
 Python</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use code below at bottom of Python/Anaconda script </span>
 <span class="c1"># to automatically sign out</span>
@@ -670,8 +686,8 @@ Python</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-6">
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 Bash</label><div class="sd-tab-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Use the code below at the bottom of the bash &quot;main&quot; or </span>
 <span class="c1"># &quot;master&quot; script to automatically sign out </span>
@@ -750,6 +766,7 @@ Bash</label><div class="sd-tab-content docutils">
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-linux-nodes-with-vscode">Accessing Linux nodes with VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-run-code">Where to run code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-and-tips-and-tricks">Additional setup and tips-and-tricks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilize-tmux">Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code></a></li>
