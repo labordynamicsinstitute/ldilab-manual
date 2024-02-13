@@ -722,9 +722,17 @@ Windows (laptop only)</label><div class="sd-tab-content docutils">
 <p>This should have created two files in your <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory:</p>
 <p>You will want to transfer the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> file to the Linux server. You can do this with the command <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code> (if it exists), or manually. We show you how to do this manually:</p>
 <p>::{note}</p>
-<p>You will be prompted a few times for your Linux server <strong>password</strong> (not yet the passphrase you created earlier):</p>
+<p>You should open two terminals: one locally on your laptop, one remotely on the Windows server!</p>
 <p>::</p>
-<p>Set your NetID here first:</p>
+<p>This creates a directory used by SSH:</p>
+<p>This transfer the public key to the remote Linux server</p>
+<p>You should now see the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> key in your <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory on the remote Linux server:</p>
+<p>Now test it:</p>
+<p>You should now be prompted for your SSH passphrase:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh netid@cbsulogin.biohpc.cornell.edu
+Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
+</pre></div>
+</div>
 <p>Finally, you will want to start the SSH-agent. The following <a class="reference external" href="https://interworks.com/blog/2021/09/15/setting-up-ssh-agent-in-windows-for-passwordless-git-authentication/">website</a> explains how to do so. You will likely need admin privileges on your laptop.</p>
 </div>
 </div>
