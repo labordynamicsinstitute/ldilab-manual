@@ -105,7 +105,7 @@ In particular, you can navigate to your working directory and `git clone` the Bi
 
 You should use `/home2/ecco_lv39/Workspace` to clone your Bitbucket repository.
 
-```{bash}
+```bash
 cd /home2/ecco_lv39/Workspace
 ```
 
@@ -251,7 +251,7 @@ To be completed.
 
 Second, you will want to create a key, then transfer it to the Linux server. The following commands should do this (should work on both Powershell and Bash):
 
-```{bash}
+```bash
 ssh-keygen -t ed25519 -C "For BioHPC"
 ```
 
@@ -259,22 +259,22 @@ ssh-keygen -t ed25519 -C "For BioHPC"
 
 This should have created two files in your `.ssh` directory:
 
-```{bash}
+```bash
 ls $HOME/.ssh
 ```
 
 You will want to transfer the `.pub` file to the Linux server. You can do this with the command `ssh-copy-id` (if it exists), or manually. We show you how to do this manually:
 
-::{note}
+:::::{note}
 
 You should open two terminals: one locally on your laptop, one remotely on the Windows server!
 
-::
+:::::
 
 
 This creates a directory used by SSH:
 
-```{bash}
+```bash
 # this is on the remote server
 mkdir $HOME/.ssh
 # stay logged in!
@@ -282,7 +282,7 @@ mkdir $HOME/.ssh
 
 This transfer the public key to the remote Linux server
 
-```{bash}
+```bash
 # this is on your laptop
 netid=lv39  # adjust to be your own netid!
 scp $HOME/.ssh/*.pub ${netid}@cbsulogin.biohpc.cornell.edu:.ssh/
@@ -290,7 +290,7 @@ scp $HOME/.ssh/*.pub ${netid}@cbsulogin.biohpc.cornell.edu:.ssh/
 
 You should now see the `.pub` key in your `.ssh` directory on the remote Linux server:
 
-```{bash}
+```bash
 # this is on the remote server
 # this should show the *.pub file
 ls $HOME/.ssh
@@ -300,7 +300,7 @@ cat $HOME/.ssh/*.pub >> $HOME/.ssh/authorized_keys
 
 Now test it:
 
-```{bash}
+```bash
 # This is run from your laptop
 ssh ${netid}@cbsulogin.biohpc.cornell.edu
 ```
