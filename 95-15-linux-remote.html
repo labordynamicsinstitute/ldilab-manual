@@ -495,6 +495,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilize-tmux">Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation-biohpc-only">Configuring automatic reservation cancellation (BioHPC only)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-ssh-agent-for-password-less-login">Setting up SSH Agent for password-less login</a></li>
 </ul>
 </li>
 </ul>
@@ -696,6 +697,37 @@ Bash</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
+</section>
+<section id="setting-up-ssh-agent-for-password-less-login">
+<h3>Setting up SSH Agent for password-less login<a class="headerlink" href="#setting-up-ssh-agent-for-password-less-login" title="Permalink to this heading">#</a></h3>
+<p>The SSH protocol allows you to create a public-private key pair. You deposit the public key on the Linux server, and keep the (passphrase-protected) private key on your laptop. You can then configure a “ssh-agent” running on your laptop to store (temporarily) your passphrase in memory, and provide it every time you log in to the Linux server. This works very easily on Unix-like systems (macOS, Linux laptops), but is a bit trickier on Windows laptops.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+macOS</label><div class="sd-tab-content docutils">
+<p>To be completed.</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+Linux (laptop)</label><div class="sd-tab-content docutils">
+<p>To be completed.</p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+Windows (laptop only)</label><div class="sd-tab-content docutils">
+<p>First, you need to ensure that the SSH subsystem is installed.</p>
+<p>To be completed.</p>
+<p>Second, you will want to create a key, then transfer it to the Linux server. The following commands should do this (should work on both Powershell and Bash):</p>
+<p><code class="docutils literal notranslate"><span class="pre">ed25519</span></code> is the encryption type, “For BioHPC” is an arbitrary comment for your own tracking of keys. When prompted, you should add a passphrase.</p>
+<p>This should have created two files in your <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory:</p>
+<p>You will want to transfer the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> file to the Linux server. You can do this with the command <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code> (if it exists), or manually. We show you how to do this manually:</p>
+<p>::{note}</p>
+<p>You will be prompted a few times for your Linux server <strong>password</strong> (not yet the passphrase you created earlier):</p>
+<p>::</p>
+<p>Set your NetID here first:</p>
+<p>Finally, you will want to start the SSH-agent. The following <a class="reference external" href="https://interworks.com/blog/2021/09/15/setting-up-ssh-agent-in-windows-for-passwordless-git-authentication/">website</a> explains how to do so. You will likely need admin privileges on your laptop.</p>
+</div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Additional tips-and-tricks can be found on the <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes">LDIlab wiki</a>. These are focused on the BioHPC cluster, but may work on other servers as well.</p>
@@ -771,6 +803,7 @@ Bash</label><div class="sd-tab-content docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilize-tmux">Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation-biohpc-only">Configuring automatic reservation cancellation (BioHPC only)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-ssh-agent-for-password-less-login">Setting up SSH Agent for password-less login</a></li>
 </ul>
 </li>
 </ul>
