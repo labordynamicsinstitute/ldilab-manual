@@ -604,6 +604,9 @@ NBER servers</label><div class="sd-tab-content docutils">
 </input><label class="sd-tab-label" for="sd-tab-item-2">
 BioHPC</label><div class="sd-tab-content docutils">
 <p>You should use <code class="docutils literal notranslate"><span class="pre">/home2/ecco_lv39/Workspace</span></code> to clone your Bitbucket repository.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/home2/ecco_lv39/Workspace
+</pre></div>
+</div>
 </div>
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-3">
@@ -718,23 +721,54 @@ Windows (laptop only)</label><div class="sd-tab-content docutils">
 <p>First, you need to ensure that the SSH subsystem is installed.</p>
 <p>To be completed.</p>
 <p>Second, you will want to create a key, then transfer it to the Linux server. The following commands should do this (should work on both Powershell and Bash):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;For BioHPC&quot;</span>
+</pre></div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">ed25519</span></code> is the encryption type, “For BioHPC” is an arbitrary comment for your own tracking of keys. When prompted, you should add a passphrase.</p>
 <p>This should have created two files in your <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span><span class="nv">$HOME</span>/.ssh
+</pre></div>
+</div>
 <p>You will want to transfer the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> file to the Linux server. You can do this with the command <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code> (if it exists), or manually. We show you how to do this manually:</p>
-<p>::{note}</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>You should open two terminals: one locally on your laptop, one remotely on the Windows server!</p>
-<p>::</p>
+</div>
+</div>
+</div>
 <p>This creates a directory used by SSH:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is on the remote server</span>
+mkdir<span class="w"> </span><span class="nv">$HOME</span>/.ssh
+<span class="c1"># stay logged in!</span>
+</pre></div>
+</div>
 <p>This transfer the public key to the remote Linux server</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is on your laptop</span>
+<span class="nv">netid</span><span class="o">=</span>lv39<span class="w">  </span><span class="c1"># adjust to be your own netid!</span>
+scp<span class="w"> </span><span class="nv">$HOME</span>/.ssh/*.pub<span class="w"> </span><span class="si">${</span><span class="nv">netid</span><span class="si">}</span>@cbsulogin.biohpc.cornell.edu:.ssh/
+</pre></div>
+</div>
 <p>You should now see the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> key in your <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory on the remote Linux server:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is on the remote server</span>
+<span class="c1"># this should show the *.pub file</span>
+ls<span class="w"> </span><span class="nv">$HOME</span>/.ssh
+<span class="c1"># this authorizes you to use the SSH key to log in:</span>
+cat<span class="w"> </span><span class="nv">$HOME</span>/.ssh/*.pub<span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$HOME</span>/.ssh/authorized_keys
+</pre></div>
+</div>
 <p>Now test it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is run from your laptop</span>
+ssh<span class="w"> </span><span class="si">${</span><span class="nv">netid</span><span class="si">}</span>@cbsulogin.biohpc.cornell.edu
+</pre></div>
+</div>
 <p>You should now be prompted for your SSH passphrase:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh netid@cbsulogin.biohpc.cornell.edu
 Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 </pre></div>
 </div>
 <p>Finally, you will want to start the SSH-agent. The following <a class="reference external" href="https://interworks.com/blog/2021/09/15/setting-up-ssh-agent-in-windows-for-passwordless-git-authentication/">website</a> explains how to do so. You will likely need admin privileges on your laptop.</p>
-</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
