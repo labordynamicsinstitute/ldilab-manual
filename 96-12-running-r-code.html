@@ -496,6 +496,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-code">Run the code</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-failures">Possible failures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-rstudio-api">Use of Rstudio API</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -583,6 +587,26 @@ Mac/Linux</label><div class="sd-tab-content docutils">
 </div></blockquote>
 </section>
 </section>
+<section id="possible-failures">
+<h2>Possible failures<a class="headerlink" href="#possible-failures" title="Permalink to this heading">#</a></h2>
+<section id="use-of-rstudio-api">
+<h3>Use of Rstudio API<a class="headerlink" href="#use-of-rstudio-api" title="Permalink to this heading">#</a></h3>
+<p>We sometimes see authors use the Rstudio API. In most cases, this will prevent the code from running in the <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">CMD</span> <span class="pre">BATCH</span></code> method. Also in most cases, this can be remedied easily.</p>
+<p>For instance, the following code leverages the Rstudio API to figure out the location of the code:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">setwd</span><span class="p">(</span><span class="nf">dirname</span><span class="p">(</span><span class="n">rstudioapi</span><span class="o">::</span><span class="nf">getActiveDocumentContext</span><span class="p">()</span><span class="o">$</span><span class="n">path</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>If using the  <a class="reference internal" href="96-11-using-config-r.html#using-config-r"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">config.R</span></code></span></a> setup, this can be easily replaced with</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">setwd</span><span class="p">(</span><span class="n">rootdir</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">setwd</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s">&quot;code&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(if the file in question is in a subdirectory of the rootdir)</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -651,6 +675,10 @@ Mac/Linux</label><div class="sd-tab-content docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-run-the-code">Step 2: Run the Code</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-environment-to-run-the-code">Setting up the environment to run the code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-code">Run the code</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-failures">Possible failures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-rstudio-api">Use of Rstudio API</a></li>
 </ul>
 </li>
 </ul>

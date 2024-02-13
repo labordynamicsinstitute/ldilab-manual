@@ -61,7 +61,7 @@ create.paths <- c("logs","libraries","outputs")
 
 The `config.R` will create these directories if they do not exist, later on.
 
-### Base directory.
+### Base directory
 
 The base directory (or here, `rootdir`) is the directory that contains the replication package, as intended by the author. How do you figure that out?
 
@@ -116,12 +116,16 @@ git add .here
 
 depending on the case. Now R will set the root directory correctly.
 
+
+:::{note}
+
 If for some reason that does not work, simply override the automatic detection, by setting the `rootdir` manually:
 
 ```
 rootdir <- "C:/user/Workspace/aearep-9999/123456/Replication-package"
 ```
 
+:::
 
 
 ### Package installation source
@@ -135,7 +139,17 @@ posit.date <- Sys.Date() - 31
 
 If you have to re-run this multiple times, and add on packages, this might get out of sync with the first time you ran it, so you might adjust the `posit.data` manually. 
 
+### Installing packages
 
+If the author's code does not provide install commands, you will need to add any missing packages to a [particular location](https://github.com/AEADataEditor/replication-template-development/blob/development/template-config.R#L30) in the `config.R`:
+
+```R
+# global.libraries <- c("devtools","rprojroot")
+# For example, you can add on two additional ones:
+global.libraries <- c("devtools","rprojroot","readxl","ggplot2")
+```
+
+This will then install the libraries locally.
 
 ### System information
 
@@ -148,16 +162,31 @@ We require system information as part of the replication package. This is becaus
 
 The template is called `template-config.R`. In order to use it, rename it to `config.R` and move it into the right folder. If there is a **main** file created by the author, put it next to that. If there is NOT a **main** file, put it into the folder that the author says to run the code from.
 
-> **[ACTION]** Check the README or the repository and determine if a master .do file was provided.
+> **[ACTION]** Check the README or the repository and determine if a master R file was provided.
 
 ### Include config.R or create main.R
 
-- If there is a main file (say `main.R`), you should put the following line at the beginning of the `main.R`:
+#### If there is a main file... 
+
+If there is a main file (say `main.R`), you should put the following line at the beginning of the `main.R`:
 
 
 ```
 source("config.R", echo = TRUE)
 ```
+
+:::{admonition} Caution:
+
+If there are lines such as `rm(ls())` at the start of the `main.R`, you should put the `source()` statement AFTERWARDS:
+
+  ```
+  rm(ls())
+  source("config.R", echo = TRUE)
+  ```
+:::
+
+#### If there is NO main file...
+
 
 - If there is no main file, rename `config.R` to `main.R`, and add the authors' code files to the end:
 
@@ -167,3 +196,12 @@ source("02_analysis.R", echo = TRUE)
 source("03_figures.R", echo = TRUE)
 ```
 
+
+:::{admonition} Caution:
+
+If there are lines such as `rm(ls())` in the various files provided by the author, you should comment them out:
+
+```R
+# rm(ls())
+... (rest of code)
+```

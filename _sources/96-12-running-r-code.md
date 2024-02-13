@@ -82,3 +82,30 @@ This will create a `main.Rout` file, which you can open up in VS Code.
 
 
 > Consider how much time a complete run would take before you run everything one last time. If it would take too long, you may want to skip a complete run, but ensure that you have log files for all partial runs. Make a note of this in the report.
+
+
+## Possible failures
+
+### Use of Rstudio API
+
+We sometimes see authors use the Rstudio API. In most cases, this will prevent the code from running in the `R CMD BATCH` method. Also in most cases, this can be remedied easily.
+
+For instance, the following code leverages the Rstudio API to figure out the location of the code: 
+
+```R
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+```
+
+If using the  [`config.R`](using-config-r) setup, this can be easily replaced with 
+
+```R
+setwd(rootdir)
+```
+
+or 
+
+```R
+setwd(file.path(rootdir,"code")
+```
+
+(if the file in question is in a subdirectory of the rootdir)
