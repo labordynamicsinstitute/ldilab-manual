@@ -267,23 +267,50 @@ You will want to transfer the `.pub` file to the Linux server. You can do this w
 
 ::{note}
 
-You will be prompted a few times for your Linux server **password** (not yet the passphrase you created earlier):
+You should open two terminals: one locally on your laptop, one remotely on the Windows server!
 
 ::
 
-Set your NetID here first:
+
+This creates a directory used by SSH:
 
 ```{bash}
-netid=lv39
+# this is on the remote server
+mkdir $HOME/.ssh
+# stay logged in!
 ```
 
+This transfer the public key to the remote Linux server
+
 ```{bash}
-ssh ${netid}@cbsulogin.biohpc.cornell.edu mkdir .ssh
+# this is on your laptop
+netid=lv39  # adjust to be your own netid!
 scp $HOME/.ssh/*.pub ${netid}@cbsulogin.biohpc.cornell.edu:.ssh/
-
 ```
 
+You should now see the `.pub` key in your `.ssh` directory on the remote Linux server:
 
+```{bash}
+# this is on the remote server
+# this should show the *.pub file
+ls $HOME/.ssh
+# this authorizes you to use the SSH key to log in:
+cat $HOME/.ssh/*.pub >> $HOME/.ssh/authorized_keys
+```
+
+Now test it:
+
+```{bash}
+# This is run from your laptop
+ssh ${netid}@cbsulogin.biohpc.cornell.edu
+```
+
+You should now be prompted for your SSH passphrase:
+
+```
+$ ssh netid@cbsulogin.biohpc.cornell.edu
+Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
+```
 
 Finally, you will want to start the SSH-agent. The following [website](https://interworks.com/blog/2021/09/15/setting-up-ssh-agent-in-windows-for-passwordless-git-authentication/) explains how to do so. You will likely need admin privileges on your laptop.
 
