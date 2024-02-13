@@ -225,6 +225,71 @@ os.system("/programs/bin/labutils/endres.pl")
 ::::
 
 
+### Setting up SSH Agent for password-less login
+
+The SSH protocol allows you to create a public-private key pair. You deposit the public key on the Linux server, and keep the (passphrase-protected) private key on your laptop. You can then configure a "ssh-agent" running on your laptop to store (temporarily) your passphrase in memory, and provide it every time you log in to the Linux server. This works very easily on Unix-like systems (macOS, Linux laptops), but is a bit trickier on Windows laptops.
+
+::::{tab-set}
+
+:::{tab-item} macOS
+
+To be completed.
+
+:::
+
+:::{tab-item} Linux (laptop)
+
+To be completed.
+
+:::
+
+:::{tab-item} Windows (laptop only)
+
+First, you need to ensure that the SSH subsystem is installed.
+
+To be completed.
+
+Second, you will want to create a key, then transfer it to the Linux server. The following commands should do this (should work on both Powershell and Bash):
+
+```{bash}
+ssh-keygen -t ed25519 -C "For BioHPC"
+```
+
+`ed25519` is the encryption type, "For BioHPC" is an arbitrary comment for your own tracking of keys. When prompted, you should add a passphrase.
+
+This should have created two files in your `.ssh` directory:
+
+```{bash}
+ls $HOME/.ssh
+```
+
+You will want to transfer the `.pub` file to the Linux server. You can do this with the command `ssh-copy-id` (if it exists), or manually. We show you how to do this manually:
+
+::{note}
+
+You will be prompted a few times for your Linux server **password** (not yet the passphrase you created earlier):
+
+::
+
+Set your NetID here first:
+
+```{bash}
+netid=lv39
+```
+
+```{bash}
+ssh ${netid}@cbsulogin.biohpc.cornell.edu mkdir .ssh
+scp $HOME/.ssh/*.pub ${netid}@cbsulogin.biohpc.cornell.edu:.ssh/
+
+```
+
+
+
+Finally, you will want to start the SSH-agent. The following [website](https://interworks.com/blog/2021/09/15/setting-up-ssh-agent-in-windows-for-passwordless-git-authentication/) explains how to do so. You will likely need admin privileges on your laptop.
+
+:::
+
+::::
 
 ```{tip}
 Additional tips-and-tricks can be found on the [LDIlab wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes). These are focused on the BioHPC cluster, but may work on other servers as well.
