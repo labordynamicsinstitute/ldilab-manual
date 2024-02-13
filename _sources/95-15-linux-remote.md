@@ -229,27 +229,37 @@ os.system("/programs/bin/labutils/endres.pl")
 
 The SSH protocol allows you to create a public-private key pair. You deposit the public key on the Linux server, and keep the (passphrase-protected) private key on your laptop. You can then configure a "ssh-agent" running on your laptop to store (temporarily) your passphrase in memory, and provide it every time you log in to the Linux server. This works very easily on Unix-like systems (macOS, Linux laptops), but is a bit trickier on Windows laptops.
 
-::::{tab-set}
+:::::{tab-set}
 
-:::{tab-item} macOS
-
-To be completed.
-
-:::
-
-:::{tab-item} Linux (laptop)
+::::{tab-item} macOS
 
 To be completed.
 
-:::
+::::
 
-:::{tab-item} Windows (laptop only)
+::::{tab-item} Linux (laptop)
+
+To be completed.
+
+::::
+
+::::{tab-item} Windows (laptop only)
 
 First, you need to ensure that the SSH subsystem is installed.
 
 To be completed.
 
-Second, you will want to create a key, then transfer it to the Linux server. The following commands should do this (should work on both Powershell and Bash):
+
+Finally, you will want to start the SSH-agent. The following [website](https://interworks.com/blog/2021/09/15/setting-up-ssh-agent-in-windows-for-passwordless-git-authentication/) explains how to do so. You will likely need admin privileges on your laptop.
+
+
+::::
+
+:::::
+
+The next steps are common to all operating systems.
+
+You will want to create a key, then transfer it to the Linux server. The following commands should do this (should work on both Powershell and Bash):
 
 ```bash
 ssh-keygen -t ed25519 -C "For BioHPC"
@@ -263,13 +273,20 @@ This should have created two files in your `.ssh` directory:
 ls $HOME/.ssh
 ```
 
+Add the new key to your SSH-agent (optional, but recommended):
+
+```bash
+ssh-add $HOME/.ssh/id_ed25519.pub
+# you should be prompted for your passphrase.
+```
+
 You will want to transfer the `.pub` file to the Linux server. You can do this with the command `ssh-copy-id` (if it exists), or manually. We show you how to do this manually:
 
-:::::{note}
+:::{note}
 
 You should open two terminals: one locally on your laptop, one remotely on the Windows server!
 
-:::::
+:::
 
 
 This creates a directory used by SSH:
@@ -312,11 +329,6 @@ $ ssh netid@cbsulogin.biohpc.cornell.edu
 Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 ```
 
-Finally, you will want to start the SSH-agent. The following [website](https://interworks.com/blog/2021/09/15/setting-up-ssh-agent-in-windows-for-passwordless-git-authentication/) explains how to do so. You will likely need admin privileges on your laptop.
-
-:::
-
-::::
 
 ```{tip}
 Additional tips-and-tricks can be found on the [LDIlab wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes). These are focused on the BioHPC cluster, but may work on other servers as well.

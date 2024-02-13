@@ -720,7 +720,11 @@ Linux (laptop)</label><div class="sd-tab-content docutils">
 Windows (laptop only)</label><div class="sd-tab-content docutils">
 <p>First, you need to ensure that the SSH subsystem is installed.</p>
 <p>To be completed.</p>
-<p>Second, you will want to create a key, then transfer it to the Linux server. The following commands should do this (should work on both Powershell and Bash):</p>
+<p>Finally, you will want to start the SSH-agent. The following <a class="reference external" href="https://interworks.com/blog/2021/09/15/setting-up-ssh-agent-in-windows-for-passwordless-git-authentication/">website</a> explains how to do so. You will likely need admin privileges on your laptop.</p>
+</div>
+</div>
+<p>The next steps are common to all operating systems.</p>
+<p>You will want to create a key, then transfer it to the Linux server. The following commands should do this (should work on both Powershell and Bash):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;For BioHPC&quot;</span>
 </pre></div>
 </div>
@@ -729,12 +733,15 @@ Windows (laptop only)</label><div class="sd-tab-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span><span class="nv">$HOME</span>/.ssh
 </pre></div>
 </div>
+<p>Add the new key to your SSH-agent (optional, but recommended):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-add<span class="w"> </span><span class="nv">$HOME</span>/.ssh/id_ed25519.pub
+<span class="c1"># you should be prompted for your passphrase.</span>
+</pre></div>
+</div>
 <p>You will want to transfer the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> file to the Linux server. You can do this with the command <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code> (if it exists), or manually. We show you how to do this manually:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You should open two terminals: one locally on your laptop, one remotely on the Windows server!</p>
-</div>
-</div>
 </div>
 <p>This creates a directory used by SSH:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is on the remote server</span>
@@ -764,10 +771,6 @@ ssh<span class="w"> </span><span class="si">${</span><span class="nv">netid</spa
 <p>You should now be prompted for your SSH passphrase:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh netid@cbsulogin.biohpc.cornell.edu
 Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
-</pre></div>
-</div>
-<p>Finally, you will want to start the SSH-agent. The following <a class="reference external" href="https://interworks.com/blog/2021/09/15/setting-up-ssh-agent-in-windows-for-passwordless-git-authentication/">website</a> explains how to do so. You will likely need admin privileges on your laptop.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="admonition tip">
