@@ -60,7 +60,7 @@ You should now open the Bitbucket report, and identify the changes that the auth
 
   - For each change, you should make a note of what problem was addressed. For instance, if the "Reason for incomplete reproducibility" notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box "Bugs in code"
   - You can find the "Reasons for incomplete reproducibility" in the "Repl. info" tab in the Jira ticket, or in the popup when moving from `Assess openICPSR changes` to `Pending publication` at the end of this process.
-  - Check that the deposit doesn't have any extraneous files (Manuscript PDFs, Response to the Editor PDF, etc). If there are these files, note this on the Jira comment. Authors must remove these files.
+  - Check that the deposit doesn't have any extraneous files (Manuscript PDFs, Response to the Editor PDF, etc). If there are these files, note this on the Jira comment, tagging the senior members of the lab. Authors must remove these files. If in doubt, check with senior members.
 
 - **If you have verified that all the required changes have been made**, continue with the ["For Accept" section](submitting-info-via-openicpsr#for-accept) of [Submitting deposit-related information via openICPSR](submitting-info-via-openicpsr).
   - You have another opportunity to uncheck any boxes here that have been addressed.
