@@ -258,9 +258,9 @@ local ssc_packages "estout ivreg2"
 
 
 
-::::{tab-set}
+:::::{tab-set}
 
-:::{tab-item}  Windows 
+::::{tab-item}  Windows 
 
 > **[ACTION]** **Right click** on the master .do file and select the option `Execute (do)`.
 
@@ -269,18 +269,18 @@ local ssc_packages "estout ivreg2"
 This option will set the working directory  to the location where the `master.do` is. It opens Stata and will show the processes in the Stata window.
 
 
-:::
+::::
 
-:::{tab-item} Mac/Linux 
+::::{tab-item} Mac/Linux 
 
 On Unix-style systems, the preferred way is to use the command line to run Stata code.
 
-```{admonition} **Mac-specific one-time setup**
+:::{admonition} **Mac-specific one-time setup**
 :class: dropdown
 
 Open Stata on your Mac, go to the "Stata" tab at the top of your screen and click "`Install Terminal Utility…`" 
 
-```
+:::
 
 :::{admonition} **BioHPC-specific setup**
 :class: dropdown
@@ -319,8 +319,8 @@ Then  type
 stata-mp -b do master.do
 ```
 
-:::
 ::::
+:::::
 
 ### Checking for a complete run, debugging and running the master in pieces
 
