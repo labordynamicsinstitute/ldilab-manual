@@ -132,6 +132,8 @@ However, the typical case will only require one modification, either to the mast
 In the author's master file, a global variable "maindir" defines the path of the root directory as:
 
 ```
+clear all
+
 /* This is Master do file */
 
 global maindir "C:\Users\Author\Dropbox\Project1" // this is the path to the repository
@@ -143,6 +145,7 @@ You would add `config.do` and change the global.
 After the change:
 
 ```
+clear all
 include "config.do"
 
 /* This is Master do file */
@@ -278,6 +281,25 @@ On Unix-style systems, the preferred way is to use the command line to run Stata
 Open Stata on your Mac, go to the "Stata" tab at the top of your screen and click "`Install Terminal Utility…`" 
 
 ```
+
+:::{admonition} **BioHPC-specific setup**
+:class: dropdown
+
+On BioHPC, you need to expand your search path to find Stata. Only Stata 14 and 16 are currently available. You can then either call them directly:
+
+```
+/usr/local/stata16/stata-mp -b do main.do
+```
+
+or add the location of the Stata to your `$PATH` variable, which you will need to do every time you open a terminal windows:
+
+```
+export PATH=/usr/local/stata16:$PATH
+stata-mp -b do main.do
+```
+
+
+:::
 
 Open up a terminal in the folder where the `master.do` file is located - this may differ depending on your system, and may involve using "`cd /path/to/code`" commands. Confirm with "`ls`" that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.
 
