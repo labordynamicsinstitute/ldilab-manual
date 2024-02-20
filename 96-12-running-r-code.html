@@ -568,10 +568,16 @@ Windows</label><div class="sd-tab-content docutils">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
 Mac/Linux</label><div class="sd-tab-content docutils">
 <p>On Unix-style systems, the preferred way is to use the Terminal to run R code.</p>
-<blockquote>
-<div><p>Mac-specific one-time setup: Open R on your Mac, go to the “R” tab at the top of your screen and click “<code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">Terminal</span> <span class="pre">Utility…</span></code>”</p>
-</div></blockquote>
 <p>Open up a Terminal in the folder where the <code class="docutils literal notranslate"><span class="pre">main.R</span></code> file is located - this may differ depending on your system, and may involve using “<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/code</span></code>” commands. Confirm with “<code class="docutils literal notranslate"><span class="pre">ls</span></code>” that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.</p>
+<p>On <strong>BioHPC</strong>, you may need to choose your R version, every time you launch a terminal (see <a class="reference external" href="https://biohpc.cornell.edu/lab/userguide.aspx?a=software&amp;i=37#c">BioHPC documentation for more details</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">R</span><span class="o">/</span><span class="mf">4.3.2</span>
+</pre></div>
+</div>
+<p>Type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">avail</span>
+</pre></div>
+</div>
+<p>to see which R versions are available.</p>
 </div>
 </div>
 </section>

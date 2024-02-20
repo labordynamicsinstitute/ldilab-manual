@@ -61,9 +61,21 @@ The most convenient way to run from the command line is to use Rstudio. Open Rst
 
 On Unix-style systems, the preferred way is to use the Terminal to run R code.
 
-> Mac-specific one-time setup: Open R on your Mac, go to the "R" tab at the top of your screen and click "`Install Terminal Utility…`" 
-
 Open up a Terminal in the folder where the `main.R` file is located - this may differ depending on your system, and may involve using "`cd /path/to/code`" commands. Confirm with "`ls`" that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.
+
+On **BioHPC**, you may need to choose your R version, every time you launch a terminal (see [BioHPC documentation for more details](https://biohpc.cornell.edu/lab/userguide.aspx?a=software&i=37#c):
+
+```
+module load R/4.3.2
+```
+
+Type 
+
+```
+module avail
+```
+
+to see which R versions are available. 
 
 ::: 
 

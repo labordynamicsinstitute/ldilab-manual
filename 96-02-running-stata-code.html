@@ -630,7 +630,9 @@ document.write(`
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
 <p>In the author’s master file, a global variable “maindir” defines the path of the root directory as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">Master</span> <span class="n">do</span> <span class="n">file</span> <span class="o">*/</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> <span class="nb">all</span>
+
+<span class="o">/*</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">Master</span> <span class="n">do</span> <span class="n">file</span> <span class="o">*/</span>
 
 <span class="k">global</span> <span class="n">maindir</span> <span class="s2">&quot;C:\Users\Author\Dropbox\Project1&quot;</span> <span class="o">//</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">repository</span>
 <span class="k">global</span> <span class="n">data</span> <span class="s2">&quot;$maindir/data&quot;</span> <span class="o">//</span> <span class="n">path</span> <span class="n">to</span> <span class="n">data</span> <span class="n">folder</span>
@@ -639,7 +641,8 @@ document.write(`
 </div>
 <p>You would add <code class="docutils literal notranslate"><span class="pre">config.do</span></code> and change the global.
 After the change:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="s2">&quot;config.do&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> <span class="nb">all</span>
+<span class="n">include</span> <span class="s2">&quot;config.do&quot;</span>
 
 <span class="o">/*</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">Master</span> <span class="n">do</span> <span class="n">file</span> <span class="o">*/</span>
 
@@ -759,6 +762,18 @@ Mac/Linux</label><div class="sd-tab-content docutils">
 <div class="dropdown admonition">
 <p class="admonition-title"><strong>Mac-specific one-time setup</strong></p>
 <p>Open Stata on your Mac, go to the “Stata” tab at the top of your screen and click “<code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">Terminal</span> <span class="pre">Utility…</span></code>”</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title"><strong>BioHPC-specific setup</strong></p>
+<p>On BioHPC, you need to expand your search path to find Stata. Only Stata 14 and 16 are currently available. You can then either call them directly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">stata16</span><span class="o">/</span><span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">b</span> <span class="n">do</span> <span class="n">main</span><span class="o">.</span><span class="n">do</span>
+</pre></div>
+</div>
+<p>or add the location of the Stata to your <code class="docutils literal notranslate"><span class="pre">$PATH</span></code> variable, which you will need to do every time you open a terminal windows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=/usr/local/stata16:$PATH
+stata-mp -b do main.do
+</pre></div>
+</div>
 </div>
 <p>Open up a terminal in the folder where the <code class="docutils literal notranslate"><span class="pre">master.do</span></code> file is located - this may differ depending on your system, and may involve using “<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/code</span></code>” commands. Confirm with “<code class="docutils literal notranslate"><span class="pre">ls</span></code>” that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.</p>
 <p>Identify which Stata version you have installed (some systems have only one, some have multiple):</p>
