@@ -32,7 +32,7 @@ If the R code fails, you will see this in the `Rout` file, which you can open in
 
 ::::{tab-set}
 
-:::{tab-item}  Windows 
+:::{tab-item}  Windows
 
 ```{tip}
 The most convenient way to run from the command line is to use Rstudio. Open Rstudio, and configure the **Terminal** as follows:
@@ -59,7 +59,7 @@ The most convenient way to run from the command line is to use Rstudio. Open Rst
 
 :::{tab-item} Mac/Linux 
 
-On Unix-style systems, the preferred way is to use the Terminal to run R code.
+On Unix-style systems, the preferred way is to use the Terminal to run R code (you can also call up RStudio and run from the "Terminal" tab as on the Windows tab).
 
 Open up a Terminal in the folder where the `main.R` file is located - this may differ depending on your system, and may involve using "`cd /path/to/code`" commands. Confirm with "`ls`" that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.
 
@@ -78,6 +78,22 @@ module avail
 to see which R versions are available. 
 
 ::: 
+
+:::{tab-item} BioHPC RStudio Server
+
+A web-based approach can be used on BioHPC. 
+
+- The first user logging on to a BioHPC node (new reservation) can launch "rstudio server", which then makes the web interface of Rstudio accessible to anybody on that server. See [https://biohpc.cornell.edu/lab/userguide.aspx?a=software&i=266#c](https://biohpc.cornell.edu/lab/userguide.aspx?a=software&i=266#c) for details.
+- For instance, if the reservation is on `cbsuecco08`:
+  -  open CiscoVPN and connect
+  -  connect to http://cbsuecco08.biohpc.cornell.edu:8016/
+  -  log in with your netid and your BioHPC password
+
+To generate a log file, you must still run R code from the terminal with `R CMD BATCH` (below).
+
+The RStudio server instance only runs the latest R code. For running other R versions, refer to the "Mac/Linux" tab.
+
+:::
 
 ::::
 
