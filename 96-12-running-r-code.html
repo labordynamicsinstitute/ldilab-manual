@@ -567,7 +567,7 @@ Windows</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
 Mac/Linux</label><div class="sd-tab-content docutils">
-<p>On Unix-style systems, the preferred way is to use the Terminal to run R code.</p>
+<p>On Unix-style systems, the preferred way is to use the Terminal to run R code (you can also call up RStudio and run from the “Terminal” tab as on the Windows tab).</p>
 <p>Open up a Terminal in the folder where the <code class="docutils literal notranslate"><span class="pre">main.R</span></code> file is located - this may differ depending on your system, and may involve using “<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/code</span></code>” commands. Confirm with “<code class="docutils literal notranslate"><span class="pre">ls</span></code>” that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.</p>
 <p>On <strong>BioHPC</strong>, you may need to choose your R version, every time you launch a terminal (see <a class="reference external" href="https://biohpc.cornell.edu/lab/userguide.aspx?a=software&amp;i=37#c">BioHPC documentation for more details</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">R</span><span class="o">/</span><span class="mf">4.3.2</span>
@@ -578,6 +578,23 @@ Mac/Linux</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 <p>to see which R versions are available.</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+BioHPC RStudio Server</label><div class="sd-tab-content docutils">
+<p>A web-based approach can be used on BioHPC.</p>
+<ul class="simple">
+<li><p>The first user logging on to a BioHPC node (new reservation) can launch “rstudio server”, which then makes the web interface of Rstudio accessible to anybody on that server. See <a class="reference external" href="https://biohpc.cornell.edu/lab/userguide.aspx?a=software&amp;i=266#c">https://biohpc.cornell.edu/lab/userguide.aspx?a=software&amp;i=266#c</a> for details.</p></li>
+<li><p>For instance, if the reservation is on <code class="docutils literal notranslate"><span class="pre">cbsuecco08</span></code>:</p>
+<ul>
+<li><p>open CiscoVPN and connect</p></li>
+<li><p>connect to <a class="reference external" href="http://cbsuecco08.biohpc.cornell.edu:8016/">http://cbsuecco08.biohpc.cornell.edu:8016/</a></p></li>
+<li><p>log in with your netid and your BioHPC password</p></li>
+</ul>
+</li>
+</ul>
+<p>To generate a log file, you must still run R code from the terminal with <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">CMD</span> <span class="pre">BATCH</span></code> (below).</p>
+<p>The RStudio server instance only runs the latest R code. For running other R versions, refer to the “Mac/Linux” tab.</p>
 </div>
 </div>
 </section>
