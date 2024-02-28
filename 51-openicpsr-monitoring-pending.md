@@ -21,7 +21,7 @@ The evaluation process usually does **NOT** require running any code. In most ca
 
 ## Process
 
-As RA tasked with this, these are the instructions.
+If you are the RA tasked with this, these are your instructions.
 
 ### Verifying if changes have been made
 
@@ -30,7 +30,7 @@ As RA tasked with this, these are the instructions.
 
 ![Communication Log area](images/pending_openicpsr_com.png)
 
-- Now open the project log:  click "View Log" under "Share Project" and "Change Owner." 
+- Now open the project log:  click "`View Log`", just below "Share Project" and "Change Owner." 
 
 ![Project log](images/pending_openicpsr_logbutton.png)
 
@@ -39,7 +39,7 @@ As RA tasked with this, these are the instructions.
 
 ### If changes have been made
 
-Once you have ascertained that changes have been made, move the Jira ticket to `Assess openICPSR changes`. 
+Once you have ascertained that changes have been made, and if this hasn't already been done, move the Jira ticket to `Assess openICPSR changes`. 
 
 ![partial process](images/pending_openicpsr.png)
 
@@ -50,22 +50,22 @@ You should now open the Bitbucket report, and identify the changes that the auth
 
 - Open the report. You can do this by checking out the Bitbucket repo, or by clicking on the [`Report URL`] field.
   - Check the "Summary" (at the top), as well as the "Reason for incomplete reproducibility" (at the bottom, and in the Jira issue)
-- Copy all the items in `Action Items (open ICPSR)` (disregard the manuscript section since we can't check that at this point)
+- Copy all the items in `Action Items (open ICPSR)` (disregard the manuscript section, this is checked by the editorial office)
 - Paste the Action Items into the Comments section of Jira.
 - Go through each item and verify the changes by marking 'Done' or 'Incomplete' next to each item. Refer to the summary or the action item for more detail as to why this item was considered incomplete. Add any relevant details. For example:
 
-
 *[REQUIRED] As specified in the Policy and the DCAF, the README shall follow the schema provided by the Social Science Data Editors'template README. **Incomplete**- They added computational requirements but are missing Statement About Rights*
-
 
   - For each change, you should make a note of what problem was addressed. For instance, if the "Reason for incomplete reproducibility" notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box "Bugs in code"
   - You can find the "Reasons for incomplete reproducibility" in the "Repl. info" tab in the Jira ticket, or in the popup when moving from `Assess openICPSR changes` to `Pending publication` at the end of this process.
   - Check that the deposit doesn't have any extraneous files (Manuscript PDFs, Response to the Editor PDF, etc). If there are these files, note this on the Jira comment, tagging the senior members of the lab. Authors must remove these files. If in doubt, check with senior members.
-
+  - **Check that the deposit is "Submitted" status**. 
+  
 - **If you have verified that all the required changes have been made**, continue with the ["For Accept" section](submitting-info-via-openicpsr#for-accept) of [Submitting deposit-related information via openICPSR](submitting-info-via-openicpsr).
   - You have another opportunity to uncheck any boxes here that have been addressed.
   - Check under "Other links" if "Non-compliant"  = yes, if so, **do not proceed** until you find clarification
   - - See if the reason for non-compliance (usually mentioned in the report, and at least in the comments) is resolved, **consult with the Data Editor**, then uncheck that box.
+  - If the deposit is **not** in "Submitted" status, choose the appropriate variant of the **Signoff** message.
 
 
 ### Insufficient Changes
@@ -95,14 +95,9 @@ You should now open the Bitbucket report, and identify the changes that the auth
 1. Open REPLICATION.md on bitbucket
 2. Copy all the items in Action Items (open ICPSR) (disregard the manuscript section since we can't check that at this point)
 3. Paste the Action Items into the Comments section of Jira.
-4. Go through each item and mark 'Done' or 'Incomplete' next to each item. With any relevant details afterwards. For example:
-
-
-*[REQUIRED] As specified in the Policy and the DCAF, the README shall follow the schema provided by the Social Science Data Editors'template README. **Incomplete**- They added computational requirements but are missing Statement About Rights*
-
-
-5. If all items are done, continue with the "For Accept" section of the  ["For Accept" section](submitting-info-via-openicpsr#for-accept) of [Submitting deposit-related information via openICPSR](submitting-info-via-openicpsr).
-6. If some items are incomplete, tag Data Editor's assistant in Jira
+4. Go through each item and mark 'Done' or 'Incomplete' next to each item. With any relevant details afterwards.
+5. If all changes have been made,  continue with the "For Accept" section of the  ["For Accept" section](submitting-info-via-openicpsr#for-accept) of [Submitting deposit-related information via openICPSR](submitting-info-via-openicpsr).
+6. If some items remain incomplete, tag Data Editor's assistant in Jira, who will then contact the authors.
 
 ### No Changes
 
