@@ -527,7 +527,7 @@ document.write(`
 </section>
 <section id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this heading">#</a></h2>
-<p>As RA tasked with this, these are the instructions.</p>
+<p>If you are the RA tasked with this, these are your instructions.</p>
 <section id="verifying-if-changes-have-been-made">
 <h3>Verifying if changes have been made<a class="headerlink" href="#verifying-if-changes-have-been-made" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -536,7 +536,7 @@ document.write(`
 </ul>
 <p><img alt="Communication Log area" src="_images/pending_openicpsr_com.png" /></p>
 <ul class="simple">
-<li><p>Now open the project log:  click “View Log” under “Share Project” and “Change Owner.”</p></li>
+<li><p>Now open the project log:  click “<code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">Log</span></code>”, just below “Share Project” and “Change Owner.”</p></li>
 </ul>
 <p><img alt="Project log" src="_images/pending_openicpsr_logbutton.png" /></p>
 <ul class="simple">
@@ -546,7 +546,7 @@ document.write(`
 </section>
 <section id="if-changes-have-been-made">
 <h3>If changes have been made<a class="headerlink" href="#if-changes-have-been-made" title="Permalink to this heading">#</a></h3>
-<p>Once you have ascertained that changes have been made, move the Jira ticket to <code class="docutils literal notranslate"><span class="pre">Assess</span> <span class="pre">openICPSR</span> <span class="pre">changes</span></code>.</p>
+<p>Once you have ascertained that changes have been made, and if this hasn’t already been done, move the Jira ticket to <code class="docutils literal notranslate"><span class="pre">Assess</span> <span class="pre">openICPSR</span> <span class="pre">changes</span></code>.</p>
 <p><img alt="partial process" src="_images/pending_openicpsr.png" /></p>
 </section>
 <section id="verify-requested-changes">
@@ -558,7 +558,7 @@ document.write(`
 <li><p>Check the “Summary” (at the top), as well as the “Reason for incomplete reproducibility” (at the bottom, and in the Jira issue)</p></li>
 </ul>
 </li>
-<li><p>Copy all the items in <code class="docutils literal notranslate"><span class="pre">Action</span> <span class="pre">Items</span> <span class="pre">(open</span> <span class="pre">ICPSR)</span></code> (disregard the manuscript section since we can’t check that at this point)</p></li>
+<li><p>Copy all the items in <code class="docutils literal notranslate"><span class="pre">Action</span> <span class="pre">Items</span> <span class="pre">(open</span> <span class="pre">ICPSR)</span></code> (disregard the manuscript section, this is checked by the editorial office)</p></li>
 <li><p>Paste the Action Items into the Comments section of Jira.</p></li>
 <li><p>Go through each item and verify the changes by marking ‘Done’ or ‘Incomplete’ next to each item. Refer to the summary or the action item for more detail as to why this item was considered incomplete. Add any relevant details. For example:</p></li>
 </ul>
@@ -567,6 +567,7 @@ document.write(`
 <li><p>For each change, you should make a note of what problem was addressed. For instance, if the “Reason for incomplete reproducibility” notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box “Bugs in code”</p></li>
 <li><p>You can find the “Reasons for incomplete reproducibility” in the “Repl. info” tab in the Jira ticket, or in the popup when moving from <code class="docutils literal notranslate"><span class="pre">Assess</span> <span class="pre">openICPSR</span> <span class="pre">changes</span></code> to <code class="docutils literal notranslate"><span class="pre">Pending</span> <span class="pre">publication</span></code> at the end of this process.</p></li>
 <li><p>Check that the deposit doesn’t have any extraneous files (Manuscript PDFs, Response to the Editor PDF, etc). If there are these files, note this on the Jira comment, tagging the senior members of the lab. Authors must remove these files. If in doubt, check with senior members.</p></li>
+<li><p><strong>Check that the deposit is “Submitted” status</strong>.</p></li>
 <li><p><strong>If you have verified that all the required changes have been made</strong>, continue with the <span class="xref myst">“For Accept” section</span> of <a class="reference internal" href="33-openicpsr-preparing.html#submitting-info-via-openicpsr"><span class="std std-ref">Submitting deposit-related information via openICPSR</span></a>.</p>
 <ul>
 <li><p>You have another opportunity to uncheck any boxes here that have been addressed.</p></li>
@@ -575,6 +576,7 @@ document.write(`
 <li><p>See if the reason for non-compliance (usually mentioned in the report, and at least in the comments) is resolved, <strong>consult with the Data Editor</strong>, then uncheck that box.</p></li>
 </ul>
 </li>
+<li><p>If the deposit is <strong>not</strong> in “Submitted” status, choose the appropriate variant of the <strong>Signoff</strong> message.</p></li>
 </ul>
 </li>
 </ul>
@@ -617,12 +619,9 @@ document.write(`
 <li><p>Open <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a> on bitbucket</p></li>
 <li><p>Copy all the items in Action Items (open ICPSR) (disregard the manuscript section since we can’t check that at this point)</p></li>
 <li><p>Paste the Action Items into the Comments section of Jira.</p></li>
-<li><p>Go through each item and mark ‘Done’ or ‘Incomplete’ next to each item. With any relevant details afterwards. For example:</p></li>
-</ol>
-<p><em>[REQUIRED] As specified in the Policy and the DCAF, the README shall follow the schema provided by the Social Science Data Editors’template README. <strong>Incomplete</strong>- They added computational requirements but are missing Statement About Rights</em></p>
-<ol class="arabic simple" start="5">
-<li><p>If all items are done, continue with the “For Accept” section of the  <span class="xref myst">“For Accept” section</span> of <a class="reference internal" href="33-openicpsr-preparing.html#submitting-info-via-openicpsr"><span class="std std-ref">Submitting deposit-related information via openICPSR</span></a>.</p></li>
-<li><p>If some items are incomplete, tag Data Editor’s assistant in Jira</p></li>
+<li><p>Go through each item and mark ‘Done’ or ‘Incomplete’ next to each item. With any relevant details afterwards.</p></li>
+<li><p>If all changes have been made,  continue with the “For Accept” section of the  <span class="xref myst">“For Accept” section</span> of <a class="reference internal" href="33-openicpsr-preparing.html#submitting-info-via-openicpsr"><span class="std std-ref">Submitting deposit-related information via openICPSR</span></a>.</p></li>
+<li><p>If some items remain incomplete, tag Data Editor’s assistant in Jira, who will then contact the authors.</p></li>
 </ol>
 </section>
 <section id="no-changes">
