@@ -8,13 +8,29 @@ We have access to two sets of remote desktop Windows servers:
 
 
 
-::::{tab-set}
+:::::{tab-set}
 
 
-:::{tab-item} Cloud CCSS
+::::{tab-item} Cloud CCSS
 
 
 - [Instructions](https://cornellprod-my.sharepoint.com/:f:/g/personal/cd642_cornell_edu/EvxDKmDjZyZBsrQvimUR8xABE4x6TYDenmLOY8ZFMLRjUw)
+
+:::{admonition} Please be sure to do this:
+
+- use the L drive for all "Workspace" folders (i.e., the clone of the Bitbucket repository)
+- use the D drive for those that are large and need fast storage (but be aware that D drive is also wiped)
+-  **ALWAYS**  `git commit` and `git push`  all changes before you logout, every time you log out.
+
+:::
+
+
+:::{warning}
+
+Please note that anything saved in the C drive (Documents, Desktop, or Download folders) and D drive may be deleted at any time (reboot/security update), and there is no way to recover the deleted files.
+
+:::
+
 
 Please be sure to follow all instructions, in particular the ones about mapping network drives. 
 
@@ -53,9 +69,9 @@ You can connect to CCSS Cloud Computing via a **web browser** or via the a Remot
 
 Close the browser tab, or close the application by the usual methods. This will leave your code running!
 
-:::
+::::
 
-:::{tab-item} CCSS-RS classic
+::::{tab-item} CCSS-RS classic
 
 ```{warning}
 These instructions are here for informational purposes only. You should be using the CCSS Cloud servers at this time.
@@ -69,9 +85,9 @@ Follow instructions at [CCSS-RS](https://socialsciences.cornell.edu/research-sup
 - If you have set a replication package's code to run, **do not sign out/ log off** - disconnect. 
 - If you are done for a few days, and have nothing running, then **sign out**. 
 
-:::
-
 ::::
+
+:::::
 
 
 **Signing out**
