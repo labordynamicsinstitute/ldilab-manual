@@ -37,10 +37,10 @@ s-drive <- "L:/Workspace/aearep-9999-implicit-nda"
 
 :::{note}
 
-If you are working on Windows (e.g. CCSS-Cloud) then you would need to use `\` or `//` to write filepaths or use the file.path() function. So, for example, the above would become:
+If you are working on Windows (e.g. CCSS-Cloud) then you would need to use `/` or `\\` to write filepaths or use the file.path() function. So, for example, the above would become:
 
 ```
-s-drive <- "L://Workspace//aearep-9999-implicit-nda"
+s-drive <- "L:\\Workspace\\aearep-9999-implicit-nda"
 ```
 
 :::
@@ -129,7 +129,7 @@ depending on the case. Now R will set the root directory correctly.
 
 :::{note}
 
-If for some reason that does not work, simply override the automatic detection, by setting the `rootdir` manually, using `/` or `\` as appropriate for your OS:
+If for some reason that does not work, simply override the automatic detection, by setting the `rootdir` manually, using `/` or `\\` as appropriate for your OS:
 
 ```
 rootdir <- "C:/user/Workspace/aearep-9999/123456/Replication-package"
@@ -187,10 +187,10 @@ source("config.R", echo = TRUE)
 
 :::{admonition} Caution:
 
-If there are lines such as `rm(ls())` at the start of the `main.R`, you should put the `source()` statement AFTERWARDS (otherwise all the information in the config.R would get cleared):
+If there are lines such as `rm(list=ls())` at the start of the `main.R`, you should put the `source()` statement AFTERWARDS (otherwise all the information in the config.R would get cleared):
 
   ```
-  rm(ls())
+  rm(list=ls())
   source("config.R", echo = TRUE)
   ```
 :::
