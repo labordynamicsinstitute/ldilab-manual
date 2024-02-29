@@ -35,6 +35,16 @@ In some cases, authors provide us privately with data that is not part of the pu
 s-drive <- "L:/Workspace/aearep-9999-implicit-nda"
 ```
 
+:::{note}
+
+If you are working on Windows (e.g. CCSS-Cloud) then you would need to use `\` or `//` to write filepaths or use the file.path() function. So, for example, the above would become:
+
+```
+s-drive <- "L://Workspace//aearep-9999-implicit-nda"
+```
+
+:::
+
 Wherever the author later references the confidential data, you can insert this placeholder, for instance:
 
 ```
@@ -92,7 +102,7 @@ In this case, the base directory is `aearep-9999/123456/`.
 
 You do not actually need to hard-code this in the `config.R` file. We will use a package called `here`, which can detect this automatically, **if** some files are present:
 
-- The author has a `rproj`  file - it will take that as the base directory.
+- The author has a `rproj` file - it will take that as the base directory.
 - The (hidden) file `.here` is present - it will take the directory that contains that as the base directory.
 
 The `here` package will get confused by the presence of **our** git setup, so if the two above files are not present, we need to manually create the latter:
@@ -119,7 +129,7 @@ depending on the case. Now R will set the root directory correctly.
 
 :::{note}
 
-If for some reason that does not work, simply override the automatic detection, by setting the `rootdir` manually:
+If for some reason that does not work, simply override the automatic detection, by setting the `rootdir` manually, using `/` or `\` as appropriate for your OS:
 
 ```
 rootdir <- "C:/user/Workspace/aearep-9999/123456/Replication-package"
@@ -177,13 +187,15 @@ source("config.R", echo = TRUE)
 
 :::{admonition} Caution:
 
-If there are lines such as `rm(ls())` at the start of the `main.R`, you should put the `source()` statement AFTERWARDS:
+If there are lines such as `rm(ls())` at the start of the `main.R`, you should put the `source()` statement AFTERWARDS (otherwise all the information in the config.R would get cleared):
 
   ```
   rm(ls())
   source("config.R", echo = TRUE)
   ```
 :::
+
+![Insert source() after any clearing code](images/Using_Config.R.png)
 
 #### If there is NO main file...
 
