@@ -495,6 +495,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilize-tmux">Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation-biohpc-only">Configuring automatic reservation cancellation (BioHPC only)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unzipping-large-zip-files-fails">Unzipping large ZIP files fails</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-ssh-agent-for-password-less-login">Setting up SSH Agent for password-less login</a></li>
 </ul>
 </li>
@@ -701,22 +702,47 @@ Bash</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </section>
+<section id="unzipping-large-zip-files-fails">
+<h3>Unzipping large ZIP files fails<a class="headerlink" href="#unzipping-large-zip-files-fails" title="Permalink to this heading">#</a></h3>
+<p>In some cases, unzipping large ZIP files (larger than 2GB) may fail:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">error</span><span class="p">:</span> <span class="n">invalid</span> <span class="nb">zip</span> <span class="n">file</span> <span class="k">with</span> <span class="n">overlapped</span> <span class="n">components</span> <span class="p">(</span><span class="n">possible</span> <span class="nb">zip</span> <span class="n">bomb</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If this is detected, you need to use a 64-bit version of a decompression program. This may vary by Linux host.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+BioHPC</label><div class="sd-tab-content docutils">
+<p>Instead of <code class="docutils literal notranslate"><span class="pre">zip</span></code>, use <code class="docutils literal notranslate"><span class="pre">7z</span></code> as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ICPSRNUM=123456
+/programs/bin/util/7z x -O${ICPSRNUM} ${ICPSRNUM}.zip
+</pre></div>
+</div>
+<p>(which is the equivalent to the zip command <code class="docutils literal notranslate"><span class="pre">zip</span> <span class="pre">-n</span> <span class="pre">${ICPSRNUM}</span> <span class="pre">-d</span> <span class="pre">${ICPSRNUM}).</span> <span class="pre">The</span> <span class="pre">first</span> <span class="pre">option</span> <span class="pre">(</span></code>-O<code class="docutils literal notranslate"><span class="pre">)</span> <span class="pre">is</span> <span class="pre">an</span> <span class="pre">upper-case</span> <span class="pre">letter</span> </code>O`, not zero.</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+Others</label><div class="sd-tab-content docutils">
+<p>If <code class="docutils literal notranslate"><span class="pre">7z</span></code> is available, use it as well (path may differ). Other options include using <code class="docutils literal notranslate"><span class="pre">jar</span></code>. Contact system administrator of the system for guidance.</p>
+</div>
+</div>
+</section>
 <section id="setting-up-ssh-agent-for-password-less-login">
 <h3>Setting up SSH Agent for password-less login<a class="headerlink" href="#setting-up-ssh-agent-for-password-less-login" title="Permalink to this heading">#</a></h3>
 <p>The SSH protocol allows you to create a public-private key pair. You deposit the public key on the Linux server, and keep the (passphrase-protected) private key on your laptop. You can then configure a “ssh-agent” running on your laptop to store (temporarily) your passphrase in memory, and provide it every time you log in to the Linux server. This works very easily on Unix-like systems (macOS, Linux laptops), but is a bit trickier on Windows laptops.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-9">
+<input checked="checked" id="sd-tab-item-11" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
 macOS</label><div class="sd-tab-content docutils">
 <p>To be completed.</p>
 </div>
-<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-10">
+<input id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
 Linux (laptop)</label><div class="sd-tab-content docutils">
 <p>To be completed.</p>
 </div>
-<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-11">
+<input id="sd-tab-item-13" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
 Windows (laptop only)</label><div class="sd-tab-content docutils">
 <p>First, you need to ensure that the SSH subsystem is installed.</p>
 <p>To be completed.</p>
@@ -848,6 +874,7 @@ Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilize-tmux">Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation-biohpc-only">Configuring automatic reservation cancellation (BioHPC only)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unzipping-large-zip-files-fails">Unzipping large ZIP files fails</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-ssh-agent-for-password-less-login">Setting up SSH Agent for password-less login</a></li>
 </ul>
 </li>

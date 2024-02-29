@@ -224,6 +224,40 @@ os.system("/programs/bin/labutils/endres.pl")
 
 ::::
 
+### Unzipping large ZIP files fails
+
+In some cases, unzipping large ZIP files (larger than 2GB) may fail:
+
+```
+error: invalid zip file with overlapped components (possible zip bomb)
+```
+
+If this is detected, you need to use a 64-bit version of a decompression program. This may vary by Linux host.
+
+
+::::{tab-set}
+
+
+:::{tab-item}  BioHPC
+
+Instead of `zip`, use `7z` as follows:
+
+```
+ICPSRNUM=123456
+/programs/bin/util/7z x -O${ICPSRNUM} ${ICPSRNUM}.zip
+```
+
+(which is the equivalent to the zip command `zip -n ${ICPSRNUM} -d ${ICPSRNUM}). The first option (`-O`) is an upper-case letter `O`, not zero.
+
+:::
+
+:::{tab-item} Others
+
+If `7z` is available, use it as well (path may differ). Other options include using `jar`. Contact system administrator of the system for guidance.
+
+:::
+
+::::
 
 ### Setting up SSH Agent for password-less login
 
