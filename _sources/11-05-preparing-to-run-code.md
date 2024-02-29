@@ -58,9 +58,9 @@ All actions on BioHPC will be performed in a terminal. Depending on whether you 
 
 - [ ] If using SSH, you are already at the "terminal". If using VNC, choose it from the application menu. If using [Visual Studio Code to connect to BioHPC], follow instructions from the **Github Codespaces** tab!
 - [ ] Change directory to the common workarea:
-      ```bash
-      cd /home2/ecco_lv39/Workspace
-      ```
+    ```bash
+    cd /home2/ecco_lv39/Workspace
+    ```
 - [ ] Populate BioHPC with the Bitbucket repo
   - Use the LDI short-cut command 
     ```bash
