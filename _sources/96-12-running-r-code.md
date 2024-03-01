@@ -107,6 +107,11 @@ R CMD BATCH main.R
 
 This will create a `main.Rout` file, which you can open up in VS Code. 
 
+:::{note}
+
+If the author's main filename has spaces in it, you will need to use quotes when inputting the filename into the bash command to say `R CMD BATCH "Main File.R"`
+
+:::
 
 
 > Consider how much time a complete run would take before you run everything one last time. If it would take too long, you may want to skip a complete run, but ensure that you have log files for all partial runs. Make a note of this in the report.

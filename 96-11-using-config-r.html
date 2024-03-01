@@ -554,6 +554,13 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">-</span><span class="n">drive</span> <span class="o">&lt;-</span> <span class="s2">&quot;L:/Workspace/aearep-9999-implicit-nda&quot;</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are working on Windows (e.g. CCSS-Cloud) then you would need to use <code class="docutils literal notranslate"><span class="pre">/</span></code> or <code class="docutils literal notranslate"><span class="pre">\\</span></code> to write filepaths or use the file.path() function. So, for example, the above would become:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">-</span><span class="n">drive</span> <span class="o">&lt;-</span> <span class="s2">&quot;L:</span><span class="se">\\</span><span class="s2">Workspace</span><span class="se">\\</span><span class="s2">aearep-9999-implicit-nda&quot;</span>
+</pre></div>
+</div>
+</div>
 <p>Wherever the author later references the confidential data, you can insert this placeholder, for instance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># original author reference</span>
 <span class="c1"># ols.data &lt;- readRDS(&quot;data/confidential/analysis.Rds&quot;)</span>
@@ -598,7 +605,7 @@ document.write(`
 <p>In this case, the base directory is <code class="docutils literal notranslate"><span class="pre">aearep-9999/123456/</span></code>.</p>
 <p>You do not actually need to hard-code this in the <code class="docutils literal notranslate"><span class="pre">config.R</span></code> file. We will use a package called <code class="docutils literal notranslate"><span class="pre">here</span></code>, which can detect this automatically, <strong>if</strong> some files are present:</p>
 <ul class="simple">
-<li><p>The author has a <code class="docutils literal notranslate"><span class="pre">rproj</span></code>  file - it will take that as the base directory.</p></li>
+<li><p>The author has a <code class="docutils literal notranslate"><span class="pre">rproj</span></code> file - it will take that as the base directory.</p></li>
 <li><p>The (hidden) file <code class="docutils literal notranslate"><span class="pre">.here</span></code> is present - it will take the directory that contains that as the base directory.</p></li>
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">here</span></code> package will get confused by the presence of <strong>our</strong> git setup, so if the two above files are not present, we need to manually create the latter:</p>
@@ -617,7 +624,7 @@ git<span class="w"> </span>add<span class="w"> </span>.here
 <p>depending on the case. Now R will set the root directory correctly.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If for some reason that does not work, simply override the automatic detection, by setting the <code class="docutils literal notranslate"><span class="pre">rootdir</span></code> manually:</p>
+<p>If for some reason that does not work, simply override the automatic detection, by setting the <code class="docutils literal notranslate"><span class="pre">rootdir</span></code> manually, using <code class="docutils literal notranslate"><span class="pre">/</span></code> or <code class="docutils literal notranslate"><span class="pre">\\</span></code> as appropriate for your OS:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rootdir</span> <span class="o">&lt;-</span> <span class="s2">&quot;C:/user/Workspace/aearep-9999/123456/Replication-package&quot;</span>
 </pre></div>
 </div>
@@ -666,12 +673,13 @@ git<span class="w"> </span>add<span class="w"> </span>.here
 </div>
 <div class="admonition-caution admonition">
 <p class="admonition-title">Caution:</p>
-<p>If there are lines such as <code class="docutils literal notranslate"><span class="pre">rm(ls())</span></code> at the start of the <code class="docutils literal notranslate"><span class="pre">main.R</span></code>, you should put the <code class="docutils literal notranslate"><span class="pre">source()</span></code> statement AFTERWARDS:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span><span class="p">(</span><span class="n">ls</span><span class="p">())</span>
+<p>If there are lines such as <code class="docutils literal notranslate"><span class="pre">rm(list=ls())</span></code> at the start of the <code class="docutils literal notranslate"><span class="pre">main.R</span></code>, you should put the <code class="docutils literal notranslate"><span class="pre">source()</span></code> statement AFTERWARDS (otherwise all the information in the config.R would get cleared):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span><span class="p">(</span><span class="nb">list</span><span class="o">=</span><span class="n">ls</span><span class="p">())</span>
 <span class="n">source</span><span class="p">(</span><span class="s2">&quot;config.R&quot;</span><span class="p">,</span> <span class="n">echo</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<p><img alt="Insert source() after any clearing code" src="_images/Using_Config.R.png" /></p>
 </section>
 <section id="if-there-is-no-main-file">
 <h4>If there is NO main file…<a class="headerlink" href="#if-there-is-no-main-file" title="Permalink to this heading">#</a></h4>
