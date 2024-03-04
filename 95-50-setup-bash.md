@@ -13,6 +13,13 @@ First, create a [Bitbucket PAT](bitbucket-authentication). Keep it handy, you wi
 
 Next, find your openICPSR login (should be your NetID + `@cornell.edu`) and your password.
 
+:::{admonition} The ICPSR password is *not* your NetID or your CMail/Google password! 
+:class: dropdown
+
+It must be set separately, by invoking the "Forgot Password" functionality. See [Setting ICPSR password](setting-icpsr-password) for more details.
+
+:::
+
 Then, copy-paste the following code into an empty VS Code window, edit the email and password, then copy-paste it into the Git bash shell. Keep all the line breaks as shown!
 
 ```bash
