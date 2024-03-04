@@ -16,7 +16,7 @@ Next, find your openICPSR login (should be your NetID + `@cornell.edu`) and your
 :::{admonition} The ICPSR password is *not* your NetID or your CMail/Google password! 
 :class: dropdown
 
-It must be set separately, by invoking the "Forgot Password" functionality. See [Setting ICPSR password](setting-icpsr-password) for more details.
+It must be set separately, by invoking the "Forgot Password" functionality. See [openICPSR authentication](openicpsr-authentication) for more details.
 
 :::
 
