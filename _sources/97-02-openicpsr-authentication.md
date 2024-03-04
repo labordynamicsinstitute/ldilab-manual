@@ -11,11 +11,16 @@ Go to [https://www.openicpsr.org/openicpsr/](https://www.openicpsr.org/openicpsr
 
 ## Creating an openICPSR-specific password when you linked your accounts
 
-Go to [https://www.openicpsr.org/openicpsr/](https://www.openicpsr.org/openicpsr/). If you are logged in (top-right corner shows your name), log out.
+- Go to [https://www.openicpsr.org/openicpsr/](https://www.openicpsr.org/openicpsr/). 
+- If you are logged in (top-right corner shows your name), log out, or open the page in a different browser.
+- On the login page, choose the "Sign in with email" option.
 
-- If you already have a **linked** account, request a new password
+![Sign in with email](images/icpsr-new-login.png)
 
-![Password request](images/icpsr-password-request.png)
+- Use the **same** email you used to create your account (i.e., `netid@cornell.edu`), but choose the "Forgot password" link
+
+![Password request](images/icpsr-new-login-email.png)
 
 - Choose a password that is **NOT** the same as your Cornell NetID password! 
- 
+
+- Now go to the [Bash setup](setup-bash) instructions, and change your password. 

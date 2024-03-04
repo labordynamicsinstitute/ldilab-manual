@@ -522,6 +522,10 @@ document.write(`
 <h2>Configure the openICPSR download script and Bitbucket access<a class="headerlink" href="#configure-the-openicpsr-download-script-and-bitbucket-access" title="Permalink to this heading">#</a></h2>
 <p>First, create a <a class="reference internal" href="97-01-Bitbucket-authentication.html#bitbucket-authentication"><span class="std std-ref">Bitbucket PAT</span></a>. Keep it handy, you will need it below.</p>
 <p>Next, find your openICPSR login (should be your NetID + <code class="docutils literal notranslate"><span class="pre">&#64;cornell.edu</span></code>) and your password.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">The ICPSR password is <em>not</em> your NetID or your CMail/Google password! </p>
+<p>It must be set separately, by invoking the “Forgot Password” functionality. See <span class="xref myst">Setting ICPSR password</span> for more details.</p>
+</div>
 <p>Then, copy-paste the following code into an empty VS Code window, edit the email and password, then copy-paste it into the Git bash shell. Keep all the line breaks as shown!</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;</span>
 <span class="s1"># env for ICPSR</span>
