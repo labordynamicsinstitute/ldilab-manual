@@ -112,10 +112,6 @@ Have a look at the **README** again.
 
 Now fill out the **Stated Requirements** section of **Part B** of the report.
 
-```{admonition} Now that you have done that:
-Do you think you know how to run the code in the software mentioned? You may not have the right experience, talk to your supervisor!
-```
-
 ## Prepare the code-check
 
 Now is a good time to understand the code in a bit more detail:
@@ -130,6 +126,19 @@ Now is a good time to understand the code in a bit more detail:
   - Are there files in the archive not explained in the README?
   - Copy-and-paste the *code-check.xlsx* into the code description part, listing the programs. Omit the "Reproduced?" Column in doing so. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
     - This table will be pasted in under "Findings" again, with "Reproduced?" column, once code has been run.
+
+## Verify that you can actually run the code
+
+```{admonition} Do you think you know how to run the code in the software mentioned?
+
+You may not have the right experience, talk to your supervisor!
+
+If both of you agree that **nobody** will run the code, then
+
+- Move the **subtask** to "Part B is complete" via `No code was run`
+- Go straight to [Part C](partc), writing the **Findings** section
+
+```
 
 
 (describe-the-data-files)=
@@ -147,7 +156,7 @@ If **there are no data at all**, for instance, when data are confidential and on
 
 Then you will skip getting the data and running code, and you are done with **Part B**! 
 
-- Move the **subtask** to "Part B is complete",
+- Move the **subtask** to "Part B is complete" via `No code was run`
 - Go straight to [Part C](partc), writing the **Findings** section
 
 ```
