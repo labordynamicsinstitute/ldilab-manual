@@ -60,6 +60,7 @@ parts:
       - file: 96-11-using-config-r
       - file: 96-12-running-r-code
     - file: 96-20-using-matlab
+    - file: 96-30-running-python-jupyter
     - file: 96-50-using-docker
     - file: 96-70-using-mathematica
     - file: 96-80-using-ox
