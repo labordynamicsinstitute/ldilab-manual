@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Mathematica-related procedures &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Python-related procedures &#8212; Training Manual For Reproducibility Verification</title>
   
   
   
@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '96-70-using-mathematica';</script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-70-using-mathematica.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '96-30-running-python-jupyter';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-30-running-python-jupyter.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Ox-related procedures" href="96-80-using-ox.html" />
-    <link rel="prev" title="Docker-related procedures" href="96-50-using-docker.html" />
+    <link rel="next" title="Docker-related procedures" href="96-50-using-docker.html" />
+    <link rel="prev" title="MATLAB-related procedures" href="96-20-using-matlab.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -230,9 +230,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="96-20-using-matlab.html">MATLAB-related procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="96-30-running-python-jupyter.html">Python-related procedures</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python-related procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="96-50-using-docker.html">Docker-related procedures</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mathematica-related procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="96-70-using-mathematica.html">Mathematica-related procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="96-80-using-ox.html">Ox-related procedures</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sundry other guidance</span></p>
@@ -351,7 +351,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-70-using-mathematica.md" target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-30-running-python-jupyter.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -368,7 +368,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-70-using-mathematica.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-30-running-python-jupyter.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -398,7 +398,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/96-70-using-mathematica.md" target="_blank"
+      <li><a href="_sources/96-30-running-python-jupyter.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -480,7 +480,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Mathematica-related procedures</h1>
+    <h1>Python-related procedures</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -490,9 +490,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files">Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variations">Variations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice-to-reproduce-a-python-paper-python-environments">Best practice to reproduce a Python paper (Python environments)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-python-code-dynamic">Making Python code dynamic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#they-provide-a-requirements-txt-file">They provide a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#they-provide-a-environment-yml-file">They provide a <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#they-provide-a-list-of-packages">They provide a list of packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-anaconda-package-manager">Using Anaconda Package manager</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#search-anaconda-prompt-from-the-start-menu-right-click-on-the-app-when-it-appears-and-pin-it-to-the-taskbar">Search “anaconda prompt” from the start menu. right click on the app when it appears and pin it to the taskbar.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#right-click-on-anaconda-prompt-in-the-taskbar-looks-like-a-black-window-similar-to-command-line-or-terminal-right-click-on-anaconda-powershell-prompt-in-the-tasks-menu-that-pops-up-and-then-properties">Right click on anaconda prompt in the taskbar (looks like a black window, similar to command line or terminal). Right click on “anaconda powershell prompt” in the tasks menu that pops up, and then properties.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#in-the-properties-window-go-to-the-shortcut-tab-and-change-the-start-in-field-to-u-documents-workspace-or-whichever-directory-you-keep-your-bitbucket-repos-in-click-apply">In the properties window, go to the shortcut tab and change the “Start in:” field to U:\Documents\Workspace or whichever directory you keep your bitbucket repos in. Click apply.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#next-click-on-the-anaconda-prompt-shortcut-in-the-taskbar-when-anaconda-prompt-opens-enter-the-command-jupyter-notebook">Next, click on the anaconda prompt shortcut in the taskbar. When anaconda prompt opens, enter the command “<code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">notebook</span></code>”</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-on-biohpc">Conda on BioHPC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jupyter-notebooks">Running Jupyter Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manually">Manually</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-command-line">From the command line</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-the-packages-you-used">Document the packages YOU used</a></li>
 </ul>
             </nav>
         </div>
@@ -504,36 +523,144 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="mathematica-related-procedures">
-<span id="id1"></span><h1>Mathematica-related procedures<a class="headerlink" href="#mathematica-related-procedures" title="Permalink to this heading">#</a></h1>
-<p>In this section, we will show you a few things related specifically to running code reproducibly with Wolfram Mathematica. For more general debugging tips for this and other computer languages, see <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/">our wiki</a>.</p>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">#</a></h2>
-<p>Mathematica uses the file extension <code class="docutils literal notranslate"><span class="pre">.nb</span></code>. This includes both code and the output. You will run the code, and then save the output in two ways: <code class="docutils literal notranslate"><span class="pre">.nb</span></code> and as a PDF.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>At this time, Mathematica is only available on CCSS machines.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-related-procedures">
+<span id="id1"></span><h1>Python-related procedures<a class="headerlink" href="#python-related-procedures" title="Permalink to this heading">#</a></h1>
+<p>In this section, we will show you a few things related specifically to running code reproducibly with Python and Jupyter notebooks. . For more general debugging tips for Python and other computer languages, see <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Python-Tips">our wiki</a>.</p>
+<section id="best-practice-to-reproduce-a-python-paper-python-environments">
+<h2>Best practice to reproduce a Python paper (Python environments)<a class="headerlink" href="#best-practice-to-reproduce-a-python-paper-python-environments" title="Permalink to this heading">#</a></h2>
+<p>You should create a Python environment that is dedicated to the project. See <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands">Anaconda instructions</a> as one possible method, <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a> as another one, though others exist.</p>
+<p>Here’s <code class="docutils literal notranslate"><span class="pre">venv</span></code> version in a nutshell (<a class="reference external" href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">full guide</a>)</p>
+<ul class="simple">
+<li><p>Ensure <code class="docutils literal notranslate"><span class="pre">venv</span></code> exists:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">pyenv</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Create a new environment</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">virtual</span><span class="o">/</span><span class="n">environment</span>
+</pre></div>
+</div>
+<p>or if using relative paths</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">env</span>
+</pre></div>
+</div>
+<p>which will create <code class="docutils literal notranslate"><span class="pre">/path/to/new/virtual/environment</span></code> or (relative to your current working directory) <code class="docutils literal notranslate"><span class="pre">env</span></code>. That directory will now contain all of your project-related Python packages.</p>
+<p>To activate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+<p>On Windows Bash (depends on install)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">env</span>
+<span class="n">source</span> <span class="n">env</span><span class="o">/</span><span class="n">Scripts</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+<p>To deactivate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deactivate</span>
+</pre></div>
 </div>
 </section>
-<section id="instructions">
-<h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this heading">#</a></h2>
-<p>Follow these instructions for each file:</p>
-<ul class="simple">
-<li><p>Open each <code class="docutils literal notranslate"><span class="pre">.nb</span></code> file, and do the following:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">Cell</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Delete</span> <span class="pre">all</span> <span class="pre">output</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Evaluation</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Evaluate</span> <span class="pre">Notebook</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Save</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">as...</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">PDF</span></code></p></li>
-</ul>
-</li>
-<li><p>Then <strong>completely</strong> exit Mathematica again!</p></li>
-</ul>
-<p>Then commit both the re-executed notebooks and the new PDF files to your repository.</p>
+<section id="making-python-code-dynamic">
+<h2>Making Python code dynamic<a class="headerlink" href="#making-python-code-dynamic" title="Permalink to this heading">#</a></h2>
+<p>In general, Python code should not have hard-coded paths. Python programs are aware of their own location, and other directories should be relative to that. However, some authors may still follow (econ-specific) norms, and hard-code paths.</p>
+<p>In that case, do the following:</p>
+<p>Say the author has code like</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xlsread</span><span class="p">(</span><span class="s1">&#39;C:\Users\me\submission\AEJMacro\yesterday\data.xlsx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At the top of the program, add the following lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">rootdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then, wherever the hard-coded path appears, replace it with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xlsread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s1">&#39;data.xlsx&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
 </section>
-<section id="variations">
-<h2>Variations<a class="headerlink" href="#variations" title="Permalink to this heading">#</a></h2>
-<p>There are a lot of different ways to run Mathematica code. Should this not work, talk to your supervisor.</p>
+<section id="installing-packages">
+<h2>Installing packages<a class="headerlink" href="#installing-packages" title="Permalink to this heading">#</a></h2>
+<p>Sometimes, authors will list the packages they used. There are a few options:</p>
+<section id="they-provide-a-requirements-txt-file">
+<h3>They provide a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file<a class="headerlink" href="#they-provide-a-requirements-txt-file" title="Permalink to this heading">#</a></h3>
+<p>If the authors provide a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file, you can install all the packages at once. From an appropriate terminal, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="they-provide-a-environment-yml-file">
+<h3>They provide a <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file<a class="headerlink" href="#they-provide-a-environment-yml-file" title="Permalink to this heading">#</a></h3>
+<p>If the authors provide an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file, they used Conda as the Python system manager. From an appropriate terminal, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</pre></div>
+</div>
+</section>
+<section id="they-provide-a-list-of-packages">
+<h3>They provide a list of packages<a class="headerlink" href="#they-provide-a-list-of-packages" title="Permalink to this heading">#</a></h3>
+<p>If the authors provide a list of packages, the easiest way is to create a simple <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file with a text editor (e.g., VS Code), then proceed as with the first option.</p>
+</section>
+<section id="using-anaconda-package-manager">
+<h3>Using Anaconda Package manager<a class="headerlink" href="#using-anaconda-package-manager" title="Permalink to this heading">#</a></h3>
+<p>This is known to work on  CISER (CCSS-Classic).</p>
+<div class="dropdown admonition">
+<p class="admonition-title">This may not be the way it works on CCSS-Cloud. </p>
+<p>Needs an update</p>
+</div>
+<p>If using the default “Jupyter” link in the Start Menu, the working directory won’t be right. Assuming that you have set your Workspace to <code class="docutils literal notranslate"><span class="pre">L:\Documents\Workspace</span></code>, the following will create a Jupyter Notebook in the right location (thanks to Louis Liu for creating this Howto)</p>
+<section id="search-anaconda-prompt-from-the-start-menu-right-click-on-the-app-when-it-appears-and-pin-it-to-the-taskbar">
+<h4>Search “anaconda prompt” from the start menu. right click on the app when it appears and pin it to the taskbar.<a class="headerlink" href="#search-anaconda-prompt-from-the-start-menu-right-click-on-the-app-when-it-appears-and-pin-it-to-the-taskbar" title="Permalink to this heading">#</a></h4>
+<p><img alt="Step 1" src="_images/Jupyter_howto_step1.png" /></p>
+</section>
+<section id="right-click-on-anaconda-prompt-in-the-taskbar-looks-like-a-black-window-similar-to-command-line-or-terminal-right-click-on-anaconda-powershell-prompt-in-the-tasks-menu-that-pops-up-and-then-properties">
+<h4>Right click on anaconda prompt in the taskbar (looks like a black window, similar to command line or terminal). Right click on “anaconda powershell prompt” in the tasks menu that pops up, and then properties.<a class="headerlink" href="#right-click-on-anaconda-prompt-in-the-taskbar-looks-like-a-black-window-similar-to-command-line-or-terminal-right-click-on-anaconda-powershell-prompt-in-the-tasks-menu-that-pops-up-and-then-properties" title="Permalink to this heading">#</a></h4>
+<p><img alt="Step 2" src="_images/Jupyter_howto_step2.png" /></p>
+</section>
+<section id="in-the-properties-window-go-to-the-shortcut-tab-and-change-the-start-in-field-to-u-documents-workspace-or-whichever-directory-you-keep-your-bitbucket-repos-in-click-apply">
+<h4>In the properties window, go to the shortcut tab and change the “Start in:” field to U:\Documents\Workspace or whichever directory you keep your bitbucket repos in. Click apply.<a class="headerlink" href="#in-the-properties-window-go-to-the-shortcut-tab-and-change-the-start-in-field-to-u-documents-workspace-or-whichever-directory-you-keep-your-bitbucket-repos-in-click-apply" title="Permalink to this heading">#</a></h4>
+<p><img alt="Step 3" src="_images/Jupyter_howto_step3.png" /></p>
+</section>
+<section id="next-click-on-the-anaconda-prompt-shortcut-in-the-taskbar-when-anaconda-prompt-opens-enter-the-command-jupyter-notebook">
+<h4>Next, click on the anaconda prompt shortcut in the taskbar. When anaconda prompt opens, enter the command “<code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">notebook</span></code>”<a class="headerlink" href="#next-click-on-the-anaconda-prompt-shortcut-in-the-taskbar-when-anaconda-prompt-opens-enter-the-command-jupyter-notebook" title="Permalink to this heading">#</a></h4>
+<p><img alt="Step 4" src="_images/Jupyter_howto_step4.png" /></p>
+</section>
+</section>
+<section id="conda-on-biohpc">
+<h3>Conda on BioHPC<a class="headerlink" href="#conda-on-biohpc" title="Permalink to this heading">#</a></h3>
+<p>If a replication package uses <code class="docutils literal notranslate"><span class="pre">conda</span></code> for package management, rather than <code class="docutils literal notranslate"><span class="pre">pip</span></code>, follow instructions <a class="reference external" href="https://biohpc.cornell.edu/lab/userguide.aspx?a=software&amp;i=574#c">at BioHPC</a> on how to install <code class="docutils literal notranslate"><span class="pre">miniconda</span></code> in your home directory, then add the line</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span><span class="nv">$HOME</span>/miniconda3/bin/activate
+</pre></div>
+</div>
+<p>at an appropriate location in the code (for instance, replacing <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">conda</span></code>).</p>
+</section>
+</section>
+<section id="running-jupyter-notebooks">
+<h2>Running Jupyter Notebooks<a class="headerlink" href="#running-jupyter-notebooks" title="Permalink to this heading">#</a></h2>
+<section id="manually">
+<h3>Manually<a class="headerlink" href="#manually" title="Permalink to this heading">#</a></h3>
+<p>In order to run Jupyter notebooks, do the following, once you have opened the Jupyter Notebook or Jupyter Lab interface:</p>
+<ul class="simple">
+<li><p>Navigate to the directory where the notebook is located</p></li>
+<li><p>Open the notebook</p></li>
+<li><p>Clear all the cells: <code class="docutils literal notranslate"><span class="pre">Cell</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">All</span> <span class="pre">Output</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Clear</span></code></p></li>
+<li><p>Run all the cells: <code class="docutils literal notranslate"><span class="pre">Cell</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">All</span></code></p></li>
+<li><p>Save the notebook: <code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Checkpoint</span></code></p></li>
+</ul>
+</section>
+<section id="from-the-command-line">
+<h3>From the command line<a class="headerlink" href="#from-the-command-line" title="Permalink to this heading">#</a></h3>
+<p>You should also be able to do the following from the command line:</p>
+<div class="sd-tab-set docutils">
+</div>
+</section>
+</section>
+<section id="document-the-packages-you-used">
+<h2>Document the packages YOU used<a class="headerlink" href="#document-the-packages-you-used" title="Permalink to this heading">#</a></h2>
+<p>If you had to iteratively install packages, you should run the following command at the end of your whole process:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>and add that output (the contents of the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file) to the repository, and to an appendix in the report. Take care to not overwrite author-provided <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> files.</p>
 </section>
 </section>
 
@@ -566,20 +693,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="96-50-using-docker.html"
+       href="96-20-using-matlab.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Docker-related procedures</p>
+        <p class="prev-next-title">MATLAB-related procedures</p>
       </div>
     </a>
     <a class="right-next"
-       href="96-80-using-ox.html"
+       href="96-50-using-docker.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ox-related procedures</p>
+        <p class="prev-next-title">Docker-related procedures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -598,9 +725,28 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files">Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variations">Variations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice-to-reproduce-a-python-paper-python-environments">Best practice to reproduce a Python paper (Python environments)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-python-code-dynamic">Making Python code dynamic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#they-provide-a-requirements-txt-file">They provide a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#they-provide-a-environment-yml-file">They provide a <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#they-provide-a-list-of-packages">They provide a list of packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-anaconda-package-manager">Using Anaconda Package manager</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#search-anaconda-prompt-from-the-start-menu-right-click-on-the-app-when-it-appears-and-pin-it-to-the-taskbar">Search “anaconda prompt” from the start menu. right click on the app when it appears and pin it to the taskbar.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#right-click-on-anaconda-prompt-in-the-taskbar-looks-like-a-black-window-similar-to-command-line-or-terminal-right-click-on-anaconda-powershell-prompt-in-the-tasks-menu-that-pops-up-and-then-properties">Right click on anaconda prompt in the taskbar (looks like a black window, similar to command line or terminal). Right click on “anaconda powershell prompt” in the tasks menu that pops up, and then properties.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#in-the-properties-window-go-to-the-shortcut-tab-and-change-the-start-in-field-to-u-documents-workspace-or-whichever-directory-you-keep-your-bitbucket-repos-in-click-apply">In the properties window, go to the shortcut tab and change the “Start in:” field to U:\Documents\Workspace or whichever directory you keep your bitbucket repos in. Click apply.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#next-click-on-the-anaconda-prompt-shortcut-in-the-taskbar-when-anaconda-prompt-opens-enter-the-command-jupyter-notebook">Next, click on the anaconda prompt shortcut in the taskbar. When anaconda prompt opens, enter the command “<code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">notebook</span></code>”</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-on-biohpc">Conda on BioHPC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jupyter-notebooks">Running Jupyter Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manually">Manually</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-command-line">From the command line</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-the-packages-you-used">Document the packages YOU used</a></li>
 </ul>
   </nav></div>
 
