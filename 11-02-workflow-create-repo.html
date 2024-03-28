@@ -491,7 +491,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-repository">Creating a repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-pipeline-to-ingest-author-materials">Running pipeline to ingest author materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ingesting-author-materials">Ingesting author materials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-deposit">Inspect the deposit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-pipeline">Running the pipeline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-the-pipeline">Monitoring the pipeline</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-step">Next step</a></li>
 </ul>
             </nav>
@@ -535,8 +540,8 @@ document.write(`
 <li><p>We have now created a Bitbucket repo named something like <code class="docutils literal notranslate"><span class="pre">aearep-123</span></code> that has been populated with the latest version of the LDI replication template documents!</p></li>
 </ul>
 </section>
-<section id="running-pipeline-to-ingest-author-materials">
-<span id="ingesting-author-materials"></span><h2>Running pipeline to ingest author materials<a class="headerlink" href="#running-pipeline-to-ingest-author-materials" title="Permalink to this heading">#</a></h2>
+<section id="ingesting-author-materials">
+<span id="id1"></span><h2>Ingesting author materials<a class="headerlink" href="#ingesting-author-materials" title="Permalink to this heading">#</a></h2>
 <p>We will now ingest the authors’ materials, and run a few statistics. Typically, the materials will be on a (private) openICPSR repository. Sometimes, the materials will be at Dataverse, Zenodo, or elsewhere.</p>
 <ul class="simple">
 <li><p>If at openICPSR, the fields <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">package</span> <span class="pre">URL</span></code>, <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">alternate</span> <span class="pre">URL</span></code>, and <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">Project</span> <span class="pre">Number</span></code> will be filled.</p></li>
@@ -546,6 +551,25 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>This currently works reliably only for openICPSR. This documentation will be updated when it works for Dataverse and Zenodo as well.</p>
 </div>
+<section id="inspect-the-deposit">
+<h3>Inspect the deposit<a class="headerlink" href="#inspect-the-deposit" title="Permalink to this heading">#</a></h3>
+<p>First, click on the <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">alternate</span> <span class="pre">URL</span></code> URL (or <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">package</span> <span class="pre">URL</span></code> if it contains a DOI and the other fields are empty). Inspect the deposit.</p>
+<ul class="simple">
+<li><p>on openICPSR, you will see the size of the deposit on the right:</p></li>
+</ul>
+<p><img alt="openICPSR size" src="_images/openicpsr-size-filecount.png" /></p>
+<ul class="simple">
+<li><p>on Zenodo, you will see the size of the deposit on the left, below the “featured” file:</p></li>
+</ul>
+<p><img alt="zenodo size" src="_images/zenodo-size-filecount.png" /></p>
+<p>The information may be in different locations at other repositories.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make a note of the size of the deposit!</p>
+</div>
+</section>
+<section id="running-the-pipeline">
+<h3>Running the pipeline<a class="headerlink" href="#running-the-pipeline" title="Permalink to this heading">#</a></h3>
 <p>You will now run what is called a <em><code class="docutils literal notranslate"><span class="pre">Bitbucket</span> <span class="pre">Pipeline</span></code></em>. Similar tools on other sites might be called <code class="docutils literal notranslate"><span class="pre">Continuous</span> <span class="pre">integration</span></code>, <code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Actions</span></code>, etc. If you have encountered these before, this will not be news for you, but it isn’t hard even when this new.</p>
 <ul class="simple">
 <li><p>First, in the repository you just created, navigate to the <code class="docutils literal notranslate"><span class="pre">Pipelines</span></code> tab</p></li>
@@ -559,10 +583,28 @@ document.write(`
 <li><p>You will now need to select a “pipeline” to run.</p></li>
 </ul>
 <p><img alt="select pipeline" src="_images/jira-select-pipeline.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is where the information about the size of the deposit matters! Choose the option that best matches the size of the deposit.</p>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">If the deposit is less than 3 GB…</p>
 <ul class="simple">
-<li><p>Choose “<code class="docutils literal notranslate"><span class="pre">populate</span> <span class="pre">from</span> <span class="pre">ICPSR</span></code>” (might change in the future), and fill in the ID for the relevant source of the replication package (here: openICPSR ID = <code class="docutils literal notranslate"><span class="pre">123456</span></code>), and hit <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</p></li>
+<li><p>Choose “<code class="docutils literal notranslate"><span class="pre">1-populate</span> <span class="pre">from</span> <span class="pre">ICPSR</span></code>” (might change in the future), and fill in the ID for the relevant source of the replication package (here: openICPSR ID = <code class="docutils literal notranslate"><span class="pre">123456</span></code>), and hit <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</p></li>
 </ul>
 <p><img alt="select pipeline" src="_images/jira-run-pipeline-icpsr.png" /></p>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">If the deposit is more than 3 GB…</p>
+<ul class="simple">
+<li><p>Choose “<code class="docutils literal notranslate"><span class="pre">w-big</span> <span class="pre">populate</span> <span class="pre">from</span> <span class="pre">ICPSR</span></code>” (might change in the future), and fill in the ID for the relevant source of the replication package (here: openICPSR ID = <code class="docutils literal notranslate"><span class="pre">123456</span></code>), and hit <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</p></li>
+</ul>
+<p><img alt="select pipeline" src="_images/jira-run-pipeline-icpsr-big.png" /></p>
+<p>Note that if you choose this pipeline, certain information is not generated (Stata scan, R package scan), and you may need to augment these manually. Try to avoid this pipeline if possible, and make a note in the Jira comments if you had to run this.</p>
+</div>
+</section>
+<section id="monitoring-the-pipeline">
+<h3>Monitoring the pipeline<a class="headerlink" href="#monitoring-the-pipeline" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Your pipeline will start, working through various steps. This might take a while! Do the next step (<a class="reference internal" href="11-03-workflow-in-progress.html#collecting-information"><span class="std std-ref">Collecting Information</span></a>) then come back here.</p></li>
 </ul>
@@ -575,6 +617,7 @@ document.write(`
 </li>
 </ul>
 <p><img alt="completed pipeline" src="_images/jira-run-pipeline-finished.png" /></p>
+</section>
 </section>
 <section id="next-step">
 <h2>Next step<a class="headerlink" href="#next-step" title="Permalink to this heading">#</a></h2>
@@ -644,7 +687,12 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-repository">Creating a repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-pipeline-to-ingest-author-materials">Running pipeline to ingest author materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ingesting-author-materials">Ingesting author materials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-deposit">Inspect the deposit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-pipeline">Running the pipeline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-the-pipeline">Monitoring the pipeline</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-step">Next step</a></li>
 </ul>
   </nav></div>
