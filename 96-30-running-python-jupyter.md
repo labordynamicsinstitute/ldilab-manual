@@ -152,7 +152,7 @@ You should also be able to do the following from the command line:
 
 ::::{tab-set}
 
-:::{tab} Linux/macOS
+:::{tab-item} Linux/macOS
 
 If you have a LaTeX installation, you can convert the notebook to a PDF using the following commands:
 
@@ -174,7 +174,7 @@ jupyter nbconvert --to webpdf --allow-chromium-download mynotebook.ipynb
 
 :::
 
-:::{tab} Windows
+:::{tab-item} Windows
 
 Not sure yet. Needs augmentation.
 
