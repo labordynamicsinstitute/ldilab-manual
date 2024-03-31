@@ -7,7 +7,12 @@ Some pre-publication reproducibility checks require revisions from the authors. 
 
 - Most revisions will not take you much time, so please try to process them quickly!
 - Revisions do not require you to repeat all of the same steps as the original replication (see below).
-- **Do not create a new Bitbucket repo**. You will overwrite the original repo (the original contents will still be available -- this is why we use version control software like Bitbucket!)
+
+:::{admonition}  **Do not create a new Bitbucket repo**. 
+You will overwrite the original repo. The original contents will still be available -- this is why we use version control software like Bitbucket!
+
+:::
+
 - The original REPLICATION.md is a contract; if the authors fix what we ask them to fix, then they have completed their part of the agreement.
     - If new issues turn up as a result of additional materials provided, these are okay to include as [REQUIRED] changes in the revised report. 
     - If you are unsure about something, add it to the report. While reviewing your report, we can make a determination about whether or not it can be done after acceptance of the manuscript, be a suggested instead of required change, etc. 
@@ -58,16 +63,20 @@ If you do not see pipelines run in the past, you will need to [do this manually 
 
 ![select pipeline](images/jira-run-pipeline-updatetools.png)
 
-- Your pipeline will start, working through various steps. 
-
-![running pipeline](images/jira-run-pipeline-running.png)
+- Your pipeline will start, working through various steps, usually quite quickly.
 
 - [ ] Once your pipeline is done, check that it is green.
-  - If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You may then need to [do this manually later](revision-code-step).
 
-![completed pipeline](images/jira-run-pipeline-finished.png)
 
-- Second, run the next pipeline. This one is the same as the one described in [Ingesting Author Materials](ingesting-author-materials). It will update the code in place, implementing the detailed instructions for the process of updating the replication materials described in the [Appendix: Updating Replication Materials after Revision](updating-replication-materials-after-revisions). You don't have to do anything except wait! Once that is done, go to the next step.
+![running pipeline](images/jira-run-pipeline-finished-refresh.png)
+
+:::{note}
+
+If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You may then need to [do this manually later](revision-code-step).
+
+:::
+
+- Second, run the next pipeline. This should be the same one that is described in [Ingesting Author Materials](running-populate-icpsr). It will update the code in place. You don't have to do anything except wait! Once that is done, go to the next step.
 
 :::
 
