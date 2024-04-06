@@ -1,6 +1,6 @@
- LDI Replication Lab Code of Conduct
+# Code of Conduct
 
-# Code of Conduct (Summary View)
+## Summary View
 
 Below is a summary of LDI Replication Lab Code of Conduct. Continue reading for a [more detailed description of the CoC](code-of-conduct-detailed-view).
 
@@ -17,7 +17,7 @@ We are dedicated to providing a welcoming and supportive environment for all peo
 If you believe someone is violating the Code of Conduct, we ask that you report it to Cornell University, who will take the appropriate action to address the situation.
 
 (code-of-conduct-detailed-view)=
-# Code of Conduct (Detailed View)
+## Details
 
 Part 1. Introduction 
 
@@ -68,11 +68,11 @@ Part 2.3 Consequences of Unacceptable behaviour
 
 Participants who are asked to stop any inappropriate behaviour are expected to comply immediately. This applies to any LDI Replication Lab activity and platforms, either online or in-person. If a participant engages in behaviour that violates this code of conduct, the organisers may warn the offender, ask them to stop any activity they may be involved in, leave the platform, or engage university mechanisms to investigate the Code of Conduct violation and impose appropriate sanctions.
 
-# Update Logs
+## Update Logs
 
 - 2021-08-19 Adapted from the [Carpentries' Code of Conduct](https://github.com/carpentries/docs.carpentries.org/blob/05bc4f4665f4ac967191df401c56b99ff0cac3cd/topic_folders/policies/code-of-conduct.md)
 
-# About this Document
+## About this Document
 
 This document is adapted from guidelines written by the [Django Project](https://www.djangoproject.com/conduct/enforcement-manual/), which was itself based on the [Ada Initiative](http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Responding_to_reports) template and the [PyCon 2013 Procedure for Handling Harassment Incidents](https://us.pycon.org/2013/about/code-of-conduct/harassment-incidents/). Contributors to the the initial document are Adam Obeng, Aleksandra Pawlik, Bill Mills, Carol Willing, Erin Becker, Hilmar Lapp, Kara Woo, Karin Lagesen, Pauline Barmby, Sheila Miguez, Simon Waldman, and Tracy Teal. Additional language was added by [Otter Tech](https://otter.technology) from the [PyCon U.S. 2018 Code of Conduct](https://us.pycon.org/2018/about/code-of-conduct/) ([licensed CC BY 3.0](http://creativecommons.org/licenses/by/3.0/))
 In 2018, the Code of Conduct was revised to add a summary, straightforward examples of both beneficial and unwanted behaviors, and evaluating intent. Reporting guidelines were also revised to include alternate contact points and a reporting form with the procedure was added. In 2019, an appeal process, the procedure for following up with a reportee, terminology, CoC incident response procedure, termed suspension checklist, expanded clauses for conflicts of interest, and committee membership agreement were included. Contributors of these revised documents are Ethan White, Kari L. Jordan, Karin Lagesen, Malvika Sharan, Samantha Ahern, and Simon Waldman.
