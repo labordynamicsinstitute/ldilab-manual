@@ -57,6 +57,7 @@ The information may be in different locations at other repositories.
 Make a note of the size of the deposit!
 :::
 
+(running-populate-icpsr)=
 ### Running the pipeline
 
 You will now run what is called a *`Bitbucket Pipeline`*. Similar tools on other sites might be called `Continuous integration`, `Github Actions`, etc. If you have encountered these before, this will not be news for you, but it isn't hard even when this new.

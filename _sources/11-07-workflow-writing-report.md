@@ -115,9 +115,15 @@ We want to learn about ALL differences that you see, even if minor.
   - For reproduced images, reference the location within the replication directory.
   - Using an annotation tool on your computer, circle or highlight where you see differences.
 
+:::{tip}
+
+See detailed step-by-step guidance in the [Appendix](tips-identifying-differences).
+
+:::
+
 Example:
 
-```
+```markdown
 
 Figure 5 in the paper:
 
