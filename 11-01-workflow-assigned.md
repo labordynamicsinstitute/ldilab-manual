@@ -18,6 +18,10 @@ Is the current Jira issue an **original report** (first time we see the manuscri
 
 ![Is it a revision or not?](images/AEA-Data-Editor-Workflow-V3-20240114-short-123.png)
 
+#### Signs that this case is a revision
+
+![Signs that it's a revision](images/revisions.png)
+
 - [ ] Check the `MCStatus` field: 
   - If it says "`RR`" or "`CA`", then it is an "original report" - proceed to the next step ([`Creating repository`](create-repo)).
   - If it says "`CA` `Revision`", then it is ... a revision! 
@@ -27,3 +31,6 @@ Is the current Jira issue an **original report** (first time we see the manuscri
     - When running a second replication on the same archive, please be sure to have the committed "REPLICATION.md" be accurate when you commit it - do not let it contain holdover data from a previous replication attempt, as this can lead to confusion.
     - Once you have entered the previous repository "stub" into the `Bitbucket short name` field, you can proceed to [`In Progress`](in-progress).
 
+```{warning}
+If a field on Jira is already filled out, **do not edit it**. The only exception is if software is missing from the `Software used` field.
+```
