@@ -104,7 +104,7 @@ Details in the full report, which you will receive via ScholarOne shortly. Pleas
 ```
 (replace xxx with the issue number)
  
-
+(submitting-info-via-openicpsr-for-accept)=
 ### FOR ACCEPT:
 
 1. Open the issue on Jira

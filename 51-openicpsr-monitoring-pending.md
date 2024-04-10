@@ -61,7 +61,7 @@ You should now open the Bitbucket report, and identify the changes that the auth
   - Check that the deposit doesn't have any extraneous files (Manuscript PDFs, Response to the Editor PDF, etc). If there are these files, note this on the Jira comment, tagging the senior members of the lab. Authors must remove these files. If in doubt, check with senior members.
   - **Check that the deposit is "Submitted" status**. 
   
-- **If you have verified that all the required changes have been made**, continue with the ["For Accept" section](submitting-info-via-openicpsr#for-accept) of [Submitting deposit-related information via openICPSR](submitting-info-via-openicpsr).
+- **If you have verified that all the required changes have been made**, continue with the ["For Accept" section](submitting-info-via-openicpsr-for-accept) of [Submitting deposit-related information via openICPSR](submitting-info-via-openicpsr).
   - You have another opportunity to uncheck any boxes here that have been addressed.
   - Check under "Other links" if "Non-compliant"  = yes, if so, **do not proceed** until you find clarification
   - - See if the reason for non-compliance (usually mentioned in the report, and at least in the comments) is resolved, **consult with the Data Editor**, then uncheck that box.
@@ -96,7 +96,7 @@ You should now open the Bitbucket report, and identify the changes that the auth
 2. Copy all the items in Action Items (open ICPSR) (disregard the manuscript section since we can't check that at this point)
 3. Paste the Action Items into the Comments section of Jira.
 4. Go through each item and mark 'Done' or 'Incomplete' next to each item. With any relevant details afterwards.
-5. If all changes have been made,  continue with the "For Accept" section of the  ["For Accept" section](submitting-info-via-openicpsr#for-accept) of [Submitting deposit-related information via openICPSR](submitting-info-via-openicpsr).
+5. If all changes have been made,  continue with the "For Accept" section of the  ["For Accept" section](submitting-info-via-openicpsr-for-accept) of [Submitting deposit-related information via openICPSR](submitting-info-via-openicpsr).
 6. If some items remain incomplete, tag Data Editor's assistant in Jira, who will then contact the authors.
 
 ### No Changes

@@ -32,7 +32,7 @@ until a resolution can be found.
 THIS STILL NEEDS UPDATES FOR V3 workflow
 ```
 
-#### Workflow for Main Task
+### Workflow for Main Task
 
 
 | From         | Transition                  | → To                   | Condition |
@@ -46,7 +46,7 @@ THIS STILL NEEDS UPDATES FOR V3 workflow
 
 At this point, there will be two subtasks: `Prepare Part A` and `Run Part B`. The following transitions are available for each of these subtasks, unless the issue has been assigned to an external replicator.
 
-#### Workflow for Part A Subtask
+### Workflow for Part A Subtask
 
 
 ![Part A](images/AEA-Data-Editor-Workflow-V3-partA.png)
@@ -56,7 +56,7 @@ At this point, there will be two subtasks: `Prepare Part A` and `Run Part B`. Th
 | Open         | Writing preliminary report  | →  Writing Part A      |  |
 | Writing Part A | Finished Part A           | →  Preliminary Report Complete |  `Part A` has been filled out         |
 
-#### Workflow for Part B Subtask
+### Workflow for Part B Subtask
 
 ![Part B](images/AEA-Data-Editor-Workflow-V3-partB.png)
 
@@ -72,7 +72,7 @@ It is possible that a Pre-approver or an Administrator move the issue back to `I
 Once both parts are complete, the issue can be merged into `REPLICATION.md` and the final report compiled. This is also true once the external report has been received.
 
 
-#### Continuation of Workflow for Main Task
+### Continuation of Workflow for Main Task
 
 ![Part C](images/AEA-Data-Editor-Workflow-V3-20240114-short-345.png)
 

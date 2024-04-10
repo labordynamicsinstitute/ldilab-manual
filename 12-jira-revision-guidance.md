@@ -45,9 +45,9 @@ First, advance the ticket from `Assigned` to `In Progress`.
 
 ### Updating code
 
-::::{tab-set}
+:::::{tab-set}
 
-:::{tab-item} Bitbucket Pipeline
+::::{tab-item} Bitbucket Pipeline
 
 - First, you will want to update the tools in this repository. Navigate to the `Pipelines` tab
 
@@ -78,15 +78,15 @@ If for some reason, it fails, the logs are available for your supervisor to insp
 
 - Second, run the next pipeline. This should be the same one that is described in [Ingesting Author Materials](running-populate-icpsr). It will update the code in place. You don't have to do anything except wait! Once that is done, go to the next step.
 
-:::
+::::
 
-:::{tab-item} Manually
+::::{tab-item} Manually
 
 If you can't use the Bitbucket pipeline, defer this step to [later](revision-code-step).
 
-:::
-
 ::::
+
+:::::
 
 ### Prepare the working area 
 

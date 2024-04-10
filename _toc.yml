@@ -73,6 +73,11 @@ parts:
     - file: 91-setup-checklist
     - file: 92-Privacy
     - file: 93-Communication
+    - file: 60-tips-for-identifying-differences
+      sections:
+      - file: 61-screenshot-windows
+      - file: 62-screenshot-macos
+      - file: 68-include-screenshots-in-report
     - file: 94-00-downloading-data
       sections:
       - file: 94-01-how-to-use-openICPSR-backend

@@ -18,7 +18,7 @@ Is the current Jira issue an **original report** (first time we see the manuscri
 
 ![Is it a revision or not?](images/AEA-Data-Editor-Workflow-V3-20240114-short-123.png)
 
-#### Signs that this case is a revision
+### Signs that this case is a revision
 
 ![Signs that it's a revision](images/revisions.png)
 
