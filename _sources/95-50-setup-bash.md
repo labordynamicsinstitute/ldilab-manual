@@ -20,29 +20,37 @@ It must be set separately, by invoking the "Forgot Password" functionality. See 
 
 :::
 
-Then, copy-paste the following code into an empty VS Code window, edit the email and password, then copy-paste it into the Git bash shell. Keep all the line breaks as shown!
+Open up a VS Code window as follows:
 
 ```bash
-echo '
+code $HOME/.bashrc
+```
+
+- copy the above exactly as shown. There is a "dot" before the word "`bashrc`".
+
+Then, copy-paste the following code into the VS Code window, and edit the values with the appropriate replacements. Keep all the line breaks, quotes, and spaces (or absence thereof) as shown!
+
+```bash
 # env for ICPSR
 export ICPSR_EMAIL=mylogin@cornell.edu
 export ICPSR_PASS="supersecretpwd"
+# env for Bitbucket
 export P_BITBUCKET_PAT="supersecretPAT" 
 export P_BITBUCKET_USERNAME=netid-replace-me
-' >> $HOME/.bashrc
 ```
 
-```{note}
-You can also use VS Code to open up the file `.bashrc` directly, if you prefer.
-```
 
 This will 
 
 - allow you to use the `aeagit` shortcut to download a Bitbucket repository to your workspace directly from the Bash command line
 - allow you to use the `tools/download_openicpsr_private.py` script to download replication packages from openICPSR from the Bash command line
 
-```{warning}
-Now might be a good time to log out and back in to make this work.
+:::{warning}
+On Windows, close the Git Bash window and open a new one to make the changes take effect. On Linux and MacOS, you can just run the following command in the terminal.
+:::
+
+```bash
+source $HOME/.bashrc
 ```
 
 ## Configure some convenience scripts
