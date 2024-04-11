@@ -47,11 +47,13 @@ This will
 
 :::{warning}
 On Windows, close the Git Bash window and open a new one to make the changes take effect. On Linux and MacOS, you can just run the following command in the terminal.
-:::
+
 
 ```bash
 source $HOME/.bashrc
 ```
+:::
+
 
 ## Configure some convenience scripts
 
