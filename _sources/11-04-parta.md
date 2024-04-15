@@ -87,6 +87,12 @@ The local repository should now have the relevant LDI replication template mater
   ```
 :::
 
+:::{tab-item} BioHPC
+
+It is not recommended to do this step on BioHPC.
+
+:::
+
 ::::
 
 - [ ] Clean-up: Delete (`git rm`) unused files from the template! 
