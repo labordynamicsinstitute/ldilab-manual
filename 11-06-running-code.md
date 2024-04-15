@@ -31,7 +31,20 @@ Check the software-specific guidelines in the manual's [section on running code]
 Sometimes, code can run for a long time. Leave the Jira ticket in `Code is running` to signal that there is activity there. Remember to come back regularly to check on it, and remember to commit all changes immediately (before running code).
 :::
 
+:::{admonition} If you appear to be stuck...
+
+then as soon as possible, call on
+
+- your supervisors (Sofia, Lars)
+- more senior RAs (pre-approvers) or graduate students
+- bring it up in a Monday or Thursday meeting
+
+Do not let yourself be blocked too long!
+
+:::
+
 Once you have run the code, come back here to continue!
+
 
 ## Details
 
