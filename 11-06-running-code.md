@@ -32,6 +32,7 @@ Sometimes, code can run for a long time. Leave the Jira ticket in `Code is runni
 :::
 
 :::{admonition} If you appear to be stuck...
+:class: warning
 
 then as soon as possible, call on
 
