@@ -87,7 +87,7 @@ The local repository should now have the relevant LDI replication template mater
   ```
 :::
 
-::: BioHPC
+:::{tab-item} BioHPC
 
 It is not recommended to do this step on BioHPC.
 
