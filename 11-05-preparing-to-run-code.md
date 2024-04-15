@@ -25,9 +25,6 @@ This is because the git setup we use does not allow you to include the data file
 ```
 
 
-```{warning}
-If you already prepared the working area on the computer you choose in [Part A](parta), then skip straight to [the next step](partb-verify)!
-```
 
 
 (get-the-code)=
@@ -56,7 +53,8 @@ If you already prepared the working area on the computer you choose in [Part A](
 
 All actions on BioHPC will be performed in a terminal. Depending on whether you connect with SSH, VNC, or Visual Studio Code, details may differ (see [Access Computer](Access_to_computers) for details). We suggest connecting via SSH or using Visual Studio Code (which uses SSH in the background), for simplicity. It is assumed that you have done [Bash setup](setup-bash). 
 
-- [ ] If using SSH, you are already at the "terminal". If using VNC, choose it from the application menu. If using [Visual Studio Code to connect to BioHPC], follow instructions from the **Github Codespaces** tab!
+- [ ] If using SSH, you are already at the "terminal". If using VNC, choose `Terminal` from the application menu. 
+  - If using [Visual Studio Code to connect to BioHPC](accessing-linux-nodes-with-vscode), follow instructions from the **Github Codespaces** tab!
 - [ ] Change directory to the common workarea:
     ```bash
     cd /home2/ecco_lv39/Workspace
@@ -74,14 +72,14 @@ All actions on BioHPC will be performed in a terminal. Depending on whether you 
 
 :::{tab-item} Github Codespaces (CS) 
 
-All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer. The particular template you use for CS already has the  [Bash setup](setup-bash) done for you.
+All actions in Github Codespaces (CS for short) will be performed in Visual Studio Code (VSC): the left pane for file and Git actions, in the Terminal, or in the text editor. To connect to CS, see [instructions to come]. It is assumed that you will run this from your laptop, but it can be run from any internet-connected computer. The particular template you use for CS already has the  [Bash setup](setup-bash) done for you. However, you need to have followed the [CS setup instructions](computing-using-cs).
 
 - [ ] Access [Github Codespaces](https://github.com/codespaces), see [appendix](computing-using-cs) for more details.
 - [ ] Use the Terminal built into VSC (`Menu` -> `Terminal` -> `New Terminal` ). By default, the Terminal should run a `bash` shell.
 - [ ] Populate CS with the Bitbucket repo (yes, this is a bit weird)
   - Use the LDI short-cut command 
     ```bash
-    aeagit 123
+    aeagit 123 http
     ```
     to clone the Bitbucket repository for `aearep-123` onto CS (this executed `git clone (URL)/aearep-123` behind the scenes).
     - If this is the first repository you run on this CS instance, you may need to configure authentication. Follow the instructions from the `aeagit` command.

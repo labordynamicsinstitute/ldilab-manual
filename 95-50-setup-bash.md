@@ -28,7 +28,16 @@ code $HOME/.bashrc
 
 - copy the above exactly as shown. There is a "dot" before the word "`bashrc`".
 
-Then, copy-paste the following code into the VS Code window, and edit the values with the appropriate replacements. Keep all the line breaks, quotes, and spaces (or absence thereof) as shown!
+:::{warning}
+
+- If this code shows an error, stop here, and debug! 
+- If no VS Code windown shows, stop here, and debug.
+
+:::
+
+You should now have a (new) VS Code window, either empty or with some pre-written script. If there is content, place your cursor at the very end of the edit window (you may need to scroll down). 
+
+Now, copy-paste the following code into the VS Code window, and edit the values with the appropriate replacements. Keep all the line breaks, quotes, and spaces (or absence thereof) as shown!
 
 ```bash
 # env for ICPSR
@@ -54,6 +63,32 @@ source $HOME/.bashrc
 ```
 :::
 
+### Verifying it works
+
+You should now be able to verify that the configuration setup worked, by typing the following at the terminal prompt:"
+
+```bash
+export | grep BIT
+```
+
+should show your Bitbucket username and PAT.
+
+```bash
+export | grep ICPSR
+```
+
+should show your openICPSR login and password. 
+
+
+:::{admonition} Now clear the confidential information from your screen!
+
+Just to be sure, now type
+
+```bash
+clear
+```
+
+:::
 
 ## Configure some convenience scripts
 
