@@ -43,6 +43,10 @@ Once you have ascertained that changes have been made, and if this hasn't alread
 
 ![partial process](images/pending_openicpsr.png)
 
+### Update the Bitbucket repository
+
+We want to capture the latest code, and generate a listing of all the files in the openICPSR deposit. To this extent, re-run the [Ingesting Author Materials](running-populate-icpsr) steps. If for some reason, this fails, you may need to [update the Pipeline tools in the repository](updating-repository-pipeline), then try again.
+
 
 ### Verify Requested Changes
 

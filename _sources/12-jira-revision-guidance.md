@@ -43,13 +43,11 @@ First, advance the ticket from `Assigned` to `In Progress`.
         - `Bitbucket short name`. This should be the name of the original JIRA issue (e.g. `aearep-123)`.
         - `openICPSR project number`
 
-### Updating code
+(updating-repository-pipeline)=
+### Updating pipeline code
 
-:::::{tab-set}
 
-::::{tab-item} Bitbucket Pipeline
-
-- First, you will want to update the tools in this repository. Navigate to the `Pipelines` tab
+First, you will want to update the tools in this repository. Navigate to the `Pipelines` tab
 
 ![](images/jira-find-pipelines.png)
 
@@ -76,7 +74,22 @@ If for some reason, it fails, the logs are available for your supervisor to insp
 
 :::
 
-- Second, run the next pipeline. This should be the same one that is described in [Ingesting Author Materials](running-populate-icpsr). It will update the code in place. You don't have to do anything except wait! Once that is done, go to the next step.
+It will update the code in place. You don't have to do anything except wait! Once that is done, go to the next step.
+
+
+### Updating Bitbucket repository with latest code and documents
+
+
+:::::{tab-set}
+
+::::{tab-item} Bitbucket Pipeline
+
+Next, run the next pipeline. This should be the same one that is described in [Ingesting Author Materials](running-populate-icpsr). 
+
+
+![select pipeline](images/jira-run-pipeline-icpsr.png)
+
+
 
 ::::
 
