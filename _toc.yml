@@ -36,6 +36,10 @@ parts:
   - caption: Advanced AEA-related tasks
     chapters:
     - file: 13-approving-issues
+      sections:
+      - file: 13-1-approving-issues-original
+      - file: 13-2-approving-issues-revision
+      - file: 13-3-approving-recommendations
     - file: 30-jira-prepare-publication
       sections:
       - file: 31-jira-openicpsr-setup
