@@ -156,3 +156,72 @@ os.system("shutdown -l")
 :::
 
 ::::
+
+(Red-Cloud)=
+## Accessing RedCloud Server
+
+1.	Install and Connect to CU VPN (instructions linked below)
+
+https://it.cornell.edu/cuvpn
+
+2. Once you have the VPN installed, enter ‘cuvpn.cuvpn.cornell.edu’
+![Log in image](images/Cisco-VPN-login.png)
+
+Username is Cornell netid with ‘@cornell.edu’ extension
+Password is normal Cornell account password
+‘Duo’ or ‘second password’: 
+Type ‘push’ – Sends DUO push to phone
+Type ‘sms’ – Sends message to Cornell email inbox
+Type ‘phone’ – Receive a phone call. 
+
+
+![Further log in](images/VPN-login-instructions.png)
+
+3. Set RedCloud account password using  https://passwordreset.computing.socialsciences.cornell.edu/
+Enter username as netid_RS when setting password. Ex: jrg363_RS
+
+4. Install the 'Remote Desktop' client:
+
+(Instructions taken from [CCSS](https://socialsciences.cornell.edu/computing-and-data/cloud-computing-solutions/account-instructions?toptab=login_instructions&contenttab=mac))
+#### Windows Remote Desktop
+
+
+[Download Remote Desktop](https://go.microsoft.com/fwlink/?linkid=2068602) for Windows Users
+
+Install the downloaded client application
+Click through installation and accept the default settings
+
+Initial ‘Remote Desktop’ Setup (to be done only once):
+- Open ‘Remote Desktop’ client application installed from earlier step
+- Click ‘Subscribe with URL’ 
+- Input the following URL.: https://rdweb.wvd.microsoft.com/ 
+- Click ‘Next’
+
+#### Mac Remote Desktop
+
+[Download Remote Desktop](https://itunes.apple.com/us/app/microsoft-remote-desktop-10/id1295203466) for Mac Users
+
+Initial ‘Microsoft Remote Desktop’ Setup (to be done only once) 
+- Open ‘Microsoft Remote Desktop’ from Applications ‘Workspaces’ tab  
+- Click Plus icon, ‘Add Workspace’
+- Input the following for ‘Email or workspace URL’: https://rdweb.wvd.microsoft.com
+- Click ‘Add’ 
+
+
+4. Open Remote Desktop and click "Show options"
+
+Change “Computer” or “PC Name” text box to IP address below (depending on Mac or Windows). Enter username as ciserrsch\netid_RS when signing in. ex: ciserrsch\jrg363_RS
+
+**IP Address: 128.84.8.93**
+
+![RedCloud](images/RedCloudPC.png)
+
+![RedCloud2](images/RedCloudPC2.png)
+
+Continue log in using the password you created in step 3
+### Accessing the L Drive
+
+1. Open File Explorer
+2. Click ‘This PC’
+3.	Underneath ‘Devices and Drives’ you will see the L: drive titled ‘lv39’
+![RedCloudL](images/RedCloudLdrive.png)
