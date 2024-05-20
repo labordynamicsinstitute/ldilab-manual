@@ -1,11 +1,17 @@
 (windows-remote)=
 # Connecting to remote Windows servers
 
-We have access to two sets of remote desktop Windows servers:
+We have access to three sets of remote desktop Windows servers:
 
-- CCSS-RS (classic)
 - Cloud CCSS (beta)
+- CCSS-RS (classic)
+- RedCloud (summer only)
 
+:::{admonition} This can be confusing!
+
+Pay attention to the precise access instructions, as they may be substantially different for each server.
+
+:::
 
 
 :::::{tab-set}
@@ -73,13 +79,10 @@ Close the browser tab, or close the application by the usual methods. This will 
 
 ::::{tab-item} CCSS-RS classic
 
+
 ```{warning}
-These instructions are here for informational purposes only. You should be using the CCSS Cloud servers at this time.
+CCSS has removed their login instructions at this time!
 ```
-
-Follow instructions at [CCSS-RS](https://socialsciences.cornell.edu/research-support/login-instructions). Be sure to select the tab that corresponds to your **laptop's** operating system!
-
-
 **Disconnecting**
 
 - If you have set a replication package's code to run, **do not sign out/ log off** - disconnect. 
@@ -87,10 +90,80 @@ Follow instructions at [CCSS-RS](https://socialsciences.cornell.edu/research-sup
 
 ::::
 
+
+::::{tab-item} RedCloud Server
+
+
+:::{admonition} Please be sure to do this:
+
+- use the L drive for all "Workspace" folders (i.e., the clone of the Bitbucket repository)
+
+:::
+
+
+:::{warning}
+
+Please note that anything saved in the C drive (Documents, Desktop, or Download folders) may be deleted at any time (reboot/security update), and there is no way to recover the deleted files.
+
+:::
+
+1.	Install and Connect to CU VPN (see [instructions](https://it.cornell.edu/cuvpn)).
+
+2. Once you have the VPN installed, enter `cuvpn.cuvpn.cornell.edu`
+
+![Log in image](images/Cisco-VPN-login.png)
+
+- Username is Cornell netid with ‘@cornell.edu’ extension
+- Password is normal Cornell account password
+- ‘Duo’ or ‘second password’: 
+  - Type ‘push’ – Sends DUO push to phone
+  - Type ‘sms’ – Sends message to Cornell email inbox
+  - Type ‘phone’ – Receive a phone call. 
+
+
+![Further log in](images/VPN-login-instructions.png)
+
+3. Set RedCloud account password using  [https://passwordreset.computing.socialsciences.cornell.edu/](https://passwordreset.computing.socialsciences.cornell.edu/) (this is only needed once!)
+
+- Enter username as `netid_RS` when setting password. Ex: `jrg363_RS`
+
+4. Install the 'Remote Desktop' client:
+
+- Windows users should use the built-in "Remote Desktop Client", **not** the client used for **CCSS Cloud**.
+- Mac users can use the same Microsoft Remote Desktop client ([Download Remote Desktop](https://itunes.apple.com/us/app/microsoft-remote-desktop-10/id1295203466))
+
+5. Make the connection to the RedCloud server:
+
+- Open up the Remote Desktop client
+- Add or Edit a new connection
+- Change "Computer" (*Windows client*) or "PC Name" (*macOS*) text box to IP address below (depending on Mac or Windows). Enter username as `ciserrsch\netid_RS` when signing in. ex: `ciserrsch\jrg363_RS`
+
+:::{admonition} IP Address
+
+**128.84.8.93**
+:::
+
+![RedCloud](images/RedCloudPC.png)
+![RedCloud2](images/RedCloudPC2.png)
+
+Continue log in using the password you created in step 3.
+
+**Mapping Network Drives**
+
+Network drives are already mapped in RedCloud. To access the shared "L-Drive", follow these steps:
+
+1. Open File Explorer
+2. Click ‘This PC’
+3.	Underneath ‘Devices and Drives’ you will see the L: drive titled ‘lv39’
+
+![RedCloudL](images/RedCloudLdrive.png)
+
+:::
+
 :::::
 
 
-**Signing out**
+## Signing out
 
 It is important to sign out when you do NOT have jobs running. However, when you no longer have a job running, it saves everybody resoures. Your data will still be accessible when you sign back on. 
 
@@ -114,7 +187,8 @@ To configure your job to sign out automatically at the end, these are the instru
 :::{tab-item}  Stata
 
 ```stata
-*Use the code below at the bottom of the Stata "main" or "master" script to automatically sign out 
+/* Use the code below at the bottom of the Stata 
+   "main" or "master" script to automatically sign out */
 
 shell shutdown -l 
 ```
@@ -135,7 +209,8 @@ system("shutdown  -l")
 :::{tab-item} Matlab
 
 ```
-%Use code below at end of MATLAB main script, or last script, to automatically sign out
+%Use code below at end of MATLAB main script, 
+%or last script, to automatically sign out
 
 system("shutdown -l")
 ```
@@ -146,7 +221,8 @@ system("shutdown -l")
 :::{tab-item}  Python
 
 ```python
-%Use code below at bottom of Python/Anaconda script to automatically sign out
+#Use code below at bottom of Python/Anaconda script 
+#to automatically sign out
 
 import os
 
@@ -156,72 +232,3 @@ os.system("shutdown -l")
 :::
 
 ::::
-
-(Red-Cloud)=
-## Accessing RedCloud Server
-
-1.	Install and Connect to CU VPN (instructions linked below)
-
-https://it.cornell.edu/cuvpn
-
-2. Once you have the VPN installed, enter ‘cuvpn.cuvpn.cornell.edu’
-![Log in image](images/Cisco-VPN-login.png)
-
-Username is Cornell netid with ‘@cornell.edu’ extension
-Password is normal Cornell account password
-‘Duo’ or ‘second password’: 
-Type ‘push’ – Sends DUO push to phone
-Type ‘sms’ – Sends message to Cornell email inbox
-Type ‘phone’ – Receive a phone call. 
-
-
-![Further log in](images/VPN-login-instructions.png)
-
-3. Set RedCloud account password using  https://passwordreset.computing.socialsciences.cornell.edu/
-Enter username as netid_RS when setting password. Ex: jrg363_RS
-
-4. Install the 'Remote Desktop' client:
-
-(Instructions taken from [CCSS](https://socialsciences.cornell.edu/computing-and-data/cloud-computing-solutions/account-instructions?toptab=login_instructions&contenttab=mac))
-#### Windows Remote Desktop
-
-
-[Download Remote Desktop](https://go.microsoft.com/fwlink/?linkid=2068602) for Windows Users
-
-Install the downloaded client application
-Click through installation and accept the default settings
-
-Initial ‘Remote Desktop’ Setup (to be done only once):
-- Open ‘Remote Desktop’ client application installed from earlier step
-- Click ‘Subscribe with URL’ 
-- Input the following URL.: https://rdweb.wvd.microsoft.com/ 
-- Click ‘Next’
-
-#### Mac Remote Desktop
-
-[Download Remote Desktop](https://itunes.apple.com/us/app/microsoft-remote-desktop-10/id1295203466) for Mac Users
-
-Initial ‘Microsoft Remote Desktop’ Setup (to be done only once) 
-- Open ‘Microsoft Remote Desktop’ from Applications ‘Workspaces’ tab  
-- Click Plus icon, ‘Add Workspace’
-- Input the following for ‘Email or workspace URL’: https://rdweb.wvd.microsoft.com
-- Click ‘Add’ 
-
-
-4. Open Remote Desktop and click "Show options"
-
-Change “Computer” or “PC Name” text box to IP address below (depending on Mac or Windows). Enter username as ciserrsch\netid_RS when signing in. ex: ciserrsch\jrg363_RS
-
-**IP Address: 128.84.8.93**
-
-![RedCloud](images/RedCloudPC.png)
-
-![RedCloud2](images/RedCloudPC2.png)
-
-Continue log in using the password you created in step 3
-### Accessing the L Drive
-
-1. Open File Explorer
-2. Click ‘This PC’
-3.	Underneath ‘Devices and Drives’ you will see the L: drive titled ‘lv39’
-![RedCloudL](images/RedCloudLdrive.png)
