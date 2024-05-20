@@ -477,7 +477,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -493,6 +495,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signing-out">Signing out</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -504,11 +514,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="connecting-to-remote-windows-servers">
 <span id="windows-remote"></span><h1>Connecting to remote Windows servers<a class="headerlink" href="#connecting-to-remote-windows-servers" title="Permalink to this heading">#</a></h1>
-<p>We have access to two sets of remote desktop Windows servers:</p>
+<p>We have access to three sets of remote desktop Windows servers:</p>
 <ul class="simple">
-<li><p>CCSS-RS (classic)</p></li>
 <li><p>Cloud CCSS (beta)</p></li>
+<li><p>CCSS-RS (classic)</p></li>
+<li><p>RedCloud (summer only)</p></li>
 </ul>
+<div class="admonition-this-can-be-confusing admonition">
+<p class="admonition-title">This can be confusing!</p>
+<p>Pay attention to the precise access instructions, as they may be substantially different for each server.</p>
+</div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
@@ -579,17 +594,87 @@ Cloud CCSS</label><div class="sd-tab-content docutils">
 CCSS-RS classic</label><div class="sd-tab-content docutils">
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>These instructions are here for informational purposes only. You should be using the CCSS Cloud servers at this time.</p>
+<p>CCSS has removed their login instructions at this time!</p>
 </div>
-<p>Follow instructions at <a class="reference external" href="https://socialsciences.cornell.edu/research-support/login-instructions">CCSS-RS</a>. Be sure to select the tab that corresponds to your <strong>laptop’s</strong> operating system!</p>
 <p><strong>Disconnecting</strong></p>
 <ul class="simple">
 <li><p>If you have set a replication package’s code to run, <strong>do not sign out/ log off</strong> - disconnect.</p></li>
 <li><p>If you are done for a few days, and have nothing running, then <strong>sign out</strong>.</p></li>
 </ul>
 </div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+RedCloud Server</label><div class="sd-tab-content docutils">
+<div class="admonition-please-be-sure-to-do-this admonition">
+<p class="admonition-title">Please be sure to do this:</p>
+<ul class="simple">
+<li><p>use the L drive for all “Workspace” folders (i.e., the clone of the Bitbucket repository)</p></li>
+</ul>
 </div>
-<p><strong>Signing out</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please note that anything saved in the C drive (Documents, Desktop, or Download folders) may be deleted at any time (reboot/security update), and there is no way to recover the deleted files.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Install and Connect to CU VPN (see <a class="reference external" href="https://it.cornell.edu/cuvpn">instructions</a>).</p></li>
+<li><p>Once you have the VPN installed, enter <code class="docutils literal notranslate"><span class="pre">cuvpn.cuvpn.cornell.edu</span></code></p></li>
+</ol>
+<p><img alt="Log in image" src="_images/Cisco-VPN-login.png" /></p>
+<ul class="simple">
+<li><p>Username is Cornell netid with ‘&#64;cornell.edu’ extension</p></li>
+<li><p>Password is normal Cornell account password</p></li>
+<li><p>‘Duo’ or ‘second password’:</p>
+<ul>
+<li><p>Type ‘push’ – Sends DUO push to phone</p></li>
+<li><p>Type ‘sms’ – Sends message to Cornell email inbox</p></li>
+<li><p>Type ‘phone’ – Receive a phone call.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Further log in" src="_images/VPN-login-instructions.png" /></p>
+<ol class="arabic simple" start="3">
+<li><p>Set RedCloud account password using  <a class="reference external" href="https://passwordreset.computing.socialsciences.cornell.edu/">https://passwordreset.computing.socialsciences.cornell.edu/</a> (this is only needed once!)</p></li>
+</ol>
+<ul class="simple">
+<li><p>Enter username as <code class="docutils literal notranslate"><span class="pre">netid_RS</span></code> when setting password. Ex: <code class="docutils literal notranslate"><span class="pre">jrg363_RS</span></code></p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Install the ‘Remote Desktop’ client:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Windows users should use the built-in “Remote Desktop Client”, <strong>not</strong> the client used for <strong>CCSS Cloud</strong>.</p></li>
+<li><p>Mac users can use the same Microsoft Remote Desktop client (<a class="reference external" href="https://itunes.apple.com/us/app/microsoft-remote-desktop-10/id1295203466">Download Remote Desktop</a>)</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>Make the connection to the RedCloud server:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Open up the Remote Desktop client</p></li>
+<li><p>Add or Edit a new connection</p></li>
+<li><p>Change “Computer” (<em>Windows client</em>) or “PC Name” (<em>macOS</em>) text box to IP address below (depending on Mac or Windows). Enter username as <code class="docutils literal notranslate"><span class="pre">ciserrsch\netid_RS</span></code> when signing in. ex: <code class="docutils literal notranslate"><span class="pre">ciserrsch\jrg363_RS</span></code></p></li>
+</ul>
+<div class="admonition-ip-address admonition">
+<p class="admonition-title">IP Address</p>
+<p><strong>128.84.8.93</strong></p>
+</div>
+<p><img alt="RedCloud" src="_images/RedCloudPC.png" />
+<img alt="RedCloud2" src="_images/RedCloudPC2.png" /></p>
+<p>Continue log in using the password you created in step 3.</p>
+<p><strong>Mapping Network Drives</strong></p>
+<p>Network drives are already mapped in RedCloud. To access the shared “L-Drive”, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Open File Explorer</p></li>
+<li><p>Click ‘This PC’</p></li>
+<li><p>Underneath ‘Devices and Drives’ you will see the L: drive titled ‘lv39’</p></li>
+</ol>
+<p><img alt="RedCloudL" src="_images/RedCloudLdrive.png" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="signing-out">
+<h2>Signing out<a class="headerlink" href="#signing-out" title="Permalink to this heading">#</a></h2>
 <p>It is important to sign out when you do NOT have jobs running. However, when you no longer have a job running, it saves everybody resoures. Your data will still be accessible when you sign back on.</p>
 <p><em>Manually</em></p>
 <ul class="simple">
@@ -601,36 +686,39 @@ CCSS-RS classic</label><div class="sd-tab-content docutils">
 <p><em>Automatically</em></p>
 <p>To configure your job to sign out automatically at the end, these are the instructions <a class="reference external" href="https://socialsciences.cornell.edu/computing-and-data/cloud-computing-solutions/account-instructions?toptab=session_tips&amp;contenttab=auto_sign_out_after_code_completes">provided by CCSS</a>:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-2">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Stata</label><div class="sd-tab-content docutils">
-<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">*Use the code below at the bottom of the Stata &quot;main&quot; or &quot;master&quot; script to automatically sign out </span>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Use the code below at the bottom of the Stata </span>
+<span class="cm">   &quot;main&quot; or &quot;master&quot; script to automatically sign out */</span>
 
 <span class="k">shell</span> shutdown <span class="o">-</span>l 
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-3">
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 R</label><div class="sd-tab-content docutils">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add to end of main or last script.</span>
 <span class="nf">system</span><span class="p">(</span><span class="s">&quot;shutdown  -l&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-4">
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 Matlab</label><div class="sd-tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">Use</span> <span class="n">code</span> <span class="n">below</span> <span class="n">at</span> <span class="n">end</span> <span class="n">of</span> <span class="n">MATLAB</span> <span class="n">main</span> <span class="n">script</span><span class="p">,</span> <span class="ow">or</span> <span class="n">last</span> <span class="n">script</span><span class="p">,</span> <span class="n">to</span> <span class="n">automatically</span> <span class="n">sign</span> <span class="n">out</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">Use</span> <span class="n">code</span> <span class="n">below</span> <span class="n">at</span> <span class="n">end</span> <span class="n">of</span> <span class="n">MATLAB</span> <span class="n">main</span> <span class="n">script</span><span class="p">,</span> 
+<span class="o">%</span><span class="ow">or</span> <span class="n">last</span> <span class="n">script</span><span class="p">,</span> <span class="n">to</span> <span class="n">automatically</span> <span class="n">sign</span> <span class="n">out</span>
 
 <span class="n">system</span><span class="p">(</span><span class="s2">&quot;shutdown -l&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-5">
+<input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 Python</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">Use</span> <span class="n">code</span> <span class="n">below</span> <span class="n">at</span> <span class="n">bottom</span> <span class="n">of</span> <span class="n">Python</span><span class="o">/</span><span class="n">Anaconda</span> <span class="n">script</span> <span class="n">to</span> <span class="n">automatically</span> <span class="n">sign</span> <span class="n">out</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Use code below at bottom of Python/Anaconda script </span>
+<span class="c1">#to automatically sign out</span>
 
 <span class="kn">import</span> <span class="nn">os</span>
 
@@ -639,6 +727,7 @@ Python</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -693,6 +782,20 @@ Python</label><div class="sd-tab-content docutils">
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signing-out">Signing out</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
