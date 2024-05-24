@@ -20,9 +20,9 @@ For **Part A**, you do NOT need the data, but you do need the working copy of th
 ## Pull everything together
 
 
-::::{tab-set}
+:::::{tab-set}
 
-:::{tab-item} CCSS 
+::::{tab-item} CCSS 
 
 
 - [ ] Clone the Bitbucket repository onto the CCSS server you are working on
@@ -36,6 +36,18 @@ For **Part A**, you do NOT need the data, but you do need the working copy of th
 - [ ] Verify that the code is present, i.e., that the automated scripts run during the [Code Ingest](ingesting-author-materials) worked. **If they did not, you need to switch to the "Manual steps"!**
 - [ ] From the JIRA issue, download and add Manuscript, Data and Code Availability Form (DCAF). 
     - Download from Jira issue attachments. The manuscript is often called `PDF_Proof.pdf`. 
+
+:::{warning}
+
+Occassionally, the email received from Manuscript Central will strip out the manuscript because it is too big. You will notice this because
+
+- There will be no `PDF_Proof.pdf` attached!
+- There is text that "the application was unable to attach manuscript files to this email, because one or more of the files exceeded the allowable attachment size (6MB). **
+
+In this case, immediately contact the (assistant) Data Editor to obtain the correct manuscript! Do not use any other manuscript or working paper you might find online.
+
+:::
+
 - [ ] Add the manuscript, and any response by the authors (if a revision)
   - Add them to the Git repo 
 - [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
@@ -44,9 +56,9 @@ For **Part A**, you do NOT need the data, but you do need the working copy of th
   git commit -m "added manuscript and DCAF"
   git push
   ```
-:::
+::::
 
-:::{tab-item} Manual steps 
+::::{tab-item} Manual steps 
 
 If the automated population of the author's code directory did not work, you will need to manually download the replication package. Try to do this first using scripts.
 
@@ -85,15 +97,15 @@ The local repository should now have the relevant LDI replication template mater
   git commit -m "Adding manuscript, DCAF, and code"
   git push
   ```
-:::
+::::
 
-:::{tab-item} BioHPC
+::::{tab-item} BioHPC
 
 It is not recommended to do this step on BioHPC.
 
-:::
-
 ::::
+
+:::::
 
 - [ ] Clean-up: Delete (`git rm`) unused files from the template! 
   - Example: `git rm README.md template-config.R` if the replication archive does not contain any R files (you can do this at any time before writing the **Preliminary Report**)
