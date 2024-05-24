@@ -118,6 +118,18 @@ If you are **returning** to the previous working area, be sure to run `git pull`
 - [ ] Download the materials attached to the JIRA issue. This will typically include 
   - an updated copy of the manuscript, 
   - a response to the editor addressing the requested changes from the prior replication attempt. 
+
+
+:::{warning}
+
+Occassionally, the email received from Manuscript Central will strip out the manuscript because it is too big. You will notice this because
+
+- There will be no `PDF_Proof.pdf` attached!
+- There is text that "the application was unable to attach manuscript files to this email, because one or more of the files exceeded the allowable attachment size (6MB). **
+
+In this case, immediately contact the (assistant) Data Editor to obtain the correct manuscript! Do not use any other manuscript or working paper you might find online.
+
+:::
   
 - [ ] Remove obsolete files. In the root, this should be obvious (old manuscript).
 
