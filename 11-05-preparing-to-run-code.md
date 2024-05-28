@@ -110,6 +110,15 @@ Have a look at the **README** again.
 
 Now fill out the **Stated Requirements** section of **Part B** of the report.
 
+
+
+:::{admonition} Be sure to use the `REPLICATION-PartB.md` for this section!
+:class: dropdown
+
+As part of the [automated processing](running-populate-icpsr), the `REPLICATION.md` is split into two parts, `REPLICATION-PartA.md` and `REPLICATION-PartB.md`. Somebody else may be working on Part A at the same time as you are working on Part B. Please be sure to use the correct file for your work.
+
+:::
+
 ## Prepare the code-check
 
 Now is a good time to understand the code in a bit more detail:
@@ -117,7 +126,7 @@ Now is a good time to understand the code in a bit more detail:
 - [ ] In the template, you will find *[code-check.xlsx](https://github.com/AEADataEditor/replication-template/blob/master/code-check.xlsx)*. 
   - Use this to create a list of all Tables and Figures in the paper
   - You will use this to guide later to tabulate your findings!
-- [ ] Fill out the "**Code Description**" section of the REPLICATION.md
+- [ ] Fill out the "**Code Description**" section of the `REPLICATION-PartB.md`
   - Provide some information about the program files (are there 3 Stata files? Are there 5 Matlab programs?). You will use this information to fill out the `Software Used` (in the main task) later as well, but provide details here.
     - You can use the file "`generated/programs-list.txt` to help you here.
   - Did you have difficulty aligning the README with the files? Does the sequence suggested by the programs differ from what's written in the README? 

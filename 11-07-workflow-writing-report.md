@@ -29,7 +29,7 @@ You should choose here the "`Resolution`" that corresponds to the outcome of the
 
 ## Run the Merge Pipeline
 
-At this point, there will be two parts of the report: `REPLICATION-partA.md` and `REPLICATION-partB.md`. To facilitate further editing, we will merge these two parts into a single file, `REPLICATION.md`. This can be done manually, or using the pipeline.
+At this point, there will be two parts of the report: `REPLICATION-PartA.md` and `REPLICATION-PartB.md`. To facilitate further editing, we will merge these two parts into a single file, `REPLICATION.md`. This can be done manually, or using the pipeline.
 
 :::::{tab-set}
 
@@ -77,18 +77,18 @@ If you want to do this on your own computer, you can use one of two methods:
 - Using the command line:
 
 ```bash
-cat REPLICATION-partA.md REPLICATION-partB.md > REPLICATION.md
+cat REPLICATION-PartA.md REPLICATION-PartB.md > REPLICATION.md
 ```
 
 - Manually, using a text editor:
-  - Open the two files `REPLICATION-partA.md` and `REPLICATION-partB.md` in a text editor
-  - Copy the contents of `REPLICATION-partB.md` and paste them at the end of `REPLICATION-partA.md`
+  - Open the two files `REPLICATION-PartA.md` and `REPLICATION-PartB.md` in a text editor
+  - Copy the contents of `REPLICATION-PartB.md` and paste them at the end of `REPLICATION-PartA.md`
   - Save the file as `REPLICATION.md`
 
 - In both cases, you now need to remove the parts, and add the combined file:
 
 ```bash
-git rm REPLICATION-partA.md REPLICATION-partB.md
+git rm REPLICATION-PartA.md REPLICATION-PartB.md
 git add REPLICATION.md
 git commit -m "Merged parts A and B"
 git push
@@ -98,6 +98,13 @@ git push
 
 :::::
 
+
+
+:::{warning} 
+
+From here on, be sure to use the consolidated `REPLICATION.md`!
+
+:::
 
 ## Standard steps
 
@@ -181,16 +188,16 @@ If the authors provided LaTeX files as part of the replication package, you may 
 
 ## Cleaning up
 
-- Clean up the REPLICATION.md - it should be factual, objective, and not written in the first person.
+- Clean up the `REPLICATION.md` - it should be factual, objective, and not written in the first person.
 - Copy-and-paste from the `code-check.xlsx`, including the column "Reproduced?" and any notes column, into the "Findings" part. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
-- Delete all of the instructional lines in REPLICATION.md  before finishing the report.
+- Delete all of the instructional lines in `REPLICATION.md`  before finishing the report.
 
 ## On Jira
 
 - Check that the `DataCitationSummary` field is filled out indicating how many data citations are in order: all, some, or none. 
 - Check that the `Report Location` is filled out. 
-  - If it is, do not change it.
-  - If for some reason, it is missing, enter the full URL from the repository, e.g. `https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md`
+  - If it is, do **not** change it.
+  - If for some reason, it is missing (very rare!), enter the full URL from the repository, e.g. `https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md`
 
 
 You can now submit your report for review by changing the status to `Under Review`

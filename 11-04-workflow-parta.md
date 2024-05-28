@@ -97,6 +97,9 @@ The local repository should now have the relevant LDI replication template mater
   git commit -m "Adding manuscript, DCAF, and code"
   git push
   ```
+- [ ] If the pipelines did not *split* the report, use the `3-split-report` pipeline before proceeding.
+  - Then `git pull` to get all the changes!
+
 ::::
 
 ::::{tab-item} BioHPC
@@ -107,6 +110,14 @@ It is not recommended to do this step on BioHPC.
 
 :::::
 
+
+:::{admonition} Be sure to use the `REPLICATION-PartA.md` for this section!
+:class: dropdown
+
+As part of the [automated processing](running-populate-icpsr), the `REPLICATION.md` is split into two parts, `REPLICATION-PartA.md` and `REPLICATION-PartB.md`. Somebody else may be working on Part B at the same time as you are working on Part A. Please be sure to use the correct file for your work.
+
+:::
+
 - [ ] Clean-up: Delete (`git rm`) unused files from the template! 
   - Example: `git rm README.md template-config.R` if the replication archive does not contain any R files (you can do this at any time before writing the **Preliminary Report**)
   -  Make this a commit:
@@ -116,7 +127,7 @@ It is not recommended to do this step on BioHPC.
   git push
   ```
 
-- The root of the repository should contain only our files (i.e., REPLICATION.md, etc.), the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket), and the code.
+- The root of the repository should contain only our files (i.e., `REPLICATION-PartA.md`, `REPLICATION-PartB.md` etc.), the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket), and the code.
   - Example:
     ```
     111234/
@@ -125,6 +136,8 @@ It is not recommended to do this step on BioHPC.
     PDF_Proof.PDF
     PII_stata_scan.do
     DataCodeAvailability.pdf
+    REPLICATION-PartA.md
+    REPLICATION-PartB.md
     REPLICATION.md
     ```
 
@@ -177,11 +190,11 @@ When assessing the data, please take care to distinguish
 ```
 
 - From the **README** provided by the authors, the **data section of the article itself**, or an **appendix**, establish a list of data sources used in the article. For each data source
-  - [ ] write the corresponding `Data description` section of REPLICATION.md. This should provide detail about the datasets 
+  - [ ] write the corresponding `Data description` section of `REPLICATION-PartA.md`. This should provide detail about the datasets 
     - If data are cited, copy and past the citation to the replication report, clarify which one you are referring to. Be sure to check  [AEA Sample References](https://www.aeaweb.org/journals/policies/sample-references) and the [additional guidance](https://social-science-data-editors.github.io/guidance/addtl-data-citation-guidance.html) to be sure it is a **data citation**, and not a citation to an article or a document describing the data!
   - [ ] check any provided URL, and verify if there is a **"Data Use Agreement", "Citation requirement", "License"** on the web page. Check any such data use agreement for conditions. These may require that the authors cite a particular paper, or cite the data in a particular way (check this), or that the authors may not actually redistribute (provide) the data (check this!). If you have doubts, check with your supervisor. 
   - [ ] Check that there is enough information to obtain the data in the README. Based on the README, you should be able to find, on the linked website, the data that you would need. (Ignore at this point that the data might be provided)
-- [ ] Add the list of data sources to the repository by committing the preliminary version of the REPLICATION.md (`git add`, `git commit`, `git push`)
+- [ ] Add the list of data sources to the repository by committing the preliminary version of the `REPLICATION-PartA.md` (`git add`, `git commit`, `git push`)
 - [ ] Fill out the `DataCitationSummary` field indicating how many data citations are in order: `all`, `some`, or `none`. 
 - [ ] Fill out the `Data Provenance` section 
   - Are the data in the openICPSR repository, or are they someplace else? "Various" is a legitimate answer if data are in various locations.
@@ -198,7 +211,7 @@ If the data are in openICPSR, you will now assess the deposit. The form in the t
 At this stage, you go back and review the Part A report again. Identify any actions you think the author should make to bring the deposit into compliance with our requirements.
 
 - There is sample language for commonly encountered problems in the [sample-language-report.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md), which is part of the replication package.
-  - Select an appropriate tag, and copy-paste into the REPLICATION.md
+  - Select an appropriate tag, and copy-paste into the `REPLICATION-PartA.md`
 
 
 ## Commit Part A to the repository
@@ -208,7 +221,7 @@ At this stage, you go back and review the Part A report again. Identify any acti
 
 
 ```bash
-git add REPLICATION.md
+git add REPLICATION-PartA.md
 git commit -m "Preliminary report"
 git push
 ```

@@ -5,4 +5,4 @@ You have now completed the report. It will be reviewed by a **Pre-Approver**, wh
 
 ## Next step
 
-Start the next case!
+[Start the next case!](workflow-assigned)
