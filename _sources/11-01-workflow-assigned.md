@@ -1,4 +1,5 @@
 
+(workflow-assigned)=
 # Assigned  
 
 When you are first assigned an issue, it will in the `Assigned` status. The first thing you must do is to either create a new repository (`Create repository`) , or reference an existing repository (if the issue is a [revision](aea-revision-reports-after-author-resubmission)) in order to move to `In Progress`.

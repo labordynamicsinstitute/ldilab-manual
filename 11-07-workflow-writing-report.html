@@ -189,7 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="11-01-workflow-assigned.html">Assigned</a></li>
 <li class="toctree-l2"><a class="reference internal" href="11-02-workflow-create-repo.html">Creating a repository and running pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="11-03-workflow-in-progress.html">In Progress</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11-04-parta.html">Preparing Part A - Preliminary Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-04-workflow-parta.html">Preparing Part A - Preliminary Report</a></li>
 <li class="toctree-l2"><a class="reference internal" href="11-05-preparing-to-run-code.html">Preparing to Run Code (Part B)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="11-06-running-code.html">Running Code (Part B)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Writing Report</a></li>
@@ -538,7 +538,7 @@ document.write(`
 </section>
 <section id="run-the-merge-pipeline">
 <h2>Run the Merge Pipeline<a class="headerlink" href="#run-the-merge-pipeline" title="Permalink to this heading">#</a></h2>
-<p>At this point, there will be two parts of the report: <code class="docutils literal notranslate"><span class="pre">REPLICATION-partA.md</span></code> and <code class="docutils literal notranslate"><span class="pre">REPLICATION-partB.md</span></code>. To facilitate further editing, we will merge these two parts into a single file, <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>. This can be done manually, or using the pipeline.</p>
+<p>At this point, there will be two parts of the report: <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartA.md</span></code> and <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartB.md</span></code>. To facilitate further editing, we will merge these two parts into a single file, <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>. This can be done manually, or using the pipeline.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
@@ -578,26 +578,30 @@ Manual Merge</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>Using the command line:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>REPLICATION-partA.md<span class="w"> </span>REPLICATION-partB.md<span class="w"> </span>&gt;<span class="w"> </span>REPLICATION.md
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>REPLICATION-PartA.md<span class="w"> </span>REPLICATION-PartB.md<span class="w"> </span>&gt;<span class="w"> </span>REPLICATION.md
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Manually, using a text editor:</p>
 <ul>
-<li><p>Open the two files <code class="docutils literal notranslate"><span class="pre">REPLICATION-partA.md</span></code> and <code class="docutils literal notranslate"><span class="pre">REPLICATION-partB.md</span></code> in a text editor</p></li>
-<li><p>Copy the contents of <code class="docutils literal notranslate"><span class="pre">REPLICATION-partB.md</span></code> and paste them at the end of <code class="docutils literal notranslate"><span class="pre">REPLICATION-partA.md</span></code></p></li>
+<li><p>Open the two files <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartA.md</span></code> and <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartB.md</span></code> in a text editor</p></li>
+<li><p>Copy the contents of <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartB.md</span></code> and paste them at the end of <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartA.md</span></code></p></li>
 <li><p>Save the file as <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code></p></li>
 </ul>
 </li>
 <li><p>In both cases, you now need to remove the parts, and add the combined file:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>rm<span class="w"> </span>REPLICATION-partA.md<span class="w"> </span>REPLICATION-partB.md
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>rm<span class="w"> </span>REPLICATION-PartA.md<span class="w"> </span>REPLICATION-PartB.md
 git<span class="w"> </span>add<span class="w"> </span>REPLICATION.md
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Merged parts A and B&quot;</span>
 git<span class="w"> </span>push
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>From here on, be sure to use the consolidated <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>!</p>
 </div>
 </section>
 <section id="standard-steps">
@@ -687,9 +691,9 @@ Figure 5 as reproduced:
 <section id="cleaning-up">
 <h2>Cleaning up<a class="headerlink" href="#cleaning-up" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Clean up the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a> - it should be factual, objective, and not written in the first person.</p></li>
+<li><p>Clean up the <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code> - it should be factual, objective, and not written in the first person.</p></li>
 <li><p>Copy-and-paste from the <code class="docutils literal notranslate"><span class="pre">code-check.xlsx</span></code>, including the column “Reproduced?” and any notes column, into the “Findings” part. Use the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table">Excel-to-Markdown plugin</a> for VSCode.</p></li>
-<li><p>Delete all of the instructional lines in <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>  before finishing the report.</p></li>
+<li><p>Delete all of the instructional lines in <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>  before finishing the report.</p></li>
 </ul>
 </section>
 <section id="on-jira">
@@ -698,8 +702,8 @@ Figure 5 as reproduced:
 <li><p>Check that the <code class="docutils literal notranslate"><span class="pre">DataCitationSummary</span></code> field is filled out indicating how many data citations are in order: all, some, or none.</p></li>
 <li><p>Check that the <code class="docutils literal notranslate"><span class="pre">Report</span> <span class="pre">Location</span></code> is filled out.</p>
 <ul>
-<li><p>If it is, do not change it.</p></li>
-<li><p>If for some reason, it is missing, enter the full URL from the repository, e.g. <code class="docutils literal notranslate"><span class="pre">https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md</span></code></p></li>
+<li><p>If it is, do <strong>not</strong> change it.</p></li>
+<li><p>If for some reason, it is missing (very rare!), enter the full URL from the repository, e.g. <code class="docutils literal notranslate"><span class="pre">https://bitbucket.org/aeaverification/aearep-123/src/master/REPLICATION.md</span></code></p></li>
 </ul>
 </li>
 </ul>

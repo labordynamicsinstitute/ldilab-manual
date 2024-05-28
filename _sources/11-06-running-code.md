@@ -1,8 +1,16 @@
 (running-code-partb)=
 # Running Code (Part B)
 
-In this stage, you will run the code, by using the provided data. The `REPLICATION.md`  is the report!
+In this stage, you will run the code, by using the provided data. The `REPLICATION-PartB.md`  is the report!
 
+
+
+:::{admonition} Be sure to use the `REPLICATION-PartB.md` for this section!
+:class: dropdown
+
+As part of the [automated processing](running-populate-icpsr), the `REPLICATION.md` is split into two parts, `REPLICATION-PartA.md` and `REPLICATION-PartB.md`. Somebody else may be working on Part A at the same time as you are working on Part B. Please be sure to use the correct file for your work.
+
+:::
 
 ## Signal that you are working on Part B
 
@@ -13,7 +21,7 @@ To signal that you are starting to run the code, you will now transition the JIR
 
 ## Principles
 
-Keep a log of what you do, what you find, and what does not work, in the `REPLICATION.md`, under *Replication Steps*.
+Keep a log of what you do, what you find, and what does not work, in the `REPLICATION-PartB.md`, under *Replication Steps*.
 
 - Document if you manually downloaded data from anywhere other than the authors' deposit.
 - Document any manual changes you made to the deposit structure (renamed file, created directory).
