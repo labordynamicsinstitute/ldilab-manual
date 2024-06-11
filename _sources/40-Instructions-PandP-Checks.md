@@ -151,10 +151,8 @@ TBD
     ```
   - *Content:* 
     ```
-    Thank you for uploading your code and data. We have
-    checked the deposit for compliance with the required metadata
-    elements. Please see the attached form for modifications to
-    make.
+    Thank you for uploading your code and data. We have checked the deposit for compliance with the required metadata
+    elements. Please see the attached form for modifications to make. Once all changes have been made, please change the status of your deposit to "Submit to AEA".
     ```
   - Attach the PDF from the issue to the communication log.
 
@@ -169,10 +167,8 @@ TBD
     ```
   - *Content:* 
     ```
-    Thank you for uploading your code and data. We have
-    checked the deposit for compliance with the required metadata
-    elements. Please see the attached form for modifications to
-    make.
+    Thank you for uploading your code and data. We have checked the deposit for compliance with the required metadata
+    elements. Please see the attached form for modifications to make. Once all changes have been made, please change the status of your deposit to "Submit to AEA".
     ```
   - Attach the PDF from the issue to the communication log.
 
