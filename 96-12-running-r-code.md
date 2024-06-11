@@ -51,7 +51,9 @@ The most convenient way to run from the command line is to use Rstudio. Open Rst
 
 - Click "OK"
 
+- Now open up the Terminal tab in the lower-left corner of the RStudio window:
 
+![Rstudio Terminal open](images/rstudio-terminal-open.png)
 
 
 
