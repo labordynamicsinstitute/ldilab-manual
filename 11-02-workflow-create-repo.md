@@ -113,9 +113,23 @@ Note that if you choose this pipeline, certain information is not generated (Sta
 ![running pipeline](images/jira-run-pipeline-running.png)
 
 - [ ] Once your pipeline is done, check that it is green.
-  - If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You, or the person assigned to `Part B`, may then need to do [the manual steps later](Manual1).
+  - If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. Check out the possible fixes below. You, or the person assigned to `Part B`, may then need to do [the manual steps later](Manual1).
 
 ![completed pipeline](images/jira-run-pipeline-finished.png)
+
+### Possible causes 
+
+#### Memory or CPU usage to high
+
+![failing pipeline in Stata](images/jira-fail-pipeline-stata.png)
+
+If your pipeline fails in the Stata step, click on the failed step, and scroll to the error message. If you see this:
+
+```
+./automations/10_run_stata_scanner.sh: line 64:   122 Killed                  stata-mp -b do ../PII_stata_scan.do
+```
+
+It is likely that the PII scan failed because the in-memory dataset is too large (too much memory was run, and the pipeline was killed). Try running the pipeline again with the "`w-big populate from ICPSR`" (see above).
 
 ## Next step
 
