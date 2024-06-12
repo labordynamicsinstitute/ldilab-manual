@@ -505,6 +505,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-deposit">Inspect the deposit</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-pipeline">Running the pipeline</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-the-pipeline">Monitoring the pipeline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-causes">Possible causes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-or-cpu-usage-to-high">Memory or CPU usage to high</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-step">Next step</a></li>
@@ -622,11 +626,23 @@ document.write(`
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Once your pipeline is done, check that it is green.</p>
 <ul>
-<li><p>If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. You, or the person assigned to <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">B</span></code>, may then need to do <a class="reference internal" href="11-05-preparing-to-run-code.html#manual1"><span class="std std-ref">the manual steps later</span></a>.</p></li>
+<li><p>If for some reason, it fails, the logs are available for your supervisor to inspect, and to help you. Check out the possible fixes below. You, or the person assigned to <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">B</span></code>, may then need to do <a class="reference internal" href="11-05-preparing-to-run-code.html#manual1"><span class="std std-ref">the manual steps later</span></a>.</p></li>
 </ul>
 </li>
 </ul>
 <p><img alt="completed pipeline" src="_images/jira-run-pipeline-finished.png" /></p>
+</section>
+<section id="possible-causes">
+<h3>Possible causes<a class="headerlink" href="#possible-causes" title="Permalink to this heading">#</a></h3>
+<section id="memory-or-cpu-usage-to-high">
+<h4>Memory or CPU usage to high<a class="headerlink" href="#memory-or-cpu-usage-to-high" title="Permalink to this heading">#</a></h4>
+<p><img alt="failing pipeline in Stata" src="_images/jira-fail-pipeline-stata.png" /></p>
+<p>If your pipeline fails in the Stata step, click on the failed step, and scroll to the error message. If you see this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">automations</span><span class="o">/</span><span class="mi">10</span><span class="n">_run_stata_scanner</span><span class="o">.</span><span class="n">sh</span><span class="p">:</span> <span class="n">line</span> <span class="mi">64</span><span class="p">:</span>   <span class="mi">122</span> <span class="n">Killed</span>                  <span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">b</span> <span class="n">do</span> <span class="o">../</span><span class="n">PII_stata_scan</span><span class="o">.</span><span class="n">do</span>
+</pre></div>
+</div>
+<p>It is likely that the PII scan failed because the in-memory dataset is too large (too much memory was run, and the pipeline was killed). Try running the pipeline again with the “<code class="docutils literal notranslate"><span class="pre">w-big</span> <span class="pre">populate</span> <span class="pre">from</span> <span class="pre">ICPSR</span></code>” (see above).</p>
+</section>
 </section>
 </section>
 <section id="next-step">
@@ -701,6 +717,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-deposit">Inspect the deposit</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-pipeline">Running the pipeline</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-the-pipeline">Monitoring the pipeline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-causes">Possible causes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-or-cpu-usage-to-high">Memory or CPU usage to high</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-step">Next step</a></li>
