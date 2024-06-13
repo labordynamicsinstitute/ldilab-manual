@@ -502,6 +502,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-openicpsr">Basics of openICPSR</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-from-openicpsr">Downloading from openICPSR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-it-fails">When it fails</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminders">Reminders</a></li>
 </ul>
             </nav>
@@ -552,6 +553,19 @@ Downloading using a script</label><div class="sd-tab-content docutils">
 <li><p><code class="docutils literal notranslate"><span class="pre">mylogin&#64;cornell.edu</span></code>  is the login you use on the openICPSR website (typically, <code class="docutils literal notranslate"><span class="pre">netid&#64;cornell.edu</span></code>)</p></li>
 </ul>
 <p>See <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">appendix</span></a> on how to set up the environment to make the script simpler (i.e., allow the short form to run).</p>
+<p><strong>Expected output</strong></p>
+<p>You should see the following output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openICPSR</span> <span class="n">downloader</span> <span class="n">v2024</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">01</span>
+<span class="n">No</span> <span class="n">debug</span><span class="p">:</span><span class="kc">None</span>
+<span class="n">Getting</span> <span class="n">session</span> <span class="n">cookies</span><span class="o">...</span>
+<span class="n">Initiating</span> <span class="n">OAuth</span> <span class="n">flow</span><span class="o">...</span>
+<span class="n">Logging</span> <span class="ow">in</span><span class="o">...</span>
+<span class="n">Accessing</span> <span class="n">files</span><span class="o">...</span>
+<span class="n">Getting</span> <span class="n">file</span> <span class="n">info</span><span class="o">...</span>
+<span class="n">Downloading</span> <span class="n">file</span><span class="p">:</span> <span class="mf">123456.</span><span class="n">zip</span>
+</pre></div>
+</div>
+<p>If you see anything other than <code class="docutils literal notranslate"><span class="pre">123456.zip</span></code> (replace with your openICPSR project number), then consult the debugging steps below.</p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
@@ -564,6 +578,10 @@ Downloading a project manually</label><div class="sd-tab-content docutils">
 <p><img alt="" src="_images/openICPSRexample.png" /></p>
 </div>
 </div>
+</section>
+<section id="when-it-fails">
+<h2>When it fails<a class="headerlink" href="#when-it-fails" title="Permalink to this heading">#</a></h2>
+<p>(provide some guidance when it fails)</p>
 </section>
 <section id="reminders">
 <h2>Reminders<a class="headerlink" href="#reminders" title="Permalink to this heading">#</a></h2>
@@ -641,6 +659,7 @@ Downloading a project manually</label><div class="sd-tab-content docutils">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-openicpsr">Basics of openICPSR</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-from-openicpsr">Downloading from openICPSR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-it-fails">When it fails</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminders">Reminders</a></li>
 </ul>
   </nav></div>
