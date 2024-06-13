@@ -45,6 +45,24 @@ where
 
 See [appendix](setup-bash) on how to set up the environment to make the script simpler (i.e., allow the short form to run).
 
+**Expected output**
+
+You should see the following output:
+
+```
+openICPSR downloader v2024-02-01
+No debug:None
+Getting session cookies...
+Initiating OAuth flow...
+Logging in...
+Accessing files...
+Getting file info...
+Downloading file: 123456.zip
+```
+
+If you see anything other than `123456.zip` (replace with your openICPSR project number), then consult the debugging steps below.
+
+
 :::
 
 :::{tab-item} Downloading a project manually
@@ -58,6 +76,10 @@ See [appendix](setup-bash) on how to set up the environment to make the script s
 :::
 
 ::::
+
+## When it fails
+
+(provide some guidance when it fails)
 
 ## Reminders
 
