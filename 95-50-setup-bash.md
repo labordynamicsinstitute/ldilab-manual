@@ -45,8 +45,10 @@ export ICPSR_EMAIL=mylogin@cornell.edu
 export ICPSR_PASS="supersecretpwd"
 # env for Bitbucket
 export P_BITBUCKET_PAT="supersecretPAT" 
-export P_BITBUCKET_USERNAME=netid-replace-me
+export P_BITBUCKET_USERNAME=bitbucketusername
 ```
+
+where you can find your `bitbutcketusername` in the Bitbucket Profile (top-right corner, gear icon, etc.)
 
 
 This will 
