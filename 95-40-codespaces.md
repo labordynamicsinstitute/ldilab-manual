@@ -11,16 +11,20 @@
 - `P_BITBUCKET_PAT`: Your personal access token from Bitbucket (see [here](bitbucket-authentication))
 - `P_BITBUCKET_USERNAME`: Your login on Bitbucket
 
-The others are only needed in specific circumstancs.
+The others are only needed in specific circumstances.
+
+Then choose to apply them to specific repositories:
+
+![Codespaces secrets in repositories](images/codespaces-secrets-repositories.png)
 
 ## Start an environment on Github Codespaces
 
-- Go to [https://github.com/labordynamicsinstitute/codespaces-stata-skeleton](https://github.com/labordynamicsinstitute/codespaces-stata-skeleton) and select "Code -> Codespaces -> Create Codespace on main"
+- Go to [https://github.com/labordynamicsinstitute/codespaces-stata-skeleton-private](https://github.com/labordynamicsinstitute/codespaces-stata-skeleton-private) and select "Code -> Codespaces -> Create Codespace on main"
 - When you have one running, you can re-use the previous one. It will show in the popup, or on [https://github.com/codespaces](https://github.com/codespaces).
 
 Alternate:
 
-- Go to [https://github.com/codespaces](https://github.com/codespaces) and select `labordynamicsinstitute/codespaces-stata-skeleton` from the dropdown menu (you may need to search).
+- Go to [https://github.com/codespaces](https://github.com/codespaces) and select `labordynamicsinstitute/codespaces-stata-skeleton-private` or `labordynamicsinstitute/codespaces-stata-r-skeleton-private` from the dropdown menu (you may need to search).
 
 If neither of those options appear, contact the LDI Lab Administrator.
 
