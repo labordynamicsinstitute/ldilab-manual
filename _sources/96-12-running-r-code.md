@@ -10,6 +10,11 @@ Although, there are plenty of ways to run code in R, our goal with these instruc
     - When a replicator submits the report, a preapprover (and an approver) needs to verify how the code ran. It is to ensure that any discrepancies we find are not due to mistakes on our end.
     - A log file is crucial for this verification. Otherwise, preapprovers and approvers have to run the code again to verify which is not an ideal use of time, nor an efficient way to process the case.
 
+:::{admonition} The following instructions are for Windows.
+
+See [Instructions for BioHPC](r-for-biohpc) for running R code generally on Linux, and specifically on BioHPC.
+
+:::
 
 ## Step 1: check for a "main" .R file
 
