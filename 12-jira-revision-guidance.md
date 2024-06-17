@@ -79,6 +79,24 @@ It will update the code in place. You don't have to do anything except wait! Onc
 
 ### Updating Bitbucket repository with latest code and documents
 
+::::{admonition} If the authors have submitted a DIFFERENT openICPSR deposit...
+:class: warning dropdown
+
+... then you will need to rename the directory containing the author code in the repository. 
+This is conveniently done using the `5-rename-directory` pipeline:
+
+![select rename pipeline](images/jira-run-pipeline-rename.png)
+
+where the fields should be straightforward to fill in.
+
+
+If for some reason you cannot run the pipeline, you will need to do this manually. `git mv` the directory containing the old deposit code to the new deposit code. E.g.
+
+```bash
+git mv 12345 67890
+```
+
+::::
 
 :::::{tab-set}
 
@@ -108,6 +126,7 @@ Similar to the original workflow, you will need to decide where you will run cod
 ```{admonition} Please note:
 
 If you are **returning** to the previous working area, be sure to run `git pull` in the working area before doing anything else!
+
 
 ```
 
