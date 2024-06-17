@@ -611,6 +611,17 @@ document.write(`
 </section>
 <section id="updating-bitbucket-repository-with-latest-code-and-documents">
 <h3>Updating Bitbucket repository with latest code and documents<a class="headerlink" href="#updating-bitbucket-repository-with-latest-code-and-documents" title="Permalink to this heading">#</a></h3>
+<div class="warning dropdown admonition">
+<p class="admonition-title">If the authors have submitted a DIFFERENT openICPSR deposit…</p>
+<p>… then you will need to rename the directory containing the author code in the repository.
+This is conveniently done using the <code class="docutils literal notranslate"><span class="pre">5-rename-directory</span></code> pipeline:</p>
+<p><img alt="select rename pipeline" src="_images/jira-run-pipeline-rename.png" /></p>
+<p>where the fields should be straightforward to fill in.</p>
+<p>If for some reason you cannot run the pipeline, you will need to do this manually. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mv</span></code> the directory containing the old deposit code to the new deposit code. E.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>mv<span class="w"> </span><span class="m">12345</span><span class="w"> </span><span class="m">67890</span>
+</pre></div>
+</div>
+</div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
