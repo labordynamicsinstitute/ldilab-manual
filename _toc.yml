@@ -59,12 +59,15 @@ parts:
       - file: 96-01-using-config-stata
       - file: 96-02-running-stata-code
       - file: 96-03-stata-scan-packages
+      - file: 96-04-stata-on-linux
     - file: 96-10-using-R
       sections:
       - file: 96-11-using-config-r
       - file: 96-12-running-r-code
+      - file: 96-14-r-on-biohpc
     - file: 96-20-using-matlab
     - file: 96-30-running-python-jupyter
+    - file: 96-40-using-julia
     - file: 96-50-using-docker
     - file: 96-70-using-mathematica
     - file: 96-80-using-ox
