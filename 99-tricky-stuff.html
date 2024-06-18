@@ -557,7 +557,74 @@ git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </sp
 <li><p><a class="reference external" href="https://support.atlassian.com/bitbucket-cloud/docs/use-bfg-to-migrate-a-repo-to-git-lfs/">Instructions to migrate to LFS</a></p></li>
 </ul>
 <p>However, we do not want to migrate to LFS, rather, we want to delete the big files. See the command line option <code class="docutils literal notranslate"><span class="pre">-D</span></code> to <code class="docutils literal notranslate"><span class="pre">bfg</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Danger! Do not proceed unless you <strong>really</strong> understand what you are doing!</p>
+</div>
+<p>Sample session:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the original cloned repository for aearep-4406</span>
+git<span class="w"> </span>rm<span class="w"> </span>data/path/to/VERYLARGEFILE
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;Removing big files&#39;</span><span class="w"> </span>-a
+git<span class="w"> </span>push
+<span class="nb">cd</span><span class="w"> </span>..
+<span class="c1"># The &quot;--bare&quot; is very important here!</span>
+git<span class="w"> </span>clone<span class="w"> </span>--bare<span class="w"> </span>git@bitbucket.org:aeaverification/aearep-4406.git
+java<span class="w"> </span>-jar<span class="w"> </span>bfg-1.14.0.jar<span class="w"> </span>-D<span class="w"> </span><span class="s2">&quot;*.rds&quot;</span><span class="w"> </span>aearep-4406.git/
+<span class="c1"># The report will detail what was removed</span>
+<span class="nb">cd</span><span class="w"> </span>aearep-4406.git
+git<span class="w"> </span>reflog<span class="w"> </span>expire<span class="w"> </span>--expire<span class="o">=</span>now<span class="w"> </span>--all<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>gc<span class="w"> </span>--prune<span class="o">=</span>now<span class="w"> </span>--aggressive
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master<span class="w"> </span>--force
+</pre></div>
+</div>
+<p>Sample report:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cleaning</span>
+<span class="o">--------</span>
+
+<span class="n">Found</span> <span class="mi">13</span> <span class="n">commits</span>
+<span class="n">Cleaning</span> <span class="n">commits</span><span class="p">:</span>       <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">13</span><span class="o">/</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">Cleaning</span> <span class="n">commits</span> <span class="n">completed</span> <span class="ow">in</span> <span class="mi">90</span> <span class="n">ms</span><span class="o">.</span>
+
+<span class="n">Updating</span> <span class="mi">3</span> <span class="n">Refs</span>
+<span class="o">---------------</span>
+
+	<span class="n">Ref</span>                 <span class="n">Before</span>     <span class="n">After</span>   
+	<span class="o">---------------------------------------</span>
+	<span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">master</span> <span class="o">|</span> <span class="n">bb7f0f55</span> <span class="o">|</span> <span class="mi">6</span><span class="n">d879f82</span>
+	<span class="n">refs</span><span class="o">/</span><span class="n">tags</span><span class="o">/</span><span class="n">update1</span> <span class="o">|</span> <span class="mi">2957723</span><span class="n">c</span> <span class="o">|</span> <span class="mf">644805e8</span>
+	<span class="n">refs</span><span class="o">/</span><span class="n">tags</span><span class="o">/</span><span class="n">update2</span> <span class="o">|</span> <span class="n">dfe21158</span> <span class="o">|</span> <span class="mf">95801e58</span>
+
+<span class="n">Updating</span> <span class="n">references</span><span class="p">:</span>    <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">...</span><span class="n">Ref</span> <span class="n">update</span> <span class="n">completed</span> <span class="ow">in</span> <span class="mi">17</span> <span class="n">ms</span><span class="o">.</span>
+<span class="o">...</span>
+	                        <span class="n">Before</span>     <span class="n">After</span>   
+	<span class="o">-------------------------------------------</span>
+	<span class="n">First</span> <span class="n">modified</span> <span class="n">commit</span> <span class="o">|</span> <span class="mi">86</span><span class="n">b4bcc3</span> <span class="o">|</span> <span class="mi">1098</span><span class="n">d6cb</span>
+	<span class="n">Last</span> <span class="n">dirty</span> <span class="n">commit</span>     <span class="o">|</span> <span class="n">f769cec6</span> <span class="o">|</span> <span class="n">cfcaead8</span>
+
+<span class="n">Deleted</span> <span class="n">files</span>
+<span class="o">-------------</span>
+
+	<span class="n">Filename</span>                  <span class="n">Git</span> <span class="nb">id</span>             
+	<span class="o">---------------------------------------------</span>
+	<span class="n">aa_fc_m</span><span class="o">.</span><span class="n">rds</span>             <span class="o">|</span> <span class="n">f1c98be6</span> <span class="p">(</span><span class="mi">56</span> <span class="n">B</span> <span class="p">)</span>   
+	<span class="n">aa_fc_nr</span><span class="o">.</span><span class="n">rds</span>            <span class="o">|</span> <span class="mi">7</span><span class="n">b82b717</span> <span class="p">(</span><span class="mi">63</span> <span class="n">B</span> <span class="p">)</span>   
+	<span class="n">altmech</span><span class="o">.</span><span class="n">rds</span>             <span class="o">|</span> <span class="mf">9e02</span><span class="n">cdbc</span> <span class="p">(</span><span class="mf">2.9</span> <span class="n">KB</span><span class="p">)</span>  
+	<span class="n">arrests</span><span class="o">-</span><span class="n">aa</span><span class="o">-</span><span class="n">outcomes</span><span class="o">.</span><span class="n">rds</span> <span class="o">|</span> <span class="n">bb6b87ba</span> <span class="p">(</span><span class="mf">17.0</span> <span class="n">MB</span><span class="p">)</span> 
+	<span class="n">arrests_by_NUID</span><span class="o">.</span><span class="n">rds</span>     <span class="o">|</span> <span class="mi">12</span><span class="n">f4b2f2</span> <span class="p">(</span><span class="mf">2.0</span> <span class="n">MB</span><span class="p">)</span>  
+	<span class="n">arrests_by_NUID180</span><span class="o">.</span><span class="n">rds</span>  <span class="o">|</span> <span class="mi">1</span><span class="n">d65d2c9</span> <span class="p">(</span><span class="mf">2.5</span> <span class="n">MB</span><span class="p">)</span>  
+	<span class="n">base_cohorts</span><span class="o">.</span><span class="n">rds</span>        <span class="o">|</span> <span class="mi">03</span><span class="n">ac41c8</span> <span class="p">(</span><span class="mf">80.0</span> <span class="n">KB</span><span class="p">)</span> 
+	<span class="n">cncomp</span><span class="o">.</span><span class="n">rds</span>              <span class="o">|</span> <span class="n">b1691139</span> <span class="p">(</span><span class="mf">6.0</span> <span class="n">KB</span><span class="p">)</span>  
+	<span class="n">compare_gr</span><span class="o">.</span><span class="n">rds</span>          <span class="o">|</span> <span class="n">ed3a3380</span> <span class="p">(</span><span class="mi">554</span> <span class="n">B</span> <span class="p">)</span>  
+	<span class="n">error_df</span><span class="o">.</span><span class="n">rds</span>            <span class="o">|</span> <span class="mi">0874</span><span class="n">a70c</span> <span class="p">(</span><span class="mf">600.8</span> <span class="n">KB</span><span class="p">)</span>
+	<span class="n">extra_comps</span><span class="o">.</span><span class="n">rds</span>         <span class="o">|</span> <span class="mi">1</span><span class="n">bcd3f3d</span> <span class="p">(</span><span class="mf">299.5</span> <span class="n">KB</span><span class="p">)</span>
+	<span class="n">fe_list</span><span class="o">.</span><span class="n">rds</span>             <span class="o">|</span> <span class="mi">018</span><span class="n">ba52c</span> <span class="p">(</span><span class="mi">349</span> <span class="n">B</span> <span class="p">)</span>  
+	<span class="n">fes_by_NUID</span><span class="o">.</span><span class="n">rds</span>         <span class="o">|</span> <span class="n">a7bd7f27</span> <span class="p">(</span><span class="mf">3.7</span> <span class="n">MB</span><span class="p">)</span>  
+	<span class="n">fes_by_NUID180</span><span class="o">.</span><span class="n">rds</span>      <span class="o">|</span> <span class="mi">4</span><span class="n">cfb0bae</span> <span class="p">(</span><span class="mf">453.2</span> <span class="n">KB</span><span class="p">)</span>
+	<span class="n">full_cohorts</span><span class="o">.</span><span class="n">rds</span>        <span class="o">|</span> <span class="n">e44c10c3</span> <span class="p">(</span><span class="mf">1.5</span> <span class="n">MB</span><span class="p">)</span>  
+	<span class="o">...</span>
+
+
+<span class="n">In</span> <span class="n">total</span><span class="p">,</span> <span class="mi">27</span> <span class="nb">object</span> <span class="n">ids</span> <span class="n">were</span> <span class="n">changed</span><span class="o">.</span> <span class="n">Full</span> <span class="n">details</span> <span class="n">are</span> <span class="n">logged</span> <span class="n">here</span><span class="p">:</span>
 </pre></div>
 </div>
 </section>
