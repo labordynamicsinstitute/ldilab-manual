@@ -44,5 +44,79 @@ If there are various files scattered throughout the history of the repository, y
 
 However, we do not want to migrate to LFS, rather, we want to delete the big files. See the command line option `-D` to `bfg`. 
 
+:::{warning}
+
+Danger! Do not proceed unless you **really** understand what you are doing!
+
+:::
+
+Sample session:
 
 ```bash
+# In the original cloned repository for aearep-4406
+git rm data/path/to/VERYLARGEFILE
+git commit -m 'Removing big files' -a
+git push
+cd ..
+# The "--bare" is very important here!
+git clone --bare git@bitbucket.org:aeaverification/aearep-4406.git
+java -jar bfg-1.14.0.jar -D "*.rds" aearep-4406.git/
+# The report will detail what was removed
+cd aearep-4406.git
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
+git push origin master --force
+```
+
+Sample report:
+
+```
+Cleaning
+--------
+
+Found 13 commits
+Cleaning commits:       100% (13/13)
+Cleaning commits completed in 90 ms.
+
+Updating 3 Refs
+---------------
+
+	Ref                 Before     After   
+	---------------------------------------
+	refs/heads/master | bb7f0f55 | 6d879f82
+	refs/tags/update1 | 2957723c | 644805e8
+	refs/tags/update2 | dfe21158 | 95801e58
+
+Updating references:    100% (3/3)
+...Ref update completed in 17 ms.
+...
+	                        Before     After   
+	-------------------------------------------
+	First modified commit | 86b4bcc3 | 1098d6cb
+	Last dirty commit     | f769cec6 | cfcaead8
+
+Deleted files
+-------------
+
+	Filename                  Git id             
+	---------------------------------------------
+	aa_fc_m.rds             | f1c98be6 (56 B )   
+	aa_fc_nr.rds            | 7b82b717 (63 B )   
+	altmech.rds             | 9e02cdbc (2.9 KB)  
+	arrests-aa-outcomes.rds | bb6b87ba (17.0 MB) 
+	arrests_by_NUID.rds     | 12f4b2f2 (2.0 MB)  
+	arrests_by_NUID180.rds  | 1d65d2c9 (2.5 MB)  
+	base_cohorts.rds        | 03ac41c8 (80.0 KB) 
+	cncomp.rds              | b1691139 (6.0 KB)  
+	compare_gr.rds          | ed3a3380 (554 B )  
+	error_df.rds            | 0874a70c (600.8 KB)
+	extra_comps.rds         | 1bcd3f3d (299.5 KB)
+	fe_list.rds             | 018ba52c (349 B )  
+	fes_by_NUID.rds         | a7bd7f27 (3.7 MB)  
+	fes_by_NUID180.rds      | 4cfb0bae (453.2 KB)
+	full_cohorts.rds        | e44c10c3 (1.5 MB)  
+	...
+
+
+In total, 27 object ids were changed. Full details are logged here:
+```
+
