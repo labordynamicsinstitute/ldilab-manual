@@ -111,6 +111,7 @@ parts:
       - file: 98-03-correspondence-requesting-restricted-access-data
       - file: 98-04-correspondence-external-reproducibility-check
       - file: 98-05-clarification-privately-provided
+    - file: 99-tricky-stuff
     - file: LDI-Replication-Lab-Code-of-Conduct
     - file: Video-etiquette
     - file: 99-References
