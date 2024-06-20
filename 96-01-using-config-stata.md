@@ -55,7 +55,7 @@ Any other paths defined or used within the replication package should be relativ
 
 ### Opening a log file with current date and time
 
-Since we usually run the program several times until the code is completely debugged (!), we would like to record all the runs. Therefore, we record the initial time we start running the code and use it in the name of the log file. Area 2 calls current date and time as local macro and opens the log file.
+Since we usually run the program several times until the code is completely [debugged](debugging-stata) (!), we would like to record all the runs. Therefore, we record the initial time we start running the code and use it in the name of the log file. Area 2 calls current date and time as local macro and opens the log file.
 
 - line 64-67: calls the current date and time as local macro
 - line 69: starts the log file, with an internal name `ldi` which prevents collision with any log files opened by authors.

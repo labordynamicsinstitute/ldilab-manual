@@ -333,6 +333,6 @@ If you decide the code needs to be run in pieces (this is NOT ideal)
 - In the master .do file, you can comment out (using the symbol \*) the programs that are not to be run and save the master. 
 - Then, you can right click on the master and select the option ``Execute (do)`.
 
-When debugging is complete, you can uncomment all programs in the master and make a clean run, using again `Execute Quietly (run)`.
+When [debugging](debugging-stata) is complete, you can uncomment all programs in the master and make a clean run, using again `Execute Quietly (run)`.
 
 > Consider how much time a complete run would take before you run everything one last time. If it would take too long, you may want to skip a complete run, but ensure that you have log files for all partial runs. Make a note of this in the report.
