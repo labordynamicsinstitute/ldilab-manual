@@ -138,11 +138,11 @@ Please note that anything saved in the C drive (Documents, Desktop, or Download 
 - Add or Edit a new connection
 - Change "Computer" (*Windows client*) or "PC Name" (*macOS*) text box to IP address below (depending on Mac or Windows). Enter username as `ciserrsch\netid_RS` when signing in. ex: `ciserrsch\jrg363_RS`
 
-::::{admonition} IP Address
+:::{admonition} IP Address
 
 **128.84.8.93**
 
-::::
+:::
 
 ![RedCloud](images/RedCloudPC.png)
 ![RedCloud2](images/RedCloudPC2.png)
@@ -159,7 +159,8 @@ Network drives are already mapped in RedCloud. To access the shared "L-Drive", f
 
 ![RedCloudL](images/RedCloudLdrive.png)
 
-:::
+::::
+
 
 :::::
 
