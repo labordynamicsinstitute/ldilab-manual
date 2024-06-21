@@ -141,6 +141,7 @@ Please note that anything saved in the C drive (Documents, Desktop, or Download 
 :::{admonition} IP Address
 
 **128.84.8.93**
+
 :::
 
 ![RedCloud](images/RedCloudPC.png)
@@ -158,7 +159,8 @@ Network drives are already mapped in RedCloud. To access the shared "L-Drive", f
 
 ![RedCloudL](images/RedCloudLdrive.png)
 
-:::
+::::
+
 
 :::::
 
