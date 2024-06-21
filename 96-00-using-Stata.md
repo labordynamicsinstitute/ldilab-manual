@@ -6,6 +6,6 @@ In this section, we will show you a few things related specifically to running c
 
 :::{admonition} The following instructions are for Windows.
 
-See [Instructions for BioHPC](stata-for-biohpc) for running Stata code generally on Linux, and specifically on BioHPC.
+See [Instructions for BioHPC](stata-on-biohpc) for running Stata code generally on Linux, and specifically on BioHPC.
 
 :::
