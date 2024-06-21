@@ -12,7 +12,7 @@ Although, there are plenty of ways to run code in R, our goal with these instruc
 
 :::{admonition} The following instructions are for Windows.
 
-See [Instructions for BioHPC](r-for-biohpc) for running R code generally on Linux, and specifically on BioHPC.
+See [Instructions for BioHPC](r-on-biohpc) for running R code generally on Linux, and specifically on BioHPC.
 
 :::
 
