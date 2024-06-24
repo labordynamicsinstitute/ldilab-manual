@@ -52,6 +52,12 @@ We want to capture the latest code, and generate a listing of all the files in t
 
 You should now open the Bitbucket report, and identify the changes that the authors were expected to make. How to do this will vary. In some cases, you may be able to simply inspect the deposit, in others, you may need to download the deposit again, and verify the changes made, as you might do for a full revision (see [Revision Reports](aea-revision-reports-after-author-resubmission)).
 
+::::{warning}
+
+Except in extremely rare cases, do **not** re-run code.
+
+::::
+
 - Open the report. You can do this by checking out the Bitbucket repo, or by clicking on the [`Report URL`] field.
   - Check the "Summary" (at the top), as well as the "Reason for incomplete reproducibility" (at the bottom, and in the Jira issue)
 - Copy all the items in `Action Items (open ICPSR)` (disregard the manuscript section, this is checked by the editorial office)
@@ -71,6 +77,21 @@ You should now open the Bitbucket report, and identify the changes that the auth
   - - See if the reason for non-compliance (usually mentioned in the report, and at least in the comments) is resolved, **consult with the Data Editor**, then uncheck that box.
   - If the deposit is **not** in "Submitted" status, choose the appropriate variant of the **Signoff** message.
 
+
+::::{admonition} How do you know that the changes are sufficient?
+:class: note
+
+For instance, the last report might have said:
+
+```
+- [REQUIRED] Please provide debugged code, addressing the issues identified in this report. 
+```
+
+and the report will have contained some mention of the bugs found. Without re-running the code, how can we assess this? 
+
+Inspect the code, in particular the changes made to the code (see `Commits` tab on Bitbucket and navigate to the file that was a problem), and see if it is **plausible** that the changes fix the bug. In general, we trust that the authors, provided with a list where bugs occur, are able to fix these types of bugs at this stage.
+
+::::
 
 ### Insufficient Changes
 
