@@ -511,7 +511,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-deposit">Inspect the deposit</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-pipeline">Running the pipeline</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-the-pipeline">Monitoring the pipeline</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-causes">Possible causes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-errors-for-pipeline-failure">Possible errors for pipeline failure</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#files-too-big">Files too big</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-or-cpu-usage-to-high">Memory or CPU usage to high</a></li>
 </ul>
 </li>
@@ -638,8 +639,22 @@ document.write(`
 </ul>
 <p><img alt="completed pipeline" src="_images/jira-run-pipeline-finished.png" /></p>
 </section>
-<section id="possible-causes">
-<h3>Possible causes<a class="headerlink" href="#possible-causes" title="Permalink to this heading">#</a></h3>
+<section id="possible-errors-for-pipeline-failure">
+<h3>Possible errors for pipeline failure<a class="headerlink" href="#possible-errors-for-pipeline-failure" title="Permalink to this heading">#</a></h3>
+<section id="files-too-big">
+<h4>Files too big<a class="headerlink" href="#files-too-big" title="Permalink to this heading">#</a></h4>
+<p>Bitbucket might complain in the <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">everything</span> <span class="pre">back</span></code> step that</p>
+<blockquote>
+<div><p>remote: Your push has been blocked because it includes at least one file that is 100 MB or larger.</p>
+</div></blockquote>
+<p><img alt="failing pipeline file too big" src="_images/bitbucket-error-file-too-big.png" /></p>
+<p><strong>Solution</strong></p>
+<p>Investigate which files are being captured that are too big. The list of file endings that Git should ignore is kept in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/.gitignore"><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file</a>. Once you have figured out which files are causing the problem, you should exclude them:</p>
+<ul class="simple">
+<li><p>in your repository, by adding them into the repository-specific <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p></li>
+<li><p>in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/.gitignore">template <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file</a>, by suggesting an edit. Click on <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/.gitignore">this link</a>, then choose “<code class="docutils literal notranslate"><span class="pre">Edit</span></code>”, and add the extension to the file (you will need a Github account to create a pull request).</p></li>
+</ul>
+</section>
 <section id="memory-or-cpu-usage-to-high">
 <h4>Memory or CPU usage to high<a class="headerlink" href="#memory-or-cpu-usage-to-high" title="Permalink to this heading">#</a></h4>
 <p><img alt="failing pipeline in Stata" src="_images/jira-fail-pipeline-stata.png" /></p>
@@ -723,7 +738,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-deposit">Inspect the deposit</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-pipeline">Running the pipeline</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-the-pipeline">Monitoring the pipeline</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-causes">Possible causes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-errors-for-pipeline-failure">Possible errors for pipeline failure</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#files-too-big">Files too big</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-or-cpu-usage-to-high">Memory or CPU usage to high</a></li>
 </ul>
 </li>
