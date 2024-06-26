@@ -117,7 +117,22 @@ Note that if you choose this pipeline, certain information is not generated (Sta
 
 ![completed pipeline](images/jira-run-pipeline-finished.png)
 
-### Possible causes 
+### Possible errors for pipeline failure
+
+#### Files too big
+
+Bitbucket might complain in the `Commit everything back` step that
+
+> remote: Your push has been blocked because it includes at least one file that is 100 MB or larger.
+
+![failing pipeline file too big](images/bitbucket-error-file-too-big.png)
+
+**Solution**
+
+Investigate which files are being captured that are too big. The list of file endings that Git should ignore is kept in the [`.gitignore` file](https://github.com/AEADataEditor/replication-template/blob/master/.gitignore). Once you have figured out which files are causing the problem, you should exclude them:
+
+- in your repository, by adding them into the repository-specific `.gitignore`
+- in the [template `.gitignore` file](https://github.com/AEADataEditor/replication-template/blob/master/.gitignore), by suggesting an edit. Click on [this link](https://github.com/AEADataEditor/replication-template/blob/master/.gitignore), then choose "`Edit`", and add the extension to the file (you will need a Github account to create a pull request).
 
 #### Memory or CPU usage to high
 
