@@ -1,5 +1,17 @@
 # AEA: Monitoring Pending openICPSR Changes
 
+
+## Pre-requisites (JIRA)
+
+
+:::{admonition} One-time administrative setup
+:class: dropdown
+
+- [ ] (Administrator for Project) needs to [add user](https://aeadataeditors.atlassian.net/plugins/servlet/project-config/AEAREP/people) to `Assessor` group. 
+
+:::
+
+
 ## Background
 
 Many cases which the Lab reviews receive a recommendation ([`MCRecommendationV2`] on Jira) of `Accept - with Changes.` What this means is that the changes which are requested do not constitute a complete revision from the authors. Instead of re-submitting a complete revision for review by the Lab, the authors will make any necessary changes to the deposit directly on openICPSR. Separately, any changes to the manuscript/appendix will be made at the copyediting stage by the editorial office, without further interaction with the Lab.
