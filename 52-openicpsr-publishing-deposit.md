@@ -19,9 +19,18 @@ Always check with your supervisor before attempting to publish a deposit.
 
 ## Pre-requisites (JIRA)
 
+:::{note}
 - [ ] The openICPSR project number must be filled out. 
 - [ ] The correct `openICPSR version` number needs to be selected.
 - [ ] An `openICPSR DOI` needs to be present (if necessary, run a script).
+:::
+
+:::{admonition} One-time administrative setup
+:class: dropdown
+
+- [ ] (Administrator for Project) needs to [add user](https://aeadataeditors.atlassian.net/plugins/servlet/project-config/AEAREP/people) to `Publisher` group. 
+
+:::
 
 ## Move to "Processing Publication"
 
