@@ -9,6 +9,26 @@ Go to [https://www.openicpsr.org/openicpsr/](https://www.openicpsr.org/openicpsr
 - You can link your account with your Netid via Google student authentication BUT:
 - You must still create a separate password for use by the [automation scripts](setup-bash).
 
+:::{warning}
+
+If you run the script and get an error message like the following:
+
+```
+Downloading file: icpsr-123456.zip
+Traceback (most recent call last):
+  File "/workspaces/codespaces-stata-r-skeleton-private/aearep-nnnn/./tools/download_openicpsr-private.py", line 151, in <module>
+    with zipfile.ZipFile(outfile) as z:
+  File "/usr/lib/python3.10/zipfile.py", line 1269, in __init__
+    self._RealGetContents()
+  File "/usr/lib/python3.10/zipfile.py", line 1336, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+```
+
+it means that you have not set up authentication as described below.
+
+:::
+
 ## Creating an openICPSR-specific password when you linked your accounts
 
 - Go to [https://www.openicpsr.org/openicpsr/](https://www.openicpsr.org/openicpsr/). 

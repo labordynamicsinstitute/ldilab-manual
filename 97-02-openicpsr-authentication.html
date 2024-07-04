@@ -529,6 +529,22 @@ document.write(`
 <li><p>You can link your account with your Netid via Google student authentication BUT:</p></li>
 <li><p>You must still create a separate password for use by the <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">automation scripts</span></a>.</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you run the script and get an error message like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Downloading</span> <span class="n">file</span><span class="p">:</span> <span class="n">icpsr</span><span class="o">-</span><span class="mf">123456.</span><span class="n">zip</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;/workspaces/codespaces-stata-r-skeleton-private/aearep-nnnn/./tools/download_openicpsr-private.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">151</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span> <span class="k">as</span> <span class="n">z</span><span class="p">:</span>
+  <span class="n">File</span> <span class="s2">&quot;/usr/lib/python3.10/zipfile.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1269</span><span class="p">,</span> <span class="ow">in</span> <span class="fm">__init__</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_RealGetContents</span><span class="p">()</span>
+  <span class="n">File</span> <span class="s2">&quot;/usr/lib/python3.10/zipfile.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1336</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_RealGetContents</span>
+    <span class="k">raise</span> <span class="n">BadZipFile</span><span class="p">(</span><span class="s2">&quot;File is not a zip file&quot;</span><span class="p">)</span>
+<span class="n">zipfile</span><span class="o">.</span><span class="n">BadZipFile</span><span class="p">:</span> <span class="n">File</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="nb">zip</span> <span class="n">file</span>
+</pre></div>
+</div>
+<p>it means that you have not set up authentication as described below.</p>
+</div>
 </section>
 <section id="creating-an-openicpsr-specific-password-when-you-linked-your-accounts">
 <h2>Creating an openICPSR-specific password when you linked your accounts<a class="headerlink" href="#creating-an-openicpsr-specific-password-when-you-linked-your-accounts" title="Permalink to this heading">#</a></h2>
