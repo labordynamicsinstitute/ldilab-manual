@@ -5,6 +5,12 @@ Typically the AEA Data Editor team will access code and data provided by authors
 
 > Cornell replicators: You will need to set up an openICPSR account using your Cornell email.
 
+:::{note}
+
+Not all deposits are provided to us on openICPSR. For instructions on how to handle other institutions (Zenodo, Dataverse, etc.), see [these notes](notes-on-downloading-other-repos).
+
+:::
+
 ## Basics of openICPSR
 
 - Authors will create a draft deposit that contains the replication archive for their paper.
