@@ -483,7 +483,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -499,6 +501,24 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#library-installation-problems">Library installation problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-different-versions-of-r">Using different versions of R</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pathnames">Pathnames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-dependency-if-you-want-to-use-an-earlier-version-of-a-package">Package Dependency - if you want to use an earlier version of a package</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-note-for-biohpc">Special note for BioHPC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trying-to-use-cran-without-setting-a-mirror"><code class="docutils literal notranslate"><span class="pre">trying</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">CRAN</span> <span class="pre">without</span> <span class="pre">setting</span> <span class="pre">a</span> <span class="pre">mirror</span></code></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -510,7 +530,94 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="debugging-r">
 <span id="id1"></span><h1>Debugging R<a class="headerlink" href="#debugging-r" title="Permalink to this heading">#</a></h1>
-<p>For now, see <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/R-Tips">our wiki</a>.</p>
+<p>See below, or <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/R-Tips">our wiki</a>.</p>
+<section id="library-installation-problems">
+<h2>Library installation problems<a class="headerlink" href="#library-installation-problems" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>You are not allowed to install packages in C: because you do not have administrator rights.</p>
+<p>This will happen on computers where you are a guest (not the owner), for instance CCSS Cloud or RedCloud.</p>
+</div></blockquote>
+<section id="solution">
+<h3>Solution:<a class="headerlink" href="#solution" title="Permalink to this heading">#</a></h3>
+<p>Run the following in an R console (or the console in Rstudio):</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">dir.create</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_LIBS_USER&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">recursive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">  </span><span class="c1"># create personal library</span>
+</pre></div>
+</div>
+<p>Then restart R, and try the install again.</p>
+</section>
+</section>
+<section id="using-different-versions-of-r">
+<h2>Using different versions of R<a class="headerlink" href="#using-different-versions-of-r" title="Permalink to this heading">#</a></h2>
+<p>For Linux, see <a class="reference internal" href="96-14-r-on-biohpc.html#r-on-biohpc"><span class="std std-ref">R on Linux</span></a>.</p>
+<p>For Windows and MacOS, when using Rstudio, see <a class="reference external" href="https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE">Rstudio help pages</a>. Note that this only works if there is, in fact, another R version installed.</p>
+</section>
+<section id="pathnames">
+<h2>Pathnames<a class="headerlink" href="#pathnames" title="Permalink to this heading">#</a></h2>
+<p>Use <strong>single</strong> forward slashes everywhere (<a class="reference external" href="http://www.dummies.com/programming/r/how-to-work-with-files-and-folders-in-r/">source</a>):</p>
+<p>For a Windows path that would read <code class="docutils literal notranslate"><span class="pre">F:\\rschfs1x\userRS\F-J\XXXX_RS\Documents\Workspace\app.20160004</span></code>, use</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">lest</span><span class="o">&lt;-</span><span class="nf">read.dta</span><span class="p">(</span><span class="s">&quot;F:/rschfs1x/userRS/F-J/XXXX_RS/Documents/Workspace/app.20160004/ddd_long.dta&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Even better, use the <code class="docutils literal notranslate"><span class="pre">file.path()</span></code> function:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">rootdir</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;F:/rschfs1x/userRS/F-J/XXXX_RS/Documents/Workspace/app.20160004&quot;</span>
+<span class="n">lest</span><span class="w">    </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.dta</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s">&quot;ddd_long.dta&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Even better better, use the <code class="docutils literal notranslate"><span class="pre">here()</span></code> function used in the <code class="docutils literal notranslate"><span class="pre">config.R</span></code> (see notes in the file on how to create the <code class="docutils literal notranslate"><span class="pre">.here</span></code> file).</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">rootdir</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">here</span><span class="p">()</span>
+<span class="n">lest</span><span class="w">    </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.dta</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s">&quot;ddd_long.dta&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="package-dependency-if-you-want-to-use-an-earlier-version-of-a-package">
+<h2>Package Dependency - if you want to use an earlier version of a package<a class="headerlink" href="#package-dependency-if-you-want-to-use-an-earlier-version-of-a-package" title="Permalink to this heading">#</a></h2>
+<p>The trick is to use the COPY of the CRAN repository at <strike>Microsoft, called the MRAN.</strike> Posit/Rstudio, called the “<a class="reference external" href="https://packagemanager.posit.co/">Posit Package Manager</a>”.</p>
+<p>At the top of any R code  add the following lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ppm</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;-</span> <span class="s2">&quot;2019-09-01&quot;</span>
+<span class="n">ppm</span><span class="o">.</span><span class="n">url</span>  <span class="o">&lt;-</span> <span class="s2">&quot;https://packagemanager.posit.co/cran/&quot;</span>
+<span class="n">options</span><span class="p">(</span><span class="n">repos</span><span class="o">=</span><span class="n">paste0</span><span class="p">(</span><span class="n">ppm</span><span class="o">.</span><span class="n">url</span><span class="p">,</span><span class="n">mran</span><span class="o">.</span><span class="n">date</span><span class="p">,</span><span class="s2">&quot;/&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>You should use a judicious “<code class="docutils literal notranslate"><span class="pre">ppm.date</span></code>”, probably based on the date JUST prior to the release of the next version of R. You can look up those dates <a class="reference external" href="https://cran.r-project.org/bin/windows/base/old/">here</a>.</p>
+<p>So for instance, if you want the last MRAN date prior to the release of R 4.0, you might choose “2020-03-15” (mid-March, prior to the release of R 4.0). At that time, the latest R version was R 3.6.3.</p>
+<p>You should then be able to install packages in a version that is compatible with R 3.6.3 from the MRAN.</p>
+<p>All package install functions in R should work “as-is”, unless they explicitly download github versions or similar (”<code class="docutils literal notranslate"><span class="pre">remotes::install_github()</span></code>” or similar).</p>
+<section id="special-note-for-biohpc">
+<h3>Special note for BioHPC<a class="headerlink" href="#special-note-for-biohpc" title="Permalink to this heading">#</a></h3>
+<p>On BioHPC, which runs a Linux version called “Rocky 9.0”, you should use the following instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ppm</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;-</span> <span class="s2">&quot;2019-09-01&quot;</span>
+<span class="n">ppm</span><span class="o">.</span><span class="n">url</span>  <span class="o">&lt;-</span> <span class="s2">&quot;https://packagemanager.posit.co/cran/__linux__/rhel9/&quot;</span>
+<span class="n">options</span><span class="p">(</span><span class="n">repos</span><span class="o">=</span><span class="n">paste0</span><span class="p">(</span><span class="n">ppm</span><span class="o">.</span><span class="n">url</span><span class="p">,</span><span class="n">ppm</span><span class="o">.</span><span class="n">date</span><span class="p">,</span><span class="s2">&quot;/&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This will (hopefully) install pre-compiled packages, rather than trying to compile every package from source, which is a LOT faster.</p>
+</section>
+</section>
+<section id="trying-to-use-cran-without-setting-a-mirror">
+<h2><code class="docutils literal notranslate"><span class="pre">trying</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">CRAN</span> <span class="pre">without</span> <span class="pre">setting</span> <span class="pre">a</span> <span class="pre">mirror</span></code><a class="headerlink" href="#trying-to-use-cran-without-setting-a-mirror" title="Permalink to this heading">#</a></h2>
+<p>For example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">&quot;reshape2&quot;</span><span class="p">)</span>
+<span class="n">Installing</span> <span class="n">package</span> <span class="n">into</span> <span class="s1">&#39;C:/Users/Mbrown_RS/AppData/Local/R/win-library/4.2&#39;</span>
+<span class="p">(</span><span class="k">as</span> <span class="s1">&#39;lib&#39;</span> <span class="ow">is</span> <span class="n">unspecified</span><span class="p">)</span>
+<span class="n">Error</span> <span class="ow">in</span> <span class="n">contrib</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="n">repos</span><span class="p">,</span> <span class="s2">&quot;source&quot;</span><span class="p">)</span> <span class="p">:</span>
+  <span class="n">trying</span> <span class="n">to</span> <span class="n">use</span> <span class="n">CRAN</span> <span class="n">without</span> <span class="n">setting</span> <span class="n">a</span> <span class="n">mirror</span>
+</pre></div>
+</div>
+<p>If you get this error, you need to set a CRAN repository within R. The best way is to set it globally, once and for all (as per <a class="reference external" href="https://www.r-bloggers.com/2011/11/permanently-setting-the-cran-repository/">this note</a>. You can do this by manually editing the <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> file, or simply running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;# set the default repository</span>
+<span class="s1">local({</span>
+<span class="s1">  r &lt;- getOption(&quot;repos&quot;)</span>
+<span class="s1">  r[&quot;CRAN&quot;] &lt;- &quot;https://cran.rstudio.com/&quot;</span>
+<span class="s1">  options(repos = r)</span>
+<span class="s1">})</span>
+<span class="s1"># create the local library if it does not exist</span>
+<span class="s1">if ( !file.exists(Sys.getenv(&quot;R_LIBS_USER&quot;) ) ) {</span>
+<span class="s1">   dir.create(Sys.getenv(&quot;R_LIBS_USER&quot;),recursive=TRUE)</span>
+<span class="s1">} &#39;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$HOME</span>/.Rprofile
+</pre></div>
+</div>
+<p>but see about the correct setting for <code class="docutils literal notranslate"><span class="pre">r[&quot;CRAN&quot;]</span></code> <span class="xref myst">here</span></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -565,6 +672,30 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#library-installation-problems">Library installation problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-different-versions-of-r">Using different versions of R</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pathnames">Pathnames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-dependency-if-you-want-to-use-an-earlier-version-of-a-package">Package Dependency - if you want to use an earlier version of a package</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#special-note-for-biohpc">Special note for BioHPC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trying-to-use-cran-without-setting-a-mirror"><code class="docutils literal notranslate"><span class="pre">trying</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">CRAN</span> <span class="pre">without</span> <span class="pre">setting</span> <span class="pre">a</span> <span class="pre">mirror</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
