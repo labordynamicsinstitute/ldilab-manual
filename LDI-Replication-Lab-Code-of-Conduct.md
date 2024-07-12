@@ -2,7 +2,7 @@
 
 ## Summary View
 
-Below is a summary of the Labor Dynamics Institute's (LDI) Code of Conduct, which applies to activities, workshops, and conferences organized by LDI, such as the LDI Replication Lab. Continue reading for a [more detailed description of the CoC](code-of-conduct-detailed-view).
+Below is a summary of the Labor Dynamics Institute's (LDI) Code of Conduct (CoC), which applies to activities, workshops, and conferences organized by LDI, such as the LDI Replication Lab, unless a different Code of Conduct is provided or referenced. Continue reading for a [more detailed description of the CoC](code-of-conduct-detailed-view).
 
 > All participants at LDI activities, unless otherwise indicated, are subject to Cornell University [Code of Academic Integrity](https://theuniversityfaculty.cornell.edu/dean/academic-integrity/code-of-academic-integrity/)  and  [Policy 6.4](https://titleix.cornell.edu/policy-6-4-prohibited-bias-discrimination-harassment-and-sexual-and-related-misconduct/) on "Prohibited Bias, Discrimination, Harassment, and Sexual and Related Misconduct." For all reporting procedures, please consult those websites.
 
