@@ -6,8 +6,8 @@ See below, or [our wiki](https://github.com/labordynamicsinstitute/replicability
 ## Library installation problems
 
 > You are not allowed to install packages in C: because you do not have administrator rights.
->
-> This will happen on computers where you are a guest (not the owner), for instance CCSS Cloud or RedCloud.
+
+This will happen on computers where you are a guest (not the owner), for instance CCSS Cloud or RedCloud.
 
 ### Solution:
 
@@ -23,7 +23,14 @@ Then restart R, and try the install again.
 
 For Linux, see [R on Linux](r-on-biohpc).
 
-For Windows and MacOS, when using Rstudio, see [Rstudio help pages](https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE). Note that this only works if there is, in fact, another R version installed.
+For Windows and MacOS, when using Rstudio, see [Rstudio help pages](https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE). 
+
+:::{admonition} Note that this only works if there is, in fact, another R version installed. 
+:class: note dropdown
+
+You can find older versions of R at [CRAN](https://cran.r-project.org/bin/windows/base/old/). To install, simply run the program, select an installation location under `C:\Users\[YOUR USER NAME]\AppData`, and uncheck any additional checkboxes during the installation process. You can then **browse** from the `R Selection Dialog` mentioned at the [Rstudio help pages](https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE) to find that version of R. 
+
+:::
 
 ## Pathnames
 
@@ -61,7 +68,7 @@ ppm.url  <- "https://packagemanager.posit.co/cran/"
 options(repos=paste0(ppm.url,mran.date,"/"))
 ```
 
-:::{.note}
+:::{note}
 Even better, the `config.R` already has lines like this, use them!
 :::
 

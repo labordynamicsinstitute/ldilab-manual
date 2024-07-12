@@ -535,8 +535,8 @@ document.write(`
 <h2>Library installation problems<a class="headerlink" href="#library-installation-problems" title="Permalink to this heading">#</a></h2>
 <blockquote>
 <div><p>You are not allowed to install packages in C: because you do not have administrator rights.</p>
-<p>This will happen on computers where you are a guest (not the owner), for instance CCSS Cloud or RedCloud.</p>
 </div></blockquote>
+<p>This will happen on computers where you are a guest (not the owner), for instance CCSS Cloud or RedCloud.</p>
 <section id="solution">
 <h3>Solution:<a class="headerlink" href="#solution" title="Permalink to this heading">#</a></h3>
 <p>Run the following in an R console (or the console in Rstudio):</p>
@@ -549,7 +549,11 @@ document.write(`
 <section id="using-different-versions-of-r">
 <h2>Using different versions of R<a class="headerlink" href="#using-different-versions-of-r" title="Permalink to this heading">#</a></h2>
 <p>For Linux, see <a class="reference internal" href="96-14-r-on-biohpc.html#r-on-biohpc"><span class="std std-ref">R on Linux</span></a>.</p>
-<p>For Windows and MacOS, when using Rstudio, see <a class="reference external" href="https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE">Rstudio help pages</a>. Note that this only works if there is, in fact, another R version installed.</p>
+<p>For Windows and MacOS, when using Rstudio, see <a class="reference external" href="https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE">Rstudio help pages</a>.</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Note that this only works if there is, in fact, another R version installed. </p>
+<p>You can find older versions of R at <a class="reference external" href="https://cran.r-project.org/bin/windows/base/old/">CRAN</a>. To install, simply run the program, select an installation location under <code class="docutils literal notranslate"><span class="pre">C:\Users\[YOUR</span> <span class="pre">USER</span> <span class="pre">NAME]\AppData</span></code>, and uncheck any additional checkboxes during the installation process. You can then <strong>browse</strong> from the <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">Selection</span> <span class="pre">Dialog</span></code> mentioned at the <a class="reference external" href="https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE">Rstudio help pages</a> to find that version of R.</p>
+</div>
 </section>
 <section id="pathnames">
 <h2>Pathnames<a class="headerlink" href="#pathnames" title="Permalink to this heading">#</a></h2>
@@ -577,6 +581,10 @@ document.write(`
 <span class="n">ppm</span><span class="o">.</span><span class="n">url</span>  <span class="o">&lt;-</span> <span class="s2">&quot;https://packagemanager.posit.co/cran/&quot;</span>
 <span class="n">options</span><span class="p">(</span><span class="n">repos</span><span class="o">=</span><span class="n">paste0</span><span class="p">(</span><span class="n">ppm</span><span class="o">.</span><span class="n">url</span><span class="p">,</span><span class="n">mran</span><span class="o">.</span><span class="n">date</span><span class="p">,</span><span class="s2">&quot;/&quot;</span><span class="p">))</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Even better, the <code class="docutils literal notranslate"><span class="pre">config.R</span></code> already has lines like this, use them!</p>
 </div>
 <p>You should use a judicious “<code class="docutils literal notranslate"><span class="pre">ppm.date</span></code>”, probably based on the date JUST prior to the release of the next version of R. You can look up those dates <a class="reference external" href="https://cran.r-project.org/bin/windows/base/old/">here</a>.</p>
 <p>So for instance, if you want the last MRAN date prior to the release of R 4.0, you might choose “2020-03-15” (mid-March, prior to the release of R 4.0). At that time, the latest R version was R 3.6.3.</p>
