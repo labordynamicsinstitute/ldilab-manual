@@ -2,9 +2,9 @@
 
 ## Summary View
 
-Below is a summary of LDI Replication Lab Code of Conduct. Continue reading for a [more detailed description of the CoC](code-of-conduct-detailed-view).
+Below is a summary of the Labor Dynamics Institute's Code of Conduct, which applies to activities, workshops, and conferences organized by LDI, such as the LDI Replication Lab. Continue reading for a [more detailed description of the CoC](code-of-conduct-detailed-view).
 
-> All team members of the LDI Replication Lab are subject to Cornell University [Code of Academic Integrity](https://theuniversityfaculty.cornell.edu/dean/academic-integrity/code-of-academic-integrity/)  and  [Policy 6.4](https://titleix.cornell.edu/policy-6-4-prohibited-bias-discrimination-harassment-and-sexual-and-related-misconduct/) on "Prohibited Bias, Discrimination, Harassment, and Sexual and Related Misconduct." For all reporting procedures, please consult those websites.
+> All participants at LDI activities, unless otherwise indicated, are subject to Cornell University [Code of Academic Integrity](https://theuniversityfaculty.cornell.edu/dean/academic-integrity/code-of-academic-integrity/)  and  [Policy 6.4](https://titleix.cornell.edu/policy-6-4-prohibited-bias-discrimination-harassment-and-sexual-and-related-misconduct/) on "Prohibited Bias, Discrimination, Harassment, and Sexual and Related Misconduct." For all reporting procedures, please consult those websites.
 
 We are dedicated to providing a welcoming and supportive environment for all people, regardless of background or identity. By participating in this team, participants accept to abide by LDI ReplicationLab's Code of Conduct and accept the procedures by which any Code of Conduct incidents are resolved. Any form of behaviour to exclude, intimidate, or cause discomfort is a violation of the Code of Conduct. In order to foster a positive and professional learning environment we encourage the following kinds of behaviours in all platforms and events:
 
