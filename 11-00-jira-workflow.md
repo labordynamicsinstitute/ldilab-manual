@@ -21,7 +21,45 @@ Your supervisor will assign you to this workflow. This workflow covers code and 
 
 ## Overview
 
+### Prior to assignment 
+
+AEA manuscripts are checked for compliance with the [AEA Data and Code Availability Policy](https://www.aeaweb.org/journals/policies/data-code) after having been `conditionally accepted` by the journal's Editor-in-Chief (EIC) or Co-Editor (which we'll call "the editor" collectively).[^exceptionaej] Once authors have received the editor's "Conditional Acceptance" email, they send their manuscript materials to the  AEA Editorial Office, together with the [AEA Data and Code Availability Form (DCAF)](https://www.aeaweb.org/journals/forms/data-code-availability). It is the **DCAF** which identifies where the authors have initiated a deposit of their replication package. Usually, this is at the [AEA Data and Code Repository @ openICPSR](https://www.openicpsr.org/openicpsr/search/aea/studies), but it can be at any [trusted repository](https://aeadataeditor.github.io/aea-de-guidance/guidelines-other-repositories). 
+
+[^exceptionaej]: The American Economic Journal: Applied Economics (AEJ:AE) is an exception, because they regularly assign us papers during the "revise-and-resubmit" phase, prior to final acceptance, for a preliminary or early check.
+
+Once the AEA Editorial Office has verified that everything is complete, they assign the manuscript to the LDI Replication Lab. This assignments happens in the manuscript management system "Scholar One", and triggers an email. This email enters our [JIRA system](https://aeadataeditors.atlassian.net/jira) system, and becomes an "open JIRA issue". That's where we start.
+
+### High-level view of flow through our process
+
 ![jira image](images/AEA-Data-Editor-Workflow-V3-20240114-short.png)
+
+An `Open` issue is first evaluated by the a supervisor (the AEA Data Editor or their assistant). The supervisor takes into account the complexity of the case, the known software or data acquisition skills of the replicators, the urgency of the case (for instance, if one of the authors is soon up for tenure), etc. Some of this is already coded into JIRA fields.
+
+Once [`Assigned`](workflow-assigned) a new case, the replicator will [create a new git repository](create-repo), if a brand new case, or reference an existing repository (if the issue is a [revision](aea-revision-reports-after-author-resubmission)) in order to move to `In Progress`. Each manuscript is associated with a single git repository, which tracks the evolution of the author's code, and of our reports and attempts to run it, over time. 
+
+The replicator then copies the author's code  (but not the data!) into the git repository, usually by [using automated scripts](running-populate-icpsr), then adds the manuscript and DCAF as provided by the AEA Editorial Office. The first task is to make an extensive assessment of the replication package in the repository, what we call a [Preliminary Report](parta). This identifies the three key elements of a reproducibility attempt:"
+
+- is the guiding document to the replication deposit (the [README](https://social-science-data-editors.github.io/template_README/)) sufficiently complete and clear to undertake a complete assessment? The replicator is the first reader of this, but the ultimate reader is a future researcher who wants to use the data and code.
+- can we access all the data? Is there additional data that needs to be obtained, and how complicated is that? (Some of this may have been signalled by the authors via the [DCAF](https://www.aeaweb.org/journals/forms/data-code-availability) and coded by the supervisor.)
+- can we run the code? Do we have access to the software, to the computing hardware to run the code? If not, can we acquire such access in a reasonable time frame?
+
+Once the Preliminary Report is complete, the replicator may discuss this at one of the bi-weekly meetings with the AEA Data Editor, if there are questions. 
+
+If a decision is made to attempt a computational reproduction of the paper, the replicator then proceeds to the next step, [running code](running-code-partb). This involves setting up the computing environment, the project environment, and running the code. Unfortunately, this almost always involves some debugging, and replicators get really good at that! 
+
+If there is too much debugging, or the debugging does not work, we may return it to the authors at this point, for correction of the identified issues, and resubmission. Our report tries to provide as much detail about what the replicator attempted and didn't work, to assist the authors, but is not a full "code consultation", as that is not the role of the journal. 
+
+If the debugging was successful (or not necessary), the replicator will, at this time, have a collection of tables and figures produced by the code. It is time to [compile all this into a report](partc). Tables and figures are compared to the manuscript, to assess for completeness and accuracy. We expect that all results are exactly reproduced, down to the last decimal, unless the README clearly states that this should not be expected (and explains why).
+ 
+Once the report is completed, it is sent back to the authors via the ScholarOne interface, to the AEA Editorial Office. The report will contain the AEA Data Editor's decision, which can be:
+
+- `Accept` - no changes need to be made anywhere
+- `Accept with changes` - there are minor changes that need to be made to the manuscript and/or the deposit, but these are not substantive, and do not require re-running code. Manuscript changes are implemented at the copy-editing stage.
+- `Conditional accept` - there are substantive changes that need to be made to the manuscript and/or the deposit, and these changes require a full review by the Data Editor, including possibly re-running code.
+- `Revise-and-resubmit` - when issues are found that put into doubt the results in the manuscript, the manuscript may need to be reviewed by the editor, or the referees, again. This is never chosen without a prior discussion with the editor, and extremely rare. As of 2024, none such cases have lead to a terminal rejection of the manuscript.
+
+
+### Details
 
 The following table illustrates the flow and transitions. The `transition` field identifies the button that will appear in the interface
 that needs to be clicked in order to progress an issue from the `From` state to the `To` state. The `Condition` field identifies
@@ -29,7 +67,7 @@ which form field needs to be filled out in order to be able to make the transiti
 until a resolution can be found.
 
 ```{warning}
-THIS STILL NEEDS UPDATES FOR V3 workflow
+We regularly tweak the process to respond to needs and changes. The following detailed description may lag behind those tweaks!
 ```
 
 ### Workflow for Main Task
