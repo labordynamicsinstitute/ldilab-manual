@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Julia-related procedures &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Docker on Windows &#8212; Training Manual For Reproducibility Verification</title>
   
   
   
@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '96-40-using-julia';</script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-40-using-julia.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '96-51-docker-windows';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-51-docker-windows.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Docker-related procedures" href="96-50-using-docker.html" />
-    <link rel="prev" title="Python-related procedures" href="96-30-running-python-jupyter.html" />
+    <link rel="next" title="Mathematica-related procedures" href="96-70-using-mathematica.html" />
+    <link rel="prev" title="Docker-related procedures" href="96-50-using-docker.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -240,9 +240,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="96-20-using-matlab.html">MATLAB-related procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="96-30-running-python-jupyter.html">Python-related procedures</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Julia-related procedures</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="96-50-using-docker.html">Docker-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="96-51-docker-windows.html">Docker on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="96-40-using-julia.html">Julia-related procedures</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="96-50-using-docker.html">Docker-related procedures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Docker on Windows</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="96-70-using-mathematica.html">Mathematica-related procedures</a></li>
@@ -370,7 +370,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-40-using-julia.md" target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-51-docker-windows.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -387,7 +387,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-40-using-julia.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-51-docker-windows.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -417,7 +417,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/96-40-using-julia.md" target="_blank"
+      <li><a href="_sources/96-51-docker-windows.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -499,7 +499,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Julia-related procedures</h1>
+    <h1>Docker on Windows</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -509,8 +509,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-multiple-julia-versions">Managing multiple Julia versions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#julia-is-picky-about-how-environments-are-passed-to-workers">Julia is picky about how environments are passed to workers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-setup">Testing Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stata-imperfect-example">Stata Imperfect Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran-example">Fortran Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wait-what-is-docker-and-what-did-we-just-do">Wait, what is docker and what did we just do?</a></li>
 </ul>
             </nav>
         </div>
@@ -522,34 +525,185 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="julia-related-procedures">
-<span id="id1"></span><h1>Julia-related procedures<a class="headerlink" href="#julia-related-procedures" title="Permalink to this heading">#</a></h1>
-<p>In this section, we will show you a few things related specifically to running code reproducibly with Julia. For more general debugging tips for Julia and other computer languages, see <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Julia-Tips">our wiki</a>.</p>
-<div class="warning dropdown admonition">
-<p class="admonition-title">The following instructions are primarily for Linux. </p>
-<p>You may need to use Conda on our Windows systems.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="docker-on-windows">
+<span id="docker-windows-beta"></span><h1>Docker on Windows<a class="headerlink" href="#docker-on-windows" title="Permalink to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>NOTE:</strong> <em>This document is a work in progress.</em></p>
 </div>
-<section id="managing-multiple-julia-versions">
-<h2>Managing multiple Julia versions<a class="headerlink" href="#managing-multiple-julia-versions" title="Permalink to this heading">#</a></h2>
-<p>Julia has a native version manager. Follow instructions at <a class="github reference external" href="https://github.com/JuliaLang/juliaup">JuliaLang/juliaup</a> to install it - it will be installed in your personal directory (so is not shared). Then, to add a particular Julia version,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">juliaup</span> <span class="n">add</span> <span class="mf">1.9.2</span>
-<span class="n">juliaup</span> <span class="n">default</span> <span class="mf">1.9.2</span>
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will only work on a laptop or desktop. It does not work on (university-provided) cloud systems!</p>
 </div>
-<p>and your next call to Julia will launch 1.9.2.</p>
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Follow these <a class="reference external" href="https://docs.docker.com/docker-for-windows/install/">instructions</a> to install Docker Desktop for Windows.</p></li>
+<li><p>Pay close attention to the system requirements:</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL 2</a></p></li>
+<li><p>Hyper-V</p></li>
+</ul>
+</li>
+<li><p>For anyone using a University computer it may be necessary to run as administrator.</p></li>
+</ul>
 </section>
-<section id="julia-is-picky-about-how-environments-are-passed-to-workers">
-<h2>Julia is picky about how environments are passed to workers<a class="headerlink" href="#julia-is-picky-about-how-environments-are-passed-to-workers" title="Permalink to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">julia</span> <span class="o">--</span><span class="n">project</span><span class="o">=</span><span class="n">julia16</span> <span class="o">-</span><span class="n">p</span> <span class="mi">4</span>
+<section id="testing-setup">
+<h2>Testing Setup<a class="headerlink" href="#testing-setup" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Open up a <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Prompt</span></code> and type <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">--version</span></code>. If working, it should output a Docker version and build number.</p></li>
+<li><p>In the same shell, type <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">hello-world</span></code> to test if your installation is working correctly. If working, you should get the following:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
 </pre></div>
 </div>
-<p>should start with the project installed in <code class="docutils literal notranslate"><span class="pre">julia16</span></code> and 4 worker processes. In fact, the worker processes ignore the project packages, and the whole thing fails (see <a class="reference external" href="https://github.com/JuliaLang/julia/issues/28781">this link</a>).</p>
-<p>Workaround:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">JULIA_PROJECT</span><span class="o">=</span><span class="n">julia16</span>
-<span class="n">julia</span> <span class="o">-</span><span class="n">p</span> <span class="mi">4</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In contrast to most other documentation in this manual, the  examples below use the old Windows <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Prompt</span></code>, not <code class="docutils literal notranslate"><span class="pre">bash</span></code> and not <code class="docutils literal notranslate"><span class="pre">PowerShell</span></code>.</p>
+</div>
+</section>
+<section id="stata-imperfect-example">
+<h2>Stata Imperfect Example<a class="headerlink" href="#stata-imperfect-example" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Start Docker Desktop.</p></li>
+<li><p>Download example project from <a class="reference external" href="https://www.openicpsr.org/openicpsr/tenant/openicpsr/module/aea/workspace?goToPath=/openicpsr/118568&amp;goToLevel=project#">ICPSR</a>.</p></li>
+<li><p>Open up a <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Prompt</span></code> (cmd) and cd into the workspace folder you would like to place the project contents.</p></li>
+<li><p>In the command line: <code class="docutils literal notranslate"><span class="pre">Unzip</span> <span class="pre">C:/path/to/Downloads/118568.zip</span></code>.</p></li>
+<li><p>Download data from <a class="reference external" href="https://www.icpsr.umich.edu/web/ICPSR/studies/13568/versions/V1/datadocumentation#">here</a> - Alaska only.</p></li>
+<li><p>Unzip into “data” folder.</p></li>
+<li><p>Test Docker: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">--version</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">hello-world</span></code>.</p></li>
+<li><p>Navigate to dataeditor <a class="reference external" href="https://hub.docker.com/u/dataeditors">dockerhub</a> and click on the Stata version you have on your workspace &gt; Tags &gt; Copy the docker pull command, i.e.: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">dataeditors/stata16:2021-06-09</span></code></p></li>
+<li><p>Paste into command line.</p></li>
+<li><p>Set version: <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">VERSION=&quot;16&quot;</span></code> and image: <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">IMG=&quot;dataeditors/stata16:2021-06-09&quot;</span></code>.</p></li>
+<li><p>Test with: <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">%VERSION%</span></code></p></li>
+<li><p>Next, cd into the “programs” folder: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/programs</span></code>.</p></li>
+<li><p>Update the globals in <code class="docutils literal notranslate"><span class="pre">config.do</span></code> to reflect that the “programs” directory is the current working directory.</p></li>
+<li><p>Run the Docker image:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">rm</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">stata_license</span><span class="o">/</span><span class="n">stata</span><span class="o">.</span><span class="n">lic</span><span class="o">.%</span><span class="n">VERSION</span><span class="o">%</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">stata</span><span class="o">%</span><span class="n">VERSION</span><span class="o">%/</span><span class="n">stata</span><span class="o">.</span><span class="n">lic</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="o">%</span><span class="n">cd</span><span class="o">%</span><span class="p">:</span><span class="o">/</span><span class="n">code</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="o">%</span><span class="n">cd</span><span class="o">%/../</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">data</span> <span class="o">^</span>
+  <span class="o">%</span><span class="n">IMG</span><span class="o">%</span> 
 </pre></div>
 </div>
-<p>seems to work.</p>
+<ol class="arabic simple" start="15">
+<li><p>This opens an interactive Stata session.</p></li>
+<li><p>Execute the master file: <code class="docutils literal notranslate"><span class="pre">do</span> <span class="pre">master.do</span></code></p></li>
+<li><p>Hit error:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>save `dtahu&#39;, replace  /* save housing unit data */
+(note: file /programs/../data/outputdata/housing.dta not found)
+file /programs/../data/outputdata/housing.dta could not be opened
+r(603);
+</pre></div>
+</div>
+<ol class="arabic simple" start="18">
+<li><p>Looks like there’s no folder “data/outputdata/”. A global was already defined for this so we can add <code class="docutils literal notranslate"><span class="pre">cap</span> <span class="pre">mkdir</span> <span class="pre">$outputdata</span></code> to the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> file to create that folder. Re-run <code class="docutils literal notranslate"><span class="pre">master.do</span></code>.</p></li>
+<li><p>Another error: <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">latab</span> <span class="pre">is</span> <span class="pre">unrecognized</span></code>. Add the “latab” package to <code class="docutils literal notranslate"><span class="pre">00_setup_stata.do</span></code> and re-run.</p></li>
+<li><p>No “tables” folder in the root directory to send the output tables to. However, this folder wasn’t mapped to the Docker image so we’ll have to create the directory and map it in our docker run command.</p></li>
+<li><p>End the Stata session: <code class="docutils literal notranslate"><span class="pre">exit,</span> <span class="pre">STATA</span> <span class="pre">clear</span></code>.</p></li>
+<li><p>Make the tables directory from the command line: <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">tables</span></code>.</p></li>
+<li><p>Adjust the docker run command to account for the results folder:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">rm</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">stata_license</span><span class="o">/</span><span class="n">stata</span><span class="o">.</span><span class="n">lic</span><span class="o">.%</span><span class="n">VERSION</span><span class="o">%</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">stata</span><span class="o">%</span><span class="n">VERSION</span><span class="o">%/</span><span class="n">stata</span><span class="o">.</span><span class="n">lic</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="o">%</span><span class="n">cd</span><span class="o">%</span><span class="p">:</span><span class="o">/</span><span class="n">code</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="o">%</span><span class="n">cd</span><span class="o">%/../</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">data</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="o">%</span><span class="n">cd</span><span class="o">%/../</span><span class="n">tables</span><span class="p">:</span><span class="o">/</span><span class="n">tables</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">code</span> <span class="o">^</span>
+  <span class="o">%</span><span class="n">IMG</span><span class="o">%</span> 
+</pre></div>
+</div>
+<ol class="arabic simple" start="24">
+<li><p>Again, and execute <code class="docutils literal notranslate"><span class="pre">master.do</span></code>.</p></li>
+<li><p>Done!</p></li>
+</ol>
+<p>It is also possible to execute the program outside of an interactive Stata session:</p>
+<ol class="arabic simple">
+<li><p>Use the following docker command:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">rm</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">stata_license</span><span class="o">/</span><span class="n">stata</span><span class="o">.</span><span class="n">lic</span><span class="o">.%</span><span class="n">VERSION</span><span class="o">%</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">stata</span><span class="o">%</span><span class="n">VERSION</span><span class="o">%/</span><span class="n">stata</span><span class="o">.</span><span class="n">lic</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="o">%</span><span class="n">cd</span><span class="o">%</span><span class="p">:</span><span class="o">/</span><span class="n">code</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="o">%</span><span class="n">cd</span><span class="o">%/../</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">data</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="o">%</span><span class="n">cd</span><span class="o">%/../</span><span class="n">tables</span><span class="p">:</span><span class="o">/</span><span class="n">tables</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">code</span> <span class="o">^</span>
+  <span class="o">--</span><span class="n">entrypoint</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">^</span>
+  <span class="o">%</span><span class="n">IMG</span><span class="o">%</span> 
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Issue the following shell command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>stata<span class="w"> </span>-b<span class="w"> </span><span class="k">do</span><span class="w"> </span>master.do
+</pre></div>
+</div>
+<p>to execute <code class="docutils literal notranslate"><span class="pre">master.do</span></code>.</p>
+</section>
+<section id="fortran-example">
+<h2>Fortran Example<a class="headerlink" href="#fortran-example" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Downloaded the <a class="reference external" href="https://hub.docker.com/r/intel/oneapi-hpckit/tags?page=1&amp;ordering=last_updated">Intel OneAPI-hpckit</a> by entering the following into the command line:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>intel/oneapi-hpckit:2021.2-devel-ubuntu18.04
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Navigate to the directory with all the Fortran model codes: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">PATH/to/model_codes</span></code></p></li>
+<li><p>Hit multiple issues attempting to run in Bash shell:
+<img alt="bash error" src="images/Docker_Error.png" /></p></li>
+<li><p>On Windows 10, opened a <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Prompt</span></code> (cmd) instead.</p></li>
+<li><p>Typed the following into the command line to run the shell script which executes all Fortran code:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-w<span class="w"> </span>/code<span class="w"> </span>-v<span class="w"> </span>%cd%:/code<span class="w"> </span>intel/oneapi-hpckit:2021.2-devel-ubuntu18.04<span class="w"> </span>/code/run_all.sh<span class="w"> </span>&gt;<span class="w"> </span>run_all.output.txt
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This maps the current directory (model_codes) to the docker image as “/code” and runs <code class="docutils literal notranslate"><span class="pre">run_all.sh</span></code>, creating the log file <code class="docutils literal notranslate"><span class="pre">run_all.output.txt</span></code>.</p></li>
+</ul>
+</section>
+<section id="wait-what-is-docker-and-what-did-we-just-do">
+<h2>Wait, what is docker and what did we just do?<a class="headerlink" href="#wait-what-is-docker-and-what-did-we-just-do" title="Permalink to this heading">#</a></h2>
+<p>Docker is a platform of services for the use of ‘containers’. These containers allow the sharing of programs or apps in isolation of their enviroment. In the imperfect example above, we ‘mounted’ our local folders to the container and then run code inside it using the Stata 16. We did the same thing in the Fortran example, except then we used a Fortran container. It may be helpful to know <a class="reference external" href="https://phoenixnap.com/kb/docker-image-vs-container">the difference between a docker image and a docker container.</a></p>
+<p>It may also be helpful to understand the basics of the commands we just run:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">dataeditors/stata16:2021-06-09</span> </code>: This command is pulling the image “dataeditors/stata16” with the tag “2021-06-09” so we can used it in our machine.</p></li>
+<li></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">rm</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">mjd443</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">aea</span><span class="o">-</span><span class="n">licenses</span><span class="o">/</span><span class="n">stata</span><span class="o">.</span><span class="n">lic</span><span class="o">.%</span><span class="n">VERSION</span><span class="o">%</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">stata</span><span class="o">%</span><span class="n">VERSION</span><span class="o">%/</span><span class="n">stata</span><span class="o">.</span><span class="n">lic</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="o">%</span><span class="n">cd</span><span class="o">%/</span><span class="n">programs</span><span class="p">:</span><span class="o">/</span><span class="n">programs</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="o">%</span><span class="n">cd</span><span class="o">%/</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">data</span> <span class="o">^</span>
+  <span class="o">-</span><span class="n">v</span> <span class="o">%</span><span class="n">cd</span><span class="o">%/</span><span class="n">tables</span><span class="p">:</span><span class="o">/</span><span class="n">tables</span> <span class="o">^</span>
+  <span class="o">%</span><span class="n">IMG</span><span class="o">%</span> 
+
+</pre></div>
+</div>
+<p>We used <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> to create a container based on a specified image (dataeditors/stata16) and then start it.  Lets undestand some of the options we used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-i</span></code> is short for <code class="docutils literal notranslate"><span class="pre">--interactive</span></code>, <code class="docutils literal notranslate"><span class="pre">-t</span></code> is short for <code class="docutils literal notranslate"><span class="pre">--tty</span></code> and is used for allocating a pseudo-TTY (<a class="reference external" href="https://stackoverflow.com/questions/30137135/confused-about-docker-t-option-to-allocate-a-pseudo-tty">whatever that means</a>). They are often used together, as we did: <code class="docutils literal notranslate"><span class="pre">-it</span></code>. They allow us to work interactively with Stata inside the container.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--rm</span></code> is used to automatically remove the container when it exits.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-v</span></code> is used to bind mount a volume. In other words, we are mapping a folder in our machine to where we want that folder to be in the container (<code class="docutils literal notranslate"><span class="pre">-v</span> <span class="pre">our/folder:container/folder</span></code>). So <code class="docutils literal notranslate"><span class="pre">%cd%/programs</span></code> is our current.directory/programs folder, and we “mount it” in the container, creating a “programs” folder inside it. We did the same for the stata license, as well as for “data”, and “tables” folders.</p></li>
+</ul>
+<p>Note that at the end of the line we have <code class="docutils literal notranslate"><span class="pre">%IMG%</span></code>, which is a local variable we previously had set to be equal to the image we are using: <code class="docutils literal notranslate"><span class="pre">dataeditors/stata16:2021-06-09&quot;</span></code>. All of that allowed us to have an interactive Stata inside the container with access to the data and .do files that we needed to replicate the project.</p>
+<ol class="arabic simple" start="3">
+<li><p>In the Fortran example when we used:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">code</span> <span class="o">-</span><span class="n">v</span> <span class="o">%</span><span class="n">cd</span><span class="o">%</span><span class="p">:</span><span class="o">/</span><span class="n">code</span> <span class="n">intel</span><span class="o">/</span><span class="n">oneapi</span><span class="o">-</span><span class="n">hpckit</span><span class="p">:</span><span class="mf">2021.2</span><span class="o">-</span><span class="n">devel</span><span class="o">-</span><span class="n">ubuntu18</span><span class="mf">.04</span> <span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">run_all</span><span class="o">.</span><span class="n">sh</span> <span class="o">&gt;</span> <span class="n">run_all</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>where the option <code class="docutils literal notranslate"><span class="pre">-w</span></code> sets the working directory inside the containers to a the existing folder called “code”. Then, we “mounted” the current working directory in the host machine to the “code” folder inside the container. We use the image  <code class="docutils literal notranslate"><span class="pre">intel/oneapi-hpckit</span></code> with the tag <code class="docutils literal notranslate"><span class="pre">2021.2-devel-ubuntu18.04</span></code> to create and start a container that run the the bash script as described previously.</p>
 </section>
 </section>
 
@@ -582,20 +736,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="96-30-running-python-jupyter.html"
+       href="96-50-using-docker.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python-related procedures</p>
+        <p class="prev-next-title">Docker-related procedures</p>
       </div>
     </a>
     <a class="right-next"
-       href="96-50-using-docker.html"
+       href="96-70-using-mathematica.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Docker-related procedures</p>
+        <p class="prev-next-title">Mathematica-related procedures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -614,8 +768,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-multiple-julia-versions">Managing multiple Julia versions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#julia-is-picky-about-how-environments-are-passed-to-workers">Julia is picky about how environments are passed to workers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-setup">Testing Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stata-imperfect-example">Stata Imperfect Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran-example">Fortran Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wait-what-is-docker-and-what-did-we-just-do">Wait, what is docker and what did we just do?</a></li>
 </ul>
   </nav></div>
 
