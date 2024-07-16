@@ -512,6 +512,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new">New</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope">Scope</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prior-to-assignment">Prior to assignment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-view-of-flow-through-our-process">High-level view of flow through our process</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-for-main-task">Workflow for Main Task</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-for-part-a-subtask">Workflow for Part A Subtask</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-for-part-b-subtask">Workflow for Part B Subtask</a></li>
@@ -519,7 +522,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Details</a></li>
 </ul>
             </nav>
         </div>
@@ -554,15 +557,45 @@ document.write(`
 </section>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<section id="prior-to-assignment">
+<h3>Prior to assignment<a class="headerlink" href="#prior-to-assignment" title="Permalink to this heading">#</a></h3>
+<p>AEA manuscripts are checked for compliance with the <a class="reference external" href="https://www.aeaweb.org/journals/policies/data-code">AEA Data and Code Availability Policy</a> after having been <code class="docutils literal notranslate"><span class="pre">conditionally</span> <span class="pre">accepted</span></code> by the journal’s Editor-in-Chief (EIC) or Co-Editor (which we’ll call “the editor” collectively).<a class="footnote-reference brackets" href="#exceptionaej" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> Once authors have received the editor’s “Conditional Acceptance” email, they send their manuscript materials to the  AEA Editorial Office, together with the <a class="reference external" href="https://www.aeaweb.org/journals/forms/data-code-availability">AEA Data and Code Availability Form (DCAF)</a>. It is the <strong>DCAF</strong> which identifies where the authors have initiated a deposit of their replication package. Usually, this is at the <a class="reference external" href="https://www.openicpsr.org/openicpsr/search/aea/studies">AEA Data and Code Repository &#64; openICPSR</a>, but it can be at any <a class="reference external" href="https://aeadataeditor.github.io/aea-de-guidance/guidelines-other-repositories">trusted repository</a>.</p>
+<p>Once the AEA Editorial Office has verified that everything is complete, they assign the manuscript to the LDI Replication Lab. This assignments happens in the manuscript management system “Scholar One”, and triggers an email. This email enters our <a class="reference external" href="https://aeadataeditors.atlassian.net/jira">JIRA system</a> system, and becomes an “open JIRA issue”. That’s where we start.</p>
+</section>
+<section id="high-level-view-of-flow-through-our-process">
+<h3>High-level view of flow through our process<a class="headerlink" href="#high-level-view-of-flow-through-our-process" title="Permalink to this heading">#</a></h3>
 <p><img alt="jira image" src="_images/AEA-Data-Editor-Workflow-V3-20240114-short.png" /></p>
+<p>An <code class="docutils literal notranslate"><span class="pre">Open</span></code> issue is first evaluated by the a supervisor (the AEA Data Editor or their assistant). The supervisor takes into account the complexity of the case, the known software or data acquisition skills of the replicators, the urgency of the case (for instance, if one of the authors is soon up for tenure), etc. Some of this is already coded into JIRA fields.</p>
+<p>Once <a class="reference internal" href="11-01-workflow-assigned.html#workflow-assigned"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">Assigned</span></code></span></a> a new case, the replicator will <a class="reference internal" href="11-02-workflow-create-repo.html#create-repo"><span class="std std-ref">create a new git repository</span></a>, if a brand new case, or reference an existing repository (if the issue is a <a class="reference internal" href="12-jira-revision-guidance.html#aea-revision-reports-after-author-resubmission"><span class="std std-ref">revision</span></a>) in order to move to <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Progress</span></code>. Each manuscript is associated with a single git repository, which tracks the evolution of the author’s code, and of our reports and attempts to run it, over time.</p>
+<p>The replicator then copies the author’s code  (but not the data!) into the git repository, usually by <a class="reference internal" href="11-02-workflow-create-repo.html#running-populate-icpsr"><span class="std std-ref">using automated scripts</span></a>, then adds the manuscript and DCAF as provided by the AEA Editorial Office. The first task is to make an extensive assessment of the replication package in the repository, what we call a <a class="reference internal" href="11-04-workflow-parta.html#parta"><span class="std std-ref">Preliminary Report</span></a>. This identifies the three key elements of a reproducibility attempt:”</p>
+<ul class="simple">
+<li><p>is the guiding document to the replication deposit (the <a class="reference external" href="https://social-science-data-editors.github.io/template_README/">README</a>) sufficiently complete and clear to undertake a complete assessment? The replicator is the first reader of this, but the ultimate reader is a future researcher who wants to use the data and code.</p></li>
+<li><p>can we access all the data? Is there additional data that needs to be obtained, and how complicated is that? (Some of this may have been signalled by the authors via the <a class="reference external" href="https://www.aeaweb.org/journals/forms/data-code-availability">DCAF</a> and coded by the supervisor.)</p></li>
+<li><p>can we run the code? Do we have access to the software, to the computing hardware to run the code? If not, can we acquire such access in a reasonable time frame?</p></li>
+</ul>
+<p>Once the Preliminary Report is complete, the replicator may discuss this at one of the bi-weekly meetings with the AEA Data Editor, if there are questions.</p>
+<p>If a decision is made to attempt a computational reproduction of the paper, the replicator then proceeds to the next step, <a class="reference internal" href="11-06-running-code.html#running-code-partb"><span class="std std-ref">running code</span></a>. This involves setting up the computing environment, the project environment, and running the code. Unfortunately, this almost always involves some debugging, and replicators get really good at that!</p>
+<p>If there is too much debugging, or the debugging does not work, we may return it to the authors at this point, for correction of the identified issues, and resubmission. Our report tries to provide as much detail about what the replicator attempted and didn’t work, to assist the authors, but is not a full “code consultation”, as that is not the role of the journal.</p>
+<p>If the debugging was successful (or not necessary), the replicator will, at this time, have a collection of tables and figures produced by the code. It is time to <a class="reference internal" href="11-07-workflow-writing-report.html#partc"><span class="std std-ref">compile all this into a report</span></a>. Tables and figures are compared to the manuscript, to assess for completeness and accuracy. We expect that all results are exactly reproduced, down to the last decimal, unless the README clearly states that this should not be expected (and explains why).</p>
+<p>Once the report is completed, it is sent back to the authors via the ScholarOne interface, to the AEA Editorial Office. The report will contain the AEA Data Editor’s decision, which can be:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Accept</span></code> - no changes need to be made anywhere</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">with</span> <span class="pre">changes</span></code> - there are minor changes that need to be made to the manuscript and/or the deposit, but these are not substantive, and do not require re-running code. Manuscript changes are implemented at the copy-editing stage.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Conditional</span> <span class="pre">accept</span></code> - there are substantive changes that need to be made to the manuscript and/or the deposit, and these changes require a full review by the Data Editor, including possibly re-running code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Revise-and-resubmit</span></code> - when issues are found that put into doubt the results in the manuscript, the manuscript may need to be reviewed by the editor, or the referees, again. This is never chosen without a prior discussion with the editor, and extremely rare. As of 2024, none such cases have lead to a terminal rejection of the manuscript.</p></li>
+</ul>
+</section>
+<section id="details">
+<h3>Details<a class="headerlink" href="#details" title="Permalink to this heading">#</a></h3>
 <p>The following table illustrates the flow and transitions. The <code class="docutils literal notranslate"><span class="pre">transition</span></code> field identifies the button that will appear in the interface
 that needs to be clicked in order to progress an issue from the <code class="docutils literal notranslate"><span class="pre">From</span></code> state to the <code class="docutils literal notranslate"><span class="pre">To</span></code> state. The <code class="docutils literal notranslate"><span class="pre">Condition</span></code> field identifies
 which form field needs to be filled out in order to be able to make the transition. <code class="docutils literal notranslate"><span class="pre">Blocked</span></code> is always an option, and leads to a “waiting state”
 until a resolution can be found.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>THIS STILL NEEDS UPDATES FOR V3 workflow</p>
+<p>We regularly tweak the process to respond to needs and changes. The following detailed description may lag behind those tweaks!</p>
 </div>
+</section>
 <section id="workflow-for-main-task">
 <h3>Workflow for Main Task<a class="headerlink" href="#workflow-for-main-task" title="Permalink to this heading">#</a></h3>
 <table class="table">
@@ -819,8 +852,8 @@ until a resolution can be found.</p>
 </ul>
 </section>
 </section>
-<section id="details">
-<h2>Details<a class="headerlink" href="#details" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2>Details<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Additional details for each of the key stages are provided here. Below is a screenshot of a Jira ticket. Some things to note:</p>
 <ul class="simple">
 <li><p>The blue <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Progress</span></code> box in the upper right - area 3 of the screen - is how you “advance” the Jira ticket. When you are first assigned a replication, this box will say <code class="docutils literal notranslate"><span class="pre">Open</span></code>.</p></li>
@@ -831,6 +864,11 @@ until a resolution can be found.</p>
 </li>
 </ul>
 <p><img alt="jira screen" src="_images/jira-screen.png" /></p>
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="exceptionaej" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The American Economic Journal: Applied Economics (AEJ:AE) is an exception, because they regularly assign us papers during the “revise-and-resubmit” phase, prior to final acceptance, for a preliminary or early check.</p>
+</aside>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -900,6 +938,9 @@ until a resolution can be found.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new">New</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope">Scope</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prior-to-assignment">Prior to assignment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level-view-of-flow-through-our-process">High-level view of flow through our process</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-for-main-task">Workflow for Main Task</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-for-part-a-subtask">Workflow for Part A Subtask</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-for-part-b-subtask">Workflow for Part B Subtask</a></li>
@@ -907,7 +948,7 @@ until a resolution can be found.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Details</a></li>
 </ul>
   </nav></div>
 
