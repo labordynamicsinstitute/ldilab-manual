@@ -21,6 +21,7 @@ In this section, we will show you a few things related specifically to running c
 Docker does not run on CCSS Cloud! These instructions may work on a personal laptop.
 ```
 
+See [Docker on Windows](docker-windows-beta).
 
 :::
 

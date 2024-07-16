@@ -71,6 +71,8 @@ parts:
     - file: 96-30-running-python-jupyter
     - file: 96-40-using-julia
     - file: 96-50-using-docker
+      sections:
+      - file: 96-51-docker-windows
     - file: 96-70-using-mathematica
     - file: 96-80-using-ox
   - caption: Sundry other guidance
