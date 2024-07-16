@@ -35,6 +35,9 @@ Once the AEA Editorial Office has verified that everything is complete, they ass
 
 An `Open` issue is first evaluated by the a supervisor (the AEA Data Editor or their assistant). The supervisor takes into account the complexity of the case, the known software or data acquisition skills of the replicators, the urgency of the case (for instance, if one of the authors is soon up for tenure), etc. Some of this is already coded into JIRA fields.
 
+
+![Part A](images/AEA-Data-Editor-Workflow-V3-partA.png)
+
 Once [`Assigned`](workflow-assigned) a new case, the replicator will [create a new git repository](create-repo), if a brand new case, or reference an existing repository (if the issue is a [revision](aea-revision-reports-after-author-resubmission)) in order to move to `In Progress`. Each manuscript is associated with a single git repository, which tracks the evolution of the author's code, and of our reports and attempts to run it, over time. 
 
 The replicator then copies the author's code  (but not the data!) into the git repository, usually by [using automated scripts](running-populate-icpsr), then adds the manuscript and DCAF as provided by the AEA Editorial Office. The first task is to make an extensive assessment of the replication package in the repository, what we call a [Preliminary Report](parta). This identifies the three key elements of a reproducibility attempt:"
@@ -45,9 +48,15 @@ The replicator then copies the author's code  (but not the data!) into the git r
 
 Once the Preliminary Report is complete, the replicator may discuss this at one of the bi-weekly meetings with the AEA Data Editor, if there are questions. 
 
+
+![Part B](images/AEA-Data-Editor-Workflow-V3-partB.png)
+
 If a decision is made to attempt a computational reproduction of the paper, the replicator then proceeds to the next step, [running code](running-code-partb). This involves setting up the computing environment, the project environment, and running the code. Unfortunately, this almost always involves some debugging, and replicators get really good at that! 
 
 If there is too much debugging, or the debugging does not work, we may return it to the authors at this point, for correction of the identified issues, and resubmission. Our report tries to provide as much detail about what the replicator attempted and didn't work, to assist the authors, but is not a full "code consultation", as that is not the role of the journal. 
+
+
+![Part C](images/AEA-Data-Editor-Workflow-V3-20240114-short-345.png)
 
 If the debugging was successful (or not necessary), the replicator will, at this time, have a collection of tables and figures produced by the code. It is time to [compile all this into a report](partc). Tables and figures are compared to the manuscript, to assess for completeness and accuracy. We expect that all results are exactly reproduced, down to the last decimal, unless the README clearly states that this should not be expected (and explains why).
  
