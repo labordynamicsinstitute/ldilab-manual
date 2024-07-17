@@ -132,18 +132,15 @@ Once both parts are complete, the issue can be merged into `REPLICATION.md` and 
 | Incomplete   | Restart task         | → In Progress  |           |
 | Incomplete   | Prepare report      | → Writing Report (Part C)  |           |
 
-The following are only relevant for "Approvers" or "Pre-Approvers" (if you have not been told you are a "(Pre-)Approver", you are not.)
+### Other Workflows
+
+The following are only relevant for "Approvers", "Pre-Approvers" (if you have not been told you are a "(Pre-)Approver", you are not.)
 
 | From         | Transition           | → To           | Condition |
 |:-------------|:---------------------|:---------------|:----------|
-| Open         | Assign               | →  Assigned    |           |
-| In Progress  | Alternate Workflow   | →  Alternate Workflow | |
 | Under Review | Approve              | →  Approved    |Can only be done by **approvers**.|
-| Pre-approved | Approve              | →  Approved    |Can only be done by **approvers**.|
+| Pre-approved | Approve              | →  Approved    |`MCRecommendationV2` is filled out <br/>Can only be done by **approvers**.|
 | Under Review | Pre-Approve          | →  Pre-Approved|Can only be done by **pre-approvers**.|
-| .            | Incomplete           | →  Incomplete  | n.a.      |
-| Approved     | Done                 | → 	Done       | n.a.      |
-| Blocked      | Reopen               | →  Open        | n.a.      |
 
 The following are only relevant for "Publishers"  (if you have not been told you are a "Publisher", you are not.)
 
@@ -155,6 +152,16 @@ The following are only relevant for "Publishers"  (if you have not been told you
 | Pending openICPSR changes | Prepare for publication | --> Pending Publication | `openICPSRVersion` is filled out, Changes have been satisfied on openICPSR| 
 | Pending Publication | Publish              | →  Published    |`openICPSRDOI` is set|
 
+The following are relevant for a few other roles (usually not accessible to replicators):
+
+
+| From         | Transition           | → To           | Condition |
+|:-------------|:---------------------|:---------------|:----------|
+| Open         | Assign               | →  Assigned    | Can only be done by **assigners**.          |
+| Assigned     | Fast Track   | →  Writing Report (Part C) | |
+| .            | Incomplete           | →  Incomplete  | n.a.      |
+| Approved     | Done                 | → 	Done       | n.a.      |
+| Blocked      | Reopen               | →  Open        | n.a.      |
 
 
 ### Notes
