@@ -1,6 +1,10 @@
-# Submitting to the JMS
+# Submitting to the JMS and openICPSR
 
-> Reminder: for the AEA, the JMS is ScholarOne.
+:::{info}
+Reminder: for the AEA, the JMS is ScholarOne.
+:::
+
+## Submitting to JMS
 
 1. Open the issue on JIRA. It must be `Approved`.
 2. Click on the `Submit to MC` transition. A pop-up will be shown.
@@ -14,10 +18,14 @@
    - Field [`MCRecommendationV2`] has the information about how the editorial office should proceed, to be selected in the JMS
       - In cases where `MCStatus` contains `RR`, the information will be in field [`MCRecommendation`]
    - Field [`Git working location`] has the information to clone the repository (and thus be able to access the report)
-4. If necessary, clone the Bitbucket repository associated with the issue 
-   -  If not already created, make a `REPLICATION.pdf` file from the markdown `REPLICATION.md` using Visual Studio Code, then commit and push!
-5. Open the Manuscript Central link (double-click, right-click, open in new tab)
-   1. Enter your credentials to access Manuscript Central (if using LastPass, let LastPass fill the information)
+4. If necessary, clone the Bitbucket repository associated with the issue. You should find a `REPLICATION.pdf` there.
+
+:::{admonition} If there is no `REPLICATION.pdf`...
+... then the Approver probably forgot to create it. Contact the Approver to avoid any misunderstandings.
+:::
+
+6. Open the Manuscript Central link `MCEntryURL` (double-click, right-click, open in new tab)
+   1. Enter your credentials to access Manuscript Central (let LastPass fill the information)
    2. Click on the review tab and identify the manuscript number (`Manuscript Central Identifier`) of the paper
    3. Select `Continue Review`
    4. Always click `Yes` when asked: Would you be willing to review a revision of this manuscript?
@@ -25,20 +33,15 @@
       - If `MCStatus` contains `CA`: Look at the field [`MCRecommendationV2`]
       - If `MCStatus` contains `RR`: Look at the field [`MCRecommendation`]
    6. Copy-paste the "Summary" part from `REPLICATION.md` into the field `Comments to the Author`. 
-      - If not already present, add "Details are in the full report."
-      - If not already present, add
-   ```
-   > [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
-   ```
    7. Select and upload the `REPLICATION.pdf`, click on `For author and  editor`.
    8. In some cases, the Data Editor will have put a note in the issue with a "for Editor only" file. The contents of that file should be copied and pasted into the field `Confidential Comments to the Coeditor`.
    8. Re-verify all information
    9. Click on `Submit`
-6. Back in the pop-up, 
+7. Back in the pop-up, 
    1. Click on `Submit to MC`
 
 
-## Decision point?
+## Processing openICPSR deposit after JMS
 
 If 
 
@@ -51,7 +54,7 @@ Otherwise, if  [`MCStatus`] contains `CA` and [`MCRecommendationV2`] = `Accept` 
 then proceed to [Preparing Deposit for Publication](preparing-deposit-for-publication-jira).
 
 (request-revisions-jira)=
-## Request revisions
+### Request revisions
 
 In principle, once the report is uploaded, the author will get the report with the requested revisions via ScholarOne. However, under the post-August 2020 workflow on openICPSR, the project may need to be unlocked for the author to make changes.
 To do so, proceed as follows:
@@ -91,10 +94,10 @@ Revisions requested. Details in the full report, which you will receive via Scho
 
 
 (preparing-deposit-for-publication-jira)=
-## Preparing Deposit for Publication
+### Preparing Deposit for Publication
  
 
-### FOR ACCEPT WITH CHANGES
+#### FOR ACCEPT WITH CHANGES
 
 1. Open the issue on Jira
 2. Click on the `Wait for response on openICPSR` transition to `Pending openICPSR changes`. 
@@ -148,7 +151,7 @@ Details in the full report, which you will receive via ScholarOne in a few busin
 (replace xxx with the issue number)
  
 
-### FOR ACCEPT:
+#### FOR ACCEPT:
 
 1. Open the issue on Jira
 2. Click on the `Prepare for publication` transition
@@ -198,10 +201,9 @@ Action items:
 ```
 
 7. Back in the Jira popup, finalize by clicking `OK`. The issue will be moved to `Pending Publication`.
-8. You are not quite done yet! You will receive an email from openICPSR.  
-   - the email needs to be forwarded to *dataeditor-queue@aeapubs.org* 
-   - manually add the **issue number** (AEAREP-xxx) into the subject line
-   - delete anything in the body of the email before the "From:" 
-   - This will add the message to the Jira ticket.
 
-> - ICPSR does not always successfully send out a notification email for the posting of the comment. If you don't receive the email, as a last resort, simply copy and paste your ICPSR comment into the Jira ticket so that we have a record.
+:::{note}
+
+You will receive an email from openICPSR. This email should also have gone to *dataeditor@aeapubs.org*. Verify that it is the case. If yes, you're all done. If not, contact the Data Editor.
+
+:::
