@@ -118,15 +118,6 @@ As part of the [automated processing](running-populate-icpsr), the `REPLICATION.
 
 :::
 
-- [ ] Clean-up: Delete (`git rm`) unused files from the template! 
-  - Example: `git rm README.md template-config.R` if the replication archive does not contain any R files (you can do this at any time before writing the **Preliminary Report**)
-  -  Make this a commit:
-
-  ```bash
-  git commit -m "Deleting unnecessary files"
-  git push
-  ```
-
 - The root of the repository should contain only our files (i.e., `REPLICATION-PartA.md`, `REPLICATION-PartB.md` etc.), the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket), and the code.
   - Example:
     ```
