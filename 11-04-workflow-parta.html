@@ -662,17 +662,7 @@ BioHPC</label><div class="sd-tab-content docutils">
 <p class="admonition-title">Be sure to use the <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartA.md</span></code> for this section!</p>
 <p>As part of the <a class="reference internal" href="11-02-workflow-create-repo.html#running-populate-icpsr"><span class="std std-ref">automated processing</span></a>, the <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code> is split into two parts, <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartA.md</span></code> and <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartB.md</span></code>. Somebody else may be working on Part B at the same time as you are working on Part A. Please be sure to use the correct file for your work.</p>
 </div>
-<ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Clean-up: Delete (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code>) unused files from the template!</p>
-<ul class="simple">
-<li><p>Example: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">README.md</span> <span class="pre">template-config.R</span></code> if the replication archive does not contain any R files (you can do this at any time before writing the <strong>Preliminary Report</strong>)</p></li>
-<li><p>Make this a commit:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Deleting unnecessary files&quot;</span>
-git<span class="w"> </span>push
-</pre></div>
-</div>
-</li>
+<ul>
 <li><p>The root of the repository should contain only our files (i.e., <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartA.md</span></code>, <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartB.md</span></code> etc.), the manuscript files (main manuscript, any online appendices and README files provided through the JIRA ticket), and the code.</p>
 <ul>
 <li><p>Example:</p>
