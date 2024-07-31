@@ -39,7 +39,7 @@ the **"Request-revisions-RR" message**.
 ```
 Revisions requested. Details in the full report, which you will receive via ScholarOne shortly.
 
-> [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+> [NOTE] Replication packages may be published as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
 ```
 
 4. Back in the Jira issue, transition the issue to `Done`.
@@ -82,7 +82,7 @@ Details in the full report, which you will receive via ScholarOne shortly. Pleas
 Once all changes have been made, please change the status of your deposit to "Submit to AEA".
 
 
-> [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+> [NOTE] Replication packages may be published as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
 ```
 (replace xxx with the issue number)
 
@@ -100,7 +100,7 @@ the **"Request-revisions-CA" message when `Submitted` is shown**.
 ```
 Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
 
-> [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+> [NOTE] Replication packages may be published as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
 ```
 (replace xxx with the issue number)
  
