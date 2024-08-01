@@ -42,13 +42,19 @@ Now, copy-paste the following code into the VS Code window, and edit the values 
 ```bash
 # env for ICPSR
 export ICPSR_EMAIL=mylogin@cornell.edu
-export ICPSR_PASS="supersecretpwd"
+export ICPSR_PASS='supersecretpwd'
 # env for Bitbucket
-export P_BITBUCKET_PAT="supersecretPAT" 
+export P_BITBUCKET_PAT='supersecretPAT' 
 export P_BITBUCKET_USERNAME=bitbucketusername
 ```
 
-where you can find your `bitbutcketusername` in the Bitbucket Profile (top-right corner, gear icon, etc.)
+where you can find your `bitbutcketusername` in the Bitbucket Profile (top-right corner, gear icon, etc.).
+
+:::{note}
+
+The use of single-quotes for the password ensures that special characters are correctly preserved.
+
+:::
 
 
 This will 

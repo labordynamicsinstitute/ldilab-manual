@@ -567,13 +567,17 @@ document.write(`
 <p>Now, copy-paste the following code into the VS Code window, and edit the values with the appropriate replacements. Keep all the line breaks, quotes, and spaces (or absence thereof) as shown!</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># env for ICPSR</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ICPSR_EMAIL</span><span class="o">=</span>mylogin@cornell.edu
-<span class="nb">export</span><span class="w"> </span><span class="nv">ICPSR_PASS</span><span class="o">=</span><span class="s2">&quot;supersecretpwd&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ICPSR_PASS</span><span class="o">=</span><span class="s1">&#39;supersecretpwd&#39;</span>
 <span class="c1"># env for Bitbucket</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">P_BITBUCKET_PAT</span><span class="o">=</span><span class="s2">&quot;supersecretPAT&quot;</span><span class="w"> </span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">P_BITBUCKET_PAT</span><span class="o">=</span><span class="s1">&#39;supersecretPAT&#39;</span><span class="w"> </span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">P_BITBUCKET_USERNAME</span><span class="o">=</span>bitbucketusername
 </pre></div>
 </div>
-<p>where you can find your <code class="docutils literal notranslate"><span class="pre">bitbutcketusername</span></code> in the Bitbucket Profile (top-right corner, gear icon, etc.)</p>
+<p>where you can find your <code class="docutils literal notranslate"><span class="pre">bitbutcketusername</span></code> in the Bitbucket Profile (top-right corner, gear icon, etc.).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The use of single-quotes for the password ensures that special characters are correctly preserved.</p>
+</div>
 <p>This will</p>
 <ul class="simple">
 <li><p>allow you to use the <code class="docutils literal notranslate"><span class="pre">aeagit</span></code> shortcut to download a Bitbucket repository to your workspace directly from the Bash command line</p></li>
