@@ -1,6 +1,48 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 (choosing-recommendation)=
 # Choosing a Recommendation
 
+
+```{code-cell} 
+:tags: [margin hide-input]
+from graphviz import Digraph
+
+# Create a new directed graph
+dot = Digraph(comment='Flow Diagram')
+
+# Add nodes
+dot.node('A', 'A')
+dot.node('B', 'B')
+dot.node('C', 'C')
+dot.node('D', 'D')
+
+# Add edges with labels
+dot.edge('A', 'B', 'Label 1')
+dot.edge('B', 'B', 'Label 2')
+dot.edge('B', 'C', 'Label 3')
+dot.edge('C', 'D', 'Label 4')
+
+# Create a subgraph for the box around B and C
+with dot.subgraph(name='cluster_0') as c:
+    c.attr(style='filled', color='lightgrey')
+    c.node_attr.update(style='filled', color='white')
+    c.nodes('B', 'C')
+    c.attr(label='Box')
+
+# Display the graph
+dot
+```
 
 ## Recommendations for `CA` reports
 
@@ -27,3 +69,4 @@ Approvers must select/confirm one of the recommendations (field `MCRecommendatio
 ## Publication
 
 Once all review rounds have been completed, the last revision will lead to a recommendation of "Accepted". The Data Editor's staff prepares the openICPSR deposit for final publication. See [Preparing for publication](aea-interfacing-with-the-journal-management-system) for details.
+
