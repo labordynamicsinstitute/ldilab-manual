@@ -107,7 +107,7 @@ Error in contrib.url(repos, "source") :
 
 If you get this error, you need to set a CRAN repository within R. The best way is to set it globally, once and for all (as per [this note](https://www.r-bloggers.com/2011/11/permanently-setting-the-cran-repository/). You can do this by manually editing the `.Rprofile` file, or simply running the following command:
 
-:::{.note}
+:::{note}
 Even better, this is already configured  in the `config.R` - use it!
 :::
 

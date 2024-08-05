@@ -13,7 +13,7 @@ This will only work on a laptop or desktop. It does not work on (university-prov
 
 :::
 
-### Install
+## Install
 
 - Follow these [instructions](https://docs.docker.com/docker-for-windows/install/) to install Docker Desktop for Windows.
 - Pay close attention to the system requirements:
@@ -21,7 +21,7 @@ This will only work on a laptop or desktop. It does not work on (university-prov
     - Hyper-V
 - For anyone using a University computer it may be necessary to run as administrator. 
 
-### Testing Setup
+## Testing Setup
 
 - Open up a `Command Prompt` and type `docker --version`. If working, it should output a Docker version and build number. 
 - In the same shell, type `docker run hello-world` to test if your installation is working correctly. If working, you should get the following:
@@ -45,7 +45,7 @@ In contrast to most other documentation in this manual, the  examples below use 
 
 :::
 
-### Stata Imperfect Example
+## Stata Imperfect Example
 
 1. Start Docker Desktop. 
 2. Download example project from [ICPSR](https://www.openicpsr.org/openicpsr/tenant/openicpsr/module/aea/workspace?goToPath=/openicpsr/118568&goToLevel=project#).
@@ -116,7 +116,7 @@ stata -b do master.do
 to execute `master.do`.
 
 
-### Fortran Example 
+## Fortran Example 
 
 1. Downloaded the [Intel OneAPI-hpckit](https://hub.docker.com/r/intel/oneapi-hpckit/tags?page=1&ordering=last_updated) by entering the following into the command line:
 
@@ -137,7 +137,7 @@ docker run --rm -it -w /code -v %cd%:/code intel/oneapi-hpckit:2021.2-devel-ubun
 
 
 
-## Wait, what is docker and what did we just do?
+# Wait, what is docker and what did we just do?
 
 Docker is a platform of services for the use of 'containers'. These containers allow the sharing of programs or apps in isolation of their enviroment. In the imperfect example above, we 'mounted' our local folders to the container and then run code inside it using the Stata 16. We did the same thing in the Fortran example, except then we used a Fortran container. It may be helpful to know [the difference between a docker image and a docker container.](https://phoenixnap.com/kb/docker-image-vs-container) 
 
