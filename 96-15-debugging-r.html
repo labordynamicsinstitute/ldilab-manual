@@ -243,6 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="96-40-using-julia.html">Julia-related procedures</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="96-50-using-docker.html">Docker-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="96-51-docker-windows.html">Docker on Windows</a></li>
+
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="96-70-using-mathematica.html">Mathematica-related procedures</a></li>
@@ -615,6 +616,10 @@ document.write(`
 </pre></div>
 </div>
 <p>If you get this error, you need to set a CRAN repository within R. The best way is to set it globally, once and for all (as per <a class="reference external" href="https://www.r-bloggers.com/2011/11/permanently-setting-the-cran-repository/">this note</a>. You can do this by manually editing the <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> file, or simply running the following command:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Even better, this is already configured  in the <code class="docutils literal notranslate"><span class="pre">config.R</span></code> - use it!</p>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;# set the default repository</span>
 <span class="s1">local({</span>
 <span class="s1">  r &lt;- getOption(&quot;repos&quot;)</span>

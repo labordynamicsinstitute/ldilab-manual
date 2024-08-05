@@ -1,6 +1,6 @@
 # Submitting to the JMS and openICPSR
 
-:::{info}
+:::{tip}
 Reminder: for the AEA, the JMS is ScholarOne.
 :::
 

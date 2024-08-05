@@ -243,6 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="96-40-using-julia.html">Julia-related procedures</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="96-50-using-docker.html">Docker-related procedures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Docker on Windows</a></li>
+
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="96-70-using-mathematica.html">Mathematica-related procedures</a></li>
@@ -509,12 +510,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Docker on Windows</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-setup">Testing Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stata-imperfect-example">Stata Imperfect Example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran-example">Fortran Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wait-what-is-docker-and-what-did-we-just-do">Wait, what is docker and what did we just do?</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wait-what-is-docker-and-what-did-we-just-do">Wait, what is docker and what did we just do?</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -673,8 +678,9 @@ r(603);
 <li><p>This maps the current directory (model_codes) to the docker image as “/code” and runs <code class="docutils literal notranslate"><span class="pre">run_all.sh</span></code>, creating the log file <code class="docutils literal notranslate"><span class="pre">run_all.output.txt</span></code>.</p></li>
 </ul>
 </section>
-<section id="wait-what-is-docker-and-what-did-we-just-do">
-<h2>Wait, what is docker and what did we just do?<a class="headerlink" href="#wait-what-is-docker-and-what-did-we-just-do" title="Permalink to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="wait-what-is-docker-and-what-did-we-just-do">
+<h1>Wait, what is docker and what did we just do?<a class="headerlink" href="#wait-what-is-docker-and-what-did-we-just-do" title="Permalink to this heading">#</a></h1>
 <p>Docker is a platform of services for the use of ‘containers’. These containers allow the sharing of programs or apps in isolation of their enviroment. In the imperfect example above, we ‘mounted’ our local folders to the container and then run code inside it using the Stata 16. We did the same thing in the Fortran example, except then we used a Fortran container. It may be helpful to know <a class="reference external" href="https://phoenixnap.com/kb/docker-image-vs-container">the difference between a docker image and a docker container.</a></p>
 <p>It may also be helpful to understand the basics of the commands we just run:</p>
 <ol class="arabic simple">
@@ -704,7 +710,6 @@ r(603);
 </pre></div>
 </div>
 <p>where the option <code class="docutils literal notranslate"><span class="pre">-w</span></code> sets the working directory inside the containers to a the existing folder called “code”. Then, we “mounted” the current working directory in the host machine to the “code” folder inside the container. We use the image  <code class="docutils literal notranslate"><span class="pre">intel/oneapi-hpckit</span></code> with the tag <code class="docutils literal notranslate"><span class="pre">2021.2-devel-ubuntu18.04</span></code> to create and start a container that run the the bash script as described previously.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -768,12 +773,16 @@ r(603);
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Docker on Windows</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-setup">Testing Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stata-imperfect-example">Stata Imperfect Example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran-example">Fortran Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wait-what-is-docker-and-what-did-we-just-do">Wait, what is docker and what did we just do?</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wait-what-is-docker-and-what-did-we-just-do">Wait, what is docker and what did we just do?</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>

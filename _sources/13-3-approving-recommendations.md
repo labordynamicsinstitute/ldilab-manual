@@ -14,34 +14,89 @@ kernelspec:
 # Choosing a Recommendation
 
 
+## Graphical overview of flow
+
 ```{code-cell} 
-:tags: [margin hide-input]
-from graphviz import Digraph
+:tags: [hide-input]
+import networkx as nx
+import matplotlib.pyplot as plt
 
-# Create a new directed graph
-dot = Digraph(comment='Flow Diagram')
-
-# Add nodes
-dot.node('A', 'A')
-dot.node('B', 'B')
-dot.node('C', 'C')
-dot.node('D', 'D')
+# Create a directed graph
+G = nx.DiGraph()
 
 # Add edges with labels
-dot.edge('A', 'B', 'Label 1')
-dot.edge('B', 'B', 'Label 2')
-dot.edge('B', 'C', 'Label 3')
-dot.edge('C', 'D', 'Label 4')
+edges = [('RR', 'CA'), ('RR', 'RR'), ('CA', 'CA'), ('CA', 'Accept'), ('Accept', 'Published')]
+edge_labels = {('RR', 'RR'): 'Revise-and-resubmit',
+               ('RR', 'CA'): '(Conditional) Accept', 
+               ('CA', 'CA'): 'Conditional Accept', 
+               ('CA', 'Accept'): 'Accept [with changes]', 
+               ('Accept', 'Published'): 'Assessment complete'}
 
-# Create a subgraph for the box around B and C
-with dot.subgraph(name='cluster_0') as c:
-    c.attr(style='filled', color='lightgrey')
-    c.node_attr.update(style='filled', color='white')
-    c.nodes('B', 'C')
-    c.attr(label='Box')
+G.add_edges_from(edges)
 
-# Display the graph
-dot
+# Set up the plot
+#plt.figure(figsize=(12, 6))
+fig, ax = plt.subplots(figsize=(12, 6))
+
+# Define custom positions
+pos = {'RR': (-1, 0), 'CA': (0, 0), 'Accept': (1, 0), 'Published': (2, 0)}
+
+
+# Draw nodes
+nx.draw_networkx_nodes(G, pos, ax=ax, node_color='lightblue', 
+                       node_size=3000)
+
+
+# Add a box around B and C
+box_nodes = ['CA', 'Accept']
+box_pos = {node: pos[node] for node in box_nodes}
+box = plt.Rectangle((-0.5, -0.5), 2, 1, fill=True, 
+                    facecolor='lightgray', edgecolor='gray', 
+                    linestyle='--', alpha=0.5)
+plt.gca().add_patch(box)
+plt.text(-0.4, -0.7, 'Our regular process', fontsize=16)
+
+
+# Draw edges
+nx.draw_networkx_edges(G, pos, ax=ax, arrowsize=20, node_size=3200)
+
+# Draw node labels
+nx.draw_networkx_labels(G, pos, ax=ax)
+
+# Custom function to position edge labels
+def edge_label_pos(pos, label_pos=0.5, offset=-0.1):
+    return {(u, v): ((pos[u][0] + pos[v][0])/2, (pos[u][1] + pos[v][1])/2 + offset)
+            for (u, v) in G.edges()}
+
+# Add edge labels with custom positioning
+edge_label_pos = edge_label_pos(pos)
+for edge, label in edge_labels.items():
+    if edge != ('CA', 'CA'):  # Handle all edges except the self-loop
+        x, y = edge_label_pos[edge]
+        plt.text(x, y, label, ha='center', va='center', bbox=dict(boxstyle='round,pad=0.2', fc='white', ec='none', alpha=0.7), fontsize=8)
+
+
+
+# Handle the self-loop for B separately
+rad = 1.3
+ax.text(pos['CA'][0], pos['CA'][1] + rad , edge_labels[('CA','CA')], ha='center', va='center', 
+        bbox=dict(boxstyle='round,pad=0.2', fc='white', ec='none', alpha=0.7), 
+        fontsize=8)
+
+# Handle the self-loop for A separately
+ax.text(pos['RR'][0], pos['RR'][1] + rad , edge_labels[('RR','RR')], ha='center', va='center', 
+        bbox=dict(boxstyle='round,pad=0.2', fc='white', ec='none', alpha=0.7), 
+        fontsize=8)
+
+# Adjust the plot limits to ensure all elements are visible
+ax.set_xlim(-1.5, 2.5)
+ax.set_ylim(-1, 2)
+
+# Show the plot
+ax.axis('off')
+
+plt.tight_layout()
+plt.show()
 ```
 
 ## Recommendations for `CA` reports
