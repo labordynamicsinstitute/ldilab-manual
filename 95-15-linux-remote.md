@@ -9,6 +9,18 @@ We have access to various Linux clusters:
 
 
 
+## First-time setup
+
+Run this ONCE the first time you ever access any Linux servers:
+
+```
+echo "umask 007" >> $HOME/.bash_profile
+```
+
+Then do the usual [Bash setup](setup-bash). That should work on nearly any Linux server.
+
+
+
 ::::{tab-set}
 
 :::{tab-item} BioHPC
@@ -123,17 +135,6 @@ Consult the Jira issue to figure out where you should run the code.
 ::::
 
 ## Additional setup and tips-and-tricks
-
-### First-time setup
-
-Run this ONCE the first time you ever access Linux servers:
-
-```
-echo "umask 007" >> $HOME/.bash_profile
-```
-
-Then do the usual [Bash setup](setup-bash). That should work on nearly any Linux server.
-
 
 ### Utilize `tmux`
 
