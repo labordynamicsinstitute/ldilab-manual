@@ -510,10 +510,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-linux-nodes-with-vscode">Accessing Linux nodes with VSCode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-run-code">Where to run code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-and-tips-and-tricks">Additional setup and tips-and-tricks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilize-tmux">Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation-biohpc-only">Configuring automatic reservation cancellation (BioHPC only)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unzipping-large-zip-files-fails">Unzipping large ZIP files fails</a></li>
@@ -539,6 +539,13 @@ document.write(`
 <li><p>Occassionally NBER linux servers</p></li>
 <li><p>Others, as provided by authors</p></li>
 </ul>
+<section id="first-time-setup">
+<h2>First-time setup<a class="headerlink" href="#first-time-setup" title="Permalink to this heading">#</a></h2>
+<p>Run this ONCE the first time you ever access any Linux servers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo &quot;umask 007&quot; &gt;&gt; $HOME/.bash_profile
+</pre></div>
+</div>
+<p>Then do the usual <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">Bash setup</span></a>. That should work on nearly any Linux server.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
@@ -592,6 +599,7 @@ NBER servers</label><div class="sd-tab-content docutils">
 <p>Access for us is primarily via SSH. See <a class="reference internal" href="#linux-vscode"><span class="std std-ref">Access via VSCode</span></a> for a more user-friendly way to use SSH to access the server.</p>
 </div>
 </div>
+</section>
 <section id="accessing-linux-nodes-with-vscode">
 <span id="linux-vscode"></span><h2>Accessing Linux nodes with VSCode<a class="headerlink" href="#accessing-linux-nodes-with-vscode" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -643,14 +651,6 @@ NBER servers</label><div class="sd-tab-content docutils">
 </section>
 <section id="additional-setup-and-tips-and-tricks">
 <h2>Additional setup and tips-and-tricks<a class="headerlink" href="#additional-setup-and-tips-and-tricks" title="Permalink to this heading">#</a></h2>
-<section id="first-time-setup">
-<h3>First-time setup<a class="headerlink" href="#first-time-setup" title="Permalink to this heading">#</a></h3>
-<p>Run this ONCE the first time you ever access Linux servers:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo &quot;umask 007&quot; &gt;&gt; $HOME/.bash_profile
-</pre></div>
-</div>
-<p>Then do the usual <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">Bash setup</span></a>. That should work on nearly any Linux server.</p>
-</section>
 <section id="utilize-tmux">
 <h3>Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code><a class="headerlink" href="#utilize-tmux" title="Permalink to this heading">#</a></h3>
 <p>If the Linux server has <code class="docutils literal notranslate"><span class="pre">tmux</span></code> installed, use it to make a persistent session that survives disconnects.</p>
@@ -893,10 +893,10 @@ Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-linux-nodes-with-vscode">Accessing Linux nodes with VSCode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-run-code">Where to run code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-and-tips-and-tricks">Additional setup and tips-and-tricks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilize-tmux">Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation-biohpc-only">Configuring automatic reservation cancellation (BioHPC only)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unzipping-large-zip-files-fails">Unzipping large ZIP files fails</a></li>
