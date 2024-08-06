@@ -19,6 +19,8 @@ We have access to various Linux clusters:
 1. Go to the [BioHPC account request page](https://biohpc.cornell.edu/NewUserRequest.aspx), and create an account on the BioHPC cluster.
 2. Then [contact BioHPC support](https://biohpc.cornell.edu/contact.aspx), requesting to join the ECCO group and lv39 (Lars') "lab" (`ecco_lv39`).
 
+Consult the [ECCO general documentation](https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html) for more details on the BioHPC cluster for economists!
+
 **Reserve a node**
 
 - Go to "User", then  [Reservations page](https://biohpc.cornell.edu/lab/labres.aspx), choose "Restricted", and reserve a node:
