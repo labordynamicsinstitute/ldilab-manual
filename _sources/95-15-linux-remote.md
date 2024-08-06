@@ -96,6 +96,8 @@ Some benefits of connecting to BioHPC with VSCode: You can view/edit programs, c
 
 In particular, you can navigate to your working directory and `git clone` the Bitbucket repository (using either the command line, or VSCode prompt to `Clone Repository`). VSCode recognizes Git, so you can visually navigate through tracked and untracked files via the lefthand side menu.
 
+For more information, see [Remote Development using SSH](https://code.visualstudio.com/docs/remote/ssh).
+
 ## Where to run code
 
 
