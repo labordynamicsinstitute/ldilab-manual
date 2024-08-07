@@ -370,4 +370,5 @@ Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 
 ```{tip}
 Additional tips-and-tricks can be found on the [LDIlab wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes). These are focused on the BioHPC cluster, but may work on other servers as well.
+Here is a tutorial video of a BioHPC walkthrough (https://vod.video.cornell.edu/media/BioHPC+Walkthrough+%28Mac%29/1_x2tmxhk9)
 ```
