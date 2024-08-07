@@ -71,6 +71,12 @@ git reflog expire --expire=now --all && git gc --prune=now --aggressive
 git push origin master --force
 ```
 
+After cleaning, if the repository size is still too big, then it may be necessary to
+
+- delete the repository completely on Bitbucket
+- create a new (empty) repository on Bitbucket
+- redo `git push origin master --force` 
+
 Sample report:
 
 ```
