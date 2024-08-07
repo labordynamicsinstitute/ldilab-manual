@@ -53,16 +53,17 @@ Danger! Do not proceed unless you **really** understand what you are doing!
 Sample session:
 
 ```bash
-# In the original cloned repository for aearep-4406
+# In the original cloned repository for aearep-xxxx
+xxxx=4406
 git rm data/path/to/VERYLARGEFILE
 git commit -m 'Removing big files' -a
 git push
 cd ..
 # The "--bare" is very important here!
-git clone --bare git@bitbucket.org:aeaverification/aearep-4406.git
-java -jar bfg-1.14.0.jar -D "*.rds" aearep-4406.git/
+git clone --bare git@bitbucket.org:aeaverification/aearep-${xxxx}.git
+java -jar bfg-1.14.0.jar -D "*.rds" aearep-${xxxx}.git/
 # The report will detail what was removed
-cd aearep-4406.git
+cd aearep-${xxxx}.git
 git reflog expire --expire=now --all && git gc --prune=now --aggressive
 git push origin master --force
 ```
