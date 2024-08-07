@@ -568,16 +568,17 @@ git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </sp
 <p>Danger! Do not proceed unless you <strong>really</strong> understand what you are doing!</p>
 </div>
 <p>Sample session:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the original cloned repository for aearep-4406</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the original cloned repository for aearep-xxxx</span>
+<span class="nv">xxxx</span><span class="o">=</span><span class="m">4406</span>
 git<span class="w"> </span>rm<span class="w"> </span>data/path/to/VERYLARGEFILE
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;Removing big files&#39;</span><span class="w"> </span>-a
 git<span class="w"> </span>push
 <span class="nb">cd</span><span class="w"> </span>..
 <span class="c1"># The &quot;--bare&quot; is very important here!</span>
-git<span class="w"> </span>clone<span class="w"> </span>--bare<span class="w"> </span>git@bitbucket.org:aeaverification/aearep-4406.git
-java<span class="w"> </span>-jar<span class="w"> </span>bfg-1.14.0.jar<span class="w"> </span>-D<span class="w"> </span><span class="s2">&quot;*.rds&quot;</span><span class="w"> </span>aearep-4406.git/
+git<span class="w"> </span>clone<span class="w"> </span>--bare<span class="w"> </span>git@bitbucket.org:aeaverification/aearep-<span class="si">${</span><span class="nv">xxxx</span><span class="si">}</span>.git
+java<span class="w"> </span>-jar<span class="w"> </span>bfg-1.14.0.jar<span class="w"> </span>-D<span class="w"> </span><span class="s2">&quot;*.rds&quot;</span><span class="w"> </span>aearep-<span class="si">${</span><span class="nv">xxxx</span><span class="si">}</span>.git/
 <span class="c1"># The report will detail what was removed</span>
-<span class="nb">cd</span><span class="w"> </span>aearep-4406.git
+<span class="nb">cd</span><span class="w"> </span>aearep-<span class="si">${</span><span class="nv">xxxx</span><span class="si">}</span>.git
 git<span class="w"> </span>reflog<span class="w"> </span>expire<span class="w"> </span>--expire<span class="o">=</span>now<span class="w"> </span>--all<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>gc<span class="w"> </span>--prune<span class="o">=</span>now<span class="w"> </span>--aggressive
 git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master<span class="w"> </span>--force
 </pre></div>
