@@ -61,7 +61,10 @@ git push
 cd ..
 # The "--bare" is very important here!
 git clone --bare git@bitbucket.org:aeaverification/aearep-${xxxx}.git
+# remove all rds files
 java -jar bfg-1.14.0.jar -D "*.rds" aearep-${xxxx}.git/
+# remove files based on size
+java -jar bfg-1.14.0.jar --strip-blobs-bigger-than 50M aearep-${xxxx}.git/
 # The report will detail what was removed
 cd aearep-${xxxx}.git
 git reflog expire --expire=now --all && git gc --prune=now --aggressive
