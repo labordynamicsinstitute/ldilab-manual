@@ -57,8 +57,15 @@ Once you have ascertained that changes have been made, and if this hasn't alread
 
 ### Update the Bitbucket repository
 
-We want to capture the latest code, and generate a listing of all the files in the openICPSR deposit. To this extent, re-run the [Ingesting Author Materials](running-populate-icpsr) steps. If for some reason, this fails, you may need to [update the Pipeline tools in the repository](updating-repository-pipeline), then try again.
+We want to capture the latest code, and generate a listing of all the files in the openICPSR deposit. To this extent, re-run the [Ingesting Author Materials](running-populate-icpsr) steps. 
 
+:::{note}
+
+If for some reason, this fails (see screenshot), you may need to [update the Pipeline tools in the repository](updating-repository-pipeline), then try again.
+
+![Pipeline failure](images/jira-pipeline-tools-error.png)
+
+:::
 
 ### Verify Requested Changes
 
