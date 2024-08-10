@@ -108,7 +108,11 @@ Some benefits of connecting to BioHPC with VSCode: You can view/edit programs, c
 
 In particular, you can navigate to your working directory and `git clone` the Bitbucket repository (using either the command line, or VSCode prompt to `Clone Repository`). VSCode recognizes Git, so you can visually navigate through tracked and untracked files via the lefthand side menu.
 
-For more information, see [Remote Development using SSH](https://code.visualstudio.com/docs/remote/ssh).
+For more information, see [VSCode Remote Development using SSH](https://code.visualstudio.com/docs/remote/ssh).
+
+```{tip}
+A tutorial video (thanks to Lars' former RA Ilona Khimey) is available at [Cornell Video-on-demand](https://vod.video.cornell.edu/media/BioHPC+Walkthrough+%28Mac%29/1_x2tmxhk9).
+```
 
 ## Where to run code
 
@@ -369,5 +373,5 @@ Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 
 
 ```{tip}
-Additional tips-and-tricks can be found on the [LDIlab wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes). These are focused on the BioHPC cluster, but may work on other servers as well. A tutorial video is available at [Cornell Video-on-demand](https://vod.video.cornell.edu/media/BioHPC+Walkthrough+%28Mac%29/1_x2tmxhk9).
+Additional tips-and-tricks can be found on the [LDIlab wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes). These are focused on the BioHPC cluster, but may work on other servers as well. 
 ```
