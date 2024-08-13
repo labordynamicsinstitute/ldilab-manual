@@ -514,12 +514,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process">Process</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-if-changes-have-been-made">Verifying if changes have been made</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-changes-have-been-made">No Changes Have Been Made</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-changes-have-been-made">If changes have been made</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-bitbucket-repository">Update the Bitbucket repository</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-requested-changes">Verify Requested Changes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insufficient-changes">Insufficient Changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-insufficient-changes-to-the-authors">Reporting Insufficient Changes to the Authors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-steps">Summary of Steps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-changes">No Changes</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
@@ -576,6 +576,37 @@ document.write(`
 <li><p>Additionally, this is a great resource for checking which program files the authors have made changes to.</p></li>
 </ul>
 </section>
+<section id="no-changes-have-been-made">
+<h3>No Changes Have Been Made<a class="headerlink" href="#no-changes-have-been-made" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>If no changes have been made to the deposit <strong>four weeks</strong> after requesting revisions, start a message in the Communication log:</p>
+<ul>
+<li><p>with subject line: <code class="docutils literal notranslate"><span class="pre">AEAREP-xxx</span> <span class="pre">Data</span> <span class="pre">and</span> <span class="pre">Code</span> <span class="pre">Deposit</span> <span class="pre">Revisions</span> <span class="pre">Reminder</span></code> (replace with appropriate numbers)</p></li>
+<li><p>with body</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Authors,
+
+Please make the revisions requested to the openICPSR deposit so that we may
+move forward with publication of the deposit.
+
+See our previous comment above and our full report for details. 
+Feel free to contact us directly at dataeditor@aeapubs.org with any questions.
+
+
+&gt; [NOTE] Starting July 1, 2021, we will start to publish replication 
+packages as soon as all requested changes to the deposit have been made. 
+Please process any requested changes as soon as possible.
+
+Thanks!
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Make a note in the Jira ticket that such a message has been posted.</p></li>
+<li><p>If after an additional <strong>four weeks</strong> still no changes have been made, make a note in the Jira ticket, tagging/ alerting the Data Editor.</p></li>
+</ul>
+</section>
 <section id="if-changes-have-been-made">
 <h3>If changes have been made<a class="headerlink" href="#if-changes-have-been-made" title="Permalink to this heading">#</a></h3>
 <p>Once you have ascertained that changes have been made, and if this hasn’t already been done, move the Jira ticket to <code class="docutils literal notranslate"><span class="pre">Assess</span> <span class="pre">openICPSR</span> <span class="pre">changes</span></code>.</p>
@@ -613,6 +644,25 @@ document.write(`
 <li><p>You can find the “Reasons for incomplete reproducibility” in the “Repl. info” tab in the Jira ticket, or in the popup when moving from <code class="docutils literal notranslate"><span class="pre">Assess</span> <span class="pre">openICPSR</span> <span class="pre">changes</span></code> to <code class="docutils literal notranslate"><span class="pre">Pending</span> <span class="pre">publication</span></code> at the end of this process.</p></li>
 <li><p>Check that the deposit doesn’t have any extraneous files (Manuscript PDFs, Response to the Editor PDF, etc). If there are these files, note this on the Jira comment, tagging the senior members of the lab. Authors must remove these files. If in doubt, check with senior members.</p></li>
 <li><p><strong>Check that the deposit is “Submitted” status</strong>.</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">How do you know that the changes are sufficient?</p>
+<p>For instance, the last report might have said:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="p">[</span><span class="n">REQUIRED</span><span class="p">]</span> <span class="n">Please</span> <span class="n">provide</span> <span class="n">debugged</span> <span class="n">code</span><span class="p">,</span> <span class="n">addressing</span> <span class="n">the</span> <span class="n">issues</span> <span class="n">identified</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">report</span><span class="o">.</span> 
+</pre></div>
+</div>
+<p>and the report will have contained some mention of the bugs found. Without re-running the code, how can we assess this?</p>
+<p>Inspect the code, in particular the changes made to the code (see <code class="docutils literal notranslate"><span class="pre">Commits</span></code> tab on Bitbucket and navigate to the file that was a problem), and see if it is <strong>plausible</strong> that the changes fix the bug. In general, we trust that the authors, provided with a list where bugs occur, are able to fix these types of bugs at this stage.</p>
+<p><strong>Additional exceptions</strong></p>
+<p>Some tags may not have a clear resolution just by scrutinizing the deposit, because they may have been handled in the copy-editing process and adjustments to the manuscript, which we (the Data Editor team) do not observe. All tags that appear in the “Action Items (manuscript)” section are communicated by the copy-editing team to the authors, so we <strong>assume</strong> that they will be handled there. Here are a few tags that fall into that category:</p>
+<ul class="simple">
+<li><p>“[REQUIRED] Please adjust your tables to account for the noted numerical discrepancies, or explain (in the README) discrepancies that a replicator should expect”. If the README makes no mention of this, then you will need to assume that this was handled by adjusting the manuscript or (online) appendix. Add the following note:</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Not done</strong>. Not addressed in the README, we assume that the online appendix and manuscript will be updated.</p>
+</div></blockquote>
+</div>
+<ul class="simple">
 <li><p><strong>If you have verified that all the required changes have been made</strong>, continue with the <a class="reference internal" href="33-openicpsr-preparing.html#submitting-info-via-openicpsr-for-accept"><span class="std std-ref">“For Accept” section</span></a> of <a class="reference internal" href="33-openicpsr-preparing.html#submitting-info-via-openicpsr"><span class="std std-ref">Submitting deposit-related information via openICPSR</span></a>.</p>
 <ul>
 <li><p>You have another opportunity to uncheck any boxes here that have been addressed.</p></li>
@@ -625,18 +675,9 @@ document.write(`
 </ul>
 </li>
 </ul>
-<div class="note admonition">
-<p class="admonition-title">How do you know that the changes are sufficient?</p>
-<p>For instance, the last report might have said:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="p">[</span><span class="n">REQUIRED</span><span class="p">]</span> <span class="n">Please</span> <span class="n">provide</span> <span class="n">debugged</span> <span class="n">code</span><span class="p">,</span> <span class="n">addressing</span> <span class="n">the</span> <span class="n">issues</span> <span class="n">identified</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">report</span><span class="o">.</span> 
-</pre></div>
-</div>
-<p>and the report will have contained some mention of the bugs found. Without re-running the code, how can we assess this?</p>
-<p>Inspect the code, in particular the changes made to the code (see <code class="docutils literal notranslate"><span class="pre">Commits</span></code> tab on Bitbucket and navigate to the file that was a problem), and see if it is <strong>plausible</strong> that the changes fix the bug. In general, we trust that the authors, provided with a list where bugs occur, are able to fix these types of bugs at this stage.</p>
-</div>
 </section>
-<section id="insufficient-changes">
-<h3>Insufficient Changes<a class="headerlink" href="#insufficient-changes" title="Permalink to this heading">#</a></h3>
+<section id="reporting-insufficient-changes-to-the-authors">
+<h3>Reporting Insufficient Changes to the Authors<a class="headerlink" href="#reporting-insufficient-changes-to-the-authors" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the assistant to the Data Editor with a comment on the Jira ticket outlining your question.</p></li>
 <li><p>These cases are not always cut and dry, please err on the side of caution and ask questions before posting a “final acceptance” message on the deposit.</p></li>
@@ -670,44 +711,13 @@ document.write(`
 <section id="summary-of-steps">
 <h3>Summary of Steps<a class="headerlink" href="#summary-of-steps" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Open <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a> on bitbucket</p></li>
-<li><p>Copy all the items in Action Items (open ICPSR) (disregard the manuscript section since we can’t check that at this point)</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code> on bitbucket</p></li>
+<li><p>Copy all the items in “Action Items (openICPSR)” (disregard the manuscript section since we can’t check that at this point)</p></li>
 <li><p>Paste the Action Items into the Comments section of Jira.</p></li>
 <li><p>Go through each item and mark ‘Done’ or ‘Incomplete’ next to each item. With any relevant details afterwards.</p></li>
 <li><p>If all changes have been made,  continue with the “For Accept” section of the  <a class="reference internal" href="33-openicpsr-preparing.html#submitting-info-via-openicpsr-for-accept"><span class="std std-ref">“For Accept” section</span></a> of <a class="reference internal" href="33-openicpsr-preparing.html#submitting-info-via-openicpsr"><span class="std std-ref">Submitting deposit-related information via openICPSR</span></a>.</p></li>
 <li><p>If some items remain incomplete, tag Data Editor’s assistant in Jira, who will then contact the authors.</p></li>
 </ol>
-</section>
-<section id="no-changes">
-<h3>No Changes<a class="headerlink" href="#no-changes" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>If no changes have been made to the deposit <strong>four weeks</strong> after requesting revisions, start a message in the Communication log:</p>
-<ul>
-<li><p>with subject line: <code class="docutils literal notranslate"><span class="pre">AEAREP-xxx</span> <span class="pre">Data</span> <span class="pre">and</span> <span class="pre">Code</span> <span class="pre">Deposit</span> <span class="pre">Revisions</span> <span class="pre">Reminder</span></code> (replace with appropriate numbers)</p></li>
-<li><p>with body</p></li>
-</ul>
-</li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Authors,
-
-Please make the revisions requested to the openICPSR deposit so that we may
-move forward with publication of the deposit.
-
-See our previous comment above and our full report for details. 
-Feel free to contact us directly at dataeditor@aeapubs.org with any questions.
-
-
-&gt; [NOTE] Starting July 1, 2021, we will start to publish replication 
-packages as soon as all requested changes to the deposit have been made. 
-Please process any requested changes as soon as possible.
-
-Thanks!
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Make a note in the Jira ticket that such a message has been posted.</p></li>
-<li><p>If after an additional <strong>four weeks</strong> still no changes have been made, make a note in the Jira ticket, tagging/ alerting the Data Editor.</p></li>
-</ul>
 </section>
 </section>
 <section id="notes">
@@ -794,12 +804,12 @@ aeraccept@aeapubs.org.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process">Process</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-if-changes-have-been-made">Verifying if changes have been made</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-changes-have-been-made">No Changes Have Been Made</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-changes-have-been-made">If changes have been made</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-bitbucket-repository">Update the Bitbucket repository</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-requested-changes">Verify Requested Changes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insufficient-changes">Insufficient Changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-insufficient-changes-to-the-authors">Reporting Insufficient Changes to the Authors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-steps">Summary of Steps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-changes">No Changes</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
