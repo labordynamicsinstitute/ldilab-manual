@@ -49,6 +49,33 @@ If you are the RA tasked with this, these are your instructions.
 - This log will tell you all the changes that have been made to the deposit and when. From here we can tell whether or not the authors have made any changes since we originally requested the revisions. 
 - Additionally, this is a great resource for checking which program files the authors have made changes to. 
 
+### No Changes Have Been Made
+
+- If no changes have been made to the deposit **four weeks** after requesting revisions, start a message in the Communication log:
+
+    - with subject line: `AEAREP-xxx Data and Code Deposit Revisions Reminder` (replace with appropriate numbers)
+    - with body
+
+```
+Authors,
+
+Please make the revisions requested to the openICPSR deposit so that we may
+move forward with publication of the deposit.
+
+See our previous comment above and our full report for details. 
+Feel free to contact us directly at dataeditor@aeapubs.org with any questions.
+
+
+> [NOTE] Starting July 1, 2021, we will start to publish replication 
+packages as soon as all requested changes to the deposit have been made. 
+Please process any requested changes as soon as possible.
+
+Thanks!
+```
+
+- Make a note in the Jira ticket that such a message has been posted.
+- If after an additional **four weeks** still no changes have been made, make a note in the Jira ticket, tagging/ alerting the Data Editor.
+
 ### If changes have been made
 
 Once you have ascertained that changes have been made, and if this hasn't already been done, move the Jira ticket to `Assess openICPSR changes`. 
@@ -90,12 +117,6 @@ Except in extremely rare cases, do **not** re-run code.
   - Check that the deposit doesn't have any extraneous files (Manuscript PDFs, Response to the Editor PDF, etc). If there are these files, note this on the Jira comment, tagging the senior members of the lab. Authors must remove these files. If in doubt, check with senior members.
   - **Check that the deposit is "Submitted" status**. 
   
-- **If you have verified that all the required changes have been made**, continue with the ["For Accept" section](submitting-info-via-openicpsr-for-accept) of [Submitting deposit-related information via openICPSR](submitting-info-via-openicpsr).
-  - You have another opportunity to uncheck any boxes here that have been addressed.
-  - Check under "Other links" if "Non-compliant"  = yes, if so, **do not proceed** until you find clarification
-  - - See if the reason for non-compliance (usually mentioned in the report, and at least in the comments) is resolved, **consult with the Data Editor**, then uncheck that box.
-  - If the deposit is **not** in "Submitted" status, choose the appropriate variant of the **Signoff** message.
-
 
 ::::{admonition} How do you know that the changes are sufficient?
 :class: note
@@ -110,9 +131,27 @@ and the report will have contained some mention of the bugs found. Without re-ru
 
 Inspect the code, in particular the changes made to the code (see `Commits` tab on Bitbucket and navigate to the file that was a problem), and see if it is **plausible** that the changes fix the bug. In general, we trust that the authors, provided with a list where bugs occur, are able to fix these types of bugs at this stage.
 
+**Additional exceptions**
+
+Some tags may not have a clear resolution just by scrutinizing the deposit, because they may have been handled in the copy-editing process and adjustments to the manuscript, which we (the Data Editor team) do not observe. All tags that appear in the "Action Items (manuscript)" section are communicated by the copy-editing team to the authors, so we **assume** that they will be handled there. Here are a few tags that fall into that category:
+
+- "[REQUIRED] Please adjust your tables to account for the noted numerical discrepancies, or explain (in the README) discrepancies that a replicator should expect". If the README makes no mention of this, then you will need to assume that this was handled by adjusting the manuscript or (online) appendix. Add the following note:
+
+> **Not done**. Not addressed in the README, we assume that the online appendix and manuscript will be updated.
+>
+> 
+
+
 ::::
 
-### Insufficient Changes
+
+- **If you have verified that all the required changes have been made**, continue with the ["For Accept" section](submitting-info-via-openicpsr-for-accept) of [Submitting deposit-related information via openICPSR](submitting-info-via-openicpsr).
+  - You have another opportunity to uncheck any boxes here that have been addressed.
+  - Check under "Other links" if "Non-compliant"  = yes, if so, **do not proceed** until you find clarification
+  - - See if the reason for non-compliance (usually mentioned in the report, and at least in the comments) is resolved, **consult with the Data Editor**, then uncheck that box.
+  - If the deposit is **not** in "Submitted" status, choose the appropriate variant of the **Signoff** message.
+
+### Reporting Insufficient Changes to the Authors
 
 - If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the assistant to the Data Editor with a comment on the Jira ticket outlining your question.
 - These cases are not always cut and dry, please err on the side of caution and ask questions before posting a "final acceptance" message on the deposit.
@@ -136,39 +175,12 @@ Inspect the code, in particular the changes made to the code (see `Commits` tab 
 
 ### Summary of Steps
 
-1. Open REPLICATION.md on bitbucket
-2. Copy all the items in Action Items (open ICPSR) (disregard the manuscript section since we can't check that at this point)
+1. Open `REPLICATION.md` on bitbucket
+2. Copy all the items in "Action Items (openICPSR)" (disregard the manuscript section since we can't check that at this point)
 3. Paste the Action Items into the Comments section of Jira.
 4. Go through each item and mark 'Done' or 'Incomplete' next to each item. With any relevant details afterwards.
 5. If all changes have been made,  continue with the "For Accept" section of the  ["For Accept" section](submitting-info-via-openicpsr-for-accept) of [Submitting deposit-related information via openICPSR](submitting-info-via-openicpsr).
 6. If some items remain incomplete, tag Data Editor's assistant in Jira, who will then contact the authors.
-
-### No Changes
-
-- If no changes have been made to the deposit **four weeks** after requesting revisions, start a message in the Communication log:
-
-    - with subject line: `AEAREP-xxx Data and Code Deposit Revisions Reminder` (replace with appropriate numbers)
-    - with body
-
-```
-Authors,
-
-Please make the revisions requested to the openICPSR deposit so that we may
-move forward with publication of the deposit.
-
-See our previous comment above and our full report for details. 
-Feel free to contact us directly at dataeditor@aeapubs.org with any questions.
-
-
-> [NOTE] Starting July 1, 2021, we will start to publish replication 
-packages as soon as all requested changes to the deposit have been made. 
-Please process any requested changes as soon as possible.
-
-Thanks!
-```
-
-- Make a note in the Jira ticket that such a message has been posted.
-- If after an additional **four weeks** still no changes have been made, make a note in the Jira ticket, tagging/ alerting the Data Editor.
 
 ## Notes
 
