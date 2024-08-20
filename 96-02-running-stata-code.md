@@ -1,3 +1,4 @@
+(running-code-in-stata)=
 # Running Code in Stata
 
 Although, there are plenty of ways to run code in Stata, our goal with these instructions is to show the easiest way to do it, by minimizing both the manual steps replicators have to go through and the chance of making a mistake that prevents a successful run.
