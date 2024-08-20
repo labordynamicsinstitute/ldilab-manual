@@ -55,11 +55,56 @@ Do not let yourself be blocked too long!
 Once you have run the code, come back here to continue!
 
 
-## Details
+### Details
 
 - If code runs for a long time, record in the Jira issue (as a comment) when you started the code. 
 - Use the `Computing Environment` to record where (CCSS, BioHPC node, etc.) you started the code.
 - It is not unusual for code to run for several days. You can start a new case in the meantime!
+
+## When you run into problems
+
+Before you even write up your [Findings](partc), you may run into problems. In order to clearly document the problem to somebody else on the team who can reference it, state the problem clearly in the Comments of the Jira ticket. Ideally, you will also reference the filename, both by name and by reference to location within the repository, as well as a log file showing the problem. 
+
+
+:::{admonition} Referencing Logfiles
+:class: info dropdown
+
+You should point to the exact line where the problem appears to show up, as follows:
+
+**Step 0**
+
+Before doing anything, 
+
+- `git add` any modified and any added files
+- `git commit` with a commit message that identifies the problem
+- `git push`
+
+**Step 1**
+
+Navigate to the Bitbucket repository of this case. If you are doing everything right, you should see the files you just committed and pushed, as well as the log files you are creating (if you are not creating log files, review [Stata instructions](running-code-in-stata), [R instructions](running-code-in-r), or other relevant instructions). You should see a `logs` directory:
+
+![images/bitbucket-logfiles-1.png]
+
+Navigate to the logfile you want to reference:
+
+![images/bitbucket-logfiles-2.png]
+
+In general, the error will be in the last lines of the logfile:
+
+
+![images/bitbucket-logfiles-3.png]
+
+Click on the line number (on the left margin). This should highlight a relevant line:
+
+![images/bitbucket-logfiles-4.png]
+
+Now copy the URL, and paste it into the Comment field of Jira:
+
+![images/bitbucket-logfiles-5.png]
+
+This allows you point the reader/helper to a specific line immediately, making it very clear where you think the error occurs. In some cases, the error might actually happen earlier, and the logfile provides a lot of information, if not always enough, to help debug.
+
+:::
 
 ## Wrapping up
 

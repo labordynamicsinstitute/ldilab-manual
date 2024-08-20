@@ -511,8 +511,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-that-you-are-working-on-part-b">Signal that you are working on Part B</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principles">Principles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principles">Principles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-you-run-into-problems">When you run into problems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up">Wrapping up</a></li>
 </ul>
             </nav>
@@ -565,14 +568,41 @@ document.write(`
 <p>Do not let yourself be blocked too long!</p>
 </div>
 <p>Once you have run the code, come back here to continue!</p>
-</section>
 <section id="details">
-<h2>Details<a class="headerlink" href="#details" title="Permalink to this heading">#</a></h2>
+<h3>Details<a class="headerlink" href="#details" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>If code runs for a long time, record in the Jira issue (as a comment) when you started the code.</p></li>
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">Computing</span> <span class="pre">Environment</span></code> to record where (CCSS, BioHPC node, etc.) you started the code.</p></li>
 <li><p>It is not unusual for code to run for several days. You can start a new case in the meantime!</p></li>
 </ul>
+</section>
+</section>
+<section id="when-you-run-into-problems">
+<h2>When you run into problems<a class="headerlink" href="#when-you-run-into-problems" title="Permalink to this heading">#</a></h2>
+<p>Before you even write up your <a class="reference internal" href="11-07-workflow-writing-report.html#partc"><span class="std std-ref">Findings</span></a>, you may run into problems. In order to clearly document the problem to somebody else on the team who can reference it, state the problem clearly in the Comments of the Jira ticket. Ideally, you will also reference the filename, both by name and by reference to location within the repository, as well as a log file showing the problem.</p>
+<div class="info dropdown admonition">
+<p class="admonition-title">Referencing Logfiles</p>
+<p>You should point to the exact line where the problem appears to show up, as follows:</p>
+<p><strong>Step 0</strong></p>
+<p>Before doing anything,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> any modified and any added files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> with a commit message that identifies the problem</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p></li>
+</ul>
+<p><strong>Step 1</strong></p>
+<p>Navigate to the Bitbucket repository of this case. If you are doing everything right, you should see the files you just committed and pushed, as well as the log files you are creating (if you are not creating log files, review <a class="reference internal" href="96-02-running-stata-code.html#running-code-in-stata"><span class="std std-ref">Stata instructions</span></a>, <a class="reference internal" href="96-12-running-r-code.html#running-code-in-r"><span class="std std-ref">R instructions</span></a>, or other relevant instructions). You should see a <code class="docutils literal notranslate"><span class="pre">logs</span></code> directory:</p>
+<p>![images/bitbucket-logfiles-1.png]</p>
+<p>Navigate to the logfile you want to reference:</p>
+<p>![images/bitbucket-logfiles-2.png]</p>
+<p>In general, the error will be in the last lines of the logfile:</p>
+<p>![images/bitbucket-logfiles-3.png]</p>
+<p>Click on the line number (on the left margin). This should highlight a relevant line:</p>
+<p>![images/bitbucket-logfiles-4.png]</p>
+<p>Now copy the URL, and paste it into the Comment field of Jira:</p>
+<p>![images/bitbucket-logfiles-5.png]</p>
+<p>This allows you point the reader/helper to a specific line immediately, making it very clear where you think the error occurs. In some cases, the error might actually happen earlier, and the logfile provides a lot of information, if not always enough, to help debug.</p>
+</div>
 </section>
 <section id="wrapping-up">
 <h2>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this heading">#</a></h2>
@@ -650,8 +680,11 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-that-you-are-working-on-part-b">Signal that you are working on Part B</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principles">Principles</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principles">Principles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#details">Details</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-you-run-into-problems">When you run into problems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up">Wrapping up</a></li>
 </ul>
   </nav></div>
