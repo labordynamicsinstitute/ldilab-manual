@@ -95,7 +95,7 @@ In general, the error will be in the last lines of the logfile:
 
 Click on the line number (on the left margin). This should highlight a relevant line:
 
-![images/bitbucket-logfiles-4.png]
+![highlighted row](images/bitbucket-logfiles-4.png)
 
 Now copy the URL, and paste it into the Comment field of Jira:
 
