@@ -83,16 +83,15 @@ Before doing anything,
 
 Navigate to the Bitbucket repository of this case. If you are doing everything right, you should see the files you just committed and pushed, as well as the log files you are creating (if you are not creating log files, review [Stata instructions](running-code-in-stata), [R instructions](running-code-in-r), or other relevant instructions). You should see a `logs` directory:
 
-![images/bitbucket-logfiles-1.png]
+![Log directory](images/bitbucket-logfiles-1.png)
 
 Navigate to the logfile you want to reference:
 
-![images/bitbucket-logfiles-2.png]
+![specific logfiles](images/bitbucket-logfiles-2.png)
 
 In general, the error will be in the last lines of the logfile:
 
-
-![images/bitbucket-logfiles-3.png]
+![location of error message](images/bitbucket-logfiles-3.png)
 
 Click on the line number (on the left margin). This should highlight a relevant line:
 
@@ -100,7 +99,7 @@ Click on the line number (on the left margin). This should highlight a relevant 
 
 Now copy the URL, and paste it into the Comment field of Jira:
 
-![images/bitbucket-logfiles-5.png]
+![line number highlighted](images/bitbucket-logfiles-5.png)
 
 This allows you point the reader/helper to a specific line immediately, making it very clear where you think the error occurs. In some cases, the error might actually happen earlier, and the logfile provides a lot of information, if not always enough, to help debug.
 
