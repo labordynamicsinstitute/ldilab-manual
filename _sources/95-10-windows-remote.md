@@ -14,6 +14,8 @@ Pay attention to the precise access instructions, as they may be substantially d
 :::
 
 
+## Connecting to different remote computers
+
 :::::{tab-set}
 
 
@@ -167,17 +169,35 @@ Network drives are already mapped in RedCloud. To access the shared "L-Drive", f
 
 ## Signing out
 
-It is important to sign out when you do NOT have jobs running. However, when you no longer have a job running, it saves everybody resoures. Your data will still be accessible when you sign back on. 
+It is important to **sign out** when you do NOT have jobs running. When you no longer have a job running, it saves everybody resoures. Your data will still be accessible when you sign back on. 
 
-*Manually*
+### Manually Signing out
 
--  Open Start Menu
+
+::::{tab-set}
+
+:::{tab-item} Current method
+
+- Open Start Menu
+- Click on the Profile icon of your name on the left.
+- Click on the three dots at the top right of the popup menu
+- Select 'Sign out'
+
+![Signout](images/ccss-cloud-signout-2.png)
+
+:::{tab-item} Old method
+
+- Open Start Menu
 - Click on the Profile icon of your name on the left.
 - Select 'Sign out'
 
 ![Signout](images/windows11-signout.png)
 
-*Automatically*
+:::
+
+::::
+
+### Automatically Signing out 
 
 To configure your job to sign out automatically at the end, these are the instructions [provided by CCSS](https://socialsciences.cornell.edu/computing-and-data/cloud-computing-solutions/account-instructions?toptab=session_tips&contenttab=auto_sign_out_after_code_completes):
 
