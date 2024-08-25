@@ -22,7 +22,11 @@ Pay attention to the precise access instructions, as they may be substantially d
 ::::{tab-item} Cloud CCSS
 
 
-- [Instructions](https://cornellprod-my.sharepoint.com/:f:/g/personal/cd642_cornell_edu/EvxDKmDjZyZBsrQvimUR8xABE4x6TYDenmLOY8ZFMLRjUw)
+:::{important} 
+
+- [**Instructions**](https://cornellprod-my.sharepoint.com/:f:/g/personal/cd642_cornell_edu/EvxDKmDjZyZBsrQvimUR8xABE4x6TYDenmLOY8ZFMLRjUw)
+
+:::
 
 :::{admonition} Please be sure to do this:
 
