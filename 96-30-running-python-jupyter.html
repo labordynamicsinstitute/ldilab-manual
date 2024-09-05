@@ -583,7 +583,7 @@ document.write(`
 </section>
 <section id="making-python-code-dynamic">
 <h2>Making Python code dynamic<a class="headerlink" href="#making-python-code-dynamic" title="Permalink to this heading">#</a></h2>
-<p>In general, Python code should not have hard-coded paths. Python programs are aware of their own location, and other directories should be relative to that. However, some authors may still follow (econ-specific) norms, and hard-code paths.</p>
+<p>In general, Python code should not have hard-coded paths. Python programs are aware of their own location, and other directories should be relative to that. However, some authors may still follow (econ-specific) norms, and hard-code paths. Similar to our approach for <a class="reference internal" href="96-02-running-stata-code.html#stata-step4-modifying-paths"><span class="std std-ref">Stata</span></a>, <a class="reference internal" href="96-11-using-config-r.html#base-root-directory-r"><span class="std std-ref">R</span></a>, and MATLAB, you can use the <code class="docutils literal notranslate"><span class="pre">rootdir</span></code> principle to make the code more portable/dynamic.</p>
 <p>In that case, do the following:</p>
 <p>Say the author has code like</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xlsread</span><span class="p">(</span><span class="s1">&#39;C:\Users\me\submission\AEJMacro\yesterday\data.xlsx&#39;</span><span class="p">)</span>
@@ -598,6 +598,12 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xlsread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s1">&#39;data.xlsx&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
+<p>Alternatively, if the author uses a change of working directory, then</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>would change the working directory to the location of the file being run.</p>
 </section>
 <section id="installing-packages">
 <h2>Installing packages<a class="headerlink" href="#installing-packages" title="Permalink to this heading">#</a></h2>

@@ -114,6 +114,7 @@ In summary, `config.do` does 4 things:
 
 A crucial function of `config.do` is that it allows for the local installation of Stata packages, which is important for two reasons. First, it will enable us to check for the completeness of replication materials. Second, when running code in servers, we often do not have the necessary permissions to install Stata packages freely.`config.do` allow us to installed packages in the replication directory.  
 
+(stata-step4-modifying-paths)=
 ## Step 4: modifying paths if necessary
 
 :::{admonition} **[ACTION]** Modify paths if necessary.
