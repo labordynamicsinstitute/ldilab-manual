@@ -45,10 +45,9 @@ deactivate
 
 ## Making Python code dynamic
 
-In general, Python code should not have hard-coded paths. Python programs are aware of their own location, and other directories should be relative to that. However, some authors may still follow (econ-specific) norms, and hard-code paths. 
+In general, Python code should not have hard-coded paths. Python programs are aware of their own location, and other directories should be relative to that. However, some authors may still follow (econ-specific) norms, and hard-code paths. Similar to our approach for Stata, R, and MATLAB, you can use the `rootdir` principle to make the code more portable/dynamic.
 
 In that case, do the following:
-
 
 Say the author has code like
 
@@ -69,6 +68,14 @@ Then, wherever the hard-coded path appears, replace it with:
 ```python
 xlsread(os.path.join(rootdir,'data.xlsx'))
 ```
+
+Alternatively, if the author uses a change of working directory, then 
+
+```python
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+```
+would change the working directory to the location of the file being run. 
 
 ## Installing packages
 
