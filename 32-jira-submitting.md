@@ -76,17 +76,23 @@ To do so, proceed as follows:
 Use this template if the paper is in [`RR`] :
 
 ```
-Revisions requested. Details in the full report, which you will receive via ScholarOne after the paper reaches the Conditional Accept stage.
+Revisions requested. Details in the full report, which you will receive via ScholarOne
+or from the editor in charge of the paper.
 
-> [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+> [NOTE] We may publish replication packages as soon as all requested changes
+to the deposit have been made. Please process any requested changes as soon
+as possible.
 ```
 
 Use this template if the paper is in [`CA`] :
 
 ```
-Revisions requested. Details in the full report, which you will receive via ScholarOne in a few business days.
+Revisions requested. Details in the full report, which you will receive via ScholarOne
+in a few business days.
 
-> [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+> [NOTE] We may publish replication packages as soon as all requested changes
+to the deposit have been made. Please process any requested changes as soon
+as possible.
 ```
 
 4. Back in the Jira issue, transition the issue to `Done`.
@@ -114,7 +120,7 @@ Revisions requested. Details in the full report, which you will receive via Scho
    - start a message in the Communication log:
       - with subject line: `Please make the following changes (AEAREP-xxx)` (replace with appropriate numbers)
       - Message content: 
-         - the contents of the portion of the report after "`Action Items (openICPSR)`"
+         - the contents of the portion of the report after "`Action Items (openICPSR)`", but ONLY the action items.
          - then the following lines
 
 
@@ -123,19 +129,25 @@ Revisions requested. Details in the full report, which you will receive via Scho
 ```
          
 ```
-Details in the full report, which you will receive via ScholarOne in a few business days. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
+Details in the full report, which you will receive via ScholarOne in a
+few business days. Please provide your response to the items listed above
+via the openICPSR Project Communication log, specifying AEAREP-xxx.
+Other items in the report may need to be addressed via ScholarOne.
 
-Once all changes have been made, please change the status of your deposit to "Submit to AEA".
+Once all changes have been made, please change the status of your deposit
+to "Submit to AEA".
 
 
-> [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+> [NOTE] We may publish replication packages as soon as all requested changes
+to the deposit have been made. Please process any requested changes as soon
+as possible.
 ```
 (replace xxx with the issue number)
 
 6. On openICPSR, if `Deposit Status` = *`Submitted`*:
   - click on `Change Status`, choose `Request revisions`
   - in the pop-up, 
-    - paste the contents of the repository-specific portion of the report after "`Action Items (openICPSR)`"
+    - paste the contents of the repository-specific portion of the report after "`Action Items (openICPSR)`", but ONLY the action items.
     - then the following lines: 
 
 
@@ -144,9 +156,18 @@ Once all changes have been made, please change the status of your deposit to "Su
 ```
 
 ```
-Details in the full report, which you will receive via ScholarOne in a few business days. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
+Details in the full report, which you will receive via ScholarOne in a
+few business days. Please provide your response to the items listed above
+via the openICPSR Project Communication log, specifying AEAREP-xxx.
+Other items in the report may need to be addressed via ScholarOne.
 
-> [NOTE] Starting July 1, 2021, we will start to publish replication packages as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+Once all changes have been made, please change the status of your deposit
+to "Submit to AEA".
+
+
+> [NOTE] We may publish replication packages as soon as all requested changes
+to the deposit have been made. Please process any requested changes as soon
+as possible.
 ```
 (replace xxx with the issue number)
  
