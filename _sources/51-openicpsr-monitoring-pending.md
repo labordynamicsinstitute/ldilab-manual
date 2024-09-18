@@ -4,10 +4,13 @@
 ## Pre-requisites (JIRA)
 
 
-:::{admonition} One-time administrative setup
+:::{admonition} One-time administrative setup (permissions)
 :class: dropdown
 
-- [ ] (Administrator for Project) needs to [add user](https://aeadataeditors.atlassian.net/plugins/servlet/project-config/AEAREP/people) to `Assessor` group. 
+- [ ] assessors need to be in the `Assessor` group (**Assistant** can  set in [Project -> Settings -> People](https://aeadataeditors.atlassian.net/plugins/servlet/project-config/AEAREP/people)   in Jira)
+- [ ] assessors need permissions on openICPSR (Data Editor or **Assistant** requests from openICPSR)
+
+```
 
 :::
 
