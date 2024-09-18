@@ -27,12 +27,12 @@ Reminder: for the AEA, the JMS is ScholarOne.
 6. Open the Manuscript Central link `MCEntryURL` (double-click, right-click, open in new tab)
    1. Enter your credentials to access Manuscript Central (let LastPass fill the information)
 
-   ![ScholarOne Login](images/scholaronelogin.png)
+   ![ScholarOne Login](images/scholarone-login.png)
 
    2. Click on the review tab and identify the manuscript number (`Manuscript Central Identifier`) of the paper
    3. Select `Continue Review`
 
-![ScholarOne Submission](images/submissionpage.png)
+![ScholarOne Submission](images/scholarone-submissionpage.png)
 
    4. Always click `Yes` when asked: Would you be willing to review a revision of this manuscript?
    5. Select the recommendation as noted in the Issue
