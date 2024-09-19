@@ -1,6 +1,8 @@
 (debugging-stata)=
 # Debugging Stata
 
+Also check the [LDI Replication Lab Wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Stata-Tips)!
+
 ## Specific to certain systems
 
 ### RedCloud
