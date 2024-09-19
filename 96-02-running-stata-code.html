@@ -786,7 +786,7 @@ Mac/Linux</label><div class="sd-tab-content docutils">
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title"><strong>BioHPC-specific setup</strong></p>
-<p>On BioHPC, you need to expand your search path to find Stata. Only Stata 14 and 16 are currently available. You can then either call them directly:</p>
+<p>On BioHPC, you need to expand your search path to find Stata.  Stata 14, 16, and 18 are currently available. You can then either call them directly:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">stata16</span><span class="o">/</span><span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">b</span> <span class="n">do</span> <span class="n">main</span><span class="o">.</span><span class="n">do</span>
 </pre></div>
 </div>
@@ -796,7 +796,11 @@ stata-mp -b do main.do
 </pre></div>
 </div>
 </div>
-<p>Open up a terminal in the folder where the <code class="docutils literal notranslate"><span class="pre">master.do</span></code> file is located - this may differ depending on your system, and may involve using “<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/code</span></code>” commands. Confirm with “<code class="docutils literal notranslate"><span class="pre">ls</span></code>” that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.</p>
+<p>Open up a terminal in the folder where the <code class="docutils literal notranslate"><span class="pre">master.do</span></code> file is located - this may differ depending on your system, and may involve changing directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">code</span>
+</pre></div>
+</div>
+<p>Confirm with “<code class="docutils literal notranslate"><span class="pre">ls</span></code>” that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.</p>
 <p>Identify which Stata version you have installed (some systems have only one, some have multiple):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">which</span> <span class="n">stata</span>
 <span class="n">which</span> <span class="n">stata</span><span class="o">-</span><span class="n">se</span>
@@ -806,6 +810,19 @@ stata-mp -b do main.do
 <p>Each version is increasingly powerful. Choose the most powerful one installed on your system. (We will assume that you have <code class="docutils literal notranslate"><span class="pre">stata-mp</span></code> but adjust accordingly)</p>
 <p>Then  type</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">b</span> <span class="n">do</span> <span class="n">master</span><span class="o">.</span><span class="n">do</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Windows terminal</label><div class="sd-tab-content docutils">
+<p>Instead of using the graphical “right-click” method, you can also use the command line in Windows. For <code class="docutils literal notranslate"><span class="pre">bash</span></code>, use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">code</span>
+ <span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">Program</span>\ <span class="n">Files</span><span class="o">/</span><span class="n">Stata18</span><span class="o">/</span><span class="n">StataMP</span><span class="o">-</span><span class="mf">64.</span><span class="n">exe</span> <span class="o">-</span><span class="n">b</span> <span class="n">master</span><span class="o">.</span><span class="n">do</span>
+</pre></div>
+</div>
+<p>For Powershell, use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span> <span class="s1">&#39;C:\Program Files\Stata18\StataMP-64.exe&#39;</span> <span class="o">-</span><span class="n">b</span> <span class="n">master</span><span class="o">.</span><span class="n">do</span>
 </pre></div>
 </div>
 </div>
