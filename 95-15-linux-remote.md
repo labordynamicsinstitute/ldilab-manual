@@ -255,7 +255,7 @@ ICPSRNUM=123456
 /programs/bin/util/7z x -O${ICPSRNUM} ${ICPSRNUM}.zip
 ```
 
-(which is the equivalent to the zip command `zip -n ${ICPSRNUM} -d ${ICPSRNUM}). The first option (`-O`) is an upper-case letter `O`, not zero.
+(which is the equivalent to the zip command `zip -n ${ICPSRNUM} -d ${ICPSRNUM}`). The first option (`-O`) is an upper-case letter `O`, not zero.
 
 :::
 
