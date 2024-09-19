@@ -273,7 +273,7 @@ This option will set the working directory  to the location where the `master.do
 
 ::::
 
-::::{tab-item} Mac/Linux 
+::::{tab-item} Mac/Linux
 
 On Unix-style systems, the preferred way is to use the command line to run Stata code.
 
@@ -287,7 +287,7 @@ Open Stata on your Mac, go to the "Stata" tab at the top of your screen and clic
 :::{admonition} **BioHPC-specific setup**
 :class: dropdown
 
-On BioHPC, you need to expand your search path to find Stata. Only Stata 14 and 16 are currently available. You can then either call them directly:
+On BioHPC, you need to expand your search path to find Stata.  Stata 14, 16, and 18 are currently available. You can then either call them directly:
 
 ```
 /usr/local/stata16/stata-mp -b do main.do
@@ -303,7 +303,13 @@ stata-mp -b do main.do
 
 :::
 
-Open up a terminal in the folder where the `master.do` file is located - this may differ depending on your system, and may involve using "`cd /path/to/code`" commands. Confirm with "`ls`" that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.
+Open up a terminal in the folder where the `master.do` file is located - this may differ depending on your system, and may involve changing directory 
+
+```
+cd /path/to/code
+```
+
+Confirm with "`ls`" that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.
 
 Identify which Stata version you have installed (some systems have only one, some have multiple):
 
@@ -319,6 +325,23 @@ Then  type
 
 ```
 stata-mp -b do master.do
+```
+
+::::
+
+::::{tab-item} Windows terminal
+
+Instead of using the graphical "right-click" method, you can also use the command line in Windows. For `bash`, use
+
+```
+cd /path/to/code
+ /c/Program\ Files/Stata18/StataMP-64.exe -b master.do
+```
+
+For Powershell, use 
+
+```
+& 'C:\Program Files\Stata18\StataMP-64.exe' -b master.do
 ```
 
 ::::
