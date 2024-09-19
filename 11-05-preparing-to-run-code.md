@@ -110,6 +110,7 @@ Have a look at the **README** again.
 
 Now fill out the **Stated Requirements** section of **Part B** of the report.
 
+- Check if the deposit has a 'main' or 'master' file and fill out the 'MainFile' field in Jira under the 'Repl. info' tab. 
 
 
 :::{admonition} Be sure to use the `REPLICATION-PartB.md` for this section!
