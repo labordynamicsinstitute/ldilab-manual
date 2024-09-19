@@ -109,6 +109,7 @@ Have a look at the **README** again.
   - How much memory, or processors, does the code need? Again, is the computer you intended to choose sufficient, or do we need to get access to a more powerful computer, or even a cluster of computers?
 
 Now fill out the **Stated Requirements** section of **Part B** of the report.
+
 - Check if the deposit has a 'main' or 'master' file and fill out the 'MainFile' field in Jira under the 'Repl. info' tab. 
 
 
