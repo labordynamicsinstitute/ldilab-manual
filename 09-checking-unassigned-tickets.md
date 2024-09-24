@@ -11,7 +11,7 @@
     - Software Used (from openICPSR deposit)
         - When checking the software in the openICPSR deposit, open the README and make sure it exists. If there is no README in the openICPSR deposit or the deposit is empty, make a [short report](https://aeadataeditor.github.io/LDI-Research-Aide/procedures/Writing-Short-Report/).
 
-![Unassigned Ticket DCAF Fields](images/unassinged-ticket-dcaf.png)
+![Unassigned Ticket DCAF Fields](images/jira-unassinged-ticket-dcaf.png)
 
 
 - Check that there is a manuscript attached, and add one if not.
@@ -22,7 +22,7 @@
 - After logging in, click “Review”. Ctrl+F and search for the Manuscript Number.
 - Once you find the manuscript, go to the Action section, “View Proof”, download the PDF of the manuscript.
 
-![Download Manuscript If Missing](images/download-manuscript-when-missing.png)
+![Download Manuscript If Missing](images/mc-download-manuscript-when-missing.png)
 
 - Attach the PDF to the Jira ticket.
 
@@ -37,7 +37,7 @@ If the MC Status field is RR ("Invitation to Review")
 
 - Navigate to the link that says “Invitations”
 
-![Invitation to Review](images/invitation-to-review.png)
+![Invitation to Review](images/mc-invitation-to-review.png)
 
 - Ctrl+F for the manuscrip number.
 - Click “Agreed and begin review”
@@ -47,11 +47,11 @@ If the MC Status field is RR ("Invitation to Review")
 
 Check if the case is a Revision by going to the Other Links tab and clicking the JiraSearchMC. If there are other Jira issues (not subtasks or FYIs), then it is a Revision.
 
-![Checking For Revision](images/checking-for-revision.png)
+![Checking For Revision](images/jira-checking-for-revision.png)
 
 - Link the Revision: Go back to the main Task you were editing, click “Link issue” > “Is a Revision of” and then input the AEAREP number of the older task.
 
-![Linking Revision to Main Issue](images/linking-revision-to-main-issue.png)
+![Linking Revision to Main Issue](images/jira-linking-revision-to-main-issue.png)
 
 - Update MCStatus to include ‘Revision’ if it doesn’t already have it.
 - Update the bitbucket short name with the repository name of the previous cases.
