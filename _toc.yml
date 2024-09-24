@@ -35,6 +35,7 @@ parts:
     - file: 12-jira-revision-guidance
   - caption: Advanced AEA-related tasks
     chapters:
+    - file: 20-checking-unassigned-tickets
     - file: 13-approving-issues
       sections:
       - file: 13-1-approving-issues-original
