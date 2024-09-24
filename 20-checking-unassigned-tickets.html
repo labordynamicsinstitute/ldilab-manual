@@ -61,10 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '09-checking-unassigned-tickets';</script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/09-checking-unassigned-tickets.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '20-checking-unassigned-tickets';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/20-checking-unassigned-tickets.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AEA: Reviewing and (Pre-) Approving Reports" href="13-approving-issues.html" />
+    <link rel="prev" title="AEA: Revision reports after author resubmission" href="12-jira-revision-guidance.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -197,7 +199,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="12-jira-revision-guidance.html">AEA: Revision reports after author resubmission</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced AEA-related tasks</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Checking Unassigned Jira Tickets</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="13-approving-issues.html">AEA: Reviewing and (Pre-) Approving Reports</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="13-1-approving-issues-original.html">Original Replication Report</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13-2-approving-issues-revision.html">Revision Report</a></li>
@@ -369,7 +372,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/09-checking-unassigned-tickets.md" target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/20-checking-unassigned-tickets.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +389,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F09-checking-unassigned-tickets.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F20-checking-unassigned-tickets.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -416,7 +419,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/09-checking-unassigned-tickets.md" target="_blank"
+      <li><a href="_sources/20-checking-unassigned-tickets.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -508,8 +511,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-instructions">Basic Instructions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-no-manuscript-in-the-jira-ticket">If no manuscript in the Jira ticket</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rr-papers">RR Papers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-case-is-a-revision">Check if case is a revision:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-steps-for-restricted-access-data">Additional Steps for Restricted Access Data</a></li>
@@ -531,49 +534,90 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="checking-unassigned-jira-tickets">
 <h1>Checking Unassigned Jira Tickets<a class="headerlink" href="#checking-unassigned-jira-tickets" title="Permalink to this heading">#</a></h1>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Permissions</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Assigner needs password to ScholarOne (<strong>Data Editor</strong> shares via <a class="reference external" href="https://it.cornell.edu/faculty-password-mgmt-staff-students/sign-cornell-lastpass-account">LastPass</a>)</p>
+<ul>
+<li><p>Then you’ll need to install the web browser extension for whichever browser you use (<a class="reference external" href="https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd">Chrome</a>, <a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/">Firefox</a>, etc).</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Assigner need permissions on openICPSR (Data Editor or <strong>Assistant</strong> requests from openICPSR)</p></li>
+</ul>
+</div>
+</section>
 <section id="basic-instructions">
 <h2>Basic Instructions<a class="headerlink" href="#basic-instructions" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Go the unassigned filter in Jira (Dashboards &gt; Admin Dashboard &gt; AEA tasks by Assignee section &gt; scroll down to “Unassigned”).</p></li>
-<li><p>In the most recent cases, fill out the following info from the DCAF attached:</p>
+<li><p>Go the unassigned filter in Jira</p>
 <ul>
-<li><p>DCAF_Access_Restrictions</p>
-<ul>
-<li><p>if “Yes, data can be made available privately”, do additional <a class="reference external" href="https://aeadataeditor.github.io/LDI-Research-Aide/procedures/Requesting_Restricted_Access_Data/">steps</a></p></li>
+<li><p>Easy way: <a class="reference external" href="https://aeadataeditors.atlassian.net/issues/?filter=10007">click on this link</a></p></li>
+<li><p>Longer way: <code class="docutils literal notranslate"><span class="pre">Dashboards</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Admin</span> <span class="pre">Dashboard</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">AEA</span> <span class="pre">tasks</span> <span class="pre">by</span> <span class="pre">Assignee</span></code> section &gt; scroll down to “Unassigned”.</p></li>
 </ul>
 </li>
-<li><p>DCAF_README_checked</p></li>
-<li><p>openICPSR Project Number</p></li>
-<li><p>Software Used (from openICPSR deposit)</p>
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">Key</span></code> for a case to start the process.</p></li>
+<li><p>The Jira issue should have two documents attached:</p>
 <ul>
-<li><p>When checking the software in the openICPSR deposit, open the README and make sure it exists. If there is no README in the openICPSR deposit or the deposit is empty, make a <a class="reference external" href="https://aeadataeditor.github.io/LDI-Research-Aide/procedures/Writing-Short-Report/">short report</a>.</p></li>
+<li><p>The manuscript (“PDF_Proof.PDF”)</p></li>
+<li><p>The DCAF (should never be missing…)</p></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<p><img alt="Unassigned Ticket DCAF Fields" src="_images/jira-unassinged-ticket-dcaf.png" /></p>
+<div class="dropdown admonition">
+<p class="admonition-title">If the manuscript is missing…</p>
 <ul class="simple">
-<li><p>Check that there is a manuscript attached, and add one if not.</p></li>
-</ul>
-</section>
-<section id="if-no-manuscript-in-the-jira-ticket">
-<h2>If no manuscript in the Jira ticket<a class="headerlink" href="#if-no-manuscript-in-the-jira-ticket" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Go to “Other Links” and click on the MCEntryURL.</p></li>
-<li><p>After logging in, click “Review”. Ctrl+F and search for the Manuscript Number.</p></li>
+<li><p>Make a note of the <code class="docutils literal notranslate"><span class="pre">Manuscript</span> <span class="pre">Central</span> <span class="pre">Identifier</span></code> (copy it to your clipboard).</p></li>
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">Other</span> <span class="pre">links</span></code> tab</p></li>
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">MCEntryURL</span></code> link</p></li>
+<li><p>Enter the ScholarOne/Manuscript Central login details provided to you.</p></li>
+<li><p>Click “Review”. Ctrl+F/Command-F and search for the Manuscript Number.</p></li>
 <li><p>Once you find the manuscript, go to the Action section, “View Proof”, download the PDF of the manuscript.</p></li>
 </ul>
 <p><img alt="Download Manuscript If Missing" src="_images/mc-download-manuscript-when-missing.png" /></p>
 <ul class="simple">
 <li><p>Attach the PDF to the Jira ticket.</p></li>
 </ul>
+</div>
+<ul class="simple">
+<li><p>Open up the DCAF (you can do this within Jira, without downloading).</p></li>
+</ul>
+<p>In the most recent cases, fill out the following info from the DCAF attached:</p>
+<ul class="simple">
+<li><p>Fill out the <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">Project</span> <span class="pre">Number</span></code> - this should be JUST the pure number part, not <code class="docutils literal notranslate"><span class="pre">openicpsr-123456</span></code>!</p></li>
+<li><p>If a different DOI is there (does not include <code class="docutils literal notranslate"><span class="pre">10.3886</span></code>), then copy the full DOI into the field <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">package</span> <span class="pre">URL</span></code>!</p></li>
+<li><p>Review the part with “Is any of the data used in this manuscript….”. This will be encoded in the field <code class="docutils literal notranslate"><span class="pre">DCAF_Access_Restrictions_V2</span></code> (which is on the <code class="docutils literal notranslate"><span class="pre">DCAF</span></code> tab in Jira)</p></li>
+</ul>
+<p><img alt="Unassigned Ticket DCAF Fields" src="_images/jira-unassinged-ticket-dcaf.png" /></p>
+<ul class="simple">
+<li><p>if <code class="docutils literal notranslate"><span class="pre">Yes,</span> <span class="pre">data</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">made</span> <span class="pre">available</span> <span class="pre">privately</span></code> is checked:</p>
+<ul>
+<li><p>Create a subtask of type <code class="docutils literal notranslate"><span class="pre">Request</span> <span class="pre">additional</span> <span class="pre">data</span></code>, with subject <code class="docutils literal notranslate"><span class="pre">Request</span> <span class="pre">Restricted</span> <span class="pre">Access</span> <span class="pre">Data</span> <span class="pre">for</span> <span class="pre">(AEAREP-NUMBER)</span></code></p></li>
+<li><p>(SCREENSHOT HERE)</p></li>
+<li><p>Tag the Assistant Data Editor in the newly created subtask comment.</p></li>
+<li><p>The Assistant Data Editor will do additional <a class="reference external" href="https://aeadataeditor.github.io/LDI-Research-Aide/procedures/Requesting_Restricted_Access_Data/">steps</a></p></li>
+</ul>
+</li>
+</ul>
+<p>Now you need to open the draft replication deposit (typically, but not always on openICPSR)</p>
+<ul class="simple">
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">Package</span> <span class="pre">URL</span></code>, which will open up a separate tab.</p></li>
+<li><p>Find the README in the deposit.</p></li>
+<li><p>Click on the README (you can preview, probably do not need to download) and scan through to identify the software used</p></li>
+<li><p>Go to the tab <code class="docutils literal notranslate"><span class="pre">Repl</span> <span class="pre">info</span></code> and add the software identified to the  <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">Used</span></code> field.</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">If there is no README…</p>
+<p>If there is no README, alert the Assistant Data Editor, who will create  a <a class="reference external" href="https://aeadataeditor.github.io/LDI-Research-Aide/procedures/Writing-Short-Report/">short report</a> and send this case back to the authors.</p>
+</div>
 </section>
 <section id="rr-papers">
 <h2>RR Papers<a class="headerlink" href="#rr-papers" title="Permalink to this heading">#</a></h2>
 <p>If the MC Status field is RR (“Invitation to Review”)</p>
 <ul class="simple">
-<li><p>Go to MCEntryURL in the ““Other Links” section</p></li>
+<li><p>Go to MCEntryURL in the “”Other Links” section</p></li>
 <li><p>Log in to ScholarOne and click Review.</p></li>
 </ul>
 <p><img alt="Scholar One Login" src="_images/scholarone-login.png" /></p>
@@ -733,6 +777,24 @@ We were contacted by a researcher about your replication package for “Title”
                 <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="12-jira-revision-guidance.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">AEA: Revision reports after author resubmission</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="13-approving-issues.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AEA: Reviewing and (Pre-) Approving Reports</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -748,8 +810,8 @@ We were contacted by a researcher about your replication package for “Title”
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-instructions">Basic Instructions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-no-manuscript-in-the-jira-ticket">If no manuscript in the Jira ticket</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rr-papers">RR Papers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-case-is-a-revision">Check if case is a revision:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-steps-for-restricted-access-data">Additional Steps for Restricted Access Data</a></li>
