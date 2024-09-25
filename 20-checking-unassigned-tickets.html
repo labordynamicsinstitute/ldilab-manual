@@ -513,13 +513,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-instructions">Basic Instructions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rr-papers">RR Papers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-case-is-a-revision">Check if case is a revision:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-steps-for-restricted-access-data">Additional Steps for Restricted Access Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requesting-restricted-access-data-from-authors">Requesting Restricted Access Data from Authors</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#once-data-is-obtained">Once data is obtained</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-case-is-a-revision">Check if the case is a revision:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-standard-unassigned-cases">Non-standard unassigned cases</a></li>
 </ul>
             </nav>
@@ -536,23 +530,22 @@ document.write(`
 <h1>Checking Unassigned Jira Tickets<a class="headerlink" href="#checking-unassigned-jira-tickets" title="Permalink to this heading">#</a></h1>
 <section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Permissions</strong></p>
+<div class="dropdown admonition">
+<p class="admonition-title"><strong>Permissions</strong>…</p>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Assigner needs password to ScholarOne (<strong>Data Editor</strong> shares via <a class="reference external" href="https://it.cornell.edu/faculty-password-mgmt-staff-students/sign-cornell-lastpass-account">LastPass</a>)</p>
 <ul>
 <li><p>Then you’ll need to install the web browser extension for whichever browser you use (<a class="reference external" href="https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd">Chrome</a>, <a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/">Firefox</a>, etc).</p></li>
 </ul>
 </li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Assigner need permissions on openICPSR (Data Editor or <strong>Assistant</strong> requests from openICPSR)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Assigner needs permissions on openICPSR (Data Editor or <strong>Assistant</strong> requests from openICPSR)</p></li>
 </ul>
 </div>
 </section>
 <section id="basic-instructions">
 <h2>Basic Instructions<a class="headerlink" href="#basic-instructions" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Go the unassigned filter in Jira</p>
+<li><p>Go to the unassigned filter in Jira</p>
 <ul>
 <li><p>Easy way: <a class="reference external" href="https://aeadataeditors.atlassian.net/issues/?filter=10007">click on this link</a></p></li>
 <li><p>Longer way: <code class="docutils literal notranslate"><span class="pre">Dashboards</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Admin</span> <span class="pre">Dashboard</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">AEA</span> <span class="pre">tasks</span> <span class="pre">by</span> <span class="pre">Assignee</span></code> section &gt; scroll down to “Unassigned”.</p></li>
@@ -561,7 +554,7 @@ document.write(`
 <li><p>Click on the <code class="docutils literal notranslate"><span class="pre">Key</span></code> for a case to start the process.</p></li>
 <li><p>The Jira issue should have two documents attached:</p>
 <ul>
-<li><p>The manuscript (“PDF_Proof.PDF”)</p></li>
+<li><p>The manuscript (“PDF_Proof.pdf”)f</p></li>
 <li><p>The DCAF (should never be missing…)</p></li>
 </ul>
 </li>
@@ -573,12 +566,29 @@ document.write(`
 <li><p>Click on the <code class="docutils literal notranslate"><span class="pre">Other</span> <span class="pre">links</span></code> tab</p></li>
 <li><p>Click on the <code class="docutils literal notranslate"><span class="pre">MCEntryURL</span></code> link</p></li>
 <li><p>Enter the ScholarOne/Manuscript Central login details provided to you.</p></li>
-<li><p>Click “Review”. Ctrl+F/Command-F and search for the Manuscript Number.</p></li>
-<li><p>Once you find the manuscript, go to the Action section, “View Proof”, download the PDF of the manuscript.</p></li>
+<li><p>Click “Review” and search for the Manuscript Number (Ctrl+F/Command-F).</p></li>
+<li><p>Once you find the manuscript, go to the Action section, “View Proof”, and download the PDF of the manuscript.</p></li>
 </ul>
 <p><img alt="Download Manuscript If Missing" src="_images/mc-download-manuscript-when-missing.png" /></p>
 <ul class="simple">
 <li><p>Attach the PDF to the Jira ticket.</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">If the ‘MC Status’ field is RR (“Invitation to Rreview”)…</p>
+<ul class="simple">
+<li><p>Go to the MCEntryURL field in the “Other Links” section</p></li>
+<li><p>Log in to ScholarOne and click Review.</p></li>
+</ul>
+<p><img alt="Scholar One Login" src="_images/scholarone-login.png" /></p>
+<ul class="simple">
+<li><p>Navigate to the link that says “Invitations”</p></li>
+</ul>
+<p><img alt="Invitation to Review" src="_images/mc-invitation-to-review.png" /></p>
+<ul class="simple">
+<li><p>Search for the manuscript number (Ctrl+F/Command-F).</p></li>
+<li><p>Click “Agreed and begin review”</p></li>
+<li><p>Then close out the tab.</p></li>
 </ul>
 </div>
 <ul class="simple">
@@ -587,7 +597,7 @@ document.write(`
 <p>In the most recent cases, fill out the following info from the DCAF attached:</p>
 <ul class="simple">
 <li><p>Fill out the <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">Project</span> <span class="pre">Number</span></code> - this should be JUST the pure number part, not <code class="docutils literal notranslate"><span class="pre">openicpsr-123456</span></code>!</p></li>
-<li><p>If a different DOI is there (does not include <code class="docutils literal notranslate"><span class="pre">10.3886</span></code>), then copy the full DOI into the field <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">package</span> <span class="pre">URL</span></code>!</p></li>
+<li><p>If a different DOI is there (does not include <code class="docutils literal notranslate"><span class="pre">10.3886</span></code>), copy the full DOI into the field <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">package</span> <span class="pre">URL</span></code>!</p></li>
 <li><p>Review the part with “Is any of the data used in this manuscript….”. This will be encoded in the field <code class="docutils literal notranslate"><span class="pre">DCAF_Access_Restrictions_V2</span></code> (which is on the <code class="docutils literal notranslate"><span class="pre">DCAF</span></code> tab in Jira)</p></li>
 </ul>
 <p><img alt="Unassigned Ticket DCAF Fields" src="_images/jira-unassinged-ticket-dcaf.png" /></p>
@@ -595,7 +605,7 @@ document.write(`
 <li><p>if <code class="docutils literal notranslate"><span class="pre">Yes,</span> <span class="pre">data</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">made</span> <span class="pre">available</span> <span class="pre">privately</span></code> is checked:</p>
 <ul>
 <li><p>Create a subtask of type <code class="docutils literal notranslate"><span class="pre">Request</span> <span class="pre">additional</span> <span class="pre">data</span></code>, with subject <code class="docutils literal notranslate"><span class="pre">Request</span> <span class="pre">Restricted</span> <span class="pre">Access</span> <span class="pre">Data</span> <span class="pre">for</span> <span class="pre">(AEAREP-NUMBER)</span></code></p></li>
-<li><p>(SCREENSHOT HERE)</p></li>
+<li><p><img alt="Restricted Access Data subtask" src="_images/jira-restricted-access-data-subtask.png" /></p></li>
 <li><p>Tag the Assistant Data Editor in the newly created subtask comment.</p></li>
 <li><p>The Assistant Data Editor will do additional <a class="reference external" href="https://aeadataeditor.github.io/LDI-Research-Aide/procedures/Requesting_Restricted_Access_Data/">steps</a></p></li>
 </ul>
@@ -610,29 +620,11 @@ document.write(`
 </ul>
 <div class="dropdown admonition">
 <p class="admonition-title">If there is no README…</p>
-<p>If there is no README, alert the Assistant Data Editor, who will create  a <a class="reference external" href="https://aeadataeditor.github.io/LDI-Research-Aide/procedures/Writing-Short-Report/">short report</a> and send this case back to the authors.</p>
+<p>If there is no README, alert the Assistant Data Editor, who will create a <a class="reference external" href="https://aeadataeditor.github.io/LDI-Research-Aide/procedures/Writing-Short-Report/">short report</a> and send this case back to the authors.</p>
 </div>
 </section>
-<section id="rr-papers">
-<h2>RR Papers<a class="headerlink" href="#rr-papers" title="Permalink to this heading">#</a></h2>
-<p>If the MC Status field is RR (“Invitation to Review”)</p>
-<ul class="simple">
-<li><p>Go to MCEntryURL in the “”Other Links” section</p></li>
-<li><p>Log in to ScholarOne and click Review.</p></li>
-</ul>
-<p><img alt="Scholar One Login" src="_images/scholarone-login.png" /></p>
-<ul class="simple">
-<li><p>Navigate to the link that says “Invitations”</p></li>
-</ul>
-<p><img alt="Invitation to Review" src="_images/mc-invitation-to-review.png" /></p>
-<ul class="simple">
-<li><p>Ctrl+F for the manuscrip number.</p></li>
-<li><p>Click “Agreed and begin review”</p></li>
-<li><p>Then close out the tab.</p></li>
-</ul>
-</section>
-<section id="check-if-case-is-a-revision">
-<h2>Check if case is a revision:<a class="headerlink" href="#check-if-case-is-a-revision" title="Permalink to this heading">#</a></h2>
+<section id="check-if-the-case-is-a-revision">
+<h2>Check if the case is a revision:<a class="headerlink" href="#check-if-the-case-is-a-revision" title="Permalink to this heading">#</a></h2>
 <p>Check if the case is a Revision by going to the Other Links tab and clicking the JiraSearchMC. If there are other Jira issues (not subtasks or FYIs), then it is a Revision.</p>
 <p><img alt="Checking For Revision" src="_images/jira-checking-for-revision.png" /></p>
 <ul class="simple">
@@ -640,112 +632,36 @@ document.write(`
 </ul>
 <p><img alt="Linking Revision to Main Issue" src="_images/jira-linking-revision-to-main-issue.png" /></p>
 <ul class="simple">
-<li><p>Update MCStatus to include ‘Revision’ if it doesn’t already have it.</p></li>
+<li><p>Update the MCStatus field to include ‘Revision’ if it doesn’t already have it.</p></li>
 <li><p>Update the bitbucket short name with the repository name of the previous cases.</p></li>
 <li><p>Check if the older Jira ticket had restricted access data (i.e. Working location of restricted data was filled out). If yes:</p>
 <ul>
 <li><p>Link Issue, select type “relates to” and add the aearep-xxx for the subtask “Request Restricted Access Data for AEAREP-nnn”</p></li>
-<li><p>Fill out Working location of restricted datawith the same L drive path</p></li>
+<li><p>Fill out Working location of restricted data with the same L drive path</p></li>
 <li><p>Fill out Agreement Signed to match the older Jira ticket</p></li>
 </ul>
 </li>
 </ul>
-</section>
-<section id="additional-steps-for-restricted-access-data">
-<h2>Additional Steps for Restricted Access Data<a class="headerlink" href="#additional-steps-for-restricted-access-data" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Check if the case is a Revision:</p>
-<ul>
-<li><p>If yes, check that we haven’t already asked for the Restricted Access Data.</p></li>
-<li><p>If yes, link the existing subtask to the most recent revision.</p></li>
-<li><p>If no, continue to next step.</p></li>
-</ul>
-</li>
-</ul>
-<p>If not a revision:</p>
-</section>
-<section id="requesting-restricted-access-data-from-authors">
-<h2>Requesting Restricted Access Data from Authors<a class="headerlink" href="#requesting-restricted-access-data-from-authors" title="Permalink to this heading">#</a></h2>
-<p>For cases where the author(s) have indicated on the DCAF that they can make restricted-access data available to the Data Editor privately, follow these steps:</p>
-<ol class="arabic simple">
-<li><p>Create a subtask (issue type: confidential data) in the main Jira task. Title it “Request Restricted Access Data for AEAREP-xxx”. This subtask will be aearep-nnnn</p></li>
-<li><p>Navigate to the following <a class="reference external" href="https://cornell.app.box.com/folder/144685329952">directory</a> in Box: “Box/LDI Replication Lab/Office of AEA Data Editor/Restricted-Access-Data/”</p></li>
-<li><p>Create a new subfolder corresponding to the main Jira issue (<code class="docutils literal notranslate"><span class="pre">aearep-xxx</span></code>).</p></li>
-<li><p>Create a <a class="reference external" href="https://support.box.com/hc/en-us/articles/360045304813-Using-File-Request-to-get-Content-from-Anyone">file request</a> within the newly created subfolder (only one file request is permitted per folder).</p></li>
-<li><p>Copy the file request link.</p></li>
-<li><p>Email the authors to request that they upload the restricted-access data files to Box using the template below:</p></li>
-</ol>
-<p>Subject Line:</p>
-<blockquote>
-<p>Request for Restricted Access Data (AEAREP-xxx)</p>
-</blockquote> 
-<p>Send it to authors, cc to <a class="reference external" href="mailto:dataeditor-queue&#37;&#52;&#48;aeapubs&#46;org">dataeditor-queue<span>&#64;</span>aeapubs<span>&#46;</span>org</a> and <a class="reference external" href="mailto:dataeditor&#37;&#52;&#48;aeapubs&#46;org">dataeditor<span>&#64;</span>aeapubs<span>&#46;</span>org</a>.</p>
-<p>Dear Dr. <em>Author</em>,</p>
-<blockquote>
-We received a request to conduct the AEA reproducibility check for your manuscript entitled "X." On the Data and Code Availability form which you submitted it was indicated that the data can be made available to the Data Editor privately. Would it be possible for you to provide the restricted-access data so that we may proceed to verify the reproducibility of the entire replication package? The data would not be published, and would be deleted by us once we have completed our process. Our preferred sharing method is a Box File Request (specific to your manuscript), the link for which can be found below, but can alternatively happen via Dropbox or similar means, and should be compliant with your data use agreement.
-<p>Box File Request (navigate to the link below and upload the file(s)):
-[Insert Box File Request Link Here]</p>
-<p>We note that all data sharing with the Data Editor should be in compliance with all applicable data use agreements. Please check before sharing.</p>
-<p>Please note that the replicator will ignore any code or public data sent via Box. For more information on what to share with the Data Editor:
-<a class="reference external" href="https://www.aeaweb.org/journals/data/faq#confidential">https://www.aeaweb.org/journals/data/faq#confidential</a>
-<a class="reference external" href="https://aeadataeditor.github.io/aea-de-guidance/preparing-for-data-deposit.html#structure-in-the-presence-of-confidential-unpublished-data">https://aeadataeditor.github.io/aea-de-guidance/preparing-for-data-deposit.html#structure-in-the-presence-of-confidential-unpublished-data</a></p>
-<p>For more guidance on how to legally and practically share restricted data with the Data Editor:
-<a class="reference external" href="https://aeadataeditor.github.io/aea-de-guidance/sharing-restricted-data.html">https://aeadataeditor.github.io/aea-de-guidance/sharing-restricted-data.html</a></p>
-<p>If you have any questions please do not hesitate to ask.
-Thank you!</p>
-</blockquote>
-<section id="once-data-is-obtained">
-<h3>Once data is obtained<a class="headerlink" href="#once-data-is-obtained" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Box will email you about changes made to Box folder (set up these notifications)</p>
-<ul>
-<li><p>Special case: Author provides Dropbox or other link to download</p></li>
-<li><p>Download from the provided link, and upload into Box. Then proceed as usual.</p></li>
-</ul>
-</li>
-<li><p>Download the data in CCSS Cloud at add it to <code class="docutils literal notranslate"><span class="pre">L:\Restricted-Access-Data</span></code> in a folder titled <code class="docutils literal notranslate"><span class="pre">aearep-xxx-nda_Implicit</span></code>.</p></li>
-<li><p>Go into Jira ticket for AEAREP-xxx, under <em>Data Info</em>, edit fields:</p>
-<ul>
-<li><p>Agreement signed: <code class="docutils literal notranslate"><span class="pre">NDA</span></code>, <code class="docutils literal notranslate"><span class="pre">Implicit</span></code></p></li>
-<li><p>Working location of restricted data: <code class="docutils literal notranslate"><span class="pre">L:\Restricted-Access-Data\aearep-xxx-nda_Implicit</span></code></p></li>
-</ul>
-</li>
-<li><p>Comment in the Jira ticket <em>“Restricted access data added: L:\Restricted-Access-Data\aearep-xxx-nda_Implicit”</em> and tag the RA currently assigned to run the code.</p></li>
-</ul>
-</section>
 </section>
 <section id="non-standard-unassigned-cases">
 <h2>Non-standard unassigned cases<a class="headerlink" href="#non-standard-unassigned-cases" title="Permalink to this heading">#</a></h2>
 <p>When you get a Jira ticket titled <code class="docutils literal notranslate"><span class="pre">&quot;Contact</span> <span class="pre">form</span> <span class="pre">submission</span> <span class="pre">(researcher&#64;university.edu,</span> <span class="pre">FirstName</span> <span class="pre">LastName)&quot;</span></code>, often these are in reference to openICPSR deposit that have already been published. The message is from someone reviewing the deposit and found something concerning, like a missing code file or potential PII.</p>
 <ul class="simple">
 <li><p>Review the message in the <code class="docutils literal notranslate"><span class="pre">Primary</span> <span class="pre">Info</span> <span class="pre">Section</span></code>.</p></li>
-<li><p>Using the DOI or article titled provided, search for the Manuscript Identifier</p></li>
-<li><p>Fill out the <code class="docutils literal notranslate"><span class="pre">Journal</span></code> field and the <code class="docutils literal notranslate"><span class="pre">Manuscript</span> <span class="pre">Central</span> <span class="pre">Identifer</span></code> field</p></li>
-<li><p>Mark the <code class="docutils literal notranslate"><span class="pre">MCStatus</span></code> as Update and fill out the <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Type</span></code> (under Other Links) as the appropriate label, depending on who is contacting us.</p></li>
-<li><p>Depending on what the email says, you may have to contact the authors of the original deposit or Kyrani for technical issues.</p></li>
+<li><p>Using the DOI or article titled provided, search for the Manuscript Identifier.</p>
+<ul>
+<li><p>You can find the article titled on the manuscript attached.</p></li>
+<li><p>You can find the DOI under the “Other Links” tab.</p></li>
 </ul>
-<p><strong>These email templates are specific examples. Please edit the content to match the issue in question.</strong></p>
-<p>Here is an email templates for the author of the package in question</p>
-<blockquote>
-<div><p>Action needed for your published replication package “Title” (AEAREP-xxx)</p>
-</div></blockquote>
-<blockquote>
-<p>Hello Dr. XXX,
-We were contacted by a researcher about your replication package for “Title” (<a class="reference external" href="https://www.openicpsr.org/openicpsr/workspace?goToPath=/openicpsr/%5B000000%5D">https://www.openicpsr.org/openicpsr/workspace?goToPath=/openicpsr/[000000]</a>). Due to a bug in openICPSR, the file [code/01_simulation/archive_functions.R] is empty. Could you please update the replication package with the necessary code?</p>
-<p>These are the directions on how to update an already published replication package.
-<a class="reference external" href="https://aeadataeditor.github.io/aea-de-guidance/FAQ.html#i-was-wondering-whether-and-how-i-can-update-the-published-repository-for-our-paper-i-was-contacted-by-a-researcher-who-is-doing-a-replication--couple-of-minor-issues--forgotten-to-include-two-auxiliary-datasets-in-the-repository-without-which-one-of-the-programs-does-not-run-successfully">https://aeadataeditor.github.io/aea-de-guidance/FAQ.html#i-was-wondering-whether-and-how-i-can-update-the-published-repository-for-our-paper-i-was-contacted-by-a-researcher-who-is-doing-a-replication–couple-of-minor-issues–forgotten-to-include-two-auxiliary-datasets-in-the-repository-without-which-one-of-the-programs-does-not-run-successfully</a></p>
-<p>Thank you so much. Please let us know if you have any questions and notify us once the changes are made.</p>
-</blockquote>
-<p>Here are some email templates for the person who submitted the contact form.</p>
-<blockquote>
-<div><p>Subject: Contact Form Submission Response (AEAREP-xxx)</p>
-</div></blockquote>
-<blockquote>
-<p>Thank you for contacting us about the replication package for the article [MC Number] “Title”.</p>
-<p>We have contacted the authors and they’ve uploaded the file [code/01_simulation/archive_functions.R] to the deposit. The deposit still needs to be published again for you to view it, but I’ve attached the code in the meantime.</p>
-<p>Hope this helps. Let us know if you have any other questions.</p>
-</blockquote>
-<p>Once the issue has been resolved, move the Jira ticket to <code class="docutils literal notranslate"><span class="pre">Done</span></code>.</p>
+</li>
+</ul>
+<p><img alt="Article DOI" src="_images/jira-article-doi.png" /></p>
+<ul class="simple">
+<li><p>Fill out the <code class="docutils literal notranslate"><span class="pre">Journal</span></code> field and the <code class="docutils literal notranslate"><span class="pre">Manuscript</span> <span class="pre">Central</span> <span class="pre">Identifer</span></code> field.</p></li>
+<li><p>Mark the <code class="docutils literal notranslate"><span class="pre">MCStatus</span></code> as Update and fill out the <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Type</span></code> (under Other Links) as the appropriate label, depending on who is contacting us.</p></li>
+<li><p>Tag the Assistant Data Editor in the ticket comments.</p></li>
+<li><p>The Assistant Data Editor will contact the authors.</p></li>
+</ul>
 </section>
 </section>
 
@@ -812,13 +728,7 @@ We were contacted by a researcher about your replication package for “Title”
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-instructions">Basic Instructions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rr-papers">RR Papers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-case-is-a-revision">Check if case is a revision:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-steps-for-restricted-access-data">Additional Steps for Restricted Access Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requesting-restricted-access-data-from-authors">Requesting Restricted Access Data from Authors</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#once-data-is-obtained">Once data is obtained</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-if-the-case-is-a-revision">Check if the case is a revision:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-standard-unassigned-cases">Non-standard unassigned cases</a></li>
 </ul>
   </nav></div>
