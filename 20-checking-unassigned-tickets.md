@@ -37,7 +37,7 @@
 
 ``` 
 
-```{admonition} If the 'MC Status' field is RR ("Invitation to Rreview")...
+```{admonition} If the 'MC Status' field is RR ("Invitation to Review")...
 :class: dropdown
 
 - Go to the MCEntryURL field in the "Other Links" section
