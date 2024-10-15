@@ -167,7 +167,7 @@ If you have a LaTeX installation, you can convert the notebook to a PDF using th
 # requires a latex installation
 pip install nbconvert
 jupyter nbconvert --to notebook --execute mynotebook.ipynb
-juptyer nbconvert --to pdf                mynotebook.ipynb
+jupyter nbconvert --to pdf                mynotebook.ipynb
 ```
 
 Alternatively, you can convert the notebook to a PDF more closely resembling the HTML view using the following command:
