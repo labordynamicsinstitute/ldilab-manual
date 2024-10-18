@@ -575,7 +575,7 @@ Windows</label><div class="sd-tab-content docutils">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
 Linux</label><div class="sd-tab-content docutils">
 <p>Assuming MATLAB is in your path (check with <code class="docutils literal notranslate"><span class="pre">matlab</span></code>), the following will generate a logfile.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matlab</span> <span class="o">-</span><span class="n">nodisplay</span> <span class="o">-</span><span class="n">r</span> <span class="s2">&quot;addpath(genpath(&#39;.&#39;)); main&quot;</span> <span class="o">-</span><span class="n">logfile</span> <span class="n">matlab</span><span class="o">.</span><span class="n">log</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>matlab -nodisplay -r &quot;addpath(genpath(&#39;.&#39;)); main&quot; -logfile matlab-$(date +%F-%M:%H:%S).log
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">main.m</span></code> is the Matlab program you want to run (you omit the <code class="docutils literal notranslate"><span class="pre">.m</span></code> when calling it).</p>
