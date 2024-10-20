@@ -72,9 +72,15 @@ If you do not have `matlab` in your path, check with system admins. For BioHPC, 
 
 ## The .m program is using a software extension to MATLAB called "Dynare"
 
-:::{admonition} Do not attempt to install Dynare on CCSS or BioHPC computers. 
+:::{admonition} Do not attempt to **install** Dynare on CCSS or BioHPC computers. 
 
 However, it is not necessary to *install* Dynare, it is sufficient to unpack the ZIP files. Try the information below first:  
+
+:::
+
+:::{warning} 
+
+Use the precise version of Dynare specified by the authors. If that version is not located on `L:\common`, then talk to your supervisor.
 
 :::
 
@@ -87,7 +93,7 @@ However, it is not necessary to *install* Dynare, it is sufficient to unpack the
 % The following are possible Dynare settings. Uncomment the one you need.
 
 % dynarepath = "/Applications/Dynare/4.6.1/matlab"
-% dynarepath = "S:\LDILab\dynare\dynare-4.5.7\matlab"
+% dynarepath = "L:\LDILab\dynare\dynare-4.5.7\matlab"
 %dynarepath = "L:\common\dynare-4.5.7\matlab"
 
 % 
@@ -107,7 +113,7 @@ Your modified `config.m` should look somewhat like this:
 % The following are possible Dynare settings. Uncomment the one you need.
 
 % dynarepath = "/Applications/Dynare/4.6.1/matlab"
-% dynarepath = "S:\LDILab\dynare\dynare-4.5.7\matlab"
+% dynarepath = "L:\LDILab\dynare\dynare-4.5.7\matlab"
 
 dynarepath = "L:\common\dynare-4.5.7\matlab"
 
@@ -130,3 +136,7 @@ If you don't have access to the L drive yet, contact us.
 
 - There should be `.cpp` files provided - if not, they should be requested from the author
 - From within Matlab, run `mex name_of_file.cpp` (though this should also be provided by the author).
+
+## MATLAB complains about a missing Toolbox
+
+Check that the Path includes said Toolbox, see <https://it.mathworks.com/help/matlab/ref/pathtool.html>. It may also be that we are not licensed to use that Toolbox. Make a note of the error in the replication report.

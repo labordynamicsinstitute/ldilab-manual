@@ -519,6 +519,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-matlab-without-the-desktop-gui-and-with-log-file">Running MATLAB without the desktop GUI and with log file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-m-program-is-using-a-software-extension-to-matlab-called-dynare">The .m program is using a software extension to MATLAB called “Dynare”</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mention-of-mex-programs-what-do-i-do">Mention of MEX programs, what do I do?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-complains-about-a-missing-toolbox">MATLAB complains about a missing Toolbox</a></li>
 </ul>
             </nav>
         </div>
@@ -586,8 +587,12 @@ Linux</label><div class="sd-tab-content docutils">
 <section id="the-m-program-is-using-a-software-extension-to-matlab-called-dynare">
 <h2>The .m program is using a software extension to MATLAB called “Dynare”<a class="headerlink" href="#the-m-program-is-using-a-software-extension-to-matlab-called-dynare" title="Permalink to this heading">#</a></h2>
 <div class="admonition-do-not-attempt-to-install-dynare-on-ccss-or-biohpc-computers admonition">
-<p class="admonition-title">Do not attempt to install Dynare on CCSS or BioHPC computers. </p>
+<p class="admonition-title">Do not attempt to <strong>install</strong> Dynare on CCSS or BioHPC computers. </p>
 <p>However, it is not necessary to <em>install</em> Dynare, it is sufficient to unpack the ZIP files. Try the information below first:</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Use the precise version of Dynare specified by the authors. If that version is not located on <code class="docutils literal notranslate"><span class="pre">L:\common</span></code>, then talk to your supervisor.</p>
 </div>
 <ul class="simple">
 <li><p>Be sure to include the <code class="docutils literal notranslate"><span class="pre">config.m</span></code> file as outlined above!</p></li>
@@ -598,7 +603,7 @@ Linux</label><div class="sd-tab-content docutils">
 <span class="o">%</span> <span class="n">The</span> <span class="n">following</span> <span class="n">are</span> <span class="n">possible</span> <span class="n">Dynare</span> <span class="n">settings</span><span class="o">.</span> <span class="n">Uncomment</span> <span class="n">the</span> <span class="n">one</span> <span class="n">you</span> <span class="n">need</span><span class="o">.</span>
 
 <span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;/Applications/Dynare/4.6.1/matlab&quot;</span>
-<span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;S:\LDILab\dynare\dynare-4.5.7\matlab&quot;</span>
+<span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;L:\LDILab\dynare\dynare-4.5.7\matlab&quot;</span>
 <span class="o">%</span><span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;L:\common\dynare-4.5.7\matlab&quot;</span>
 
 <span class="o">%</span> 
@@ -617,7 +622,7 @@ Linux</label><div class="sd-tab-content docutils">
 <span class="o">%</span> <span class="n">The</span> <span class="n">following</span> <span class="n">are</span> <span class="n">possible</span> <span class="n">Dynare</span> <span class="n">settings</span><span class="o">.</span> <span class="n">Uncomment</span> <span class="n">the</span> <span class="n">one</span> <span class="n">you</span> <span class="n">need</span><span class="o">.</span>
 
 <span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;/Applications/Dynare/4.6.1/matlab&quot;</span>
-<span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;S:\LDILab\dynare\dynare-4.5.7\matlab&quot;</span>
+<span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;L:\LDILab\dynare\dynare-4.5.7\matlab&quot;</span>
 
 <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;L:\common\dynare-4.5.7\matlab&quot;</span>
 
@@ -639,6 +644,10 @@ Linux</label><div class="sd-tab-content docutils">
 <li><p>There should be <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> files provided - if not, they should be requested from the author</p></li>
 <li><p>From within Matlab, run <code class="docutils literal notranslate"><span class="pre">mex</span> <span class="pre">name_of_file.cpp</span></code> (though this should also be provided by the author).</p></li>
 </ul>
+</section>
+<section id="matlab-complains-about-a-missing-toolbox">
+<h2>MATLAB complains about a missing Toolbox<a class="headerlink" href="#matlab-complains-about-a-missing-toolbox" title="Permalink to this heading">#</a></h2>
+<p>Check that the Path includes said Toolbox, see <a class="reference external" href="https://it.mathworks.com/help/matlab/ref/pathtool.html">https://it.mathworks.com/help/matlab/ref/pathtool.html</a>. It may also be that we are not licensed to use that Toolbox. Make a note of the error in the replication report.</p>
 </section>
 </section>
 
@@ -707,6 +716,7 @@ Linux</label><div class="sd-tab-content docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-matlab-without-the-desktop-gui-and-with-log-file">Running MATLAB without the desktop GUI and with log file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-m-program-is-using-a-software-extension-to-matlab-called-dynare">The .m program is using a software extension to MATLAB called “Dynare”</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mention-of-mex-programs-what-do-i-do">Mention of MEX programs, what do I do?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-complains-about-a-missing-toolbox">MATLAB complains about a missing Toolbox</a></li>
 </ul>
   </nav></div>
 
