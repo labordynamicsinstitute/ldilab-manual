@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '96-05-debugging-stata';</script>
     <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-05-debugging-stata.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -515,9 +517,45 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-debugging">Basic debugging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ado-files-not-found">Ado files not found</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unknown-egen-function-wtmean">unknown egen function wtmean()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unknown-egen-function">unknown egen function ….</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#struct-ms-vcvorthog-undefined">struct_ ms_vcvorthog undefined</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reg2hdfespatial-and-ols-spatial-hac"><code class="docutils literal notranslate"><span class="pre">reg2hdfespatial</span></code> and <code class="docutils literal notranslate"><span class="pre">ols_spatial_HAC</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-grc1leg">Installing grc1leg</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-graphs">Exporting Graphs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-run-my-program-in-an-older-version-of-stata">I want to run my program in an older version of Stata?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-do-file">MAIN DO FILE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-other-do-files">Running other do files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-stata-from-the-command-line">Running Stata from the command line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stata-errors">Stata Errors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varlist-required-error"><code class="docutils literal notranslate"><span class="pre">Varlist</span> <span class="pre">required</span></code> error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#too-many-values-error"><code class="docutils literal notranslate"><span class="pre">Too</span> <span class="pre">many</span> <span class="pre">values</span></code> error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varlist-not-allowed-error"><code class="docutils literal notranslate"><span class="pre">Varlist</span> <span class="pre">not</span> <span class="pre">allowed</span></code> error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxvar-too-small-error"><code class="docutils literal notranslate"><span class="pre">Maxvar</span> <span class="pre">too</span> <span class="pre">small</span></code> error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-could-not-be-opened-error"><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">___</span> <span class="pre">could</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">opened</span></code> error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#options-ik-cct-and-cv-have-been-deprecated-error"><code class="docutils literal notranslate"><span class="pre">Options</span> <span class="pre">IK,</span> <span class="pre">CCT,</span> <span class="pre">and</span> <span class="pre">CV</span> <span class="pre">have</span> <span class="pre">been</span> <span class="pre">deprecated</span></code> error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-with-xi-command">Problems with “xi” command:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-with-the-kdens-command">Problems with the “kdens” command:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tex-files-cannot-be-opened">.tex files cannot be opened</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-to-certain-systems">Specific to certain systems</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redcloud">RedCloud</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-with-temp-files">Problems with temp files</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ccss-classic">CCSS Classic</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#when-trying-to-install-some-extension-stata-shows-an-error-message-such-as-file-c-ado-plus-next-trk-already-exists">When trying to install some extension Stata shows an error message such as: <code class="docutils literal notranslate"><span class="pre">_file</span> <span class="pre">c:\ado\plus\next.trk</span> <span class="pre">already</span> <span class="pre">exists_</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -536,6 +574,297 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="debugging-stata">
 <span id="id1"></span><h1>Debugging Stata<a class="headerlink" href="#debugging-stata" title="Permalink to this heading">#</a></h1>
 <p>Also check the <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Stata-Tips">LDI Replication Lab Wiki</a>!</p>
+<section id="basic-debugging">
+<h2>Basic debugging<a class="headerlink" href="#basic-debugging" title="Permalink to this heading">#</a></h2>
+<section id="ado-files-not-found">
+<h3>Ado files not found<a class="headerlink" href="#ado-files-not-found" title="Permalink to this heading">#</a></h3>
+<p><strong>Issue:</strong> When an error message such as <code class="docutils literal notranslate"><span class="pre">xml_tab</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">recognized</span></code> or <code class="docutils literal notranslate"><span class="pre">outreg2</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">recognized</span></code> appears…</p>
+<p><strong>Solution</strong> it usually means that you need to first install the command before running the .do file. Try</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssc</span> <span class="n">install</span> <span class="n">outreg2</span>
+</pre></div>
+</div>
+<p>or possibly</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">search</span> <span class="n">this_great_command</span>
+</pre></div>
+</div>
+<p>followed by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="n">install</span>  <span class="n">this_great_command</span><span class="p">,</span> <span class="n">from</span><span class="p">(</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">this_great_command</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">stata</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In some cases, this will be a reference to the Stata Journal packages, which do NOT have the same name as the command they provide:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">search</span> <span class="n">frmttable</span>
+</pre></div>
+</div>
+<p>yields:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Search</span> <span class="n">of</span> <span class="n">official</span> <span class="n">help</span> <span class="n">files</span><span class="p">,</span> <span class="n">FAQs</span><span class="p">,</span> <span class="n">Examples</span><span class="p">,</span> <span class="ow">and</span> <span class="n">Stata</span> <span class="n">Journals</span>
+<span class="o">-----------------------------------------------------------------</span>
+
+<span class="n">SJ</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">4</span> <span class="n">sg97_5</span>  <span class="o">.</span> <span class="n">A</span> <span class="n">programmer</span><span class="s1">&#39;s command to build formatted statistical tables</span>
+        <span class="p">(</span><span class="n">help</span> <span class="n">frmttable</span> <span class="k">if</span> <span class="n">installed</span><span class="p">)</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="n">J</span><span class="o">.</span> <span class="n">L</span><span class="o">.</span> <span class="n">Gallup</span>
+        <span class="n">Q4</span><span class="o">/</span><span class="mi">12</span>   <span class="n">SJ</span> <span class="mi">12</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span><span class="mi">655</span><span class="o">--</span><span class="mi">673</span>
+        <span class="n">create</span> <span class="n">formatted</span> <span class="n">tables</span> <span class="kn">from</span> <span class="nn">statistics</span> <span class="ow">and</span> <span class="n">write</span> <span class="n">them</span> <span class="n">to</span>
+        <span class="n">Word</span> <span class="ow">or</span> <span class="n">LaTeX</span> <span class="n">files</span>
+</pre></div>
+</div>
+<p>Further below, you see this in a different way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="n">packages</span> <span class="n">found</span> <span class="p">(</span><span class="n">Stata</span> <span class="n">Journal</span> <span class="n">listed</span> <span class="n">first</span><span class="p">)</span>
+<span class="o">---------------------------------------------</span>
+
+<span class="n">sg97_5</span> <span class="kn">from</span> <span class="nn">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">stata</span><span class="o">-</span><span class="n">journal</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">software</span><span class="o">/</span><span class="n">sj12</span><span class="o">-</span><span class="mi">4</span>
+    <span class="n">SJ12</span><span class="o">-</span><span class="mi">4</span> <span class="n">sg97_5</span><span class="o">.</span> <span class="n">Update</span><span class="p">:</span> <span class="n">A</span> <span class="n">programmer</span><span class="s1">&#39;s command... / Update: A programmer&#39;</span><span class="n">s</span>
+    <span class="n">command</span> <span class="n">to</span> <span class="n">build</span> <span class="o">/</span> <span class="n">formatted</span> <span class="n">statistical</span> <span class="n">tables</span> <span class="o">/</span> <span class="n">by</span> <span class="n">John</span> <span class="n">Luke</span> <span class="n">Gallup</span><span class="p">,</span>
+    <span class="n">Portland</span> <span class="n">State</span> <span class="n">University</span> <span class="o">/</span> <span class="n">Support</span><span class="p">:</span>  <span class="n">jlgallup</span><span class="nd">@pdx</span><span class="o">.</span><span class="n">edu</span> <span class="o">/</span> <span class="n">After</span>
+    <span class="n">installation</span><span class="p">,</span> <span class="nb">type</span> <span class="n">help</span> <span class="n">frmttable</span>
+</pre></div>
+</div>
+<p>Now you see how to construct this with a one-line net install command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">pkgname</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">from</span><span class="p">(</span><span class="o">&lt;</span><span class="n">pkgurl</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where you replace <code class="docutils literal notranslate"><span class="pre">&lt;pkgname&gt;</span></code> with the name of the Stata Journal package (here: <code class="docutils literal notranslate"><span class="pre">sg97_5</span></code>) and the <code class="docutils literal notranslate"><span class="pre">from()</span></code> command gets the URL that is listed in the help.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">frmttable</span></code>, this yields:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="n">install</span> <span class="n">sg97_5</span><span class="p">,</span> <span class="n">from</span><span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">stata</span><span class="o">-</span><span class="n">journal</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">software</span><span class="o">/</span><span class="n">sj12</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><em>Please be sure to make a note of this installation in the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>!!</em></p>
+<p>You must include all these commands in the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>. For all <code class="docutils literal notranslate"><span class="pre">ssc</span> <span class="pre">install</span></code> commands, add them to the appropriate line at the top of the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>.</p>
+</div>
+<div class="admonition-great-tip admonition">
+<p class="admonition-title"><strong>Great tip:</strong></p>
+<p>When searching for a package, the Stata help browser will show in the address bar “<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">describe</span>&#160; <span class="pre">this_great_command,</span> <span class="pre">from(https://this_great_command.com/stata)</span></code>. Simply copy and paste into your <code class="docutils literal notranslate"><span class="pre">config.do</span></code> and change <code class="docutils literal notranslate"><span class="pre">describe</span></code> to <code class="docutils literal notranslate"><span class="pre">install</span></code>.</p>
+</div>
+<section id="unknown-egen-function-wtmean">
+<h4>unknown egen function wtmean()<a class="headerlink" href="#unknown-egen-function-wtmean" title="Permalink to this heading">#</a></h4>
+<p>Add package <code class="docutils literal notranslate"><span class="pre">_gwtmean</span></code> to the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>, or <code class="docutils literal notranslate"><span class="pre">ssc</span> <span class="pre">inst</span> <span class="pre">_gwtmean</span></code></p>
+</section>
+<section id="unknown-egen-function">
+<h4>unknown egen function ….<a class="headerlink" href="#unknown-egen-function" title="Permalink to this heading">#</a></h4>
+<p>Add package <code class="docutils literal notranslate"><span class="pre">egenmore</span></code> to the <code class="docutils literal notranslate"><span class="pre">config.do</span></code></p>
+</section>
+<section id="struct-ms-vcvorthog-undefined">
+<h4>struct_ ms_vcvorthog undefined<a class="headerlink" href="#struct-ms-vcvorthog-undefined" title="Permalink to this heading">#</a></h4>
+<p>You may find this with <code class="docutils literal notranslate"><span class="pre">ivreg2</span></code> or <code class="docutils literal notranslate"><span class="pre">ivreghdfe</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">ms_vcvorthog</span> <span class="n">undefined</span>
+<span class="p">(</span><span class="mi">817</span> <span class="n">lines</span> <span class="n">skipped</span><span class="p">)</span>
+<span class="p">(</span><span class="n">error</span> <span class="n">occurred</span> <span class="k">while</span> <span class="n">loading</span> <span class="n">ivreghdfe</span><span class="o">.</span><span class="n">ado</span><span class="p">)</span>
+<span class="n">r</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Solution: Ensure that you are using the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> correctly, your <code class="docutils literal notranslate"><span class="pre">config.do</span></code> installs the relevant package (<code class="docutils literal notranslate"><span class="pre">ivreg2</span></code>, <code class="docutils literal notranslate"><span class="pre">ivreghdfe</span></code>, etc.), and that <code class="docutils literal notranslate"><span class="pre">ranktest</span></code> is also included. The code in the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> that calls</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mata</span><span class="p">:</span> <span class="n">mata</span> <span class="n">mlib</span> <span class="n">index</span>
+</pre></div>
+</div>
+<p>should fix any additional issues.</p>
+<p>If you then get</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">last</span> <span class="n">estimates</span> <span class="ow">not</span> <span class="n">found</span>
+</pre></div>
+</div>
+<p>try installing from the Github website for <code class="docutils literal notranslate"><span class="pre">ivreghdfe</span></code> (see <a class="reference external" href="https://github.com/sergiocorreia/ivreghdfe/issues/54#issuecomment-1988774628">this link</a>):</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These commands should be included in the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>!</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Install</span> <span class="n">ftools</span> <span class="p">(</span><span class="n">remove</span> <span class="n">program</span> <span class="k">if</span> <span class="n">it</span> <span class="n">existed</span> <span class="n">previously</span><span class="p">)</span>
+<span class="n">cap</span> <span class="n">ado</span> <span class="n">uninstall</span> <span class="n">ftools</span>
+<span class="n">net</span> <span class="n">install</span> <span class="n">ftools</span><span class="p">,</span> <span class="n">from</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/sergiocorreia/ftools/master/src/&quot;</span><span class="p">)</span>
+
+<span class="o">*</span> <span class="n">Install</span> <span class="n">reghdfe</span>
+<span class="n">cap</span> <span class="n">ado</span> <span class="n">uninstall</span> <span class="n">reghdfe</span>
+<span class="n">net</span> <span class="n">install</span> <span class="n">reghdfe</span><span class="p">,</span> <span class="n">from</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/sergiocorreia/reghdfe/master/src/&quot;</span><span class="p">)</span>
+
+<span class="o">*</span> <span class="n">Install</span> <span class="n">ivreg2</span><span class="p">,</span> <span class="n">the</span> <span class="n">core</span> <span class="n">package</span>
+<span class="n">cap</span> <span class="n">ado</span> <span class="n">uninstall</span> <span class="n">ivreg2</span>
+<span class="n">ssc</span> <span class="n">install</span> <span class="n">ivreg2</span>
+
+<span class="o">*</span> <span class="n">Finally</span><span class="p">,</span> <span class="n">install</span> <span class="n">this</span> <span class="n">package</span>
+<span class="n">cap</span> <span class="n">ado</span> <span class="n">uninstall</span> <span class="n">ivreghdfe</span>
+<span class="n">net</span> <span class="n">install</span> <span class="n">ivreghdfe</span><span class="p">,</span> <span class="n">from</span><span class="p">(</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sergiocorreia</span><span class="o">/</span><span class="n">ivreghdfe</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This problem is <em>always</em> fixable, contact your Team lead if you run into persistent problems.</p>
+</section>
+<section id="reg2hdfespatial-and-ols-spatial-hac">
+<h4><code class="docutils literal notranslate"><span class="pre">reg2hdfespatial</span></code> and <code class="docutils literal notranslate"><span class="pre">ols_spatial_HAC</span></code><a class="headerlink" href="#reg2hdfespatial-and-ols-spatial-hac" title="Permalink to this heading">#</a></h4>
+<p>These programs are usually included. If they are not, they can be installed using the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cap mkdir reg2hdfespatial
+copy http://www.trfetzer.com/wp-content/uploads/reg2hdfespatial-id1id2.ado reg2hdfespatial/reg2hdfespatial.ado
+copy https://www.dropbox.com/s/pf2vtvgqhjk7rc8/spatial_HAC.zip?dl=1 spatial_HAC.zip
+unzipfile spatial_HAC.zip // should create a directory &quot;spatial_HAC&quot;
+local pwd : pwd
+adopath ++ &quot;`pwd&#39;/spatial_HAC&quot;
+adopath ++ &quot;`pwd&#39;/reg2hdfespatial&quot;
+</pre></div>
+</div>
+</section>
+<section id="installing-grc1leg">
+<h4>Installing grc1leg<a class="headerlink" href="#installing-grc1leg" title="Permalink to this heading">#</a></h4>
+<p>If you encounter the <code class="docutils literal notranslate"><span class="pre">grc1leg</span></code> package, it cannot be installed by <code class="docutils literal notranslate"><span class="pre">ssc</span> <span class="pre">install</span> <span class="pre">grc1leg</span></code>. Use the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="n">install</span> <span class="n">grc1leg</span><span class="p">,</span> <span class="n">from</span><span class="p">(</span><span class="s2">&quot;http://www.stata.com/users/vwiggins/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="exporting-graphs">
+<h2>Exporting Graphs<a class="headerlink" href="#exporting-graphs" title="Permalink to this heading">#</a></h2>
+<p>If a manuscript contains figures but the authors do not include code to automatically export those figures, there exists very straightforward code to fix this.</p>
+<p>Stata package information: <a class="reference external" href="https://www.stata.com/manuals13/g-2graphexport.pdf">Stata Manual</a>.</p>
+<p>Syntax:</p>
+<blockquote>
+<div><p>graph export newfilename.suffix [, options]</p>
+</div></blockquote>
+<p>Example:</p>
+<blockquote>
+<div><p>graph export Figure.pdf</p>
+</div></blockquote>
+<blockquote>
+<div><p>graph export Figure.png</p>
+</div></blockquote>
+<section id="i-want-to-run-my-program-in-an-older-version-of-stata">
+<h3>I want to run my program in an older version of Stata?<a class="headerlink" href="#i-want-to-run-my-program-in-an-older-version-of-stata" title="Permalink to this heading">#</a></h3>
+<p>Use the <a class="reference external" href="https://www.stata.com/manuals/pversion.pdf">version</a> command to emulate running the program on an older version. For example, to emulate Stata 12.1, use the following line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span> <span class="mf">12.1</span> 
+</pre></div>
+</div>
+<p>This fix may be relevant when running into problems with the tobit regression. This does not always work. We have some other, somewhat more involved solutions, involving running <a class="reference external" href="https://github.com/AEADataEditor/docker-stata">Stata in Docker</a> and have access to Stata versions 12, 13, 14, 16, and 17.</p>
+</section>
+</section>
+<section id="main-do-file">
+<h2>MAIN DO FILE<a class="headerlink" href="#main-do-file" title="Permalink to this heading">#</a></h2>
+<section id="running-other-do-files">
+<h3>Running other do files<a class="headerlink" href="#running-other-do-files" title="Permalink to this heading">#</a></h3>
+<p>Some code has a main “<code class="docutils literal notranslate"><span class="pre">replication.do</span></code>” or “<code class="docutils literal notranslate"><span class="pre">main.do</span></code>” etc., which will have lines such as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">do</span> <span class="n">tables</span><span class="o">.</span><span class="n">do</span>
+</pre></div>
+</div>
+<p>This is a problem, because any parameters from <a class="reference external" href="http://main.do">main.do</a>, such as changing where you install Stata packages (<code class="docutils literal notranslate"><span class="pre">sysdir</span> <span class="pre">PERSONAL</span> <span class="pre">&quot;/path/to/somewhere&quot;</span></code>) are lost…</p>
+<p>Replace the above with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="s2">&quot;tables.do&quot;</span>
+</pre></div>
+</div>
+<p>and you will be fine.</p>
+<p>The difference is that the first one executes the <code class="docutils literal notranslate"><span class="pre">tables.do</span></code> in a somewhat fresh environment. The second one simply includes the code (as if copying-and-pasting) in the <code class="docutils literal notranslate"><span class="pre">main.do</span></code>, by reference, and thus inherits everything that is transient (such as tempfiles, etc.)</p>
+<p>This may not always work - sometimes authors rely on that reset that happens when you use the <code class="docutils literal notranslate"><span class="pre">do</span> <span class="pre">tables.do</span></code> version.</p>
+<p>Always use <code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">config.do</span></code> for <code class="docutils literal notranslate"><span class="pre">config.do</span></code> files however.</p>
+</section>
+</section>
+<section id="running-stata-from-the-command-line">
+<h2>Running Stata from the command line<a class="headerlink" href="#running-stata-from-the-command-line" title="Permalink to this heading">#</a></h2>
+<p>It sometimes is more convenient to run Stata from the command line. How to do this varies by operating system. In almost all cases, you need to know where Stata is installed.</p>
+<ul class="simple">
+<li><p>Windows: See <a class="reference external" href="https://www.stata.com/support/faqs/windows/batch-mode/">this Stata page</a>. In essence, on CISER nodes, navigate to the directory where the Stata program you want to run is located (here: <code class="docutils literal notranslate"><span class="pre">master.do</span></code>). Then, in the address bar of the file browser, type <code class="docutils literal notranslate"><span class="pre">powershell</span></code>. In the command line window, type</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span> <span class="s1">&#39;C:\Program Files\Stata16\StataMP-64.exe&#39;</span> <span class="o">/</span><span class="n">b</span> <span class="n">do</span> <span class="o">.</span>\<span class="n">master</span><span class="o">.</span><span class="n">do</span>
+</pre></div>
+</div>
+<p>will run the program, and create a logfile <code class="docutils literal notranslate"><span class="pre">master.log</span></code> (and any configured log files). Note that you can also right-click and request “Run (silently)”.</p>
+<ul class="simple">
+<li><p>Linux/MacOS: Similar to the Windows instructions, in a terminal, navigate (<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/directory</span></code>) to the directory with the program you want to run. Most Linux systems will have the Stata command in the “path”, meaning it will be automatically found.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">b</span> <span class="n">do</span> <span class="n">master</span><span class="o">.</span><span class="n">do</span>
+</pre></div>
+</div>
+<p>will run the program.</p>
+</section>
+<section id="stata-errors">
+<h2>Stata Errors<a class="headerlink" href="#stata-errors" title="Permalink to this heading">#</a></h2>
+<section id="varlist-required-error">
+<h3><code class="docutils literal notranslate"><span class="pre">Varlist</span> <span class="pre">required</span></code> error:<a class="headerlink" href="#varlist-required-error" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>May occur if the author calls upon a varlist that s/he forgets to define. Check the other .do files to see if it has been defined elsewhere. If the definition is obvious (based on the article &amp; data) insert a line of code defining it yourself.</p></li>
+</ul>
+</section>
+<section id="too-many-values-error">
+<h3><code class="docutils literal notranslate"><span class="pre">Too</span> <span class="pre">many</span> <span class="pre">values</span></code> error:<a class="headerlink" href="#too-many-values-error" title="Permalink to this heading">#</a></h3>
+<p>(SOLUTION?)</p>
+</section>
+<section id="varlist-not-allowed-error">
+<h3><code class="docutils literal notranslate"><span class="pre">Varlist</span> <span class="pre">not</span> <span class="pre">allowed</span></code> error:<a class="headerlink" href="#varlist-not-allowed-error" title="Permalink to this heading">#</a></h3>
+<p>(SOLUTION?)</p>
+</section>
+<section id="maxvar-too-small-error">
+<h3><code class="docutils literal notranslate"><span class="pre">Maxvar</span> <span class="pre">too</span> <span class="pre">small</span></code> error:<a class="headerlink" href="#maxvar-too-small-error" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Run .do file using Stata-MP and add <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">maxvar</span> <span class="pre">32767</span></code> (maximum number of variables) to the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>.</p></li>
+</ul>
+</section>
+<section id="file-could-not-be-opened-error">
+<h3><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">___</span> <span class="pre">could</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">opened</span></code> error:<a class="headerlink" href="#file-could-not-be-opened-error" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>May appear after the <code class="docutils literal notranslate"><span class="pre">esttab</span></code> command, or when Unix and Windows paths are mixed, or when running with Network paths (of style <code class="docutils literal notranslate"><span class="pre">\\network\path\to\folder</span></code>)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">esttab</span> <span class="n">using</span> <span class="s2">&quot;$res/Cage_Rueda_Table_4.tex&quot;</span>
+</pre></div>
+</div>
+<p><em>Solution 1</em> (most likely)</p>
+<p>The directory <code class="docutils literal notranslate"><span class="pre">$res</span></code> has one or more elements that are missing (ie a subdirectory does not exist). For instance, if <code class="docutils literal notranslate"><span class="pre">$res</span></code> resolves to <code class="docutils literal notranslate"><span class="pre">D:/project/tables</span></code> but the subdirectory <code class="docutils literal notranslate"><span class="pre">tables/</span></code> does not exist, Stata will fail.</p>
+<p>You need to create the directory, as part of the code (and make a note of this in the report). Add the following line above the problematic line, or in the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cap</span> <span class="n">mkdir</span> <span class="s2">&quot;$res&quot;</span>
+</pre></div>
+</div>
+<p>(NOTE: this will <em>still</em> fail if there are additional parts of the path that do not exist.)</p>
+<p><em>Solution 2</em> (preferred if Solution 1 does not solve the problem)</p>
+<p>Verify that <code class="docutils literal notranslate"><span class="pre">$res</span></code> does not contain a Windows “network path” (<code class="docutils literal notranslate"><span class="pre">\\rschfs\users\A-K\fellow\project</span></code>). Rather, it should contain a “letter drive” (<code class="docutils literal notranslate"><span class="pre">D:/project</span></code>). On Unix systems, it may help to remove relative paths (<code class="docutils literal notranslate"><span class="pre">../project</span></code>) and use a fully-qualified path (<code class="docutils literal notranslate"><span class="pre">/home/user/fellow/project</span></code>)</p>
+<blockquote>
+<div><p>For reference: Filed with the package author on <a class="reference external" href="https://github.com/benjann/estout/issues/58">Github</a></p>
+</div></blockquote>
+<p>If <code class="docutils literal notranslate"><span class="pre">$res</span></code> does actually contain a Windows network path, install the newest Github version of <code class="docutils literal notranslate"><span class="pre">estout</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="n">install</span> <span class="n">estout</span><span class="p">,</span> <span class="n">replace</span> <span class="n">from</span><span class="p">(</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">benjann</span><span class="o">/</span><span class="n">estout</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(this is also an optional install in the LDILab’s <code class="docutils literal notranslate"><span class="pre">config.do</span></code>).</p>
+</section>
+<section id="options-ik-cct-and-cv-have-been-deprecated-error">
+<h3><code class="docutils literal notranslate"><span class="pre">Options</span> <span class="pre">IK,</span> <span class="pre">CCT,</span> <span class="pre">and</span> <span class="pre">CV</span> <span class="pre">have</span> <span class="pre">been</span> <span class="pre">deprecated</span></code> error:<a class="headerlink" href="#options-ik-cct-and-cv-have-been-deprecated-error" title="Permalink to this heading">#</a></h3>
+<p>May occur when using the <code class="docutils literal notranslate"><span class="pre">bwselect()</span></code> option after the <code class="docutils literal notranslate"><span class="pre">rdrobust</span></code> command. To fix this an older version of the <code class="docutils literal notranslate"><span class="pre">rdrobust</span></code> command must be installed. Install this by typing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="n">install</span> <span class="n">st0366</span><span class="o">.</span><span class="n">pkg</span><span class="p">,</span> <span class="n">from</span><span class="p">(</span><span class="s2">&quot;http://www.stata-journal.com/software/sj14-4/&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>into the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>. <em>Don’t forget to make a note of this in the Replication.txt!!</em></p>
+</section>
+<section id="problems-with-xi-command">
+<h3>Problems with “xi” command:<a class="headerlink" href="#problems-with-xi-command" title="Permalink to this heading">#</a></h3>
+<p>The outdated command xi may sometimes cause errors that cannot be remedied by using an older version of Stata. To update the syntax follow this example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xi</span><span class="p">:</span> <span class="n">gen</span> <span class="n">i</span><span class="o">.</span><span class="n">year</span> <span class="n">i</span><span class="o">.</span><span class="n">adjustedmsc</span>
+</pre></div>
+</div>
+<p>This line of code currently produces the error message “invalid name”. Correct this by dividing up the command into:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xi</span> <span class="n">i</span><span class="o">.</span><span class="n">year</span>
+<span class="n">xi</span> <span class="n">i</span><span class="o">.</span><span class="n">adjustedmsc</span>
+</pre></div>
+</div>
+</section>
+<section id="problems-with-the-kdens-command">
+<h3>Problems with the “kdens” command:<a class="headerlink" href="#problems-with-the-kdens-command" title="Permalink to this heading">#</a></h3>
+<p>May require the installation of <code class="docutils literal notranslate"><span class="pre">kdens</span></code> and possibly <code class="docutils literal notranslate"><span class="pre">moremata</span></code>.</p>
+</section>
+<section id="tex-files-cannot-be-opened">
+<h3>.tex files cannot be opened<a class="headerlink" href="#tex-files-cannot-be-opened" title="Permalink to this heading">#</a></h3>
+<p>(this is a variant of the “<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">___</span> <span class="pre">could</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">opened</span></code> error”)</p>
+<p><strong>Basic idea</strong>: Try setting your global directory (however that is specified in the code) to reference the name of the local drive on CISER.</p>
+<p>Instead of setting the directory as something like:
+<code class="docutils literal notranslate"><span class="pre">\\rschfs1x\userRS\K-Q\msw274_RS\aea_workspace\stata-training-redo\aer_replication</span></code></p>
+<p>Replace the beginning part with (where anything after the U: is going to be specific to your project and set up):
+<code class="docutils literal notranslate"><span class="pre">U:/aea_workspace/stata-training-redo/aer_replication</span></code></p>
+<p><strong>Suggested solution</strong></p>
+<ul class="simple">
+<li><p>Make the following modifications to the “<a class="reference external" href="http://config.do">config.do</a>”</p></li>
+<li><p>modify, if necessary the last line (where “global rootdir” is set) to reference the local drive on CISER
+global rootdir “U:/Documents/Workspace/aearep-950/112343/replication_package”
+Note the use of “/” instead of “” - please always do so.</p></li>
+<li><p>if the use of esttab using “$rootdir/output/table.tex” does not work, then try the next solution. Otherwise, you are done.
+Note the use of the quotes! they are important in this case, because the path contains spaces!</p></li>
+</ul>
+<p><strong>Expanded solution:</strong></p>
+<ul class="simple">
+<li><p>add a line global texdir “${rootdir}/output” (preferred) or the full path, to the BOTTOM of the <a class="reference external" href="http://config.do">config.do</a></p></li>
+<li><p>then replace  esttab using “$texdir/table.tex”</p></li>
+</ul>
+<p>If you do it like that, your modified programs will never have your personal path in the program code, only <span class="math notranslate nohighlight">\(rootdir and \)</span>texdir. Those are defined in the “<a class="reference external" href="http://config.do">config.do</a>”, and are easy to change by the next replicator.</p>
+</section>
+</section>
 <section id="specific-to-certain-systems">
 <h2>Specific to certain systems<a class="headerlink" href="#specific-to-certain-systems" title="Permalink to this heading">#</a></h2>
 <section id="redcloud">
@@ -557,14 +886,57 @@ document.write(`
 </div>
 <p>(the error is not specific to the <code class="docutils literal notranslate"><span class="pre">graph</span></code> command). Note the missing double-backslash in the path.</p>
 <p><strong>Solution</strong></p>
-<p>You need to redirect the STATATMP directory to a non-networked drive:</p>
+<p>You need to redirect the STATATMP directory to a non-networked drive.
+Use a terminal, and set the <code class="docutils literal notranslate"><span class="pre">STATATMP</span></code> variable before launching Stata. In all examples, we assume that the new directory is <code class="docutils literal notranslate"><span class="pre">U:\Documents\tmpdir</span></code>. If it doesn’t exist, create it. The path to Stata may be different on different systems, use command line expansion to find the right path.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Bash</label><div class="sd-tab-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">STATATMP</span><span class="o">=</span><span class="s2">&quot;/c/Users/</span><span class="nv">$USERNAME</span><span class="s2">/statatmp&quot;</span>
 mkdir<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$STATATMP</span><span class="s2">&quot;</span>
 <span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;/l/workspace/aearep-5697/203501/Data and do-files&quot;</span>
 <span class="s2">&quot;/c/Program Files/Stata18/StataMP-64.exe&quot;</span><span class="w"> </span>-b<span class="w"> </span>master.do
 </pre></div>
 </div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Powershell</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$env:STATATMP=&quot;U:\Documents\tmpdir&quot;
+&amp; &#39;C:\Program Files\Stata18\StataMP-64.exe&#39;
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Command Prompt</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="n">STATATMP</span><span class="o">=</span><span class="s2">&quot;U:\Documents</span><span class="se">\t</span><span class="s2">mpdir&quot;</span>
+<span class="s1">&#39;C:\Program Files\Stata18\StataMP-64.exe&#39;</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Alternate</label><div class="sd-tab-content docutils">
+<p>Use the “Permanent fix” described here:  <a class="reference external" href="https://www.stata.com/support/faqs/data-management/statatmp-environment-variable/">https://www.stata.com/support/faqs/data-management/statatmp-environment-variable/</a></p>
+</div>
+</div>
 <p>This normally succeeds.</p>
+</section>
+</section>
+<section id="ccss-classic">
+<h3>CCSS Classic<a class="headerlink" href="#ccss-classic" title="Permalink to this heading">#</a></h3>
+<section id="when-trying-to-install-some-extension-stata-shows-an-error-message-such-as-file-c-ado-plus-next-trk-already-exists">
+<h4>When trying to install some extension Stata shows an error message such as: <code class="docutils literal notranslate"><span class="pre">_file</span> <span class="pre">c:\ado\plus\next.trk</span> <span class="pre">already</span> <span class="pre">exists_</span></code><a class="headerlink" href="#when-trying-to-install-some-extension-stata-shows-an-error-message-such-as-file-c-ado-plus-next-trk-already-exists" title="Permalink to this heading">#</a></h4>
+<p>This issue usually occurs when running on a university system where you do not have rights to install to C:</p>
+<p><strong>Solution:</strong> Be sure you are including <code class="docutils literal notranslate"><span class="pre">config.do</span></code>, which has lines like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">basepath</span> <span class="s2">&quot;/path/to/your/project/directory&quot;</span>
+<span class="n">sysdir</span> <span class="nb">set</span> <span class="n">PERSONAL</span> <span class="s2">&quot;$basepath/ado/personal&quot;</span>
+<span class="n">sysdir</span> <span class="nb">set</span> <span class="n">PLUS</span> <span class="s2">&quot;$basepath/ado/plus&quot;</span>
+</pre></div>
+</div>
+<p>where you would create a “ado” directory in the “project” folder you are currently using for the replication (i.e., <code class="docutils literal notranslate"><span class="pre">..../10.1257/mac.12345/replication_netid/ado</span></code>). See  the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/template-config.do">template-config.do</a>.</p>
+<p>Stata will then install the new extension into that directory instead of c:\ado\plus (<a class="reference external" href="https://www.stata.com/support/faqs/programming/personal-ado-directory/">source</a> )</p>
 </section>
 </section>
 </section>
@@ -631,9 +1003,45 @@ mkdir<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$STA
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-debugging">Basic debugging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ado-files-not-found">Ado files not found</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unknown-egen-function-wtmean">unknown egen function wtmean()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unknown-egen-function">unknown egen function ….</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#struct-ms-vcvorthog-undefined">struct_ ms_vcvorthog undefined</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reg2hdfespatial-and-ols-spatial-hac"><code class="docutils literal notranslate"><span class="pre">reg2hdfespatial</span></code> and <code class="docutils literal notranslate"><span class="pre">ols_spatial_HAC</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-grc1leg">Installing grc1leg</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-graphs">Exporting Graphs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-want-to-run-my-program-in-an-older-version-of-stata">I want to run my program in an older version of Stata?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-do-file">MAIN DO FILE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-other-do-files">Running other do files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-stata-from-the-command-line">Running Stata from the command line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stata-errors">Stata Errors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varlist-required-error"><code class="docutils literal notranslate"><span class="pre">Varlist</span> <span class="pre">required</span></code> error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#too-many-values-error"><code class="docutils literal notranslate"><span class="pre">Too</span> <span class="pre">many</span> <span class="pre">values</span></code> error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varlist-not-allowed-error"><code class="docutils literal notranslate"><span class="pre">Varlist</span> <span class="pre">not</span> <span class="pre">allowed</span></code> error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxvar-too-small-error"><code class="docutils literal notranslate"><span class="pre">Maxvar</span> <span class="pre">too</span> <span class="pre">small</span></code> error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-could-not-be-opened-error"><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">___</span> <span class="pre">could</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">opened</span></code> error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#options-ik-cct-and-cv-have-been-deprecated-error"><code class="docutils literal notranslate"><span class="pre">Options</span> <span class="pre">IK,</span> <span class="pre">CCT,</span> <span class="pre">and</span> <span class="pre">CV</span> <span class="pre">have</span> <span class="pre">been</span> <span class="pre">deprecated</span></code> error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-with-xi-command">Problems with “xi” command:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-with-the-kdens-command">Problems with the “kdens” command:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tex-files-cannot-be-opened">.tex files cannot be opened</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-to-certain-systems">Specific to certain systems</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redcloud">RedCloud</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-with-temp-files">Problems with temp files</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ccss-classic">CCSS Classic</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#when-trying-to-install-some-extension-stata-shows-an-error-message-such-as-file-c-ado-plus-next-trk-already-exists">When trying to install some extension Stata shows an error message such as: <code class="docutils literal notranslate"><span class="pre">_file</span> <span class="pre">c:\ado\plus\next.trk</span> <span class="pre">already</span> <span class="pre">exists_</span></code></a></li>
 </ul>
 </li>
 </ul>
