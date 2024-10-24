@@ -34,15 +34,19 @@ Reminder: for the AEA, the JMS is ScholarOne.
 
 ![ScholarOne Submission](images/scholarone-submissionpage.png)
 
-   4. Always click `Yes` when asked: Would you be willing to review a revision of this manuscript?
-   5. Select the recommendation as noted in the Issue
+   4. Choose the first item in `Reviewer permission`
+
+![ScholarOne Reviewer Permission](images/scholarone-reviewer-permission.png)
+
+   5. Click `Yes` when asked: Would you be willing to review a revision of this manuscript?
+   6. Select the recommendation as noted in the Issue
       - If `MCStatus` contains `CA`: Look at the field [`MCRecommendationV2`]
       - If `MCStatus` contains `RR`: Look at the field [`MCRecommendation`]
-   6. Copy-paste the "Summary" part from `REPLICATION.md` into the field `Comments to the Author`. 
-   7. Select and upload the `REPLICATION.pdf`, click on `For author and  editor`.
-   8. In some cases, the Data Editor will have put a note in the issue with a "for Editor only" file. The contents of that file should be copied and pasted into the field `Confidential Comments to the Coeditor`.
-   8. Re-verify all information
-   9. Click on `Submit`
+   7. Copy-paste the "Summary" part from `REPLICATION.md` into the field `Comments to the Author`. 
+   8. Select and upload the `REPLICATION.pdf`, click on `For author and  editor`.
+   9. In some cases, the Data Editor will have put a note in the issue with a "for Editor only" file. The contents of that file should be copied and pasted into the field `Confidential Comments to the Coeditor`.
+   10. Re-verify all information
+   11. Click on `Submit`
 7. Back in the pop-up, 
    1. Click on `Submit to MC`
 
