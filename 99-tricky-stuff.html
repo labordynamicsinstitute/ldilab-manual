@@ -515,6 +515,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-eps-files">What are EPS files?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-too-big-rejection-by-bitbucket">File too big - rejection by Bitbucket</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-the-commit-has-not-been-pushed-yet">If the commit has not been pushed yet</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-the-commit-has-been-pushed">If the commit has been pushed</a></li>
@@ -534,6 +535,22 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="technical-issues">
 <span id="tricky-stuff"></span><h1>Technical issues<a class="headerlink" href="#technical-issues" title="Permalink to this heading">#</a></h1>
+<section id="what-are-eps-files">
+<h2>What are EPS files?<a class="headerlink" href="#what-are-eps-files" title="Permalink to this heading">#</a></h2>
+<p>Some authors have the code write out <code class="docutils literal notranslate"><span class="pre">.eps</span></code> files. These are “<a class="reference external" href="https://en.wikipedia.org/wiki/Encapsulated_PostScript">Encapsulated PostScript</a>” files. In principle, Adobe Acrobat should be able to conver them, but they cannot be included in the <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code> file, nor can they easily be viewed.</p>
+<p>Since October 2024, we have a pipeline script that can help you.</p>
+<ul class="simple">
+<li><p>First, be sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> all EPS files, then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> them, followed by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>.</p></li>
+<li><p>Go to the <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> tab in Bitbucket for your repository, and</p>
+<ul>
+<li><p>choose the <code class="docutils literal notranslate"><span class="pre">6-convert-eps-pdf</span></code> pipeline.</p></li>
+<li><p>enter the <code class="docutils literal notranslate"><span class="pre">openICPSRID</span></code> that is being used (this field can also handle a deeper directory, such as <code class="docutils literal notranslate"><span class="pre">openICPSRID/replication_package</span></code>, but you will rarely need to use this).</p></li>
+<li><p>by default, the pipeline will only convert <code class="docutils literal notranslate"><span class="pre">.eps</span></code> to <code class="docutils literal notranslate"><span class="pre">.png</span></code>, but you can also select <code class="docutils literal notranslate"><span class="pre">yes</span></code> in the <code class="docutils literal notranslate"><span class="pre">ProcessPDF</span></code> field if you need PDF files.</p></li>
+</ul>
+</li>
+</ul>
+<p>This will convert all <code class="docutils literal notranslate"><span class="pre">.eps</span></code> files, and create <code class="docutils literal notranslate"><span class="pre">.png</span></code> files in the same directory. You should then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> in your local workspace to get the files.</p>
+</section>
 <section id="file-too-big-rejection-by-bitbucket">
 <h2>File too big - rejection by Bitbucket<a class="headerlink" href="#file-too-big-rejection-by-bitbucket" title="Permalink to this heading">#</a></h2>
 <p>Bitbucket imposes a 100MB limit for files being pushed to the Git repo. This is similar to other Git services.</p>
@@ -713,6 +730,7 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-eps-files">What are EPS files?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-too-big-rejection-by-bitbucket">File too big - rejection by Bitbucket</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-the-commit-has-not-been-pushed-yet">If the commit has not been pushed yet</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-the-commit-has-been-pushed">If the commit has been pushed</a></li>
