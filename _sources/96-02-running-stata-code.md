@@ -329,6 +329,30 @@ stata-mp -b do master.do
 
 ::::
 
+
+::::{tab-item}  Windows Double-click 
+
+In some cases, the right-click menu may not contain the `Execute (do)` option. In that case, the following workaround also works; but does not automatically exit Stata when the do file is done. Start by **double-clicking** on the `master.do` file. This should open the Stata Editor window:
+
+![Double-click Do file](images/stata-editor-window.png)
+
+Now click on the circled green triangle to run the do file. 
+
+If double-clicking the do file does not open Stata, you may need to check the `Properties` tab. Right-click on the do file and select `Properties`. In the `General` tab, you may see an option to `Change` the default program that opens the do file. You may need to choose `Choose an app from your PC`:
+
+
+![Choose app on your PC dialog](images/windows11-set-default-app.png)
+
+Then navigate to the Stata executable (e.g., `C:\Program Files\Stata18\StataMP-64.exe`) and select it:
+
+![Select Stata executable](images/windows11-set-stata18-app.png)
+
+Then click `OK` and `Apply` to save the changes. Now double-clicking the do file should open it in Stata.
+
+
+::::
+
+
 ::::{tab-item} Windows terminal
 
 Instead of using the graphical "right-click" method, you can also use the command line in Windows. For `bash`, use

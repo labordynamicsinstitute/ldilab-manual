@@ -820,6 +820,18 @@ stata-mp -b do main.do
 </div>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-2">
+Windows Double-click </label><div class="sd-tab-content docutils">
+<p>In some cases, the right-click menu may not contain the <code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">(do)</span></code> option. In that case, the following workaround also works; but does not automatically exit Stata when the do file is done. Start by <strong>double-clicking</strong> on the <code class="docutils literal notranslate"><span class="pre">master.do</span></code> file. This should open the Stata Editor window:</p>
+<p><img alt="Double-click Do file" src="_images/stata-editor-window.png" /></p>
+<p>Now click on the circled green triangle to run the do file.</p>
+<p>If double-clicking the do file does not open Stata, you may need to check the <code class="docutils literal notranslate"><span class="pre">Properties</span></code> tab. Right-click on the do file and select <code class="docutils literal notranslate"><span class="pre">Properties</span></code>. In the <code class="docutils literal notranslate"><span class="pre">General</span></code> tab, you may see an option to <code class="docutils literal notranslate"><span class="pre">Change</span></code> the default program that opens the do file. You may need to choose <code class="docutils literal notranslate"><span class="pre">Choose</span> <span class="pre">an</span> <span class="pre">app</span> <span class="pre">from</span> <span class="pre">your</span> <span class="pre">PC</span></code>:</p>
+<p><img alt="Choose app on your PC dialog" src="_images/windows11-set-default-app.png" /></p>
+<p>Then navigate to the Stata executable (e.g., <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Stata18\StataMP-64.exe</span></code>) and select it:</p>
+<p><img alt="Select Stata executable" src="_images/windows11-set-stata18-app.png" /></p>
+<p>Then click <code class="docutils literal notranslate"><span class="pre">OK</span></code> and <code class="docutils literal notranslate"><span class="pre">Apply</span></code> to save the changes. Now double-clicking the do file should open it in Stata.</p>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Windows terminal</label><div class="sd-tab-content docutils">
 <p>Instead of using the graphical “right-click” method, you can also use the command line in Windows. For <code class="docutils literal notranslate"><span class="pre">bash</span></code>, use</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">code</span>
