@@ -517,7 +517,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#responsibilities">Responsibilities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-requisites-jira">Pre-requisites (JIRA)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#move-to-processing-publication">Move to “Processing Publication”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jira-move-to-processing-publication">JIRA: Move to “Processing Publication”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deposit-sequences">Deposit: Sequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deposit-add-doi">Deposit: Add DOI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deposit-publish">Deposit: Publish</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jira-move-to-published">JIRA: Move to “Published”</a></li>
 </ul>
             </nav>
         </div>
@@ -535,7 +539,7 @@ document.write(`
 <h2>Responsibilities<a class="headerlink" href="#responsibilities" title="Permalink to this heading">#</a></h2>
 <p>The complete general sequence is as follows:</p>
 <ol class="arabic simple">
-<li><p>Publish ICPSR deposit</p></li>
+<li><p>Publish replication package deposit (openICPSR, others)</p></li>
 <li><p>Publish AEA article</p></li>
 <li><p>Update the “related publication” link using the “Import from DOI functionality.”</p></li>
 </ol>
@@ -551,10 +555,21 @@ document.write(`
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> The openICPSR project number must be filled out.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> The openICPSR project number must be filled out, if the paper has an openICPSR deposit.</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> The correct <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">version</span></code> number needs to be selected.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> An <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">DOI</span></code> needs to be present (if necessary, run a script).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> An <code class="docutils literal notranslate"><span class="pre">replication</span> <span class="pre">pacakge</span> <span class="pre">DOI</span></code> needs to be present (if necessary, run a script).</p></li>
 </ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Some manuscript may have deposits elsewhere. Handling may differ in those cases. Examples include:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://reproducibility.worldbank.org/">World Bank Reproducible Research Repository</a></p></li>
+<li><p><a class="reference external" href="https://codeocean.com/explore">Codeocean Open Science Library</a></p></li>
+<li><p><a class="reference external" href="https://zenodo.org/communities/aeajournals/">Zenodo American Economic Association community</a></p></li>
+<li><p>Dataverses, for instance <a class="reference external" href="https://dataverse.harvard.edu/">at Harvard</a>, <a class="reference external" href="https://dataverse.yale.edu/">Yale</a>, and <a class="reference external" href="https://borealisdata.ca/">Canada</a></p></li>
+</ul>
+<p>Instructions for those may not yet exist.</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">One-time administrative setup</p>
@@ -563,14 +578,100 @@ document.write(`
 </ul>
 </div>
 </section>
-<section id="move-to-processing-publication">
-<h2>Move to “Processing Publication”<a class="headerlink" href="#move-to-processing-publication" title="Permalink to this heading">#</a></h2>
+<section id="jira-move-to-processing-publication">
+<h2>JIRA: Move to “Processing Publication”<a class="headerlink" href="#jira-move-to-processing-publication" title="Permalink to this heading">#</a></h2>
 <p>Select the transition “<code class="docutils literal notranslate"><span class="pre">Publish</span></code>” to move it to “<code class="docutils literal notranslate"><span class="pre">Processing</span> <span class="pre">Publication</span></code>”. In the popup, verify that all information seems complete.</p>
-<p>In a separate tab, open the deposit. Verify that the usual “ready for publication”  communication entry has been added.</p>
+</section>
+<section id="deposit-sequences">
+<h2>Deposit: Sequences<a class="headerlink" href="#deposit-sequences" title="Permalink to this heading">#</a></h2>
+<p>On openICPSR, the sequence is <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">DOI</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Publish</span></code>. For other platforms, it often is <code class="docutils literal notranslate"><span class="pre">Amend</span> <span class="pre">publication</span> <span class="pre">with</span> <span class="pre">DOI</span></code>.</p>
+<p>In a separate tab, open the deposit.</p>
+</section>
+<section id="deposit-add-doi">
+<h2>Deposit: Add DOI<a class="headerlink" href="#deposit-add-doi" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+openICPSR</label><div class="sd-tab-content docutils">
+<div class="dropdown admonition">
+<p class="admonition-title">Verify that the usual “ready for publication”  communication entry has been added. </p>
 <ul class="simple">
 <li><p>if not, investigate why</p></li>
 </ul>
-<p>Now move to the next step:</p>
+</div>
+<p>Scroll down to the “Related Publications” section.</p>
+<ul class="simple">
+<li><p>Go through the process to add the DOI.</p></li>
+<li><p>Remove any related publications that simply say “n.a.” in publication info</p></li>
+</ul>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Zenodo</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>go to <a class="reference external" href="https://zenodo.org/communities/aeajournals/records">https://zenodo.org/communities/aeajournals/records</a> (you need to be a part of the curation team of the American Economic Association Community)</p></li>
+</ul>
+<p><img alt="Zenodo Community" src="_images/zenodo-add-doi-step1.png" /></p>
+<ul class="simple">
+<li><p>Find the item, and click on the “Edit” button (<strong>not “New version”</strong>!)</p>
+<ul>
+<li><p>If you do not see the “Edit” button, you are not a part of the curation team. Please contact the community manager.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Zenodo Edit button" src="_images/zenodo-add-doi-step2.png" /></p>
+<ul class="simple">
+<li><p>You should see the “Publish” and “Share” buttons. You will come back to the “Publish” button later.</p></li>
+</ul>
+<p><img alt="Zenodo publish and share button" src="_images/zenodo-add-doi-step3.png" /></p>
+<ul class="simple">
+<li><p>Scroll down “Related works”.</p></li>
+<li><p>Select</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Relation</span></code> - <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">supplement</span> <span class="pre">to</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Identifier</span></code> - the DOI in the form of <code class="docutils literal notranslate"><span class="pre">10.5281/zenodo.1234567</span></code> of the manuscript</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Scheme</span></code> - <code class="docutils literal notranslate"><span class="pre">DOI</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Resource</span> <span class="pre">type</span></code> - <code class="docutils literal notranslate"><span class="pre">Publication</span> <span class="pre">/</span> <span class="pre">Journal</span> <span class="pre">article</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Zenodo Related Works" src="_images/zenodo-add-doi-step4.png" /></p>
+<ul class="simple">
+<li><p>Scroll back up and click on the <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">draft</span></code> button. This should not generate any error messages.</p></li>
+</ul>
+<p><img alt="Zenodo Save Draft" src="_images/zenodo-add-doi-step5a.png" /></p>
+<ul class="simple">
+<li><p>Now press <code class="docutils literal notranslate"><span class="pre">Publish</span></code>.</p></li>
+</ul>
+<p><img alt="Zenodo Publish" src="_images/zenodo-add-doi-step5b.png" /></p>
+<ul class="simple">
+<li><p>Confirm in the pop-up the publication.</p></li>
+</ul>
+<p><img alt="Zenodo Popup" src="_images/zenodo-add-doi-step6.png" /></p>
+<ul class="simple">
+<li><p>The new view is the published deposit. Scroll down to the “Additional details” section, and verify that the “Related works” section is correctly populated (there may be other elements there, but the DOI should be listed).</p></li>
+</ul>
+<p><img alt="Zenodo Success" src="_images/zenodo-add-doi-step7.png" /></p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Codeocean</label><div class="sd-tab-content docutils">
+<p>Send a note to the helpdesk, requesting the addition of a DOI to the related publications. <strong>Do not create a new version!</strong></p>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Others</label><div class="sd-tab-content docutils">
+<p>In general, for others, you may need to email the repository platform contact.</p>
+</div>
+</div>
+</section>
+<section id="deposit-publish">
+<h2>Deposit: Publish<a class="headerlink" href="#deposit-publish" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+openICPSR</label><div class="sd-tab-content docutils">
+<p>Move to the next step:</p>
 <blockquote>
 <div><p>Change Status -&gt; Publish</p>
 </div></blockquote>
@@ -584,6 +685,12 @@ document.write(`
 <p><img alt="publish step2" src="_images/openICPSR-publish-modal-part1.png" /></p>
 <p>The remaining options are non-selectable. However, verify that the License is correctly chosen - if there is a license file in the deposit, there should be a “<code class="docutils literal notranslate"><span class="pre">Other</span> <span class="pre">license</span></code>” selected.</p>
 <p>Choose “Publish Project”. The project will go public shortly. You should verify that in fact the deposit is publicly accessible at the DOI. Any failure should be reported to openICPSR.</p>
+</div>
+</div>
+</section>
+<section id="jira-move-to-published">
+<h2>JIRA: Move to “Published”<a class="headerlink" href="#jira-move-to-published" title="Permalink to this heading">#</a></h2>
+<p>Finalize the process on JIRA.</p>
 </section>
 </section>
 
@@ -650,7 +757,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#responsibilities">Responsibilities</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-requisites-jira">Pre-requisites (JIRA)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#move-to-processing-publication">Move to “Processing Publication”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jira-move-to-processing-publication">JIRA: Move to “Processing Publication”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deposit-sequences">Deposit: Sequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deposit-add-doi">Deposit: Add DOI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deposit-publish">Deposit: Publish</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jira-move-to-published">JIRA: Move to “Published”</a></li>
 </ul>
   </nav></div>
 
