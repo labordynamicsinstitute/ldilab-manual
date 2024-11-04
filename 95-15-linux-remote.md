@@ -294,6 +294,19 @@ To be completed.
 
 Finally, you will want to start the SSH-agent. The following [website](https://interworks.com/blog/2021/09/15/setting-up-ssh-agent-in-windows-for-passwordless-git-authentication/) explains how to do so. You will likely need admin privileges on your laptop.
 
+First, as admin in a PowerShell:
+
+```powershell
+Get-Service ssh-agent | Set-Service -StartupType Automatic -PassThru | Start-Service
+```
+
+Then either reboot, or start the service
+
+```powershell
+start-ssh-agent.cmd
+```
+
+
 
 ::::
 
