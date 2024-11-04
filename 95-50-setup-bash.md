@@ -124,6 +124,46 @@ You should now have access to the various scripts, such as `aeagit`.
 If you *do* have a `$HOME/bin` directory, you will need to manually adjust a few more things. Contact your supervisor.
 
 
+## Other software dependencies
+
+
+::::{tab-set}
+
+:::{tab-item} Windows
+
+You may need
+
+- Python
+- Rsync
+
+On CCSS Cloud, Python should be installed. You may need to add `rsync` only if you are a LDI Lab Admin working with CodeOcean. Installation has only been tested on a laptop and may not work on CCSS Cloud.
+
+Installing Python is best done using `winget`. From a **Powershell**, run these install commands:
+
+```powershell
+winget install Python.Python.3.12
+```
+
+If you need `rsync`, run the following in a Bash shell
+
+```bash
+setup-rsync.sh
+```
+
+
+:::
+
+:::{tab-item} MacOS
+
+Both Python and rsync should be installed. If you need a newer version of Python 3.x, check the internet...
+
+:::{tab-item} Linux
+
+Both Python and rsync should be installed. If not, check your version of package manager. You mean need to reference `python3` because the default Python might be `python2`, which won't work.
+
+:::
+::::
+
 ## Configuring Python defaults
 
 The last step you do once you have cloned your first repository.
