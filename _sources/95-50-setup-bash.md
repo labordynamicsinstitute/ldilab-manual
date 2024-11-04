@@ -124,6 +124,9 @@ You should now have access to the various scripts, such as `aeagit`.
 If you *do* have a `$HOME/bin` directory, you will need to manually adjust a few more things. Contact your supervisor.
 
 
+
+
+
 ## Other software dependencies
 
 
@@ -193,6 +196,31 @@ python3 -m pip install -r requirements.txt
 :::
 
 ::::
+
+## Updating
+
+Sometimes, updates are made. 
+
+### Scripts
+
+If you installed them in `$HOME/bin`, then simply run
+
+```bash
+cd $HOME/bin
+git pull
+```
+
+Adjust if you installed them somewhere else.
+
+### Python dependencies
+
+It is safe to re-run
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+at any time.
 
 ## Optional customizations
 
