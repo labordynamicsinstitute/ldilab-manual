@@ -781,6 +781,14 @@ Windows (laptop only)</label><div class="sd-tab-content docutils">
 <p>First, you need to ensure that the SSH subsystem is installed.</p>
 <p>To be completed.</p>
 <p>Finally, you will want to start the SSH-agent. The following <a class="reference external" href="https://interworks.com/blog/2021/09/15/setting-up-ssh-agent-in-windows-for-passwordless-git-authentication/">website</a> explains how to do so. You will likely need admin privileges on your laptop.</p>
+<p>First, as admin in a PowerShell:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-Service</span> <span class="n">ssh-agent</span> <span class="p">|</span> <span class="nb">Set-Service</span> <span class="n">-StartupType</span> <span class="n">Automatic</span> <span class="n">-PassThru</span> <span class="p">|</span> <span class="nb">Start-Service</span>
+</pre></div>
+</div>
+<p>Then either reboot, or start the service</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">start-ssh</span><span class="n">-agent</span><span class="p">.</span><span class="n">cmd</span>
+</pre></div>
+</div>
 </div>
 </div>
 <p>The next steps are common to all operating systems.</p>
