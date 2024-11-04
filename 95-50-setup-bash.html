@@ -524,6 +524,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-already-have-a-home-bin-directory">If you already have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software-dependencies">Other software dependencies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-python-defaults">Configuring Python defaults</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-customizations">Optional customizations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-add-git-bash-to-the-windows-terminal">Windows: Add Git Bash to the Windows Terminal</a></li>
@@ -637,21 +638,55 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AEADa
 <p>If you <em>do</em> have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory, you will need to manually adjust a few more things. Contact your supervisor.</p>
 </section>
 </section>
+<section id="other-software-dependencies">
+<h2>Other software dependencies<a class="headerlink" href="#other-software-dependencies" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Windows</label><div class="sd-tab-content docutils">
+<p>You may need</p>
+<ul class="simple">
+<li><p>Python</p></li>
+<li><p>Rsync</p></li>
+</ul>
+<p>On CCSS Cloud, Python should be installed. You may need to add <code class="docutils literal notranslate"><span class="pre">rsync</span></code> only if you are a LDI Lab Admin working with CodeOcean. Installation has only been tested on a laptop and may not work on CCSS Cloud.</p>
+<p>Installing Python is best done using <code class="docutils literal notranslate"><span class="pre">winget</span></code>. From a <strong>Powershell</strong>, run these install commands:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">winget</span> <span class="n">install</span> <span class="n">Python</span><span class="p">.</span><span class="n">Python</span><span class="p">.</span><span class="n">3</span><span class="p">.</span><span class="n">12</span>
+</pre></div>
+</div>
+<p>If you need <code class="docutils literal notranslate"><span class="pre">rsync</span></code>, run the following in a Bash shell</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setup-rsync.sh
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+MacOS</label><div class="sd-tab-content docutils">
+<p>Both Python and rsync should be installed. If you need a newer version of Python 3.x, check the internet…</p>
+<div class="sd-tab-item docutils">
+<p class="sd-tab-label rubric">Linux</p>
+<div class="sd-tab-content docutils">
+<p>Both Python and rsync should be installed. If not, check your version of package manager. You mean need to reference <code class="docutils literal notranslate"><span class="pre">python3</span></code> because the default Python might be <code class="docutils literal notranslate"><span class="pre">python2</span></code>, which won’t work.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="configuring-python-defaults">
 <h2>Configuring Python defaults<a class="headerlink" href="#configuring-python-defaults" title="Permalink to this heading">#</a></h2>
 <p>The last step you do once you have cloned your first repository.</p>
 <p>If you are on a machine that has Python installed, run the following command (if it fails with <code class="docutils literal notranslate"><span class="pre">python3</span></code>, replace with <code class="docutils literal notranslate"><span class="pre">python</span></code>). You should do this once, from any recently cloned Bitbucket repository (which will contain a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file). You do NOT have to do it every time!</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 Windows</label><div class="sd-tab-content docutils">
 <p>When running in Bash, this should work:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Linux/macOS</label><div class="sd-tab-content docutils">
 <p>While the use of <code class="docutils literal notranslate"><span class="pre">python</span></code> might work, using <code class="docutils literal notranslate"><span class="pre">python3</span></code> is more robust:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
@@ -740,6 +775,7 @@ Linux/macOS</label><div class="sd-tab-content docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-already-have-a-home-bin-directory">If you already have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software-dependencies">Other software dependencies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-python-defaults">Configuring Python defaults</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-customizations">Optional customizations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-add-git-bash-to-the-windows-terminal">Windows: Add Git Bash to the Windows Terminal</a></li>
