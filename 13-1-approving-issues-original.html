@@ -608,10 +608,10 @@ document.write(`
 <li><p>Add a template line with the proposed resolution. These are at the top of the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">sample-language-report.md</a>.</p></li>
 </ul>
 </li>
-<li><p>(Re)generate the PDF of the report.</p>
+<li><p>Commit the report.</p>
 <ul class="simple">
-<li><p>Use MarkdownPDF package if you are using Visual Studio Code</p></li>
-<li><p>Use a script: <a class="reference external" href="https://github.com/AEADataEditor/editor-scripts"><code class="docutils literal notranslate"><span class="pre">aeaready</span></code></a> creates the PDF from the <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a>, crafts the commit message and pushes it to the repository.  It requires additional pieces of software that are noted in the link.</p></li>
+<li><p>Use standard <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commands</span></code>: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Pre-approval</span> <span class="pre">of</span> <span class="pre">replication</span> <span class="pre">report&quot;</span> <span class="pre">-a</span></code> followed by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p></li>
+<li><p>Alternatively, use a script: <a class="reference external" href="https://github.com/AEADataEditor/editor-scripts"><code class="docutils literal notranslate"><span class="pre">aeaready</span> <span class="pre">[JIRAISSUE]</span> <span class="pre">pre</span> <span class="pre">nopdf</span></code></a> will create the right commit message, and push as soon as you hit enter. If you are on a computer that can create the PDF (some Linux and some MacOS systems), dropping the <code class="docutils literal notranslate"><span class="pre">nopdf</span></code> part will also create the PDF.</p></li>
 </ul>
 </li>
 <li><p>Select a recommendation on the <code class="docutils literal notranslate"><span class="pre">Other</span> <span class="pre">links</span></code> tab of the JIRA ticket (see <a class="reference internal" href="13-3-approving-recommendations.html#choosing-recommendation"><span class="std std-ref">Choosing a Recommendation</span></a>)</p>
@@ -620,7 +620,7 @@ document.write(`
 <li><p>If this is a <code class="docutils literal notranslate"><span class="pre">CA</span></code>, choose a recommendation in the <code class="docutils literal notranslate"><span class="pre">MCRecommendationV2</span></code> field.</p></li>
 </ul>
 </li>
-<li><p>Commit and push all changes to the repository.  Advance the JIRA ticket to “Pre-approved.”  The pre-approval is now complete!</p></li>
+<li><p>Advance the JIRA ticket to “Pre-approved.”  The pre-approval is now <strong>complete!</strong></p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
