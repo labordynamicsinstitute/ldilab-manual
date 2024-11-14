@@ -57,7 +57,7 @@ This will still open a Matlab window in the background (check your taskbar).
 Assuming MATLAB is in your path (check with `matlab`), the following will generate a logfile. 
 
 ```
-time matlab -nodisplay -r "addpath(genpath('.')); main" -logfile matlab-$(date +%F-%H:%M:%S).log
+time matlab -nodisplay -r "addpath(genpath('.')); main" -logfile matlab-$(date +%F_%H-%M-%S).log
 ```
 
 where `main.m` is the Matlab program you want to run (you omit the `.m` when calling it). 
