@@ -27,7 +27,7 @@ The process of deleting data should be performed by the Research Aide.
 
 ## Moving the Jira issue
 
-You should move the Jira issue to the `Delete NDA Data` status by choosing `Submitted to MC`. 
+You should move the Jira issue to the `Delete NDA Data` status by choosing `Deleting NDA Data`. 
 
 ![Move to Delete NDA Data](images/jira-delete-nda-data.png)
 
