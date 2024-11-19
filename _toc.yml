@@ -45,7 +45,8 @@ parts:
       sections:
       - file: 31-jira-openicpsr-setup
       - file: 32-jira-submitting
-      - file: 33-openicpsr-preparing
+      - file: 33-jira-delete-nda-data
+      - file: 34-openicpsr-preparing
     - file: 50-openicpsr-related-tasks
       sections:
       - file: 51-openicpsr-monitoring-pending
