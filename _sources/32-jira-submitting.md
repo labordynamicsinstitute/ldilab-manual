@@ -1,4 +1,4 @@
-# Submitting to the JMS and openICPSR
+# Submitting to the JMS ScholarOne
 
 :::{tip}
 Reminder: for the AEA, the JMS is ScholarOne.
