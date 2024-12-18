@@ -634,10 +634,10 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
 <section id="run-the-code">
 <h3>Run the code<a class="headerlink" href="#run-the-code" title="Permalink to this heading">#</a></h3>
 <p>Once the above is done, running R is simple:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>R<span class="w"> </span>CMD<span class="w"> </span>BATCH<span class="w"> </span>main.R
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>R<span class="w"> </span>CMD<span class="w"> </span>BATCH<span class="w"> </span>--debugger<span class="w"> </span>--verbose<span class="w"> </span>--vanilla<span class="w"> </span>main.R<span class="w"> </span>main.<span class="k">$(</span>date<span class="w"> </span>+%F-%H:%M:%S<span class="k">)</span>.Rout
 </pre></div>
 </div>
-<p>This will create a <code class="docutils literal notranslate"><span class="pre">main.Rout</span></code> file, which you can open up in VS Code.</p>
+<p>This will create a <code class="docutils literal notranslate"><span class="pre">main.(DATE).Rout</span></code> file, which you can open up in VS Code. You must commit this file to Bitbucket. Every run will create a new <code class="docutils literal notranslate"><span class="pre">main.(DATE).Rout</span></code> with a slightly different date-stamp.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If the author’s main filename has spaces in it, you will need to use quotes when inputting the filename into the bash command to say <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">CMD</span> <span class="pre">BATCH</span> <span class="pre">&quot;Main</span> <span class="pre">File.R&quot;</span></code></p>
