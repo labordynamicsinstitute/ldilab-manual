@@ -281,9 +281,10 @@ In this stage, you will finalize the revision report.
     - Create a new sub-section `### Previously` and collect the **Unresolved**, and **Resolved** issues. 
       - Leave the existing `### Action Items (manuscript)` and `### Action Items (openICPSR)` sections!
     - Collect all the `> [We REQUESTED]` and `> [We SUGGESTED]` items from the rest of the report (this should correspond to the previous - [REQUIRED]` and `- [SUGGESTED]` items)
-      - These should go under the `### Previously` section, appropriately classified.
+      - These should go under the `### Previously` section, appropriately classified into `Unresolved` and `Resolved`.
+      - Do not create **separate** `Previously` sections for Manuscript and openICPSR sections!
       - Below each item, include the same resolution you listed in the body of the report. 
-    - New and any unresolved issues should be collected with their `- [REQUIRED]` and `- [SUGGESTED]` tags under the `### Action Items` sections. 
+    - New and any unresolved issues should be collected with their `- [REQUIRED]` and `- [SUGGESTED]` tags under the appropriate `### Action Items` sections. 
       - If using the scripts, you can use the [`aeareq`](https://github.com/AEADataEditor/editor-scripts) as usual.
     
 
