@@ -38,10 +38,10 @@ This works on any platform.
 :::{tab-item} Windows
 
 
-See [these instructions](https://www.mathworks.com/matlabcentral/answers/102082-how-do-i-call-matlab-from-the-dos-prompt) for finding the Matlab binary on the system. However, this should work "out of the box" on CCSS-managed systems from the Bash prompt. 
+See [these instructions](https://www.mathworks.com/matlabcentral/answers/102082-how-do-i-call-matlab-from-the-dos-prompt) for finding the Matlab binary on the system. However, this should work "out of the box" on CCSS-managed systems from the **Bash** prompt. 
 
 ```
-start matlab -nosplash  -minimize -r  "addpath(genpath('.'));main"  -logfile matlab.log
+start matlab -nosplash  -minimize -r  "addpath(genpath('.'));main"  -logfile matlab-$(date +%F_%H-%M-%S).log
 ```
 
 where `main.m` is the Matlab program you want to run (you omit the `.m` when calling it). 
