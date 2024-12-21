@@ -563,8 +563,8 @@ document.write(`
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 Windows</label><div class="sd-tab-content docutils">
-<p>See <a class="reference external" href="https://www.mathworks.com/matlabcentral/answers/102082-how-do-i-call-matlab-from-the-dos-prompt">these instructions</a> for finding the Matlab binary on the system. However, this should work “out of the box” on CCSS-managed systems from the Bash prompt.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="n">matlab</span> <span class="o">-</span><span class="n">nosplash</span>  <span class="o">-</span><span class="n">minimize</span> <span class="o">-</span><span class="n">r</span>  <span class="s2">&quot;addpath(genpath(&#39;.&#39;));main&quot;</span>  <span class="o">-</span><span class="n">logfile</span> <span class="n">matlab</span><span class="o">.</span><span class="n">log</span>
+<p>See <a class="reference external" href="https://www.mathworks.com/matlabcentral/answers/102082-how-do-i-call-matlab-from-the-dos-prompt">these instructions</a> for finding the Matlab binary on the system. However, this should work “out of the box” on CCSS-managed systems from the <strong>Bash</strong> prompt.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>start matlab -nosplash  -minimize -r  &quot;addpath(genpath(&#39;.&#39;));main&quot;  -logfile matlab-$(date +%F_%H-%M-%S).log
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">main.m</span></code> is the Matlab program you want to run (you omit the <code class="docutils literal notranslate"><span class="pre">.m</span></code> when calling it).</p>
