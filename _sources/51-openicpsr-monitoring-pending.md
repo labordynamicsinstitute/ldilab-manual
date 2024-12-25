@@ -138,11 +138,13 @@ Inspect the code, in particular the changes made to the code (see `Commits` tab 
 
 Some tags may not have a clear resolution just by scrutinizing the deposit, because they may have been handled in the copy-editing process and adjustments to the manuscript, which we (the Data Editor team) do not observe. All tags that appear in the "Action Items (manuscript)" section are communicated by the copy-editing team to the authors, so we **assume** that they will be handled there. Here are a few tags that fall into that category:
 
-- "[REQUIRED] Please adjust your tables to account for the noted numerical discrepancies, or explain (in the README) discrepancies that a replicator should expect". If the README makes no mention of this, then you will need to assume that this was handled by adjusting the manuscript or (online) appendix. Add the following note:
+- "[REQUIRED] Please adjust your tables to account for the noted numerical discrepancies, or explain (in the README) discrepancies that a replicator should expect".
 
-> **Not done**. Not addressed in the README, we assume that the online appendix and manuscript will be updated.
+If the README makes no mention of this, and there is no mention in the Project Communication Log, then you will need to assume that this was handled by adjusting the manuscript or (online) appendix. Add the following note:
+
+> **Not verifiable by us**. Not addressed in the README or code, we assume that the online appendix and manuscript will be/has been updated.
 >
-> 
+ 
 
 
 ::::
