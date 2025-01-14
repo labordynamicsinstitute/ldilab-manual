@@ -518,7 +518,13 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-log-files">Why do we need log files?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-have-to-install-programs">Why do we have to install programs?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-template-config-do">Explaining template-config.do</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-config-do">Explaining config.do</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-directory-structure-information">Setting directory structure information</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-a">Scenario A</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-b">Scenario B</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-c">Scenario C</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-paths-for-log-files">Directory paths for log files.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-a-log-file-with-current-date-and-time">Opening a log file with current date and time</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information">System information</a></li>
@@ -526,7 +532,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-do">How to use config.do</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-the-config-file">Rename the config file.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-the-config-file-to-the-right-location">Copy the config file to the right location</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-do">Include config.do</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
 </ul>
@@ -546,7 +552,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="using-config-do-in-stata">
 <span id="using-config-do"></span><h1>Using <a class="reference external" href="http://config.do">config.do</a> in STATA<a class="headerlink" href="#using-config-do-in-stata" title="Permalink to this heading">#</a></h1>
-<p>When <a class="reference internal" href="11-06-running-code.html#running-code-partb"><span class="std std-ref">running code</span></a>, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of STATA. How can you keep track of what is needed, and what was used by the code? We provide <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code> in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template">template repository</a> you clone which addresses these problems.</p>
+<p>When <a class="reference internal" href="11-06-running-code.html#running-code-partb"><span class="std std-ref">running code</span></a>, we ask you to keep a log of what you do. Moreover, authors often use packages that are not part of STATA. How can you keep track of what is needed, and what was used by the code? We provide <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code> in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template">template repository</a> you clone which addresses these problems.</p>
 <section id="why-do-we-need-log-files">
 <h2>Why do we need log files?<a class="headerlink" href="#why-do-we-need-log-files" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -562,7 +568,7 @@ document.write(`
 <section id="why-do-we-have-to-install-programs">
 <h2>Why do we have to install programs?<a class="headerlink" href="#why-do-we-have-to-install-programs" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Stata, or many other statistical software, does not provide all the packages (or “libraries”, or “modules”) that enable or facilitate the analysis. Therefore, many user-written programs or extensions are publicly available for downloads. For Stata, this is often at the <a class="reference external" href="https://ideas.repec.org/s/boc/bocode.html">SSC</a> (<code class="docutils literal notranslate"><span class="pre">ssc</span> <span class="pre">install</span> <span class="pre">package</span></code>), but sometimes at the <a class="reference external" href="https://www.stata-journal.com/">Stata Journal archives</a> (<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install</span> <span class="pre">sj53</span></code>), and sometimes in authors’ webpages (<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install</span> <span class="pre">package,</span> <span class="pre">using(https://author.com/packages)</span></code>)</p></li>
+<li><p>STATA, or many other statistical software, does not provide all the packages (or “libraries”, or “modules”) that enable or facilitate the analysis. Therefore, many user-written programs or extensions are publicly available for downloads. For STATA, this is often at the <a class="reference external" href="https://ideas.repec.org/s/boc/bocode.html">SSC</a> (<code class="docutils literal notranslate"><span class="pre">ssc</span> <span class="pre">install</span> <span class="pre">package</span></code>), but sometimes at the <a class="reference external" href="https://www.stata-journal.com/">STATA Journal archives</a> (<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install</span> <span class="pre">sjt0444,</span> <span class="pre">using(http://www.stata-journal.com/software/sj16-3)</span></code>), and sometimes in authors’ webpages (<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install</span> <span class="pre">package,</span> <span class="pre">using(https://author.com/packages)</span></code>)</p></li>
 <li><p>We differ in installation process from many others in the sense that, we want to install programs in a specified directory that is NOT a system directory.</p>
 <ul>
 <li><p>This is to ensure that the set of packages used by replication package is complete. A complete replication package should be stand-alone, regardless of packages installed elsewhere in the machine that program is run on.</p></li>
@@ -570,37 +576,129 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="explaining-template-config-do">
-<h2>Explaining <a class="reference external" href="http://template-config.do">template-config.do</a><a class="headerlink" href="#explaining-template-config-do" title="Permalink to this heading">#</a></h2>
-<p><img alt="template-config.do" src="_images/stata_config.png" /></p>
+<section id="explaining-config-do">
+<h2>Explaining <a class="reference external" href="http://config.do">config.do</a><a class="headerlink" href="#explaining-config-do" title="Permalink to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In the following text, the line numbers mentioned are approximate. We regularly update the <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code> to improve it, which may shift specific lines.</p>
 </div>
-<section id="directory-paths-for-log-files">
-<h3>Directory paths for log files.<a class="headerlink" href="#directory-paths-for-log-files" title="Permalink to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">config.do</span></code> creates a subdirectory and saves log files in the subdirectory. Area 1 sets these directory paths. Let’s say the current working directory path is the following, since Jira issue number is <code class="docutils literal notranslate"><span class="pre">AEAREP-9999</span></code> and openICPSR case number is <code class="docutils literal notranslate"><span class="pre">111111</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">U</span><span class="p">:</span><span class="o">/</span><span class="n">Workspace</span><span class="o">/</span><span class="n">aearep</span><span class="o">-</span><span class="mi">9999</span><span class="o">/</span><span class="mi">111111</span>
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\\<span class="n">networkpath</span>\<span class="n">users</span>\<span class="n">me</span>\<span class="n">Desktop</span>\<span class="n">Workspace</span>\<span class="n">aearep</span><span class="o">-</span><span class="mi">9999</span>\<span class="mi">111111</span>
-</pre></div>
-</div>
+<section id="setting-directory-structure-information">
+<h3>Setting directory structure information<a class="headerlink" href="#setting-directory-structure-information" title="Permalink to this heading">#</a></h3>
+<p>The directory structure of the replication package and of the <code class="docutils literal notranslate"><span class="pre">main.do</span></code> within determines the location of  <code class="docutils literal notranslate"><span class="pre">config.do</span></code>. It also determins a few other parameters within the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>.</p>
+<div class="admonition-action-adjust-the-config-do admonition">
+<p class="admonition-title"><strong>[ACTION]</strong> Adjust the <code class="docutils literal notranslate"><span class="pre">config.do</span></code></p>
 <ul class="simple">
-<li><p>line 50, <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">rootdir</span> <span class="pre">:</span> <span class="pre">pwd</span></code> sets the current working directory as a root directory, a.k.a. <code class="docutils literal notranslate"><span class="pre">rootdir</span></code>. It does not explicitly write the directory path, but see <a class="reference internal" href="96-02-running-stata-code.html#right-click-stata"><span class="std std-ref">later</span></a> on how to run Stata so that it picks that up <strong>automatically</strong>.</p></li>
+<li><p>If the main .do file is directly placed in the root directory, set the parameter <code class="docutils literal notranslate"><span class="pre">scenario</span></code> to be <code class="docutils literal notranslate"><span class="pre">B</span></code> and save.</p></li>
+<li><p>If the main .do file is inside a folder, open <code class="docutils literal notranslate"><span class="pre">config.do</span></code> and set the parameter <code class="docutils literal notranslate"><span class="pre">scenario</span></code> to <code class="docutils literal notranslate"><span class="pre">A</span></code> and save. (This is the default, so really no action is necessary.)</p></li>
+<li><p>If the replication package includes a folder with STATA packages, add the line  <code class="docutils literal notranslate"><span class="pre">adopath</span> <span class="pre">++</span></code> followed by the path of the location of that folder and save. See “<a class="reference internal" href="#using-config-do"><span class="std std-ref">Using Config.do</span></a>” for details.</p></li>
+<li><p>Add packages that need to be installed to <code class="docutils literal notranslate"><span class="pre">config.do</span></code>. See “<a class="reference internal" href="#using-config-do"><span class="std std-ref">Using Config.do</span></a>” for details.</p></li>
+</ul>
+</div>
+<p>We will refer to the <code class="docutils literal notranslate"><span class="pre">directory</span></code> that contains the package as <code class="docutils literal notranslate"><span class="pre">$rootdir</span></code>. The scenarios helps us to define that programmatically.</p>
+<ul class="simple">
+<li><p>line 80, <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">rootdir</span> <span class="pre">:</span> <span class="pre">pwd</span></code> sets the current working directory as a root directory, a.k.a. <code class="docutils literal notranslate"><span class="pre">rootdir</span></code>. It does not explicitly write the directory path, but see <a class="reference internal" href="96-02-running-stata-code.html#right-click-stata"><span class="std std-ref">later</span></a> on how to run STATA so that it picks that up <strong>automatically</strong>.</p></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Many authors of replication package tell you to “write the path where the package is”. DO NOT DO THIS. Use <code class="docutils literal notranslate"><span class="pre">$rootdir</span></code> instead, once you have set up the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> file as outlined later.</p>
+<p>Many authors of replication package tell you to “write the path where the package is”. DO NOT DO THIS. Use <code class="docutils literal notranslate"><span class="pre">$rootdir</span></code> instead.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Any other paths defined or used within the replication package should be relative to <code class="docutils literal notranslate"><span class="pre">$rootdir</span></code>. This is to ensure that the replication package is self-contained, and can be moved to another machine without breaking.</p>
 </div>
+<section id="scenario-a">
+<h4>Scenario A<a class="headerlink" href="#scenario-a" title="Permalink to this heading">#</a></h4>
+<p>A simplified directory structure that correspond to scenario “A” look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">directory</span><span class="o">/</span>
+              <span class="n">code</span><span class="o">/</span>
+                 <span class="n">main</span><span class="o">.</span><span class="n">do</span>
+                 <span class="mi">01</span><span class="n">_dosomething</span><span class="o">.</span><span class="n">do</span>
+              <span class="n">data</span><span class="o">/</span>
+                 <span class="n">data</span><span class="o">.</span><span class="n">dta</span>
+                 <span class="n">otherdata</span><span class="o">.</span><span class="n">dta</span>
+
+</pre></div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <ul class="simple">
-<li><p>line 59, <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">logdir</span> <span class="pre">&quot;${rootdir}/logs&quot;</span></code> sets the following directory as a directory for log files: <code class="docutils literal notranslate"><span class="pre">U:/Workspace/aearep-9999/111111/logs</span></code> or the network path equivalent.</p></li>
-<li><p>Notice that  no such directory exists. Therefore, the do file creates a new directory in line 60.</p>
+<li><p>A main .do file is  inside a folder and you have placed <code class="docutils literal notranslate"><span class="pre">config.do</span></code> in that same folder.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Template</span> <span class="n">config</span><span class="o">.</span><span class="n">do</span> <span class="o">*/</span>
+
+<span class="n">local</span> <span class="n">scenario</span> <span class="s2">&quot;A&quot;</span> 
+<span class="o">*</span> <span class="o">***</span> <span class="n">Add</span> <span class="n">required</span> <span class="n">packages</span> <span class="kn">from</span><span class="w"> </span><span class="nn">SSC</span> <span class="n">to</span> <span class="n">this</span> <span class="nb">list</span> <span class="o">***</span>
+<span class="n">local</span> <span class="n">ssc_packages</span> <span class="s2">&quot;estout ivreg2&quot;</span>
+    <span class="o">//</span> <span class="n">Example</span><span class="p">:</span>
+    <span class="o">//</span> <span class="n">local</span> <span class="n">ssc_packages</span> <span class="s2">&quot;estout boottest&quot;</span>
+    <span class="o">//</span> <span class="n">If</span> <span class="n">you</span> <span class="n">need</span> <span class="n">to</span> <span class="s2">&quot;net install&quot;</span> <span class="n">packages</span><span class="p">,</span> <span class="n">go</span> <span class="n">to</span> <span class="n">the</span> <span class="n">very</span> <span class="n">end</span> <span class="n">of</span> <span class="n">this</span> <span class="n">program</span><span class="p">,</span> <span class="ow">and</span> <span class="n">add</span> <span class="n">them</span> <span class="n">there</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="scenario-b">
+<h4>Scenario B<a class="headerlink" href="#scenario-b" title="Permalink to this heading">#</a></h4>
+<p>A simplified directory structure that correspond to scenario “B” looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">directory</span><span class="o">/</span>
+        <span class="n">main</span><span class="o">.</span><span class="n">do</span>
+        <span class="n">scripts</span><span class="o">/</span>
+             <span class="mi">01</span><span class="n">_dosomething</span><span class="o">.</span><span class="n">do</span>
+        <span class="n">data</span><span class="o">/</span>
+             <span class="n">data</span><span class="o">.</span><span class="n">dta</span>
+             <span class="n">otherdata</span><span class="o">.</span><span class="n">dta</span>
+</pre></div>
+</div>
+</section>
+<section id="scenario-c">
+<h4>Scenario C<a class="headerlink" href="#scenario-c" title="Permalink to this heading">#</a></h4>
+<p>Sometimes, we encounter Scenario C, which adds an additional level. A simplified directory structure that correspond to scenario “C” looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">directory</span><span class="o">/</span>
+	    <span class="n">step1</span><span class="o">/</span>
+            <span class="n">scripts</span><span class="o">/</span>
+                <span class="n">main</span><span class="o">.</span><span class="n">do</span>
+                <span class="mi">01</span><span class="n">_dosomething</span><span class="o">.</span><span class="n">do</span>
+        <span class="n">step2</span><span class="o">/</span>
+	        <span class="n">scripts</span><span class="o">/</span>
+	            <span class="n">othermain</span><span class="o">.</span><span class="n">do</span>
+		        <span class="mi">01</span><span class="n">_analysis</span><span class="o">.</span><span class="n">do</span>
+        <span class="n">data</span><span class="o">/</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">dta</span>
+            <span class="n">otherdata</span><span class="o">.</span><span class="n">dta</span>
+</pre></div>
+</div>
+<p>Note: you would place the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> in <strong>all</strong> directories that have some sort of <code class="docutils literal notranslate"><span class="pre">main.do</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<ul class="simple">
+<li><p>A main .do file is in the main directory, and you have placed <code class="docutils literal notranslate"><span class="pre">config.do</span></code> in the main directory. The package <code class="docutils literal notranslate"><span class="pre">estout</span></code> and <code class="docutils literal notranslate"><span class="pre">ivreg2</span></code> need to be installed:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">Template</span> <span class="n">config</span><span class="o">.</span><span class="n">do</span> <span class="o">*/</span>
+
+<span class="n">local</span> <span class="n">scenario</span> <span class="s2">&quot;B&quot;</span>  <span class="o">//</span> <span class="n">around</span> <span class="n">line</span> <span class="mi">48</span>
+<span class="o">***</span> <span class="n">Add</span> <span class="n">required</span> <span class="n">packages</span> <span class="kn">from</span><span class="w"> </span><span class="nn">SSC</span> <span class="n">to</span> <span class="n">this</span> <span class="nb">list</span> <span class="o">***</span>
+<span class="n">local</span> <span class="n">ssc_packages</span> <span class="s2">&quot;estout ivreg2&quot;</span>
+    <span class="o">//</span> <span class="n">Example</span><span class="p">:</span>
+    <span class="o">//</span> <span class="n">local</span> <span class="n">ssc_packages</span> <span class="s2">&quot;estout boottest&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="directory-paths-for-log-files">
+<h3>Directory paths for log files.<a class="headerlink" href="#directory-paths-for-log-files" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">config.do</span></code> creates a subdirectory and saves log files in the subdirectory. Area 1 sets these directory paths. Let’s say the current working directory path is the following, since Jira issue number is <code class="docutils literal notranslate"><span class="pre">AEAREP-9999</span></code> and openICPSR case number is <code class="docutils literal notranslate"><span class="pre">111111</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="p">:</span><span class="o">/</span><span class="n">Workspace</span><span class="o">/</span><span class="n">aearep</span><span class="o">-</span><span class="mi">9999</span><span class="o">/</span><span class="mi">111111</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>line 97, <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">logdir</span> <span class="pre">&quot;${rootdir}/logs&quot;</span></code> sets the following directory as a directory for log files: <code class="docutils literal notranslate"><span class="pre">U:/Workspace/aearep-9999/111111/logs</span></code> or the network path equivalent. Note that it will automatically use the <code class="docutils literal notranslate"><span class="pre">$rootdir</span></code> created earlier based on your choice of scenario.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">logdir</span> <span class="s2">&quot;$</span><span class="si">{rootdir}</span><span class="s2">/logs&quot;</span>
+<span class="n">cap</span> <span class="n">mkdir</span> <span class="s2">&quot;$logdir&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The first time you run the code,  no such directory exists. Therefore, the do file creates a new directory in line 98.</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> is a command to create a directory</p></li>
 </ul>
@@ -609,82 +707,108 @@ document.write(`
 </section>
 <section id="opening-a-log-file-with-current-date-and-time">
 <h3>Opening a log file with current date and time<a class="headerlink" href="#opening-a-log-file-with-current-date-and-time" title="Permalink to this heading">#</a></h3>
-<p>Since we usually run the program several times until the code is completely <a class="reference internal" href="96-05-debugging-stata.html#debugging-stata"><span class="std std-ref">debugged</span></a> (!), we would like to record all the runs. Therefore, we record the initial time we start running the code and use it in the name of the log file. Area 2 calls current date and time as local macro and opens the log file.</p>
+<p>Since we usually run the program several times until the code is completely <a class="reference internal" href="96-05-debugging-stata.html#debugging-stata"><span class="std std-ref">debugged</span></a> (!), we would like to record all the runs. Therefore, we record the initial time we start running the code and use it in the name of the log file.</p>
 <ul class="simple">
-<li><p>line 64-67: calls the current date and time as local macro</p></li>
-<li><p>line 69: starts the log file, with an internal name <code class="docutils literal notranslate"><span class="pre">ldi</span></code> which prevents collision with any log files opened by authors.</p></li>
+<li><p>Lines 102-110 create a log file with the current date and time, and an identifier of who is running the code:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">check</span> <span class="k">if</span> <span class="n">the</span> <span class="n">author</span> <span class="n">creates</span> <span class="n">a</span> <span class="n">log</span> <span class="n">file</span><span class="o">.</span> <span class="n">If</span> <span class="ow">not</span><span class="p">,</span> <span class="n">adjust</span> <span class="n">the</span> <span class="n">following</span> <span class="n">code</span> <span class="n">fragment</span> <span class="o">*/</span>
+
+<span class="n">local</span> <span class="n">c_date</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="n">current_date</span><span class="p">)</span>
+<span class="n">local</span> <span class="n">cdate</span> <span class="o">=</span> <span class="n">subinstr</span><span class="p">(</span><span class="s2">&quot;`c_date&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="o">.</span><span class="p">)</span>
+<span class="n">local</span> <span class="n">c_time</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="n">current_time</span><span class="p">)</span>
+<span class="n">local</span> <span class="n">ctime</span> <span class="o">=</span> <span class="n">subinstr</span><span class="p">(</span><span class="s2">&quot;`c_time&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="o">.</span><span class="p">)</span>
+<span class="n">local</span> <span class="n">ldilog</span> <span class="o">=</span> <span class="s2">&quot;$logdir/logfile_`cdate&#39;-`ctime&#39;-`c(username)&#39;.log&quot;</span>
+<span class="n">local</span> <span class="n">systeminfo</span> <span class="o">=</span> <span class="s2">&quot;$logdir/system_`cdate&#39;-`ctime&#39;-`c(username)&#39;.log&quot;</span>
+
+<span class="o">/*</span> <span class="k">global</span> <span class="n">logfile</span> <span class="o">*/</span>
+<span class="n">log</span> <span class="n">using</span> <span class="s2">&quot;`ldilog&#39;&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">(</span><span class="n">ldi</span><span class="p">)</span> <span class="n">replace</span> <span class="n">text</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>the last line starts the log file, with an internal name <code class="docutils literal notranslate"><span class="pre">ldi</span></code> which prevents collision with any log files opened by authors.</p></li>
 </ul>
 </section>
 <section id="system-information">
 <h3>System information<a class="headerlink" href="#system-information" title="Permalink to this heading">#</a></h3>
-<p>We require system information as part of the replication package. This is because some commands are sensitive to the OS, STATA version, machine type, etc. Area 3 calls in that information from the system and displays in the log file.</p>
+<p>We require system information as part of the replication package. This is because some commands are sensitive to the OS, STATA version, machine type, etc. Lines 113 calls a separate logfile so as not to clutter up the main logfile:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">used</span> <span class="n">only</span> <span class="k">for</span> <span class="n">system</span> <span class="n">info</span> <span class="o">*/</span>
+<span class="n">log</span> <span class="n">using</span> <span class="s2">&quot;`systeminfo&#39;&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">(</span><span class="n">system</span><span class="p">)</span> <span class="n">replace</span> <span class="n">text</span>
+</pre></div>
+</div>
 </section>
 <section id="package-installation">
 <h3>Package installation<a class="headerlink" href="#package-installation" title="Permalink to this heading">#</a></h3>
-<p>As explained above, we often need to install packages. Even when the packages were installed in previous cases, it should be irrelevant to your current case, since we install those packages within our deposit directory so that we can verify the completeness of the replication packages. Area 4 does this job.</p>
+<p>As explained above, we often need to install packages. Even when the packages were installed in previous cases, it should be irrelevant to your current case, since we install those packages within our deposit directory so that we can verify the completeness of the replication packages.</p>
 <ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">sysdir</span></code> commands (in line 89-91) redirects Stata to search for, and install ado files in the directories referenced. It won’t automatically install them.</p>
+<li><p>Add list of packages in the quotation marks in <strong>line 50</strong></p>
 <ul>
-<li><p>In case where the authors provided the ado files, adding a new command to the end of the <a class="reference external" href="http://config.do">config.do</a> would suffice. For instance, if the authors have provided ado files in the directory <code class="docutils literal notranslate"><span class="pre">packages</span></code>, then</p></li>
+<li><p>line 52 provides an example.</p></li>
 </ul>
 </li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adopath</span> <span class="o">++</span> <span class="s2">&quot;$</span><span class="si">{rootdir}</span><span class="s2">/packages&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local</span> <span class="n">ssc_packages</span> <span class="s2">&quot;estout&quot;</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Add list of packages in the quotation marks in <strong>line 37</strong></p>
-<ul>
-<li><p>line 39 provides an example.</p></li>
-<li><p>line 97-106 installs each package if there are packages listed and these packages do not already exist.</p></li>
+<li><p>If there are packages that do not contain a command of the same name (examples are <code class="docutils literal notranslate"><span class="pre">egenmore</span></code> and <code class="docutils literal notranslate"><span class="pre">moremata</span></code>), add these packages to <strong>line 56</strong>.</p></li>
 </ul>
-</li>
-<li><p>In some cases, the installation would fail since you have to use “<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install..</span></code>” instead of “<code class="docutils literal notranslate"><span class="pre">ssc</span> <span class="pre">install</span></code>”. In this case, write such <code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install</span></code>  commands after line 112, an example is given in line 111.</p></li>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local</span> <span class="n">ssc_unconditional</span> <span class="s2">&quot;egenmore&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>normally, no additional changes are needed!</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">adopath</span></code> and <code class="docutils literal notranslate"><span class="pre">sysdir</span></code> commands (lines 120-124) redirect STATA to search for, and install ado files in the directories referenced.</p></li>
+<li><p>Lines 159-170  installs each package if there are packages listed and these packages do not already exist.</p></li>
+<li><p>Lines 172-180 do the same for packages that do not have a command with the same name.</p></li>
+<li><p>Some packages are not hosted on SSC. In that case, you have to use “<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install..</span></code>” instead of “<code class="docutils literal notranslate"><span class="pre">ssc</span> <span class="pre">install</span></code>”. Write such <code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install</span></code>  commands after line 185, an example is given in line 185.</p></li>
+<li><p>In case where the authors provided ado files, we may need to specify this extra path, if the authors have not done so themselves (this varies across packages). Line 68</p></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local</span> <span class="n">author_adopath</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>will allow you to set that path at the top of the file. Lines 132-134 will implement this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;`author_adopath&#39;&quot;</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="p">{</span>             <span class="o">//</span> <span class="n">The</span> <span class="n">author</span> <span class="n">adopath</span> <span class="n">variable</span> <span class="ow">is</span> <span class="n">filled</span> <span class="n">out</span>
+    <span class="n">adopath</span> <span class="o">++</span> <span class="s2">&quot;$rootdir/`author_adopath&#39;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="how-to-use-config-do">
 <h2>How to use <a class="reference external" href="http://config.do">config.do</a><a class="headerlink" href="#how-to-use-config-do" title="Permalink to this heading">#</a></h2>
-<section id="rename-the-config-file">
-<h3>Rename the config file.<a class="headerlink" href="#rename-the-config-file" title="Permalink to this heading">#</a></h3>
-<p>The template is called <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code>. In order to use it, copy it into the openICPSR folder (e.g. , <code class="docutils literal notranslate"><span class="pre">111111</span></code>) next to the author’s code, rename it to <code class="docutils literal notranslate"><span class="pre">config.do</span></code>.</p>
+<section id="copy-the-config-file-to-the-right-location">
+<h3>Copy the config file to the right location<a class="headerlink" href="#copy-the-config-file-to-the-right-location" title="Permalink to this heading">#</a></h3>
+<div class="admonition-action-copy-the-template-config-do-https-github-com-aeadataeditor-replication-template-blob-master-template-config-do-to-the-right-location admonition">
+<p class="admonition-title"><strong>[ACTION]</strong> Copy the  <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/template-config.do"><code class="docutils literal notranslate"><span class="pre">template-config.do</span></code></a> to the right location.</p>
+<p>You should copy it (using Windows actions, or command line) and paste it into the folder where the main file is located. Change the name from <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code> to <code class="docutils literal notranslate"><span class="pre">config.do</span></code></p>
+</div>
+<p>The template is called <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code>. In order to use it, copy it into the openICPSR folder (e.g. , <code class="docutils literal notranslate"><span class="pre">111111</span></code>) next to the author’s main file, and rename it to <code class="docutils literal notranslate"><span class="pre">config.do</span></code>. If there is no <code class="docutils literal notranslate"><span class="pre">main.do</span></code> or similar, create one. See the <a class="reference internal" href="96-02-running-stata-code.html#running-code-in-stata"><span class="std std-ref">next section</span></a> for more details.</p>
 </section>
 <section id="include-config-do">
 <h3>Include <a class="reference external" href="http://config.do">config.do</a><a class="headerlink" href="#include-config-do" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>If there is a master dofile, you should put the following line at the beginning of the <code class="docutils literal notranslate"><span class="pre">master.do</span></code>:</p></li>
+<li><p>If there is a main dofile, you should put the following line at the beginning of the <code class="docutils literal notranslate"><span class="pre">main.do</span></code>:</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="n">config</span><span class="o">.</span><span class="n">do</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>You should also add to the end of the <code class="docutils literal notranslate"><span class="pre">master.do</span></code>:</p></li>
+<li><p>You should also add to the end of the <code class="docutils literal notranslate"><span class="pre">main.do</span></code>:</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">log</span> <span class="n">close</span> <span class="n">_all</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Do NOT include it in the individual code files.</p>
+<p>Do NOT include it in the individual code files that are being called from the <code class="docutils literal notranslate"><span class="pre">main.do</span></code>. This will lead to errors.</p>
 </div>
 <section id="notes">
 <h4>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
-<li><p>If there is no master dofile, you should try to create one (see <a class="reference internal" href="96-02-running-stata-code.html#create-master"><span class="std std-ref">how in the next section</span></a>), starting with the lines above, and ending with the <code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">close</span></code> command.</p></li>
-<li><p>If creating a master dofile is not possible, <strong>and only then</strong>, add the  lines at the beginning and the end, respectively, of <strong>each</strong> code file.</p></li>
+<li><p>If there is no main dofile, you should try to create one (see <a class="reference internal" href="96-02-running-stata-code.html#create-master"><span class="std std-ref">how in the next section</span></a>), starting with the lines above, and ending with the <code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">close</span></code> command.</p></li>
+<li><p>If creating a main dofile is not possible, <strong>and only then</strong>, add the  lines at the beginning and the end, respectively, of <strong>each</strong> code file.</p></li>
 <li><p>There will be cases where authors <strong>create their own log files</strong>. Do NOT comment out the log file creation here, as the named logfile will not conflict with any author-generated files.</p></li>
-<li><p>In some cases, authors will have code at the start of their dofile that does “housekeeping”, for example</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>	<span class="o">*</span> <span class="n">Housekeeping</span>
-		<span class="n">cap</span> <span class="n">log</span> <span class="n">close</span>		
-		<span class="nb">set</span> <span class="n">more</span> <span class="n">off</span>
-		<span class="n">clear</span> <span class="nb">all</span>
-		<span class="n">estimates</span> <span class="n">drop</span> <span class="n">_all</span>
-		<span class="n">eststo</span> <span class="n">clear</span>	
-		<span class="n">macro</span> <span class="n">drop</span> <span class="n">_all</span>
-</pre></div>
-</div>
-<p>In this case, you should add <code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">&quot;config.do&quot;</span></code> <strong>after</strong> such commands, to avoid problems. Technically, the command <code class="docutils literal notranslate"><span class="pre">clear</span> <span class="pre">all</span></code> undoes many of the settings that our <code class="docutils literal notranslate"><span class="pre">config.do</span></code> does.</p>
 </section>
 </section>
 </section>
@@ -753,7 +877,13 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-log-files">Why do we need log files?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-have-to-install-programs">Why do we have to install programs?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-template-config-do">Explaining template-config.do</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-config-do">Explaining config.do</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-directory-structure-information">Setting directory structure information</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-a">Scenario A</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-b">Scenario B</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-c">Scenario C</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-paths-for-log-files">Directory paths for log files.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-a-log-file-with-current-date-and-time">Opening a log file with current date and time</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information">System information</a></li>
@@ -761,7 +891,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-do">How to use config.do</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-the-config-file">Rename the config file.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-the-config-file-to-the-right-location">Copy the config file to the right location</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-do">Include config.do</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
 </ul>

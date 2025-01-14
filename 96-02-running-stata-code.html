@@ -516,21 +516,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-check-for-a-master-do-file">Step 1: check for a “master” .do file</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-a-master-do-file-is-provided">When a master .do file is provided</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-a-master-do-file-is-not-provided">When a master .do file is not provided</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-check-for-a-main-do-file">Step 1: check for a “main” .do file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-a-main-do-file-is-provided">When a main .do file is provided</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-a-main-do-file-is-not-provided">When a main .do file is NOT provided</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-place-config-do-where-the-master-do-file-is-located">Step 2: place config.do where the master .do file is located</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-include-config-do-in-the-master-do-file">Step 3: include config.do in the master .do file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-modifying-paths-if-necessary">Step 4: modifying paths if necessary</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-place-config-do-where-the-main-do-file-is-located">Step 2: place config.do where the main .do file is located</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-include-config-do-in-the-main-do-file">Step 3: include config.do in the main .do file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-modify-config-do">Step 4: Modify config.do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-modifying-paths-if-necessary-in-author-provided-code">Step 5: modifying paths if necessary in author-provided code</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-check-the-location-of-the-master-do-file-and-modify-config-do">Step 5: Check the location of the master .do file and modify config.do</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-a">Scenario A</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-b">Scenario B</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-c">Scenario C</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-run-the-code">Step 6: Run the Code</a><ul class="nav section-nav flex-column">
@@ -557,25 +552,25 @@ document.write(`
 <li><p>Installing user-written functions, programs, or packages that are necessary to do computations and produce tables/figures.</p></li>
 <li><p>Creating .log files (files that record, in this case, Stata output) of the replication attempts.</p></li>
 </ol>
-<section id="step-1-check-for-a-master-do-file">
-<h2>Step 1: check for a “master” .do file<a class="headerlink" href="#step-1-check-for-a-master-do-file" title="Permalink to this heading">#</a></h2>
-<div class="admonition-action-check-the-readme-or-the-repository-and-determine-if-a-master-do-file-was-provided admonition">
-<p class="admonition-title"><strong>[ACTION]</strong> Check the README or the repository and determine if a master .do file was provided.</p>
-<p>A master .do file is a Stata script that will call, in the correct sequence, all the programs necessary to construct analysis datasets, do all computations, and produce figures and tables. If a master do file exists, it should be mentioned in the README. In most cases, running a single master do file is sufficient to complete the reproduction. In general, a master script does not need to be a .do file. However, we will focus on cases where all work done in Stata is reduced to executing a single .do file.</p>
+<section id="step-1-check-for-a-main-do-file">
+<h2>Step 1: check for a “main” .do file<a class="headerlink" href="#step-1-check-for-a-main-do-file" title="Permalink to this heading">#</a></h2>
+<div class="admonition-action-check-the-readme-or-the-repository-and-determine-if-a-main-do-file-was-provided admonition">
+<p class="admonition-title"><strong>[ACTION]</strong> Check the README or the repository and determine if a main .do file was provided.</p>
+<p>A main .do file is a Stata script that will call, in the correct sequence, all the programs necessary to construct analysis datasets, do all computations, and produce figures and tables. If a main do file exists, it should be mentioned in the README. In most cases, running a single main do file is sufficient to complete the reproduction. In general, a main script does not need to be a .do file. However, we will focus on cases where all work done in Stata is reduced to executing a single .do file.</p>
 </div>
-<section id="when-a-master-do-file-is-provided">
-<h3>When a master .do file is provided<a class="headerlink" href="#when-a-master-do-file-is-provided" title="Permalink to this heading">#</a></h3>
-<p>If there is a master do file, continue with <a class="reference internal" href="#step2"><span class="std std-ref">Step 2</span></a>.</p>
+<section id="when-a-main-do-file-is-provided">
+<h3>When a main .do file is provided<a class="headerlink" href="#when-a-main-do-file-is-provided" title="Permalink to this heading">#</a></h3>
+<p>If there is a main do file, continue with <a class="reference internal" href="#step2"><span class="std std-ref">Step 2</span></a>.</p>
 </section>
-<section id="when-a-master-do-file-is-not-provided">
-<span id="create-master"></span><h3>When a master .do file is not provided<a class="headerlink" href="#when-a-master-do-file-is-not-provided" title="Permalink to this heading">#</a></h3>
-<div class="admonition-action-if-a-master-do-file-is-not-provided-you-should-create-a-one admonition">
-<p class="admonition-title"><strong>[ACTION]</strong> If a master .do file is not provided, you should create a one. </p>
-<p>Identify all the programs (do files) that need to be run, and create a master file. This is easy!</p>
+<section id="when-a-main-do-file-is-not-provided">
+<span id="create-master"></span><h3>When a main .do file is NOT provided<a class="headerlink" href="#when-a-main-do-file-is-not-provided" title="Permalink to this heading">#</a></h3>
+<div class="admonition-action-if-a-main-do-file-is-not-provided-you-should-create-a-one admonition">
+<p class="admonition-title"><strong>[ACTION]</strong> If a main .do file is not provided, you should create a one. </p>
+<p>Identify all the programs (do files) that need to be run, and create a main file. This is easy!</p>
 </div>
 <p>To create a do file follow the following steps:</p>
 <ol class="arabic simple">
-<li><p>Check that the README for specific instructions about the order in which each program is supposed to be run. If there are no such instructions, or they are not obvious by the name of the programs, is probably best to not create a master do file.</p></li>
+<li><p>Check that the README for specific instructions about the order in which each program is supposed to be run. If there are no such instructions, or they are not obvious by the name of the programs, is probably best to not create a main do file.</p></li>
 <li><p>Assuming that the sequence of programs is clear to you, open stata and click on the “New do file editor” (you can also work on Visual Studio Code):</p></li>
 </ol>
 <p><img alt="do_editor" src="_images/doeditor.png" /></p>
@@ -598,29 +593,29 @@ document.write(`
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>Save your master file.</p></li>
+<li><p>Save your main file.</p></li>
 </ol>
-<p>At the end your master .do file may look like this:</p>
-<p><img alt="master" src="_images/master-example.png" /></p>
-<p>With your master do file done, continue with <a class="reference internal" href="#step2"><span class="std std-ref">Step 2</span></a>.</p>
+<p>At the end your main .do file may look like this:</p>
+<p><img alt="main" src="_images/master-example.png" /></p>
+<p>With your main do file done, continue with <a class="reference internal" href="#step2"><span class="std std-ref">Step 2</span></a>.</p>
 </section>
 </section>
-<section id="step-2-place-config-do-where-the-master-do-file-is-located">
-<span id="step2"></span><h2>Step 2: place <a class="reference external" href="http://config.do">config.do</a> where the master .do file is located<a class="headerlink" href="#step-2-place-config-do-where-the-master-do-file-is-located" title="Permalink to this heading">#</a></h2>
+<section id="step-2-place-config-do-where-the-main-do-file-is-located">
+<span id="step2"></span><h2>Step 2: place <a class="reference external" href="http://config.do">config.do</a> where the main .do file is located<a class="headerlink" href="#step-2-place-config-do-where-the-main-do-file-is-located" title="Permalink to this heading">#</a></h2>
 <div class="admonition-action-copy-the-template-config-do-https-github-com-aeadataeditor-replication-template-blob-master-template-config-do-to-the-right-location admonition">
 <p class="admonition-title"><strong>[ACTION]</strong> Copy the  <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/template-config.do"><code class="docutils literal notranslate"><span class="pre">template-config.do</span></code></a> to the right location.</p>
-<p>You should copy it (using Windows actions, or command line) and paste it into the folder where the master file is located. Change the name from <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code> to <code class="docutils literal notranslate"><span class="pre">config.do</span></code></p>
+<p>You should copy it (using Windows actions, or command line) and paste it into the folder where the main file is located. Change the name from <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code> to <code class="docutils literal notranslate"><span class="pre">config.do</span></code></p>
 </div>
 <p>The folder with the code, whether is the root directory or a subfolder, should look something like this:</p>
 <p><img alt="Code_Repository" src="_images/code_repo.png" /></p>
 </section>
-<section id="step-3-include-config-do-in-the-master-do-file">
-<h2>Step 3: include <a class="reference external" href="http://config.do">config.do</a> in the master .do file<a class="headerlink" href="#step-3-include-config-do-in-the-master-do-file" title="Permalink to this heading">#</a></h2>
-<div class="admonition-action-add-a-call-to-the-config-do-file-in-the-master-do-file admonition">
-<p class="admonition-title"><strong>[ACTION]</strong> Add a call to the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> file in the master .do file.</p>
-<p>Open the master .do file. In the beginning, add the line to include the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>.</p>
+<section id="step-3-include-config-do-in-the-main-do-file">
+<h2>Step 3: include <a class="reference external" href="http://config.do">config.do</a> in the main .do file<a class="headerlink" href="#step-3-include-config-do-in-the-main-do-file" title="Permalink to this heading">#</a></h2>
+<div class="admonition-action-add-a-call-to-the-config-do-file-in-the-main-do-file admonition">
+<p class="admonition-title"><strong>[ACTION]</strong> Add a call to the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> file in the main .do file.</p>
+<p>Open the main .do file. In the beginning, add the line to include the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>.</p>
 </div>
-<p>(You already did this if you created a master .do file in <a class="reference internal" href="#create-master"><span class="std std-ref">Step 1</span></a>.)</p>
+<p>(You already did this if you <strong>created</strong> a main .do file in <a class="reference internal" href="#create-master"><span class="std std-ref">Step 1</span></a>.)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="n">include</span> <span class="s2">&quot;config.do&quot;</span>
 <span class="mi">2</span>
 <span class="mi">3</span> <span class="o">/*</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">Master</span> <span class="n">do</span> <span class="n">file</span> <span class="o">*/</span>
@@ -629,10 +624,25 @@ document.write(`
 <blockquote>
 <div><p>Save.</p>
 </div></blockquote>
-<p>More information about <code class="docutils literal notranslate"><span class="pre">config.do</span></code> can be found in “<a class="reference internal" href="96-01-using-config-stata.html#using-config-do"><span class="std std-ref">Using Config.do</span></a>”.</p>
+<ul class="simple">
+<li><p>In some cases, authors will have code at the start of their dofile that does “housekeeping”, for example</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>	<span class="o">*</span> <span class="n">Housekeeping</span>
+		<span class="n">cap</span> <span class="n">log</span> <span class="n">close</span>		
+		<span class="nb">set</span> <span class="n">more</span> <span class="n">off</span>
+		<span class="n">clear</span> <span class="nb">all</span>
+		<span class="n">estimates</span> <span class="n">drop</span> <span class="n">_all</span>
+		<span class="n">eststo</span> <span class="n">clear</span>	
+		<span class="n">macro</span> <span class="n">drop</span> <span class="n">_all</span>
+</pre></div>
+</div>
+<p>In this case, you should add <code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">&quot;config.do&quot;</span></code> <strong>after</strong> such commands, to avoid problems. Technically, the command <code class="docutils literal notranslate"><span class="pre">clear</span> <span class="pre">all</span></code> undoes many of the settings that our <code class="docutils literal notranslate"><span class="pre">config.do</span></code> does.</p>
+</section>
+<section id="step-4-modify-config-do">
+<h2>Step 4: Modify <a class="reference external" href="http://config.do">config.do</a><a class="headerlink" href="#step-4-modify-config-do" title="Permalink to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In summary, <code class="docutils literal notranslate"><span class="pre">config.do</span></code> does 4 things:</p>
+<p><code class="docutils literal notranslate"><span class="pre">config.do</span></code> does 4 things:</p>
 <ul class="simple">
 <li><p>Creates a global variable called “rootdir” with the local path to the root directory.</p></li>
 <li><p>Creates a logs files.</p></li>
@@ -641,22 +651,23 @@ document.write(`
 </ul>
 </div>
 <p>A crucial function of <code class="docutils literal notranslate"><span class="pre">config.do</span></code> is that it allows for the local installation of Stata packages, which is important for two reasons. First, it will enable us to check for the completeness of replication materials. Second, when running code in servers, we often do not have the necessary permissions to install Stata packages freely.<code class="docutils literal notranslate"><span class="pre">config.do</span></code> allow us to installed packages in the replication directory.</p>
+<p>More information about modifying <code class="docutils literal notranslate"><span class="pre">config.do</span></code> can be found in “<a class="reference internal" href="96-01-using-config-stata.html#using-config-do"><span class="std std-ref">Using Config.do</span></a>”.</p>
 </section>
-<section id="step-4-modifying-paths-if-necessary">
-<span id="stata-step4-modifying-paths"></span><h2>Step 4: modifying paths if necessary<a class="headerlink" href="#step-4-modifying-paths-if-necessary" title="Permalink to this heading">#</a></h2>
+<section id="step-5-modifying-paths-if-necessary-in-author-provided-code">
+<span id="stata-step4-modifying-paths"></span><h2>Step 5: modifying paths if necessary in author-provided code<a class="headerlink" href="#step-5-modifying-paths-if-necessary-in-author-provided-code" title="Permalink to this heading">#</a></h2>
 <div class="admonition-action-modify-paths-if-necessary admonition">
 <p class="admonition-title"><strong>[ACTION]</strong> Modify paths if necessary.</p>
 <ul class="simple">
 <li><p>Check the Readme and determine if (and where) the root directory should be modified.</p></li>
-<li><p>Open the .do file to be modified (probably the master .do file) and set the global variable <code class="docutils literal notranslate"><span class="pre">$rootdir</span></code> as the path.</p></li>
+<li><p>Open the .do file to be modified (probably the main .do file) and set the global variable <code class="docutils literal notranslate"><span class="pre">$rootdir</span></code> as the path.</p></li>
 <li><p>Save.</p></li>
 </ul>
 </div>
 <p>To run the code, we need to make sure that Stata can access the locally-saved data, access the packages that will be installed, and save the output in the computer where you are running the code. To do that, we often need to change some directory paths defined in the .do files provided. This step may vary in each replication package, so you need to look at the README instructions closely. Some packages may not require any change, while others may require a little more work.</p>
-<p>However, the typical case will only require one modification, either to the master .do file or to a program called by the master .do file, where you define the path of the location of the replication package. This location is what we refer to as the “root directory”. Once this change is made, the code provided (if it follows good practices) will define every other path relative to the root directory.</p>
+<p>However, the typical case will only require one modification, either to the main .do file or to a program called by the main .do file, where you define the path of the location of the replication package. This location is what we refer to as the “root directory”. Once this change is made, the code provided (if it follows good practices) will define every other path relative to the root directory.</p>
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
-<p>In the author’s master file, a global variable “maindir” defines the path of the root directory as:</p>
+<p>In the author’s main file, a global variable “maindir” defines the path of the root directory as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> <span class="nb">all</span>
 
 <span class="o">/*</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">Master</span> <span class="n">do</span> <span class="n">file</span> <span class="o">*/</span>
@@ -677,96 +688,6 @@ After the change:</p>
 <span class="k">global</span> <span class="n">data</span> <span class="s2">&quot;$maindir/data&quot;</span> <span class="o">//</span> <span class="n">path</span> <span class="n">to</span> <span class="n">data</span> <span class="n">folder</span>
 <span class="k">global</span> <span class="n">figures</span> <span class="s2">&quot;$maindir/figures&quot;</span> <span class="o">//</span> <span class="n">path</span> <span class="n">to</span> <span class="n">figures</span> <span class="n">folder</span>
 </pre></div>
-</div>
-</section>
-</section>
-<section id="step-5-check-the-location-of-the-master-do-file-and-modify-config-do">
-<h2>Step 5: Check the location of the master .do file and modify <a class="reference external" href="http://config.do">config.do</a><a class="headerlink" href="#step-5-check-the-location-of-the-master-do-file-and-modify-config-do" title="Permalink to this heading">#</a></h2>
-<div class="admonition-action-adjust-the-config-do admonition">
-<p class="admonition-title"><strong>[ACTION]</strong> Adjust the <code class="docutils literal notranslate"><span class="pre">config.do</span></code></p>
-<ul class="simple">
-<li><p>If the master .do file is directly placed in the root directory, set the parameter <code class="docutils literal notranslate"><span class="pre">scenario</span></code> to be <code class="docutils literal notranslate"><span class="pre">B</span></code> and save.</p></li>
-<li><p>If the master .do file is inside a folder, open <code class="docutils literal notranslate"><span class="pre">config.do</span></code> and set the parameter <code class="docutils literal notranslate"><span class="pre">scenario</span></code> to <code class="docutils literal notranslate"><span class="pre">A</span></code> and save. (This is the default, so really no action is necessary.)</p></li>
-<li><p>If the replication package includes a folder with Stata packages, add the line  <code class="docutils literal notranslate"><span class="pre">adopath</span> <span class="pre">++</span></code> followed by the path of the location of that folder and save. See “<a class="reference internal" href="96-01-using-config-stata.html#using-config-do"><span class="std std-ref">Using Config.do</span></a>” for details.</p></li>
-<li><p>Add packages that need to be installed to <code class="docutils literal notranslate"><span class="pre">config.do</span></code>. See “<a class="reference internal" href="96-01-using-config-stata.html#using-config-do"><span class="std std-ref">Using Config.do</span></a>” for details.</p></li>
-</ul>
-</div>
-<section id="scenario-a">
-<h3>Scenario A<a class="headerlink" href="#scenario-a" title="Permalink to this heading">#</a></h3>
-<p>A simplified directory structure that correspond to scenario “A” look like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">directory</span><span class="o">/</span>
-              <span class="n">code</span><span class="o">/</span>
-                 <span class="n">main</span><span class="o">.</span><span class="n">do</span>
-                 <span class="mi">01</span><span class="n">_dosomething</span><span class="o">.</span><span class="n">do</span>
-              <span class="n">data</span><span class="o">/</span>
-                 <span class="n">data</span><span class="o">.</span><span class="n">dta</span>
-                 <span class="n">otherdata</span><span class="o">.</span><span class="n">dta</span>
-
-</pre></div>
-</div>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<ul class="simple">
-<li><p>A Master .do file is  inside a folder and you have placed <code class="docutils literal notranslate"><span class="pre">config.do</span></code> in that same folder. The package <code class="docutils literal notranslate"><span class="pre">estout</span></code> needs to be installed:</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Template</span> <span class="n">config</span><span class="o">.</span><span class="n">do</span> <span class="o">*/</span>
-
-<span class="n">local</span> <span class="n">scenario</span> <span class="s2">&quot;A&quot;</span> 
-<span class="o">*</span> <span class="o">***</span> <span class="n">Add</span> <span class="n">required</span> <span class="n">packages</span> <span class="kn">from</span> <span class="nn">SSC</span> <span class="n">to</span> <span class="n">this</span> <span class="nb">list</span> <span class="o">***</span>
-<span class="n">local</span> <span class="n">ssc_packages</span> <span class="s2">&quot;estout ivreg2&quot;</span>
-    <span class="o">//</span> <span class="n">Example</span><span class="p">:</span>
-    <span class="o">//</span> <span class="n">local</span> <span class="n">ssc_packages</span> <span class="s2">&quot;estout boottest&quot;</span>
-    <span class="o">//</span> <span class="n">If</span> <span class="n">you</span> <span class="n">need</span> <span class="n">to</span> <span class="s2">&quot;net install&quot;</span> <span class="n">packages</span><span class="p">,</span> <span class="n">go</span> <span class="n">to</span> <span class="n">the</span> <span class="n">very</span> <span class="n">end</span> <span class="n">of</span> <span class="n">this</span> <span class="n">program</span><span class="p">,</span> <span class="ow">and</span> <span class="n">add</span> <span class="n">them</span> <span class="n">there</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="scenario-b">
-<h3>Scenario B<a class="headerlink" href="#scenario-b" title="Permalink to this heading">#</a></h3>
-<p>A simplified directory structure that correspond to scenario “B” looks like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">directory</span><span class="o">/</span>
-        <span class="n">main</span><span class="o">.</span><span class="n">do</span>
-        <span class="n">scripts</span><span class="o">/</span>
-             <span class="mi">01</span><span class="n">_dosomething</span><span class="o">.</span><span class="n">do</span>
-        <span class="n">data</span><span class="o">/</span>
-             <span class="n">data</span><span class="o">.</span><span class="n">dta</span>
-             <span class="n">otherdata</span><span class="o">.</span><span class="n">dta</span>
-</pre></div>
-</div>
-</section>
-<section id="scenario-c">
-<h3>Scenario C<a class="headerlink" href="#scenario-c" title="Permalink to this heading">#</a></h3>
-<p>Sometimes, we encounter Scenario C, which adds an additional level. A simplified directory structure that correspond to scenario “C” looks like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">directory</span><span class="o">/</span>
-	    <span class="n">step1</span><span class="o">/</span>
-            <span class="n">scripts</span><span class="o">/</span>
-                <span class="n">main</span><span class="o">.</span><span class="n">do</span>
-                <span class="mi">01</span><span class="n">_dosomething</span><span class="o">.</span><span class="n">do</span>
-        <span class="n">step2</span><span class="o">/</span>
-	        <span class="n">scripts</span><span class="o">/</span>
-	            <span class="n">othermain</span><span class="o">.</span><span class="n">do</span>
-		        <span class="mi">01</span><span class="n">_analysis</span><span class="o">.</span><span class="n">do</span>
-        <span class="n">data</span><span class="o">/</span>
-            <span class="n">data</span><span class="o">.</span><span class="n">dta</span>
-            <span class="n">otherdata</span><span class="o">.</span><span class="n">dta</span>
-</pre></div>
-</div>
-<p>Note: you would place the <code class="docutils literal notranslate"><span class="pre">config.do</span></code> in <strong>all</strong> directories that have some sort of <code class="docutils literal notranslate"><span class="pre">main.do</span></code>.</p>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<ul class="simple">
-<li><p>A Master .do file is in the main directory, and you have placed <code class="docutils literal notranslate"><span class="pre">config.do</span></code> in the main directory. The package <code class="docutils literal notranslate"><span class="pre">estout</span></code> and <code class="docutils literal notranslate"><span class="pre">ivreg2</span></code> need to be installed:</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">Template</span> <span class="n">config</span><span class="o">.</span><span class="n">do</span> <span class="o">*/</span>
-
-<span class="n">local</span> <span class="n">scenario</span> <span class="s2">&quot;B&quot;</span>  <span class="o">//</span> <span class="n">around</span> <span class="n">line</span> <span class="mi">30</span>
-<span class="o">***</span> <span class="n">Add</span> <span class="n">required</span> <span class="n">packages</span> <span class="kn">from</span> <span class="nn">SSC</span> <span class="n">to</span> <span class="n">this</span> <span class="nb">list</span> <span class="o">***</span>
-<span class="n">local</span> <span class="n">ssc_packages</span> <span class="s2">&quot;estout ivreg2&quot;</span>
-    <span class="o">//</span> <span class="n">Example</span><span class="p">:</span>
-    <span class="o">//</span> <span class="n">local</span> <span class="n">ssc_packages</span> <span class="s2">&quot;estout boottest&quot;</span>
-    <span class="o">//</span> <span class="n">If</span> <span class="n">you</span> <span class="n">need</span> <span class="n">to</span> <span class="s2">&quot;net install&quot;</span> <span class="n">packages</span><span class="p">,</span> <span class="n">go</span> <span class="n">to</span> <span class="n">the</span> <span class="n">very</span> <span class="n">end</span> <span class="n">of</span> <span class="n">this</span> <span class="n">program</span><span class="p">,</span> <span class="ow">and</span> <span class="n">add</span> <span class="n">them</span> <span class="n">there</span><span class="o">.</span>
-</pre></div>
-</div>
 </div>
 </section>
 </section>
@@ -923,21 +844,16 @@ Windows terminal</label><div class="sd-tab-content docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-check-for-a-master-do-file">Step 1: check for a “master” .do file</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-a-master-do-file-is-provided">When a master .do file is provided</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-a-master-do-file-is-not-provided">When a master .do file is not provided</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-check-for-a-main-do-file">Step 1: check for a “main” .do file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-a-main-do-file-is-provided">When a main .do file is provided</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-a-main-do-file-is-not-provided">When a main .do file is NOT provided</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-place-config-do-where-the-master-do-file-is-located">Step 2: place config.do where the master .do file is located</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-include-config-do-in-the-master-do-file">Step 3: include config.do in the master .do file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-modifying-paths-if-necessary">Step 4: modifying paths if necessary</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-place-config-do-where-the-main-do-file-is-located">Step 2: place config.do where the main .do file is located</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-include-config-do-in-the-main-do-file">Step 3: include config.do in the main .do file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-modify-config-do">Step 4: Modify config.do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-modifying-paths-if-necessary-in-author-provided-code">Step 5: modifying paths if necessary in author-provided code</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-check-the-location-of-the-master-do-file-and-modify-config-do">Step 5: Check the location of the master .do file and modify config.do</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-a">Scenario A</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-b">Scenario B</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-c">Scenario C</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-run-the-code">Step 6: Run the Code</a><ul class="nav section-nav flex-column">

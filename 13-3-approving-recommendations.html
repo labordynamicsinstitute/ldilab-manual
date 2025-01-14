@@ -542,8 +542,8 @@ document.write(`
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Create a directed graph</span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
@@ -588,7 +588,7 @@ document.write(`
 <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 
 <span class="c1"># Custom function to position edge labels</span>
-<span class="k">def</span> <span class="nf">edge_label_pos</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">label_pos</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">offset</span><span class="o">=-</span><span class="mf">0.1</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">edge_label_pos</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">label_pos</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">offset</span><span class="o">=-</span><span class="mf">0.1</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">{(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span> <span class="p">((</span><span class="n">pos</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">pos</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">pos</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
             <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()}</span>
 
@@ -626,6 +626,9 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
+</pre></div>
+</div>
 <img alt="_images/89cc33aea33d15c4bb8e1ecf03adbaa2ea17796ef5dda3f9608819d8317cdf27.png" src="_images/89cc33aea33d15c4bb8e1ecf03adbaa2ea17796ef5dda3f9608819d8317cdf27.png" />
 </div>
 </div>
