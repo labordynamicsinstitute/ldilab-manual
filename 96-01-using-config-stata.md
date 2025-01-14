@@ -190,6 +190,18 @@ log using "`systeminfo'", name(system) replace text
 
 As explained above, we often need to install packages. Even when the packages were installed in previous cases, it should be irrelevant to your current case, since we install those packages within our deposit directory so that we can verify the completeness of the replication packages. 
 
+```
+* *** Add required packages from SSC to this list ***
+local ssc_packages ""
+    // Example:
+    // local ssc_packages "estout boottest"
+    // 
+    // If you have packages that need to be unconditionally installed (the name of the package differs from the included commands), then list them here.
+    // examples are moremata, egennmore, blindschemes, etc.
+local ssc_unconditional ""
+
+    // If you need to "net install" packages, go to the very end of this program, and add them there.
+```
 
 - Add list of packages in the quotation marks in **line 50**
     - line 52 provides an example.
@@ -205,11 +217,66 @@ local ssc_unconditional "egenmore"
 ```
 
 - normally, no additional changes are needed!
+
+```
+/* install any packages locally */
+di "=== Redirecting where Stata searches for ado files ==="
+capture mkdir "$rootdir/ado"
+adopath - PERSONAL
+adopath - OLDPLACE
+adopath - SITE
+sysdir set PLUS     "$rootdir/ado/plus"
+sysdir set PERSONAL "$rootdir/ado"       // may be needed for some packages
+sysdir
+```
+
 - The `adopath` and `sysdir` commands (lines 120-124) redirect STATA to search for, and install ado files in the directories referenced. 
+
+```
+
+/* add packages to the macro */
+    
+    display in red "============ Installing packages/commands from SSC ============="
+    display in red "== Packages: `ssc_packages'"
+    if !missing("`ssc_packages'") {
+        foreach pkg in `ssc_packages' {
+            capture which `pkg'
+            if _rc == 111 {                 
+               dis "Installing `pkg'"
+                ssc install `pkg', replace
+            }
+            which `pkg'
+        }
+    }
+
+```
+
 - Lines 159-170  installs each package if there are packages listed and these packages do not already exist.   
+
+```
+/* add unconditionally installed packages */
+    display in red "=============== Unconditionally installed packages from SSC ==============="
+    display in red "== Packages: `ssc_unconditional'"
+    if !missing("`ssc_unconditional'") {
+        foreach pkg in `ssc_unconditional' {
+            dis "Installing `pkg'"
+            ssc install `pkg', replace
+        }
+    }
+
+```
+
 - Lines 172-180 do the same for packages that do not have a command with the same name.
 
-- Some packages are not hosted on SSC. In that case, you have to use "`net install..`" instead of "`ssc install`". Write such `net install`  commands after line 185, an example is given in line 185. 
+```
+
+/*==============================================================================================*/
+/* If you need to "net install" packages, add lines to this section                             */
+    * Install packages using net
+    * net install grc1leg, from("http://www.stata.com/users/vwiggins/")
+```
+
+- Some packages are not hosted on SSC. In that case, you have to use "`net install..`" instead of "`ssc install`". Write such `net install`  commands after line 185, an example is given in line 185. **This is one of the RARE instances where you have to edit something in the latter part of `config.do`!!**
 
 - In case where the authors provided ado files, we may need to specify this extra path, if the authors have not done so themselves (this varies across packages). Line 68
 
@@ -227,7 +294,7 @@ if "`author_adopath'" != "" {             // The author adopath variable is fill
 
 
 
-## How to use config.do
+## How to deploy config.do
 
 ### Copy the config file to the right location
 
