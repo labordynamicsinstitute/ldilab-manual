@@ -15,7 +15,9 @@ parts:
         - file: 02-03-toolkit
   - caption: Basics
     chapters:
-    - file: 04-concepts
+    - file: 04-01-concepts
+    - file: 04-02-reproducible-practices
+    - file: 04-03-readme-template
     - file: 05-data-citations-and-das
     - file: 06-basic-flow
     - file: 07-basic-assessing-reproducibility

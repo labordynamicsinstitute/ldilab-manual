@@ -3,6 +3,12 @@
 
 Most students and researchers have been trained to cite their sources. Mostly, this is meant to be literature sources, but the basic idea applies just as much to data: If you use somebody else's data, you should acknowledge that. 
 
+:::{note}
+
+See the [relevant presentation slides](https://labordynamicsinstitute.github.io/replicability-training-presentation/part2.html).
+
+:::
+
 ## A very short history of data citations
 
 The almost complete absence of data citations from the literature has lead to issues when data creators and data providers attempt to assess their impact on science. Typically, they revert to manually or algorithmically scouring the literature, trying to find instances where their data is used.
