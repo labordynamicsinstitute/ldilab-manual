@@ -177,7 +177,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="04-concepts.html">Basic Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01-concepts.html">Basic Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-02-reproducible-practices.html">Reproducible practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-03-readme-template.html">The README template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05-data-citations-and-das.html">Data citations and data availability statements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06-basic-flow.html">Generic data workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07-basic-assessing-reproducibility.html">Assessing computational reproducibility</a></li>
@@ -531,7 +533,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation">Package installation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-do">How to use config.do</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-deploy-config-do">How to deploy config.do</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-the-config-file-to-the-right-location">Copy the config file to the right location</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-do">Include config.do</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
@@ -739,6 +741,18 @@ document.write(`
 <section id="package-installation">
 <h3>Package installation<a class="headerlink" href="#package-installation" title="Permalink to this heading">#</a></h3>
 <p>As explained above, we often need to install packages. Even when the packages were installed in previous cases, it should be irrelevant to your current case, since we install those packages within our deposit directory so that we can verify the completeness of the replication packages.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">***</span> <span class="n">Add</span> <span class="n">required</span> <span class="n">packages</span> <span class="kn">from</span><span class="w"> </span><span class="nn">SSC</span> <span class="n">to</span> <span class="n">this</span> <span class="nb">list</span> <span class="o">***</span>
+<span class="n">local</span> <span class="n">ssc_packages</span> <span class="s2">&quot;&quot;</span>
+    <span class="o">//</span> <span class="n">Example</span><span class="p">:</span>
+    <span class="o">//</span> <span class="n">local</span> <span class="n">ssc_packages</span> <span class="s2">&quot;estout boottest&quot;</span>
+    <span class="o">//</span> 
+    <span class="o">//</span> <span class="n">If</span> <span class="n">you</span> <span class="n">have</span> <span class="n">packages</span> <span class="n">that</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">unconditionally</span> <span class="n">installed</span> <span class="p">(</span><span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">package</span> <span class="n">differs</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">included</span> <span class="n">commands</span><span class="p">),</span> <span class="n">then</span> <span class="nb">list</span> <span class="n">them</span> <span class="n">here</span><span class="o">.</span>
+    <span class="o">//</span> <span class="n">examples</span> <span class="n">are</span> <span class="n">moremata</span><span class="p">,</span> <span class="n">egennmore</span><span class="p">,</span> <span class="n">blindschemes</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
+<span class="n">local</span> <span class="n">ssc_unconditional</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="o">//</span> <span class="n">If</span> <span class="n">you</span> <span class="n">need</span> <span class="n">to</span> <span class="s2">&quot;net install&quot;</span> <span class="n">packages</span><span class="p">,</span> <span class="n">go</span> <span class="n">to</span> <span class="n">the</span> <span class="n">very</span> <span class="n">end</span> <span class="n">of</span> <span class="n">this</span> <span class="n">program</span><span class="p">,</span> <span class="ow">and</span> <span class="n">add</span> <span class="n">them</span> <span class="n">there</span><span class="o">.</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p>Add list of packages in the quotation marks in <strong>line 50</strong></p>
 <ul>
@@ -757,10 +771,66 @@ document.write(`
 </div>
 <ul class="simple">
 <li><p>normally, no additional changes are needed!</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">install</span> <span class="nb">any</span> <span class="n">packages</span> <span class="n">locally</span> <span class="o">*/</span>
+<span class="n">di</span> <span class="s2">&quot;=== Redirecting where Stata searches for ado files ===&quot;</span>
+<span class="n">capture</span> <span class="n">mkdir</span> <span class="s2">&quot;$rootdir/ado&quot;</span>
+<span class="n">adopath</span> <span class="o">-</span> <span class="n">PERSONAL</span>
+<span class="n">adopath</span> <span class="o">-</span> <span class="n">OLDPLACE</span>
+<span class="n">adopath</span> <span class="o">-</span> <span class="n">SITE</span>
+<span class="n">sysdir</span> <span class="nb">set</span> <span class="n">PLUS</span>     <span class="s2">&quot;$rootdir/ado/plus&quot;</span>
+<span class="n">sysdir</span> <span class="nb">set</span> <span class="n">PERSONAL</span> <span class="s2">&quot;$rootdir/ado&quot;</span>       <span class="o">//</span> <span class="n">may</span> <span class="n">be</span> <span class="n">needed</span> <span class="k">for</span> <span class="n">some</span> <span class="n">packages</span>
+<span class="n">sysdir</span>
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">adopath</span></code> and <code class="docutils literal notranslate"><span class="pre">sysdir</span></code> commands (lines 120-124) redirect STATA to search for, and install ado files in the directories referenced.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+/* add packages to the macro */
+    
+    display in red &quot;============ Installing packages/commands from SSC =============&quot;
+    display in red &quot;== Packages: `ssc_packages&#39;&quot;
+    if !missing(&quot;`ssc_packages&#39;&quot;) {
+        foreach pkg in `ssc_packages&#39; {
+            capture which `pkg&#39;
+            if _rc == 111 {                 
+               dis &quot;Installing `pkg&#39;&quot;
+                ssc install `pkg&#39;, replace
+            }
+            which `pkg&#39;
+        }
+    }
+
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>Lines 159-170  installs each package if there are packages listed and these packages do not already exist.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/* add unconditionally installed packages */
+    display in red &quot;=============== Unconditionally installed packages from SSC ===============&quot;
+    display in red &quot;== Packages: `ssc_unconditional&#39;&quot;
+    if !missing(&quot;`ssc_unconditional&#39;&quot;) {
+        foreach pkg in `ssc_unconditional&#39; {
+            dis &quot;Installing `pkg&#39;&quot;
+            ssc install `pkg&#39;, replace
+        }
+    }
+
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>Lines 172-180 do the same for packages that do not have a command with the same name.</p></li>
-<li><p>Some packages are not hosted on SSC. In that case, you have to use “<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install..</span></code>” instead of “<code class="docutils literal notranslate"><span class="pre">ssc</span> <span class="pre">install</span></code>”. Write such <code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install</span></code>  commands after line 185, an example is given in line 185.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="o">/*==============================================================================================*/</span>
+<span class="o">/*</span> <span class="n">If</span> <span class="n">you</span> <span class="n">need</span> <span class="n">to</span> <span class="s2">&quot;net install&quot;</span> <span class="n">packages</span><span class="p">,</span> <span class="n">add</span> <span class="n">lines</span> <span class="n">to</span> <span class="n">this</span> <span class="n">section</span>                             <span class="o">*/</span>
+    <span class="o">*</span> <span class="n">Install</span> <span class="n">packages</span> <span class="n">using</span> <span class="n">net</span>
+    <span class="o">*</span> <span class="n">net</span> <span class="n">install</span> <span class="n">grc1leg</span><span class="p">,</span> <span class="n">from</span><span class="p">(</span><span class="s2">&quot;http://www.stata.com/users/vwiggins/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Some packages are not hosted on SSC. In that case, you have to use “<code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install..</span></code>” instead of “<code class="docutils literal notranslate"><span class="pre">ssc</span> <span class="pre">install</span></code>”. Write such <code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">install</span></code>  commands after line 185, an example is given in line 185. <strong>This is one of the RARE instances where you have to edit something in the latter part of <code class="docutils literal notranslate"><span class="pre">config.do</span></code>!!</strong></p></li>
 <li><p>In case where the authors provided ado files, we may need to specify this extra path, if the authors have not done so themselves (this varies across packages). Line 68</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local</span> <span class="n">author_adopath</span> <span class="s2">&quot;&quot;</span>
@@ -774,8 +844,8 @@ document.write(`
 </div>
 </section>
 </section>
-<section id="how-to-use-config-do">
-<h2>How to use <a class="reference external" href="http://config.do">config.do</a><a class="headerlink" href="#how-to-use-config-do" title="Permalink to this heading">#</a></h2>
+<section id="how-to-deploy-config-do">
+<h2>How to deploy <a class="reference external" href="http://config.do">config.do</a><a class="headerlink" href="#how-to-deploy-config-do" title="Permalink to this heading">#</a></h2>
 <section id="copy-the-config-file-to-the-right-location">
 <h3>Copy the config file to the right location<a class="headerlink" href="#copy-the-config-file-to-the-right-location" title="Permalink to this heading">#</a></h3>
 <div class="admonition-action-copy-the-template-config-do-https-github-com-aeadataeditor-replication-template-blob-master-template-config-do-to-the-right-location admonition">
@@ -890,7 +960,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation">Package installation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-do">How to use config.do</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-deploy-config-do">How to deploy config.do</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-the-config-file-to-the-right-location">Copy the config file to the right location</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-do">Include config.do</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
