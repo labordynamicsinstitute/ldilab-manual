@@ -36,7 +36,7 @@ We have also in the past done an evaluation of the response of authors when the 
 
 This is a secondary goal, as time permits or as research goals suggest. It is quite similar to the first goal, but there is no interaction with authors, and no method to improve authors' files.
 
-> Interested parties might visit [ACRE](`r config$url$acre`) for how to incorporate this kind of activity into a class curriculum.
+> Interested parties might visit [ACRE](https://bitss.github.io/ACRE/) for how to incorporate this kind of activity into a class curriculum.
 
 ## Learning goals
 
