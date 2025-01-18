@@ -20,7 +20,21 @@ Follow these instructions for each file:
   - `Evaluation` -> `Evaluate Notebook`
   - `Save`
   - `Save as...` -> `PDF` 
-- Then **completely** exit Mathematica again! 
+- Then **completely** exit Mathematica again!
+
+
+::::{note}
+
+You can paste this into the `Replication Steps` section when appropriate:
+
+```
+- Opened each `.nb` file, and did the following:
+  - `Cell` -> `Delete all output`
+  - `Evaluation` -> `Evaluate Notebook`
+  - `Save`
+  - `Save as...` -> `PDF` 
+```
+::::
 
 Then commit both the re-executed notebooks and the new PDF files to your repository.
 
