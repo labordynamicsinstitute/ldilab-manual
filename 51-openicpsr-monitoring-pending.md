@@ -115,9 +115,9 @@ Except in extremely rare cases, do **not** re-run code.
 
 *[REQUIRED] As specified in the Policy and the DCAF, the README shall follow the schema provided by the Social Science Data Editors'template README. **Incomplete**- They added computational requirements but are missing Statement About Rights*
 
-  - For each change, you should make a note of what problem was addressed. For instance, if the "Reason for incomplete reproducibility" notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box "Bugs in code"
+  - For each change, you should make a note of what problem was addressed. For instance, if the "Reason for incomplete reproducibility" notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box "Bugs in code".
   - You can find the "Reasons for incomplete reproducibility" in the "Repl. info" tab in the Jira ticket, or in the popup when moving from `Assess openICPSR changes` to `Pending publication` at the end of this process.
-  - Check that the deposit doesn't have any extraneous files (Manuscript PDFs, Response to the Editor PDF, etc). If there are these files, note this on the Jira comment, tagging the senior members of the lab. Authors must remove these files. If in doubt, check with senior members.
+  - Check that the deposit doesn't have any extraneous files (Manuscript PDFs, Response to the Editor PDF, files with tildes (`~_readme.doc`, ...) etc). If there are these files, note this on the Jira comment, tagging the senior members of the lab. Authors must remove these files. If in doubt, check with senior members.
   - **Check that the deposit is "Submitted" status**. 
   
 
@@ -159,7 +159,8 @@ If the README makes no mention of this, and there is no mention in the Project C
 ### Reporting Insufficient Changes to the Authors
 
 - If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the assistant to the Data Editor with a comment on the Jira ticket outlining your question.
-- These cases are not always cut and dry, please err on the side of caution and ask questions before posting a "final acceptance" message on the deposit.
+- These cases are not always cut and dry, please err on the side of caution and ask questions before posting a "final acceptance" message on the deposit, or before requesting additional changes from the authors.
+- Do not include any `[SUGGESTED]` items in the response. We only suggest **once**, in the original report. If the only items not completed are `[SUGGESTED]` items, the deposit is accepted.
 - **If you are certain that items are incomplete** and theres 3 or less action items remaining:
   - Go back into openICPSR and "Change status" -> "Request Revisions". Then input the message:
   ```
@@ -167,7 +168,7 @@ If the README makes no mention of this, and there is no mention in the Project C
   
   ```
 
-  - Then paste only the incomplete action items (along with the reason we consider this incomplete).
+  - Then paste only the incomplete `[REQUIRED]` action items (along with the reason we consider this incomplete), ignore any `[SUGGESTED]`  items.
 - **If you are certain that items are incomplete** and theres more than 3 action items remaining:
   - Go back into openICPSR and "Change status" -> "Request Revisions". Then input the message:
   ```
