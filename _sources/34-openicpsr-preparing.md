@@ -21,9 +21,10 @@ then proceed to [Preparing Deposit for Publication](preparing-deposit-for-public
 In principle, once the report is uploaded, the author will get the report with the requested revisions via ScholarOne. However, under the post-August 2020 workflow on openICPSR, the project may need to be unlocked for the author to make changes.
 To do so, proceed as follows:
 
-1. Open the issue on Jira
-2. Right-click on the [`Replication package URL`] field to open the openICPSR deposit.
-3. On openICPSR, 
+1. Open the issue on Jira.
+2. If the issue is still in `Submitted to MC`, then choose `Post message to openICPSR` transition, which will pop up with fields displayed. Wait here.
+3. Right-click on the [`Replication package URL`] field to open the openICPSR deposit.
+4. On openICPSR, 
    - verify what the openICPSR `Deposit Status` is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
    - if  `Deposit Status` = *`Deposit in Progress`*, you are done on openICPSR. Go back to the Jira issue
    - if `Deposit Status` = *`Submitted`*, then
@@ -56,7 +57,7 @@ to the deposit have been made. Please process any requested changes as soon
 as possible.
 ```
 
-4. Back in the Jira issue, transition the issue to `Done`.
+4. Back in the Jira issue, continue to transition the issue to `Done`.
 
 
 
@@ -66,7 +67,7 @@ as possible.
 
 ### FOR ACCEPT WITH CHANGES
 
-1. Open the issue on Jira
+1. Open the issue on Jira.
 2. Click on the `Wait for response on openICPSR` transition to `Pending openICPSR changes`. 
   - In the pop-up, you should have all the necessary information.
      - Note: links in the pop-up window are not clickable: double-click, then use right-click to "Open in New Tab".
