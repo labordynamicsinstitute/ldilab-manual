@@ -652,9 +652,9 @@ Thanks!
 </ul>
 <p><em>[REQUIRED] As specified in the Policy and the DCAF, the README shall follow the schema provided by the Social Science Data Editors’template README. <strong>Incomplete</strong>- They added computational requirements but are missing Statement About Rights</em></p>
 <ul class="simple">
-<li><p>For each change, you should make a note of what problem was addressed. For instance, if the “Reason for incomplete reproducibility” notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box “Bugs in code”</p></li>
+<li><p>For each change, you should make a note of what problem was addressed. For instance, if the “Reason for incomplete reproducibility” notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box “Bugs in code”.</p></li>
 <li><p>You can find the “Reasons for incomplete reproducibility” in the “Repl. info” tab in the Jira ticket, or in the popup when moving from <code class="docutils literal notranslate"><span class="pre">Assess</span> <span class="pre">openICPSR</span> <span class="pre">changes</span></code> to <code class="docutils literal notranslate"><span class="pre">Pending</span> <span class="pre">publication</span></code> at the end of this process.</p></li>
-<li><p>Check that the deposit doesn’t have any extraneous files (Manuscript PDFs, Response to the Editor PDF, etc). If there are these files, note this on the Jira comment, tagging the senior members of the lab. Authors must remove these files. If in doubt, check with senior members.</p></li>
+<li><p>Check that the deposit doesn’t have any extraneous files (Manuscript PDFs, Response to the Editor PDF, files with tildes (<code class="docutils literal notranslate"><span class="pre">~_readme.doc</span></code>, …) etc). If there are these files, note this on the Jira comment, tagging the senior members of the lab. Authors must remove these files. If in doubt, check with senior members.</p></li>
 <li><p><strong>Check that the deposit is “Submitted” status</strong>.</p></li>
 </ul>
 <div class="note admonition">
@@ -693,7 +693,8 @@ Thanks!
 <h3>Reporting Insufficient Changes to the Authors<a class="headerlink" href="#reporting-insufficient-changes-to-the-authors" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the assistant to the Data Editor with a comment on the Jira ticket outlining your question.</p></li>
-<li><p>These cases are not always cut and dry, please err on the side of caution and ask questions before posting a “final acceptance” message on the deposit.</p></li>
+<li><p>These cases are not always cut and dry, please err on the side of caution and ask questions before posting a “final acceptance” message on the deposit, or before requesting additional changes from the authors.</p></li>
+<li><p>Do not include any <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code> items in the response. We only suggest <strong>once</strong>, in the original report. If the only items not completed are <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code> items, the deposit is accepted.</p></li>
 <li><p><strong>If you are certain that items are incomplete</strong> and theres 3 or less action items remaining:</p>
 <ul class="simple">
 <li><p>Go back into openICPSR and “Change status” -&gt; “Request Revisions”. Then input the message:</p></li>
@@ -703,7 +704,7 @@ Thanks!
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Then paste only the incomplete action items (along with the reason we consider this incomplete).</p></li>
+<li><p>Then paste only the incomplete <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> action items (along with the reason we consider this incomplete), ignore any <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code>  items.</p></li>
 </ul>
 </li>
 <li><p><strong>If you are certain that items are incomplete</strong> and theres more than 3 action items remaining:</p>
