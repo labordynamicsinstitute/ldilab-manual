@@ -13,13 +13,15 @@ then you can proceed to [Submitting deposit-related information via openICPSR](s
 
 Otherwise, you will need to go through the "Restricted Data Deletion" process outlined on this page.
 
-:::{note}
+```
 
-This does not apply to `MCStatus` = `RR` cases.
+:::{warning}
+
+This does not apply to `MCStatus` = `RR` or `MCRecommendationV2` = `Conditional Accept` cases. For both of these scenarios, we will see the replication package again, and will need the restricted data.
 
 :::
 
-:::{warning}
+:::{note}
 
 The process of deleting data should be performed by the Research Aide.
 
@@ -39,5 +41,5 @@ You should move the Jira issue to the `Delete NDA Data` status by choosing `Dele
 
 ## Move the issue forward
 
-Once the box for [`Was data deleted?`] is marked `Yes`, you can proceed to the next steps. 
+Once the box for [`Was data deleted?`] is marked `Yes`, you can proceed to the next steps. Select `Pending openICPSR Changes`.
 
