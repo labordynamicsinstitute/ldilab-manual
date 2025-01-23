@@ -518,7 +518,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-the-openicpsr-download-script-and-bitbucket-access">Configure the openICPSR download script and Bitbucket access</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-bashrc">Preparing the BASHRC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-up-vs-code">Open up VS Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-the-bitbucket-pat">Get the Bitbucket PAT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-the-openicpsr-info">Get the openICPSR info</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why">Why?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-it-works">Verifying it works</a></li>
 </ul>
 </li>
@@ -556,14 +560,10 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>On Windows, this will be “Git bash”. On Linux, you are usually using <code class="docutils literal notranslate"><span class="pre">bash</span></code>, but check with your sysadmin if you are unsure. On MacOS, newer versions have changed the default shell to <code class="docutils literal notranslate"><span class="pre">zsh</span></code>, which should work mostly the same. It is possible to use the <code class="docutils literal notranslate"><span class="pre">bash</span></code> shell there as well.</p>
 </div>
-<section id="configure-the-openicpsr-download-script-and-bitbucket-access">
-<h2>Configure the openICPSR download script and Bitbucket access<a class="headerlink" href="#configure-the-openicpsr-download-script-and-bitbucket-access" title="Permalink to this heading">#</a></h2>
-<p>First, create a <a class="reference internal" href="97-01-Bitbucket-authentication.html#bitbucket-authentication"><span class="std std-ref">Bitbucket PAT</span></a>. Keep it handy, you will need it below.</p>
-<p>Next, find your openICPSR login (should be your NetID + <code class="docutils literal notranslate"><span class="pre">&#64;cornell.edu</span></code>) and your password.</p>
-<div class="dropdown admonition">
-<p class="admonition-title">The ICPSR password is <em>not</em> your NetID or your CMail/Google password! </p>
-<p>It must be set separately, by invoking the “Forgot Password” functionality. See <a class="reference internal" href="97-02-openicpsr-authentication.html#openicpsr-authentication"><span class="std std-ref">openICPSR authentication</span></a> for more details.</p>
-</div>
+<section id="preparing-the-bashrc">
+<h2>Preparing the BASHRC<a class="headerlink" href="#preparing-the-bashrc" title="Permalink to this heading">#</a></h2>
+<section id="open-up-vs-code">
+<h3>Open up VS Code<a class="headerlink" href="#open-up-vs-code" title="Permalink to this heading">#</a></h3>
 <p>Open up a VS Code window as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>code<span class="w"> </span><span class="nv">$HOME</span>/.bashrc
 </pre></div>
@@ -579,7 +579,7 @@ document.write(`
 </ul>
 </div>
 <p>You should now have a (new) VS Code window, either empty or with some pre-written script. If there is content, place your cursor at the very end of the edit window (you may need to scroll down).</p>
-<p>Now, copy-paste the following code into the VS Code window, and edit the values with the appropriate replacements. Keep all the line breaks, quotes, and spaces (or absence thereof) as shown!</p>
+<p>Now, copy-paste the following code into the VS Code window. We will edit the values with the appropriate replacements. Keep all the line breaks, quotes, and spaces (or absence thereof) as shown!</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># env for ICPSR</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ICPSR_EMAIL</span><span class="o">=</span>mylogin@cornell.edu
 <span class="nb">export</span><span class="w"> </span><span class="nv">ICPSR_PASS</span><span class="o">=</span><span class="s1">&#39;supersecretpwd&#39;</span>
@@ -588,16 +588,41 @@ document.write(`
 <span class="nb">export</span><span class="w"> </span><span class="nv">P_BITBUCKET_USERNAME</span><span class="o">=</span>bitbucketusername
 </pre></div>
 </div>
-<p>where you can find your <code class="docutils literal notranslate"><span class="pre">bitbutcketusername</span></code> in the Bitbucket Profile (top-right corner, gear icon, etc.).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The use of single-quotes for the password ensures that special characters are correctly preserved.</p>
 </div>
+</section>
+<section id="get-the-bitbucket-pat">
+<h3>Get the Bitbucket PAT<a class="headerlink" href="#get-the-bitbucket-pat" title="Permalink to this heading">#</a></h3>
+<p>First, create a <a class="reference internal" href="97-01-Bitbucket-authentication.html#bitbucket-authentication"><span class="std std-ref">Bitbucket PAT</span></a>. Once you have created it,</p>
+<ul class="simple">
+<li><p>paste the PAT into the line with <code class="docutils literal notranslate"><span class="pre">P_BITBUCKET_PAT</span></code> (remember to keep the single-quotes!)</p></li>
+<li><p>also put your  <code class="docutils literal notranslate"><span class="pre">bitbutcketusername</span></code> (if you can’t find it, see in the Bitbucket Profile (top-right corner, gear icon, etc.)).</p></li>
+</ul>
+</section>
+<section id="get-the-openicpsr-info">
+<h3>Get the openICPSR info<a class="headerlink" href="#get-the-openicpsr-info" title="Permalink to this heading">#</a></h3>
+<p>Next, find your openICPSR login (should be your NetID + <code class="docutils literal notranslate"><span class="pre">&#64;cornell.edu</span></code>) and your <strong>openICPSR</strong> password (not your Cornell or Google password)</p>
+<div class="dropdown admonition">
+<p class="admonition-title">The ICPSR password is <em>not</em> your NetID or your CMail/Google password! </p>
+<p>It must be set separately, by invoking the “Forgot Password” functionality. See <a class="reference internal" href="97-02-openicpsr-authentication.html#openicpsr-authentication"><span class="std std-ref">openICPSR authentication</span></a> for more details.</p>
+</div>
+<ul class="simple">
+<li><p>paste the openICPSR login (probably <code class="docutils literal notranslate"><span class="pre">netid&#64;cornell.edu</span></code>) into the line with <code class="docutils literal notranslate"><span class="pre">ICPSR_EMAIL</span></code></p></li>
+<li><p>paste the openICPSR password into the line with <code class="docutils literal notranslate"><span class="pre">ICPSR_PASS</span></code></p></li>
+</ul>
+</section>
+<section id="why">
+<h3>Why?<a class="headerlink" href="#why" title="Permalink to this heading">#</a></h3>
 <p>This will</p>
 <ul class="simple">
 <li><p>allow you to use the <code class="docutils literal notranslate"><span class="pre">aeagit</span></code> shortcut to download a Bitbucket repository to your workspace directly from the Bash command line</p></li>
 <li><p>allow you to use the <code class="docutils literal notranslate"><span class="pre">tools/download_openicpsr_private.py</span></code> script to download replication packages from openICPSR from the Bash command line</p></li>
 </ul>
+</section>
+<section id="verifying-it-works">
+<h3>Verifying it works<a class="headerlink" href="#verifying-it-works" title="Permalink to this heading">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>On Windows, close the Git Bash window and open a new one to make the changes take effect. On Linux and MacOS, you can just run the following command in the terminal.</p>
@@ -605,8 +630,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<section id="verifying-it-works">
-<h3>Verifying it works<a class="headerlink" href="#verifying-it-works" title="Permalink to this heading">#</a></h3>
 <p>You should now be able to verify that the configuration setup worked, by typing the following at the terminal prompt:”</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>BIT
 </pre></div>
@@ -682,13 +705,20 @@ MacOS</label><div class="sd-tab-content docutils">
 </section>
 <section id="configuring-python-defaults">
 <h2>Configuring Python defaults<a class="headerlink" href="#configuring-python-defaults" title="Permalink to this heading">#</a></h2>
-<p>The last step you do once you have cloned your first repository.</p>
+<p>The last step you do once you have cloned your first repository (this can be run from within <strong>any</strong> recently cloned repository).</p>
 <p>If you are on a machine that has Python installed, run the following command (if it fails with <code class="docutils literal notranslate"><span class="pre">python3</span></code>, replace with <code class="docutils literal notranslate"><span class="pre">python</span></code>). You should do this once, from any recently cloned Bitbucket repository (which will contain a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file). You do NOT have to do it every time!</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-2">
 Windows</label><div class="sd-tab-content docutils">
 <p>When running in Bash, this should work:</p>
+<ul class="simple">
+<li><p>Change the working directory to one of your recent cases, say <code class="docutils literal notranslate"><span class="pre">xxxx</span></code>:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/l/workspace/aearep-xxxx
+</pre></div>
+</div>
+<p>then</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </pre></div>
 </div>
@@ -795,7 +825,11 @@ git<span class="w"> </span>pull
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-the-openicpsr-download-script-and-bitbucket-access">Configure the openICPSR download script and Bitbucket access</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-bashrc">Preparing the BASHRC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-up-vs-code">Open up VS Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-the-bitbucket-pat">Get the Bitbucket PAT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-the-openicpsr-info">Get the openICPSR info</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why">Why?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-it-works">Verifying it works</a></li>
 </ul>
 </li>
