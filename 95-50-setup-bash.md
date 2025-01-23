@@ -7,18 +7,9 @@ The following setup applies to any computer you may be using to run Bash command
 On Windows, this will be "Git bash". On Linux, you are usually using `bash`, but check with your sysadmin if you are unsure. On MacOS, newer versions have changed the default shell to `zsh`, which should work mostly the same. It is possible to use the `bash` shell there as well. 
 ```
 
-## Configure the openICPSR download script and Bitbucket access
+## Preparing the BASHRC
 
-First, create a [Bitbucket PAT](bitbucket-authentication). Keep it handy, you will need it below.
-
-Next, find your openICPSR login (should be your NetID + `@cornell.edu`) and your password.
-
-:::{admonition} The ICPSR password is *not* your NetID or your CMail/Google password! 
-:class: dropdown
-
-It must be set separately, by invoking the "Forgot Password" functionality. See [openICPSR authentication](openicpsr-authentication) for more details.
-
-:::
+### Open up VS Code
 
 Open up a VS Code window as follows:
 
@@ -37,7 +28,7 @@ code $HOME/.bashrc
 
 You should now have a (new) VS Code window, either empty or with some pre-written script. If there is content, place your cursor at the very end of the edit window (you may need to scroll down). 
 
-Now, copy-paste the following code into the VS Code window, and edit the values with the appropriate replacements. Keep all the line breaks, quotes, and spaces (or absence thereof) as shown!
+Now, copy-paste the following code into the VS Code window. We will edit the values with the appropriate replacements. Keep all the line breaks, quotes, and spaces (or absence thereof) as shown!
 
 ```bash
 # env for ICPSR
@@ -48,19 +39,44 @@ export P_BITBUCKET_PAT='supersecretPAT'
 export P_BITBUCKET_USERNAME=bitbucketusername
 ```
 
-where you can find your `bitbutcketusername` in the Bitbucket Profile (top-right corner, gear icon, etc.).
-
 :::{note}
 
 The use of single-quotes for the password ensures that special characters are correctly preserved.
 
 :::
 
+### Get the Bitbucket PAT
+
+First, create a [Bitbucket PAT](bitbucket-authentication). Once you have created it,
+
+- paste the PAT into the line with `P_BITBUCKET_PAT` (remember to keep the single-quotes!)
+- also put your  `bitbutcketusername` (if you can't find it, see in the Bitbucket Profile (top-right corner, gear icon, etc.)).
+
+
+
+### Get the openICPSR info
+
+Next, find your openICPSR login (should be your NetID + `@cornell.edu`) and your **openICPSR** password (not your Cornell or Google password)
+
+:::{admonition} The ICPSR password is *not* your NetID or your CMail/Google password! 
+:class: dropdown
+
+It must be set separately, by invoking the "Forgot Password" functionality. See [openICPSR authentication](openicpsr-authentication) for more details.
+
+:::
+
+- paste the openICPSR login (probably `netid@cornell.edu`) into the line with `ICPSR_EMAIL`
+- paste the openICPSR password into the line with `ICPSR_PASS`
+
+### Why?
 
 This will 
 
 - allow you to use the `aeagit` shortcut to download a Bitbucket repository to your workspace directly from the Bash command line
 - allow you to use the `tools/download_openicpsr_private.py` script to download replication packages from openICPSR from the Bash command line
+
+
+### Verifying it works
 
 :::{warning}
 On Windows, close the Git Bash window and open a new one to make the changes take effect. On Linux and MacOS, you can just run the following command in the terminal.
@@ -70,8 +86,6 @@ On Windows, close the Git Bash window and open a new one to make the changes tak
 source $HOME/.bashrc
 ```
 :::
-
-### Verifying it works
 
 You should now be able to verify that the configuration setup worked, by typing the following at the terminal prompt:"
 
@@ -169,15 +183,25 @@ Both Python and rsync should be installed. If not, check your version of package
 
 ## Configuring Python defaults
 
-The last step you do once you have cloned your first repository.
+The last step you do once you have cloned your first repository (this can be run from within **any** recently cloned repository).
 
 If you are on a machine that has Python installed, run the following command (if it fails with `python3`, replace with `python`). You should do this once, from any recently cloned Bitbucket repository (which will contain a `requirements.txt` file). You do NOT have to do it every time!
+
+
 
 ::::{tab-set}
 
 :::{tab-item} Windows
 
 When running in Bash, this should work:
+
+- Change the working directory to one of your recent cases, say `xxxx`:
+
+```bash
+cd /l/workspace/aearep-xxxx
+```
+
+then
 
 ```bash
 python -m pip install -r requirements.txt
