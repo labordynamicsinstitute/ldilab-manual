@@ -518,6 +518,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-package-installation">Python package installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice-to-reproduce-a-python-paper-python-environments">Best practice to reproduce a Python paper (Python environments)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-python-code-dynamic">Making Python code dynamic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a><ul class="nav section-nav flex-column">
@@ -554,6 +555,18 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="python-related-procedures">
 <span id="id1"></span><h1>Python-related procedures<a class="headerlink" href="#python-related-procedures" title="Permalink to this heading">#</a></h1>
 <p>In this section, we will show you a few things related specifically to running code reproducibly with Python and Jupyter notebooks. . For more general debugging tips for Python and other computer languages, see <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Python-Tips">our wiki</a>.</p>
+<section id="python-package-installation">
+<h2>Python package installation<a class="headerlink" href="#python-package-installation" title="Permalink to this heading">#</a></h2>
+<p>Most systems will have the standard Python package installer <code class="docutils literal notranslate"><span class="pre">pip</span></code> already installed, so you should be able to use it.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">If <code class="docutils literal notranslate"><span class="pre">pip</span></code> is not available…</p>
+<p>Should for some reason <code class="docutils literal notranslate"><span class="pre">pip</span></code> not be installed, you can install <code class="docutils literal notranslate"><span class="pre">pip</span></code> into your user library using the procedures outlined at <a class="reference external" href="https://pip.pypa.io/en/stable/installation/#ensurepip">https://pip.pypa.io/en/stable/installation/#ensurepip</a>. In a nutshell, for Linux</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>ensurepip<span class="w"> </span>--upgrade
+</pre></div>
+</div>
+<p>should work.</p>
+</div>
+</section>
 <section id="best-practice-to-reproduce-a-python-paper-python-environments">
 <h2>Best practice to reproduce a Python paper (Python environments)<a class="headerlink" href="#best-practice-to-reproduce-a-python-paper-python-environments" title="Permalink to this heading">#</a></h2>
 <p>You should create a Python environment that is dedicated to the project. See <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands">Anaconda instructions</a> as one possible method, <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a> as another one, though others exist.</p>
@@ -782,6 +795,7 @@ Windows</label><div class="sd-tab-content docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-package-installation">Python package installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice-to-reproduce-a-python-paper-python-environments">Best practice to reproduce a Python paper (Python environments)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-python-code-dynamic">Making Python code dynamic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a><ul class="nav section-nav flex-column">
