@@ -3,6 +3,23 @@
 
 In this section, we will show you a few things related specifically to running code reproducibly with Python and Jupyter notebooks. . For more general debugging tips for Python and other computer languages, see [our wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Python-Tips).
 
+## Python package installation
+
+Most systems will have the standard Python package installer `pip` already installed, so you should be able to use it.
+
+:::{admonition} If `pip` is not available...
+:class: dropdown
+
+Should for some reason `pip` not be installed, you can install `pip` into your user library using the procedures outlined at <https://pip.pypa.io/en/stable/installation/#ensurepip>. In a nutshell, for Linux
+
+```bash
+python -m ensurepip --upgrade
+```
+
+should work.
+
+:::
+
 
 ## Best practice to reproduce a Python paper (Python environments)
 
