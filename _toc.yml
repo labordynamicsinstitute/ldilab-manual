@@ -72,6 +72,11 @@ parts:
       - file: 96-14-r-on-biohpc
       - file: 96-15-debugging-r
     - file: 96-20-using-matlab
+      sections:
+      - file: 96-21-using-config-matlab
+      - file: 96-22-running-matlab-code
+      - file: 96-23-dynare-matlab
+      - file: 96-24-debugging-matlab
     - file: 96-30-running-python-jupyter
     - file: 96-40-using-julia
     - file: 96-50-using-docker
