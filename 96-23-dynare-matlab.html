@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Pre-training tasks &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Running Dynare from MATLAB &#8212; Training Manual For Reproducibility Verification</title>
   
   
   
@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '02-02-pre-training-tasks';</script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/02-02-pre-training-tasks.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '96-23-dynare-matlab';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-23-dynare-matlab.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Toolkit" href="02-03-toolkit.html" />
-    <link rel="prev" title="Pre-requisites" href="02-01-pre-requisites.html" />
+    <link rel="next" title="Debugging MATLAB-related problems" href="96-24-debugging-matlab.html" />
+    <link rel="prev" title="Running MATLAB without the desktop GUI and with log file" href="96-22-running-matlab-code.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -168,9 +168,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="01-introduction.html">Background</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preliminary Tasks</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="02-01-pre-requisites.html">Pre-requisites</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pre-training tasks</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="02-01-pre-requisites.html">Pre-requisites</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="02-02-pre-training-tasks.html">Pre-training tasks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02-03-toolkit.html">Toolkit</a></li>
 </ul>
 </li>
@@ -225,7 +225,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="40-Instructions-PandP-Checks.html">AEA: Instructions for Papers and Proceedings checks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Running code</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="96-00-running-code.html">Guidelines for running code</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="96-01-using-config-stata.html">Using config.do in STATA</a></li>
@@ -242,10 +242,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="96-15-debugging-r.html">Debugging R</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="96-20-using-matlab.html">MATLAB-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="96-20-using-matlab.html">MATLAB-related procedures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="96-21-using-config-matlab.html">Adding <code class="docutils literal notranslate"><span class="pre">config.m</span></code> to MATLAB and path names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-22-running-matlab-code.html">Running MATLAB without the desktop GUI and with log file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="96-23-dynare-matlab.html">Running Dynare from MATLAB</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Running Dynare from MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-24-debugging-matlab.html">Debugging MATLAB-related problems</a></li>
 </ul>
 </li>
@@ -385,7 +385,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/02-02-pre-training-tasks.md" target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-23-dynare-matlab.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -402,7 +402,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F02-02-pre-training-tasks.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-23-dynare-matlab.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -432,7 +432,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/02-02-pre-training-tasks.md" target="_blank"
+      <li><a href="_sources/96-23-dynare-matlab.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -514,7 +514,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pre-training tasks</h1>
+    <h1>Running Dynare from MATLAB</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -524,10 +524,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read">Read</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view">View</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-out">Try-out</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-dynare">Obtaining Dynare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-matlab-to-recognize-dynare">Configuring MATLAB to recognize Dynare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-dynare-matlab-in-docker">Running Dynare+MATLAB in Docker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-info">Additional info</a></li>
 </ul>
 </li>
 </ul>
@@ -541,32 +541,94 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pre-training-tasks">
-<span id="pre-training"></span><h1>Pre-training tasks<a class="headerlink" href="#pre-training-tasks" title="Permalink to this heading">#</a></h1>
-<p>We ask that trainees accomplish a few tasks prior to the first training session. Please do the following:</p>
-<section id="read">
-<h2>Read<a class="headerlink" href="#read" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>We frequently meet virtually - at least one, and most of the time both of our weekly meetings are on Zoom. Review our <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Videoconferencing-Rules-and-Etiquette">Video Etiquette rules</a> (they are useful beyond our group as well). When training is virtual, these rules apply as well.</p></li>
-<li><p>Review our <a class="reference internal" href="92-Privacy.html#privacy"><span class="std std-ref">Privacy Policy</span></a>, where you will recognize how we handle your privacy, and the privacy of authors.</p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="running-dynare-from-matlab">
+<span id="dynare-matlab"></span><h1>Running Dynare from MATLAB<a class="headerlink" href="#running-dynare-from-matlab" title="Permalink to this heading">#</a></h1>
+<p>Dynare is often used as an extension from within MATLAB. Files are usually identified as <code class="docutils literal notranslate"><span class="pre">.mod</span></code>, though many other countries also use that extension.</p>
+<section id="obtaining-dynare">
+<h2>Obtaining Dynare<a class="headerlink" href="#obtaining-dynare" title="Permalink to this heading">#</a></h2>
+<p>Dynare is available for download from <a class="reference external" href="https://www.dynare.org/download/">https://www.dynare.org/download/</a>.</p>
+<div class="admonition-do-not-attempt-to-install-dynare-on-ccss-or-biohpc-computers admonition">
+<p class="admonition-title">Do not attempt to <strong>install</strong> Dynare on CCSS or BioHPC computers. </p>
+<p>However, it is not necessary to <em>install</em> Dynare, it is sufficient to unpack the ZIP files. Try the information below first:</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Use the precise version of Dynare specified by the authors. If that version is not located on <code class="docutils literal notranslate"><span class="pre">L:\common</span></code> (CCSS Cloud) or <code class="docutils literal notranslate"><span class="pre">/home2/ecco_lv39/software</span></code>, then talk to your supervisor.</p>
+</div>
+<p>If a specific version is mentioned and is not there, download it from the <a class="reference external" href="https://www.dynare.org/download/">Dynare website</a> - choose the <strong>ZIP</strong> version. Then unzip it to the <code class="docutils literal notranslate"><span class="pre">L:</span> <span class="pre">drive</span></code> (move it around if necessary so you get the same structure as in the example above, i.e. <code class="docutils literal notranslate"><span class="pre">L:\common\dynare\(SOME</span> <span class="pre">VERSION)\matlab</span></code>). Then include the <code class="docutils literal notranslate"><span class="pre">addpath</span></code> command as before.</p>
 </section>
-<section id="view">
-<h2>View<a class="headerlink" href="#view" title="Permalink to this heading">#</a></h2>
+<section id="configuring-matlab-to-recognize-dynare">
+<h2>Configuring MATLAB to recognize Dynare<a class="headerlink" href="#configuring-matlab-to-recognize-dynare" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>View <a class="reference external" href="https://www.youtube.com/watch?v=pj-y3dLDOEA">my talk on the background of the lab</a>, including what we do, and why we do it.</p></li>
+<li><p>Be sure to include the <code class="docutils literal notranslate"><span class="pre">config.m</span></code> file as outlined in <a class="reference internal" href="96-21-using-config-matlab.html#matlab-config"><span class="std std-ref">Configuring MATLAB</span></a>!</p></li>
+<li><p>Inspect the last part of the <code class="docutils literal notranslate"><span class="pre">config.m</span></code>, it should have code much like the following:</p></li>
 </ul>
-<p><a class="reference external" href="https://www.youtube.com/watch?v=pj-y3dLDOEA"><img alt="Youtube video" src="_images/RR_in_Social_Sciences_Statistics_Youtube20200320.png" /></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%%</span> <span class="n">Dynare</span> <span class="n">settings</span>
+<span class="o">%</span>
+<span class="o">%</span> <span class="n">The</span> <span class="n">following</span> <span class="n">are</span> <span class="n">possible</span> <span class="n">Dynare</span> <span class="n">settings</span><span class="o">.</span> <span class="n">Uncomment</span> <span class="n">the</span> <span class="n">one</span> <span class="n">you</span> <span class="n">need</span><span class="o">.</span>
+
+<span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;/Applications/Dynare/4.6.1/matlab&quot;</span>
+<span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;L:\LDILab\dynare\dynare-4.5.7\matlab&quot;</span>
+<span class="o">%</span><span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;L:\common\dynare-4.5.7\matlab&quot;</span>
+
+<span class="o">%</span> 
+<span class="o">%</span> <span class="n">Then</span> <span class="n">uncomment</span> <span class="n">the</span> <span class="n">following</span> <span class="n">line</span><span class="p">:</span>
+<span class="o">%</span>
+<span class="o">%</span><span class="n">addpath</span><span class="p">(</span><span class="n">genpath</span><span class="p">(</span><span class="n">dynarepath</span><span class="p">))</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>You will want the path for the system you are working on. If CCSS Cloud, use the <code class="docutils literal notranslate"><span class="pre">L:</span></code> path. If on BioHPC, you will need to add a path like <code class="docutils literal notranslate"><span class="pre">/home2/ecco_lv39/software/dynare-x.y.z</span></code>.</p></li>
+<li><p>Then uncomment the <code class="docutils literal notranslate"><span class="pre">addpath()</span></code> statement at the end.</p></li>
+</ul>
+<p>Your modified <code class="docutils literal notranslate"><span class="pre">config.m</span></code> should look somewhat like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%%</span> <span class="n">Dynare</span> <span class="n">settings</span>
+<span class="o">%</span>
+<span class="o">%</span> <span class="n">The</span> <span class="n">following</span> <span class="n">are</span> <span class="n">possible</span> <span class="n">Dynare</span> <span class="n">settings</span><span class="o">.</span> <span class="n">Uncomment</span> <span class="n">the</span> <span class="n">one</span> <span class="n">you</span> <span class="n">need</span><span class="o">.</span>
+
+<span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;/Applications/Dynare/4.6.1/matlab&quot;</span>
+<span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;L:\LDILab\dynare\dynare-4.5.7\matlab&quot;</span>
+
+<span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;L:\common\dynare-4.5.7\matlab&quot;</span>
+
+<span class="o">%</span> 
+<span class="o">%</span> <span class="n">Then</span> <span class="n">uncomment</span> <span class="n">the</span> <span class="n">following</span> <span class="n">line</span><span class="p">:</span>
+<span class="o">%</span>
+
+<span class="n">addpath</span><span class="p">(</span><span class="n">genpath</span><span class="p">(</span><span class="n">dynarepath</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The Matlab program should now run, and call out to the Dynare software as needed.</p>
 </section>
-<section id="install">
-<h2>Install<a class="headerlink" href="#install" title="Permalink to this heading">#</a></h2>
+<section id="running-dynare-matlab-in-docker">
+<h2>Running Dynare+MATLAB in Docker<a class="headerlink" href="#running-dynare-matlab-in-docker" title="Permalink to this heading">#</a></h2>
+<div class="admonition-this-is-experimental admonition">
+<p class="admonition-title">This is experimental!</p>
+<p>Your mileage will vary</p>
+</div>
 <ul class="simple">
-<li><p>Go through our <a class="reference internal" href="91-setup-checklist.html#checklist"><span class="std std-ref">Setup Checklist</span></a> and install necessary software</p></li>
+<li><p>Consult the <a class="reference external" href="https://biohpc.cornell.edu/lab/userguide.aspx?a=software">BioHPC Software page</a> to learn how to run Docker on BioHPC. See also <a class="reference internal" href="96-50-using-docker.html#docker-related-procedures"><span class="std std-ref">Docker-related procedures</span></a>.</p></li>
 </ul>
-<section id="try-out">
-<h3>Try-out<a class="headerlink" href="#try-out" title="Permalink to this heading">#</a></h3>
+<div class="note admonition">
+<p class="admonition-title">Simple command line</p>
+<p>Obtain the value of <code class="docutils literal notranslate"><span class="pre">SERVER</span></code> from your supervisor.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">MATLAB_VERSION</span><span class="o">=</span>2021a
+<span class="nv">MATLAB_LICENSE</span><span class="o">=</span><span class="m">27000</span>@SERVER.cornell.edu
+<span class="nv">DYNARE</span><span class="o">=</span><span class="m">4</span>.6.4-2024-04-21
+docker1<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/project<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-w<span class="w"> </span>/project<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-e<span class="w"> </span><span class="nv">MLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$MATLAB_LICENSE</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--entrypoint<span class="w"> </span>/bin/bash<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>dynare/dynare:<span class="nv">$DYNARE_VERSION</span>
+</pre></div>
+</div>
+</div>
+<section id="additional-info">
+<h3>Additional info<a class="headerlink" href="#additional-info" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Try out command line, Markdown, Git (we’ll come back to it on the first day).</p></li>
+<li><p><a class="reference external" href="https://github.com/mathworks-ref-arch/matlab-dockerfile/tree/main/alternates/building-on-matlab-docker-image">Building Docker image with MATLAB Toolboxes</a></p></li>
+<li><p><a class="reference external" href="https://hub.docker.com/r/dynare/dynare">Dynare Docker images with MATLAB</a></p></li>
 </ul>
 </section>
 </section>
@@ -601,20 +663,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="02-01-pre-requisites.html"
+       href="96-22-running-matlab-code.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Pre-requisites</p>
+        <p class="prev-next-title">Running MATLAB without the desktop GUI and with log file</p>
       </div>
     </a>
     <a class="right-next"
-       href="02-03-toolkit.html"
+       href="96-24-debugging-matlab.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Toolkit</p>
+        <p class="prev-next-title">Debugging MATLAB-related problems</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -633,10 +695,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read">Read</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view">View</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-out">Try-out</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-dynare">Obtaining Dynare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-matlab-to-recognize-dynare">Configuring MATLAB to recognize Dynare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-dynare-matlab-in-docker">Running Dynare+MATLAB in Docker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-info">Additional info</a></li>
 </ul>
 </li>
 </ul>

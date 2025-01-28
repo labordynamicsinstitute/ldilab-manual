@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-20-using-matlab.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python-related procedures" href="96-30-running-python-jupyter.html" />
+    <link rel="next" title="Adding config.m to MATLAB and path names" href="96-21-using-config-matlab.html" />
     <link rel="prev" title="Debugging R" href="96-15-debugging-r.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -242,16 +242,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="96-15-debugging-r.html">Debugging R</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">MATLAB-related procedures</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">MATLAB-related procedures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-21-using-config-matlab.html">Adding <code class="docutils literal notranslate"><span class="pre">config.m</span></code> to MATLAB and path names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-22-running-matlab-code.html">Running MATLAB without the desktop GUI and with log file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-23-dynare-matlab.html">Running Dynare from MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-24-debugging-matlab.html">Debugging MATLAB-related problems</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="96-30-running-python-jupyter.html">Python-related procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="96-40-using-julia.html">Julia-related procedures</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="96-50-using-docker.html">Docker-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-50-using-docker.html">Docker-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="96-51-docker-windows.html">Docker on Windows</a></li>
 
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="96-70-using-mathematica.html">Mathematica-related procedures</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="96-80-sundry.html">Rare software</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-80-sundry.html">Rare software</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="96-81-using-ox.html">Ox-related procedures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-82-installing-add-ons.html">Mosek</a></li>
 </ul>
@@ -267,20 +273,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="91-setup-checklist.html">Setup Checklist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="92-Privacy.html">Privacy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="93-Communication.html">Communication</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="60-tips-for-identifying-differences.html">Identifying differences between original manuscript and reproduction</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="60-tips-for-identifying-differences.html">Identifying differences between original manuscript and reproduction</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="61-screenshot-windows.html">Using screenshot and annotation tools on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="62-screenshot-macos.html">Using screenshot and annotation tools on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="68-include-screenshots-in-report.html">Include Screenshots in the Report</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="94-00-downloading-data.html">Downloading Data</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="94-00-downloading-data.html">Downloading Data</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">Using pre-publication openICPSR Projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="94-02-alternate-downloads.html">Alternate sources of data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="94-03-private-data.html">Accessing privately provided data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="94-04-Updating_Materials.html">Updating Replication Materials after Revisions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="95_Access_to_computers.html">Access to Computers</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="95_Access_to_computers.html">Access to Computers</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="95-10-windows-remote.html">Connecting to remote Windows servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-15-linux-remote.html">Connecting to remote Linux servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="95-20-codeocean.html">Reproducibility Checks in Codeocean</a></li>
@@ -290,12 +296,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="95-60-general-setup.html">Additional setup instructions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="97-00-authentication.html">Authentication-related issues</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="97-00-authentication.html">Authentication-related issues</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="97-01-Bitbucket-authentication.html">Bitbucket Authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="97-02-openicpsr-authentication.html">openICPSR Authentication</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="98-00-sundry-correspondence.html">Various templates for correspondence by AEA Data Editor team members</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="98-00-sundry-correspondence.html">Various templates for correspondence by AEA Data Editor team members</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="98-01-correspondence-legacy-updates.html">Preparing a Legacy Deposit for Updates by Authors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="98-02-correspondence-ipums-beta-request.html">IPUMS Beta API request</a></li>
 <li class="toctree-l2"><a class="reference internal" href="98-03-correspondence-requesting-restricted-access-data.html">Requesting Restricted-Access Data from Authors</a></li>
@@ -495,9 +501,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -513,18 +517,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-config-m-to-matlab-and-path-names">Adding <code class="docutils literal notranslate"><span class="pre">config.m</span></code> to MATLAB and path names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-matlab-without-the-desktop-gui-and-with-log-file">Running MATLAB without the desktop GUI and with log file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-m-program-is-using-a-software-extension-to-matlab-called-dynare">The .m program is using a software extension to MATLAB called “Dynare”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mention-of-mex-programs-what-do-i-do">Mention of MEX programs, what do I do?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-complains-about-a-missing-toolbox">MATLAB complains about a missing Toolbox</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -537,121 +529,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="matlab-related-procedures">
 <span id="id1"></span><h1>MATLAB-related procedures<a class="headerlink" href="#matlab-related-procedures" title="Permalink to this heading">#</a></h1>
 <p>In this section, we will show you a few things related specifically to running code reproducibly with MATLAB. For more general debugging tips for MATLAB and other computer languages, see <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Matlab-Tips">our wiki</a>.</p>
-<section id="adding-config-m-to-matlab-and-path-names">
-<h2>Adding <code class="docutils literal notranslate"><span class="pre">config.m</span></code> to MATLAB and path names<a class="headerlink" href="#adding-config-m-to-matlab-and-path-names" title="Permalink to this heading">#</a></h2>
-<p>When you replace hard-coded filepaths in Matlab, please do the following:</p>
-<p>Say the author has code like</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xlsread</span><span class="p">(</span><span class="s1">&#39;C:\Users\me\submission\AEJMacro\yesterday\data.xlsx&#39;</span><span class="p">)</span>
-</pre></div>
+<div class="toctree-wrapper compound">
 </div>
-<p>You should do the following:</p>
-<ul class="simple">
-<li><p>Copy <a class="reference external" href="https://raw.githubusercontent.com/AEADataEditor/replication-template/master/template-config.m"><code class="docutils literal notranslate"><span class="pre">template-config.m</span></code></a> to the directory of the Matlab script you are running, and call it <code class="docutils literal notranslate"><span class="pre">config.m</span></code>.</p></li>
-<li><p>Adjust the options.</p></li>
-<li><p>Add the line <code class="docutils literal notranslate"><span class="pre">config</span></code> to the main Matlab script.</p></li>
-</ul>
-<p>Then</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Add</span> <span class="n">this</span> <span class="n">ONCE</span> <span class="n">at</span> <span class="n">the</span> <span class="n">top</span> <span class="n">of</span> <span class="n">the</span> <span class="n">program</span><span class="o">.</span> <span class="n">Do</span> <span class="n">NOT</span> <span class="n">repeat</span> <span class="n">it</span><span class="o">.</span>
-<span class="n">config</span>
-<span class="o">%</span> <span class="n">wherever</span> <span class="n">the</span> <span class="n">hard</span><span class="o">-</span><span class="n">coded</span> <span class="n">path</span> <span class="n">appears</span><span class="p">,</span> <span class="n">replace</span> <span class="k">with</span>
-<span class="n">xlsread</span><span class="p">(</span><span class="n">fullfile</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s1">&#39;data.xlsx&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>This works on any platform.</p>
-</section>
-<section id="running-matlab-without-the-desktop-gui-and-with-log-file">
-<h2>Running MATLAB without the desktop GUI and with log file<a class="headerlink" href="#running-matlab-without-the-desktop-gui-and-with-log-file" title="Permalink to this heading">#</a></h2>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
-Windows</label><div class="sd-tab-content docutils">
-<p>See <a class="reference external" href="https://www.mathworks.com/matlabcentral/answers/102082-how-do-i-call-matlab-from-the-dos-prompt">these instructions</a> for finding the Matlab binary on the system. However, this should work “out of the box” on CCSS-managed systems from the <strong>Bash</strong> prompt.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>start matlab -nosplash  -minimize -r  &quot;addpath(genpath(&#39;.&#39;));main&quot;  -logfile matlab-$(date +%F_%H-%M-%S).log
-</pre></div>
-</div>
-<p>where <code class="docutils literal notranslate"><span class="pre">main.m</span></code> is the Matlab program you want to run (you omit the <code class="docutils literal notranslate"><span class="pre">.m</span></code> when calling it).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This will still open a Matlab window in the background (check your taskbar).</p>
-</div>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
-Linux</label><div class="sd-tab-content docutils">
-<p>Assuming MATLAB is in your path (check with <code class="docutils literal notranslate"><span class="pre">matlab</span></code>), the following will generate a logfile.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>time matlab -nodisplay -r &quot;addpath(genpath(&#39;.&#39;)); main&quot; -logfile matlab-$(date +%F_%H-%M-%S).log
-</pre></div>
-</div>
-<p>where <code class="docutils literal notranslate"><span class="pre">main.m</span></code> is the Matlab program you want to run (you omit the <code class="docutils literal notranslate"><span class="pre">.m</span></code> when calling it).</p>
-<p>If you do not have <code class="docutils literal notranslate"><span class="pre">matlab</span></code> in your path, check with system admins. For BioHPC, as long as you are on the ECCO nodes, you should have access. See <a class="reference external" href="https://biohpc.cornell.edu/lab/ecco.htm">BioHPC ECCO page</a> for some details.</p>
-</div>
-</div>
-</section>
-<section id="the-m-program-is-using-a-software-extension-to-matlab-called-dynare">
-<h2>The .m program is using a software extension to MATLAB called “Dynare”<a class="headerlink" href="#the-m-program-is-using-a-software-extension-to-matlab-called-dynare" title="Permalink to this heading">#</a></h2>
-<div class="admonition-do-not-attempt-to-install-dynare-on-ccss-or-biohpc-computers admonition">
-<p class="admonition-title">Do not attempt to <strong>install</strong> Dynare on CCSS or BioHPC computers. </p>
-<p>However, it is not necessary to <em>install</em> Dynare, it is sufficient to unpack the ZIP files. Try the information below first:</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Use the precise version of Dynare specified by the authors. If that version is not located on <code class="docutils literal notranslate"><span class="pre">L:\common</span></code>, then talk to your supervisor.</p>
-</div>
-<ul class="simple">
-<li><p>Be sure to include the <code class="docutils literal notranslate"><span class="pre">config.m</span></code> file as outlined above!</p></li>
-<li><p>Inspect the last part of the <code class="docutils literal notranslate"><span class="pre">config.m</span></code>, it should have code much like the following:</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%%</span> <span class="n">Dynare</span> <span class="n">settings</span>
-<span class="o">%</span>
-<span class="o">%</span> <span class="n">The</span> <span class="n">following</span> <span class="n">are</span> <span class="n">possible</span> <span class="n">Dynare</span> <span class="n">settings</span><span class="o">.</span> <span class="n">Uncomment</span> <span class="n">the</span> <span class="n">one</span> <span class="n">you</span> <span class="n">need</span><span class="o">.</span>
-
-<span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;/Applications/Dynare/4.6.1/matlab&quot;</span>
-<span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;L:\LDILab\dynare\dynare-4.5.7\matlab&quot;</span>
-<span class="o">%</span><span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;L:\common\dynare-4.5.7\matlab&quot;</span>
-
-<span class="o">%</span> 
-<span class="o">%</span> <span class="n">Then</span> <span class="n">uncomment</span> <span class="n">the</span> <span class="n">following</span> <span class="n">line</span><span class="p">:</span>
-<span class="o">%</span>
-<span class="o">%</span><span class="n">addpath</span><span class="p">(</span><span class="n">genpath</span><span class="p">(</span><span class="n">dynarepath</span><span class="p">))</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>You will want the path for the system you are working on. If CCSS Cloud, use the <code class="docutils literal notranslate"><span class="pre">L:</span></code> path. If on BioHPC, you will need to add a path like <code class="docutils literal notranslate"><span class="pre">/home/ecco_lv39/common/dynare</span></code>.</p></li>
-<li><p>Then uncomment the <code class="docutils literal notranslate"><span class="pre">addpath()</span></code> statement at the end.</p></li>
-</ul>
-<p>Your modified <code class="docutils literal notranslate"><span class="pre">config.m</span></code> should look somewhat like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%%</span> <span class="n">Dynare</span> <span class="n">settings</span>
-<span class="o">%</span>
-<span class="o">%</span> <span class="n">The</span> <span class="n">following</span> <span class="n">are</span> <span class="n">possible</span> <span class="n">Dynare</span> <span class="n">settings</span><span class="o">.</span> <span class="n">Uncomment</span> <span class="n">the</span> <span class="n">one</span> <span class="n">you</span> <span class="n">need</span><span class="o">.</span>
-
-<span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;/Applications/Dynare/4.6.1/matlab&quot;</span>
-<span class="o">%</span> <span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;L:\LDILab\dynare\dynare-4.5.7\matlab&quot;</span>
-
-<span class="n">dynarepath</span> <span class="o">=</span> <span class="s2">&quot;L:\common\dynare-4.5.7\matlab&quot;</span>
-
-<span class="o">%</span> 
-<span class="o">%</span> <span class="n">Then</span> <span class="n">uncomment</span> <span class="n">the</span> <span class="n">following</span> <span class="n">line</span><span class="p">:</span>
-<span class="o">%</span>
-
-<span class="n">addpath</span><span class="p">(</span><span class="n">genpath</span><span class="p">(</span><span class="n">dynarepath</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>The Matlab program should now run, and call out to the Dynare software as needed.</p>
-<p>If a specific version is mentioned and is not there, download it from the <a class="reference external" href="https://www.dynare.org/download/">Dynare website</a> - choose the <strong>ZIP</strong> version. Then unzip it to the <code class="docutils literal notranslate"><span class="pre">L:</span> <span class="pre">drive</span></code> (move it around if necessary so you get the same structure as in the example above, i.e. <code class="docutils literal notranslate"><span class="pre">L:\common\dynare\(SOME</span> <span class="pre">VERSION)\matlab</span></code>). Then include the <code class="docutils literal notranslate"><span class="pre">addpath</span></code> command as before.</p>
-<p>If you don’t have access to the L drive yet, contact us.</p>
-</section>
-<section id="mention-of-mex-programs-what-do-i-do">
-<h2>Mention of MEX programs, what do I do?<a class="headerlink" href="#mention-of-mex-programs-what-do-i-do" title="Permalink to this heading">#</a></h2>
-<p>(or: MEX files provided for Linux/MacOS, but you need to run on Windows)</p>
-<ul class="simple">
-<li><p>There should be <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> files provided - if not, they should be requested from the author</p></li>
-<li><p>From within Matlab, run <code class="docutils literal notranslate"><span class="pre">mex</span> <span class="pre">name_of_file.cpp</span></code> (though this should also be provided by the author).</p></li>
-</ul>
-</section>
-<section id="matlab-complains-about-a-missing-toolbox">
-<h2>MATLAB complains about a missing Toolbox<a class="headerlink" href="#matlab-complains-about-a-missing-toolbox" title="Permalink to this heading">#</a></h2>
-<p>Check that the Path includes said Toolbox, see <a class="reference external" href="https://it.mathworks.com/help/matlab/ref/pathtool.html">https://it.mathworks.com/help/matlab/ref/pathtool.html</a>. It may also be that we are not licensed to use that Toolbox. Make a note of the error in the replication report.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -692,11 +571,11 @@ Linux</label><div class="sd-tab-content docutils">
       </div>
     </a>
     <a class="right-next"
-       href="96-30-running-python-jupyter.html"
+       href="96-21-using-config-matlab.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python-related procedures</p>
+        <p class="prev-next-title">Adding <code class="docutils literal notranslate"><span class="pre">config.m</span></code> to MATLAB and path names</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -706,24 +585,6 @@ Linux</label><div class="sd-tab-content docutils">
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-config-m-to-matlab-and-path-names">Adding <code class="docutils literal notranslate"><span class="pre">config.m</span></code> to MATLAB and path names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-matlab-without-the-desktop-gui-and-with-log-file">Running MATLAB without the desktop GUI and with log file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-m-program-is-using-a-software-extension-to-matlab-called-dynare">The .m program is using a software extension to MATLAB called “Dynare”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mention-of-mex-programs-what-do-i-do">Mention of MEX programs, what do I do?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-complains-about-a-missing-toolbox">MATLAB complains about a missing Toolbox</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

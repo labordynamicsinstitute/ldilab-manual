@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Pre-training tasks &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Debugging MATLAB-related problems &#8212; Training Manual For Reproducibility Verification</title>
   
   
   
@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '02-02-pre-training-tasks';</script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/02-02-pre-training-tasks.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '96-24-debugging-matlab';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-24-debugging-matlab.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Toolkit" href="02-03-toolkit.html" />
-    <link rel="prev" title="Pre-requisites" href="02-01-pre-requisites.html" />
+    <link rel="next" title="Python-related procedures" href="96-30-running-python-jupyter.html" />
+    <link rel="prev" title="Running Dynare from MATLAB" href="96-23-dynare-matlab.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -168,9 +168,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="01-introduction.html">Background</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preliminary Tasks</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="02-01-pre-requisites.html">Pre-requisites</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pre-training tasks</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="02-01-pre-requisites.html">Pre-requisites</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="02-02-pre-training-tasks.html">Pre-training tasks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02-03-toolkit.html">Toolkit</a></li>
 </ul>
 </li>
@@ -225,7 +225,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="40-Instructions-PandP-Checks.html">AEA: Instructions for Papers and Proceedings checks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Running code</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="96-00-running-code.html">Guidelines for running code</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="96-01-using-config-stata.html">Using config.do in STATA</a></li>
@@ -242,11 +242,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="96-15-debugging-r.html">Debugging R</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="96-20-using-matlab.html">MATLAB-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="96-20-using-matlab.html">MATLAB-related procedures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="96-21-using-config-matlab.html">Adding <code class="docutils literal notranslate"><span class="pre">config.m</span></code> to MATLAB and path names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-22-running-matlab-code.html">Running MATLAB without the desktop GUI and with log file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-23-dynare-matlab.html">Running Dynare from MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="96-24-debugging-matlab.html">Debugging MATLAB-related problems</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Debugging MATLAB-related problems</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="96-30-running-python-jupyter.html">Python-related procedures</a></li>
@@ -385,7 +385,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/02-02-pre-training-tasks.md" target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-24-debugging-matlab.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -402,7 +402,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F02-02-pre-training-tasks.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-24-debugging-matlab.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -432,7 +432,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/02-02-pre-training-tasks.md" target="_blank"
+      <li><a href="_sources/96-24-debugging-matlab.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -514,7 +514,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pre-training tasks</h1>
+    <h1>Debugging MATLAB-related problems</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -524,12 +524,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read">Read</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view">View</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-out">Try-out</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-m-program-is-using-a-software-extension-to-matlab-called-dynare">The .m program is using a software extension to MATLAB called “Dynare”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mention-of-mex-programs-what-do-i-do">Mention of MEX programs, what do I do?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-complains-about-a-missing-toolbox">MATLAB complains about a missing Toolbox</a></li>
 </ul>
             </nav>
         </div>
@@ -541,34 +538,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pre-training-tasks">
-<span id="pre-training"></span><h1>Pre-training tasks<a class="headerlink" href="#pre-training-tasks" title="Permalink to this heading">#</a></h1>
-<p>We ask that trainees accomplish a few tasks prior to the first training session. Please do the following:</p>
-<section id="read">
-<h2>Read<a class="headerlink" href="#read" title="Permalink to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="debugging-matlab-related-problems">
+<span id="matlab-debugging"></span><h1>Debugging MATLAB-related problems<a class="headerlink" href="#debugging-matlab-related-problems" title="Permalink to this heading">#</a></h1>
+<section id="the-m-program-is-using-a-software-extension-to-matlab-called-dynare">
+<h2>The .m program is using a software extension to MATLAB called “Dynare”<a class="headerlink" href="#the-m-program-is-using-a-software-extension-to-matlab-called-dynare" title="Permalink to this heading">#</a></h2>
+<p>See <a class="reference internal" href="96-23-dynare-matlab.html#dynare-matlab"><span class="std std-ref">Using Dynare in MATLAB</span></a>.</p>
+</section>
+<section id="mention-of-mex-programs-what-do-i-do">
+<h2>Mention of MEX programs, what do I do?<a class="headerlink" href="#mention-of-mex-programs-what-do-i-do" title="Permalink to this heading">#</a></h2>
+<p>(or: MEX files provided for Linux/MacOS, but you need to run on Windows)</p>
 <ul class="simple">
-<li><p>We frequently meet virtually - at least one, and most of the time both of our weekly meetings are on Zoom. Review our <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Videoconferencing-Rules-and-Etiquette">Video Etiquette rules</a> (they are useful beyond our group as well). When training is virtual, these rules apply as well.</p></li>
-<li><p>Review our <a class="reference internal" href="92-Privacy.html#privacy"><span class="std std-ref">Privacy Policy</span></a>, where you will recognize how we handle your privacy, and the privacy of authors.</p></li>
+<li><p>There should be <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> files provided - if not, they should be requested from the author</p></li>
+<li><p>From within Matlab, run <code class="docutils literal notranslate"><span class="pre">mex</span> <span class="pre">name_of_file.cpp</span></code> (though this should also be provided by the author).</p></li>
 </ul>
 </section>
-<section id="view">
-<h2>View<a class="headerlink" href="#view" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>View <a class="reference external" href="https://www.youtube.com/watch?v=pj-y3dLDOEA">my talk on the background of the lab</a>, including what we do, and why we do it.</p></li>
-</ul>
-<p><a class="reference external" href="https://www.youtube.com/watch?v=pj-y3dLDOEA"><img alt="Youtube video" src="_images/RR_in_Social_Sciences_Statistics_Youtube20200320.png" /></a></p>
-</section>
-<section id="install">
-<h2>Install<a class="headerlink" href="#install" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Go through our <a class="reference internal" href="91-setup-checklist.html#checklist"><span class="std std-ref">Setup Checklist</span></a> and install necessary software</p></li>
-</ul>
-<section id="try-out">
-<h3>Try-out<a class="headerlink" href="#try-out" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Try out command line, Markdown, Git (we’ll come back to it on the first day).</p></li>
-</ul>
-</section>
+<section id="matlab-complains-about-a-missing-toolbox">
+<h2>MATLAB complains about a missing Toolbox<a class="headerlink" href="#matlab-complains-about-a-missing-toolbox" title="Permalink to this heading">#</a></h2>
+<p>Check that the Path includes said Toolbox, see <a class="reference external" href="https://it.mathworks.com/help/matlab/ref/pathtool.html">https://it.mathworks.com/help/matlab/ref/pathtool.html</a>. It may also be that we are not licensed to use that Toolbox. Make a note of the error in the replication report.</p>
 </section>
 </section>
 
@@ -601,20 +587,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="02-01-pre-requisites.html"
+       href="96-23-dynare-matlab.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Pre-requisites</p>
+        <p class="prev-next-title">Running Dynare from MATLAB</p>
       </div>
     </a>
     <a class="right-next"
-       href="02-03-toolkit.html"
+       href="96-30-running-python-jupyter.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Toolkit</p>
+        <p class="prev-next-title">Python-related procedures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -633,12 +619,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read">Read</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view">View</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-out">Try-out</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-m-program-is-using-a-software-extension-to-matlab-called-dynare">The .m program is using a software extension to MATLAB called “Dynare”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mention-of-mex-programs-what-do-i-do">Mention of MEX programs, what do I do?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-complains-about-a-missing-toolbox">MATLAB complains about a missing Toolbox</a></li>
 </ul>
   </nav></div>
 
