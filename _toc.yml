@@ -70,7 +70,8 @@ parts:
       - file: 96-11-using-config-r
       - file: 96-12-running-r-code
       - file: 96-14-r-on-biohpc
-      - file: 96-15-debugging-r
+      - file: 96-15-r-from-other
+      - file: 96-16-debugging-r
     - file: 96-20-using-matlab
       sections:
       - file: 96-21-using-config-matlab
