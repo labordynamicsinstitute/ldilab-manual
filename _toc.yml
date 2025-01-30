@@ -35,6 +35,7 @@ parts:
       - file: 11-07-workflow-writing-report
       - file: 11-08-report-completed
     - file: 12-jira-revision-guidance
+    - file: 00-meetings
   - caption: Advanced AEA-related tasks
     chapters:
     - file: 20-checking-unassigned-tickets
