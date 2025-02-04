@@ -192,6 +192,18 @@ If the authors provided LaTeX files as part of the replication package, you may 
 - Copy-and-paste from the `code-check.xlsx`, including the column "Reproduced?" and any notes column, into the "Findings" part. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
 - Delete all of the instructional lines in `REPLICATION.md`  before finishing the report.
 
+
+::::{admonition}  Commit this part of the report to the Bitbucket repository.
+:class: warning
+
+```bash
+git add REPLICATION.md code-check.xlsx
+git commit -m "Completed writing report"
+git push
+```
+
+::::
+
 ## On Jira
 
 - Check that the `DataCitationSummary` field is filled out indicating how many data citations are in order: all, some, or none. 

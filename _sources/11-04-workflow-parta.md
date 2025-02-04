@@ -207,10 +207,9 @@ At this stage, you go back and review the Part A report again. Identify any acti
   - Select an appropriate tag, and copy-paste into the `REPLICATION-PartA.md`
 
 
-## Commit Part A to the repository
 
-- [ ] Commit this preliminary report to the Bitbucket repository.
-
+::::{admonition}  Commit Part A to the Bitbucket repository.
+:class: warning
 
 
 ```bash
@@ -218,6 +217,8 @@ git add REPLICATION-PartA.md
 git commit -m "Preliminary report"
 git push
 ```
+
+::::
 
 
 ## Completing JIRA fields
