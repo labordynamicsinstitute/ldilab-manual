@@ -105,14 +105,34 @@ This allows you point the reader/helper to a specific line immediately, making i
 
 :::
 
-## Wrapping up
+## Wrapping up Part B
 
-Once the code has run, **error-free and creating the intended output** (as far as you can tell), it is time to wrap up this sub-tasks.
+Once the code has run, **error-free and creating the intended output** (as far as you can tell), it is time to wrap up this sub-task.
 
-- Review again the **Replication steps** section, please include all steps that you took.
+- [ ] **Commit all changes and outputs** to the repository. This includes the log files and any other output files that were generated.
+
+```bash
+git add (path to log files and output)
+git commit -m "Successfully ran code all the way through"
+git push
+```
+
+- [ ] Review  the **Replication steps** section again, please include all steps that you undertook.
 
 ```{note}
 You, or somebody else, will compare the output to the manuscript in the next step! You may, however, simply check that output exists, regardless of its specific content, before moving forward.
 ```
+
+
+::::{admonition}  Commit this part of the report to the Bitbucket repository.
+:class: warning
+
+```bash
+git add REPLICATION-PartB.md
+git commit -m "Completed Part B"
+git push
+```
+
+::::
 
 ![Move to Part B to Code has completed](images/jira-in-progress-partb-3.png)
