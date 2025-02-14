@@ -175,4 +175,9 @@ However, in doing so, it also created `/home/vilhuber/R/x86_64-suse-linux-gnu-li
 
 :::
 
+Exit R, and proceed as above:
 
+```R
+> q()
+Save workspace image? [y/n/c]: n
+```
