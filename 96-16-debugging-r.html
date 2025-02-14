@@ -537,6 +537,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trying-to-use-cran-without-setting-a-mirror"><code class="docutils literal notranslate"><span class="pre">trying</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">CRAN</span> <span class="pre">without</span> <span class="pre">setting</span> <span class="pre">a</span> <span class="pre">mirror</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lib-usr-lib64-r-library-is-not-writable">‘lib = “/usr/lib64/R/library”’ is not writable</a></li>
 </ul>
             </nav>
         </div>
@@ -650,6 +651,41 @@ document.write(`
 </div>
 <p>but see about the correct setting for <code class="docutils literal notranslate"><span class="pre">r[&quot;CRAN&quot;]</span></code> <span class="xref myst">here</span></p>
 </section>
+<section id="lib-usr-lib64-r-library-is-not-writable">
+<h2>‘lib = “/usr/lib64/R/library”’ is not writable<a class="headerlink" href="#lib-usr-lib64-r-library-is-not-writable" title="Permalink to this heading">#</a></h2>
+<p>You will probably see this error on Linux, but possibly on Windows as well, when running a package installation command (<code class="docutils literal notranslate"><span class="pre">install.packages()</span></code>) for the first time ever for a particular version of R on that system. The reason is that the first time around, R will need to create a directory in your space, but cannot do so automatically, as it needs permission.</p>
+<p>The solution is to run the same version of R, on that system, interactively.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>R
+&gt;
+</pre></div>
+</div>
+<p>You can then install any package, though an excellent choice are <code class="docutils literal notranslate"><span class="pre">here</span></code> and <code class="docutils literal notranslate"><span class="pre">renv</span></code>:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;here&quot;</span><span class="p">,</span><span class="s">&quot;renv&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>You will then be prompted to create a personal library, because the system library is not writable:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;here&quot;</span><span class="p">,</span><span class="s">&quot;renv&quot;</span><span class="p">))</span>
+<span class="n">Warning</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;here&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;renv&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">:</span>
+<span class="w">  </span><span class="s">&#39;lib = &quot;/usr/lib64/R/library&quot;&#39;</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">writable</span>
+<span class="n">Would</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">like</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">personal</span><span class="w"> </span><span class="n">library</span><span class="w"> </span><span class="n">instead</span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">yes</span><span class="o">/</span><span class="n">No</span><span class="o">/</span><span class="n">cancel</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You should now say “yes”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Would you like to create a personal library
+‘/home/vilhuber/R/x86_64-suse-linux-gnu-library/4.2’
+to install packages into? (yes/No/cancel)
+</pre></div>
+</div>
+<p>You should say yes again. You <strong>may</strong> then be asked</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span> <span class="n">Please</span> <span class="n">select</span> <span class="n">a</span> <span class="n">CRAN</span> <span class="n">mirror</span> <span class="k">for</span> <span class="n">use</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">session</span> <span class="o">---</span>
+</pre></div>
+</div>
+<p>Select a CRAN mirror (<code class="docutils literal notranslate"><span class="pre">0-Cloud</span> <span class="pre">[https]</span></code> is a good choice), and proceed. R will then install the packages and their dependencies.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>However, in doing so, it also created <code class="docutils literal notranslate"><span class="pre">/home/vilhuber/R/x86_64-suse-linux-gnu-library/4.2</span></code>, which now exists. You should now go back to the original code you were running, and run it again, it should work.</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -724,6 +760,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trying-to-use-cran-without-setting-a-mirror"><code class="docutils literal notranslate"><span class="pre">trying</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">CRAN</span> <span class="pre">without</span> <span class="pre">setting</span> <span class="pre">a</span> <span class="pre">mirror</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lib-usr-lib64-r-library-is-not-writable">‘lib = “/usr/lib64/R/library”’ is not writable</a></li>
 </ul>
   </nav></div>
 
