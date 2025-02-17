@@ -185,6 +185,25 @@ When getting the data, please take care to distinguish
 
 Here, we will describe the most likely first step: getting the data from openICPSR. Any data you download should also be stored on this computer. We do not explicitly describe this here. **CCSS** is the most likely place where you do this, but double-check with your supervisor.
 
+
+```{admonition} What if the data are not on openICPSR?
+:class: dropdown
+
+Sometimes, data are provided on other repositories: OSF, Dataverse, Zenodo are the most frequent ones.
+
+You may need to adapt the process below to those circumstances. See the following mapping:
+
+| Deposit | Name of download folder | Name of script | Tested? |
+|---------|-------------------------|----------------|---------|
+| openICPSR | `111234`  | `tools/download_openicpsr-private.py` |  Yes |
+| OSF       | `osf-ZX123A` | `tools/download_osf.sh`  | Partially |
+| Zenodo    | `zenodo-1234567` | `tools/download_zenodo.sh` | Maybe |
+| Dataverse | `dv-2YWLWG` | `tools/download_dv.py` | Maybe |
+
+In all cases, you should obtain the data from the deposit, and otherwise follow the same principles as are described below for openICPSR.
+
+```
+
 ::::{tab-set}
 
 :::{tab-item} CCSS
