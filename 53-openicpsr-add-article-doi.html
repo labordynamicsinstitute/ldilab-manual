@@ -221,6 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="51-openicpsr-monitoring-pending.html">AEA: Monitoring Pending openICPSR Changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="52-openicpsr-publishing-deposit.html">AEA: Publishing a deposit</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Adding the article DOI to the openICPSR deposit metadata</a></li>
+
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="40-Instructions-PandP-Checks.html">AEA: Instructions for Papers and Proceedings checks</a></li>
@@ -503,7 +504,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -519,6 +522,22 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Adding the article DOI to the openICPSR deposit metadata</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-the-article-doi-to-the-dataverse-deposit-metadata">Adding the article DOI to the Dataverse deposit metadata</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#go-to-the-deposit">Go to the deposit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-contact-owner">Choose <code class="docutils literal notranslate"><span class="pre">Contact</span> <span class="pre">Owner</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fill-out-the-email-dataset-contact-form">Fill out the <code class="docutils literal notranslate"><span class="pre">Email</span> <span class="pre">Dataset</span> <span class="pre">Contact</span></code> form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-note-in-jira">Make a note in Jira</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -546,6 +565,47 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>Authors can also do this themselves. In the case of PSID or related repositories, this action <strong>must</strong> be performed by authors themselves.</p>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="adding-the-article-doi-to-the-dataverse-deposit-metadata">
+<span id="adding-article-doi-dataverse"></span><h1>Adding the article DOI to the Dataverse deposit metadata<a class="headerlink" href="#adding-the-article-doi-to-the-dataverse-deposit-metadata" title="Permalink to this heading">#</a></h1>
+<p>When the replication package is hosted at a Dataverse repository, the article DOI must be added to the metadata by the authors or the Dataverse curators. The following steps describe how to convey this to the authors or curators</p>
+<section id="go-to-the-deposit">
+<h2>Go to the deposit<a class="headerlink" href="#go-to-the-deposit" title="Permalink to this heading">#</a></h2>
+<p>The deposit DOI should be available in the field <code class="docutils literal notranslate"><span class="pre">RepositoryDOI</span></code>. Click on it.</p>
+</section>
+<section id="choose-contact-owner">
+<h2>Choose <code class="docutils literal notranslate"><span class="pre">Contact</span> <span class="pre">Owner</span></code><a class="headerlink" href="#choose-contact-owner" title="Permalink to this heading">#</a></h2>
+<p>There usually is a button called <code class="docutils literal notranslate"><span class="pre">Contact</span> <span class="pre">Owner</span></code> top right:</p>
+<p><img alt="Contact Owner" src="_images/dataverse-contact-form-1.png" /></p>
+</section>
+<section id="fill-out-the-email-dataset-contact-form">
+<h2>Fill out the <code class="docutils literal notranslate"><span class="pre">Email</span> <span class="pre">Dataset</span> <span class="pre">Contact</span></code> form<a class="headerlink" href="#fill-out-the-email-dataset-contact-form" title="Permalink to this heading">#</a></h2>
+<p>You should use the following information:</p>
+<ul class="simple">
+<li><p><strong>From</strong>: <code class="docutils literal notranslate"><span class="pre">dataeditor&#64;aeapubs.org</span></code></p></li>
+<li><p><strong>Subject</strong>: <code class="docutils literal notranslate"><span class="pre">Please</span> <span class="pre">add</span> <span class="pre">article</span> <span class="pre">DOI</span> <span class="pre">to</span> <span class="pre">deposit</span> <span class="pre">metadata</span></code></p></li>
+<li><p><strong>Message</strong>:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dear</span> <span class="p">[</span><span class="n">AUTHOR</span><span class="p">],</span> <span class="n">others</span><span class="p">,</span>
+
+<span class="n">please</span> <span class="n">add</span> <span class="n">the</span> <span class="n">article</span> <span class="n">DOI</span> <span class="p">([</span><span class="n">DOI</span> <span class="n">HERE</span><span class="p">])</span> <span class="n">to</span> <span class="n">the</span> <span class="s2">&quot;Related Publication&quot;</span> <span class="n">field</span><span class="o">.</span> <span class="n">We</span> <span class="n">would</span> <span class="n">appreciate</span> <span class="n">it</span><span class="o">.</span>
+
+<span class="n">Sincerely</span><span class="p">,</span>
+
+<span class="n">Lars</span> <span class="n">Vilhuber</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">Data</span> <span class="n">Editor</span> <span class="n">team</span>
+</pre></div>
+</div>
+<p>where you should replace <code class="docutils literal notranslate"><span class="pre">[AUTHOR]</span></code> with the author’s name, and <code class="docutils literal notranslate"><span class="pre">[DOI</span> <span class="pre">HERE]</span></code> with the article DOI.</p>
+<p>Then fill out the math problem, and hit <code class="docutils literal notranslate"><span class="pre">Send</span> <span class="pre">Message</span></code>.</p>
+<p><img alt="Send message" src="_images/dataverse-contact-form-2.png" /></p>
+</section>
+<section id="make-a-note-in-jira">
+<h2>Make a note in Jira<a class="headerlink" href="#make-a-note-in-jira" title="Permalink to this heading">#</a></h2>
+<p>Add a comment in the Jira ticket:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Left</span> <span class="n">note</span> <span class="n">on</span> <span class="n">Dataverse</span> <span class="n">contact</span> <span class="n">form</span><span class="p">,</span> <span class="n">requesting</span> <span class="n">that</span> <span class="n">authors</span>  <span class="n">add</span> <span class="n">article</span> <span class="n">DOI</span> <span class="n">to</span> <span class="n">deposit</span> <span class="n">metadata</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -600,6 +660,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Adding the article DOI to the openICPSR deposit metadata</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-the-article-doi-to-the-dataverse-deposit-metadata">Adding the article DOI to the Dataverse deposit metadata</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#go-to-the-deposit">Go to the deposit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-contact-owner">Choose <code class="docutils literal notranslate"><span class="pre">Contact</span> <span class="pre">Owner</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fill-out-the-email-dataset-contact-form">Fill out the <code class="docutils literal notranslate"><span class="pre">Email</span> <span class="pre">Dataset</span> <span class="pre">Contact</span></code> form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-note-in-jira">Make a note in Jira</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
