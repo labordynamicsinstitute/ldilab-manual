@@ -146,6 +146,18 @@ If your pipeline fails in the Stata step, click on the failed step, and scroll t
 
 It is likely that the PII scan failed because the in-memory dataset is too large (too much memory was run, and the pipeline was killed). Try running the pipeline again with the "`w-big populate from ICPSR`" (see above).
 
+#### `Cannot stat zip`
+
+![cannot stat zip](images/jira-pipeline-error-zip.png)
+
+This is an indication of an earlier error, typically forgotten variables. To check, click on the `Build setup`, and check the `Pipeline variables`. If it looks like this:
+
+![pipeline variables](images/jira-pipeline-error-variables.png)
+
+then you forgot to specify the `openICPSRID` variable. Rerun the pipeline with the correct variable entered. It should look like this:
+
+![pipeline corrected](images/jira-pipeline-error-variables-corrected.png)
+
 ## Next step
 
 ![Move to In Progress](images/AEA-Data-Editor-Workflow-V3-20240114-short-23.png)

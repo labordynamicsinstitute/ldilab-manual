@@ -535,6 +535,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-errors-for-pipeline-failure">Possible errors for pipeline failure</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#files-too-big">Files too big</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-or-cpu-usage-to-high">Memory or CPU usage to high</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cannot-stat-zip"><code class="docutils literal notranslate"><span class="pre">Cannot</span> <span class="pre">stat</span> <span class="pre">zip</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -685,6 +686,14 @@ document.write(`
 </div>
 <p>It is likely that the PII scan failed because the in-memory dataset is too large (too much memory was run, and the pipeline was killed). Try running the pipeline again with the “<code class="docutils literal notranslate"><span class="pre">w-big</span> <span class="pre">populate</span> <span class="pre">from</span> <span class="pre">ICPSR</span></code>” (see above).</p>
 </section>
+<section id="cannot-stat-zip">
+<h4><code class="docutils literal notranslate"><span class="pre">Cannot</span> <span class="pre">stat</span> <span class="pre">zip</span></code><a class="headerlink" href="#cannot-stat-zip" title="Permalink to this heading">#</a></h4>
+<p><img alt="cannot stat zip" src="_images/jira-pipeline-error-zip.png" /></p>
+<p>This is an indication of an earlier error, typically forgotten variables. To check, click on the <code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">setup</span></code>, and check the <code class="docutils literal notranslate"><span class="pre">Pipeline</span> <span class="pre">variables</span></code>. If it looks like this:</p>
+<p><img alt="pipeline variables" src="_images/jira-pipeline-error-variables.png" /></p>
+<p>then you forgot to specify the <code class="docutils literal notranslate"><span class="pre">openICPSRID</span></code> variable. Rerun the pipeline with the correct variable entered. It should look like this:</p>
+<p><img alt="pipeline corrected" src="_images/jira-pipeline-error-variables-corrected.png" /></p>
+</section>
 </section>
 </section>
 <section id="next-step">
@@ -762,6 +771,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-errors-for-pipeline-failure">Possible errors for pipeline failure</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#files-too-big">Files too big</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-or-cpu-usage-to-high">Memory or CPU usage to high</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cannot-stat-zip"><code class="docutils literal notranslate"><span class="pre">Cannot</span> <span class="pre">stat</span> <span class="pre">zip</span></code></a></li>
 </ul>
 </li>
 </ul>
