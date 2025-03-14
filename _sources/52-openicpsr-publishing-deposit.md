@@ -20,9 +20,13 @@ Always check with your supervisor before attempting to publish a deposit.
 ## Pre-requisites (JIRA)
 
 :::{note}
+
+Fields are in `Publication info` tab, unless otherwise noted.
+
 - [ ] The openICPSR project number must be filled out, if the paper has an openICPSR deposit.
 - [ ] The correct `openICPSR version` number needs to be selected.
-- [ ] An `replication pacakge DOI` needs to be present (if necessary, run a script).
+- [ ] A `replication package DOI` needs to be present (if necessary, run a script).
+- [ ] The field `Non-compliant` is not checked (not `Yes`) (in `Other links` tab)
 :::
 
 :::{warning}
