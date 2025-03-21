@@ -17,6 +17,7 @@ To signal that you are starting the report, you will now transition the JIRA sub
 For **Part A**, you do NOT need the data, but you do need the working copy of the repository. It is not important what computer you prepare this part, you can do it on CCSS or your laptop.
 ```
 
+(parta-pull-together)=
 ## Pull everything together
 
 
@@ -61,6 +62,10 @@ In this case, immediately contact the (assistant) Data Editor to obtain the corr
 ::::{tab-item} Manual steps 
 
 If the automated population of the author's code directory did not work, you will need to manually download the replication package. Try to do this first using scripts.
+
+**Consult the notes on downloading from other repositories**
+
+See  [repository-specific guidelines](notes-on-downloading-other-repos) if the download is not from openICPSR.
 
 **Downloading using scripts**
 

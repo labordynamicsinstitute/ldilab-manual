@@ -36,7 +36,7 @@ We will now ingest the authors' materials, and run a few statistics. Typically, 
 
 
 ```{note}
-This currently works reliably only for openICPSR. This documentation will be updated when it works for Dataverse and Zenodo as well.
+⚠️ This currently works reliably only for openICPSR. This documentation will be updated when it works for Dataverse and Zenodo as well. In the meantime, follow [Manual Steps](parta-pull-together) taking into account [repository-specific guidelines](notes-on-downloading-other-repos).
 ```
 
 ### Inspect the deposit
