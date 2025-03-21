@@ -24,7 +24,7 @@ Not all deposits are provided to us on openICPSR. For instructions on how to han
 
 :::{tab-item} Downloading using a script
 
-The most convenient way to download the information is to use the LDI-specific script `tools/download_openicpsr-private.py` (be sure to have [set up your environment first](setup-bash)).
+The most convenient way to download the information is to use the LDI-specific script `tools/download_openicpsr-private.py` (be sure to have [set up your environment first](setup-bash)). There are also scripts for other repositories that may work (type `ls tools/download*` to get a list of the most current ones).
 
 **Short version of call to script**
 
