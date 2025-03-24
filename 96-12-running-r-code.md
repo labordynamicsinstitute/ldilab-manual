@@ -120,6 +120,16 @@ If the author's main filename has spaces in it, you will need to use quotes when
 
 :::
 
+::::{admonition} If the author uses `Rscript` ...
+:class: tip dropdown
+
+... then use the following command line (adjusting the authors'  accordingly)
+
+```
+RScript  --verbose main.R > main.$(date +%F-%H:%M:%S).Rout 2>&1 
+```
+
+::::
 
 > Consider how much time a complete run would take before you run everything one last time. If it would take too long, you may want to skip a complete run, but ensure that you have log files for all partial runs. Make a note of this in the report.
 
