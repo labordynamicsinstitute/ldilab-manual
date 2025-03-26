@@ -109,7 +109,7 @@ The RStudio server instance only runs the latest R code. For running other R ver
 Once the above is done, running R is simple:
 
 ```bash
-R CMD BATCH --debugger --verbose --vanilla main.R main.$(date +%F-%H:%M:%S).Rout
+R CMD BATCH --debugger --verbose --vanilla main.R main.$(date +%F_%H-%M-%S).Rout
 ```
 
 This will create a `main.(DATE).Rout` file, which you can open up in VS Code. You must commit this file to Bitbucket. Every run will create a new `main.(DATE).Rout` with a slightly different date-stamp.
