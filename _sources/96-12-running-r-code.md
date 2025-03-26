@@ -126,7 +126,7 @@ If the author's main filename has spaces in it, you will need to use quotes when
 ... then use the following command line (adjusting the authors'  accordingly)
 
 ```
-RScript  --verbose main.R > main.$(date +%F-%H:%M:%S).Rout 2>&1 
+RScript  --verbose main.R > main.$(date +%F_%H-%M-%S).Rout 2>&1 
 ```
 
 ::::
