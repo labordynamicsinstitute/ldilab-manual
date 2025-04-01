@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Downloading Data &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Globus Transfers &#8212; Training Manual For Reproducibility Verification</title>
   
   
   
@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '94-00-downloading-data';</script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/94-00-downloading-data.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '94-05-globus-transfers';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/94-05-globus-transfers.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Using pre-publication openICPSR Projects" href="94-01-how-to-use-openICPSR-backend.html" />
-    <link rel="prev" title="Include Screenshots in the Report" href="68-include-screenshots-in-report.html" />
+    <link rel="next" title="Updating Replication Materials after Revisions" href="94-04-Updating_Materials.html" />
+    <link rel="prev" title="Accessing privately provided data" href="94-03-private-data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -282,11 +282,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="68-include-screenshots-in-report.html">Include Screenshots in the Report</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Downloading Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="94-00-downloading-data.html">Downloading Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">Using pre-publication openICPSR Projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="94-02-alternate-downloads.html">Alternate sources of data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="94-03-private-data.html">Accessing privately provided data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="94-05-globus-transfers.html">Globus Transfers</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Globus Transfers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="94-04-Updating_Materials.html">Updating Replication Materials after Revisions</a></li>
 </ul>
 </li>
@@ -389,7 +389,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/94-00-downloading-data.md" target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/94-05-globus-transfers.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -406,7 +406,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F94-00-downloading-data.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F94-05-globus-transfers.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -436,7 +436,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/94-00-downloading-data.md" target="_blank"
+      <li><a href="_sources/94-05-globus-transfers.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -505,7 +505,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -516,11 +518,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Downloading Data</h1>
+    <h1>Globus Transfers</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#globus-setup">Globus setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#globus-on-ccss-cloud">Globus on CCSS Cloud</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transferring-files">Transferring files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-the-ccss-endpoint">Select the CCSS “endpoint”</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -530,12 +545,53 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="downloading-data">
-<h1>Downloading Data<a class="headerlink" href="#downloading-data" title="Permalink to this heading">#</a></h1>
-<p>Most data we receive comes from pre-publication openICPSR deposits. However, they may sometimes be privately provided and are then stored on a secure shared drive, or they may come from other trusted repositories (e.g., Zenodo, Dataverse), as well as restricted data.</p>
-<p>Sometimes, when we process data on <a class="reference internal" href="95-15-linux-remote.html#linux-remote"><span class="std std-ref">BioHPC</span></a>, it may be more convenient to download the data to <a class="reference internal" href="95-10-windows-remote.html#windows-remote"><span class="std std-ref">CCSS Cloud</span></a>, and then transfer to BioHPC. See <a class="reference internal" href="94-05-globus-transfers.html#globus-transfers"><span class="std std-ref">Globus transfers</span></a> (this chapter) for more information. The use of <code class="docutils literal notranslate"><span class="pre">sftp</span></code> is another option.</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="globus-transfers">
+<span id="id1"></span><h1>Globus Transfers<a class="headerlink" href="#globus-transfers" title="Permalink to this heading">#</a></h1>
+<p>Globus is a file transfer service that allows you to transfer large amounts of data between different systems. It is particularly useful for transferring data between BioHPC and CCSS Cloud, as well as between different research institutions.</p>
+<p>There are two components to using Globus: the web interface, and (in our case) the taskbar icon on CCSS Cloud.</p>
+<section id="globus-setup">
+<h2>Globus setup<a class="headerlink" href="#globus-setup" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>create a Globus account</p></li>
+<li><p>configure the personal Globus endpoint on CCSS Cloud (call it <code class="docutils literal notranslate"><span class="pre">CCSS</span> <span class="pre">for</span> <span class="pre">LDI-AEA</span></code>)</p></li>
+</ul>
+</section>
+<section id="globus-on-ccss-cloud">
+<h2>Globus on CCSS Cloud<a class="headerlink" href="#globus-on-ccss-cloud" title="Permalink to this heading">#</a></h2>
+<p>Look for the Globus icon on the desktop: <img alt="Globus icon" src="_images/globus-icon.png" />. Click on it. If it says “Another instance is running”, you are all set.</p>
+<p>Now look for the Globus icon to the right in the Windows taskbar. Right-click on it and select <code class="docutils literal notranslate"><span class="pre">Options</span></code>:</p>
+<p>![Globus options](images/globus-transfer-options.png</p>
+<p>Ensure that it contains at least the following entry:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="p">:</span>\
+</pre></div>
 </div>
+</section>
+<section id="transferring-files">
+<h2>Transferring files<a class="headerlink" href="#transferring-files" title="Permalink to this heading">#</a></h2>
+<p>Transferring files is triggered from the <a class="reference external" href="https://app.globus.org/file-manager">Globus web interface</a>. You will need to log in with your Cornell credentials. You can then select the source and destination systems, and transfer files between them.</p>
+<section id="select-the-ccss-endpoint">
+<h3>Select the CCSS “endpoint”<a class="headerlink" href="#select-the-ccss-endpoint" title="Permalink to this heading">#</a></h3>
+<p>In the navigation pane, you should be able to search for <code class="docutils literal notranslate"><span class="pre">CCSS</span> <span class="pre">for</span> <span class="pre">LDI-AEA</span></code> or whatever you called it in the <code class="docutils literal notranslate"><span class="pre">Collection</span></code> field. By default, it will open on the first entry in the list configured earlier. Go “up one folder”, and you should see “/L/”. Select it, and navigate to the folder where the files or folders are located you wish to transfer.</p>
+<p><img alt="Globus source" src="_images/globus-transfer-navigate1.png" /></p>
+<p>On the right panel, you will see <code class="docutils literal notranslate"><span class="pre">Transfer</span> <span class="pre">or</span> <span class="pre">Sync</span> <span class="pre">to...</span></code>. Select it. You will see a second pane, similar to the first one. In the <code class="docutils literal notranslate"><span class="pre">Collection</span></code> field, search for “biohpc cornell”. You should see</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">biohpc</span><span class="c1">#cbsulogin</span>
+<span class="n">biohpc</span><span class="c1">#cbusulogin2</span>
+<span class="n">biohpc</span><span class="c1">#cbsulogin3</span>
+</pre></div>
+</div>
+<p>Select any one of them, you may need to authenticate with your BioHPC login credentials.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Path</span></code> field, type <code class="docutils literal notranslate"><span class="pre">/home2/ecco_lv39/Workspace</span></code>. You should now see the list of directories there. Navigate to where you want to put the file. For instance,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home2</span><span class="o">/</span><span class="n">ecco_lv39</span><span class="o">/</span><span class="n">Workspace</span><span class="o">/</span><span class="n">aearep</span><span class="o">-</span><span class="n">xxxx</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">xxxx</span></code> is the number of the replication package you are working on.</p>
+<p><img alt="Globus navigation" src="_images/globus-transfer-navigate2.png" /></p>
+<p>Now start the transfer in the direction you wish to transfer, see the <code class="docutils literal notranslate"><span class="pre">[Start]</span></code> button above the pane where you want to transfer files FROM.</p>
+<p><img alt="Globus transfer" src="_images/globus-transfer-navigate3.png" /></p>
+<p>Your transfer will be queued. The pop-up will allow you to view the progress of the transfer (click on it):</p>
+<p><img alt="Globus status" src="_images/globus-transfer-status.png" /></p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -567,20 +623,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="68-include-screenshots-in-report.html"
+       href="94-03-private-data.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Include Screenshots in the Report</p>
+        <p class="prev-next-title">Accessing privately provided data</p>
       </div>
     </a>
     <a class="right-next"
-       href="94-01-how-to-use-openICPSR-backend.html"
+       href="94-04-Updating_Materials.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Using pre-publication openICPSR Projects</p>
+        <p class="prev-next-title">Updating Replication Materials after Revisions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -590,6 +646,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#globus-setup">Globus setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#globus-on-ccss-cloud">Globus on CCSS Cloud</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transferring-files">Transferring files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-the-ccss-endpoint">Select the CCSS “endpoint”</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

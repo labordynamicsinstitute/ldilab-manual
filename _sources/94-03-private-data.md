@@ -25,7 +25,7 @@ You should then look into the "`Data`" tab for the field `Working location of re
 
 - Log into remote desktop as usual.
 - The restricted access data will be stored in the L drive. If you haven't mapped the L drive, do that first ([instructions here](https://labordynamicsinstitute.github.io/ldilab-manual/95-10-windows-remote.html)).
-- Navigate to the folder `Restricted-Access-Data` and find the corresponding folder that is in the Jira field, e.g., `L:\Restricted-Access-Data\aearep-4400-nda_Implicit`.
+- Navigate to the folder `Restricted-Access-Data` and find the corresponding folder that is in the Jira field, e.g., `L:\Restricted-Access-Data\aearep-4400`.
 - If there is a ZIP file (looks like a folder, but is not), right-click and choose `Extract All` before working in the folder
 
 :::
@@ -36,10 +36,10 @@ You should then look into the "`Data`" tab for the field `Working location of re
 - Open the File Explorer
 - Under "`This PC`", click "`Share (\\rschfs2x.ciserrsch.cornell.edu)`" under `Network Locations`. This location is also available as "`S:`".
 - Find the `LDILab` folder. (You should probably bookmark/ add to favorites) 
-- Within that folder is the corresponding restricted access data (e.g. `aearep-3756-nda_Implicit`)
+- Within that folder is the corresponding restricted access data (e.g. `aearep-3756`)
    - If you cannot open the `LDILab` folder, contact the assistant to the Data Editor 
 - If there is a ZIP file (looks like a folder, but is not), right-click and choose `Extract All` before working in the folder
-- Remember the full location. This should correspond to what is entered in to the JIRA field, e.g., `S:\LDILab\aearep-3756-nda_Implicit`.
+- Remember the full location. This should correspond to what is entered in to the JIRA field, e.g., `S:\LDILab\aearep-3756`.
 
 :::
 
