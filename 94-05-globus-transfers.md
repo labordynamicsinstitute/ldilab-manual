@@ -64,3 +64,10 @@ Now start the transfer in the direction you wish to transfer, see the `[Start]` 
 Your transfer will be queued. The pop-up will allow you to view the progress of the transfer (click on it):
 
 ![Globus status](images/globus-transfer-status.png)
+
+:::{warning}
+
+While the transfer is in progress, you should NOT log out of the CCSS Cloud instance. If you do, the transfer will be interrupted.
+
+:::
+
