@@ -12,13 +12,16 @@ There are two components to using Globus: the web interface, and (in our case) t
 
 ## Globus on CCSS Cloud
 
-Look for the Globus icon on the desktop: ![Globus icon](images/globus-icon.png). Click on it. If it says "Another instance is running", you are all set.
+Look for the Globus icon on the desktop: 
 
-Now look for the Globus icon to the right in the Windows taskbar. Right-click on it and select `Options`:
+![Globus icon](images/globus-icon.png). 
 
-![Globus options](images/globus-transfer-options.png
+- Click on it. If it says "Another instance is running", you are all set.
+- Now look for the Globus icon to the right in the Windows taskbar. Right-click on it and select `Options`:
 
-Ensure that it contains at least the following entry:
+![Globus options](images/globus-transfer-options.png)
+
+- Ensure that it contains at least the following entry:
 
 ```
 L:\
