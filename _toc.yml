@@ -108,6 +108,7 @@ parts:
       - file: 94-01-how-to-use-openICPSR-backend
       - file: 94-02-alternate-downloads
       - file: 94-03-private-data
+      - file: 94-05-globus-transfers
       - file: 94-04-Updating_Materials
     - file: 95_Access_to_computers
       sections:
