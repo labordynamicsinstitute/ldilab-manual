@@ -505,9 +505,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -523,21 +521,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jira-stuff">Jira stuff</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-subtask">Create a new subtask</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#email-template">Email template</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openicpsr">openICPSR</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#receipt-of-report">Receipt of report</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finalizing-the-report">Finalizing the report</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -549,74 +532,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="request-for-external-reproducibility-check-general">
 <h1>Request for External Reproducibility Check (general)<a class="headerlink" href="#request-for-external-reproducibility-check-general" title="Permalink to this heading">#</a></h1>
-<p>When we ask an external entity (person or institution) to verify reproduciblity, we initiate the process with an email, and follow the process with several tags within Jira.</p>
-<section id="jira-stuff">
-<h2>Jira stuff<a class="headerlink" href="#jira-stuff" title="Permalink to this heading">#</a></h2>
-<section id="create-a-new-subtask">
-<h3>Create a new subtask<a class="headerlink" href="#create-a-new-subtask" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">Verify</span> <span class="pre">code</span> <span class="pre">and</span> <span class="pre">data</span></code> with title “External reproducibility check for (AEAREP-xxxx)”</p></li>
-<li><p>In the tab <code class="docutils literal notranslate"><span class="pre">External</span> <span class="pre">validation</span></code>, select <code class="docutils literal notranslate"><span class="pre">Yes</span></code> for <code class="docutils literal notranslate"><span class="pre">External</span> <span class="pre">validation</span></code> and choose or add <code class="docutils literal notranslate"><span class="pre">External</span> <span class="pre">party</span> <span class="pre">name</span></code> (try to remain consistent with existing entries).</p></li>
-<li><p>The subtask has status “open”, “in progress”, and “done”.</p></li>
-<li><p>Choose as <code class="docutils literal notranslate"><span class="pre">Assignee</span></code> the person who will follow the progress.</p></li>
-</ul>
-<p>Back in the main issue,</p>
-<ul class="simple">
-<li><p>Duplicate the information in the tab <code class="docutils literal notranslate"><span class="pre">External</span> <span class="pre">validation</span></code>, select <code class="docutils literal notranslate"><span class="pre">Yes</span></code> for <code class="docutils literal notranslate"><span class="pre">External</span> <span class="pre">validation</span></code> and choose or add <code class="docutils literal notranslate"><span class="pre">External</span> <span class="pre">party</span> <span class="pre">name</span></code> (try to remain consistent with existing entries).</p></li>
-</ul>
-<p>The main issue can</p>
-<ul class="simple">
-<li><p>go from <code class="docutils literal notranslate"><span class="pre">Open</span></code> to <code class="docutils literal notranslate"><span class="pre">Waiting</span> <span class="pre">for</span> <span class="pre">external</span> <span class="pre">report</span></code>, which should be chosen when no preliminary report is or will be created (rare)</p></li>
-<li><p>go through the normal process up to <code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">preliminary</span> <span class="pre">report</span></code>, and then can only go to <code class="docutils literal notranslate"><span class="pre">Waiting</span> <span class="pre">for</span> <span class="pre">external</span> <span class="pre">report</span></code> if the <code class="docutils literal notranslate"><span class="pre">External</span> <span class="pre">validation</span></code> field <code class="docutils literal notranslate"><span class="pre">=Yes</span></code>.</p></li>
-</ul>
-<p>Now send the email.</p>
-</section>
-</section>
-<section id="email-template">
-<h2>Email template<a class="headerlink" href="#email-template" title="Permalink to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-Dear [replicator],
-
-I would like to ask if you are able to review a manuscript for us. [Brief description - 1 sentence]
-
-If you are able to conduct the reproducibility check, please prepare a reproducibility report 
-for the following manuscript, code, and data:
-
-Manuscript: Attached.
-
-README: In the ICPSR repository.
-
-Code: https://www.openicpsr.org/openicpsr/workspace?goToPath=/openicpsr/172381
-
-Please file your report via reply-all to this email,  as soon as possible, understanding that it 
-might take a while to get access to the data.
-
-Thank you very much in advance!
-
-</pre></div>
-</div>
-<blockquote>
-<div><p>NOTE: This needs more info, pointing to the Policy on Third-party replications, and explaining the report. The above example is a simplified example for communication with cascad.</p>
-</div></blockquote>
-<p>The email should be sent from the <code class="docutils literal notranslate"><span class="pre">dataeditor&#64;aeapubs.org</span></code> account, cc’ing the same, as well as the <code class="docutils literal notranslate"><span class="pre">dataeditor-queue&#64;aeapubs.org</span></code> account. The subject line should hvae the <code class="docutils literal notranslate"><span class="pre">AEAREP-xxxx</span></code> number of the <strong>subtask</strong>.</p>
-</section>
-<section id="openicpsr">
-<h2>openICPSR<a class="headerlink" href="#openicpsr" title="Permalink to this heading">#</a></h2>
-<p>The openICPSR repository should be shared with the external replicator. All information should come from the openICPSR repository, and not from communication of any kind with the authors, other than to possibly obtain the data.</p>
-</section>
-<section id="receipt-of-report">
-<h2>Receipt of report<a class="headerlink" href="#receipt-of-report" title="Permalink to this heading">#</a></h2>
-<p>When the external report is received,</p>
-<ul class="simple">
-<li><p>If not already done, forward the report to <code class="docutils literal notranslate"><span class="pre">dataeditor-queue&#64;aeapubs.org</span></code> with the subtask number in the subject line. If authors reply-all to the original email, this will already be done.</p></li>
-<li><p>Mark the subtask as <code class="docutils literal notranslate"><span class="pre">done</span></code></p></li>
-<li><p>Move the main issue forward to <code class="docutils literal notranslate"><span class="pre">writing</span> <span class="pre">report</span></code> and assign a pre-approver to combine the two reports.</p></li>
-</ul>
-</section>
-<section id="finalizing-the-report">
-<h2>Finalizing the report<a class="headerlink" href="#finalizing-the-report" title="Permalink to this heading">#</a></h2>
-<p>During report writing, the salient facts should be summarized in the standard report. The third-party report will generally be appended. However, if  we need to keep the replicator “anonymous”, the contents of the report, suitably edited, should be added into the standard report.</p>
-</section>
+<p>See <a class="reference external" href="https://aeadataeditor.github.io/LDI-Research-Aide/docs/procedures/External-Reproducibility-Reports.html">AEA Research Aide manual</a> for details.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -671,27 +587,6 @@ Thank you very much in advance!
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jira-stuff">Jira stuff</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-subtask">Create a new subtask</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#email-template">Email template</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openicpsr">openICPSR</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#receipt-of-report">Receipt of report</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finalizing-the-report">Finalizing the report</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

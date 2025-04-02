@@ -156,6 +156,21 @@ If the README makes no mention of this, and there is no mention in the Project C
   - - See if the reason for non-compliance (usually mentioned in the report, and at least in the comments) is resolved, **consult with the Data Editor**, then uncheck that box.
   - If the deposit is **not** in "Submitted" status, choose the appropriate variant of the **Signoff** message.
 
+### Verifying if Deposit was marked Restricted
+
+In some cases, authors will have checked a few boxes (see [Guidance]()) that lead to the deposit being marked as **Restricted**. In almost all cases, this is in error. 
+
+![Restricted deposit](images/openicpsr-restricted.png)
+
+You must immediately notify the Data Editor's assistant, who will contact the authors to clarify. 
+
+::::{warning}
+
+Do not sign off on a deposit when it is marked as **restricted** unless instructed to do so.
+
+::::
+
+
 ### Reporting Insufficient Changes to the Authors
 
 - If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the assistant to the Data Editor with a comment on the Jira ticket outlining your question.
