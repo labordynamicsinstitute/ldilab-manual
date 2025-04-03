@@ -55,12 +55,19 @@ There are two situations.
 
 There are two ways to run code using the data in this folder:
 
-1. Run all programs within this folder, do not take the data out of this folder. However, you will need to transfer log files and output back to your regular "cloned" folder (i.e. `aearep-3756`).
-2. More robust, but a bit more work, is to modify the code to reference the confidential data every time it is called.
-  - In the `config.do`, is a line `global sdrive ""`. Modify that line to read `global sdrive "L:\Restricted-Access-Data\aearep-3756-nda_Implicit"`
-  - Run the code in its usual location. When the code encounters (absent) confidential data in the usual location, it will break/stop.
-  - Everywhere you encounter references to confidential data in the code, e.g., `use "${datadir}/mysuper.dta"`, modify the code to reference the L-drive: `use "${sdrive}/mysuper.dta`. 
-  - commit all code modifications and log files as you normally would.
+### Run all programs from within this folder
+
+1. Copy all programs to this folder, do not take the data out of this folder.
+2. However, you will need to transfer modified code, log files, and output back to your regular "cloned" folder (i.e. `aearep-3756`), so that you can commit all changes (including to code files) back to the repository (this may require manual tracking of changes).
+
+### Run from regular folder, reference data in restricted-data folder
+
+More robust, but maybe a bit more work, is to modify the code to reference the confidential data every time it is called.
+
+- In the `config.do`, is a line `global sdrive ""`. Modify that line to read `global sdrive "L:\Restricted-Access-Data\aearep-3756"`
+- Run the code in its usual location. When the code encounters (absent) confidential data in the usual location, it will break/stop.
+- Everywhere you encounter references to confidential data in the code, e.g., `use "${datadir}/mysuper.dta"`, modify the code to reference the L-drive: `use "${sdrive}/mysuper.dta`. 
+- commit all code modifications, output, and log files as you normally would.
 
 ## Examples
 

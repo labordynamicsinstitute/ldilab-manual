@@ -530,7 +530,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-there-is-privately-provided-data">When there is privately provided data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-prepare-privately-provided-data">How to prepare privately provided data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-data-in-this-folder">How to use the data in this folder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-data-in-this-folder">How to use the data in this folder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-all-programs-from-within-this-folder">Run all programs from within this folder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-from-regular-folder-reference-data-in-restricted-data-folder">Run from regular folder, reference data in restricted-data folder</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stata-example-1">Stata Example 1</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#original-master-file">Original master file</a></li>
@@ -605,16 +609,23 @@ CCSS Classic</label><div class="sd-tab-content docutils">
 <li><p>The folder contains a copy of the openICPSR deposit, but with the confidential data included.</p></li>
 </ol>
 <p>There are two ways to run code using the data in this folder:</p>
+<section id="run-all-programs-from-within-this-folder">
+<h3>Run all programs from within this folder<a class="headerlink" href="#run-all-programs-from-within-this-folder" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Run all programs within this folder, do not take the data out of this folder. However, you will need to transfer log files and output back to your regular “cloned” folder (i.e. <code class="docutils literal notranslate"><span class="pre">aearep-3756</span></code>).</p></li>
-<li><p>More robust, but a bit more work, is to modify the code to reference the confidential data every time it is called.</p></li>
+<li><p>Copy all programs to this folder, do not take the data out of this folder.</p></li>
+<li><p>However, you will need to transfer modified code, log files, and output back to your regular “cloned” folder (i.e. <code class="docutils literal notranslate"><span class="pre">aearep-3756</span></code>), so that you can commit all changes (including to code files) back to the repository (this may require manual tracking of changes).</p></li>
 </ol>
+</section>
+<section id="run-from-regular-folder-reference-data-in-restricted-data-folder">
+<h3>Run from regular folder, reference data in restricted-data folder<a class="headerlink" href="#run-from-regular-folder-reference-data-in-restricted-data-folder" title="Permalink to this heading">#</a></h3>
+<p>More robust, but maybe a bit more work, is to modify the code to reference the confidential data every time it is called.</p>
 <ul class="simple">
-<li><p>In the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>, is a line <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">sdrive</span> <span class="pre">&quot;&quot;</span></code>. Modify that line to read <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">sdrive</span> <span class="pre">&quot;L:\Restricted-Access-Data\aearep-3756-nda_Implicit&quot;</span></code></p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>, is a line <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">sdrive</span> <span class="pre">&quot;&quot;</span></code>. Modify that line to read <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">sdrive</span> <span class="pre">&quot;L:\Restricted-Access-Data\aearep-3756&quot;</span></code></p></li>
 <li><p>Run the code in its usual location. When the code encounters (absent) confidential data in the usual location, it will break/stop.</p></li>
 <li><p>Everywhere you encounter references to confidential data in the code, e.g., <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&quot;${datadir}/mysuper.dta&quot;</span></code>, modify the code to reference the L-drive: <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&quot;${sdrive}/mysuper.dta</span></code>.</p></li>
-<li><p>commit all code modifications and log files as you normally would.</p></li>
+<li><p>commit all code modifications, output, and log files as you normally would.</p></li>
 </ul>
+</section>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
@@ -748,7 +759,11 @@ CCSS Classic</label><div class="sd-tab-content docutils">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-there-is-privately-provided-data">When there is privately provided data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-prepare-privately-provided-data">How to prepare privately provided data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-data-in-this-folder">How to use the data in this folder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-data-in-this-folder">How to use the data in this folder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-all-programs-from-within-this-folder">Run all programs from within this folder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-from-regular-folder-reference-data-in-restricted-data-folder">Run from regular folder, reference data in restricted-data folder</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stata-example-1">Stata Example 1</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#original-master-file">Original master file</a></li>
