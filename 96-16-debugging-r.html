@@ -540,6 +540,11 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trying-to-use-cran-without-setting-a-mirror"><code class="docutils literal notranslate"><span class="pre">trying</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">CRAN</span> <span class="pre">without</span> <span class="pre">setting</span> <span class="pre">a</span> <span class="pre">mirror</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lib-usr-lib64-r-library-is-not-writable">‘lib = “/usr/lib64/R/library”’ is not writable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rjava-issues">rJava Issues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rjava-installation-error">rJava Installation Error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-resolutions">Potential Resolutions</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -693,6 +698,49 @@ to install packages into? (yes/No/cancel)
 </pre></div>
 </div>
 </section>
+<section id="rjava-issues">
+<h2>rJava Issues<a class="headerlink" href="#rjava-issues" title="Permalink to this heading">#</a></h2>
+<p>Below you will find details of a rJava error and how it was resolved.</p>
+<section id="rjava-installation-error">
+<h3>rJava Installation Error<a class="headerlink" href="#rjava-installation-error" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span><span class="p">:</span> <span class="n">Error</span> <span class="n">installing</span> <span class="n">package</span> <span class="s1">&#39;rJava&#39;</span><span class="p">:</span> 
+<span class="o">=================================</span>
+<span class="o">*</span> <span class="n">installing</span> <span class="o">*</span><span class="n">source</span><span class="o">*</span> <span class="n">package</span> <span class="s1">&#39;rJava&#39;</span> <span class="o">...</span>
+<span class="o">**</span> <span class="n">package</span> <span class="s1">&#39;rJava&#39;</span> <span class="n">successfully</span> <span class="n">unpacked</span> <span class="ow">and</span> <span class="n">MD5</span> <span class="n">sums</span> <span class="n">checked</span>
+<span class="o">**</span> <span class="n">using</span> <span class="n">staged</span> <span class="n">installation</span>
+<span class="n">Generate</span> <span class="n">Windows</span><span class="o">-</span><span class="n">specific</span> <span class="n">files</span> <span class="p">(</span><span class="n">src</span><span class="o">/</span><span class="n">jvm</span><span class="o">-</span><span class="n">w32</span><span class="p">)</span> <span class="o">...</span>
+<span class="n">make</span><span class="p">:</span> <span class="n">Entering</span> <span class="n">directory</span> <span class="s1">&#39;/c/.../Temp/RtmpUVjaDY/renv-package-new-13b84f6a7cd0/rJava/src/jvm-w32&#39;</span>
+<span class="n">dlltool</span> <span class="o">--</span><span class="k">as</span> <span class="k">as</span>  <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="k">def</span><span class="w"> </span><span class="nf">jvm64</span><span class="o">.</span><span class="k">def</span><span class="w"> </span><span class="o">--</span><span class="n">kill</span><span class="o">-</span><span class="n">at</span> <span class="o">--</span><span class="n">dllname</span> <span class="n">jvm</span><span class="o">.</span><span class="n">dll</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">lib</span> <span class="n">libjvm</span><span class="o">.</span><span class="n">dll</span><span class="o">.</span><span class="n">a</span>
+<span class="n">gcc</span>  <span class="o">-</span><span class="n">O2</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">findjava</span><span class="o">.</span><span class="n">o</span> <span class="n">findjava</span><span class="o">.</span><span class="n">c</span>
+<span class="n">gcc</span>  <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">o</span> <span class="n">findjava</span><span class="o">.</span><span class="n">exe</span> <span class="n">findjava</span><span class="o">.</span><span class="n">o</span>
+<span class="n">make</span><span class="p">:</span> <span class="n">Leaving</span> <span class="n">directory</span> <span class="s1">&#39;/c.../Temp/RtmpUVjaDY/renv-package-new-13b84f6a7cd0/rJava/src/jvm-w32&#39;</span>
+<span class="n">Find</span> <span class="n">Java</span><span class="o">...</span>
+<span class="n">ERROR</span><span class="o">*&gt;</span> <span class="n">JavaSoft</span>\<span class="p">{</span><span class="n">JRE</span><span class="o">|</span><span class="n">JDK</span><span class="p">}</span> <span class="n">can</span><span class="s1">&#39;t open registry keys.</span>
+<span class="n">ERROR</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">find</span> <span class="n">Java</span> <span class="n">Development</span> <span class="n">Kit</span><span class="o">.</span>
+  <span class="n">Please</span> <span class="nb">set</span> <span class="n">JAVA_HOME</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">its</span> <span class="n">location</span> <span class="n">manually</span>
+<span class="n">ERROR</span><span class="p">:</span> <span class="n">configuration</span> <span class="n">failed</span> <span class="k">for</span> <span class="n">package</span> <span class="s1">&#39;rJava&#39;</span>
+<span class="o">*</span> <span class="n">removing</span> <span class="s1">&#39;L:/Workspace/aearep-XXXX/123456/renv/library/windows/R-4.4/x86_64-w64-mingw32/.renv/1/rJava&#39;</span>
+<span class="n">install</span> <span class="n">of</span> <span class="n">package</span> <span class="s1">&#39;rJava&#39;</span> <span class="n">failed</span> <span class="p">[</span><span class="n">error</span> <span class="n">code</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="potential-resolutions">
+<h3>Potential Resolutions<a class="headerlink" href="#potential-resolutions" title="Permalink to this heading">#</a></h3>
+<p>The resolutions specified here are only suitable for Windows systems like CCSS-Cloud. For Linux, we will create documentation as we encounter and resolve errors.</p>
+<p>First, confirm whether azulJava files are present in the locations specified in the examples below. They won’t be on all systems. If you find the files then, at the beginning of the R script, place the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sys</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="n">JAVA_HOME</span><span class="o">=</span><span class="s1">&#39;L:</span><span class="se">\\</span><span class="s1">common</span><span class="se">\\</span><span class="s1">azulJava</span><span class="se">\\</span><span class="s1">jdk</span><span class="se">\\</span><span class="s1">jre&#39;</span><span class="p">)</span>
+<span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">&quot;rJava&quot;</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">rJava</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If that doesn’t work, try:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sys</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="n">JAVA_HOME</span> <span class="o">=</span> <span class="s2">&quot;L:/common/azulJava/jdk&quot;</span><span class="p">)</span>
+<span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">&quot;rJava&quot;</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">rJava</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -768,6 +816,11 @@ to install packages into? (yes/No/cancel)
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trying-to-use-cran-without-setting-a-mirror"><code class="docutils literal notranslate"><span class="pre">trying</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">CRAN</span> <span class="pre">without</span> <span class="pre">setting</span> <span class="pre">a</span> <span class="pre">mirror</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lib-usr-lib64-r-library-is-not-writable">‘lib = “/usr/lib64/R/library”’ is not writable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rjava-issues">rJava Issues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rjava-installation-error">rJava Installation Error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-resolutions">Potential Resolutions</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
