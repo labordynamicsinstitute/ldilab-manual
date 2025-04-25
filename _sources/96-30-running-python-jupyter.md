@@ -183,7 +183,8 @@ If you have a LaTeX installation, you can convert the notebook to a PDF using th
 ```bash
 # requires a latex installation
 pip install nbconvert ipykernel
-jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to notebook   --execute mynotebook.ipynb
+jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to notebook  \
+  --inplace --execute mynotebook.ipynb
 jupyter nbconvert --to pdf                mynotebook.ipynb
 ```
 
@@ -192,7 +193,8 @@ Alternatively, you can convert the notebook to a PDF more closely resembling the
 ```bash
 pip install nbconvert ipykernel
 pip install pyppeteer
-jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to notebook --execute mynotebook.ipynb
+jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to notebook \
+  --inplace --execute mynotebook.ipynb
 jupyter nbconvert --to webpdf --allow-chromium-download mynotebook.ipynb
 ```
 
