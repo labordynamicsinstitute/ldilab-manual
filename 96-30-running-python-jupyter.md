@@ -25,7 +25,12 @@ should work.
 
 You should create a Python environment that is dedicated to the project. See [Anaconda instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) as one possible method, [venv](https://docs.python.org/3/library/venv.html) as another one, though others exist.
 
-Here's `venv` version in a nutshell ([full guide](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment))
+### Native Python `venv`
+
+
+Here's `venv` version in a nutshell ([full guide](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment)). Open up a shell.
+
+
 
 - Ensure `venv` exists:
 ```
@@ -58,6 +63,51 @@ To deactivate:
 ```
 deactivate
 ```
+
+### Anaconda method
+
+::::{admonition} On Windows, use `Anaconda Powershell Prompt` or `Anaconda Prompt`
+:class: dropdown
+
+![Windows Anaconda Prompt](images/ccss-anaconda-shell.png)
+:::: 
+
+::::{admonition} On BioHPC
+:class: dropdown
+
+Follow instructions [at BioHPC](https://biohpc.cornell.edu/lab/userguide.aspx?a=software&i=574#c) on how to install `miniconda` in your home directory, then add the line
+
+```bash
+source $HOME/miniconda3/bin/activate
+```
+
+at an appropriate location in the code (for instance, replacing `module load conda` in the SLURM batch file), or interactively.
+
+::::
+
+
+In the shell of your choice, run
+
+```bash
+conda create -n (your_env_name) 
+```
+
+where ideally, `(your_env_name)` is the name of the JIRA issue, in **lower case** (e.g., `aearep-123`).
+
+Then, activate the environment:
+
+```bash
+conda activate (your_env_name)
+```
+
+To deactivate, run
+
+```bash
+conda deactivate
+```
+
+
+
 
 
 ## Making Python code dynamic
@@ -147,15 +197,6 @@ If using the default "Jupyter" link in the Start Menu, the working directory won
 
 ![Step 4](images/Jupyter_howto_step4.png)
 
-### Conda on BioHPC
-
-If a replication package uses `conda` for package management, rather than `pip`, follow instructions [at BioHPC](https://biohpc.cornell.edu/lab/userguide.aspx?a=software&i=574#c) on how to install `miniconda` in your home directory, then add the line
-
-```bash
-source $HOME/miniconda3/bin/activate
-```
-
-at an appropriate location in the code (for instance, replacing `module load conda`).
 
 
 ## Running Jupyter Notebooks
