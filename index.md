@@ -13,7 +13,7 @@ Content is [![License: CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/80x1
 If you are a casual reader of this document, start with the [pre-requisites](pre-requisites). If you are a student participating in our training, then start with the [pre-training tasks](pre-training). Read the rest sequentially.
 
 ```{important}
-Once trained, jump right to the **[AEA Jira Workflow](aea-jira-workflow)!**
+Once trained, jump right to the **[AEA Jira Workflow](aea-jira-workflow-a-guide)!**
 ```
 
 ## Slides
