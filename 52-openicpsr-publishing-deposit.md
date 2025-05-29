@@ -87,9 +87,14 @@ Scroll down to the "Related Publications" section.
 ![Zenodo Community](images/zenodo-add-doi-step1.png)
 
 - Find the item, and click on the "Edit" button (**not "New version"**!)
-  - If you do not see the "Edit" button, you are not a part of the curation team. Please contact the community manager.
 
 ![Zenodo Edit button](images/zenodo-add-doi-step2.png)
+
+::: {warning}
+
+- If you do not see the "Edit" button, you are not a part of the curation team. Please contact the community manager.
+
+:::
 
 - You should see the "Publish" and "Share" buttons. You will come back to the "Publish" button later. 
 
