@@ -195,6 +195,8 @@ It is important to **sign out** when you do NOT have jobs running. When you no l
 
 ![Signout](images/ccss-cloud-signout-2.png)
 
+:::
+
 :::{tab-item} Old method
 
 - Open Start Menu

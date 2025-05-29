@@ -81,10 +81,6 @@ Scroll down to the "Related Publications" section.
 
 
 
-<!-- ========================= ZENODO ========================= -->
-
-
-
 ::::{tab-item} Zenodo
 
 - go to <https://zenodo.org/communities/aeajournals/records> (you need to be a part of the curation team of the American Economic Association Community)
@@ -136,7 +132,7 @@ Scroll down to the "Related Publications" section.
 
 
 
-::::{tab-item} Zenodo (bulk updates)
+::::{tab-item} Zenodo bulk updates
 
 If you have a large number of deposits to update, the script [`zenodo_metadata_editor.py`](https://github.com/AEADataEditor/editor-scripts/blob/main/zenodo_metadata_editor.py) (in `editor-scripts`) can be used. Sample usage is
 
