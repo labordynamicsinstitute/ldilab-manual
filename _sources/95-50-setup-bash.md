@@ -127,8 +127,7 @@ ls -l $HOME/bin
 If that yields an error, then you don't have one. So run the next part:
 
 ```bash
-cd $HOME
-git clone https://github.com/AEADataEditor/editor-scripts bin
+git clone https://github.com/AEADataEditor/editor-scripts $HOME/bin
 ```
 
 You should now have access to the various scripts, such as `aeagit`.
