@@ -80,6 +80,7 @@ Scroll down to the "Related Publications" section.
 ::::
 
 
+
 ::::{tab-item} Zenodo
 
 - go to <https://zenodo.org/communities/aeajournals/records> (you need to be a part of the curation team of the American Economic Association Community)
@@ -126,6 +127,39 @@ Scroll down to the "Related Publications" section.
 
 ![Zenodo Success](images/zenodo-add-doi-step7.png)
 
+
+::::
+
+
+
+::::{tab-item} Zenodo bulk updates
+
+If you have a large number of deposits to update, the script [`zenodo_metadata_editor.py`](https://github.com/AEADataEditor/editor-scripts/blob/main/zenodo_metadata_editor.py) (in `editor-scripts`) can be used. Sample usage is
+
+```bash
+python zenodo_metadata_editor.py --deposit-id 1234567 --article-doi 10.1257/app.20230046 --replpkg-doi 10.3886/E194388V1  
+```
+
+which will add the article and replicatory package DOIs to the deposit with ID `1234567`. Note that by default, there are two safeguards: the default instance of Zenodo is `sandbox` (the deposit number would need to exist), and the script will not actually update the deposit. Rather, you need to subsequently go to the web interface, review the changes, and then manually publish the deposit. You will need a Zenodo API token. 
+
+> The script will generate a configuration file if run without arguments, which you can edit, and include the API token. 
+
+If you are sure that you want to run the script against the production instance, you can use the `--production` flag, and if you know that the edits are fine, then you can use the `--publish` flag. 
+
+The script will not add duplicate entries, it is safe to run multiple times. 
+
+```bash
+python zenodo_metadata_editor.py --deposit-id 1234567 --article-doi 10.1257/app.20230046 --replpkg-doi 10.3886/E194388V1 --production --publish
+```
+
+is then an automated way, and if you want to iterate over multiple deposits, 
+
+```bash
+for deposit in 1234567 2345678 3456789; do
+    python zenodo_metadata_editor.py --deposit-id $deposit --article-doi 10.1257/app.20230046 --replpkg-doi 10.3886/E194388V1 --production --publish
+done
+```
+will update all three deposits in one go. 
 
 ::::
 

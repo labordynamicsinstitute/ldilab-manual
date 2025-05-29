@@ -703,12 +703,11 @@ Windows</label><div class="sd-tab-content docutils">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
 MacOS</label><div class="sd-tab-content docutils">
 <p>Both Python and rsync should be installed. If you need a newer version of Python 3.x, check the internet…</p>
-<div class="sd-tab-item docutils">
-<p class="sd-tab-label rubric">Linux</p>
-<div class="sd-tab-content docutils">
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Linux</label><div class="sd-tab-content docutils">
 <p>Both Python and rsync should be installed. If not, check your version of package manager. You mean need to reference <code class="docutils literal notranslate"><span class="pre">python3</span></code> because the default Python might be <code class="docutils literal notranslate"><span class="pre">python2</span></code>, which won’t work.</p>
-</div>
-</div>
 </div>
 </div>
 </section>
@@ -717,8 +716,8 @@ MacOS</label><div class="sd-tab-content docutils">
 <p>The last step you do once you have cloned your first repository (this can be run from within <strong>any</strong> recently cloned repository).</p>
 <p>If you are on a machine that has Python installed, run the following command (if it fails with <code class="docutils literal notranslate"><span class="pre">python3</span></code>, replace with <code class="docutils literal notranslate"><span class="pre">python</span></code>). You should do this once, from any recently cloned Bitbucket repository (which will contain a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file). You do NOT have to do it every time!</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-2">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Windows</label><div class="sd-tab-content docutils">
 <p>When running in Bash, this should work:</p>
 <ul class="simple">
@@ -732,8 +731,8 @@ Windows</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-3">
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Linux/macOS</label><div class="sd-tab-content docutils">
 <p>While the use of <code class="docutils literal notranslate"><span class="pre">python</span></code> might work, using <code class="docutils literal notranslate"><span class="pre">python3</span></code> is more robust:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt

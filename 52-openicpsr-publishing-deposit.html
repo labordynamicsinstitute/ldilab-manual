@@ -672,11 +672,35 @@ Zenodo</label><div class="sd-tab-content docutils">
 </div>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-2">
-Codeocean</label><div class="sd-tab-content docutils">
-<p>Send a note to the helpdesk, requesting the addition of a DOI to the related publications. <strong>Do not create a new version!</strong></p>
+Zenodo bulk updates</label><div class="sd-tab-content docutils">
+<p>If you have a large number of deposits to update, the script <a class="reference external" href="https://github.com/AEADataEditor/editor-scripts/blob/main/zenodo_metadata_editor.py"><code class="docutils literal notranslate"><span class="pre">zenodo_metadata_editor.py</span></code></a> (in <code class="docutils literal notranslate"><span class="pre">editor-scripts</span></code>) can be used. Sample usage is</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>zenodo_metadata_editor.py<span class="w"> </span>--deposit-id<span class="w"> </span><span class="m">1234567</span><span class="w"> </span>--article-doi<span class="w"> </span><span class="m">10</span>.1257/app.20230046<span class="w"> </span>--replpkg-doi<span class="w"> </span><span class="m">10</span>.3886/E194388V1<span class="w">  </span>
+</pre></div>
+</div>
+<p>which will add the article and replicatory package DOIs to the deposit with ID <code class="docutils literal notranslate"><span class="pre">1234567</span></code>. Note that by default, there are two safeguards: the default instance of Zenodo is <code class="docutils literal notranslate"><span class="pre">sandbox</span></code> (the deposit number would need to exist), and the script will not actually update the deposit. Rather, you need to subsequently go to the web interface, review the changes, and then manually publish the deposit. You will need a Zenodo API token.</p>
+<blockquote>
+<div><p>The script will generate a configuration file if run without arguments, which you can edit, and include the API token.</p>
+</div></blockquote>
+<p>If you are sure that you want to run the script against the production instance, you can use the <code class="docutils literal notranslate"><span class="pre">--production</span></code> flag, and if you know that the edits are fine, then you can use the <code class="docutils literal notranslate"><span class="pre">--publish</span></code> flag.</p>
+<p>The script will not add duplicate entries, it is safe to run multiple times.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>zenodo_metadata_editor.py<span class="w"> </span>--deposit-id<span class="w"> </span><span class="m">1234567</span><span class="w"> </span>--article-doi<span class="w"> </span><span class="m">10</span>.1257/app.20230046<span class="w"> </span>--replpkg-doi<span class="w"> </span><span class="m">10</span>.3886/E194388V1<span class="w"> </span>--production<span class="w"> </span>--publish
+</pre></div>
+</div>
+<p>is then an automated way, and if you want to iterate over multiple deposits,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>deposit<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1234567</span><span class="w"> </span><span class="m">2345678</span><span class="w"> </span><span class="m">3456789</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>python<span class="w"> </span>zenodo_metadata_editor.py<span class="w"> </span>--deposit-id<span class="w"> </span><span class="nv">$deposit</span><span class="w"> </span>--article-doi<span class="w"> </span><span class="m">10</span>.1257/app.20230046<span class="w"> </span>--replpkg-doi<span class="w"> </span><span class="m">10</span>.3886/E194388V1<span class="w"> </span>--production<span class="w"> </span>--publish
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>will update all three deposits in one go.</p>
 </div>
 <input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-3">
+Codeocean</label><div class="sd-tab-content docutils">
+<p>Send a note to the helpdesk, requesting the addition of a DOI to the related publications. <strong>Do not create a new version!</strong></p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Others</label><div class="sd-tab-content docutils">
 <p>In general, for others, you may need to email the repository platform contact.</p>
 </div>
@@ -685,8 +709,8 @@ Others</label><div class="sd-tab-content docutils">
 <section id="deposit-publish">
 <h2>Deposit: Publish<a class="headerlink" href="#deposit-publish" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-4">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 openICPSR</label><div class="sd-tab-content docutils">
 <p>Move to the next step:</p>
 <blockquote>

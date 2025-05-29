@@ -173,6 +173,8 @@ setup-rsync.sh
 
 Both Python and rsync should be installed. If you need a newer version of Python 3.x, check the internet...
 
+:::
+
 :::{tab-item} Linux
 
 Both Python and rsync should be installed. If not, check your version of package manager. You mean need to reference `python3` because the default Python might be `python2`, which won't work.
