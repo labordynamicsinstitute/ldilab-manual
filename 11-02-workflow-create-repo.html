@@ -537,6 +537,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#files-too-big">Files too big</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-or-cpu-usage-to-high">Memory or CPU usage to high</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cannot-stat-zip"><code class="docutils literal notranslate"><span class="pre">Cannot</span> <span class="pre">stat</span> <span class="pre">zip</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zip-file-is-too-big">ZIP file is too big</a></li>
 </ul>
 </li>
 </ul>
@@ -597,19 +598,24 @@ document.write(`
 </div>
 <section id="inspect-the-deposit">
 <h3>Inspect the deposit<a class="headerlink" href="#inspect-the-deposit" title="Permalink to this heading">#</a></h3>
-<p>First, click on the <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">alternate</span> <span class="pre">URL</span></code> URL (or <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">package</span> <span class="pre">URL</span></code> if it contains a DOI and the other fields are empty). Inspect the deposit.</p>
-<ul class="simple">
-<li><p>on openICPSR, you will see the size of the deposit on the right:</p></li>
-</ul>
+<p>First, click on the <code class="docutils literal notranslate"><span class="pre">openICPSR</span> <span class="pre">alternate</span> <span class="pre">URL</span></code> URL (or <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">package</span> <span class="pre">URL</span></code> if it contains a DOI and the other fields are empty). Inspect the deposit. The information may be in different locations at other repositories.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+openICPSR</label><div class="sd-tab-content docutils">
+<p>You will see the size of the deposit on the right:</p>
 <p><img alt="openICPSR size" src="_images/openicpsr-size-filecount.png" /></p>
-<ul class="simple">
-<li><p>on Zenodo, you will see the size of the deposit on the left, below the “featured” file:</p></li>
-</ul>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Zenodo</label><div class="sd-tab-content docutils">
+<p>You will see the size of the deposit on the left, below the “featured” file:</p>
 <p><img alt="zenodo size" src="_images/zenodo-size-filecount.png" /></p>
-<p>The information may be in different locations at other repositories.</p>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Make a note of the size of the deposit!</p>
+<p>Make a note of the size of the deposit! Bitbucket pipelines have a limit of 1GB for technical reasons, but the size you see is not the size of the ZIPed download, it is the size before compression. The Zipped size is hard to predict.</p>
 </div>
 </section>
 <section id="running-the-pipeline">
@@ -695,6 +701,35 @@ document.write(`
 <p>then you forgot to specify the <code class="docutils literal notranslate"><span class="pre">openICPSRID</span></code> variable. Rerun the pipeline with the correct variable entered. It should look like this:</p>
 <p><img alt="pipeline corrected" src="_images/jira-pipeline-error-variables-corrected.png" /></p>
 </section>
+<section id="zip-file-is-too-big">
+<h4>ZIP file is too big<a class="headerlink" href="#zip-file-is-too-big" title="Permalink to this heading">#</a></h4>
+<p>When the ZIP file downloaded from the repository is too big, parts of the pipeline will run, but ultimately, the full pipeline may fail.</p>
+<p>To diagnose this part,</p>
+<ul class="simple">
+<li><p>Go back to the list of Pipeline runs</p></li>
+<li><p>Click on the failed run</p></li>
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">Download</span></code> part.</p></li>
+<li><p>At the very bottom of the log, you will see <code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">teardown</span></code>. Click on it to expand. You are looking for lines mentioning <code class="docutils literal notranslate"><span class="pre">cache/**</span></code>:</p></li>
+<li><p>A successful run will look something like this:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Searching<span class="w"> </span><span class="k">for</span><span class="w"> </span>files<span class="w"> </span>matching<span class="w"> </span>artifact<span class="w"> </span>pattern<span class="w"> </span>cache/**
+Artifact<span class="w"> </span>pattern<span class="w"> </span>cache/**<span class="w"> </span>matched<span class="w"> </span><span class="m">1</span><span class="w"> </span>files<span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>total<span class="w"> </span>size<span class="w"> </span>of<span class="w"> </span><span class="m">26</span>.1<span class="w"> </span>MiB
+Compressed<span class="w"> </span>files<span class="w"> </span><span class="k">for</span><span class="w"> </span>artifact<span class="w"> </span><span class="s2">&quot;cache/**&quot;</span><span class="w"> </span>matching<span class="w"> </span>pattern<span class="w"> </span>cache/**<span class="w"> </span>to<span class="w"> </span><span class="m">25</span>.8<span class="w"> </span>MiB<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>seconds
+Uploading<span class="w"> </span>artifact<span class="w"> </span>of<span class="w"> </span><span class="m">25</span>.8<span class="w"> </span>MiB
+Successfully<span class="w"> </span>uploaded<span class="w"> </span>artifact<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>seconds.
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>A <strong>failed</strong> run due to the size of the ZIP file will look like this:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Searching<span class="w"> </span><span class="k">for</span><span class="w"> </span>files<span class="w"> </span>matching<span class="w"> </span>artifact<span class="w"> </span>pattern<span class="w"> </span>cache/**
+Artifact<span class="w"> </span>pattern<span class="w"> </span>cache/**<span class="w"> </span>matched<span class="w"> </span><span class="m">1</span><span class="w"> </span>files<span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>total<span class="w"> </span>size<span class="w"> </span>of<span class="w"> </span><span class="m">1</span><span class="w"> </span>GiB
+Compressed<span class="w"> </span>files<span class="w"> </span><span class="k">for</span><span class="w"> </span>artifact<span class="w"> </span><span class="s2">&quot;cache/**&quot;</span><span class="w"> </span>matching<span class="w"> </span>pattern<span class="w"> </span>cache/**<span class="w"> </span>to<span class="w"> </span><span class="m">1</span><span class="w"> </span>GiB<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">47</span><span class="w"> </span>seconds
+Compressed<span class="w"> </span>artifact<span class="w"> </span>size<span class="w"> </span>is<span class="w"> </span><span class="m">39</span>.6<span class="w"> </span>MiB<span class="w"> </span>over<span class="w"> </span>the<span class="w"> </span><span class="m">1</span><span class="w"> </span>GiB<span class="w"> </span>upload<span class="w"> </span>limit,<span class="w"> </span>so<span class="w"> </span>the<span class="w"> </span>artifact<span class="w"> </span>will<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>uploaded.
+</pre></div>
+</div>
+<p>If this is the case, try again with the “<code class="docutils literal notranslate"><span class="pre">w-big</span> <span class="pre">populate</span> <span class="pre">from</span> <span class="pre">ICPSR</span></code>” pipeline, which will not try to upload the ZIP file, but will still run the other steps.</p>
+</section>
 </section>
 </section>
 <section id="next-step">
@@ -773,6 +808,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#files-too-big">Files too big</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-or-cpu-usage-to-high">Memory or CPU usage to high</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cannot-stat-zip"><code class="docutils literal notranslate"><span class="pre">Cannot</span> <span class="pre">stat</span> <span class="pre">zip</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zip-file-is-too-big">ZIP file is too big</a></li>
 </ul>
 </li>
 </ul>
