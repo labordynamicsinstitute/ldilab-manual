@@ -530,6 +530,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-multiple-julia-versions">Managing multiple Julia versions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#julia-is-picky-about-how-environments-are-passed-to-workers">Julia is picky about how environments are passed to workers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-someone-else-s-julia-environment">Importing someone else’s Julia environment</a></li>
 </ul>
             </nav>
         </div>
@@ -569,6 +570,14 @@ document.write(`
 </pre></div>
 </div>
 <p>seems to work.</p>
+</section>
+<section id="importing-someone-else-s-julia-environment">
+<h2>Importing someone else’s Julia environment<a class="headerlink" href="#importing-someone-else-s-julia-environment" title="Permalink to this heading">#</a></h2>
+<p>An author using Julia may have included Project.toml and/or Manifest.toml, which specify Julia version and dependencies. To activate this environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">julia</span> <span class="o">--</span><span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="o">/</span><span class="n">path</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;using Pkg; Pkg.instantiate()&#39;</span>
+</pre></div>
+</div>
+<p>where project/path contains Project.toml and Manifest.toml. (more information <a class="reference external" href="https://pkgdocs.julialang.org/v1/environments/">here</a>).</p>
 </section>
 </section>
 
@@ -635,6 +644,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-multiple-julia-versions">Managing multiple Julia versions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#julia-is-picky-about-how-environments-are-passed-to-workers">Julia is picky about how environments are passed to workers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-someone-else-s-julia-environment">Importing someone else’s Julia environment</a></li>
 </ul>
   </nav></div>
 
