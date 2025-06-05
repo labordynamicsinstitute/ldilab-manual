@@ -563,7 +563,7 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">julia</span> <span class="o">--</span><span class="n">project</span><span class="o">=</span><span class="n">julia16</span> <span class="o">-</span><span class="n">p</span> <span class="mi">4</span>
 </pre></div>
 </div>
-<p>should start with the project installed in <code class="docutils literal notranslate"><span class="pre">julia16</span></code> and 4 worker processes. In fact, the worker processes ignore the project packages, and the whole thing fails (see <a class="reference external" href="https://github.com/JuliaLang/julia/issues/28781">this link</a>).</p>
+<p>should start with the project installed in folder <code class="docutils literal notranslate"><span class="pre">julia16</span></code> and 4 worker processes. In fact, the worker processes ignore the project packages, and the whole thing fails (see <a class="reference external" href="https://github.com/JuliaLang/julia/issues/28781">this link</a>).</p>
 <p>Workaround:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">JULIA_PROJECT</span><span class="o">=</span><span class="n">julia16</span>
 <span class="n">julia</span> <span class="o">-</span><span class="n">p</span> <span class="mi">4</span>
@@ -573,11 +573,22 @@ document.write(`
 </section>
 <section id="importing-someone-else-s-julia-environment">
 <h2>Importing someone else’s Julia environment<a class="headerlink" href="#importing-someone-else-s-julia-environment" title="Permalink to this heading">#</a></h2>
-<p>An author using Julia may have included Project.toml and/or Manifest.toml, which specify Julia version and dependencies. To activate this environment:</p>
+<p>An author using Julia may have included <code class="docutils literal notranslate"><span class="pre">Project.toml</span></code> and/or <code class="docutils literal notranslate"><span class="pre">Manifest.toml</span></code>, which specify Julia version and dependencies. To activate this environment (one time action):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">julia</span> <span class="o">--</span><span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="o">/</span><span class="n">path</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;using Pkg; Pkg.instantiate()&#39;</span>
 </pre></div>
 </div>
-<p>where project/path contains Project.toml and Manifest.toml. (more information <a class="reference external" href="https://pkgdocs.julialang.org/v1/environments/">here</a>).</p>
+<p>where <code class="docutils literal notranslate"><span class="pre">project/path</span></code> contains <code class="docutils literal notranslate"><span class="pre">Project.toml</span></code> and <code class="docutils literal notranslate"><span class="pre">Manifest.toml</span></code> (typically, the code directory). (more information <a class="reference external" href="https://pkgdocs.julialang.org/v1/environments/">here</a>).</p>
+<p>Alternatively, you can add</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">Pkg</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">instantiate</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>at the top of the main file (if there is one), and invoke this</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">JULIA_PROJECT</span><span class="o">=</span>project/path
+julia<span class="w"> </span>-p<span class="w"> </span><span class="m">4</span><span class="w"> </span>main.jl
+</pre></div>
+</div>
+<p>In many cases, <code class="docutils literal notranslate"><span class="pre">project/path</span></code> will be <code class="docutils literal notranslate"><span class="pre">.</span></code>, i.e., <code class="docutils literal notranslate"><span class="pre">main.jl</span></code> and the TOML files are in the same directory.</p>
 </section>
 </section>
 
