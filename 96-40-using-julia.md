@@ -44,4 +44,4 @@ An author using Julia may have included Project.toml and/or Manifest.toml, which
 ```
 julia --project=project/path -e 'using Pkg; Pkg.instantiate()'
 ```
-where project/path contains Project.toml and Manifest.toml. (see [Julia Environments](https://pkgdocs.julialang.org/v1/environments/)). 
+where project/path contains Project.toml and Manifest.toml. (more information [here](https://pkgdocs.julialang.org/v1/environments/)). 
