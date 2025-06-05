@@ -36,3 +36,12 @@ export JULIA_PROJECT=julia16
 julia -p 4
 ```
 seems to work.
+
+## Importing someone else's Julia environment
+
+An author using Julia may have included Project.toml and/or Manifest.toml, which specify Julia version and dependencies. To activate this environment:
+
+```
+julia --project=project/path -e 'using Pkg; Pkg.instantiate()'
+```
+where project/path contains Project.toml and Manifest.toml. (more information [here](https://pkgdocs.julialang.org/v1/environments/)). 
