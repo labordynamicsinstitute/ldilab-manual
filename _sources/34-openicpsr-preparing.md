@@ -138,6 +138,19 @@ as possible.
 
 1. Open the issue on Jira
 2. Click on the `Prepare for publication` transition
+
+::::{admonition} If the transition is not available
+:class: dropdown 
+There are several conditions that need to be met in order to move it forward. Check that all apply if the transition is not available
+
+- If there was an NDA, then `Agreement signed` will be filled, but the field `Was data deleted?` must be set to `Yes`. If not, check with supervisor.
+- Field `openICPSRversion` has to have a value. This is usually automatic.
+- `MCStatus` cannot be `RR`
+- The field `Non-compliant` cannot be 'Yes'. 
+- The field `MCRecommendationV2` cannot be `Conditional Accept`
+
+::::
+
 3. In the pop-up, you should have all the necessary information.
    - Note: links in the pop-up window are not clickable: double-click, then use right-click to "Open in New Tab".
    - If not already done: `Replication package URL` should point to openICPSR. If not, go to the final step.
