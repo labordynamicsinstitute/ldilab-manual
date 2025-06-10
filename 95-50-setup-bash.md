@@ -73,7 +73,7 @@ It must be set separately, by invoking the "Forgot Password" functionality. See 
 This will 
 
 - allow you to use the `aeagit` shortcut to download a Bitbucket repository to your workspace directly from the Bash command line
-- allow you to use the `tools/download_openicpsr_private.py` script to download replication packages from openICPSR from the Bash command line
+- allow you to use the `tools/download_openicpsr_private.py` script to download replication packages from openICPSR from the Bash command line (see [Helpful scripts](helpful-scripts) for details on this and other scripts).
 
 
 ### Verifying it works

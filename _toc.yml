@@ -123,6 +123,19 @@ parts:
       sections:
       - file: 97-01-Bitbucket-authentication
       - file: 97-02-openicpsr-authentication
+    - file: 96-90-00-useful-scripts
+      sections:
+      - file: 96-90-download_box_private
+      - file: 96-90-download_dv
+      - file: 96-90-download_openicpsr-private
+      - file: 96-90-download_osf
+      - file: 96-90-download_zenodo_draft
+      - file: 96-90-download_zenodo_public
+      - file: 96-90-generate_png_diff
+      - file: 96-90-matlab_convert_fig
+      - file: 96-90-matlab_convert_mat2csv
+      - file: 96-90-mk_tex_table
+      - file: 96-90-sync-codeocean
     - file: 98-00-sundry-correspondence
       sections:
       - file: 98-01-correspondence-legacy-updates
