@@ -1,0 +1,824 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>download_zenodo_draft.py - Download files from Zenodo draft deposits &#8212; Training Manual For Reproducibility Verification</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '96-90-download_zenodo_draft';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-90-download_zenodo_draft.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="download_zenodo_public.sh - Download files from public Zenodo repositories" href="96-90-download_zenodo_public.html" />
+    <link rel="prev" title="download_osf.sh - Download files from Open Science Framework (OSF) projects" href="96-90-download_osf.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">This is not yet fully debugged - report any issues!</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-introduction.html">Background</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Preliminary Tasks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="02-01-pre-requisites.html">Pre-requisites</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="02-02-pre-training-tasks.html">Pre-training tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-03-toolkit.html">Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="04-01-concepts.html">Basic Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-02-reproducible-practices.html">Reproducible practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-03-readme-template.html">The README template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-data-citations-and-das.html">Data citations and data availability statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-basic-flow.html">Generic data workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-basic-assessing-reproducibility.html">Assessing computational reproducibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-details-replication-report.html">A guided walk through the Replication Report</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">AEA-specific Jira Workflow</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="11-00-jira-workflow.html">AEA Jira workflow</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="11-01-workflow-assigned.html">Assigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-02-workflow-create-repo.html">Creating a repository and running pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-03-workflow-in-progress.html">In Progress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-04-workflow-parta.html">Preparing Part A - Preliminary Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-05-preparing-to-run-code.html">Preparing to Run Code (Part B)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-06-running-code.html">Running Code (Part B)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-07-workflow-writing-report.html">Writing Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-08-report-completed.html">Report completed</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="12-jira-revision-guidance.html">AEA: Revision reports after author resubmission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00-meetings.html">AEA-related meetings</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced AEA-related tasks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20-checking-unassigned-tickets.html">Checking Unassigned Jira Tickets</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="13-approving-issues.html">AEA: Reviewing and (Pre-) Approving Reports</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="13-1-approving-issues-original.html">Original Replication Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13-2-approving-issues-revision.html">Revision Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13-3-approving-recommendations.html">Choosing a Recommendation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="30-jira-prepare-publication.html">AEA: Submitting information back to the Editorial Office and to authors</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="31-jira-openicpsr-setup.html">Basic setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32-jira-submitting.html">Submitting to the JMS ScholarOne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33-jira-delete-nda-data.html">Deleting restricted data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="34-openicpsr-preparing.html">Submitting deposit-related information via openICPSR</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="50-openicpsr-related-tasks.html">AEA: Interfacing with openICPSR</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="51-openicpsr-monitoring-pending.html">AEA: Monitoring Pending openICPSR Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="52-openicpsr-publishing-deposit.html">AEA: Publishing a deposit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="53-openicpsr-add-article-doi.html">Adding the article DOI to the openICPSR deposit metadata</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="40-Instructions-PandP-Checks.html">AEA: Instructions for Papers and Proceedings checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Running code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="96-00-running-code.html">Guidelines for running code</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-01-using-config-stata.html">Using config.do in STATA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-02-running-stata-code.html">Running Code in Stata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-03-stata-scan-packages.html">Using scan_packages.do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-04-stata-on-linux.html">Stata on Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-05-debugging-stata.html">Debugging Stata</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-10-using-R.html">R-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-11-using-config-r.html">Using config.R in R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-12-running-r-code.html">Running Code in R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-14-r-on-biohpc.html">Running R on Linux systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-15-r-from-other.html">Running R from other software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-16-debugging-r.html">Debugging R</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-20-using-matlab.html">MATLAB-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-21-using-config-matlab.html">Adding <code class="docutils literal notranslate"><span class="pre">config.m</span></code> to MATLAB and path names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-22-running-matlab-code.html">Running MATLAB without the desktop GUI and with log file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-23-dynare-matlab.html">Running Dynare from MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-24-debugging-matlab.html">Debugging MATLAB-related problems</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="96-30-running-python-jupyter.html">Python-related procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="96-40-using-julia.html">Julia-related procedures</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-50-using-docker.html">Docker-related procedures</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-51-docker-windows.html">Docker on Windows</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="96-70-using-mathematica.html">Mathematica-related procedures</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-80-sundry.html">Rare software</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-81-using-ox.html">Ox-related procedures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-82-installing-add-ons.html">Mosek</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sundry other guidance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="71-External-reproducibility-checks.html">External reproducibility checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="90-Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="91-setup-checklist.html">Setup Checklist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="92-Privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="93-Communication.html">Communication</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="60-tips-for-identifying-differences.html">Identifying differences between original manuscript and reproduction</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="61-screenshot-windows.html">Using screenshot and annotation tools on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="62-screenshot-macos.html">Using screenshot and annotation tools on macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="68-include-screenshots-in-report.html">Include Screenshots in the Report</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="94-00-downloading-data.html">Downloading Data</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">Using pre-publication openICPSR Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="94-02-alternate-downloads.html">Alternate sources of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="94-03-private-data.html">Accessing privately provided data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="94-05-globus-transfers.html">Globus Transfers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="94-04-Updating_Materials.html">Updating Replication Materials after Revisions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="95_Access_to_computers.html">Access to Computers</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="95-10-windows-remote.html">Connecting to remote Windows servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-15-linux-remote.html">Connecting to remote Linux servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-20-codeocean.html">Reproducibility Checks in Codeocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-30-wholetale.html">Conducting reproducibility checks on WholeTale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-40-codespaces.html">Computing using Github Codespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-50-setup-bash.html">Setting up your Bash environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-60-general-setup.html">Additional setup instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="97-00-authentication.html">Authentication-related issues</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="97-01-Bitbucket-authentication.html">Bitbucket Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="97-02-openicpsr-authentication.html">openICPSR Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="96-90-00-useful-scripts.html">Various helpful scripts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="96-90-download_box_private.html">download_box_private.py - Download files from private Box folders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-download_dv.html">download_dv.py - Download datasets from Dataverse repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-download_openicpsr-private.html">download_openicpsr-private.py - Download files from private openICPSR deposits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-download_osf.html">download_osf.sh - Download files from Open Science Framework (OSF) projects</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">download_zenodo_draft.py - Download files from Zenodo draft deposits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-download_zenodo_public.html">download_zenodo_public.sh - Download files from public Zenodo repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-generate_png_diff.html">generate_png_diff.sh - Generate visual diffs for modified PNG images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-matlab_convert_fig.html">matlab_convert_fig.m - Convert MATLAB .fig files to PNG format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-matlab_convert_mat2csv.html">matlab_convert_mat2csv.m - Convert MATLAB .mat files to CSV format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-mk_tex_table.html">mk_tex_table.sh - Convert standalone LaTeX table files to PDF documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-sync-codeocean.html">sync-codeocean.sh - Synchronize CodeOcean capsules with local repositories</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="98-00-sundry-correspondence.html">Various templates for correspondence by AEA Data Editor team members</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="98-01-correspondence-legacy-updates.html">Preparing a Legacy Deposit for Updates by Authors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="98-02-correspondence-ipums-beta-request.html">IPUMS Beta API request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="98-03-correspondence-requesting-restricted-access-data.html">Requesting Restricted-Access Data from Authors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="98-04-correspondence-external-reproducibility-check.html">Request for External Reproducibility Check (general)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="98-05-clarification-privately-provided.html">Clarification regarding privately-provided restricted access files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="99-tricky-stuff.html">Technical issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LDI-Replication-Lab-Code-of-Conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Video-etiquette.html">Videoconferencing Rules and Etiquette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99-References.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99-older-versions.html">Older versions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-90-download_zenodo_draft.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-90-download_zenodo_draft.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/96-90-download_zenodo_draft.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>download_zenodo_draft.py - Download files from Zenodo draft deposits</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authentication">Authentication</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#env-file-support">.env File Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#token-priority-order">Token Priority Order</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How It Works</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-structure">Output Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-access-tokens">Getting Access Tokens</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling">Error Handling</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="download-zenodo-draft-py-download-files-from-zenodo-draft-deposits">
+<span id="help-download-zenodo-draft"></span><h1>download_zenodo_draft.py - Download files from Zenodo draft deposits<a class="headerlink" href="#download-zenodo-draft-py-download-files-from-zenodo-draft-deposits" title="Permalink to this heading">#</a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">#</a></h2>
+<p>This script downloads files from a Zenodo draft deposit using the Zenodo API. It can handle draft deposits that require authentication and provides advanced features like selective downloading and smart resuming.</p>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>tools/download_zenodo_draft.py<span class="w"> </span>RECORD_ID<span class="w"> </span><span class="o">[</span>--access-token<span class="w"> </span>TOKEN<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="arguments">
+<h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>RECORD_ID</strong> (Required) - Zenodo draft record ID</p></li>
+<li><p><strong>–access-token</strong> (Optional) - Zenodo access token for authentication</p></li>
+<li><p><strong>–sandbox</strong> (Optional) - Use Zenodo sandbox instead of production</p></li>
+<li><p><strong>–dry-run</strong> (Optional) - Show what would be downloaded without downloading</p></li>
+<li><p><strong>–files</strong> (Optional) - Download only specific files by number (comma-separated)</p></li>
+</ul>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download all files with access token</span>
+python3<span class="w"> </span>tools/download_zenodo_draft.py<span class="w"> </span><span class="m">123456</span><span class="w"> </span>--access-token<span class="w"> </span>your_token_here
+
+<span class="c1"># Show what would be downloaded (dry run)</span>
+python3<span class="w"> </span>tools/download_zenodo_draft.py<span class="w"> </span><span class="m">123456</span><span class="w"> </span>--sandbox<span class="w"> </span>--dry-run
+
+<span class="c1"># Download only specific files (use numbers from dry-run output)</span>
+python3<span class="w"> </span>tools/download_zenodo_draft.py<span class="w"> </span><span class="m">123456</span><span class="w"> </span>--files<span class="w"> </span><span class="s2">&quot;1,3,5&quot;</span>
+python3<span class="w"> </span>tools/download_zenodo_draft.py<span class="w"> </span><span class="m">123456</span><span class="w"> </span>--files<span class="w"> </span><span class="s2">&quot;2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading">#</a></h2>
+<section id="environment-variables">
+<h3>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ZENODO_ACCESS_TOKEN</span><span class="o">=</span>your_token_here
+<span class="c1"># or</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENODO_TOKEN</span><span class="o">=</span>your_token_here
+</pre></div>
+</div>
+</section>
+<section id="env-file-support">
+<h3>.env File Support<a class="headerlink" href="#env-file-support" title="Permalink to this heading">#</a></h3>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">.env</span></code> file with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ZENODO_ACCESS_TOKEN</span><span class="o">=</span><span class="n">your_token_here</span>
+</pre></div>
+</div>
+<p>(requires python-dotenv: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">python-dotenv</span></code>)</p>
+</section>
+<section id="token-priority-order">
+<h3>Token Priority Order<a class="headerlink" href="#token-priority-order" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Command line <code class="docutils literal notranslate"><span class="pre">--access-token</span></code> argument</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ZENODO_ACCESS_TOKEN</span></code> or <code class="docutils literal notranslate"><span class="pre">ZENODO_TOKEN</span></code> environment variable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.env</span></code> file with <code class="docutils literal notranslate"><span class="pre">ZENODO_ACCESS_TOKEN</span></code> or <code class="docutils literal notranslate"><span class="pre">ZENODO_TOKEN</span></code></p></li>
+</ol>
+</section>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Smart resuming</strong>: Won’t re-download files that already exist with correct checksums</p></li>
+<li><p><strong>Selective download</strong>: Choose specific files by number (use <code class="docutils literal notranslate"><span class="pre">--dry-run</span></code> first to see file numbers)</p></li>
+<li><p><strong>Multiple authentication methods</strong>: Command line, environment variables, or .env file</p></li>
+<li><p><strong>Checksum verification</strong>: Validates file integrity using Zenodo metadata</p></li>
+<li><p><strong>Metadata preservation</strong>: Creates manifest and metadata files</p></li>
+</ul>
+</section>
+<section id="how-it-works">
+<h2>How It Works<a class="headerlink" href="#how-it-works" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>API Connection</strong>: Connects to Zenodo API (production or sandbox)</p></li>
+<li><p><strong>Metadata Fetch</strong>: Retrieves metadata for the specified draft deposit</p></li>
+<li><p><strong>File Validation</strong>: Skips files that already exist with matching checksums</p></li>
+<li><p><strong>Download</strong>: Downloads selected files (or all files) to <code class="docutils literal notranslate"><span class="pre">zenodo-RECORD_ID</span></code> directory</p></li>
+<li><p><strong>Checksum Storage</strong>: Preserves checksums in <code class="docutils literal notranslate"><span class="pre">generated/manifest.zenodo-RECORD_ID.DATE.{sha256,md5}</span></code></p></li>
+<li><p><strong>Metadata Creation</strong>: Creates file size metadata in <code class="docutils literal notranslate"><span class="pre">generated/metadata.zenodo-RECORD_ID.txt</span></code></p></li>
+</ol>
+</section>
+<section id="output-structure">
+<h2>Output Structure<a class="headerlink" href="#output-structure" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zenodo-RECORD_ID/           # Downloaded files
+generated/
+├── manifest.zenodo-RECORD_ID.DATE.sha256
+├── manifest.zenodo-RECORD_ID.DATE.md5
+└── metadata.zenodo-RECORD_ID.txt
+</pre></div>
+</div>
+</section>
+<section id="getting-access-tokens">
+<h2>Getting Access Tokens<a class="headerlink" href="#getting-access-tokens" title="Permalink to this heading">#</a></h2>
+<p>You need a Zenodo access token to access draft deposits:</p>
+<ul class="simple">
+<li><p><strong>Production</strong>: <a class="reference external" href="https://zenodo.org/account/settings/applications/tokens/new/">https://zenodo.org/account/settings/applications/tokens/new/</a></p></li>
+<li><p><strong>Sandbox</strong>: <a class="reference external" href="https://sandbox.zenodo.org/account/settings/applications/tokens/new/">https://sandbox.zenodo.org/account/settings/applications/tokens/new/</a></p></li>
+</ul>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Python 3.x</p></li>
+<li><p>requests: HTTP client library</p></li>
+<li><p>python-dotenv (optional): For .env file support</p></li>
+</ul>
+</section>
+<section id="error-handling">
+<h2>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Validates access token and API connectivity</p></li>
+<li><p>Handles network failures gracefully</p></li>
+<li><p>Reports detailed error messages for API issues</p></li>
+<li><p>Validates checksums for downloaded files</p></li>
+</ul>
+<p>This tool is essential for working with unpublished Zenodo deposits in research workflows that require access to draft materials.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="96-90-download_osf.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">download_osf.sh - Download files from Open Science Framework (OSF) projects</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="96-90-download_zenodo_public.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">download_zenodo_public.sh - Download files from public Zenodo repositories</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authentication">Authentication</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#env-file-support">.env File Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#token-priority-order">Token Priority Order</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How It Works</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-structure">Output Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-access-tokens">Getting Access Tokens</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling">Error Handling</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lars Vilhuber, Michael Darisse, Sofia Encarnación, Ilanith Nizard, Leonel Borja Plaza, Takshil Sachdev, Hyuk Son, Linda Wang, David Wasser, Meredith Welch
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2018-2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
