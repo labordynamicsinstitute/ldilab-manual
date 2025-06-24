@@ -112,7 +112,15 @@ Scroll down to the "Related Publications" section.
 
 - Scroll back up and click on the `Save draft` button. This should not generate any error messages.
 
+
 ![Zenodo Save Draft](images/zenodo-add-doi-step5a.png)
+
+
+::: {note}
+
+Repeat this for the DOI of the openICPSR deposit if the Zenodo deposit is a "supplemental" rather than primary deposit.
+
+::: 
 
 - Now press `Publish`.
 
