@@ -76,6 +76,7 @@ Scroll down to the "Related Publications" section.
 
 - Go through the process to add the DOI.
 - Remove any related publications that simply say "n.a." in publication info
+- If there are any "supplemental" data publications (e.g., on Zenodo, see **Zenodo** tab), link them here as well. You may need to first "accept" or "publish" the supplemental deposits.
 
 ::::
 
@@ -90,6 +91,16 @@ Scroll down to the "Related Publications" section.
 - Find the item, and click on the "Edit" button (**not "New version"**!)
 
 ![Zenodo Edit button](images/zenodo-add-doi-step2.png)
+
+::: {admonition} You may need to look in the "Requests" section...
+:class: dropdown
+
+- If the article is not yet published, you may need to find it in the [Requests](https://zenodo.org/communities/aeajournals/requests) section, and then switch to the "Record" tab.
+
+![Zenodo Edit button](images/zenodo-add-doi-step2b.png)
+
+
+:::
 
 ::: {warning}
 
@@ -118,7 +129,11 @@ Scroll down to the "Related Publications" section.
 
 ::: {note}
 
-Repeat this for the DOI of the openICPSR deposit if the Zenodo deposit is a "supplemental" rather than primary deposit.
+Repeat this for the DOI of the **openICPSR deposit** if the Zenodo deposit is a "supplemental" rather than primary deposit.
+
+
+![Zenodo when data are supplemental](images/zenodo-add-doi-step5c.png)
+
 
 ::: 
 

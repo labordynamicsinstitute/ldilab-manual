@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="34-openicpsr-preparing.html">Submitting deposit-related information via openICPSR</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="50-openicpsr-related-tasks.html">AEA: Interfacing with openICPSR</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="50-openicpsr-related-tasks.html">AEA: Interfacing with repositories</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="51-openicpsr-monitoring-pending.html">AEA: Monitoring Pending openICPSR Changes</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">AEA: Publishing a deposit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="53-openicpsr-add-article-doi.html">Adding the article DOI to the openICPSR deposit metadata</a></li>
@@ -632,6 +632,7 @@ openICPSR</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>Go through the process to add the DOI.</p></li>
 <li><p>Remove any related publications that simply say “n.a.” in publication info</p></li>
+<li><p>If there are any “supplemental” data publications (e.g., on Zenodo, see <strong>Zenodo</strong> tab), link them here as well. You may need to first “accept” or “publish” the supplemental deposits.</p></li>
 </ul>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
@@ -645,6 +646,13 @@ Zenodo</label><div class="sd-tab-content docutils">
 <li><p>Find the item, and click on the “Edit” button (<strong>not “New version”</strong>!)</p></li>
 </ul>
 <p><img alt="Zenodo Edit button" src="_images/zenodo-add-doi-step2.png" /></p>
+<div class="dropdown admonition">
+<p class="admonition-title">You may need to look in the “Requests” section…</p>
+<ul class="simple">
+<li><p>If the article is not yet published, you may need to find it in the <a class="reference external" href="https://zenodo.org/communities/aeajournals/requests">Requests</a> section, and then switch to the “Record” tab.</p></li>
+</ul>
+<p><img alt="Zenodo Edit button" src="images/zenodo-add-doi-step2b.png" /></p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <ul class="simple">
@@ -673,7 +681,8 @@ Zenodo</label><div class="sd-tab-content docutils">
 <p><img alt="Zenodo Save Draft" src="_images/zenodo-add-doi-step5a.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Repeat this for the DOI of the openICPSR deposit if the Zenodo deposit is a “supplemental” rather than primary deposit.</p>
+<p>Repeat this for the DOI of the <strong>openICPSR deposit</strong> if the Zenodo deposit is a “supplemental” rather than primary deposit.</p>
+<p><img alt="Zenodo when data are supplemental" src="images/zenodo-add-doi-step5c.png" /></p>
 </div>
 <ul class="simple">
 <li><p>Now press <code class="docutils literal notranslate"><span class="pre">Publish</span></code>.</p></li>
