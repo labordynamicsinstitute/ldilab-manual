@@ -572,7 +572,8 @@ document.write(`
 <span id="create-repo"></span><h1>Creating a repository and running pipeline<a class="headerlink" href="#creating-a-repository-and-running-pipeline" title="Permalink to this heading">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>In some instances, somebody else has already created a repository. Always check first if the <code class="docutils literal notranslate"><span class="pre">Bitbucket</span> <span class="pre">short</span> <span class="pre">name</span></code> is already filled out. If yes, skip this section and go to <a class="reference internal" href="11-03-workflow-in-progress.html#collecting-information"><span class="std std-ref">Collecting information</span></a>!</p>
+<p>In some instances, somebody else has already created a repository. Always check first if the <code class="docutils literal notranslate"><span class="pre">Bitbucket</span> <span class="pre">short</span> <span class="pre">name</span></code> is already filled out. If it is, <strong>do not</strong> run the pipeline scripts again. This can overwrite or destroy changes already made by someone working on the case.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">Bitbucket</span> <span class="pre">short</span> <span class="pre">name</span></code> is filled out, skip this section and go to <a class="reference internal" href="11-03-workflow-in-progress.html#collecting-information"><span class="std std-ref">Collecting information</span></a>!</p>
 </div>
 <section id="creating-a-repository">
 <h2>Creating a repository<a class="headerlink" href="#creating-a-repository" title="Permalink to this heading">#</a></h2>

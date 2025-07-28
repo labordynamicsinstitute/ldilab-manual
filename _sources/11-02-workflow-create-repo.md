@@ -3,7 +3,9 @@
 
 
 ```{warning}
-In some instances, somebody else has already created a repository. Always check first if the `Bitbucket short name` is already filled out. If yes, skip this section and go to [Collecting information](collecting-information)!
+In some instances, somebody else has already created a repository. Always check first if the `Bitbucket short name` is already filled out. If it is, **do not** run the pipeline scripts again. This can overwrite or destroy changes already made by someone working on the case.
+
+If the `Bitbucket short name` is filled out, skip this section and go to [Collecting information](collecting-information)!
 ```
 
 ## Creating a repository
