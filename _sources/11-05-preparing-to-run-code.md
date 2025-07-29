@@ -107,10 +107,12 @@ Have a look at the **README** again.
   - Is there information about the **software**? 
   - How long does the author say the code will run? Is it a reasonable time, or do we maybe need to run it on a more powerful computer?
   - How much memory, or processors, does the code need? Again, is the computer you intended to choose sufficient, or do we need to get access to a more powerful computer, or even a cluster of computers?
+  - What operating system (Mac, Windows, Linux) does the author appear to have used?
 
 Now fill out the **Stated Requirements** section of **Part B** of the report.
 
 - Check if the deposit has a 'main' or 'master' file and fill out the 'MainFile' field in Jira under the 'Repl. info' tab. 
+- Mark the **operating system (OS)** that the authors used in the field `Original OS`. Leave blank if you do not know.
 
 
 :::{admonition} Be sure to use the `REPLICATION-PartB.md` for this section!
