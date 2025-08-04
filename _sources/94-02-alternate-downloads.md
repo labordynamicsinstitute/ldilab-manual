@@ -1,7 +1,7 @@
 (notes-on-downloading-other-repos)=
 # Alternate sources of data
 
-We sometimes encounter replication packages that reference Dataverse or Zotero. Download those as they are found on those sites. Extract them as you would the openICPSR downloads, but please pay attention to the directory naming structure:
+We sometimes encounter replication packages that reference Dataverse or Zenodo. Download those as they are found on those sites. Extract them as you would the openICPSR downloads, but please pay attention to the directory naming structure:
 
 | Source | DOI or project | Directory name (`DIRNAME`) |
 |--------|----------------|------------------|
