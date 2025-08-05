@@ -175,8 +175,65 @@ global data "$maindir/data" // path to data folder
 global figures "$maindir/figures" // path to figures folder
 ```
 
+(modify-main_do)=
+## Step 6: Modifying the main .do file
+
+:::{admonition} You may have to modify some additional code in the `main.do` file.
+:class: warning
+
+If the `main.do`  provided by the authors contains `run` commands, you must replace them with `do`.
+
+- `run` will hide much of the output.
+- `do` will show output, in particular when code goes wrong.
+:::
+
+So if the `main.do` looks like this:
+
+```stata
+***************************
+
+run "${do}/2_transform_data.do"
+
+****************************************
+* 3 * Append Denmark, Norway, Finland and Sweden
+* depends on the previous step
+****************************************
+
+run "${do}/3_appending.do"
+
+****************************************
+* 4 * Prepare the data for the ridgeline plots and maps
+* depends on the previous step
+****************************************
+
+run "${do}/4_ridgeline_prep.do"
+```
+(etc.), then you must modify it so it looks like this:
+
+```stata
+***************************
+
+do "${do}/2_transform_data.do"
+
+****************************************
+* 3 * Append Denmark, Norway, Finland and Sweden
+* depends on the previous step
+****************************************
+
+do "${do}/3_appending.do"
+
+****************************************
+* 4 * Prepare the data for the ridgeline plots and maps
+* depends on the previous step
+****************************************
+
+do "${do}/4_ridgeline_prep.do"
+```
+
+Save it, and proceed to the next step.
+
 (right-click-stata)=
-## Step 6: Run the Code
+## Step 7: Run the Code
 
 
 
