@@ -554,7 +554,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-run-the-code">Step 6: Run the Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-modifying-the-main-do-file">Step 6: Modifying the main .do file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-run-the-code">Step 7: Run the Code</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-for-a-complete-run-debugging-and-running-the-master-in-pieces">Checking for a complete run, debugging and running the master in pieces</a></li>
 </ul>
 </li>
@@ -717,8 +718,60 @@ After the change:</p>
 </div>
 </section>
 </section>
-<section id="step-6-run-the-code">
-<span id="right-click-stata"></span><h2>Step 6: Run the Code<a class="headerlink" href="#step-6-run-the-code" title="Permalink to this heading">#</a></h2>
+<section id="step-6-modifying-the-main-do-file">
+<span id="modify-main-do"></span><h2>Step 6: Modifying the main .do file<a class="headerlink" href="#step-6-modifying-the-main-do-file" title="Permalink to this heading">#</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">You may have to modify some additional code in the <code class="docutils literal notranslate"><span class="pre">main.do</span></code> file.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">main.do</span></code>  provided by the authors contains <code class="docutils literal notranslate"><span class="pre">run</span></code> commands, you must replace them with <code class="docutils literal notranslate"><span class="pre">do</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">run</span></code> will hide much of the output.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">do</span></code> will show output, in particular when code goes wrong.</p></li>
+</ul>
+</div>
+<p>So if the <code class="docutils literal notranslate"><span class="pre">main.do</span></code> looks like this:</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">***************************</span>
+
+<span class="k">run</span> <span class="s">&quot;</span><span class="vg">${do}</span><span class="s">/2_transform_data.do&quot;</span>
+
+<span class="c1">****************************************</span>
+<span class="c1">* 3 * Append Denmark, Norway, Finland and Sweden</span>
+<span class="c1">* depends on the previous step</span>
+<span class="c1">****************************************</span>
+
+<span class="k">run</span> <span class="s">&quot;</span><span class="vg">${do}</span><span class="s">/3_appending.do&quot;</span>
+
+<span class="c1">****************************************</span>
+<span class="c1">* 4 * Prepare the data for the ridgeline plots and maps</span>
+<span class="c1">* depends on the previous step</span>
+<span class="c1">****************************************</span>
+
+<span class="k">run</span> <span class="s">&quot;</span><span class="vg">${do}</span><span class="s">/4_ridgeline_prep.do&quot;</span>
+</pre></div>
+</div>
+<p>(etc.), then you must modify it so it looks like this:</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">***************************</span>
+
+<span class="k">do</span> <span class="s">&quot;</span><span class="vg">${do}</span><span class="s">/2_transform_data.do&quot;</span>
+
+<span class="c1">****************************************</span>
+<span class="c1">* 3 * Append Denmark, Norway, Finland and Sweden</span>
+<span class="c1">* depends on the previous step</span>
+<span class="c1">****************************************</span>
+
+<span class="k">do</span> <span class="s">&quot;</span><span class="vg">${do}</span><span class="s">/3_appending.do&quot;</span>
+
+<span class="c1">****************************************</span>
+<span class="c1">* 4 * Prepare the data for the ridgeline plots and maps</span>
+<span class="c1">* depends on the previous step</span>
+<span class="c1">****************************************</span>
+
+<span class="k">do</span> <span class="s">&quot;</span><span class="vg">${do}</span><span class="s">/4_ridgeline_prep.do&quot;</span>
+</pre></div>
+</div>
+<p>Save it, and proceed to the next step.</p>
+</section>
+<section id="step-7-run-the-code">
+<span id="right-click-stata"></span><h2>Step 7: Run the Code<a class="headerlink" href="#step-7-run-the-code" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
@@ -882,7 +935,8 @@ Windows terminal</label><div class="sd-tab-content docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-run-the-code">Step 6: Run the Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-modifying-the-main-do-file">Step 6: Modifying the main .do file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-run-the-code">Step 7: Run the Code</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-for-a-complete-run-debugging-and-running-the-master-in-pieces">Checking for a complete run, debugging and running the master in pieces</a></li>
 </ul>
 </li>
