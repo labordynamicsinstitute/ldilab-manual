@@ -43,6 +43,10 @@ If you are the RA tasked with this, these are your instructions.
 - A good place to start in this process is to go to the openICPSR deposit (fields [`Replication package URL`] or [`openICPSR alternate URL`]) 
 - First, verify the **date** of the last request made to the author, in the "Project Communication Log" area. The Project Communication log always contains our request to the authors, and may contain subsequent responses from the author.
 
+While checking the Communication Log, look for any uploaded response letters from the authors. If a response letter is attached there, download it and attach it to the corresponding Jira ticket, so we have a complete record in one place.
+
+Now open the project log: click "View Log", just below "Share Project" and "Change Owner."
+
 ![Communication Log area](images/pending_openicpsr_com.png)
 
 - Now open the project log:  click "`View Log`", just below "Share Project" and "Change Owner." 
