@@ -125,6 +125,7 @@ parts:
       - file: 97-02-openicpsr-authentication
     - file: 96-90-00-useful-scripts
       sections:
+      - file: 96-90-advanced_pdf_extractor
       - file: 96-90-download_box_private
       - file: 96-90-download_dv
       - file: 96-90-download_openicpsr-private
