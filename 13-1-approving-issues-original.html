@@ -520,7 +520,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -536,6 +538,17 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-reproducibility-reports">External Reproducibility Reports</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-notes">Important Notes</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -650,6 +663,37 @@ document.write(`
 </li>
 <li><p>Advance the JIRA ticket to “Pre-approved.”  The pre-approval is now <strong>complete!</strong></p></li>
 </ol>
+<section id="external-reproducibility-reports">
+<h2>External Reproducibility Reports<a class="headerlink" href="#external-reproducibility-reports" title="Permalink to this heading">#</a></h2>
+<p>In cases where an external reproducibility check was completed (e.g., CASCAD, World Bank), the following steps must be taken during pre-approval to ensure proper documentation and integration.</p>
+<ol class="arabic">
+<li><p><strong>Verify the “External Validation” checkbox is selected</strong> in the JIRA ticket.</p></li>
+<li><p><strong>Ensure that the external report is included in the repository.</strong> It must be part of the final deposit and not just attached to JIRA or email.</p></li>
+<li><p><strong>Ensure no section titles from our <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code> template report are deleted.</strong> The internal report must maintain its structure even when referencing external work.</p></li>
+<li><p>In any section of the internal report where the external replicator’s work applies, include a pointer such as:</p>
+<blockquote>
+<div><p>“Please refer to the external report below.”</p>
+</div></blockquote>
+</li>
+<li><p><strong>Review the external report.</strong> Identify any bugs or discrepancies and ensure they are recorded in the <strong>Summary</strong> and <strong>Findings</strong> sections of the internal <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code>.</p></li>
+<li><p><strong>Add appropriate <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> or <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code> Action Item tags</strong> corresponding to the issues found in the external report.</p></li>
+<li><p><strong>Generate a PDF of the internal <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code> report</strong> and name it: <code class="docutils literal notranslate"><span class="pre">REPLICATION_internal.md</span></code>.</p></li>
+<li><p><strong>Append the external report PDF</strong> (as received) to the internal report.</p></li>
+<li><p><strong>Save the combined file as:</strong> <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code> and convert it to a PDF.</p></li>
+<li><p><strong>Commit both files to the Git repository:</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">REPLICATION_internal.md</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REPLICATION.pdf</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<section id="important-notes">
+<h3>Important Notes<a class="headerlink" href="#important-notes" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Do not delete the external report.</strong> The combined <code class="docutils literal notranslate"><span class="pre">REPLICATION.pdf</span></code> serves as the official record.</p></li>
+<li><p>The external report must be <strong>included at the end of</strong> the final <code class="docutils literal notranslate"><span class="pre">REPLICATION.pdf</span></code>.</p></li>
+<li><p>This procedure applies to all external reproducibility checks.</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The pre-approver should reach out to the original replicator for clarifications should there be any confusions during the course of pre-approving the report.  If bugs in the code seem trivial i.e. missing packages, missing <code class="docutils literal notranslate"><span class="pre">Results</span></code> directory, replicator cannot find output etc., the pre-approver should reach out to the original replicator for further clarification.</p>
@@ -667,6 +711,8 @@ document.write(`
 <div><p>[REQUIRED] Please provide complete code for appendix tables and figures, in particular Table A.6.</p>
 </div></blockquote>
 </div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -721,6 +767,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-reproducibility-reports">External Reproducibility Reports</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-notes">Important Notes</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

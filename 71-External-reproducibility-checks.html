@@ -543,6 +543,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-external-reproducibility-reports-are-used">When External Reproducibility Reports Are Used</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-the-external-report">Integrating the External Report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-an-external-report">Writing an External Report</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-manuscript-code-and-data-are-confidential-at-this-stage">The manuscript, code, and data are confidential at this stage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-separate-environment-to-run-the-code-where-possible">Use a separate environment to run the code where possible</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access-to-code-and-data">Access to code and data</a></li>
@@ -569,7 +572,33 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="external-reproducibility-checks">
 <h1>External reproducibility checks<a class="headerlink" href="#external-reproducibility-checks" title="Permalink to this heading">#</a></h1>
+<p>In some cases, reproducibility checks must be conducted externally—particularly when restricted-access data is involved. This section outlines how to integrate such reports and ensure they are properly archived in our systems.</p>
+<section id="when-external-reproducibility-reports-are-used">
+<h2>When External Reproducibility Reports Are Used<a class="headerlink" href="#when-external-reproducibility-reports-are-used" title="Permalink to this heading">#</a></h2>
+<p>Instances that require the use of restricted-access data for a full reproducibility check can occasionally be sent out for an external report. These cases often arise when data cannot be shared with our team.</p>
+<p>For more information, see the <a class="reference external" href="https://aeadataeditor.github.io/third-party-verification-policy/">AEA Policy and Protocol on Third-Party Verifications</a>, which describes who can conduct these external reports and the expected process.</p>
+<blockquote>
+<div><p>🔒 In all cases where an external reproducibility check is used (e.g., CASCAD or World Bank), the <strong>“external validation” checkbox in JIRA must be checked</strong>.</p>
+</div></blockquote>
+</section>
+<section id="integrating-the-external-report">
+<h2>Integrating the External Report<a class="headerlink" href="#integrating-the-external-report" title="Permalink to this heading">#</a></h2>
+<p>The external report must be included in the repository. It is <strong>not sufficient</strong> to leave it attached to a JIRA ticket or email.</p>
+<ol class="arabic">
+<li><p>Start with the internal <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code> report.</p></li>
+<li><p><strong>Do not delete</strong> any section titles from the internal report.</p></li>
+<li><p>In relevant sections, add a note such as:</p>
+<blockquote>
+<div><p>“Please refer to the external report below.”</p>
+</div></blockquote>
+</li>
+<li><p>Review the external report and ensure all <strong>bugs</strong> and <strong>discrepancies</strong> are recorded in the <strong>Summary and Findings</strong> section of the internal report.</p></li>
+</ol>
+</section>
+<section id="writing-an-external-report">
+<h2>Writing an External Report<a class="headerlink" href="#writing-an-external-report" title="Permalink to this heading">#</a></h2>
 <p>If you have agreed to provide us with an external reproducibility check, we kindly ask that you follow these instructions.</p>
+</section>
 <section id="the-manuscript-code-and-data-are-confidential-at-this-stage">
 <h2>The manuscript, code, and data are confidential at this stage<a class="headerlink" href="#the-manuscript-code-and-data-are-confidential-at-this-stage" title="Permalink to this heading">#</a></h2>
 <p>Do not post them to any public place. Use the resources we provide you with, or those that your institution provides you with. While we may provide you with Github or Bitbucket repositories, those are to remain private, i.e., require a login for access.</p>
@@ -768,6 +797,9 @@ Cornell-affiliated</label><div class="sd-tab-content docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-external-reproducibility-reports-are-used">When External Reproducibility Reports Are Used</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-the-external-report">Integrating the External Report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-an-external-report">Writing an External Report</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-manuscript-code-and-data-are-confidential-at-this-stage">The manuscript, code, and data are confidential at this stage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-separate-environment-to-run-the-code-where-possible">Use a separate environment to run the code where possible</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access-to-code-and-data">Access to code and data</a></li>
