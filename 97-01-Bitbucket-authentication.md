@@ -1,20 +1,28 @@
 (bitbucket-authentication)=
 # Bitbucket Authentication
 
-## Creating an App Password (or PAT)
+## Creating an API Token (or PAT)
 
-The long-term solution is to create an [App Password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/).
+The long-term solution is to create an [API Token](https://support.atlassian.com/bitbucket-cloud/docs/api-tokens/)[^apppwd]
 
-1. Follow the steps to create an App Password. 
-2. You want to give it ONLY permissions to `repository read + write`
+[^apppwd]: This used to be an [App Password](https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/), but they are being phased out as of 2025.
 
-![Screenshot of permissions](images/Bitbucket-App-password-permissions.png)
+1. Follow the steps to [create an API Token](https://support.atlassian.com/bitbucket-cloud/docs/create-an-api-token/). You can also try going to [this page](https://id.atlassian.com/manage-profile/security/api-tokens) directly.
+2. Click on **Create API token with scopes**.
+  - Name it something like "LDI Replication Lab Git".
+  - Choose an expiration date that makes sense (minimum end of semester, maximum 1 year)
+  -  You want to give it ONLY permissions to `read:repository:bitbucket` and `write:repository:bitbucket`.
 
-Some important points about app passwords:
+Your confirmation screen should look like this:
 
-- You **cannot** view an app password or adjust permissions after you create the app password.
+![Screenshot of API Token creation](images/atlassian-api-final.png)
+
+3. Click **Create**, and copy the long string of characters that appears to your password manager. Use it whereever it says to use a PAT or Bitbucket API token in this manual.
+
+Some important points about API tokens:
+
+- You **cannot** view an API token or adjust permissions after you create it, but you can create a new one (and delete the old one).
 - You **cannot** use them to log in to your Bitbucket account at bitbucket.org.
-- You **cannot** use app passwords to manage workspace actions.
 
 ## Possible errors
 
