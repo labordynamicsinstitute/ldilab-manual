@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -543,7 +544,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-app-password-or-pat">Creating an App Password (or PAT)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-api-token-or-pat">Creating an API Token (or PAT)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-errors">Possible errors</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
 </ul>
@@ -561,19 +562,27 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="bitbucket-authentication">
 <span id="id1"></span><h1>Bitbucket Authentication<a class="headerlink" href="#bitbucket-authentication" title="Permalink to this heading">#</a></h1>
-<section id="creating-an-app-password-or-pat">
-<h2>Creating an App Password (or PAT)<a class="headerlink" href="#creating-an-app-password-or-pat" title="Permalink to this heading">#</a></h2>
-<p>The long-term solution is to create an <a class="reference external" href="https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/">App Password</a>.</p>
+<section id="creating-an-api-token-or-pat">
+<h2>Creating an API Token (or PAT)<a class="headerlink" href="#creating-an-api-token-or-pat" title="Permalink to this heading">#</a></h2>
+<p>The long-term solution is to create an <a class="reference external" href="https://support.atlassian.com/bitbucket-cloud/docs/api-tokens/">API Token</a><a class="footnote-reference brackets" href="#apppwd" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 <ol class="arabic simple">
-<li><p>Follow the steps to create an App Password.</p></li>
-<li><p>You want to give it ONLY permissions to <code class="docutils literal notranslate"><span class="pre">repository</span> <span class="pre">read</span> <span class="pre">+</span> <span class="pre">write</span></code></p></li>
+<li><p>Follow the steps to <a class="reference external" href="https://support.atlassian.com/bitbucket-cloud/docs/create-an-api-token/">create an API Token</a>. You can also try going to <a class="reference external" href="https://id.atlassian.com/manage-profile/security/api-tokens">this page</a> directly.</p></li>
+<li><p>Click on <strong>Create API token with scopes</strong>.</p></li>
 </ol>
-<p><img alt="Screenshot of permissions" src="_images/Bitbucket-App-password-permissions.png" /></p>
-<p>Some important points about app passwords:</p>
 <ul class="simple">
-<li><p>You <strong>cannot</strong> view an app password or adjust permissions after you create the app password.</p></li>
+<li><p>Name it something like “LDI Replication Lab Git”.</p></li>
+<li><p>Choose an expiration date that makes sense (minimum end of semester, maximum 1 year)</p></li>
+<li><p>You want to give it ONLY permissions to <code class="docutils literal notranslate"><span class="pre">read:repository:bitbucket</span></code> and <code class="docutils literal notranslate"><span class="pre">write:repository:bitbucket</span></code>.</p></li>
+</ul>
+<p>Your confirmation screen should look like this:</p>
+<p><img alt="Screenshot of API Token creation" src="_images/atlassian-api-final.png" /></p>
+<ol class="arabic simple" start="3">
+<li><p>Click <strong>Create</strong>, and copy the long string of characters that appears to your password manager. Use it whereever it says to use a PAT or Bitbucket API token in this manual.</p></li>
+</ol>
+<p>Some important points about API tokens:</p>
+<ul class="simple">
+<li><p>You <strong>cannot</strong> view an API token or adjust permissions after you create it, but you can create a new one (and delete the old one).</p></li>
 <li><p>You <strong>cannot</strong> use them to log in to your Bitbucket account at <a class="reference external" href="http://bitbucket.org">bitbucket.org</a>.</p></li>
-<li><p>You <strong>cannot</strong> use app passwords to manage workspace actions.</p></li>
 </ul>
 </section>
 <section id="possible-errors">
@@ -590,6 +599,11 @@ document.write(`
 <ol class="arabic simple" start="3">
 <li><p>Attempt the git action again.</p></li>
 </ol>
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="apppwd" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>This used to be an <a class="reference external" href="https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/">App Password</a>, but they are being phased out as of 2025.</p>
+</aside>
 </section>
 </section>
 </section>
@@ -655,7 +669,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-app-password-or-pat">Creating an App Password (or PAT)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-api-token-or-pat">Creating an API Token (or PAT)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-errors">Possible errors</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
 </ul>

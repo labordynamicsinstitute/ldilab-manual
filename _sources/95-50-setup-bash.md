@@ -17,6 +17,13 @@ Open up a VS Code window as follows:
 code $HOME/.bashrc
 ```
 
+````{margin}
+```{note}
+If this does not work (you get an error), you may need to install the `code` command in your Path. See  [instructions for MacOS](https://code.visualstudio.com/docs/setup/mac#_launch-vs-code-from-the-command-line). For Windows, there is an option during installation to "Add to PATH". After installation, on both operating systems, open **VS Code**, then press `Ctrl+Shift+P` (or `Cmd+Shift+P` on MacOS) and type "Shell Command: Install 'code' command in PATH" and select it. (You may need to restart your terminal or your computer for this to take effect.) On most Linux distributions, this is not necessary.   
+```
+````
+
+
 - copy the above exactly as shown. There is a "dot" before the word "`bashrc`".
 
 :::{warning}

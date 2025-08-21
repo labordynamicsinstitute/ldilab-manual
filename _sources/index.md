@@ -1,5 +1,6 @@
 
-<div class="big-title">LDI Replication Lab - THE Manual</div>
+<div class="bigger-title">LDI Replication Lab</div>
+<div class="big-title">THE Manual</div>
 
 # Introduction
 
