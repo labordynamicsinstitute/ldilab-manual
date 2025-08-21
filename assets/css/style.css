@@ -105,3 +105,12 @@ background-color: #f8afaf;
 #citationLink {
     margin-bottom: 1em;
 }
+
+
+.big-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
