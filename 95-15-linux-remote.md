@@ -255,7 +255,7 @@ ICPSRNUM=123456
 /programs/bin/util/7z x -O${ICPSRNUM} ${ICPSRNUM}.zip
 ```
 
-(which is the equivalent to the zip command `zip -n ${ICPSRNUM} -d ${ICPSRNUM}). The first option (`-O`) is an upper-case letter `O`, not zero.
+(which is the equivalent to the zip command `zip -n ${ICPSRNUM} -d ${ICPSRNUM}`). The first option (`-O`) is an upper-case letter `O`, not zero.
 
 :::
 
@@ -293,6 +293,19 @@ To be completed.
 
 
 Finally, you will want to start the SSH-agent. The following [website](https://interworks.com/blog/2021/09/15/setting-up-ssh-agent-in-windows-for-passwordless-git-authentication/) explains how to do so. You will likely need admin privileges on your laptop.
+
+First, as admin in a PowerShell:
+
+```powershell
+Get-Service ssh-agent | Set-Service -StartupType Automatic -PassThru | Start-Service
+```
+
+Then either reboot, or start the service
+
+```powershell
+start-ssh-agent.cmd
+```
+
 
 
 ::::

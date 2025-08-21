@@ -3,12 +3,34 @@
 
 In this section, we will show you a few things related specifically to running code reproducibly with Python and Jupyter notebooks. . For more general debugging tips for Python and other computer languages, see [our wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Python-Tips).
 
+## Python package installation
+
+Most systems will have the standard Python package installer `pip` already installed, so you should be able to use it.
+
+:::{admonition} If `pip` is not available...
+:class: dropdown
+
+Should for some reason `pip` not be installed, you can install `pip` into your user library using the procedures outlined at <https://pip.pypa.io/en/stable/installation/#ensurepip>. In a nutshell, for Linux
+
+```bash
+python -m ensurepip --upgrade
+```
+
+should work.
+
+:::
+
 
 ## Best practice to reproduce a Python paper (Python environments)
 
 You should create a Python environment that is dedicated to the project. See [Anaconda instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) as one possible method, [venv](https://docs.python.org/3/library/venv.html) as another one, though others exist.
 
-Here's `venv` version in a nutshell ([full guide](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment))
+### Native Python `venv`
+
+
+Here's `venv` version in a nutshell ([full guide](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment)). Open up a shell.
+
+
 
 - Ensure `venv` exists:
 ```
@@ -42,13 +64,57 @@ To deactivate:
 deactivate
 ```
 
+### Anaconda method
+
+::::{admonition} On Windows, use `Anaconda Powershell Prompt` or `Anaconda Prompt`
+:class: dropdown
+
+![Windows Anaconda Prompt](images/ccss-anaconda-shell.png)
+:::: 
+
+::::{admonition} On BioHPC
+:class: dropdown
+
+Follow instructions [at BioHPC](https://biohpc.cornell.edu/lab/userguide.aspx?a=software&i=574#c) on how to install `miniconda` in your home directory, then add the line
+
+```bash
+source $HOME/miniconda3/bin/activate
+```
+
+at an appropriate location in the code (for instance, replacing `module load conda` in the SLURM batch file), or interactively.
+
+::::
+
+
+In the shell of your choice, run
+
+```bash
+conda create -n (your_env_name) 
+```
+
+where ideally, `(your_env_name)` is the name of the JIRA issue, in **lower case** (e.g., `aearep-123`).
+
+Then, activate the environment:
+
+```bash
+conda activate (your_env_name)
+```
+
+To deactivate, run
+
+```bash
+conda deactivate
+```
+
+
+
+
 
 ## Making Python code dynamic
 
-In general, Python code should not have hard-coded paths. Python programs are aware of their own location, and other directories should be relative to that. However, some authors may still follow (econ-specific) norms, and hard-code paths. 
+In general, Python code should not have hard-coded paths. Python programs are aware of their own location, and other directories should be relative to that. However, some authors may still follow (econ-specific) norms, and hard-code paths. Similar to our approach for [Stata](stata-step4-modifying-paths), [R](base-root-directory-r), and MATLAB, you can use the `rootdir` principle to make the code more portable/dynamic.
 
 In that case, do the following:
-
 
 Say the author has code like
 
@@ -69,6 +135,14 @@ Then, wherever the hard-coded path appears, replace it with:
 ```python
 xlsread(os.path.join(rootdir,'data.xlsx'))
 ```
+
+Alternatively, if the author uses a change of working directory, then 
+
+```python
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+```
+would change the working directory to the location of the file being run. 
 
 ## Installing packages
 
@@ -123,15 +197,6 @@ If using the default "Jupyter" link in the Start Menu, the working directory won
 
 ![Step 4](images/Jupyter_howto_step4.png)
 
-### Conda on BioHPC
-
-If a replication package uses `conda` for package management, rather than `pip`, follow instructions [at BioHPC](https://biohpc.cornell.edu/lab/userguide.aspx?a=software&i=574#c) on how to install `miniconda` in your home directory, then add the line
-
-```bash
-source $HOME/miniconda3/bin/activate
-```
-
-at an appropriate location in the code (for instance, replacing `module load conda`).
 
 
 ## Running Jupyter Notebooks
@@ -158,17 +223,19 @@ If you have a LaTeX installation, you can convert the notebook to a PDF using th
 
 ```bash
 # requires a latex installation
-pip install nbconvert
-jupyter nbconvert --to notebook --execute mynotebook.ipynb
-juptyer nbconvert --to pdf                mynotebook.ipynb
+pip install nbconvert ipykernel
+jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to notebook  \
+  --inplace --execute mynotebook.ipynb
+jupyter nbconvert --to pdf                mynotebook.ipynb
 ```
 
 Alternatively, you can convert the notebook to a PDF more closely resembling the HTML view using the following command:
 
 ```bash
-pip install nbconvert
+pip install nbconvert ipykernel
 pip install pyppeteer
-jupyter nbconvert --to notebook --execute mynotebook.ipynb
+jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to notebook \
+  --inplace --execute mynotebook.ipynb
 jupyter nbconvert --to webpdf --allow-chromium-download mynotebook.ipynb
 ```
 

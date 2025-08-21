@@ -9,30 +9,30 @@ In essence, these instructions show how to deal with the three most common actio
  2. Installing user-written functions, programs, or packages that are necessary to do computations and produce tables/figures.
  3. Creating .log files (files that record, in this case, Stata output) of the replication attempts.
 
-## Step 1: check for a "master" .do file
+## Step 1: check for a "main" .do file
 
-```{admonition} **[ACTION]** Check the README or the repository and determine if a master .do file was provided.
+```{admonition} **[ACTION]** Check the README or the repository and determine if a main .do file was provided.
 
 
-A master .do file is a Stata script that will call, in the correct sequence, all the programs necessary to construct analysis datasets, do all computations, and produce figures and tables. If a master do file exists, it should be mentioned in the README. In most cases, running a single master do file is sufficient to complete the reproduction. In general, a master script does not need to be a .do file. However, we will focus on cases where all work done in Stata is reduced to executing a single .do file.
+A main .do file is a Stata script that will call, in the correct sequence, all the programs necessary to construct analysis datasets, do all computations, and produce figures and tables. If a main do file exists, it should be mentioned in the README. In most cases, running a single main do file is sufficient to complete the reproduction. In general, a main script does not need to be a .do file. However, we will focus on cases where all work done in Stata is reduced to executing a single .do file.
 ```
 
-### When a master .do file is provided
+### When a main .do file is provided
 
-If there is a master do file, continue with [Step 2](Step2).
+If there is a main do file, continue with [Step 2](Step2).
 
 (create-master)=
-### When a master .do file is not provided
+### When a main .do file is NOT provided
 
-```{admonition} **[ACTION]** If a master .do file is not provided, you should create a one. 
+```{admonition} **[ACTION]** If a main .do file is not provided, you should create a one. 
 
-Identify all the programs (do files) that need to be run, and create a master file. This is easy!
+Identify all the programs (do files) that need to be run, and create a main file. This is easy!
 
 ``` 
 
 To create a do file follow the following steps:
 
-1. Check that the README for specific instructions about the order in which each program is supposed to be run. If there are no such instructions, or they are not obvious by the name of the programs, is probably best to not create a master do file.
+1. Check that the README for specific instructions about the order in which each program is supposed to be run. If there are no such instructions, or they are not obvious by the name of the programs, is probably best to not create a main do file.
 
 2. Assuming that the sequence of programs is clear to you, open stata and click on the "New do file editor" (you can also work on Visual Studio Code):
 
@@ -60,20 +60,20 @@ do "${rootdir}/code/appendix_code/appendix.do"
 
 ```
 
-5. Save your master file.
+5. Save your main file.
 
-At the end your master .do file may look like this:
+At the end your main .do file may look like this:
 
-![master](images/master-example.png)
+![main](images/master-example.png)
 
-With your master do file done, continue with [Step 2](Step2).
+With your main do file done, continue with [Step 2](Step2).
 
 (Step2)=
-## Step 2: place config.do where the master .do file is located 
+## Step 2: place config.do where the main .do file is located 
 
 :::{admonition} **[ACTION]** Copy the  [`template-config.do`](https://github.com/AEADataEditor/replication-template/blob/master/template-config.do) to the right location.
 
-You should copy it (using Windows actions, or command line) and paste it into the folder where the master file is located. Change the name from `template-config.do` to `config.do`
+You should copy it (using Windows actions, or command line) and paste it into the folder where the main file is located. Change the name from `template-config.do` to `config.do`
 
 ::: 
 
@@ -81,15 +81,15 @@ The folder with the code, whether is the root directory or a subfolder, should l
 
 ![Code_Repository](images/code_repo.png)
 
-## Step 3: include config.do in the master .do file
+## Step 3: include config.do in the main .do file
 
-:::{admonition} **[ACTION]** Add a call to the `config.do` file in the master .do file.
+:::{admonition} **[ACTION]** Add a call to the `config.do` file in the main .do file.
 
-Open the master .do file. In the beginning, add the line to include the `config.do`.
+Open the main .do file. In the beginning, add the line to include the `config.do`.
 
 :::
 
-(You already did this if you created a master .do file in [Step 1](create-master).)
+(You already did this if you **created** a main .do file in [Step 1](create-master).)
 
 ```
 1 include "config.do"
@@ -99,11 +99,25 @@ Open the master .do file. In the beginning, add the line to include the `config.
 
 > Save.
 
-More information about `config.do` can be found in "[Using Config.do](using-config-do)".
+- In some cases, authors will have code at the start of their dofile that does "housekeeping", for example
+
+```
+	* Housekeeping
+		cap log close		
+		set more off
+		clear all
+		estimates drop _all
+		eststo clear	
+		macro drop _all
+```
+
+In this case, you should add `include "config.do"` **after** such commands, to avoid problems. Technically, the command `clear all` undoes many of the settings that our `config.do` does.
+
+## Step 4: Modify config.do
 
 :::{note}
 
-In summary, `config.do` does 4 things:
+`config.do` does 4 things:
 
 - Creates a global variable called "rootdir" with the local path to the root directory.
 - Creates a logs files.
@@ -114,23 +128,28 @@ In summary, `config.do` does 4 things:
 
 A crucial function of `config.do` is that it allows for the local installation of Stata packages, which is important for two reasons. First, it will enable us to check for the completeness of replication materials. Second, when running code in servers, we often do not have the necessary permissions to install Stata packages freely.`config.do` allow us to installed packages in the replication directory.  
 
-## Step 4: modifying paths if necessary
+
+More information about modifying `config.do` can be found in "[Using Config.do](using-config-do)".
+
+
+(stata-step4-modifying-paths)=
+## Step 5: modifying paths if necessary in author-provided code
 
 :::{admonition} **[ACTION]** Modify paths if necessary.
 
 - Check the Readme and determine if (and where) the root directory should be modified.
-- Open the .do file to be modified (probably the master .do file) and set the global variable `$rootdir` as the path.
+- Open the .do file to be modified (probably the main .do file) and set the global variable `$rootdir` as the path.
 - Save.
 
 :::
 
 To run the code, we need to make sure that Stata can access the locally-saved data, access the packages that will be installed, and save the output in the computer where you are running the code. To do that, we often need to change some directory paths defined in the .do files provided. This step may vary in each replication package, so you need to look at the README instructions closely. Some packages may not require any change, while others may require a little more work.
 
-However, the typical case will only require one modification, either to the master .do file or to a program called by the master .do file, where you define the path of the location of the replication package. This location is what we refer to as the "root directory". Once this change is made, the code provided (if it follows good practices) will define every other path relative to the root directory.
+However, the typical case will only require one modification, either to the main .do file or to a program called by the main .do file, where you define the path of the location of the replication package. This location is what we refer to as the "root directory". Once this change is made, the code provided (if it follows good practices) will define every other path relative to the root directory.
 
 ### Example
 
-In the author's master file, a global variable "maindir" defines the path of the root directory as:
+In the author's main file, a global variable "maindir" defines the path of the root directory as:
 
 ```
 clear all
@@ -156,106 +175,65 @@ global data "$maindir/data" // path to data folder
 global figures "$maindir/figures" // path to figures folder
 ```
 
-## Step 5: Check the location of the master .do file and modify config.do
+(modify-main_do)=
+## Step 6: Modifying the main .do file
 
-:::{admonition} **[ACTION]** Adjust the `config.do`
+:::{admonition} You may have to modify some additional code in the `main.do` file.
+:class: warning
 
-- If the master .do file is directly placed in the root directory, set the parameter `scenario` to be `B` and save. 
-- If the master .do file is inside a folder, open `config.do` and set the parameter `scenario` to `A` and save. (This is the default, so really no action is necessary.)
-- If the replication package includes a folder with Stata packages, add the line  `adopath ++` followed by the path of the location of that folder and save. See "[Using Config.do](using-config-do)" for details.
-- Add packages that need to be installed to `config.do`. See "[Using Config.do](using-config-do)" for details.
+If the `main.do`  provided by the authors contains `run` commands, you must replace them with `do`.
 
+- `run` will hide much of the output.
+- `do` will show output, in particular when code goes wrong.
 :::
 
-### Scenario A
+So if the `main.do` looks like this:
 
-A simplified directory structure that correspond to scenario "A" look like this:
+```stata
+***************************
 
+run "${do}/2_transform_data.do"
+
+****************************************
+* 3 * Append Denmark, Norway, Finland and Sweden
+* depends on the previous step
+****************************************
+
+run "${do}/3_appending.do"
+
+****************************************
+* 4 * Prepare the data for the ridgeline plots and maps
+* depends on the previous step
+****************************************
+
+run "${do}/4_ridgeline_prep.do"
 ```
- directory/
-              code/
-                 main.do
-                 01_dosomething.do
-              data/
-                 data.dta
-                 otherdata.dta
+(etc.), then you must modify it so it looks like this:
 
-```
+```stata
+***************************
 
-:::{admonition} Example
+do "${do}/2_transform_data.do"
 
-- A Master .do file is  inside a folder and you have placed `config.do` in that same folder. The package `estout` needs to be installed:
+****************************************
+* 3 * Append Denmark, Norway, Finland and Sweden
+* depends on the previous step
+****************************************
 
-```
-* Template config.do */
+do "${do}/3_appending.do"
 
-local scenario "A" 
-* *** Add required packages from SSC to this list ***
-local ssc_packages "estout ivreg2"
-    // Example:
-    // local ssc_packages "estout boottest"
-    // If you need to "net install" packages, go to the very end of this program, and add them there.
-```
+****************************************
+* 4 * Prepare the data for the ridgeline plots and maps
+* depends on the previous step
+****************************************
 
-:::
-
-### Scenario B
-
-A simplified directory structure that correspond to scenario "B" looks like this:
-
-```
- directory/
-        main.do
-        scripts/
-             01_dosomething.do
-        data/
-             data.dta
-             otherdata.dta
+do "${do}/4_ridgeline_prep.do"
 ```
 
-
-### Scenario C
-
-Sometimes, we encounter Scenario C, which adds an additional level. A simplified directory structure that correspond to scenario "C" looks like this:
-
-```
-directory/
-	    step1/
-            scripts/
-                main.do
-                01_dosomething.do
-        step2/
-	        scripts/
-	            othermain.do
-		        01_analysis.do
-        data/
-            data.dta
-            otherdata.dta
-```
-
-Note: you would place the `config.do` in **all** directories that have some sort of `main.do`. 
-
-:::{admonition} Example
-
-
-- A Master .do file is in the main directory, and you have placed `config.do` in the main directory. The package `estout` and `ivreg2` need to be installed:
-
-
-```
-/* Template config.do */
-
-local scenario "B"  // around line 30
-*** Add required packages from SSC to this list ***
-local ssc_packages "estout ivreg2"
-    // Example:
-    // local ssc_packages "estout boottest"
-    // If you need to "net install" packages, go to the very end of this program, and add them there.
-```
-
-:::
+Save it, and proceed to the next step.
 
 (right-click-stata)=
-## Step 6: Run the Code
+## Step 7: Run the Code
 
 
 
@@ -272,7 +250,7 @@ This option will set the working directory  to the location where the `master.do
 
 ::::
 
-::::{tab-item} Mac/Linux 
+::::{tab-item} Mac/Linux
 
 On Unix-style systems, the preferred way is to use the command line to run Stata code.
 
@@ -286,7 +264,7 @@ Open Stata on your Mac, go to the "Stata" tab at the top of your screen and clic
 :::{admonition} **BioHPC-specific setup**
 :class: dropdown
 
-On BioHPC, you need to expand your search path to find Stata. Only Stata 14 and 16 are currently available. You can then either call them directly:
+On BioHPC, you need to expand your search path to find Stata.  Stata 14, 16, and 18 are currently available. You can then either call them directly:
 
 ```
 /usr/local/stata16/stata-mp -b do main.do
@@ -302,7 +280,13 @@ stata-mp -b do main.do
 
 :::
 
-Open up a terminal in the folder where the `master.do` file is located - this may differ depending on your system, and may involve using "`cd /path/to/code`" commands. Confirm with "`ls`" that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.
+Open up a terminal in the folder where the `master.do` file is located - this may differ depending on your system, and may involve changing directory 
+
+```
+cd /path/to/code
+```
+
+Confirm with "`ls`" that you see the same files you might see in Finder / File Explorer. Refer to the command line training in the initial training.
 
 Identify which Stata version you have installed (some systems have only one, some have multiple):
 
@@ -318,6 +302,47 @@ Then  type
 
 ```
 stata-mp -b do master.do
+```
+
+::::
+
+
+::::{tab-item}  Windows Double-click 
+
+In some cases, the right-click menu may not contain the `Execute (do)` option. In that case, the following workaround also works; but does not automatically exit Stata when the do file is done. Start by **double-clicking** on the `master.do` file. This should open the Stata Editor window:
+
+![Double-click Do file](images/stata-editor-window.png)
+
+Now click on the circled green triangle to run the do file. 
+
+If double-clicking the do file does not open Stata, you may need to check the `Properties` tab. Right-click on the do file and select `Properties`. In the `General` tab, you may see an option to `Change` the default program that opens the do file. You may need to choose `Choose an app from your PC`:
+
+
+![Choose app on your PC dialog](images/windows11-set-default-app.png)
+
+Then navigate to the Stata executable (e.g., `C:\Program Files\Stata18\StataMP-64.exe`) and select it:
+
+![Select Stata executable](images/windows11-set-stata18-app.png)
+
+Then click `OK` and `Apply` to save the changes. Now double-clicking the do file should open it in Stata.
+
+
+::::
+
+
+::::{tab-item} Windows terminal
+
+Instead of using the graphical "right-click" method, you can also use the command line in Windows. For `bash`, use
+
+```
+cd /path/to/code
+ /c/Program\ Files/Stata18/StataMP-64.exe -b master.do
+```
+
+For Powershell, use 
+
+```
+& 'C:\Program Files\Stata18\StataMP-64.exe' -b master.do
 ```
 
 ::::

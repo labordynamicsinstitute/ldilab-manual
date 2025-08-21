@@ -27,7 +27,7 @@ and your next call to Julia will launch 1.9.2.
 ```
 julia --project=julia16 -p 4
 ```
-should start with the project installed in `julia16` and 4 worker processes. In fact, the worker processes ignore the project packages, and the whole thing fails (see [this link](https://github.com/JuliaLang/julia/issues/28781)).
+should start with the project installed in folder `julia16` and 4 worker processes. In fact, the worker processes ignore the project packages, and the whole thing fails (see [this link](https://github.com/JuliaLang/julia/issues/28781)).
 
 Workaround:
 
@@ -36,3 +36,28 @@ export JULIA_PROJECT=julia16
 julia -p 4
 ```
 seems to work.
+
+## Importing someone else's Julia environment
+
+An author using Julia may have included `Project.toml` and/or `Manifest.toml`, which specify Julia version and dependencies. To activate this environment (one time action):
+
+```
+julia --project=project/path -e 'using Pkg; Pkg.instantiate()'
+```
+where `project/path` contains `Project.toml` and `Manifest.toml` (typically, the code directory). (more information [here](https://pkgdocs.julialang.org/v1/environments/)). 
+
+Alternatively, you can add 
+
+```julia
+using Pkg
+Pkg.instantiate()
+```
+
+at the top of the main file (if there is one), and invoke this
+
+```bash
+export JULIA_PROJECT=project/path
+julia -p 4 main.jl
+```
+
+In many cases, `project/path` will be `.`, i.e., `main.jl` and the TOML files are in the same directory.

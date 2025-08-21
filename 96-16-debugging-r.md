@@ -127,3 +127,104 @@ if ( !file.exists(Sys.getenv("R_LIBS_USER") ) ) {
 but see about the correct setting for `r["CRAN"]` [here](#package-dependency---if-you-want-to-use-an-earlier-version-of-a-package)
 
 
+## 'lib = "/usr/lib64/R/library"' is not writable
+
+You will probably see this error on Linux, but possibly on Windows as well, when running a package installation command (`install.packages()`) for the first time ever for a particular version of R on that system. The reason is that the first time around, R will need to create a directory in your space, but cannot do so automatically, as it needs permission. 
+
+The solution is to run the same version of R, on that system, interactively. 
+
+```bash
+R
+>
+```
+
+You can then install any package, though an excellent choice are `here` and `renv`:
+
+```R
+install.packages(c("here","renv"))
+```
+
+You will then be prompted to create a personal library, because the system library is not writable:
+
+```R
+install.packages(c("here","renv"))
+Warning in install.packages(c("here", "renv")) :
+  'lib = "/usr/lib64/R/library"' is not writable
+Would you like to use a personal library instead? (yes/No/cancel)
+```
+
+You should now say "yes". 
+
+```
+Would you like to create a personal library
+‘/home/vilhuber/R/x86_64-suse-linux-gnu-library/4.2’
+to install packages into? (yes/No/cancel)
+```
+
+You should say yes again. You **may** then be asked
+
+```
+--- Please select a CRAN mirror for use in this session ---
+```
+
+Select a CRAN mirror (`0-Cloud [https]` is a good choice), and proceed. R will then install the packages and their dependencies. 
+
+:::{note}
+
+However, in doing so, it also created `/home/vilhuber/R/x86_64-suse-linux-gnu-library/4.2`, which now exists. You should now go back to the original code you were running, and run it again, it should work.
+
+:::
+
+Exit R, and proceed as above:
+
+```R
+> q()
+Save workspace image? [y/n/c]: n
+```
+
+## rJava Issues
+
+Below you will find details of a rJava error and how it was resolved.
+
+### rJava Installation Error
+
+```
+Error: Error installing package 'rJava': 
+=================================
+* installing *source* package 'rJava' ...
+** package 'rJava' successfully unpacked and MD5 sums checked
+** using staged installation
+Generate Windows-specific files (src/jvm-w32) ...
+make: Entering directory '/c/.../Temp/RtmpUVjaDY/renv-package-new-13b84f6a7cd0/rJava/src/jvm-w32'
+dlltool --as as  --input-def jvm64.def --kill-at --dllname jvm.dll --output-lib libjvm.dll.a
+gcc  -O2 -c -o findjava.o findjava.c
+gcc  -s -o findjava.exe findjava.o
+make: Leaving directory '/c.../Temp/RtmpUVjaDY/renv-package-new-13b84f6a7cd0/rJava/src/jvm-w32'
+Find Java...
+ERROR*> JavaSoft\{JRE|JDK} can't open registry keys.
+ERROR: cannot find Java Development Kit.
+  Please set JAVA_HOME to specify its location manually
+ERROR: configuration failed for package 'rJava'
+* removing 'L:/Workspace/aearep-XXXX/123456/renv/library/windows/R-4.4/x86_64-w64-mingw32/.renv/1/rJava'
+install of package 'rJava' failed [error code 1]
+```
+
+### Potential Resolutions
+
+The resolutions specified here are only suitable for Windows systems like CCSS-Cloud. For Linux, we will create documentation as we encounter and resolve errors.
+
+First, confirm whether azulJava files are present in the locations specified in the examples below. They won't be on all systems. If you find the files then, at the beginning of the R script, place the following:
+
+```
+Sys.setenv(JAVA_HOME='L:\\common\\azulJava\\jdk\\jre')
+install.packages("rJava")
+library(rJava)
+```
+
+If that doesn't work, try:
+
+```
+Sys.setenv(JAVA_HOME = "L:/common/azulJava/jdk")
+install.packages("rJava")
+library(rJava)
+```

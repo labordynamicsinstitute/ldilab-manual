@@ -6,9 +6,9 @@ In the JMS, the Data Editor is set up as a reviewer who can be assigned during t
 
 **Permissions**
 
-- submitters needs password to ScholarOne (Lars shares via [LastPass](https://it.cornell.edu/faculty-password-mgmt-staff-students/sign-cornell-lastpass-account))
+- [ ] submitters needs password to ScholarOne (**Data Editor** shares via [LastPass](https://it.cornell.edu/faculty-password-mgmt-staff-students/sign-cornell-lastpass-account))
    - Then you'll need to install the web browser extension for whichever browser you use ([Chrome](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/), etc).
-- submitters need permissions on openICPSR (Lars requests from openICPSR)
-- submitters need `Publisher` permission on Jira (can be set in Project -> Settings -> People in Jira)
+- [ ] submitters need permissions on openICPSR (Data Editor or **Assistant** requests from openICPSR)
+- [ ] submitters need `Publisher` permission on Jira (**Assistant** can  set in [Project -> Settings -> People](https://aeadataeditors.atlassian.net/plugins/servlet/project-config/AEAREP/people)   in Jira)
 
 ```

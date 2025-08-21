@@ -59,13 +59,49 @@ If there is an overlapping `CA` case, the next steps depend on what updates the 
 1. Fill out the **Summary section** of the report.
    - Start with a thank you, and a positive note: Highlight the merits of the replication i.e. how many figures/tables were replicated, if data citations were properly completed, etc. 
    - Add a template line with the proposed resolution. These are at the top of the [sample-language-report.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md).
-1. (Re)generate the PDF of the report.
-   - Use MarkdownPDF package if you are using Visual Studio Code
-   - Use a script: [`aeaready`](https://github.com/AEADataEditor/editor-scripts) creates the PDF from the REPLICATION.md, crafts the commit message and pushes it to the repository.  It requires additional pieces of software that are noted in the link.
+1. Commit the report.
+   - Use standard `git commands`: `git commit -m "Pre-approval of replication report" -a` followed by `git push`
+   - Alternatively, use a script: [`aeaready [JIRAISSUE] pre nopdf`](https://github.com/AEADataEditor/editor-scripts) will create the right commit message, and push as soon as you hit enter. If you are on a computer that can create the PDF (some Linux and some MacOS systems), dropping the `nopdf` part will also create the PDF.
 1. Select a recommendation on the `Other links` tab of the JIRA ticket (see [Choosing a Recommendation](choosing-recommendation))
    - If this is a `RR`, choose a recommendation in the `MCRecommendation` field.
    - If this is a `CA`, choose a recommendation in the `MCRecommendationV2` field.
-1. Commit and push all changes to the repository.  Advance the JIRA ticket to "Pre-approved."  The pre-approval is now complete!
+1.  Advance the JIRA ticket to "Pre-approved."  The pre-approval is now **complete!**
+
+## External Reproducibility Reports
+
+In cases where an external reproducibility check was completed (e.g., CASCAD, World Bank), the following steps must be taken during pre-approval to ensure proper documentation and integration.
+
+1. **Verify the "External Validation" checkbox is selected** in the JIRA ticket. 
+
+2. **Ensure that the external report is included in the repository.** It must be part of the final deposit and not just attached to JIRA or email.
+
+3. **Ensure no section titles from our `REPLICATION.md` template report are deleted.** The internal report must maintain its structure even when referencing external work.
+
+4. In any section of the internal report where the external replicator's work applies, include a pointer such as:
+
+   > “Please refer to the external report below.”
+
+5. **Review the external report.** Identify any bugs or discrepancies and ensure they are recorded in the **Summary** and **Findings** sections of the internal `REPLICATION.md`.
+
+6. **Add appropriate `[REQUIRED]` or `[SUGGESTED]` Action Item tags** corresponding to the issues found in the external report.
+
+7. **Generate a PDF of the internal `REPLICATION.md` report** and name it: `REPLICATION_internal.md`.
+
+8. **Append the external report PDF** (as received) to the internal report.
+
+9. **Save the combined file as:** `REPLICATION.md` and convert it to a PDF. 
+
+10. **Commit both files to the Git repository:**
+ - `REPLICATION_internal.md`
+ - `REPLICATION.pdf`
+---
+
+### Important Notes
+
+- **Do not delete the external report.** The combined `REPLICATION.pdf` serves as the official record.
+- The external report must be **included at the end of** the final `REPLICATION.pdf`.
+- This procedure applies to all external reproducibility checks. 
+
 
 :::{note}
 The pre-approver should reach out to the original replicator for clarifications should there be any confusions during the course of pre-approving the report.  If bugs in the code seem trivial i.e. missing packages, missing `Results` directory, replicator cannot find output etc., the pre-approver should reach out to the original replicator for further clarification.

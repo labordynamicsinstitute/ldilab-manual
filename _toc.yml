@@ -15,7 +15,9 @@ parts:
         - file: 02-03-toolkit
   - caption: Basics
     chapters:
-    - file: 04-concepts
+    - file: 04-01-concepts
+    - file: 04-02-reproducible-practices
+    - file: 04-03-readme-template
     - file: 05-data-citations-and-das
     - file: 06-basic-flow
     - file: 07-basic-assessing-reproducibility
@@ -33,8 +35,10 @@ parts:
       - file: 11-07-workflow-writing-report
       - file: 11-08-report-completed
     - file: 12-jira-revision-guidance
+    - file: 00-meetings
   - caption: Advanced AEA-related tasks
     chapters:
+    - file: 20-checking-unassigned-tickets
     - file: 13-approving-issues
       sections:
       - file: 13-1-approving-issues-original
@@ -44,7 +48,8 @@ parts:
       sections:
       - file: 31-jira-openicpsr-setup
       - file: 32-jira-submitting
-      - file: 33-openicpsr-preparing
+      - file: 33-jira-delete-nda-data
+      - file: 34-openicpsr-preparing
     - file: 50-openicpsr-related-tasks
       sections:
       - file: 51-openicpsr-monitoring-pending
@@ -66,15 +71,24 @@ parts:
       - file: 96-11-using-config-r
       - file: 96-12-running-r-code
       - file: 96-14-r-on-biohpc
-      - file: 96-15-debugging-r
+      - file: 96-15-r-from-other
+      - file: 96-16-debugging-r
     - file: 96-20-using-matlab
+      sections:
+      - file: 96-21-using-config-matlab
+      - file: 96-22-running-matlab-code
+      - file: 96-23-dynare-matlab
+      - file: 96-24-debugging-matlab
     - file: 96-30-running-python-jupyter
     - file: 96-40-using-julia
     - file: 96-50-using-docker
       sections:
       - file: 96-51-docker-windows
     - file: 96-70-using-mathematica
-    - file: 96-80-using-ox
+    - file: 96-80-sundry
+      sections:
+      - file: 96-81-using-ox
+      - file: 96-82-installing-add-ons
   - caption: Sundry other guidance
     chapters:
     - file: 71-External-reproducibility-checks
@@ -94,6 +108,7 @@ parts:
       - file: 94-01-how-to-use-openICPSR-backend
       - file: 94-02-alternate-downloads
       - file: 94-03-private-data
+      - file: 94-05-globus-transfers
       - file: 94-04-Updating_Materials
     - file: 95_Access_to_computers
       sections:
@@ -108,6 +123,20 @@ parts:
       sections:
       - file: 97-01-Bitbucket-authentication
       - file: 97-02-openicpsr-authentication
+    - file: 96-90-00-useful-scripts
+      sections:
+      - file: 96-90-advanced_pdf_extractor
+      - file: 96-90-download_box_private
+      - file: 96-90-download_dv
+      - file: 96-90-download_openicpsr-private
+      - file: 96-90-download_osf
+      - file: 96-90-download_zenodo_draft
+      - file: 96-90-download_zenodo_public
+      - file: 96-90-generate_png_diff
+      - file: 96-90-matlab_convert_fig
+      - file: 96-90-matlab_convert_mat2csv
+      - file: 96-90-mk_tex_table
+      - file: 96-90-sync-codeocean
     - file: 98-00-sundry-correspondence
       sections:
       - file: 98-01-correspondence-legacy-updates

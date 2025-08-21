@@ -46,9 +46,15 @@ Please note that anything saved in the C drive (Documents, Desktop, or Download 
 
 Please be sure to follow all instructions, in particular the ones about mapping network drives. 
 
-You can connect to CCSS Cloud Computing via a **web browser** or via the a Remote Desktop (RDP) client. Note that for some strange reason, Windows users need to use a DIFFERENT RDP client than the one that comes with their system (and used for CCSS classic). See the [instructions provided by CCSS](https://cornellprod-my.sharepoint.com/:f:/g/personal/cd642_cornell_edu/EvxDKmDjZyZBsrQvimUR8xABE4x6TYDenmLOY8ZFMLRjUw) and [this link at Microsoft](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients) for the right client for your laptop's OS. Web browser instructions are below, for convenience.
+You can connect to CCSS Cloud Computing via a **web browser** or via the a Remote Desktop (RDP) client. Note that for some strange reason, Windows users need to use a DIFFERENT RDP client than the one that comes with their system (and used for CCSS classic). See the [instructions provided by CCSS](https://socialsciences.cornell.edu/computing-and-data/cloud-computing-solutions/account-instructions?toptab=login_instructions) and [these older instructions](https://cornellprod-my.sharepoint.com/:f:/g/personal/cd642_cornell_edu/EvxDKmDjZyZBsrQvimUR8xABE4x6TYDenmLOY8ZFMLRjUw), as well as [this link at Microsoft](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients) for the right client for your laptop's OS. Web browser instructions are below, for convenience.
 
-- Open the latest version of a web browser (Chrome, Safari, Firefox or Edge). · Go to following link: [https://client.wvd.microsoft.com/arm/webclient/](https://client.wvd.microsoft.com/arm/webclient/) (V1) or the newer one [https://client.wvd.microsoft.com/arm/webclient/v2/index.html](https://client.wvd.microsoft.com/arm/webclient/v2/index.html) (V2)
+- Open the latest version of a web browser (Chrome, Safari, Firefox or Edge). · Go to following link: <https://windows365.microsoft.com/ent#/devices>.
+
+:::{admonition} If those fail...
+:class: dropdown
+use the [https://client.wvd.microsoft.com/arm/webclient/](https://client.wvd.microsoft.com/arm/webclient/) (V1) client or the newer one [https://client.wvd.microsoft.com/arm/webclient/v2/index.html](https://client.wvd.microsoft.com/arm/webclient/v2/index.html) (V2)
+
+:::
  
 - Sign into Microsoft with your regular Cornell University email and password. 
   -  Cornell email address. Ex: jrg363@cornell.edu
@@ -146,7 +152,7 @@ Please note that anything saved in the C drive (Documents, Desktop, or Download 
 
 :::{admonition} IP Address
 
-**128.84.8.93**
+**128.84.40.156**
 
 :::
 
@@ -188,6 +194,8 @@ It is important to **sign out** when you do NOT have jobs running. When you no l
 - Select 'Sign out'
 
 ![Signout](images/ccss-cloud-signout-2.png)
+
+:::
 
 :::{tab-item} Old method
 

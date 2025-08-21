@@ -4,10 +4,13 @@
 ## Pre-requisites (JIRA)
 
 
-:::{admonition} One-time administrative setup
+:::{admonition} One-time administrative setup (permissions)
 :class: dropdown
 
-- [ ] (Administrator for Project) needs to [add user](https://aeadataeditors.atlassian.net/plugins/servlet/project-config/AEAREP/people) to `Assessor` group. 
+- [ ] assessors need to be in the `Assessor` group (**Assistant** can  set in [Project -> Settings -> People](https://aeadataeditors.atlassian.net/plugins/servlet/project-config/AEAREP/people)   in Jira)
+- [ ] assessors need permissions on openICPSR (Data Editor or **Assistant** requests from openICPSR)
+
+```
 
 :::
 
@@ -39,6 +42,10 @@ If you are the RA tasked with this, these are your instructions.
 
 - A good place to start in this process is to go to the openICPSR deposit (fields [`Replication package URL`] or [`openICPSR alternate URL`]) 
 - First, verify the **date** of the last request made to the author, in the "Project Communication Log" area. The Project Communication log always contains our request to the authors, and may contain subsequent responses from the author.
+
+While checking the Communication Log, look for any uploaded response letters from the authors. If a response letter is attached there, download it and attach it to the corresponding Jira ticket, so we have a complete record in one place.
+
+Now open the project log: click "View Log", just below "Share Project" and "Change Owner."
 
 ![Communication Log area](images/pending_openicpsr_com.png)
 
@@ -112,9 +119,9 @@ Except in extremely rare cases, do **not** re-run code.
 
 *[REQUIRED] As specified in the Policy and the DCAF, the README shall follow the schema provided by the Social Science Data Editors'template README. **Incomplete**- They added computational requirements but are missing Statement About Rights*
 
-  - For each change, you should make a note of what problem was addressed. For instance, if the "Reason for incomplete reproducibility" notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box "Bugs in code"
+  - For each change, you should make a note of what problem was addressed. For instance, if the "Reason for incomplete reproducibility" notes that the code contained fixable bugs, and the authors have made the changes noted in the report, then you will want to  uncheck the box "Bugs in code".
   - You can find the "Reasons for incomplete reproducibility" in the "Repl. info" tab in the Jira ticket, or in the popup when moving from `Assess openICPSR changes` to `Pending publication` at the end of this process.
-  - Check that the deposit doesn't have any extraneous files (Manuscript PDFs, Response to the Editor PDF, etc). If there are these files, note this on the Jira comment, tagging the senior members of the lab. Authors must remove these files. If in doubt, check with senior members.
+  - Check that the deposit doesn't have any extraneous files (Manuscript PDFs, Response to the Editor PDF, files with tildes (`~_readme.doc`, ...) etc). If there are these files, note this on the Jira comment, tagging the senior members of the lab. Authors must remove these files. If in doubt, check with senior members.
   - **Check that the deposit is "Submitted" status**. 
   
 
@@ -135,11 +142,13 @@ Inspect the code, in particular the changes made to the code (see `Commits` tab 
 
 Some tags may not have a clear resolution just by scrutinizing the deposit, because they may have been handled in the copy-editing process and adjustments to the manuscript, which we (the Data Editor team) do not observe. All tags that appear in the "Action Items (manuscript)" section are communicated by the copy-editing team to the authors, so we **assume** that they will be handled there. Here are a few tags that fall into that category:
 
-- "[REQUIRED] Please adjust your tables to account for the noted numerical discrepancies, or explain (in the README) discrepancies that a replicator should expect". If the README makes no mention of this, then you will need to assume that this was handled by adjusting the manuscript or (online) appendix. Add the following note:
+- "[REQUIRED] Please adjust your tables to account for the noted numerical discrepancies, or explain (in the README) discrepancies that a replicator should expect".
 
-> **Not done**. Not addressed in the README, we assume that the online appendix and manuscript will be updated.
+If the README makes no mention of this, and there is no mention in the Project Communication Log, then you will need to assume that this was handled by adjusting the manuscript or (online) appendix. Add the following note:
+
+> **Not verifiable by us**. Not addressed in the README or code, we assume that the online appendix and manuscript will be/has been updated.
 >
-> 
+ 
 
 
 ::::
@@ -151,10 +160,26 @@ Some tags may not have a clear resolution just by scrutinizing the deposit, beca
   - - See if the reason for non-compliance (usually mentioned in the report, and at least in the comments) is resolved, **consult with the Data Editor**, then uncheck that box.
   - If the deposit is **not** in "Submitted" status, choose the appropriate variant of the **Signoff** message.
 
+### Verifying if Deposit was marked Restricted
+
+In some cases, authors will have checked a few boxes (see [Guidance]()) that lead to the deposit being marked as **Restricted**. In almost all cases, this is in error. 
+
+![Restricted deposit](images/openicpsr-restricted.png)
+
+You must immediately notify the Data Editor's assistant, who will contact the authors to clarify. 
+
+::::{warning}
+
+Do not sign off on a deposit when it is marked as **restricted** unless instructed to do so.
+
+::::
+
+
 ### Reporting Insufficient Changes to the Authors
 
 - If, in your review, you find that not all changes have been made, or it is unclear whether or not certain changes are acceptable/sufficient, please reach out to the assistant to the Data Editor with a comment on the Jira ticket outlining your question.
-- These cases are not always cut and dry, please err on the side of caution and ask questions before posting a "final acceptance" message on the deposit.
+- These cases are not always cut and dry, please err on the side of caution and ask questions before posting a "final acceptance" message on the deposit, or before requesting additional changes from the authors.
+- Do not include any `[SUGGESTED]` items in the response. We only suggest **once**, in the original report. If the only items not completed are `[SUGGESTED]` items, the deposit is accepted.
 - **If you are certain that items are incomplete** and theres 3 or less action items remaining:
   - Go back into openICPSR and "Change status" -> "Request Revisions". Then input the message:
   ```
@@ -162,7 +187,7 @@ Some tags may not have a clear resolution just by scrutinizing the deposit, beca
   
   ```
 
-  - Then paste only the incomplete action items (along with the reason we consider this incomplete).
+  - Then paste only the incomplete `[REQUIRED]` action items (along with the reason we consider this incomplete), ignore any `[SUGGESTED]`  items.
 - **If you are certain that items are incomplete** and theres more than 3 action items remaining:
   - Go back into openICPSR and "Change status" -> "Request Revisions". Then input the message:
   ```

@@ -1,6 +1,20 @@
 (tricky-stuff)=
 # Technical issues
 
+## What are EPS files?
+
+Some authors have the code write out `.eps` files. These are "[Encapsulated PostScript](https://en.wikipedia.org/wiki/Encapsulated_PostScript)" files. In principle, Adobe Acrobat should be able to conver them, but they cannot be included in the `REPLICATION.md` file, nor can they easily be viewed.
+
+Since October 2024, we have a pipeline script that can help you. 
+
+- First, be sure to `git add` all EPS files, then `git commit` them, followed by `git push`.
+- Go to the `Pipeline` tab in Bitbucket for your repository, and 
+	- choose the `6-convert-eps-pdf` pipeline. 
+	- enter the `openICPSRID` that is being used (this field can also handle a deeper directory, such as `openICPSRID/replication_package`, but you will rarely need to use this).
+	- by default, the pipeline will only convert `.eps` to `.png`, but you can also select `yes` in the `ProcessPDF` field if you need PDF files.
+
+This will convert all `.eps` files, and create `.png` files in the same directory. You should then `git pull` in your local workspace to get the files.
+
 ## File too big - rejection by Bitbucket
 
 Bitbucket imposes a 100MB limit for files being pushed to the Git repo. This is similar to other Git services.

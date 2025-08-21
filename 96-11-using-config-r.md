@@ -71,7 +71,8 @@ create.paths <- c("logs","libraries","outputs")
 
 The `config.R` will create these directories if they do not exist, later on.
 
-### Base directory
+(base-root-directory-r)=
+### Base (root) directory
 
 The base directory (or here, `rootdir`) is the directory that contains the replication package, as intended by the author. How do you figure that out?
 

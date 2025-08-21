@@ -3,7 +3,9 @@
 
 
 ```{warning}
-In some instances, somebody else has already created a repository. Always check first if the `Bitbucket short name` is already filled out. If yes, skip this section and go to [Collecting information](collecting-information)!
+In some instances, somebody else has already created a repository. Always check first if the `Bitbucket short name` is already filled out. If it is, **do not** run the pipeline scripts again. This can overwrite or destroy changes already made by someone working on the case.
+
+If the `Bitbucket short name` is filled out, skip this section and go to [Collecting information](collecting-information)!
 ```
 
 ## Creating a repository
@@ -36,25 +38,37 @@ We will now ingest the authors' materials, and run a few statistics. Typically, 
 
 
 ```{note}
-This currently works reliably only for openICPSR. This documentation will be updated when it works for Dataverse and Zenodo as well.
+⚠️ This currently works reliably only for openICPSR. This documentation will be updated when it works for Dataverse and Zenodo as well. In the meantime, follow [Manual Steps](parta-pull-together) taking into account [repository-specific guidelines](notes-on-downloading-other-repos).
 ```
 
 ### Inspect the deposit
 
-First, click on the `openICPSR alternate URL` URL (or `Replication package URL` if it contains a DOI and the other fields are empty). Inspect the deposit.
+First, click on the `openICPSR alternate URL` URL (or `Replication package URL` if it contains a DOI and the other fields are empty). Inspect the deposit. The information may be in different locations at other repositories. 
 
-- on openICPSR, you will see the size of the deposit on the right:
+
+:::: {tab-set}
+
+::: {tab-item} openICPSR
+
+
+You will see the size of the deposit on the right:
 
 ![openICPSR size](images/openicpsr-size-filecount.png)
 
-- on Zenodo, you will see the size of the deposit on the left, below the "featured" file:
+:::
+
+::: {tab-item} Zenodo
+
+You will see the size of the deposit on the left, below the "featured" file:
 
 ![zenodo size](images/zenodo-size-filecount.png)
 
-The information may be in different locations at other repositories. 
+:::
+::::
+
 
 :::{note}
-Make a note of the size of the deposit!
+Make a note of the size of the deposit! Bitbucket pipelines have a limit of 1GB for technical reasons, but the size you see is not the size of the ZIPed download, it is the size before compression. The Zipped size is hard to predict. 
 :::
 
 (running-populate-icpsr)=
@@ -105,7 +119,6 @@ Note that if you choose this pipeline, certain information is not generated (Sta
 
 :::
 
-
 ### Monitoring the pipeline
 
 - Your pipeline will start, working through various steps. This might take a while! Do the next step ([Collecting Information](collecting-information)) then come back here.
@@ -145,6 +158,50 @@ If your pipeline fails in the Stata step, click on the failed step, and scroll t
 ```
 
 It is likely that the PII scan failed because the in-memory dataset is too large (too much memory was run, and the pipeline was killed). Try running the pipeline again with the "`w-big populate from ICPSR`" (see above).
+
+#### `Cannot stat zip`
+
+![cannot stat zip](images/jira-pipeline-error-zip.png)
+
+This is an indication of an earlier error, typically forgotten variables. To check, click on the `Build setup`, and check the `Pipeline variables`. If it looks like this:
+
+![pipeline variables](images/jira-pipeline-error-variables.png)
+
+then you forgot to specify the `openICPSRID` variable. Rerun the pipeline with the correct variable entered. It should look like this:
+
+![pipeline corrected](images/jira-pipeline-error-variables-corrected.png)
+
+#### ZIP file is too big
+
+When the ZIP file downloaded from the repository is too big, parts of the pipeline will run, but ultimately, the full pipeline may fail.
+
+To diagnose this part, 
+
+- Go back to the list of Pipeline runs
+- Click on the failed run
+- Click on the `Download` part.
+- At the very bottom of the log, you will see `Build teardown`. Click on it to expand. You are looking for lines mentioning `cache/**`: 
+- A successful run will look something like this:
+
+```bash
+Searching for files matching artifact pattern cache/**
+Artifact pattern cache/** matched 1 files with a total size of 26.1 MiB
+Compressed files for artifact "cache/**" matching pattern cache/** to 25.8 MiB in 1 seconds
+Uploading artifact of 25.8 MiB
+Successfully uploaded artifact in 1 seconds.
+```
+
+- A **failed** run due to the size of the ZIP file will look like this:
+
+```bash
+Searching for files matching artifact pattern cache/**
+Artifact pattern cache/** matched 1 files with a total size of 1 GiB
+Compressed files for artifact "cache/**" matching pattern cache/** to 1 GiB in 47 seconds
+Compressed artifact size is 39.6 MiB over the 1 GiB upload limit, so the artifact will not be uploaded.
+```
+
+If this is the case, try again with the "`w-big populate from ICPSR`" pipeline, which will not try to upload the ZIP file, but will still run the other steps.
+
 
 ## Next step
 

@@ -21,9 +21,10 @@ then proceed to [Preparing Deposit for Publication](preparing-deposit-for-public
 In principle, once the report is uploaded, the author will get the report with the requested revisions via ScholarOne. However, under the post-August 2020 workflow on openICPSR, the project may need to be unlocked for the author to make changes.
 To do so, proceed as follows:
 
-1. Open the issue on Jira
-2. Right-click on the [`Replication package URL`] field to open the openICPSR deposit.
-3. On openICPSR, 
+1. Open the issue on Jira.
+2. If the issue is still in `Submitted to MC`, then choose `Post message to openICPSR` transition, which will pop up with fields displayed. Wait here.
+3. Right-click on the [`Replication package URL`] field to open the openICPSR deposit.
+4. On openICPSR, 
    - verify what the openICPSR `Deposit Status` is (top right corner) ![Deposit in Progress image](images/change-status-button.png).
    - if  `Deposit Status` = *`Deposit in Progress`*, you are done on openICPSR. Go back to the Jira issue
    - if `Deposit Status` = *`Submitted`*, then
@@ -36,13 +37,27 @@ the **"Request-revisions-RR" message**.
 
 ```
 
+Use this template if the paper is in [`RR`] :
+
 ```
-Revisions requested. Details in the full report, which you will receive via ScholarOne shortly.
+Revisions requested. Details in the full report, which you will receive via ScholarOne
+or from the editor in charge of the paper.
 
 > [NOTE] Replication packages may be published as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
 ```
 
-4. Back in the Jira issue, transition the issue to `Done`.
+Use this template if the paper is in [`CA`] :
+
+```
+Revisions requested. Details in the full report, which you will receive via ScholarOne
+in a few business days.
+
+> [NOTE] We may publish replication packages as soon as all requested changes
+to the deposit have been made. Please process any requested changes as soon
+as possible.
+```
+
+4. Back in the Jira issue, continue to transition the issue to `Done`.
 
 
 
@@ -52,7 +67,7 @@ Revisions requested. Details in the full report, which you will receive via Scho
 
 ### FOR ACCEPT WITH CHANGES
 
-1. Open the issue on Jira
+1. Open the issue on Jira.
 2. Click on the `Wait for response on openICPSR` transition to `Pending openICPSR changes`. 
   - In the pop-up, you should have all the necessary information.
      - Note: links in the pop-up window are not clickable: double-click, then use right-click to "Open in New Tab".
@@ -67,7 +82,7 @@ Revisions requested. Details in the full report, which you will receive via Scho
    - start a message in the Communication log:
       - with subject line: `Please make the following changes (AEAREP-xxx)` (replace with appropriate numbers)
       - Message content: 
-         - the contents of the portion of the report after "`Action Items (openICPSR)`"
+         - the contents of the portion of the report after "`Action Items (openICPSR)`", but ONLY the action items.
          - then the following lines
 
 
@@ -77,19 +92,24 @@ the **"Request-revisions-CA" message  when `Deposit in Progress`** is shown.
 ```
          
 ```
-Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
+Details in the full report, which you will receive via ScholarOne in a
+few business days. Please provide your response to the items listed above
+via the openICPSR Project Communication log, specifying AEAREP-xxx.
+Other items in the report may need to be addressed via ScholarOne.
 
 Once all changes have been made, please change the status of your deposit to "Submit to AEA".
 
 
-> [NOTE] Replication packages may be published as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+> [NOTE] Replication packages may be published as soon as all 
+requested changes to the deposit have been made. Please process 
+any requested changes as soon as possible.
 ```
 (replace xxx with the issue number)
 
 6. On openICPSR, if `Deposit Status` = *`Submitted`*:
   - click on `Change Status`, choose `Request revisions`
   - in the pop-up, 
-    - paste the contents of the repository-specific portion of the report after "`Action Items (openICPSR)`"
+    - paste the contents of the repository-specific portion of the report after "`Action Items (openICPSR)`", but ONLY the action items.
     - then the following lines: 
 
 
@@ -98,9 +118,18 @@ the **"Request-revisions-CA" message when `Submitted` is shown**.
 ```
 
 ```
-Details in the full report, which you will receive via ScholarOne shortly. Please provide your response to the items listed above via the openICPSR Project Communication log, specifying AEAREP-xxx. Other items in the report may need to be addressed via ScholarOne.
+Details in the full report, which you will receive via ScholarOne in a
+few business days. Please provide your response to the items listed above
+via the openICPSR Project Communication log, specifying AEAREP-xxx.
+Other items in the report may need to be addressed via ScholarOne.
 
-> [NOTE] Replication packages may be published as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
+Once all changes have been made, please change the status of your deposit
+to "Submit to AEA".
+
+
+> [NOTE] We may publish replication packages as soon as all requested changes
+to the deposit have been made. Please process any requested changes as soon
+as possible.
 ```
 (replace xxx with the issue number)
  
@@ -109,6 +138,19 @@ Details in the full report, which you will receive via ScholarOne shortly. Pleas
 
 1. Open the issue on Jira
 2. Click on the `Prepare for publication` transition
+
+::::{admonition} If the transition is not available
+:class: dropdown 
+There are several conditions that need to be met in order to move it forward. Check that all apply if the transition is not available
+
+- If there was an NDA, then `Agreement signed` will be filled, but the field `Was data deleted?` must be set to `Yes`. If not, check with supervisor.
+- Field `openICPSRversion` has to have a value. This is usually automatic.
+- `MCStatus` cannot be `RR`
+- The field `Non-compliant` cannot be 'Yes'. 
+- The field `MCRecommendationV2` cannot be `Conditional Accept`
+
+::::
+
 3. In the pop-up, you should have all the necessary information.
    - Note: links in the pop-up window are not clickable: double-click, then use right-click to "Open in New Tab".
    - If not already done: `Replication package URL` should point to openICPSR. If not, go to the final step.

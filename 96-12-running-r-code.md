@@ -109,10 +109,10 @@ The RStudio server instance only runs the latest R code. For running other R ver
 Once the above is done, running R is simple:
 
 ```bash
-R CMD BATCH main.R
+R CMD BATCH --debugger --verbose --vanilla main.R main.$(date +%F_%H-%M-%S).Rout
 ```
 
-This will create a `main.Rout` file, which you can open up in VS Code. 
+This will create a `main.(DATE).Rout` file, which you can open up in VS Code. You must commit this file to Bitbucket. Every run will create a new `main.(DATE).Rout` with a slightly different date-stamp.
 
 :::{note}
 
@@ -120,6 +120,16 @@ If the author's main filename has spaces in it, you will need to use quotes when
 
 :::
 
+::::{admonition} If the author uses `Rscript` ...
+:class: tip dropdown
+
+... then use the following command line (adjusting the authors'  accordingly)
+
+```
+RScript  --verbose main.R > main.$(date +%F_%H-%M-%S).Rout 2>&1 
+```
+
+::::
 
 > Consider how much time a complete run would take before you run everything one last time. If it would take too long, you may want to skip a complete run, but ensure that you have log files for all partial runs. Make a note of this in the report.
 

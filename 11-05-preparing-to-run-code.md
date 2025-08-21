@@ -54,7 +54,7 @@ This is because the git setup we use does not allow you to include the data file
 All actions on BioHPC will be performed in a terminal. Depending on whether you connect with SSH, VNC, or Visual Studio Code, details may differ (see [Access Computer](Access_to_computers) for details). We suggest connecting via SSH or using Visual Studio Code (which uses SSH in the background), for simplicity. It is assumed that you have done [Bash setup](setup-bash). 
 
 - [ ] If using SSH, you are already at the "terminal". If using VNC, choose `Terminal` from the application menu. 
-  - If using [Visual Studio Code to connect to BioHPC](accessing-linux-nodes-with-vscode), follow instructions from the **Github Codespaces** tab!
+  - If using [Visual Studio Code to connect to BioHPC](linux-vscode), follow instructions from the **Github Codespaces** tab!
 - [ ] Change directory to the common workarea:
     ```bash
     cd /home2/ecco_lv39/Workspace
@@ -107,9 +107,12 @@ Have a look at the **README** again.
   - Is there information about the **software**? 
   - How long does the author say the code will run? Is it a reasonable time, or do we maybe need to run it on a more powerful computer?
   - How much memory, or processors, does the code need? Again, is the computer you intended to choose sufficient, or do we need to get access to a more powerful computer, or even a cluster of computers?
+  - What operating system (Mac, Windows, Linux) does the author appear to have used?
 
 Now fill out the **Stated Requirements** section of **Part B** of the report.
 
+- Check if the deposit has a 'main' or 'master' file and fill out the 'MainFile' field in Jira under the 'Repl. info' tab. 
+- Mark the **operating system (OS)** that the authors used in the field `Original OS`. Leave blank if you do not know.
 
 
 :::{admonition} Be sure to use the `REPLICATION-PartB.md` for this section!
@@ -183,6 +186,25 @@ When getting the data, please take care to distinguish
 
 
 Here, we will describe the most likely first step: getting the data from openICPSR. Any data you download should also be stored on this computer. We do not explicitly describe this here. **CCSS** is the most likely place where you do this, but double-check with your supervisor.
+
+
+```{admonition} What if the data are not on openICPSR?
+:class: dropdown
+
+Sometimes, data are provided on other repositories: OSF, Dataverse, Zenodo are the most frequent ones.
+
+You may need to adapt the process below to those circumstances. See the following mapping:
+
+| Deposit | Name of download folder | Name of script | Tested? |
+|---------|-------------------------|----------------|---------|
+| openICPSR | `111234`  | `tools/download_openicpsr-private.py` |  Yes |
+| OSF       | `osf-ZX123A` | `tools/download_osf.sh`  | Partially |
+| Zenodo    | `zenodo-1234567` | `tools/download_zenodo.sh` | Maybe |
+| Dataverse | `dv-2YWLWG` | `tools/download_dv.py` | Maybe |
+
+In all cases, you should obtain the data from the deposit, and otherwise follow the same principles as are described below for openICPSR.
+
+```
 
 ::::{tab-set}
 

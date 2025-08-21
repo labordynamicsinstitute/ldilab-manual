@@ -25,7 +25,7 @@ You should then look into the "`Data`" tab for the field `Working location of re
 
 - Log into remote desktop as usual.
 - The restricted access data will be stored in the L drive. If you haven't mapped the L drive, do that first ([instructions here](https://labordynamicsinstitute.github.io/ldilab-manual/95-10-windows-remote.html)).
-- Navigate to the folder `Restricted-Access-Data` and find the corresponding folder that is in the Jira field, e.g., `L:\Restricted-Access-Data\aearep-4400-nda_Implicit`.
+- Navigate to the folder `Restricted-Access-Data` and find the corresponding folder that is in the Jira field, e.g., `L:\Restricted-Access-Data\aearep-4400`.
 - If there is a ZIP file (looks like a folder, but is not), right-click and choose `Extract All` before working in the folder
 
 :::
@@ -36,10 +36,10 @@ You should then look into the "`Data`" tab for the field `Working location of re
 - Open the File Explorer
 - Under "`This PC`", click "`Share (\\rschfs2x.ciserrsch.cornell.edu)`" under `Network Locations`. This location is also available as "`S:`".
 - Find the `LDILab` folder. (You should probably bookmark/ add to favorites) 
-- Within that folder is the corresponding restricted access data (e.g. `aearep-3756-nda_Implicit`)
+- Within that folder is the corresponding restricted access data (e.g. `aearep-3756`)
    - If you cannot open the `LDILab` folder, contact the assistant to the Data Editor 
 - If there is a ZIP file (looks like a folder, but is not), right-click and choose `Extract All` before working in the folder
-- Remember the full location. This should correspond to what is entered in to the JIRA field, e.g., `S:\LDILab\aearep-3756-nda_Implicit`.
+- Remember the full location. This should correspond to what is entered in to the JIRA field, e.g., `S:\LDILab\aearep-3756`.
 
 :::
 
@@ -55,12 +55,19 @@ There are two situations.
 
 There are two ways to run code using the data in this folder:
 
-1. Run all programs within this folder, do not take the data out of this folder. However, you will need to transfer log files and output back to your regular "cloned" folder (i.e. `aearep-3756`).
-2. More robust, but a bit more work, is to modify the code to reference the confidential data every time it is called.
-  - In the `config.do`, is a line `global sdrive ""`. Modify that line to read `global sdrive "L:\Restricted-Access-Data\aearep-3756-nda_Implicit"`
-  - Run the code in its usual location. When the code encounters (absent) confidential data in the usual location, it will break/stop.
-  - Everywhere you encounter references to confidential data in the code, e.g., `use "${datadir}/mysuper.dta"`, modify the code to reference the L-drive: `use "${sdrive}/mysuper.dta`. 
-  - commit all code modifications and log files as you normally would.
+### Run all programs from within this folder
+
+1. Copy all programs to this folder, do not take the data out of this folder.
+2. However, you will need to transfer modified code, log files, and output back to your regular "cloned" folder (i.e. `aearep-3756`), so that you can commit all changes (including to code files) back to the repository (this may require manual tracking of changes).
+
+### Run from regular folder, reference data in restricted-data folder
+
+More robust, but maybe a bit more work, is to modify the code to reference the confidential data every time it is called.
+
+- In the `config.do`, is a line `global sdrive ""`. Modify that line to read `global sdrive "L:\Restricted-Access-Data\aearep-3756"`
+- Run the code in its usual location. When the code encounters (absent) confidential data in the usual location, it will break/stop.
+- Everywhere you encounter references to confidential data in the code, e.g., `use "${datadir}/mysuper.dta"`, modify the code to reference the L-drive: `use "${sdrive}/mysuper.dta`. 
+- commit all code modifications, output, and log files as you normally would.
 
 ## Examples
 
