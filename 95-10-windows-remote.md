@@ -24,7 +24,7 @@ Pay attention to the precise access instructions, as they may be substantially d
 
 :::{important} 
 
-- [**Instructions**](https://cornellprod-my.sharepoint.com/:f:/g/personal/cd642_cornell_edu/EvxDKmDjZyZBsrQvimUR8xABE4x6TYDenmLOY8ZFMLRjUw)
+- [**Instructions**](https://socialsciences.cornell.edu/computing-and-data/cloud-computing-solutions/account-instructions)
 
 :::
 
