@@ -171,12 +171,23 @@ reply_to_editor.pdf
     - If the only [REQUIRED] changes were data citations or changes to the README, you should not need to re-run code. 
 
 
-Change the status from `In Progress` to `Code`. 
+### Data 
+
+- [ ] Update the Data Description section of the report.  
+
+- [ ] Update the Data Checks section of the report, if new data have been provided.
+  - Check the `generated` directory for any update summary, most of the mechanical checks will be automatically added to the appendix.
+
+- [ ] Fill out the required JIRA fields: 
+    - `Working location of the data` or
+    - `Reason for non-accessibility` 
+    - and `Data Provenance` 
+
+
 
 (revision-code-step)=
 ### Code 
 
-At this point, you may want to transition to CISER if you haven't already. You should `git pull` to ensure the changes you've made are reflected in the local version of the repository on CISER.  
 
 
 ::::{tab-set}
@@ -201,39 +212,14 @@ If you already ran the Bitbucket pipeline, your code is already updated.
 
 ::::
 
-- [ ] Update the Data Description section of the report.  
    
 - [ ] Update the Code Description section of the report. 
 
-- [ ] Fill out the required JIRA fields: 
-    - `Data Provenance` 
-
-Change the status from `Code` to `Data`. 
-
-### Data 
-
-- [ ] Update the Data Checks section of the report, if new data have been provided. 
-
-- Fill out the required fields in JIRA:    
-    - `Working location of the data` or
-    - `Reason for non-accessibility` 
-
-Change the status from `Data` to `Write Preliminary Report`. 
-
-### Write Preliminary report
-
-- [ ] Change the title of the report to reflect the **new Manuscript Number**. E.g. `# [AERI-2025-0123.R2] [My title here ...` becomes `# [AERI-2025-0123.R3] [My title here ...` (**R2** -> **R3**)
-- [ ] Ensure all sections of the report up to Replication Steps have been updated. 
-- [ ] Delete sections of the report that are not relevant any more.
 
 
-Change the status from `Writing preliminary report` to `Code Review` or `Verification`. 
 
 ### Code Review or Verification 
 
-If you have previously determined that code needs to be re-run, you should select the  `Verification` stage. 
-
-If you have determined that code does not need to be re-run (or code is unable to be run due to lack of data), select the `Code Review` option. 
 
 #### Re-running code 
 
@@ -251,7 +237,7 @@ If you have determined that code does not need to be re-run (or code is unable t
 
 - [ ] `git add`, `git commit`, and `git push` any new results to the Bitbucket repository. 
 
-Change the status from `Code Review` or `Verification` to `Writing Report`. 
+> Change the status from `In Progress` to `Writing Report`. 
 
 ### Writing Report 
 
