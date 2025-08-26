@@ -551,9 +551,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-bitbucket-repository-with-latest-code-and-documents">Updating Bitbucket repository with latest code and documents</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-working-area">Prepare the working area</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-other-materials">Updating other materials</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-preliminary-report">Write Preliminary report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-review-or-verification">Code Review or Verification</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#re-running-code">Re-running code</a></li>
 </ul>
@@ -732,11 +731,27 @@ Manually</label><div class="sd-tab-content docutils">
 </ul>
 </li>
 </ul>
-<p>Change the status from <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Progress</span></code> to <code class="docutils literal notranslate"><span class="pre">Code</span></code>.</p>
+</section>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Data Description section of the report.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Data Checks section of the report, if new data have been provided.</p>
+<ul>
+<li><p>Check the <code class="docutils literal notranslate"><span class="pre">generated</span></code> directory for any update summary, most of the mechanical checks will be automatically added to the appendix.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Fill out the required JIRA fields:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Working</span> <span class="pre">location</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">data</span></code> or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Reason</span> <span class="pre">for</span> <span class="pre">non-accessibility</span></code></p></li>
+<li><p>and <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Provenance</span></code></p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="code">
 <span id="revision-code-step"></span><h3>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h3>
-<p>At this point, you may want to transition to CISER if you haven’t already. You should <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> to ensure the changes you’ve made are reflected in the local version of the repository on CISER.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-2">
@@ -758,42 +773,11 @@ Manually updating code</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Data Description section of the report.</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Code Description section of the report.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Fill out the required JIRA fields:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Provenance</span></code></p></li>
 </ul>
-</li>
-</ul>
-<p>Change the status from <code class="docutils literal notranslate"><span class="pre">Code</span></code> to <code class="docutils literal notranslate"><span class="pre">Data</span></code>.</p>
-</section>
-<section id="data">
-<h3>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h3>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Data Checks section of the report, if new data have been provided.</p></li>
-<li><p>Fill out the required fields in JIRA:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">Working</span> <span class="pre">location</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">data</span></code> or</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Reason</span> <span class="pre">for</span> <span class="pre">non-accessibility</span></code></p></li>
-</ul>
-</li>
-</ul>
-<p>Change the status from <code class="docutils literal notranslate"><span class="pre">Data</span></code> to <code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">Preliminary</span> <span class="pre">Report</span></code>.</p>
-</section>
-<section id="write-preliminary-report">
-<h3>Write Preliminary report<a class="headerlink" href="#write-preliminary-report" title="Permalink to this heading">#</a></h3>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Change the title of the report to reflect the <strong>new Manuscript Number</strong>. E.g. <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">[AERI-2025-0123.R2]</span> <span class="pre">[My</span> <span class="pre">title</span> <span class="pre">here</span> <span class="pre">...</span></code> becomes <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">[AERI-2025-0123.R3]</span> <span class="pre">[My</span> <span class="pre">title</span> <span class="pre">here</span> <span class="pre">...</span></code> (<strong>R2</strong> -&gt; <strong>R3</strong>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Ensure all sections of the report up to Replication Steps have been updated.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Delete sections of the report that are not relevant any more.</p></li>
-</ul>
-<p>Change the status from <code class="docutils literal notranslate"><span class="pre">Writing</span> <span class="pre">preliminary</span> <span class="pre">report</span></code> to <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Review</span></code> or <code class="docutils literal notranslate"><span class="pre">Verification</span></code>.</p>
 </section>
 <section id="code-review-or-verification">
 <h3>Code Review or Verification<a class="headerlink" href="#code-review-or-verification" title="Permalink to this heading">#</a></h3>
-<p>If you have previously determined that code needs to be re-run, you should select the  <code class="docutils literal notranslate"><span class="pre">Verification</span></code> stage.</p>
-<p>If you have determined that code does not need to be re-run (or code is unable to be run due to lack of data), select the <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Review</span></code> option.</p>
 <section id="re-running-code">
 <h4>Re-running code<a class="headerlink" href="#re-running-code" title="Permalink to this heading">#</a></h4>
 <ul class="contains-task-list simple">
@@ -806,7 +790,9 @@ Manually updating code</label><div class="sd-tab-content docutils">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the Findings section of the report.</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> any new results to the Bitbucket repository.</p></li>
 </ul>
-<p>Change the status from <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Review</span></code> or <code class="docutils literal notranslate"><span class="pre">Verification</span></code> to <code class="docutils literal notranslate"><span class="pre">Writing</span> <span class="pre">Report</span></code>.</p>
+<blockquote>
+<div><p>Change the status from <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Progress</span></code> to <code class="docutils literal notranslate"><span class="pre">Writing</span> <span class="pre">Report</span></code>.</p>
+</div></blockquote>
 </section>
 </section>
 <section id="writing-report">
@@ -1012,9 +998,8 @@ packages.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-bitbucket-repository-with-latest-code-and-documents">Updating Bitbucket repository with latest code and documents</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-working-area">Prepare the working area</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-other-materials">Updating other materials</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-preliminary-report">Write Preliminary report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-review-or-verification">Code Review or Verification</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#re-running-code">Re-running code</a></li>
 </ul>
