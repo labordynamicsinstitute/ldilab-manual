@@ -28,7 +28,13 @@ While in some cases, the right solution may be to use something like [Git LFS](h
 
 ### If the commit has not been pushed yet
 
-Remove the file from the repository, and then "amend" the previous commit. This assumes that the immediately preceding commit is the offending one. Adjust if not.
+First, find the file:
+
+```bash
+find /path/to/search -type f -size +100M
+```
+
+Then, remove the file from the repository, and then "amend" the previous commit. This assumes that the immediately preceding commit is the offending one. Adjust if not.
 
 ```bash
 git rm --cached path/to/VERYLARGEFILE

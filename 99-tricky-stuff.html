@@ -589,7 +589,11 @@ document.write(`
 </div>
 <section id="if-the-commit-has-not-been-pushed-yet">
 <h3>If the commit has not been pushed yet<a class="headerlink" href="#if-the-commit-has-not-been-pushed-yet" title="Permalink to this heading">#</a></h3>
-<p>Remove the file from the repository, and then “amend” the previous commit. This assumes that the immediately preceding commit is the offending one. Adjust if not.</p>
+<p>First, find the file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find<span class="w"> </span>/path/to/search<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-size<span class="w"> </span>+100M
+</pre></div>
+</div>
+<p>Then, remove the file from the repository, and then “amend” the previous commit. This assumes that the immediately preceding commit is the offending one. Adjust if not.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span>path/to/VERYLARGEFILE
 git<span class="w"> </span>commit<span class="w"> </span>--amend
 </pre></div>
