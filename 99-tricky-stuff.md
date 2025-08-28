@@ -38,13 +38,13 @@ Because this lists all the files in the directory that are larger, but not neces
 
 ```bash
 commit=<commit-hash>
-git show --name-only $commit
+git show --pretty=format: --name-only $commit
 ```
 
 or
 
 ```bash
-git show --name-only $commit | while read file; do        ls -l "$file" | sort -nk 5;    done
+git show --pretty=format: --name-only $commit | while read file; do        ls -l "$file" | sort -nk 5;    done
 ```
 
 where the largest files should be at the bottom of that list.
