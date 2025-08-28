@@ -593,6 +593,16 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find<span class="w"> </span>/path/to/search<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-size<span class="w"> </span>+100M
 </pre></div>
 </div>
+<p>Because this lists all the files in the directory that are larger, but not necessarily the files that have been <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">committed</span></code>, you may need to inspect the output from the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code> command as well:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">commit</span><span class="o">=</span>&lt;commit-hash&gt;
+git<span class="w"> </span>show<span class="w"> </span>--name-only<span class="w"> </span><span class="nv">$commit</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>show<span class="w"> </span>--name-only<span class="w"> </span><span class="nv">$commit</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>file<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w">        </span>ls<span class="w"> </span>-l<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nk<span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w">    </span><span class="k">done</span>
+</pre></div>
+</div>
+<p>where the largest files should be at the bottom of that list.</p>
 <p>Then, remove the file from the repository, and then “amend” the previous commit. This assumes that the immediately preceding commit is the offending one. Adjust if not.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span>path/to/VERYLARGEFILE
 git<span class="w"> </span>commit<span class="w"> </span>--amend

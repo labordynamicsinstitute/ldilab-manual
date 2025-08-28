@@ -34,6 +34,21 @@ First, find the file:
 find /path/to/search -type f -size +100M
 ```
 
+Because this lists all the files in the directory that are larger, but not necessarily the files that have been `git committed`, you may need to inspect the output from the `git show` command as well:
+
+```bash
+commit=<commit-hash>
+git show --name-only $commit
+```
+
+or
+
+```bash
+git show --name-only $commit | while read file; do        ls -l "$file" | sort -nk 5;    done
+```
+
+where the largest files should be at the bottom of that list.
+
 Then, remove the file from the repository, and then "amend" the previous commit. This assumes that the immediately preceding commit is the offending one. Adjust if not.
 
 ```bash
