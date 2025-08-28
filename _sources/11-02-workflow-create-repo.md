@@ -205,4 +205,9 @@ If this is the case, try again with the "`w-big populate from ICPSR`" pipeline, 
 
 ## Next step
 
+Once everything has completed to your satisfaction, 
+
+- fill out the  `Bitbucket short name` field (e.g., `aearep-1234`)
+- Move the Jira issue forward to `In Progress`.
+
 ![Move to In Progress](images/AEA-Data-Editor-Workflow-V3-20240114-short-23.png)
