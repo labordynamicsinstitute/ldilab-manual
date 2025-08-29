@@ -546,6 +546,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utility-scripts">Utility scripts</a></li>
 </ul>
             </nav>
         </div>
@@ -565,31 +566,43 @@ document.write(`
 <tr class="row-odd"><th class="head"><p>Source</p></th>
 <th class="head"><p>DOI or project</p></th>
 <th class="head"><p>Directory name (<code class="docutils literal notranslate"><span class="pre">DIRNAME</span></code>)</p></th>
+<th class="head"><p>Pipeline Variable</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>openICPSR</p></td>
 <td><p><a class="reference external" href="https://doi.org/10.3886/E">https://doi.org/10.3886/E</a><strong>123456</strong>V1</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">123456</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">123456</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>openICPSR</p></td>
 <td><p>openicpsr-<strong>123456</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">123456</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">123456</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>Dataverse</p></td>
 <td><p><a class="reference external" href="https://doi.org/10.7910/DVN/RE5ZVI">https://doi.org/10.7910/DVN/RE5ZVI</a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">dv-10.7910-DVN-RE5ZVI</span></code></p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>Dataverse</p></td>
 <td><p><a class="reference external" href="https://doi.org/10.3456/ABCDE">https://doi.org/10.3456/ABCDE</a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">dv-10.3456-ABCDE</span></code></p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>Zenodo</p></td>
 <td><p><a class="reference external" href="https://doi.org/10.5281/zenodo.7041706">https://doi.org/10.5281/zenodo.7041706</a></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">zenodo-7041706</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">7041706</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>World Bank</p></td>
+<td><p><a class="reference external" href="https://doi.org/10.60572/101y-vn15">https://doi.org/10.60572/101y-vn15</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">wb-101y-vn15</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">101y-vn15</span></code> or entire DOI</p></td>
 </tr>
 </tbody>
 </table>
+<p>If a <code class="docutils literal notranslate"><span class="pre">Pipeline</span> <span class="pre">Variable</span></code> is given, use that in the <a class="reference internal" href="11-02-workflow-create-repo.html#create-repo"><span class="std std-ref">Bitbucket Pipeline</span></a> when <a class="reference internal" href="11-02-workflow-create-repo.html#create-repo"><span class="std std-ref">creating</span></a> or <a class="reference internal" href="12-jira-revision-guidance.html#updating-repository-pipeline"><span class="std std-ref">updating</span></a> the repository.</p>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h2>
 <p>Whether <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html#using-pre-pub-openicpsr"><span class="std std-ref">manually downloading the files</span></a> or using the scripts, once the ZIP file is downloaded, you would still use</p>
@@ -597,6 +610,18 @@ document.write(`
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">DIRNAME</span></code> is defined as in the table above, and <code class="docutils literal notranslate"><span class="pre">NAME_OF_ZIP.zip</span></code> is whatever you downloaded from the repository. In the case of the [openICPSR download script]((get-the-data), the file downloaded from openICPSR is typically called <code class="docutils literal notranslate"><span class="pre">DIRNAME.zip</span></code>, e.g, <code class="docutils literal notranslate"><span class="pre">123456.zip</span></code>. It will be called something else in most other cases.</p>
+</section>
+<section id="utility-scripts">
+<h2>Utility scripts<a class="headerlink" href="#utility-scripts" title="Permalink to this heading">#</a></h2>
+<p>We have a few scripts, some of which have not yet been integrated into the pipeline. All can be run from the command line instead of manually downloading the repository. All are in the <code class="docutils literal notranslate"><span class="pre">tools</span></code> directory of your issue-specific repository. If not, refresh the tools.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="96-90-download_openicpsr-private.html#help-download-openicpsr-private"><span class="std std-ref"><strong>download_openicpsr-private.py</strong></span></a>: For downloading from private openICPSR deposits (also integrated into the pipeline)</p></li>
+<li><p><a class="reference internal" href="96-90-download_dv.html#help-download-dv"><span class="std std-ref"><strong>download_dv.py</strong></span></a>: For downloading from Dataverse repositories.</p></li>
+<li><p><a class="reference internal" href="96-90-download_osf.html#help-download-osf"><span class="std std-ref"><strong>download_osf.sh</strong></span></a>: For downloading from OSF repositories.</p></li>
+<li><p><a class="reference internal" href="96-90-download_worldbank.html#help-download-worldbank"><span class="std std-ref"><strong>download_worldbank.py</strong></span></a>: For downloading from World Bank Reproducibility Repository, including the public reproducibility report!</p></li>
+<li><p><a class="reference internal" href="96-90-download_zenodo_public.html#help-download-zenodo-public"><span class="std std-ref"><strong>download_zenodo_public.sh</strong></span></a>: For downloading from public Zenodo repositories</p></li>
+<li><p><a class="reference internal" href="96-90-download_zenodo_draft.html#help-download-zenodo-draft"><span class="std std-ref"><strong>download_zenodo_draft.py</strong></span></a>: For downloading from private/draft Zenodo deposits (also integrated into the pipeline)</p></li>
+</ul>
 </section>
 </section>
 
@@ -662,6 +687,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utility-scripts">Utility scripts</a></li>
 </ul>
   </nav></div>
 
