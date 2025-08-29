@@ -1,5 +1,4 @@
 (help-download_osf)=
-
 # download_osf.sh - Download files from Open Science Framework (OSF) projects
 
 ## Description

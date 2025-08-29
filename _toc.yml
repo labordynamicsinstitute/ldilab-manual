@@ -130,6 +130,7 @@ parts:
       - file: 96-90-download_dv
       - file: 96-90-download_openicpsr-private
       - file: 96-90-download_osf
+      - file: 96-90-download_worldbank
       - file: 96-90-download_zenodo_draft
       - file: 96-90-download_zenodo_public
       - file: 96-90-generate_png_diff

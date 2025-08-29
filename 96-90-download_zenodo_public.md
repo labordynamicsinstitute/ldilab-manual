@@ -1,5 +1,4 @@
 (help-download_zenodo_public)=
-
 # download_zenodo_public.sh - Download files from public Zenodo repositories
 
 ## Description
