@@ -1,5 +1,4 @@
 (help-download_zenodo_draft)=
-
 # download_zenodo_draft.py - Download files from Zenodo draft deposits
 
 ## Description

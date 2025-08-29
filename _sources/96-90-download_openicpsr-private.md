@@ -1,5 +1,4 @@
 (help-download_openicpsr-private)=
-
 # download_openicpsr-private.py - Download files from private openICPSR deposits
 
 ## Description
