@@ -9,7 +9,7 @@ This script downloads files from a private Box folder using JWT authentication. 
 ## Usage
 
 ```bash
-python download_box_private.py SUBFOLDER [options]
+python tools/download_box_private.py SUBFOLDER [options]
 ```
 
 ### Arguments
