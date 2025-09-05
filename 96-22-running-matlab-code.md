@@ -15,7 +15,7 @@ start matlab -nosplash  -minimize -r  "addpath(genpath('.'));main"  -logfile mat
 where `main.m` is the Matlab program you want to run (you omit the `.m` when calling it). 
 
 ```{note}
-This will still open a Matlab window in the background (check your taskbar). 
+This will exit, and first appear to do nothing for a few seconds. It will in fact open a Matlab window in the background (check your taskbar after a few seconds). At the end of the MATLAB code, you may need to manually exit MATLAB, but do so only when it is clear that MATLAB has ended! 
 ```
 
 :::
