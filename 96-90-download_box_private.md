@@ -33,9 +33,10 @@ python tools/download_box_private.py 1234  # Download from subfolder 'aearep-123
 - The above dependencies can be installed in a virtual environment or on your system. Installing the Box Python SDK requires two packages:
 
 ```shell
-conda install box-sdk-gen
-conda install box-sdk-gen[jwt]
+conda install boxsdk
+conda install boxsdk[jwt]
 ```
+- Currently, box is updating the box-python-sdk. This script will work only with `boxsdk`, not the newer `box-sdk-gen`. 
 
 - This can be done through conda, or in pip, or pipx. 
 
