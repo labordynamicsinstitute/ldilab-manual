@@ -41,24 +41,7 @@ conda install box-sdk-gen[jwt]
 
 ## Using AEA Credentials
 
-To permantently set the proper credentials on BioHPC, you can modify your `~/.bashrc` profile. This will contain the environmental variables required for logging in. Your `~/.bashrc` will look something like
-
-```shell
-MLM_LICENSE_FILE=00000@licenseserver.cornell.edu
-SDRIVE = "Path/On/SDRIVE"
-BOX_FOLDER_ID = 123456789012
-BOX_PRIVATE_KEY_ID = abcd123
-BOX_ENTERPRISE_ID = 12345
-BOX_FOLDER_PRIVATE = 123456789012
-BOX_PRIVATE_JSON = "
-
-
-"
-
-
-```
-
-- These values can be obtained from a supervisor.
+To permantently set the proper credentials on BioHPC, you can modify your `~/.bashrc` profile, to include the box environmental variables. These values can be obtained from a supervisor.
 
 ## Environment Variables
 
