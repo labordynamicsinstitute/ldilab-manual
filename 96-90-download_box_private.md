@@ -36,7 +36,7 @@ python tools/download_box_private.py 1234  # Download from subfolder 'aearep-123
 conda install boxsdk
 conda install boxsdk[jwt]
 ```
-- Currently, box is updating the box-python-sdk. This script will work only with `boxsdk`, not the newer `box-sdk-gen`. 
+- Currently, box is updating boxsdk to box-sdk-gen. This script will work only with `boxsdk`, not the newer `box-sdk-gen`. 
 
 - This can be done through conda, or in pip, or pipx. 
 
