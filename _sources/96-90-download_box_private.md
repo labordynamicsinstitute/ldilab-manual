@@ -9,18 +9,40 @@ This script downloads files from a private Box folder using JWT authentication. 
 ## Usage
 
 ```bash
-download_box_private.py SUBFOLDER [options]
+python tools/download_box_private.py SUBFOLDER [options]
 ```
 
-## Arguments
+### Arguments
 
-- **SUBFOLDER** (Required) - Subfolder identifier (downloads from 'aearep-SUBFOLDER')
+- **SUBFOLDER** (Required) - Subfolder identifier (downloads from 'aearep-SUBFOLDER'). This will be the tag of the main Jira ticket, such as aearep-1234.
 
-## Example
+### Example
 
 ```bash
-download_box_private.py 1234  # Download from subfolder 'aearep-1234'
+python tools/download_box_private.py 1234  # Download from subfolder 'aearep-1234'
 ```
+
+## Requirements
+
+- Python 3.x
+- boxsdk: Box Python SDK
+- Valid Box JWT application credentials
+
+### Installing Box SDK
+
+- The above dependencies can be installed in a virtual environment or on your system. Installing the Box Python SDK requires two packages:
+
+```shell
+conda install boxsdk
+conda install boxsdk[jwt]
+```
+- Currently, box is updating boxsdk to box-sdk-gen. This script will work only with `boxsdk`, not the newer `box-sdk-gen`. 
+
+- This can be done through conda, or in pip, or pipx. 
+
+## Using AEA Credentials
+
+To permantently set the proper credentials on BioHPC, you can modify your `~/.bashrc` profile, to include the box environmental variables. These values can be obtained from a supervisor.
 
 ## Environment Variables
 
@@ -78,12 +100,6 @@ restricted/                 # Default output directory (configurable)
     ├── file2.pdf
     └── ...
 ```
-
-## Requirements
-
-- Python 3.x
-- boxsdk: Box Python SDK
-- Valid Box JWT application credentials
 
 ## Box Application Setup
 
