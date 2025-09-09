@@ -9,12 +9,12 @@ This script downloads files from a private Box folder using JWT authentication. 
 ## Usage
 
 ```bash
-python tools/download_box_private.py SUBFOLDER [options]
+python tools/download_box_private.py [SUBFOLDER] 
 ```
 
 ### Arguments
 
-- **SUBFOLDER** (Required) - Subfolder identifier (downloads from 'aearep-SUBFOLDER'). This will be the tag of the main Jira ticket, such as aearep-1234.
+- **SUBFOLDER** (optional) - Subfolder identifier (downloads from 'aearep-SUBFOLDER'). This will be the tag of the main Jira ticket, such as aearep-1234. If empty, will be deduced from the current directory name.
 
 ### Example
 
@@ -22,23 +22,41 @@ python tools/download_box_private.py SUBFOLDER [options]
 python tools/download_box_private.py 1234  # Download from subfolder 'aearep-1234'
 ```
 
+or
+
+```bash
+cd /path/to/aearep-1234
+python tools/download_box_private.py   # Download from subfolder 'aearep-1234'
+```
+
 ## Requirements
 
-- Python 3.x
-- boxsdk: Box Python SDK
+- Python >= 3.9
+- `boxsdk`: Box Python SDK
 - Valid Box JWT application credentials
 
 ### Installing Box SDK
 
-- The above dependencies can be installed in a virtual environment or on your system. Installing the Box Python SDK requires two packages:
+- This can be done through conda, or in pip, or pipx. 
+- The above dependencies can be installed by executing 
+
+```
+pip install -r requirements.txt
+```
+
+in any recent repository updated with "tools" newer than June 7, 2025.
+
+Ideally, these should be installed in your main Python environment, since you will be re-using this regularly. You can also install in a virtual environment. 
+
+If using `conda`, you can install `boxsdk` with:
 
 ```shell
 conda install boxsdk
 conda install boxsdk[jwt]
 ```
+
 - Currently, box is updating boxsdk to box-sdk-gen. This script will work only with `boxsdk`, not the newer `box-sdk-gen`. 
 
-- This can be done through conda, or in pip, or pipx. 
 
 ## Using AEA Credentials
 
@@ -75,12 +93,15 @@ export BOX_PRIVATE_JSON="base64_encoded_string_here"
 ## Authentication Methods
 
 ### 1. Environment Variables
+
 Set individual Box API credentials as environment variables.
 
 ### 2. Config File
+
 Place Box JWT configuration file in the directory specified by `BOX_CONFIG_PATH`.
 
 ### 3. Base64 Encoded Config
+
 Provide entire configuration as base64-encoded string in `BOX_PRIVATE_JSON`.
 
 ## Features
@@ -95,7 +116,7 @@ Provide entire configuration as base64-encoded string in `BOX_PRIVATE_JSON`.
 
 ```
 restricted/                 # Default output directory (configurable)
-└── aearep-SUBFOLDER/      # Downloaded files from specified subfolder
+└──                         # Downloaded files from specified subfolder
     ├── file1.txt
     ├── file2.pdf
     └── ...
@@ -117,11 +138,3 @@ To use this script, you need:
 - Limit application permissions to necessary scopes
 - Regularly rotate authentication credentials
 
-## Error Handling
-
-- Validates authentication credentials before proceeding
-- Handles network failures and API rate limits
-- Reports detailed error messages for troubleshooting
-- Graceful handling of missing files or permissions
-
-This tool is essential for research workflows that require secure access to private datasets stored in Box repositories.
