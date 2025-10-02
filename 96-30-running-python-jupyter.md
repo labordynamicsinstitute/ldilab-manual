@@ -232,7 +232,7 @@ jupyter nbconvert --to pdf                mynotebook.ipynb
 Alternatively, you can convert the notebook to a PDF more closely resembling the HTML view using the following command:
 
 ```bash
-pip install nbconvert ipykernel
+pip install nbconvert[webpdf] ipykernel
 pip install pyppeteer
 jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to notebook \
   --inplace --execute mynotebook.ipynb
