@@ -763,7 +763,7 @@ jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class=
 </pre></div>
 </div>
 <p>Alternatively, you can convert the notebook to a PDF more closely resembling the HTML view using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>nbconvert<span class="w"> </span>ipykernel
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>nbconvert<span class="o">[</span>webpdf<span class="o">]</span><span class="w"> </span>ipykernel
 pip<span class="w"> </span>install<span class="w"> </span>pyppeteer
 jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--ClearOutputPreprocessor.enabled<span class="o">=</span>True<span class="w"> </span>--to<span class="w"> </span>notebook<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--inplace<span class="w"> </span>--execute<span class="w"> </span>mynotebook.ipynb
