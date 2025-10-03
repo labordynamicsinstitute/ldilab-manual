@@ -224,19 +224,31 @@ If you have a LaTeX installation, you can convert the notebook to a PDF using th
 ```bash
 # requires a latex installation
 pip install nbconvert ipykernel
+```
+Define the notebook name:
+
+```bash
+NOTEBOOK=/path/to/notebook.ipynb
+
+```bash
 jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to notebook  \
-  --inplace --execute mynotebook.ipynb
-jupyter nbconvert --to pdf                mynotebook.ipynb
+  --inplace --execute "$NOTEBOOK"
+jupyter nbconvert --to pdf   "$NOTEBOOK"
 ```
 
-Alternatively, you can convert the notebook to a PDF more closely resembling the HTML view using the following command:
+Alternatively, you can convert the notebook to a PDF more closely resembling the HTML view as follows. First, install additional packages:
 
 ```bash
 pip install nbconvert[webpdf] ipykernel
 pip install pyppeteer
-jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to notebook \
-  --inplace --execute mynotebook.ipynb
-jupyter nbconvert --to webpdf --allow-chromium-download mynotebook.ipynb
+```
+
+Then run this code:
+```bash
+jupyter nbconvert --ClearOutputPreprocessor.enabled=True \
+  --allow-errors \
+  --inplace  --to notebook --execute "$NOTEBOOK" || echo "Errors occurred while executing"
+jupyter nbconvert --to webpdf --allow-chromium-download "$NOTEBOOK"
 ```
 
 :::
