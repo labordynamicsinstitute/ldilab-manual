@@ -553,9 +553,6 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-python-code-dynamic">Making Python code dynamic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#they-provide-a-requirements-txt-file">They provide a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#they-provide-a-environment-yml-file">They provide a <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#they-provide-a-list-of-packages">They provide a list of packages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-anaconda-package-manager">Using Anaconda Package manager</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#search-anaconda-prompt-from-the-start-menu-right-click-on-the-app-when-it-appears-and-pin-it-to-the-taskbar">Search “anaconda prompt” from the start menu. right click on the app when it appears and pin it to the taskbar.</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#right-click-on-anaconda-prompt-in-the-taskbar-looks-like-a-black-window-similar-to-command-line-or-terminal-right-click-on-anaconda-powershell-prompt-in-the-tasks-menu-that-pops-up-and-then-properties">Right click on anaconda prompt in the taskbar (looks like a black window, similar to command line or terminal). Right click on “anaconda powershell prompt” in the tasks menu that pops up, and then properties.</a></li>
@@ -566,7 +563,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jupyter-notebooks">Running Jupyter Notebooks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manually">Manually</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactively">Interactively</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-command-line">From the command line</a></li>
 </ul>
 </li>
@@ -690,24 +687,29 @@ document.write(`
 <section id="installing-packages">
 <h2>Installing packages<a class="headerlink" href="#installing-packages" title="Permalink to this heading">#</a></h2>
 <p>Sometimes, authors will list the packages they used. There are a few options:</p>
-<section id="they-provide-a-requirements-txt-file">
-<h3>They provide a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file<a class="headerlink" href="#they-provide-a-requirements-txt-file" title="Permalink to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+&lt;literal&gt;requirements.txt&lt;/literal&gt; file</label><div class="sd-tab-content docutils">
 <p>If the authors provide a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file, you can install all the packages at once. From an appropriate terminal, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </pre></div>
 </div>
-</section>
-<section id="they-provide-a-environment-yml-file">
-<h3>They provide a <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file<a class="headerlink" href="#they-provide-a-environment-yml-file" title="Permalink to this heading">#</a></h3>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+&lt;literal&gt;environment.yml&lt;/literal&gt; file</label><div class="sd-tab-content docutils">
 <p>If the authors provide an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file, they used Conda as the Python system manager. From an appropriate terminal, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
 </pre></div>
 </div>
-</section>
-<section id="they-provide-a-list-of-packages">
-<h3>They provide a list of packages<a class="headerlink" href="#they-provide-a-list-of-packages" title="Permalink to this heading">#</a></h3>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+List of packages</label><div class="sd-tab-content docutils">
 <p>If the authors provide a list of packages, the easiest way is to create a simple <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file with a text editor (e.g., VS Code), then proceed as with the first option.</p>
-</section>
+</div>
+</div>
 <section id="using-anaconda-package-manager">
 <h3>Using Anaconda Package manager<a class="headerlink" href="#using-anaconda-package-manager" title="Permalink to this heading">#</a></h3>
 <p>This is known to work on  CISER (CCSS-Classic).</p>
@@ -736,9 +738,13 @@ document.write(`
 </section>
 <section id="running-jupyter-notebooks">
 <h2>Running Jupyter Notebooks<a class="headerlink" href="#running-jupyter-notebooks" title="Permalink to this heading">#</a></h2>
-<section id="manually">
-<h3>Manually<a class="headerlink" href="#manually" title="Permalink to this heading">#</a></h3>
-<p>In order to run Jupyter notebooks, do the following, once you have opened the Jupyter Notebook or Jupyter Lab interface:</p>
+<section id="interactively">
+<h3>Interactively<a class="headerlink" href="#interactively" title="Permalink to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Conda</label><div class="sd-tab-content docutils">
+<p>In order to run Jupyter notebooks that you started from the Conda prompt, do the following, once you have opened the Jupyter Notebook or Jupyter Lab interface:</p>
 <ul class="simple">
 <li><p>Navigate to the directory where the notebook is located</p></li>
 <li><p>Open the notebook</p></li>
@@ -746,13 +752,28 @@ document.write(`
 <li><p>Run all the cells: <code class="docutils literal notranslate"><span class="pre">Cell</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">All</span></code></p></li>
 <li><p>Save the notebook: <code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Checkpoint</span></code></p></li>
 </ul>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+VS Code</label><div class="sd-tab-content docutils">
+<p>If you are using VS Code, open the notebook in VS Code. You should get options to choose a kernel. If prompted to create an environment, do so.</p>
+<p><img alt="VS Code top menu" src="_images/vscode-ipynb.png" /></p>
+<p>Then, from the top-menu,</p>
+<ul class="simple">
+<li><p>Choose “Clear All Outputs”</p></li>
+<li><p>Choose “Run All”</p></li>
+<li><p>Save the notebook</p></li>
+<li><p>From the <code class="docutils literal notranslate"><span class="pre">...</span></code> menu, choose “Export” -&gt; “PDF”</p></li>
+</ul>
+</div>
+</div>
 </section>
 <section id="from-the-command-line">
 <h3>From the command line<a class="headerlink" href="#from-the-command-line" title="Permalink to this heading">#</a></h3>
 <p>You should also be able to do the following from the command line:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 Linux/macOS</label><div class="sd-tab-content docutils">
 <p>If you have a LaTeX installation, you can convert the notebook to a PDF using the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># requires a latex installation</span>
@@ -781,8 +802,8 @@ jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class=
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 Windows</label><div class="sd-tab-content docutils">
 <p>Not sure yet. Needs augmentation.</p>
 </div>
@@ -868,9 +889,6 @@ Windows</label><div class="sd-tab-content docutils">
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-python-code-dynamic">Making Python code dynamic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#they-provide-a-requirements-txt-file">They provide a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#they-provide-a-environment-yml-file">They provide a <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#they-provide-a-list-of-packages">They provide a list of packages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-anaconda-package-manager">Using Anaconda Package manager</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#search-anaconda-prompt-from-the-start-menu-right-click-on-the-app-when-it-appears-and-pin-it-to-the-taskbar">Search “anaconda prompt” from the start menu. right click on the app when it appears and pin it to the taskbar.</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#right-click-on-anaconda-prompt-in-the-taskbar-looks-like-a-black-window-similar-to-command-line-or-terminal-right-click-on-anaconda-powershell-prompt-in-the-tasks-menu-that-pops-up-and-then-properties">Right click on anaconda prompt in the taskbar (looks like a black window, similar to command line or terminal). Right click on “anaconda powershell prompt” in the tasks menu that pops up, and then properties.</a></li>
@@ -881,7 +899,7 @@ Windows</label><div class="sd-tab-content docutils">
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jupyter-notebooks">Running Jupyter Notebooks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manually">Manually</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactively">Interactively</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-command-line">From the command line</a></li>
 </ul>
 </li>

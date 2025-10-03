@@ -148,26 +148,32 @@ would change the working directory to the location of the file being run.
 
 Sometimes, authors will list the packages they used. There are a few options:
 
-### They provide a `requirements.txt` file
+
+::::{tab-set}
+
+:::{tab-item}  `requirements.txt` file
 
 If the authors provide a `requirements.txt` file, you can install all the packages at once. From an appropriate terminal, run:
 
 ```bash
 pip install -r requirements.txt
 ```
-
-### They provide a `environment.yml` file
+:::
+:::{tab-item}  `environment.yml` file
 
 If the authors provide an `environment.yml` file, they used Conda as the Python system manager. From an appropriate terminal, run:
 
 ```bash
 conda env create -f environment.yml
 ```
+:::
 
-### They provide a list of packages
+:::{tab-item} List of packages
 
 If the authors provide a list of packages, the easiest way is to create a simple `requirements.txt` file with a text editor (e.g., VS Code), then proceed as with the first option.
 
+:::
+::::
 
 
 ### Using Anaconda Package manager
@@ -201,9 +207,14 @@ If using the default "Jupyter" link in the Start Menu, the working directory won
 
 ## Running Jupyter Notebooks
 
-### Manually
+### Interactively
 
-In order to run Jupyter notebooks, do the following, once you have opened the Jupyter Notebook or Jupyter Lab interface:
+
+::::{tab-set}
+
+:::{tab-item} Conda
+
+In order to run Jupyter notebooks that you started from the Conda prompt, do the following, once you have opened the Jupyter Notebook or Jupyter Lab interface:
 
 - Navigate to the directory where the notebook is located
 - Open the notebook
@@ -211,13 +222,31 @@ In order to run Jupyter notebooks, do the following, once you have opened the Ju
 - Run all the cells: `Cell` -> `Run All`
 - Save the notebook: `File` -> `Save and Checkpoint`
 
+:::
+:::{tab-item} VS Code
+
+If you are using VS Code, open the notebook in VS Code. You should get options to choose a kernel. If prompted to create an environment, do so. 
+
+![VS Code top menu](images/vscode-ipynb.png)
+
+Then, from the top-menu, 
+
+- Choose "Clear All Outputs"
+- Choose "Run All"
+- Save the notebook
+- From the `...` menu, choose "Export" -> "PDF" 
+
+
+:::
+::::
+
 ### From the command line
 
 You should also be able to do the following from the command line:
 
 ::::{tab-set}
 
-:::{tab-item} Linux/macOS
+:::{tab-item} Linux/macOS 
 
 If you have a LaTeX installation, you can convert the notebook to a PDF using the following commands:
 
