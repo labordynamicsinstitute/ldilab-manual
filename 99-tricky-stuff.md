@@ -28,6 +28,13 @@ While in some cases, the right solution may be to use something like [Git LFS](h
 
 ### If the commit has not been pushed yet
 
+This works if you have only a single commit where this is an issue, i.e., your `git status` shows something like:
+
+```
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+```
+
 First, find the file:
 
 ```bash
@@ -56,16 +63,30 @@ git rm --cached path/to/VERYLARGEFILE
 git commit --amend
 ```
 
-### If the commit has been pushed
+### If there are more than 1 commits
 
-If the commit has been pushed, you will need to rewrite the history. This is a bit more complicated, but it can be done. The following steps will rewrite the history of the last 3 commits.
+If your `git status` shows
+
+
+```
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+```
+
+(or more), you will need to rewrite the history. This is a bit more complicated, but it can be done. The following steps will rewrite the history of the last 3 commits.
 
 ```bash
 git rm --cached path/to/VERYLARGEFILE
 git rebase -i HEAD~3
 ```
 
-This will open an editor with the last 3 commits. Change the word `pick` to `squash` for the commits between when the large file was added, and when it was removed. Save and close the editor. You will then be prompted to edit the commit message. Save and close the editor. This will solve it on your local machine. You will then need to force push to the remote repository.
+This will open an editor with the last 3 commits. Change the word `pick` to `squash` for the commits between when the large file was added, and when it was removed. Save and close the editor. You will then be prompted to edit the commit message. Save and close the editor. This will solve it on your local machine. You can now push.
+
+### If the commits have already been pushed
+
+Sometimes, this happens after the commits have already been pushed, but Bitbucket has implemented a new policy (does not happen very often). You may then need to clean the historical commits. If not already done, first `git pull` so you get the complete history. 
+
+Then proceed as in the [previous step](#if-there-are-more-than-1-commits). Once done, you will then need to force push to the remote repository.
 
 ```bash
 git push origin master --force
