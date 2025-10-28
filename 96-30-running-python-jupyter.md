@@ -258,6 +258,7 @@ Define the notebook name:
 
 ```bash
 NOTEBOOK=/path/to/notebook.ipynb
+```
 
 ```bash
 jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to notebook  \
