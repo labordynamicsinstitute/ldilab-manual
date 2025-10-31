@@ -109,7 +109,7 @@ The RStudio server instance only runs the latest R code. For running other R ver
 Once the above is done, running R is simple:
 
 ```bash
-R CMD BATCH --debugger --verbose --vanilla main.R main.$(date +%F_%H-%M-%S).Rout
+R CMD BATCH --verbose --vanilla main.R main.$(date +%F_%H-%M-%S).Rout
 ```
 
 This will create a `main.(DATE).Rout` file, which you can open up in VS Code. You must commit this file to Bitbucket. Every run will create a new `main.(DATE).Rout` with a slightly different date-stamp.
@@ -159,3 +159,26 @@ setwd(file.path(rootdir,"code")
 ```
 
 (if the file in question is in a subdirectory of the rootdir)
+
+### Failure due to `renv`
+
+The package management system `renv` needs to be initialized. Possible failures include:
+
+* the required `.Rprofile` file is missing (it is hidden from view in the file browser, but it must be there).
+
+Solution: create a minimal `.Rprofile` file in the root directory with the following content:
+
+```R
+source("renv/activate.R")
+```
+
+* the `renv` environment was not initialized.
+
+The first time running code on a system, `renv` needs to restore packages.
+
+Solution: Add the following line to the authors' `main.R`, before any other code that uses packages:
+
+```R
+renv::restore()
+```
+

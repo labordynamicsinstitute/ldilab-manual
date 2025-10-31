@@ -3,6 +3,12 @@
 
 In "Verification" stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of R. We provide `template-config.R` in the [template repository](https://github.com/AEADataEditor/replication-template) you clone which addresses these problems. In this section, we will walk you through how to update the `config.R`, in the [next section](running-code-in-r) how to run R in a way that generates log files automatically.
 
+::::{warning}
+
+If the author use `renv`, or `groundhog`, or other package management systems, you should NOT use `config.R`. Instead, follow the author's instructions for setting up the environment, and proceed to [running code in R](running-code-in-r).
+
+::::
+
 ## Why do we have to install programs?
 
 - R, or other statistical software, does not provide all the packages (or "libraries", or "modules") that enable or facilitate the analysis. Therefore, many user-written programs or extensions are publicly available for downloads. For R, this is most often comes from [CRAN](https://cran.r-project.org/), but the specific "mirror" of CRAN that is used may vary. You install packages with something like `install.packages("package name")` or multiple packages with `install.packages(c("package1","package2"))`. You might also see the use of `remotes::install_github("r-lib/conflicted")` (to install a package from Github) or `install_version("devtools", "1.11.0")` to install a specific version.
