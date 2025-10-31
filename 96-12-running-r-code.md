@@ -136,6 +136,15 @@ RScript  --verbose main.R > main.$(date +%F_%H-%M-%S).Rout 2>&1
 
 ## Possible failures
 
+### `main.R` and `.Rprofile` are not in the same directory
+
+If the `main.R` file is not in the root directory (i.e., the same directory as the `.Rprofile` file), then you need to use a workaround. Call the `main.R` file from a wrapper script in the root directory, or using the source command directly:
+
+```bash
+R  --no-restore -e 'source("scripts/main.R")' main.$(date +%F_%H-%M-%S).Rout
+``` 
+
+
 ### Use of Rstudio API
 
 We sometimes see authors use the Rstudio API. In most cases, this will prevent the code from running in the `R CMD BATCH` method. Also in most cases, this can be remedied easily.
@@ -181,4 +190,6 @@ Solution: Add the following line to the authors' `main.R`, before any other code
 ```R
 renv::restore()
 ```
+
+You might also simply need to invoke R (in the same directory as the `renv` setup) and run `renv::restore()` once manually.
 
