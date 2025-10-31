@@ -554,6 +554,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-failures">Possible failures</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-rstudio-api">Use of Rstudio API</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-due-to-renv">Failure due to <code class="docutils literal notranslate"><span class="pre">renv</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -663,7 +664,7 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
 <section id="run-the-code">
 <h3>Run the code<a class="headerlink" href="#run-the-code" title="Permalink to this heading">#</a></h3>
 <p>Once the above is done, running R is simple:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>R<span class="w"> </span>CMD<span class="w"> </span>BATCH<span class="w"> </span>--debugger<span class="w"> </span>--verbose<span class="w"> </span>--vanilla<span class="w"> </span>main.R<span class="w"> </span>main.<span class="k">$(</span>date<span class="w"> </span>+%F_%H-%M-%S<span class="k">)</span>.Rout
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>R<span class="w"> </span>CMD<span class="w"> </span>BATCH<span class="w"> </span>--verbose<span class="w"> </span>--vanilla<span class="w"> </span>main.R<span class="w"> </span>main.<span class="k">$(</span>date<span class="w"> </span>+%F_%H-%M-%S<span class="k">)</span>.Rout
 </pre></div>
 </div>
 <p>This will create a <code class="docutils literal notranslate"><span class="pre">main.(DATE).Rout</span></code> file, which you can open up in VS Code. You must commit this file to Bitbucket. Every run will create a new <code class="docutils literal notranslate"><span class="pre">main.(DATE).Rout</span></code> with a slightly different date-stamp.</p>
@@ -701,6 +702,25 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 <p>(if the file in question is in a subdirectory of the rootdir)</p>
+</section>
+<section id="failure-due-to-renv">
+<h3>Failure due to <code class="docutils literal notranslate"><span class="pre">renv</span></code><a class="headerlink" href="#failure-due-to-renv" title="Permalink to this heading">#</a></h3>
+<p>The package management system <code class="docutils literal notranslate"><span class="pre">renv</span></code> needs to be initialized. Possible failures include:</p>
+<ul class="simple">
+<li><p>the required <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> file is missing (it is hidden from view in the file browser, but it must be there).</p></li>
+</ul>
+<p>Solution: create a minimal <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> file in the root directory with the following content:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">source</span><span class="p">(</span><span class="s">&quot;renv/activate.R&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>the <code class="docutils literal notranslate"><span class="pre">renv</span></code> environment was not initialized.</p></li>
+</ul>
+<p>The first time running code on a system, <code class="docutils literal notranslate"><span class="pre">renv</span></code> needs to restore packages.</p>
+<p>Solution: Add the following line to the authors’ <code class="docutils literal notranslate"><span class="pre">main.R</span></code>, before any other code that uses packages:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">renv</span><span class="o">::</span><span class="nf">restore</span><span class="p">()</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -775,6 +795,7 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-failures">Possible failures</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-rstudio-api">Use of Rstudio API</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-due-to-renv">Failure due to <code class="docutils literal notranslate"><span class="pre">renv</span></code></a></li>
 </ul>
 </li>
 </ul>

@@ -579,6 +579,10 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="using-config-r-in-r">
 <span id="using-config-r"></span><h1>Using config.R in R<a class="headerlink" href="#using-config-r-in-r" title="Permalink to this heading">#</a></h1>
 <p>In “Verification” stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of R. We provide <code class="docutils literal notranslate"><span class="pre">template-config.R</span></code> in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template">template repository</a> you clone which addresses these problems. In this section, we will walk you through how to update the <code class="docutils literal notranslate"><span class="pre">config.R</span></code>, in the <a class="reference internal" href="96-12-running-r-code.html#running-code-in-r"><span class="std std-ref">next section</span></a> how to run R in a way that generates log files automatically.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the author use <code class="docutils literal notranslate"><span class="pre">renv</span></code>, or <code class="docutils literal notranslate"><span class="pre">groundhog</span></code>, or other package management systems, you should NOT use <code class="docutils literal notranslate"><span class="pre">config.R</span></code>. Instead, follow the author’s instructions for setting up the environment, and proceed to <a class="reference internal" href="96-12-running-r-code.html#running-code-in-r"><span class="std std-ref">running code in R</span></a>.</p>
+</div>
 <section id="why-do-we-have-to-install-programs">
 <h2>Why do we have to install programs?<a class="headerlink" href="#why-do-we-have-to-install-programs" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
