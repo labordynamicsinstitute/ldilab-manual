@@ -553,6 +553,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-failures">Possible failures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-r-and-rprofile-are-not-in-the-same-directory"><code class="docutils literal notranslate"><span class="pre">main.R</span></code> and <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> are not in the same directory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-rstudio-api">Use of Rstudio API</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-due-to-renv">Failure due to <code class="docutils literal notranslate"><span class="pre">renv</span></code></a></li>
 </ul>
@@ -686,6 +687,13 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
 </section>
 <section id="possible-failures">
 <h2>Possible failures<a class="headerlink" href="#possible-failures" title="Permalink to this heading">#</a></h2>
+<section id="main-r-and-rprofile-are-not-in-the-same-directory">
+<h3><code class="docutils literal notranslate"><span class="pre">main.R</span></code> and <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> are not in the same directory<a class="headerlink" href="#main-r-and-rprofile-are-not-in-the-same-directory" title="Permalink to this heading">#</a></h3>
+<p>If the <code class="docutils literal notranslate"><span class="pre">main.R</span></code> file is not in the root directory (i.e., the same directory as the <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> file), then you need to use a workaround. Call the <code class="docutils literal notranslate"><span class="pre">main.R</span></code> file from a wrapper script in the root directory, or using the source command directly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>R<span class="w">  </span>--no-restore<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;source(&quot;scripts/main.R&quot;)&#39;</span><span class="w"> </span>main.<span class="k">$(</span>date<span class="w"> </span>+%F_%H-%M-%S<span class="k">)</span>.Rout
+</pre></div>
+</div>
+</section>
 <section id="use-of-rstudio-api">
 <h3>Use of Rstudio API<a class="headerlink" href="#use-of-rstudio-api" title="Permalink to this heading">#</a></h3>
 <p>We sometimes see authors use the Rstudio API. In most cases, this will prevent the code from running in the <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">CMD</span> <span class="pre">BATCH</span></code> method. Also in most cases, this can be remedied easily.</p>
@@ -721,6 +729,7 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">renv</span><span class="o">::</span><span class="nf">restore</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>You might also simply need to invoke R (in the same directory as the <code class="docutils literal notranslate"><span class="pre">renv</span></code> setup) and run <code class="docutils literal notranslate"><span class="pre">renv::restore()</span></code> once manually.</p>
 </section>
 </section>
 </section>
@@ -794,6 +803,7 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-failures">Possible failures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-r-and-rprofile-are-not-in-the-same-directory"><code class="docutils literal notranslate"><span class="pre">main.R</span></code> and <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> are not in the same directory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-rstudio-api">Use of Rstudio API</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-due-to-renv">Failure due to <code class="docutils literal notranslate"><span class="pre">renv</span></code></a></li>
 </ul>
