@@ -1,6 +1,6 @@
-jupyter-book
+jupyter-book==1.0.4
 matplotlib
 numpy
 sphinx-design
-pydata-sphinx-theme==0.13.1
+pydata-sphinx-theme
 networkx
