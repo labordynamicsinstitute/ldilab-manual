@@ -229,6 +229,62 @@ python3 -m pip install -r requirements.txt
 
 ::::
 
+### Problems
+
+
+::::{tab-set}
+
+:::{tab-item} Windows
+
+**Permission errors on CCSS Cloud**
+
+If you get an error about permissions on CCSS Cloud, such as the following or similar:
+
+```
+WARNING: Failed to write executable - trying to use .deleteme logic
+ERROR: Could not install packages due to an OSError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\lv39\\AppData\\Roaming\\Python\\Python313\\Scripts\\dotenv.exe' -> 'C:\\Users\\lv39\\AppData\\Roaming\\Python\\Python313\\Scripts\\dotenv.exe.deleteme'
+```
+
+then you will need to use Anaconda Python instead of the default Python installation. To do so, run the following commands in your Bash shell:
+
+```bash
+/c/ProgramData/Anaconda3/Scripts/conda init bash
+```
+
+You will be prompted for an admin password, which you should say "No" to. The command will report that it failed, but should have modified your `.bashrc` file to use Anaconda Python. Close that Bash window, and open a new one. It should display the word `(base)` at the beginning of the prompt, indicating that Anaconda Python is now active.
+
+```
+(base)
+lv39@RS-CCSSlv39-16 MINGW64 ~
+```
+
+Now, go back to the repository directory (e.g., `cd /l/Workspace/aearep-xxxx`) and re-run the `python -m pip install -r requirements.txt` command from above.
+
+:::
+
+:::{tab-item} Linux
+
+Newer versions of Ubuntu disallow the "global" installation of packages, even with the `--user` flag. You may need to create a virtual environment in your home directory first, and activate it every time you log on.
+
+**Creating the virtual environment:**
+
+```bash
+python3 -m venv $HOME/aeapyenv
+source $HOME/aeapyenv/bin/activate
+```
+
+Then run the `pip install` command again, from the `aearep-xxxx` directory.
+
+**Activating the virtual environment every time you log on:**
+
+Add the following line to your `$HOME/.bashrc` file, using the same methods described earlier.
+
+```bash
+source $HOME/aeapyenv/bin/activate
+```
+:::
+::::
+
 ## Updating
 
 Sometimes, updates are made. 
