@@ -94,7 +94,6 @@ A tutorial video (thanks to Lars' former RA Ilona Khimey) is available at [Corne
 ## Where to run code
 
 
-
 ::::{tab-set}
 
 :::{tab-item} BioHPC
@@ -114,6 +113,21 @@ Consult the Jira issue to figure out where you should run the code.
 :::
 
 ::::
+
+```{tip}
+For instructions on how to setup and run code see [ECCO Notes](https://labordynamicsinstitute.github.io/ecco-notes/docs/intro.html)
+```
+
+## Obtaining Data on Biohpc
+
+### From A Deposit
+
+The instructions from the manual [Deposit Download Instructions](https://labordynamicsinstitute.github.io/ldilab-manual/94-01-how-to-use-openICPSR-backend.html) will work. Note that you need to use the scripts instead of doing it manually. That page also has a link to non-icpsr deposit instructions
+
+### From Another Source
+
+The following page [Obtaining Data on Biohpc](https://labordynamicsinstitute.github.io/ecco-notes/docs/transfer.html) has extensive instructions on how to get data onto Biohpc from other sources. When obtaining data on your personal laptop is easy then using WinSCP will be straightforward. 
+
 
 ## Additional setup and tips-and-tricks
 
