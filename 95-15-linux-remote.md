@@ -33,34 +33,11 @@ Then do the usual [Bash setup](setup-bash). That should work on nearly any Linux
 
 Consult the [ECCO general documentation](https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html) for more details on the BioHPC cluster for economists!
 
-**Reserve a node**
-
-- Go to "User", then  [Reservations page](https://biohpc.cornell.edu/lab/labres.aspx), choose "Restricted", and reserve a node:
-  - cbsuecco02: up to 7 days
-  - all others: up to 3 days
-  - in both cases, renewable
-- Then go to 'My Reservations' and share the reservation with Lars (`lv39`) and others, if necessary.
-
-```{note}
-Skip this step if somebody else added you to their reservation!
-```
-
-```{note}
-If you do not see an open server, ask on the mailing list (ldi-lab-l@cornell.edu) if somebody has an active reservation that they can add you to!
-```
-
 **Access a node**
 
 See [Getting Started Guide](https://biohpc.cornell.edu/lab/userguide.aspx?a=quickstart) and [Remote Access](https://biohpc.cornell.edu/lab/doc/Remote_access.pdf). SSH is the best path (if you don't need graphical applications). See [Access via VSCode](linux-vscode) for a more user-friendly way to use SSH to access the server.
 
 Note that, for off-campus access, you will need to use Cornell VPN. Instructions can be found [here](https://it.cornell.edu/cuvpn).
-
-For **VNC**: 
-
-- Once your have a reserved node, click ["My Reservation"](https://biohpc.cornell.edu/lab/labresman.aspx) to manage all your active reservations. 
-- Choose your reservation. 
-- Click "Connect VNC" under "Action" and you will have your machine name and port number. To disconnect, click "Cancel VNC" under "Action".
-- Open VNC Viewer and type in session number in the form of "machine name:port number" given by BioHPC.
 
 ```{tip}
 
@@ -95,7 +72,7 @@ Access for us is primarily via SSH. See [Access via VSCode](linux-vscode) for a 
 - You may be prompted to "Select the platform of the remote host". If so, select the "Linux" option in the drop down menu.
 
 ```{tip}
-For this to work on BioHPC, verify that you have a valid reservation and an active VPN! 
+If you get the following message in the bottom right: "Setting up SSH Host BioHPC: (details) Initializing VS Code Server", then it may be waiting for you to enter your TFA code
 ```
 
 - Enter your account password when prompted.
@@ -161,76 +138,6 @@ Next time:
 3. If you forgot what session, `tmux ls`
 
 To save the output of a `tmux` session to a file, see [https://unix.stackexchange.com/questions/26548/write-all-tmux-scrollback-to-a-file](https://unix.stackexchange.com/questions/26548/write-all-tmux-scrollback-to-a-file).
-
-
-### Configuring automatic reservation cancellation (BioHPC only)
-
-If you use the BioHPC reservation system, it helps others if at the end of a long-running job, your reservation is cancelled as soon as possible. One way to do this is to add the following to the scripts you are running:
-
-
-
-
-::::{tab-set}
-
-
-:::{tab-item}  Stata
-
-```stata
-// Use the code below at the bottom of the Stata "main" or 
-// "master" script to automatically sign out 
-
-shell /programs/bin/labutils/endres.pl 
-```
-
-
-:::
-
-:::{tab-item} R
-
-```r
-# Add to end of main or last script.
-system("/programs/bin/labutils/endres.pl")
-```
-
-
-:::
-
-:::{tab-item} Matlab
-
-```
-%Use code below at end of MATLAB main script, or last script, to automatically sign out
-
-system("/programs/bin/labutils/endres.pl")
-```
-
-
-:::
-
-:::{tab-item}  Python
-
-```python
-# Use code below at bottom of Python/Anaconda script 
-# to automatically sign out
-
-import os
-
-os.system("/programs/bin/labutils/endres.pl")
-```
-
-:::
-
-
-:::{tab-item}  Bash
-
-```bash
-#Use the code below at the bottom of the bash "main" or 
-# "master" script to automatically sign out 
-/programs/bin/labutils/endres.pl 
-```
-
-:::
-
-::::
 
 ### Unzipping large ZIP files fails
 
