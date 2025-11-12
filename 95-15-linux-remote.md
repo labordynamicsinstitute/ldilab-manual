@@ -37,8 +37,6 @@ Consult the [ECCO general documentation](https://labordynamicsinstitute.github.i
 
 See [Getting Started Guide](https://biohpc.cornell.edu/lab/userguide.aspx?a=quickstart) and [Remote Access](https://biohpc.cornell.edu/lab/doc/Remote_access.pdf). SSH is the best path (if you don't need graphical applications). See [Access via VSCode](linux-vscode) for a more user-friendly way to use SSH to access the server.
 
-Note that, for off-campus access, you will need to use Cornell VPN. Instructions can be found [here](https://it.cornell.edu/cuvpn).
-
 ```{tip}
 
 For first-time access,  [set up](https://labordynamicsinstitute.github.io/ldilab-manual/95-50-setup-bash.html#configure-bitbucket-access) your bash environment.
@@ -117,6 +115,87 @@ Consult the Jira issue to figure out where you should run the code.
 ```{tip}
 For instructions on how to setup and run code see [ECCO Notes](https://labordynamicsinstitute.github.io/ecco-notes/docs/intro.html)
 ```
+
+## Running Code
+
+Running code on Biohpc is not as simple as opening the Stata GUI. Instead, you submit jobs through the SLURM scheduler. A detailed walkthrough can be seen [here](https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/sbatch.html). 
+
+### Modules
+
+[details on running modules]
+
+### SBATCH
+
+To submit a job to the server, you create a script with a header. Below is an example from the replication template.
+
+```bash
+#!/bin/bash
+# Job name:
+#SBATCH --job-name=RunStata
+#
+# Memory
+#SBATCH --mem=32G
+#
+# Request one node:
+#SBATCH --nodes=1
+#
+# Specify number of tasks for use case (example):
+#SBATCH --ntasks-per-node=1
+#
+# Processors per task: here, 8 bc we have Stata-MP/8
+#SBATCH --cpus-per-task=8
+#
+# Wall clock limit: adjust accordingly. Format is HH:MM:SS or DD-HH:MM:SS where DD are days.
+#SBATCH --time=00:00:30
+#
+# Email?
+# Probably do not need "--mail-user=youremail@cornell.edu"
+# Just add your email to the file "$HOME/.forward"
+# 
+#SBATCH --mail-type=ALL
+#
+## Command(s) to run (example):
+#
+# Stata example
+#
+/usr/local/stata16/stata-mp -b main.do
+#
+## Matlab - will run "main.m", output to "main.log"
+## Assumes you have done the setup at https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html#one-time-setup
+# module load matlab/2023a
+# matlab -nodisplay -r "addpath(genpath('.')); main" -logfile main.$(date +%F_%H-%M-%S).log
+#
+# R example - caution with version and parallel processing
+module load R/4.4.2
+R CMD BATCH main.R main.$(date +%F_%H-%M-%S).log
+```
+
+Each item in the header specifies some detail for the server. Jobs submitted must specifiy levels of compute (such as memory required), time to run, . A good starting point for these details is an authors `README`.
+
+To view the status of your jobs, you can run
+
+```bash
+squeue
+```
+
+or 
+
+```bash
+squeue -u <netid>
+```
+
+
+### Interactivly
+
+Sometimes, it can be helpful to run code interactively, rather than through SBATCH, on the BioHPC shell. Details [here](https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html#interactive-shell). 
+
+The most important idea is not to run code on the login node of BioHPC. You must transfer over to a computing node, using
+
+```bash
+srun --pty bash -l
+```
+
+Here, you can load modules, run programs, 
 
 ## Obtaining Data on Biohpc
 
@@ -304,6 +383,27 @@ You should now be prompted for your SSH passphrase:
 $ ssh netid@cbsulogin.biohpc.cornell.edu
 Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 ```
+
+### Utilizing Aliases
+
+Workflows on Linux Systems can be simplified by using bash aliases. The example below can exist on your personal machine
+
+```bash
+alias biohpc='ssh <netid>@cbsulogin.biohpc.cornell.edu'
+```
+
+Adding this to your `~/.bashrc` enables you to type `bihopc` in your terminal, and an ssh connection is opened.
+
+### Using `linux-system-info.sh`
+
+Part of replicating packages is capturing as much information as we can. You will see in the replication report that we must specify the amount of compute our replication used, under `Computing Environment of the Replicator`. This can be captured by adding the following line to your SBATCH script.
+
+```bash
+echo "Linux System Info:"
+<package>/tools/linux-system-info.sh
+```
+
+This will output the computing resources in the SLURM output file.
 
 
 ```{tip}
