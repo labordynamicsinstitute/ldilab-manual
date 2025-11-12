@@ -30,7 +30,8 @@ Then do the usual [Bash setup](setup-bash). That should work on nearly any Linux
 
 1. Go to the [BioHPC account request page](https://biohpc.cornell.edu/NewUserRequest.aspx), and create an account on the BioHPC cluster.
 2. Then [contact BioHPC support](https://biohpc.cornell.edu/contact.aspx), requesting to join the ECCO group and lv39 (Lars') "lab" (`ecco_lv39`).
-
+3. If you are logging on from outside the Cornell network you will need to setup [Two Factor Identification](https://biohpc.cornell.edu/doc/biohpc_external_quickstart.html).
+   
 Consult the [ECCO general documentation](https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html) for more details on the BioHPC cluster for economists!
 
 **Access a node**
