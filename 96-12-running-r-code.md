@@ -193,3 +193,10 @@ renv::restore()
 
 You might also simply need to invoke R (in the same directory as the `renv` setup) and run `renv::restore()` once manually.
 
+### Failure due to `segmentation fault`
+
+On CCSS Cloud, running R code that requires a high amount of memory can cause R to fail. 
+
+Solution 1: Check how much memory storage is available in CCSS Cloud in the Task Manager and run the R file when memory is highest (usually at night)
+
+Solution 2: Run the main file, but call only one R file at a time by commenting out all of the other R files. Rerun the main file for each additional R file that is included in the main file.
