@@ -578,6 +578,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-r-and-rprofile-are-not-in-the-same-directory"><code class="docutils literal notranslate"><span class="pre">main.R</span></code> and <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> are not in the same directory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-rstudio-api">Use of Rstudio API</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-due-to-renv">Failure due to <code class="docutils literal notranslate"><span class="pre">renv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-due-to-segmentation-fault">Failure due to <code class="docutils literal notranslate"><span class="pre">segmentation</span> <span class="pre">fault</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -753,6 +754,12 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
 </div>
 <p>You might also simply need to invoke R (in the same directory as the <code class="docutils literal notranslate"><span class="pre">renv</span></code> setup) and run <code class="docutils literal notranslate"><span class="pre">renv::restore()</span></code> once manually.</p>
 </section>
+<section id="failure-due-to-segmentation-fault">
+<h3>Failure due to <code class="docutils literal notranslate"><span class="pre">segmentation</span> <span class="pre">fault</span></code><a class="headerlink" href="#failure-due-to-segmentation-fault" title="Link to this heading">#</a></h3>
+<p>On CCSS Cloud, running R code that requires a high amount of memory can cause R to fail.</p>
+<p>Solution 1: Check how much memory storage is available in CCSS Cloud in the Task Manager and run the R file when memory is highest (usually at night)</p>
+<p>Solution 2: Run the main file, but call only one R file at a time by commenting out all of the other R files. Rerun the main file for each additional R file that is included in the main file.</p>
+</section>
 </section>
 </section>
 
@@ -831,6 +838,7 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-r-and-rprofile-are-not-in-the-same-directory"><code class="docutils literal notranslate"><span class="pre">main.R</span></code> and <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> are not in the same directory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-rstudio-api">Use of Rstudio API</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-due-to-renv">Failure due to <code class="docutils literal notranslate"><span class="pre">renv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-due-to-segmentation-fault">Failure due to <code class="docutils literal notranslate"><span class="pre">segmentation</span> <span class="pre">fault</span></code></a></li>
 </ul>
 </li>
 </ul>
