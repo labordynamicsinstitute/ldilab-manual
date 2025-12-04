@@ -57,6 +57,76 @@ conda install boxsdk[jwt]
 
 - Currently, box is updating boxsdk to box-sdk-gen. This script will work only with `boxsdk`, not the newer `box-sdk-gen`. 
 
+## BioHPC Setup Experience (User Notes)
+
+**1. Download Environment Variables File**
+
+Download the environment variable setup file onto BioHPC:
+
+```bash
+wget https://www.dropbox.com/scl/fi/ovn9bk2mw7v00zxhj1zz1/envvars.txt?rlkey=kyesfqmpst22ibo3r67xcvix4&dl=1 -O ~/envvars.txt
+```
+Then add the contents to your ~/.bashrc (adjust the path if needed):
+
+```
+cat ~/envvars.txt >> ~/.bashrc
+source ~/.bashrc
+```
+
+This ensures that all required Box environment variables are available in your session.
+
+**2. Create a Conda Environment (from BioHPC login node)**
+
+To avoid conflicts with existing Python installations, create a dedicated conda environment:
+
+# Load conda if needed
+
+```
+module load anaconda  # or follow BioHPC-specific instructions to enable conda
+```
+# Create environment with Python 3.11
+
+```
+conda create --name download python=3.11
+```
+
+# Activate the environment
+
+```
+conda activate download
+```
+
+**3. Install Box SDK**
+
+Install the Box Python SDK with JWT support inside the environment:
+
+```
+conda install boxsdk
+conda install boxsdk[jwt]
+```
+
+⚠️ Important: Some newer versions of boxsdk are incompatible. If you get import errors (No module named 'boxsdk'), uninstall the current version and install a compatible version:
+
+```
+conda uninstall boxsdk
+conda install -c conda-forge boxsdk=3.14.0
+```
+
+**4. Install Additional Dependencies**
+
+If you encounter authentication errors related to JWT, install pyjwt:
+
+```
+pip install pyjwt
+```
+
+**5. Run the Script**
+
+From the directory where you want to download restricted data, run:
+
+python tools/download_box_private.py [SUBFOLDER] # where SUBFOLDER is the deposit number.
+
+This should now successfully authenticate and download files from the private Box folder.
 
 ## Using AEA Credentials
 
