@@ -576,7 +576,7 @@ document.write(`
 <label class="sd-tab-label" for="sd-tab-item-0">
 Windows</label><div class="sd-tab-content docutils">
 <p>See <a class="reference external" href="https://www.mathworks.com/matlabcentral/answers/102082-how-do-i-call-matlab-from-the-dos-prompt">these instructions</a> for finding the Matlab binary on the system. However, this should work “out of the box” on CCSS-managed systems from the <strong>Bash</strong> prompt.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>start matlab -nosplash  -minimize -r  &quot;addpath(genpath(&#39;.&#39;));main&quot;  -logfile matlab-$(date +%F_%H-%M-%S).log
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>start matlab -nosplash  -batch  &quot;addpath(genpath(&#39;.&#39;));main;exit&quot;  -logfile matlab-$(date +%F_%H-%M-%S).log
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">main.m</span></code> is the Matlab program you want to run (you omit the <code class="docutils literal notranslate"><span class="pre">.m</span></code> when calling it).</p>
@@ -589,7 +589,7 @@ Windows</label><div class="sd-tab-content docutils">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Linux</label><div class="sd-tab-content docutils">
 <p>Assuming MATLAB is in your path (check with <code class="docutils literal notranslate"><span class="pre">matlab</span></code>), the following will generate a logfile.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>time matlab -nodisplay -r &quot;addpath(genpath(&#39;.&#39;)); main&quot; -logfile matlab-$(date +%F_%H-%M-%S).log
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>time matlab -nodisplay -r &quot;addpath(genpath(&#39;.&#39;)); main; exit&quot; -logfile matlab-$(date +%F_%H-%M-%S).log
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">main.m</span></code> is the Matlab program you want to run (you omit the <code class="docutils literal notranslate"><span class="pre">.m</span></code> when calling it).</p>
