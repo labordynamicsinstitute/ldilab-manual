@@ -577,13 +577,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-box-sdk">Installing Box SDK</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biohpc-setup-experience-user-notes">BioHPC Setup Experience (User Notes)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-right-credentials">Using Right Credentials</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-environment-variables-file">Download Environment Variables File</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-environment-setup">Python Environment Setup</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-script">Run the Script</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-aea-credentials">Using AEA Credentials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment Variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base64-configuration">Base64 Configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authentication-methods">Authentication Methods</a><ul class="nav section-nav flex-column">
@@ -652,7 +650,7 @@ python<span class="w"> </span>tools/download_box_private.py<span class="w">   </
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
-<p>in any recent repository updated with “tools” newer than June 7, 2025.</p>
+<p>in any recent Bitbucket repository updated with “tools” newer than June 7, 2025.</p>
 <p>Ideally, these should be installed in your main Python environment, since you will be re-using this regularly. You can also install in a virtual environment.</p>
 <p>If using <code class="docutils literal notranslate"><span class="pre">conda</span></code>, you can install <code class="docutils literal notranslate"><span class="pre">boxsdk</span></code> with:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>boxsdk
@@ -660,12 +658,13 @@ conda<span class="w"> </span>install<span class="w"> </span>boxsdk<span class="o
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Currently, box is updating boxsdk to box-sdk-gen. This script will work only with <code class="docutils literal notranslate"><span class="pre">boxsdk</span></code>, not the newer <code class="docutils literal notranslate"><span class="pre">box-sdk-gen</span></code>.</p></li>
+<li><p>Currently, Box is updating <code class="docutils literal notranslate"><span class="pre">boxsdk</span></code> to <code class="docutils literal notranslate"><span class="pre">box-sdk-gen</span></code>. This script will work only with <code class="docutils literal notranslate"><span class="pre">boxsdk</span></code>, not the newer <code class="docutils literal notranslate"><span class="pre">box-sdk-gen</span></code>.</p></li>
 </ul>
 </section>
 </section>
-<section id="biohpc-setup-experience-user-notes">
-<h2>BioHPC Setup Experience (User Notes)<a class="headerlink" href="#biohpc-setup-experience-user-notes" title="Link to this heading">#</a></h2>
+<section id="using-right-credentials">
+<h2>Using Right Credentials<a class="headerlink" href="#using-right-credentials" title="Link to this heading">#</a></h2>
+<p>To permantently set the proper credentials on BioHPC, you can modify your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> profile, to include the box environmental variables. These values (or the <code class="docutils literal notranslate"><span class="pre">(SECRETURL)</span></code>) can be obtained from a supervisor.</p>
 <section id="download-environment-variables-file">
 <h3>Download Environment Variables File<a class="headerlink" href="#download-environment-variables-file" title="Link to this heading">#</a></h3>
 <p>Download the environment variable setup file onto BioHPC:</p>
@@ -700,15 +699,12 @@ Conda</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 <p><strong>Activate the environment</strong></p>
+<p>You will need to do this every time after you log in, if you intend to use the script:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">download</span>
 </pre></div>
 </div>
 <p><strong>Install Box SDK</strong></p>
-<p>Install the Box Python SDK with JWT support inside the environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">boxsdk</span>
-<span class="n">conda</span> <span class="n">install</span> <span class="n">boxsdk</span><span class="p">[</span><span class="n">jwt</span><span class="p">]</span>
-</pre></div>
-</div>
+<p>Follow the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> instructions from above to install the necessary packages.</p>
 <p>⚠️ Important: Some newer versions of <code class="docutils literal notranslate"><span class="pre">boxsdk</span></code> are incompatible. If you get import errors (No module named ‘boxsdk’), uninstall the current version and install a compatible version:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">uninstall</span> <span class="n">boxsdk</span>
 <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">boxsdk</span><span class="o">=</span><span class="mf">3.14.0</span>
@@ -720,20 +716,23 @@ Conda</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-</div>
-</section>
-<section id="run-the-script">
-<h3>Run the Script<a class="headerlink" href="#run-the-script" title="Link to this heading">#</a></h3>
-<p>From the directory where you want to download restricted data (typically, the root of a Bitbucket repo, e.g., <code class="docutils literal notranslate"><span class="pre">aearep-1234</span></code>), run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">tools</span><span class="o">/</span><span class="n">download_box_private</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="n">SUBFOLDER</span><span class="p">]</span> <span class="c1"># where SUBFOLDER is the deposit number.</span>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Standard Python</label><div class="sd-tab-content docutils">
+<p>You can use standard Python on BioHPC compute nodes. Get a terminal through Slurm:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun<span class="w"> </span>--pty<span class="w">  </span>bash<span class="w"> </span>-l
 </pre></div>
 </div>
-<p>This should now successfully authenticate and download files from the private Box folder.</p>
+<p>Load the necessary modules, and install the necessary packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">python</span><span class="o">/</span><span class="mf">3.12.7</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">aearep</span><span class="o">-</span><span class="mi">1234</span> <span class="c1"># adjust to the project at hand</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>You will need to run this every time from a compute node, as the more recent Python versions are not available on the login nodes.</p>
+</div>
+</div>
 </section>
-</section>
-<section id="using-aea-credentials">
-<h2>Using AEA Credentials<a class="headerlink" href="#using-aea-credentials" title="Link to this heading">#</a></h2>
-<p>To permantently set the proper credentials on BioHPC, you can modify your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> profile, to include the box environmental variables. These values can be obtained from a supervisor.</p>
 </section>
 <section id="environment-variables">
 <h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Link to this heading">#</a></h2>
@@ -754,7 +753,7 @@ Conda</label><div class="sd-tab-content docutils">
 </section>
 <section id="base64-configuration">
 <h2>Base64 Configuration<a class="headerlink" href="#base64-configuration" title="Link to this heading">#</a></h2>
-<p>For CI/CD environments, you can provide the entire Box configuration as a base64-encoded string:</p>
+<p>To convert the entire Box configuration as a base64-encoded string:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate base64 config</span>
 cat<span class="w"> </span>config.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64
 
@@ -800,7 +799,7 @@ cat<span class="w"> </span>config.json<span class="w"> </span><span class="p">|<
 </section>
 <section id="box-application-setup">
 <h2>Box Application Setup<a class="headerlink" href="#box-application-setup" title="Link to this heading">#</a></h2>
-<p>To use this script, you need:</p>
+<p>To use this script, a technical person / supervisor needs to set up the following:</p>
 <ol class="arabic simple">
 <li><p><strong>Box Developer Account</strong>: Create at <a class="reference external" href="https://developer.box.com/">https://developer.box.com/</a></p></li>
 <li><p><strong>JWT Application</strong>: Create a new JWT application in Box Developer Console</p></li>
@@ -893,13 +892,11 @@ cat<span class="w"> </span>config.json<span class="w"> </span><span class="p">|<
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-box-sdk">Installing Box SDK</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biohpc-setup-experience-user-notes">BioHPC Setup Experience (User Notes)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-right-credentials">Using Right Credentials</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-environment-variables-file">Download Environment Variables File</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-environment-setup">Python Environment Setup</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-script">Run the Script</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-aea-credentials">Using AEA Credentials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment Variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base64-configuration">Base64 Configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authentication-methods">Authentication Methods</a><ul class="nav section-nav flex-column">

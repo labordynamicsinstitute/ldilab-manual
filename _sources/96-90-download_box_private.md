@@ -44,7 +44,7 @@ python tools/download_box_private.py   # Download from subfolder 'aearep-1234'
 pip install -r requirements.txt
 ```
 
-in any recent repository updated with "tools" newer than June 7, 2025.
+in any recent Bitbucket repository updated with "tools" newer than June 7, 2025.
 
 Ideally, these should be installed in your main Python environment, since you will be re-using this regularly. You can also install in a virtual environment. 
 
@@ -55,9 +55,12 @@ conda install boxsdk
 conda install boxsdk[jwt]
 ```
 
-- Currently, box is updating boxsdk to box-sdk-gen. This script will work only with `boxsdk`, not the newer `box-sdk-gen`. 
+- Currently, Box is updating `boxsdk` to `box-sdk-gen`. This script will work only with `boxsdk`, not the newer `box-sdk-gen`. 
 
-## BioHPC Setup Experience (User Notes)
+
+## Using Right Credentials
+
+To permantently set the proper credentials on BioHPC, you can modify your `~/.bashrc` profile, to include the box environmental variables. These values (or the `(SECRETURL)`) can be obtained from a supervisor.
 
 ### Download Environment Variables File
 
@@ -106,18 +109,15 @@ conda create --name download python=3.11
 
 **Activate the environment**
 
+You will need to do this every time after you log in, if you intend to use the script:
+
 ```
 conda activate download
 ```
 
 **Install Box SDK**
 
-Install the Box Python SDK with JWT support inside the environment:
-
-```
-conda install boxsdk
-conda install boxsdk[jwt]
-```
+Follow the `conda install` instructions from above to install the necessary packages.
 
 ⚠️ Important: Some newer versions of `boxsdk` are incompatible. If you get import errors (No module named 'boxsdk'), uninstall the current version and install a compatible version:
 
@@ -137,23 +137,27 @@ pip install pyjwt
 
 :::{tab-item} Standard Python
 
+You can use standard Python on BioHPC compute nodes. Get a terminal through Slurm:
+
+```bash
+srun --pty  bash -l
+```
+
+Load the necessary modules, and install the necessary packages:
+
+```
+module load python/3.12.7
+cd /path/to/aearep-1234 # adjust to the project at hand
+pip install -r requirements.txt
+```
+
+You will need to run this every time from a compute node, as the more recent Python versions are not available on the login nodes. 
+
 :::
 
 ::::
 
-### Run the Script
 
-From the directory where you want to download restricted data (typically, the root of a Bitbucket repo, e.g., `aearep-1234`), run:
-
-```
-python tools/download_box_private.py [SUBFOLDER] # where SUBFOLDER is the deposit number.
-```
-
-This should now successfully authenticate and download files from the private Box folder.
-
-## Using AEA Credentials
-
-To permantently set the proper credentials on BioHPC, you can modify your `~/.bashrc` profile, to include the box environmental variables. These values can be obtained from a supervisor.
 
 ## Environment Variables
 
@@ -173,7 +177,7 @@ Optional configuration:
 
 ## Base64 Configuration
 
-For CI/CD environments, you can provide the entire Box configuration as a base64-encoded string:
+To convert the entire Box configuration as a base64-encoded string:
 
 ```bash
 # Generate base64 config
@@ -217,7 +221,7 @@ restricted/                 # Default output directory (configurable)
 
 ## Box Application Setup
 
-To use this script, you need:
+To use this script, a technical person / supervisor needs to set up the following:
 
 1. **Box Developer Account**: Create at https://developer.box.com/
 2. **JWT Application**: Create a new JWT application in Box Developer Console
