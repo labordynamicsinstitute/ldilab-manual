@@ -127,7 +127,19 @@ Running code on Biohpc is not as simple as opening the Stata GUI. Instead, you s
 
 ### SBATCH
 
-To submit a job to the server, you create a script with a header. Below is an example from the replication template.
+To submit a job to the server, you create a script with a header. Below is an example from the [tools folder in the replication template](https://github.com/AEADataEditor/replication-template/blob/master/tools/sbatch-shell.sh).
+
+::::{tip}
+:class: dropdown
+
+You can use the template by copying it into the authors working space, e.g.,
+
+```bash
+cp tools/sbatch-shell.sh 12345/path/to/code/sbatch.sh
+```
+
+Then customize it to fit your needs.
+::::
 
 ```bash
 #!/bin/bash
@@ -196,7 +208,7 @@ The most important idea is not to run code on the login node of BioHPC. You must
 srun --pty bash -l
 ```
 
-Here, you can load modules, run programs, 
+Here, you can load modules, run programs, etc.
 
 ## Obtaining Data on Biohpc
 
@@ -206,7 +218,7 @@ The instructions from the manual [Deposit Download Instructions](https://labordy
 
 ### From Another Source
 
-The following page [Obtaining Data on Biohpc](https://labordynamicsinstitute.github.io/ecco-notes/docs/transfer.html) has extensive instructions on how to get data onto Biohpc from other sources. When obtaining data on your personal laptop is easy then using WinSCP will be straightforward. 
+The following page [Obtaining Data on Biohpc](https://labordynamicsinstitute.github.io/ecco-notes/docs/transfer.html) has extensive instructions on how to get data onto Biohpc from other sources. When obtaining data on your personal laptop is easy, then using WinSCP will be straightforward. 
 
 
 ## Additional setup and tips-and-tricks
