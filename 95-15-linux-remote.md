@@ -30,37 +30,13 @@ Then do the usual [Bash setup](setup-bash). That should work on nearly any Linux
 
 1. Go to the [BioHPC account request page](https://biohpc.cornell.edu/NewUserRequest.aspx), and create an account on the BioHPC cluster.
 2. Then [contact BioHPC support](https://biohpc.cornell.edu/contact.aspx), requesting to join the ECCO group and lv39 (Lars') "lab" (`ecco_lv39`).
-
+3. If you are logging on from outside the Cornell network you will need to setup [Two Factor Identification](https://biohpc.cornell.edu/doc/biohpc_external_quickstart.html).
+   
 Consult the [ECCO general documentation](https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html) for more details on the BioHPC cluster for economists!
-
-**Reserve a node**
-
-- Go to "User", then  [Reservations page](https://biohpc.cornell.edu/lab/labres.aspx), choose "Restricted", and reserve a node:
-  - cbsuecco02: up to 7 days
-  - all others: up to 3 days
-  - in both cases, renewable
-- Then go to 'My Reservations' and share the reservation with Lars (`lv39`) and others, if necessary.
-
-```{note}
-Skip this step if somebody else added you to their reservation!
-```
-
-```{note}
-If you do not see an open server, ask on the mailing list (ldi-lab-l@cornell.edu) if somebody has an active reservation that they can add you to!
-```
 
 **Access a node**
 
 See [Getting Started Guide](https://biohpc.cornell.edu/lab/userguide.aspx?a=quickstart) and [Remote Access](https://biohpc.cornell.edu/lab/doc/Remote_access.pdf). SSH is the best path (if you don't need graphical applications). See [Access via VSCode](linux-vscode) for a more user-friendly way to use SSH to access the server.
-
-Note that, for off-campus access, you will need to use Cornell VPN. Instructions can be found [here](https://it.cornell.edu/cuvpn).
-
-For **VNC**: 
-
-- Once your have a reserved node, click ["My Reservation"](https://biohpc.cornell.edu/lab/labresman.aspx) to manage all your active reservations. 
-- Choose your reservation. 
-- Click "Connect VNC" under "Action" and you will have your machine name and port number. To disconnect, click "Cancel VNC" under "Action".
-- Open VNC Viewer and type in session number in the form of "machine name:port number" given by BioHPC.
 
 ```{tip}
 
@@ -95,7 +71,7 @@ Access for us is primarily via SSH. See [Access via VSCode](linux-vscode) for a 
 - You may be prompted to "Select the platform of the remote host". If so, select the "Linux" option in the drop down menu.
 
 ```{tip}
-For this to work on BioHPC, verify that you have a valid reservation and an active VPN! 
+If you get the following message in the bottom right: "Setting up SSH Host BioHPC: (details) Initializing VS Code Server", then it may be waiting for you to enter your TFA code
 ```
 
 - Enter your account password when prompted.
@@ -117,7 +93,6 @@ A tutorial video (thanks to Lars' former RA Ilona Khimey) is available at [Corne
 ## Where to run code
 
 
-
 ::::{tab-set}
 
 :::{tab-item} BioHPC
@@ -137,6 +112,114 @@ Consult the Jira issue to figure out where you should run the code.
 :::
 
 ::::
+
+```{tip}
+For instructions on how to setup and run code see [ECCO Notes](https://labordynamicsinstitute.github.io/ecco-notes/docs/intro.html)
+```
+
+## Running Code
+
+Running code on Biohpc is not as simple as opening the Stata GUI. Instead, you submit jobs through the SLURM scheduler. A detailed walkthrough can be seen [here](https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/sbatch.html). 
+
+### Modules
+
+[details on running modules]
+
+### SBATCH
+
+To submit a job to the server, you create a script with a header. Below is an example from the [tools folder in the replication template](https://github.com/AEADataEditor/replication-template/blob/master/tools/sbatch-shell.sh).
+
+::::{tip}
+:class: dropdown
+
+You can use the template by copying it into the authors working space, e.g.,
+
+```bash
+cp tools/sbatch-shell.sh 12345/path/to/code/sbatch.sh
+```
+
+Then customize it to fit your needs.
+::::
+
+```bash
+#!/bin/bash
+# Job name:
+#SBATCH --job-name=RunStata
+#
+# Memory
+#SBATCH --mem=32G
+#
+# Request one node:
+#SBATCH --nodes=1
+#
+# Specify number of tasks for use case (example):
+#SBATCH --ntasks-per-node=1
+#
+# Processors per task: here, 8 bc we have Stata-MP/8
+#SBATCH --cpus-per-task=8
+#
+# Wall clock limit: adjust accordingly. Format is HH:MM:SS or DD-HH:MM:SS where DD are days.
+#SBATCH --time=00:00:30
+#
+# Email?
+# Probably do not need "--mail-user=youremail@cornell.edu"
+# Just add your email to the file "$HOME/.forward"
+# 
+#SBATCH --mail-type=ALL
+#
+## Command(s) to run (example):
+#
+# Stata example
+#
+/usr/local/stata16/stata-mp -b main.do
+#
+## Matlab - will run "main.m", output to "main.log"
+## Assumes you have done the setup at https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html#one-time-setup
+# module load matlab/2023a
+# matlab -nodisplay -r "addpath(genpath('.')); main" -logfile main.$(date +%F_%H-%M-%S).log
+#
+# R example - caution with version and parallel processing
+module load R/4.4.2
+R CMD BATCH main.R main.$(date +%F_%H-%M-%S).log
+```
+
+Each item in the header specifies some detail for the server. Jobs submitted must specifiy levels of compute (such as memory required), time to run, . A good starting point for these details is an authors `README`.
+
+To view the status of your jobs, you can run
+
+```bash
+squeue
+```
+
+or 
+
+```bash
+squeue -u <netid>
+```
+
+
+### Interactivly
+
+Sometimes, it can be helpful to run code interactively, rather than through SBATCH, on the BioHPC shell. Details [here](https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html#interactive-shell). 
+
+The most important idea is not to run code on the login node of BioHPC. You must transfer over to a computing node, using
+
+```bash
+srun --pty bash -l
+```
+
+Here, you can load modules, run programs, etc.
+
+## Obtaining Data on Biohpc
+
+### From A Deposit
+
+The instructions from the manual [Deposit Download Instructions](https://labordynamicsinstitute.github.io/ldilab-manual/94-01-how-to-use-openICPSR-backend.html) will work. Note that you need to use the scripts instead of doing it manually. That page also has a link to non-icpsr deposit instructions
+
+### From Another Source
+
+The following page [Obtaining Data on Biohpc](https://labordynamicsinstitute.github.io/ecco-notes/docs/transfer.html) has extensive instructions on how to get data onto Biohpc from other sources. When obtaining data on your personal laptop is easy, then using WinSCP will be straightforward. 
+
 
 ## Additional setup and tips-and-tricks
 
@@ -161,76 +244,6 @@ Next time:
 3. If you forgot what session, `tmux ls`
 
 To save the output of a `tmux` session to a file, see [https://unix.stackexchange.com/questions/26548/write-all-tmux-scrollback-to-a-file](https://unix.stackexchange.com/questions/26548/write-all-tmux-scrollback-to-a-file).
-
-
-### Configuring automatic reservation cancellation (BioHPC only)
-
-If you use the BioHPC reservation system, it helps others if at the end of a long-running job, your reservation is cancelled as soon as possible. One way to do this is to add the following to the scripts you are running:
-
-
-
-
-::::{tab-set}
-
-
-:::{tab-item}  Stata
-
-```stata
-// Use the code below at the bottom of the Stata "main" or 
-// "master" script to automatically sign out 
-
-shell /programs/bin/labutils/endres.pl 
-```
-
-
-:::
-
-:::{tab-item} R
-
-```r
-# Add to end of main or last script.
-system("/programs/bin/labutils/endres.pl")
-```
-
-
-:::
-
-:::{tab-item} Matlab
-
-```
-%Use code below at end of MATLAB main script, or last script, to automatically sign out
-
-system("/programs/bin/labutils/endres.pl")
-```
-
-
-:::
-
-:::{tab-item}  Python
-
-```python
-# Use code below at bottom of Python/Anaconda script 
-# to automatically sign out
-
-import os
-
-os.system("/programs/bin/labutils/endres.pl")
-```
-
-:::
-
-
-:::{tab-item}  Bash
-
-```bash
-#Use the code below at the bottom of the bash "main" or 
-# "master" script to automatically sign out 
-/programs/bin/labutils/endres.pl 
-```
-
-:::
-
-::::
 
 ### Unzipping large ZIP files fails
 
@@ -383,6 +396,27 @@ You should now be prompted for your SSH passphrase:
 $ ssh netid@cbsulogin.biohpc.cornell.edu
 Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 ```
+
+### Utilizing Aliases
+
+Workflows on Linux Systems can be simplified by using bash aliases. The example below can exist on your personal machine
+
+```bash
+alias biohpc='ssh <netid>@cbsulogin.biohpc.cornell.edu'
+```
+
+Adding this to your `~/.bashrc` enables you to type `bihopc` in your terminal, and an ssh connection is opened.
+
+### Using `linux-system-info.sh`
+
+Part of replicating packages is capturing as much information as we can. You will see in the replication report that we must specify the amount of compute our replication used, under `Computing Environment of the Replicator`. This can be captured by adding the following line to your SBATCH script.
+
+```bash
+echo "Linux System Info:"
+<package>/tools/linux-system-info.sh
+```
+
+This will output the computing resources in the SLURM output file.
 
 
 ```{tip}
