@@ -687,8 +687,23 @@ conda<span class="w"> </span>install<span class="w"> </span>boxsdk<span class="o
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
+Standard Python</label><div class="sd-tab-content docutils">
+<p>You can use standard Python on BioHPC compute nodes. Get a terminal through Slurm:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun<span class="w"> </span>--pty<span class="w">  </span>bash<span class="w"> </span>-l
+</pre></div>
+</div>
+<p>Load the necessary modules, and install the necessary packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">python</span><span class="o">/</span><span class="mf">3.12.7</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">aearep</span><span class="o">-</span><span class="mi">1234</span> <span class="c1"># adjust to the project at hand</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>You will need to run this every time from a compute node, as the more recent Python versions are not available on the login nodes.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
 Conda</label><div class="sd-tab-content docutils">
-<p><strong>Option 1: Create a Conda Environment (from BioHPC login node)</strong></p>
+<p><strong>Create a Conda Environment (from BioHPC login node)</strong></p>
 <p>To avoid conflicts with existing Python installations, create a dedicated conda environment:</p>
 <p><strong>Load conda if needed</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">anaconda</span>  <span class="c1"># or follow BioHPC-specific instructions to enable conda</span>
@@ -715,21 +730,6 @@ Conda</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyjwt</span>
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
-Standard Python</label><div class="sd-tab-content docutils">
-<p>You can use standard Python on BioHPC compute nodes. Get a terminal through Slurm:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun<span class="w"> </span>--pty<span class="w">  </span>bash<span class="w"> </span>-l
-</pre></div>
-</div>
-<p>Load the necessary modules, and install the necessary packages:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">python</span><span class="o">/</span><span class="mf">3.12.7</span>
-<span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">aearep</span><span class="o">-</span><span class="mi">1234</span> <span class="c1"># adjust to the project at hand</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
-</div>
-<p>You will need to run this every time from a compute node, as the more recent Python versions are not available on the login nodes.</p>
 </div>
 </div>
 </section>
