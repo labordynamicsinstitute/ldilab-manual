@@ -89,9 +89,29 @@ To run the script, you need a newer version of Python (>= 3.10). There are two w
 
 ::::{tab-set}
 
+:::{tab-item} Standard Python
+
+You can use standard Python on BioHPC compute nodes. Get a terminal through Slurm:
+
+```bash
+srun --pty  bash -l
+```
+
+Load the necessary modules, and install the necessary packages:
+
+```
+module load python/3.12.7
+cd /path/to/aearep-1234 # adjust to the project at hand
+pip install -r requirements.txt
+```
+
+You will need to run this every time from a compute node, as the more recent Python versions are not available on the login nodes. 
+
+:::
+
 :::{tab-item} Conda
 
-**Option 1: Create a Conda Environment (from BioHPC login node)**
+**Create a Conda Environment (from BioHPC login node)**
 
 To avoid conflicts with existing Python installations, create a dedicated conda environment:
 
@@ -135,25 +155,6 @@ pip install pyjwt
 ```
 :::
 
-:::{tab-item} Standard Python
-
-You can use standard Python on BioHPC compute nodes. Get a terminal through Slurm:
-
-```bash
-srun --pty  bash -l
-```
-
-Load the necessary modules, and install the necessary packages:
-
-```
-module load python/3.12.7
-cd /path/to/aearep-1234 # adjust to the project at hand
-pip install -r requirements.txt
-```
-
-You will need to run this every time from a compute node, as the more recent Python versions are not available on the login nodes. 
-
-:::
 
 ::::
 
