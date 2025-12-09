@@ -570,11 +570,23 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-linux-nodes-with-vscode">Accessing Linux nodes with VSCode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-run-code">Where to run code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-code">Running Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modules">Modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sbatch">SBATCH</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivly">Interactivly</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-data-on-biohpc">Obtaining Data on Biohpc</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-a-deposit">From A Deposit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-another-source">From Another Source</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-and-tips-and-tricks">Additional setup and tips-and-tricks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilize-tmux">Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation-biohpc-only">Configuring automatic reservation cancellation (BioHPC only)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unzipping-large-zip-files-fails">Unzipping large ZIP files fails</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-ssh-agent-for-password-less-login">Setting up SSH Agent for password-less login</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizing-aliases">Utilizing Aliases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-linux-system-info-sh">Using <code class="docutils literal notranslate"><span class="pre">linux-system-info.sh</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -611,37 +623,11 @@ BioHPC</label><div class="sd-tab-content docutils">
 <ol class="arabic simple">
 <li><p>Go to the <a class="reference external" href="https://biohpc.cornell.edu/NewUserRequest.aspx">BioHPC account request page</a>, and create an account on the BioHPC cluster.</p></li>
 <li><p>Then <a class="reference external" href="https://biohpc.cornell.edu/contact.aspx">contact BioHPC support</a>, requesting to join the ECCO group and lv39 (Lars’) “lab” (<code class="docutils literal notranslate"><span class="pre">ecco_lv39</span></code>).</p></li>
+<li><p>If you are logging on from outside the Cornell network you will need to setup <a class="reference external" href="https://biohpc.cornell.edu/doc/biohpc_external_quickstart.html">Two Factor Identification</a>.</p></li>
 </ol>
 <p>Consult the <a class="reference external" href="https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html">ECCO general documentation</a> for more details on the BioHPC cluster for economists!</p>
-<p><strong>Reserve a node</strong></p>
-<ul class="simple">
-<li><p>Go to “User”, then  <a class="reference external" href="https://biohpc.cornell.edu/lab/labres.aspx">Reservations page</a>, choose “Restricted”, and reserve a node:</p>
-<ul>
-<li><p>cbsuecco02: up to 7 days</p></li>
-<li><p>all others: up to 3 days</p></li>
-<li><p>in both cases, renewable</p></li>
-</ul>
-</li>
-<li><p>Then go to ‘My Reservations’ and share the reservation with Lars (<code class="docutils literal notranslate"><span class="pre">lv39</span></code>) and others, if necessary.</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Skip this step if somebody else added you to their reservation!</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you do not see an open server, ask on the mailing list (<a class="reference external" href="mailto:ldi-lab-l&#37;&#52;&#48;cornell&#46;edu">ldi-lab-l<span>&#64;</span>cornell<span>&#46;</span>edu</a>) if somebody has an active reservation that they can add you to!</p>
-</div>
 <p><strong>Access a node</strong></p>
 <p>See <a class="reference external" href="https://biohpc.cornell.edu/lab/userguide.aspx?a=quickstart">Getting Started Guide</a> and <a class="reference external" href="https://biohpc.cornell.edu/lab/doc/Remote_access.pdf">Remote Access</a>. SSH is the best path (if you don’t need graphical applications). See <a class="reference internal" href="#linux-vscode"><span class="std std-ref">Access via VSCode</span></a> for a more user-friendly way to use SSH to access the server.</p>
-<p>Note that, for off-campus access, you will need to use Cornell VPN. Instructions can be found <a class="reference external" href="https://it.cornell.edu/cuvpn">here</a>.</p>
-<p>For <strong>VNC</strong>:</p>
-<ul class="simple">
-<li><p>Once your have a reserved node, click <a class="reference external" href="https://biohpc.cornell.edu/lab/labresman.aspx">“My Reservation”</a> to manage all your active reservations.</p></li>
-<li><p>Choose your reservation.</p></li>
-<li><p>Click “Connect VNC” under “Action” and you will have your machine name and port number. To disconnect, click “Cancel VNC” under “Action”.</p></li>
-<li><p>Open VNC Viewer and type in session number in the form of “machine name:port number” given by BioHPC.</p></li>
-</ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>For first-time access,  <a class="reference external" href="https://labordynamicsinstitute.github.io/ldilab-manual/95-50-setup-bash.html#configure-bitbucket-access">set up</a> your bash environment.</p>
@@ -672,7 +658,7 @@ NBER servers</label><div class="sd-tab-content docutils">
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>For this to work on BioHPC, verify that you have a valid reservation and an active VPN!</p>
+<p>If you get the following message in the bottom right: “Setting up SSH Host BioHPC: (details) Initializing VS Code Server”, then it may be waiting for you to enter your TFA code</p>
 </div>
 <ul class="simple">
 <li><p>Enter your account password when prompted.</p></li>
@@ -709,6 +695,100 @@ NBER servers</label><div class="sd-tab-content docutils">
 <p>Consult the Jira issue to figure out where you should run the code.</p>
 </div>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For instructions on how to setup and run code see <a class="reference external" href="https://labordynamicsinstitute.github.io/ecco-notes/docs/intro.html">ECCO Notes</a></p>
+</div>
+</section>
+<section id="running-code">
+<h2>Running Code<a class="headerlink" href="#running-code" title="Link to this heading">#</a></h2>
+<p>Running code on Biohpc is not as simple as opening the Stata GUI. Instead, you submit jobs through the SLURM scheduler. A detailed walkthrough can be seen <a class="reference external" href="https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/sbatch.html">here</a>.</p>
+<section id="modules">
+<h3>Modules<a class="headerlink" href="#modules" title="Link to this heading">#</a></h3>
+<p>[details on running modules]</p>
+</section>
+<section id="sbatch">
+<h3>SBATCH<a class="headerlink" href="#sbatch" title="Link to this heading">#</a></h3>
+<p>To submit a job to the server, you create a script with a header. Below is an example from the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/tools/sbatch-shell.sh">tools folder in the replication template</a>.</p>
+<div class="dropdown admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use the template by copying it into the authors working space, e.g.,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>tools/sbatch-shell.sh<span class="w"> </span><span class="m">12345</span>/path/to/code/sbatch.sh
+</pre></div>
+</div>
+<p>Then customize it to fit your needs.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># Job name:</span>
+<span class="c1">#SBATCH --job-name=RunStata</span>
+<span class="c1">#</span>
+<span class="c1"># Memory</span>
+<span class="c1">#SBATCH --mem=32G</span>
+<span class="c1">#</span>
+<span class="c1"># Request one node:</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#</span>
+<span class="c1"># Specify number of tasks for use case (example):</span>
+<span class="c1">#SBATCH --ntasks-per-node=1</span>
+<span class="c1">#</span>
+<span class="c1"># Processors per task: here, 8 bc we have Stata-MP/8</span>
+<span class="c1">#SBATCH --cpus-per-task=8</span>
+<span class="c1">#</span>
+<span class="c1"># Wall clock limit: adjust accordingly. Format is HH:MM:SS or DD-HH:MM:SS where DD are days.</span>
+<span class="c1">#SBATCH --time=00:00:30</span>
+<span class="c1">#</span>
+<span class="c1"># Email?</span>
+<span class="c1"># Probably do not need &quot;--mail-user=youremail@cornell.edu&quot;</span>
+<span class="c1"># Just add your email to the file &quot;$HOME/.forward&quot;</span>
+<span class="c1"># </span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+<span class="c1">#</span>
+<span class="c1">## Command(s) to run (example):</span>
+<span class="c1">#</span>
+<span class="c1"># Stata example</span>
+<span class="c1">#</span>
+/usr/local/stata16/stata-mp<span class="w"> </span>-b<span class="w"> </span>main.do
+<span class="c1">#</span>
+<span class="c1">## Matlab - will run &quot;main.m&quot;, output to &quot;main.log&quot;</span>
+<span class="c1">## Assumes you have done the setup at https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html#one-time-setup</span>
+<span class="c1"># module load matlab/2023a</span>
+<span class="c1"># matlab -nodisplay -r &quot;addpath(genpath(&#39;.&#39;)); main&quot; -logfile main.$(date +%F_%H-%M-%S).log</span>
+<span class="c1">#</span>
+<span class="c1"># R example - caution with version and parallel processing</span>
+module<span class="w"> </span>load<span class="w"> </span>R/4.4.2
+R<span class="w"> </span>CMD<span class="w"> </span>BATCH<span class="w"> </span>main.R<span class="w"> </span>main.<span class="k">$(</span>date<span class="w"> </span>+%F_%H-%M-%S<span class="k">)</span>.log
+</pre></div>
+</div>
+<p>Each item in the header specifies some detail for the server. Jobs submitted must specifiy levels of compute (such as memory required), time to run, . A good starting point for these details is an authors <code class="docutils literal notranslate"><span class="pre">README</span></code>.</p>
+<p>To view the status of your jobs, you can run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue<span class="w"> </span>-u<span class="w"> </span>&lt;netid&gt;
+</pre></div>
+</div>
+</section>
+<section id="interactivly">
+<h3>Interactivly<a class="headerlink" href="#interactivly" title="Link to this heading">#</a></h3>
+<p>Sometimes, it can be helpful to run code interactively, rather than through SBATCH, on the BioHPC shell. Details <a class="reference external" href="https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html#interactive-shell">here</a>.</p>
+<p>The most important idea is not to run code on the login node of BioHPC. You must transfer over to a computing node, using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun<span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-l
+</pre></div>
+</div>
+<p>Here, you can load modules, run programs, etc.</p>
+</section>
+</section>
+<section id="obtaining-data-on-biohpc">
+<h2>Obtaining Data on Biohpc<a class="headerlink" href="#obtaining-data-on-biohpc" title="Link to this heading">#</a></h2>
+<section id="from-a-deposit">
+<h3>From A Deposit<a class="headerlink" href="#from-a-deposit" title="Link to this heading">#</a></h3>
+<p>The instructions from the manual <a class="reference external" href="https://labordynamicsinstitute.github.io/ldilab-manual/94-01-how-to-use-openICPSR-backend.html">Deposit Download Instructions</a> will work. Note that you need to use the scripts instead of doing it manually. That page also has a link to non-icpsr deposit instructions</p>
+</section>
+<section id="from-another-source">
+<h3>From Another Source<a class="headerlink" href="#from-another-source" title="Link to this heading">#</a></h3>
+<p>The following page <a class="reference external" href="https://labordynamicsinstitute.github.io/ecco-notes/docs/transfer.html">Obtaining Data on Biohpc</a> has extensive instructions on how to get data onto Biohpc from other sources. When obtaining data on your personal laptop is easy, then using WinSCP will be straightforward.</p>
+</section>
 </section>
 <section id="additional-setup-and-tips-and-tricks">
 <h2>Additional setup and tips-and-tricks<a class="headerlink" href="#additional-setup-and-tips-and-tricks" title="Link to this heading">#</a></h2>
@@ -734,60 +814,6 @@ NBER servers</label><div class="sd-tab-content docutils">
 </ol>
 <p>To save the output of a <code class="docutils literal notranslate"><span class="pre">tmux</span></code> session to a file, see <a class="reference external" href="https://unix.stackexchange.com/questions/26548/write-all-tmux-scrollback-to-a-file">https://unix.stackexchange.com/questions/26548/write-all-tmux-scrollback-to-a-file</a>.</p>
 </section>
-<section id="configuring-automatic-reservation-cancellation-biohpc-only">
-<h3>Configuring automatic reservation cancellation (BioHPC only)<a class="headerlink" href="#configuring-automatic-reservation-cancellation-biohpc-only" title="Link to this heading">#</a></h3>
-<p>If you use the BioHPC reservation system, it helps others if at the end of a long-running job, your reservation is cancelled as soon as possible. One way to do this is to add the following to the scripts you are running:</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
-Stata</label><div class="sd-tab-content docutils">
-<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">// Use the code below at the bottom of the Stata &quot;main&quot; or </span>
-<span class="c1">// &quot;master&quot; script to automatically sign out </span>
-
-<span class="k">shell</span> <span class="o">/</span>programs<span class="o">/</span>bin<span class="o">/</span>labutils<span class="o">/</span>endres<span class="m">.</span>pl 
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-5">
-R</label><div class="sd-tab-content docutils">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add to end of main or last script.</span>
-<span class="nf">system</span><span class="p">(</span><span class="s">&quot;/programs/bin/labutils/endres.pl&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-6">
-Matlab</label><div class="sd-tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">Use</span> <span class="n">code</span> <span class="n">below</span> <span class="n">at</span> <span class="n">end</span> <span class="n">of</span> <span class="n">MATLAB</span> <span class="n">main</span> <span class="n">script</span><span class="p">,</span> <span class="ow">or</span> <span class="n">last</span> <span class="n">script</span><span class="p">,</span> <span class="n">to</span> <span class="n">automatically</span> <span class="n">sign</span> <span class="n">out</span>
-
-<span class="n">system</span><span class="p">(</span><span class="s2">&quot;/programs/bin/labutils/endres.pl&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-7">
-Python</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use code below at bottom of Python/Anaconda script </span>
-<span class="c1"># to automatically sign out</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;/programs/bin/labutils/endres.pl&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-8">
-Bash</label><div class="sd-tab-content docutils">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Use the code below at the bottom of the bash &quot;main&quot; or </span>
-<span class="c1"># &quot;master&quot; script to automatically sign out </span>
-/programs/bin/labutils/endres.pl<span class="w"> </span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="unzipping-large-zip-files-fails">
 <h3>Unzipping large ZIP files fails<a class="headerlink" href="#unzipping-large-zip-files-fails" title="Link to this heading">#</a></h3>
 <p>In some cases, unzipping large ZIP files (larger than 2GB) may fail:</p>
@@ -796,8 +822,8 @@ Bash</label><div class="sd-tab-content docutils">
 </div>
 <p>If this is detected, you need to use a 64-bit version of a decompression program. This may vary by Linux host.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-9">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
 BioHPC</label><div class="sd-tab-content docutils">
 <p>Instead of <code class="docutils literal notranslate"><span class="pre">zip</span></code>, use <code class="docutils literal notranslate"><span class="pre">7z</span></code> as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ICPSRNUM=123456
@@ -806,8 +832,8 @@ BioHPC</label><div class="sd-tab-content docutils">
 </div>
 <p>(which is the equivalent to the zip command <code class="docutils literal notranslate"><span class="pre">zip</span> <span class="pre">-n</span> <span class="pre">${ICPSRNUM}</span> <span class="pre">-d</span> <span class="pre">${ICPSRNUM}</span></code>). The first option (<code class="docutils literal notranslate"><span class="pre">-O</span></code>) is an upper-case letter <code class="docutils literal notranslate"><span class="pre">O</span></code>, not zero.</p>
 </div>
-<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-10">
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
 Others</label><div class="sd-tab-content docutils">
 <p>If <code class="docutils literal notranslate"><span class="pre">7z</span></code> is available, use it as well (path may differ). Other options include using <code class="docutils literal notranslate"><span class="pre">jar</span></code>. Contact system administrator of the system for guidance.</p>
 </div>
@@ -817,18 +843,18 @@ Others</label><div class="sd-tab-content docutils">
 <h3>Setting up SSH Agent for password-less login<a class="headerlink" href="#setting-up-ssh-agent-for-password-less-login" title="Link to this heading">#</a></h3>
 <p>The SSH protocol allows you to create a public-private key pair. You deposit the public key on the Linux server, and keep the (passphrase-protected) private key on your laptop. You can then configure a “ssh-agent” running on your laptop to store (temporarily) your passphrase in memory, and provide it every time you log in to the Linux server. This works very easily on Unix-like systems (macOS, Linux laptops), but is a bit trickier on Windows laptops.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-11" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-11">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
 macOS</label><div class="sd-tab-content docutils">
 <p>To be completed.</p>
 </div>
-<input id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-12">
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
 Linux (laptop)</label><div class="sd-tab-content docutils">
 <p>To be completed.</p>
 </div>
-<input id="sd-tab-item-13" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-13">
+<input id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
 Windows (laptop only)</label><div class="sd-tab-content docutils">
 <p>First, you need to ensure that the SSH subsystem is installed.</p>
 <p>To be completed.</p>
@@ -893,6 +919,23 @@ ssh<span class="w"> </span><span class="si">${</span><span class="nv">netid</spa
 Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 </pre></div>
 </div>
+</section>
+<section id="utilizing-aliases">
+<h3>Utilizing Aliases<a class="headerlink" href="#utilizing-aliases" title="Link to this heading">#</a></h3>
+<p>Workflows on Linux Systems can be simplified by using bash aliases. The example below can exist on your personal machine</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span><span class="w"> </span><span class="nv">biohpc</span><span class="o">=</span><span class="s1">&#39;ssh &lt;netid&gt;@cbsulogin.biohpc.cornell.edu&#39;</span>
+</pre></div>
+</div>
+<p>Adding this to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> enables you to type <code class="docutils literal notranslate"><span class="pre">bihopc</span></code> in your terminal, and an ssh connection is opened.</p>
+</section>
+<section id="using-linux-system-info-sh">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">linux-system-info.sh</span></code><a class="headerlink" href="#using-linux-system-info-sh" title="Link to this heading">#</a></h3>
+<p>Part of replicating packages is capturing as much information as we can. You will see in the replication report that we must specify the amount of compute our replication used, under <code class="docutils literal notranslate"><span class="pre">Computing</span> <span class="pre">Environment</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">Replicator</span></code>. This can be captured by adding the following line to your SBATCH script.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Linux System Info:&quot;</span>
+&lt;package&gt;/tools/linux-system-info.sh
+</pre></div>
+</div>
+<p>This will output the computing resources in the SLURM output file.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Additional tips-and-tricks can be found on the <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes">LDIlab wiki</a>. These are focused on the BioHPC cluster, but may work on other servers as well.</p>
@@ -968,11 +1011,23 @@ Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-linux-nodes-with-vscode">Accessing Linux nodes with VSCode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-run-code">Where to run code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-code">Running Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modules">Modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sbatch">SBATCH</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivly">Interactivly</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-data-on-biohpc">Obtaining Data on Biohpc</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-a-deposit">From A Deposit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-another-source">From Another Source</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-setup-and-tips-and-tricks">Additional setup and tips-and-tricks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilize-tmux">Utilize <code class="docutils literal notranslate"><span class="pre">tmux</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-automatic-reservation-cancellation-biohpc-only">Configuring automatic reservation cancellation (BioHPC only)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unzipping-large-zip-files-fails">Unzipping large ZIP files fails</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-ssh-agent-for-password-less-login">Setting up SSH Agent for password-less login</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizing-aliases">Utilizing Aliases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-linux-system-info-sh">Using <code class="docutils literal notranslate"><span class="pre">linux-system-info.sh</span></code></a></li>
 </ul>
 </li>
 </ul>
