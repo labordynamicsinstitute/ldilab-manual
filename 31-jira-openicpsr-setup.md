@@ -12,3 +12,25 @@ In the JMS, the Data Editor is set up as a reviewer who can be assigned during t
 - [ ] submitters need `Publisher` permission on Jira (**Assistant** can  set in [Project -> Settings -> People](https://aeadataeditors.atlassian.net/plugins/servlet/project-config/AEAREP/people)   in Jira)
 
 ```
+
+**Daily ScholarOne Subscription Reminder**
+
+Submitters should receive a daily email reminder titled **"Subscription: To be submitted to ScholarOne"** to ensure reports are submitted on time.
+
+1. Go to the Jira filter for reports **To be submitted to ScholarOne**:  
+   [https://aeadataeditors.atlassian.net/issues/?filter=10030](https://aeadataeditors.atlassian.net/issues/?filter=10030)
+
+3. Click **Filter details**.  
+   ![Filter details screenshot](images/filter-details-uploader-setup.png)
+
+4. Scroll down to **Subscriptions**.  
+   ![Subscriptions screenshot](images/subscription-email-uploader-setup.png)
+
+5. Click **Add subscription**.
+
+6. Set up a **Personal subscription**:  
+   - Choose your own email address.  
+   - Set it to run **every day**.
+
+7. Save the subscription. You should now receive daily reminders for reports that need to be submitted to ScholarOne.
+
