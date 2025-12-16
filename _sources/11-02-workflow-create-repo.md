@@ -104,6 +104,8 @@ This is where the information about the size of the deposit matters! Choose the 
 
 ![select pipeline](images/jira-run-pipeline-icpsr.png)
 
+However, closely monitor the pipeline output - it might still fail because the resulting ZIP file is too big. See [ZIP file is too big](#zip-file-is-too-big) below for how to diagnose this.
+
 
 :::
 
@@ -202,6 +204,13 @@ Compressed artifact size is 39.6 MiB over the 1 GiB upload limit, so the artifac
 
 If this is the case, try again with the "`w-big populate from ICPSR`" pipeline, which will not try to upload the ZIP file, but will still run the other steps.
 
+#### Download failed
+
+Since Dec 2025, we have seen occasional failures, with our script being blocked by ICPSR. If you see an error like this:
+
+![failing pipeline download](./images/Bitbucket_Error_blocked.png)
+
+then the download got blocked. There is no need to report it, and usually, it will work after 2-3 retries. Simply run a new pipeline with the same settings (do not use the `Rerun` button).
 
 ## Next step
 
