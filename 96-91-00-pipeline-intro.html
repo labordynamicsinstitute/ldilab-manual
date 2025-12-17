@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Alternate sources of data &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Automation Explainer &#8212; Training Manual For Reproducibility Verification</title>
   
   
   
@@ -58,12 +58,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '94-02-alternate-downloads';</script>
-    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/94-02-alternate-downloads.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '96-91-00-pipeline-intro';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-91-00-pipeline-intro.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Accessing privately provided data" href="94-03-private-data.html" />
-    <link rel="prev" title="Using pre-publication openICPSR Projects" href="94-01-how-to-use-openICPSR-backend.html" />
+    <link rel="next" title="Bitbucket Pipeline Overview" href="96-91-pipeline-overview.html" />
+    <link rel="prev" title="sync-codeocean.sh - Synchronize CodeOcean capsules with local repositories" href="96-90-sync-codeocean.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -303,9 +303,9 @@
 <li class="toctree-l2"><a class="reference internal" href="68-include-screenshots-in-report.html">Include Screenshots in the Report</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="94-00-downloading-data.html">Downloading Data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="94-00-downloading-data.html">Downloading Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">Using pre-publication openICPSR Projects</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Alternate sources of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="94-02-alternate-downloads.html">Alternate sources of data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="94-03-private-data.html">Accessing privately provided data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="94-05-globus-transfers.html">Globus Transfers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="94-04-Updating_Materials.html">Updating Replication Materials after Revisions</a></li>
@@ -342,7 +342,7 @@
 <li class="toctree-l2"><a class="reference internal" href="96-90-sync-codeocean.html">sync-codeocean.sh - Synchronize CodeOcean capsules with local repositories</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="96-91-00-pipeline-intro.html">Automation Explainer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Automation Explainer</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="96-91-pipeline-overview.html">Bitbucket Pipeline Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-92-bitbucket-pipelines.html">Bitbucket Pipelines Configuration</a></li>
 </ul>
@@ -431,7 +431,7 @@
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/94-02-alternate-downloads.md" target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-91-00-pipeline-intro.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -448,7 +448,7 @@
       
       
       
-      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F94-02-alternate-downloads.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-91-00-pipeline-intro.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -478,7 +478,7 @@
       
       
       
-      <li><a href="_sources/94-02-alternate-downloads.md" target="_blank"
+      <li><a href="_sources/96-91-00-pipeline-intro.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -549,9 +549,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -562,20 +560,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Alternate sources of data</h1>
+    <h1>Automation Explainer</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utility-scripts">Utility scripts</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -585,72 +574,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="alternate-sources-of-data">
-<span id="notes-on-downloading-other-repos"></span><h1>Alternate sources of data<a class="headerlink" href="#alternate-sources-of-data" title="Link to this heading">#</a></h1>
-<p>We sometimes encounter replication packages that reference Dataverse or Zenodo. Download those as they are found on those sites. Extract them as you would the openICPSR downloads, but please pay attention to the directory naming structure:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Source</p></th>
-<th class="head"><p>DOI or project</p></th>
-<th class="head"><p>Directory name (<code class="docutils literal notranslate"><span class="pre">DIRNAME</span></code>)</p></th>
-<th class="head"><p>Pipeline Variable</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>openICPSR</p></td>
-<td><p><a class="reference external" href="https://doi.org/10.3886/E**123456**V1">https://doi.org/10.3886/E**123456**V1</a></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">123456</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">123456</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>openICPSR</p></td>
-<td><p>openicpsr-<strong>123456</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">123456</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">123456</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>Dataverse</p></td>
-<td><p><a class="reference external" href="https://doi.org/10.7910/DVN/RE5ZVI">https://doi.org/10.7910/DVN/RE5ZVI</a></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">dv-10.7910-DVN-RE5ZVI</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>Dataverse</p></td>
-<td><p><a class="reference external" href="https://doi.org/10.3456/ABCDE">https://doi.org/10.3456/ABCDE</a></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">dv-10.3456-ABCDE</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>Zenodo</p></td>
-<td><p><a class="reference external" href="https://doi.org/10.5281/zenodo.7041706">https://doi.org/10.5281/zenodo.7041706</a></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">zenodo-7041706</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">7041706</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>World Bank</p></td>
-<td><p><a class="reference external" href="https://doi.org/10.60572/101y-vn15">https://doi.org/10.60572/101y-vn15</a></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">wb-101y-vn15</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">101y-vn15</span></code> or entire DOI</p></td>
-</tr>
-</tbody>
-</table>
+  <section class="tex2jax_ignore mathjax_ignore" id="automation-explainer">
+<span id="pipeline-intro"></span><h1>Automation Explainer<a class="headerlink" href="#automation-explainer" title="Link to this heading">#</a></h1>
+<p>We rely on a lot of automation to speed up and standardize tasks. This is usually handled by Bitbucket Pipelines, which is a continuous integration (CI) service built into Bitbucket. For more information on the available pipelines, see the <a class="reference internal" href="96-91-pipeline-overview.html#bitbucket-pipeline-overview"><span class="std std-ref">Pipeline Overview</span></a>. The actual pipeline configuration can be found <a class="reference external" href="https://github.com/AEADataEditor/replication-template-development/blob/development/bitbucket-pipelines.yml">on Github</a>.</p>
+<div class="toctree-wrapper compound">
 </div>
-<p>If a <code class="docutils literal notranslate"><span class="pre">Pipeline</span> <span class="pre">Variable</span></code> is given, use that in the <a class="reference internal" href="11-02-workflow-create-repo.html#create-repo"><span class="std std-ref">Bitbucket Pipeline</span></a> when <a class="reference internal" href="11-02-workflow-create-repo.html#create-repo"><span class="std std-ref">creating</span></a> or <a class="reference internal" href="12-jira-revision-guidance.html#updating-repository-pipeline"><span class="std std-ref">updating</span></a> the repository.</p>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
-<p>Whether <a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html#using-pre-pub-openicpsr"><span class="std std-ref">manually downloading the files</span></a> or using the scripts, once the ZIP file is downloaded, you would still use</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>unzip<span class="w"> </span>-n<span class="w"> </span>NAME_OF_ZIP.zip<span class="w"> </span>-d<span class="w"> </span>DIRNAME
-</pre></div>
-</div>
-<p>where <code class="docutils literal notranslate"><span class="pre">DIRNAME</span></code> is defined as in the table above, and <code class="docutils literal notranslate"><span class="pre">NAME_OF_ZIP.zip</span></code> is whatever you downloaded from the repository. In the case of the [openICPSR download script]((get-the-data), the file downloaded from openICPSR is typically called <code class="docutils literal notranslate"><span class="pre">DIRNAME.zip</span></code>, e.g, <code class="docutils literal notranslate"><span class="pre">123456.zip</span></code>. It will be called something else in most other cases.</p>
-</section>
-<section id="utility-scripts">
-<h2>Utility scripts<a class="headerlink" href="#utility-scripts" title="Link to this heading">#</a></h2>
-<p>We have a few scripts, some of which have not yet been integrated into the pipeline. All can be run from the command line instead of manually downloading the repository. All are in the <code class="docutils literal notranslate"><span class="pre">tools</span></code> directory of your issue-specific repository. If not, refresh the tools.</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="96-90-download_openicpsr-private.html#help-download-openicpsr-private"><span class="std std-ref"><strong>download_openicpsr-private.py</strong></span></a>: For downloading from private openICPSR deposits (also integrated into the pipeline)</p></li>
-<li><p><a class="reference internal" href="96-90-download_dv.html#help-download-dv"><span class="std std-ref"><strong>download_dv.py</strong></span></a>: For downloading from Dataverse repositories.</p></li>
-<li><p><a class="reference internal" href="96-90-download_osf.html#help-download-osf"><span class="std std-ref"><strong>download_osf.sh</strong></span></a>: For downloading from OSF repositories.</p></li>
-<li><p><a class="reference internal" href="96-90-download_worldbank.html#help-download-worldbank"><span class="std std-ref"><strong>download_worldbank.py</strong></span></a>: For downloading from World Bank Reproducibility Repository, including the public reproducibility report!</p></li>
-<li><p><a class="reference internal" href="96-90-download_zenodo_public.html#help-download-zenodo-public"><span class="std std-ref"><strong>download_zenodo_public.sh</strong></span></a>: For downloading from public Zenodo repositories</p></li>
-<li><p><a class="reference internal" href="96-90-download_zenodo_draft.html#help-download-zenodo-draft"><span class="std std-ref"><strong>download_zenodo_draft.py</strong></span></a>: For downloading from private/draft Zenodo deposits (also integrated into the pipeline)</p></li>
-</ul>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -684,20 +612,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="94-01-how-to-use-openICPSR-backend.html"
+       href="96-90-sync-codeocean.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Using pre-publication openICPSR Projects</p>
+        <p class="prev-next-title">sync-codeocean.sh - Synchronize CodeOcean capsules with local repositories</p>
       </div>
     </a>
     <a class="right-next"
-       href="94-03-private-data.html"
+       href="96-91-pipeline-overview.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Accessing privately provided data</p>
+        <p class="prev-next-title">Bitbucket Pipeline Overview</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -707,22 +635,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utility-scripts">Utility scripts</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

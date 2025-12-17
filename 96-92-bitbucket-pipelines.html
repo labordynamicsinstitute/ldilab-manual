@@ -1,0 +1,1314 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Bitbucket Pipelines Configuration &#8212; Training Manual For Reproducibility Verification</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css?v=668b42aa" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '96-92-bitbucket-pipelines';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/96-92-bitbucket-pipelines.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Various templates for correspondence by AEA Data Editor team members" href="98-00-sundry-correspondence.html" />
+    <link rel="prev" title="Bitbucket Pipeline Overview" href="96-91-pipeline-overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">This is not yet fully debugged - report any issues!</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="Training Manual For Reproducibility Verification - Home"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Training Manual For Reproducibility Verification - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-background.html">Background</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Preliminary Tasks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="02-01-pre-requisites.html">Pre-requisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="02-02-pre-training-tasks.html">Pre-training tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-03-toolkit.html">Toolkit</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="04-01-concepts.html">Basic Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-02-reproducible-practices.html">Reproducible practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-03-readme-template.html">The README template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-data-citations-and-das.html">Data citations and data availability statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-basic-flow.html">Generic data workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-basic-assessing-reproducibility.html">Assessing computational reproducibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-details-replication-report.html">A guided walk through the Replication Report</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">AEA-specific Jira Workflow</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="11-00-jira-workflow.html">AEA Jira workflow</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="11-01-workflow-assigned.html">Assigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-02-workflow-create-repo.html">Creating a repository and running pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-03-workflow-in-progress.html">In Progress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-04-workflow-parta.html">Preparing Part A - Preliminary Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-05-preparing-to-run-code.html">Preparing to Run Code (Part B)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-06-running-code.html">Running Code (Part B)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-07-workflow-writing-report.html">Writing Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-08-report-completed.html">Report completed</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="12-jira-revision-guidance.html">AEA: Revision reports after author resubmission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00-meetings.html">AEA-related meetings</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced AEA-related tasks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20-checking-unassigned-tickets.html">Checking Unassigned Jira Tickets</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="13-approving-issues.html">AEA: Reviewing and (Pre-) Approving Reports</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="13-1-approving-issues-original.html">Original Replication Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13-2-approving-issues-revision.html">Revision Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13-3-approving-recommendations.html">Choosing a Recommendation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="30-jira-prepare-publication.html">AEA: Submitting information back to the Editorial Office and to authors</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="31-jira-openicpsr-setup.html">Basic setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32-jira-submitting.html">Submitting to the JMS ScholarOne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33-jira-delete-nda-data.html">Deleting restricted data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="34-openicpsr-preparing.html">Submitting deposit-related information via openICPSR</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="50-openicpsr-related-tasks.html">AEA: Interfacing with repositories</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="51-openicpsr-monitoring-pending.html">AEA: Monitoring Pending openICPSR Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="52-openicpsr-publishing-deposit.html">AEA: Publishing a deposit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="53-openicpsr-add-article-doi.html">Adding the article DOI to the openICPSR deposit metadata</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="40-Instructions-PandP-Checks.html">AEA: Instructions for Papers and Proceedings checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Running code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="96-00-running-code.html">Guidelines for running code</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-01-using-config-stata.html">Using config.do in STATA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-02-running-stata-code.html">Running Code in Stata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-03-stata-scan-packages.html">Using scan_packages.do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-04-stata-on-linux.html">Stata on Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-05-debugging-stata.html">Debugging Stata</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-10-using-R.html">R-related procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-11-using-config-r.html">Using config.R in R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-12-running-r-code.html">Running Code in R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-14-r-on-biohpc.html">Running R on Linux systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-15-r-from-other.html">Running R from other software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-16-debugging-r.html">Debugging R</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-20-using-matlab.html">MATLAB-related procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-21-using-config-matlab.html">Adding <code class="docutils literal notranslate"><span class="pre">config.m</span></code> to MATLAB and path names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-22-running-matlab-code.html">Running MATLAB without the desktop GUI and with log file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-23-dynare-matlab.html">Running Dynare from MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-24-debugging-matlab.html">Debugging MATLAB-related problems</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="96-30-running-python-jupyter.html">Python-related procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="96-40-using-julia.html">Julia-related procedures</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-50-using-docker.html">Docker-related procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-51-docker-windows.html">Docker on Windows</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="96-70-using-mathematica.html">Mathematica-related procedures</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-80-sundry.html">Rare software</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-81-using-ox.html">Ox-related procedures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-82-installing-add-ons.html">Mosek</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sundry other guidance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="71-External-reproducibility-checks.html">External reproducibility checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="90-Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="91-setup-checklist.html">Setup Checklist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="92-Privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="93-Communication.html">Communication</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="60-tips-for-identifying-differences.html">Identifying differences between original manuscript and reproduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="61-screenshot-windows.html">Using screenshot and annotation tools on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="62-screenshot-macos.html">Using screenshot and annotation tools on macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="68-include-screenshots-in-report.html">Include Screenshots in the Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="94-00-downloading-data.html">Downloading Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">Using pre-publication openICPSR Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="94-02-alternate-downloads.html">Alternate sources of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="94-03-private-data.html">Accessing privately provided data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="94-05-globus-transfers.html">Globus Transfers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="94-04-Updating_Materials.html">Updating Replication Materials after Revisions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="95_Access_to_computers.html">Access to Computers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="95-10-windows-remote.html">Connecting to remote Windows servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-15-linux-remote.html">Connecting to remote Linux servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-20-codeocean.html">Reproducibility Checks in Codeocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-30-wholetale.html">Conducting reproducibility checks on WholeTale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-40-codespaces.html">Computing using Github Codespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-50-setup-bash.html">Setting up your Bash environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-60-general-setup.html">Additional setup instructions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="97-00-authentication.html">Authentication-related issues</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="97-01-Bitbucket-authentication.html">Bitbucket Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="97-02-openicpsr-authentication.html">openICPSR Authentication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-90-00-useful-scripts.html">Various helpful scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-90-advanced_pdf_extractor.html">Advanced PDF Content Extractor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-download_box_private.html">download_box_private.py - Download files from private Box folders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-download_dv.html">download_dv.py - Download datasets from Dataverse repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-download_openicpsr-private.html">download_openicpsr-private.py - Download files from private openICPSR deposits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-download_osf.html">download_osf.sh - Download files from Open Science Framework (OSF) projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-download_worldbank.html">World Bank Reproducible Research Repository Downloads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-download_zenodo_draft.html">download_zenodo_draft.py - Download files from Zenodo draft deposits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-download_zenodo_public.html">download_zenodo_public.sh - Download files from public Zenodo repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-generate_png_diff.html">generate_png_diff.sh - Generate visual diffs for modified PNG images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-matlab_convert_fig.html">matlab_convert_fig.m - Convert MATLAB .fig files to PNG format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-matlab_convert_mat2csv.html">matlab_convert_mat2csv.m - Convert MATLAB .mat files to CSV format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-mk_tex_table.html">mk_tex_table.sh - Convert standalone LaTeX table files to PDF documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-90-sync-codeocean.html">sync-codeocean.sh - Synchronize CodeOcean capsules with local repositories</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="96-91-00-pipeline-intro.html">Automation Explainer</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="96-91-pipeline-overview.html">Bitbucket Pipeline Overview</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Bitbucket Pipelines Configuration</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="98-00-sundry-correspondence.html">Various templates for correspondence by AEA Data Editor team members</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="98-01-correspondence-legacy-updates.html">Preparing a Legacy Deposit for Updates by Authors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="98-02-correspondence-ipums-beta-request.html">IPUMS Beta API request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="98-03-correspondence-requesting-restricted-access-data.html">Requesting Restricted-Access Data from Authors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="98-04-correspondence-external-reproducibility-check.html">Request for External Reproducibility Check (general)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="98-05-clarification-privately-provided.html">Clarification regarding privately-provided restricted access files</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="99-tricky-stuff.html">Technical issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LDI-Replication-Lab-Code-of-Conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Video-etiquette.html">Videoconferencing Rules and Etiquette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99-References.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99-older-versions.html">Older versions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/96-92-bitbucket-pipelines.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2F96-92-bitbucket-pipelines.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/96-92-bitbucket-pipelines.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bitbucket Pipelines Configuration</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-pipelines">Custom Pipelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#populate-from-icpsr">1. <code class="docutils literal notranslate"><span class="pre">1-populate-from-icpsr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-download">Step 1: Download</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-check-downloads">Step 2: Check downloads</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-parallel-processing">Step 3: Parallel Processing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-add-info-to-replication-md">Step 4: Add info to REPLICATION.md</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-commit-everything-back">Step 5: Commit everything back</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#w-big-populate-from-icpsr">2. <code class="docutils literal notranslate"><span class="pre">w-big-populate-from-icpsr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-download-and-commit">Step: Download and commit</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-run-stata">3. <code class="docutils literal notranslate"><span class="pre">z-run-stata</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-run-stata-code">Step: Run Stata code</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-run-any-big">4. <code class="docutils literal notranslate"><span class="pre">z-run-any-big</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-run-r-or-stata-code">Step: Run R or Stata code</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-report">5. <code class="docutils literal notranslate"><span class="pre">2-merge-report</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-report">6. <code class="docutils literal notranslate"><span class="pre">3-split-report</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#refresh-tools">7. <code class="docutils literal notranslate"><span class="pre">4-refresh-tools</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-directory">8. <code class="docutils literal notranslate"><span class="pre">5-rename-directory</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-eps-pdf">9. <code class="docutils literal notranslate"><span class="pre">6-convert-eps-pdf</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-box-manifest">10. <code class="docutils literal notranslate"><span class="pre">7-download-box-manifest</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-download-box-and-create-manifests">Step: Download Box and create manifests</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-run-python">11. <code class="docutils literal notranslate"><span class="pre">x-run-python</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-images">Docker Images</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#artifact-management">Artifact Management</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caching">Caching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-integration">Configuration Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-processing">Conditional Processing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-integration">Git Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resource-sizing">Resource Sizing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-vs-sequential">Parallel vs Sequential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yaml-anchors">YAML Anchors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-documentation">Related Documentation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="bitbucket-pipelines-configuration">
+<span id="id1"></span><h1>Bitbucket Pipelines Configuration<a class="headerlink" href="#bitbucket-pipelines-configuration" title="Link to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This documentation was AI-generated by Claude Code and should be reviewed for accuracy. Please report any errors or inconsistencies.</p>
+</div>
+<p><strong>File</strong>: <a class="reference internal" href="#../bitbucket-pipelines.yml"><span class="xref myst">bitbucket-pipelines.yml</span></a></p>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Link to this heading">#</a></h2>
+<p>This file defines the CI/CD pipelines for automated replication package analysis and verification. It orchestrates downloading deposits from various repositories, analyzing code and data, scanning for dependencies and PII, and generating comprehensive reports.</p>
+</section>
+<section id="custom-pipelines">
+<h2>Custom Pipelines<a class="headerlink" href="#custom-pipelines" title="Link to this heading">#</a></h2>
+<p>The configuration defines several custom pipelines that can be manually triggered via Bitbucket’s web interface.</p>
+<section id="populate-from-icpsr">
+<h3>1. <code class="docutils literal notranslate"><span class="pre">1-populate-from-icpsr</span></code><a class="headerlink" href="#populate-from-icpsr" title="Link to this heading">#</a></h3>
+<p><strong>Purpose</strong>: Full analysis pipeline with parallel processing for optimal performance.</p>
+<p><strong>Parameters</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">openICPSRID</span></code> - openICPSR project ID (or read from config.yml)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jiraticket</span></code> - JIRA ticket identifier</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ZenodoID</span></code> - Zenodo deposit ID (alternative to openICPSR)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProcessStata</span></code> - Enable/disable Stata scanning (default: yes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProcessR</span></code> - Enable/disable R scanning (default: yes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProcessPython</span></code> - Enable/disable Python scanning (default: yes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProcessJulia</span></code> - Enable/disable Julia scanning (default: no)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProcessPii</span></code> - Enable/disable PII scanning (default: yes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SkipProcessing</span></code> - Skip all processing steps (default: no)</p></li>
+</ul>
+<p><strong>Pipeline Steps</strong>:</p>
+<section id="step-1-download">
+<h4>Step 1: Download<a class="headerlink" href="#step-1-download" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">python:3.12</span></code></p></li>
+<li><p>Downloads deposit from openICPSR or Zenodo</p></li>
+<li><p>Unpacks ZIP archives</p></li>
+<li><p>Lists data and program files</p></li>
+<li><p>Creates manifests with checksums</p></li>
+<li><p>Checks for ZIP files, duplicates, zero-byte files</p></li>
+<li><p>Validates file paths</p></li>
+<li><p>Compares manifests</p></li>
+<li><p><strong>Artifacts</strong>: <code class="docutils literal notranslate"><span class="pre">generated/**</span></code>, <code class="docutils literal notranslate"><span class="pre">cache/**</span></code></p></li>
+</ul>
+</section>
+<section id="step-2-check-downloads">
+<h4>Step 2: Check downloads<a class="headerlink" href="#step-2-check-downloads" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Verifies that deposit ZIP file exists in cache</p></li>
+<li><p>Fails pipeline if download was unsuccessful</p></li>
+</ul>
+</section>
+<section id="step-3-parallel-processing">
+<h4>Step 3: Parallel Processing<a class="headerlink" href="#step-3-parallel-processing" title="Link to this heading">#</a></h4>
+<p>Runs multiple scanners concurrently for maximum efficiency:</p>
+<p><strong>3a. Run Stata parser</strong></p>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">larsvilhuber/bitbucket-stata:latest</span></code></p></li>
+<li><p>Scans Stata code for package dependencies</p></li>
+<li><p>Generates <code class="docutils literal notranslate"><span class="pre">candidatepackages.csv</span></code></p></li>
+<li><p><strong>Artifacts</strong>: <code class="docutils literal notranslate"><span class="pre">generated/**</span></code></p></li>
+</ul>
+<p><strong>3b. Run Stata PII scanner</strong></p>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">larsvilhuber/bitbucket-stata:latest</span></code></p></li>
+<li><p>Scans for Personally Identifiable Information</p></li>
+<li><p>Generates PII reports</p></li>
+<li><p><strong>Artifacts</strong>: <code class="docutils literal notranslate"><span class="pre">generated/**</span></code></p></li>
+</ul>
+<p><strong>3c. Run R parser</strong></p>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">aeadataeditor/verification-r:latest</span></code></p></li>
+<li><p>Checks R dependencies and data files</p></li>
+<li><p>Generates <code class="docutils literal notranslate"><span class="pre">r-deps.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">r-data-checks.csv</span></code></p></li>
+</ul>
+<p><strong>3d. Run Python parser</strong></p>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">python:3.12</span></code></p></li>
+<li><p>Scans Python code for package dependencies</p></li>
+<li><p>Generates <code class="docutils literal notranslate"><span class="pre">python-deps.csv</span></code></p></li>
+<li><p><strong>Artifacts</strong>: <code class="docutils literal notranslate"><span class="pre">generated/**</span></code></p></li>
+</ul>
+<p><strong>3e. Run Julia parser</strong></p>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">julia:latest</span></code></p></li>
+<li><p>Scans Julia code for package dependencies</p></li>
+<li><p><strong>Artifacts</strong>: <code class="docutils literal notranslate"><span class="pre">generated/**</span></code></p></li>
+</ul>
+<p><strong>3f. Count lines and comments</strong></p>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">aldanial/cloc</span></code></p></li>
+<li><p>Counts lines of code by language</p></li>
+<li><p>Generates code statistics</p></li>
+<li><p><strong>Artifacts</strong>: <code class="docutils literal notranslate"><span class="pre">generated/**</span></code></p></li>
+</ul>
+</section>
+<section id="step-4-add-info-to-replication-md">
+<h4>Step 4: Add info to <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a><a class="headerlink" href="#step-4-add-info-to-replication-md" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">python:3.12</span></code></p></li>
+<li><p>Consolidates all findings into report</p></li>
+<li><p>Runs <code class="docutils literal notranslate"><span class="pre">24_amend_report.sh</span></code></p></li>
+<li><p><strong>Artifacts</strong>: <code class="docutils literal notranslate"><span class="pre">generated/**</span></code></p></li>
+</ul>
+</section>
+<section id="step-5-commit-everything-back">
+<h4>Step 5: Commit everything back<a class="headerlink" href="#step-5-commit-everything-back" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">python:3.12</span></code></p></li>
+<li><p>Re-extracts deposit</p></li>
+<li><p>Commits analyzed code to repository</p></li>
+<li><p>Cleans up deposit directory</p></li>
+<li><p>Replaces report sections</p></li>
+<li><p>Updates <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></p></li>
+<li><p>Pushes to Git with tags</p></li>
+</ul>
+<p><strong>Use Case</strong>: Standard replication package analysis with optimal performance.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="w-big-populate-from-icpsr">
+<h3>2. <code class="docutils literal notranslate"><span class="pre">w-big-populate-from-icpsr</span></code><a class="headerlink" href="#w-big-populate-from-icpsr" title="Link to this heading">#</a></h3>
+<p><strong>Purpose</strong>: Single-step pipeline for large deposits requiring more resources.</p>
+<p><strong>Parameters</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">openICPSRID</span></code> - openICPSR project ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ZenodoID</span></code> - Zenodo deposit ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jiraticket</span></code> - JIRA ticket identifier</p></li>
+</ul>
+<p><strong>Pipeline Steps</strong>:</p>
+<section id="step-download-and-commit">
+<h4>Step: Download and commit<a class="headerlink" href="#step-download-and-commit" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">python:3.12</span></code></p></li>
+<li><p><strong>Size</strong>: <code class="docutils literal notranslate"><span class="pre">2x</span></code> (double resources)</p></li>
+<li><p>Installs <code class="docutils literal notranslate"><span class="pre">cloc</span></code> for line counting</p></li>
+<li><p>Downloads and analyzes deposit sequentially</p></li>
+<li><p>All processing in single step (no parallelization)</p></li>
+<li><p>Commits and pushes results</p></li>
+</ul>
+<p><strong>Key Differences from Pipeline 1</strong>:</p>
+<ul class="simple">
+<li><p>All processing is sequential (slower but more reliable)</p></li>
+<li><p>Double resources (2x memory and CPU)</p></li>
+<li><p>No artifact passing between steps</p></li>
+<li><p>Includes <code class="docutils literal notranslate"><span class="pre">cloc</span></code> installation</p></li>
+</ul>
+<p><strong>Use Case</strong>: Large deposits that may timeout or fail with standard resources.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="z-run-stata">
+<h3>3. <code class="docutils literal notranslate"><span class="pre">z-run-stata</span></code><a class="headerlink" href="#z-run-stata" title="Link to this heading">#</a></h3>
+<p><strong>Purpose</strong>: Execute Stata replication code.</p>
+<p><strong>Parameters</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">openICPSRID</span></code> - Project ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MainFile</span></code> - Main script to execute (default: <a class="reference external" href="http://main.do">main.do</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RunCommand</span></code> - Command to run (default: <a class="reference external" href="http://run.sh">run.sh</a>)</p></li>
+</ul>
+<p><strong>Pipeline Steps</strong>:</p>
+<section id="step-run-stata-code">
+<h4>Step: Run Stata code<a class="headerlink" href="#step-run-stata-code" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">larsvilhuber/bitbucket-stata:latest</span></code></p></li>
+<li><p><strong>Size</strong>: <code class="docutils literal notranslate"><span class="pre">2x</span></code></p></li>
+<li><p>Downloads deposit</p></li>
+<li><p>Executes replication code</p></li>
+<li><p>Commits outputs</p></li>
+<li><p>Pushes results</p></li>
+</ul>
+<p><strong>Use Case</strong>: Running actual Stata replication code (not just analysis).</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="z-run-any-big">
+<h3>4. <code class="docutils literal notranslate"><span class="pre">z-run-any-big</span></code><a class="headerlink" href="#z-run-any-big" title="Link to this heading">#</a></h3>
+<p><strong>Purpose</strong>: Execute replication code with maximum resources.</p>
+<p><strong>Parameters</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">openICPSRID</span></code> - Project ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MainFile</span></code> - Main script to execute</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RunCommand</span></code> - Command to run (default: <a class="reference external" href="http://run.sh">run.sh</a>)</p></li>
+</ul>
+<p><strong>Pipeline Steps</strong>:</p>
+<section id="step-run-r-or-stata-code">
+<h4>Step: Run R or Stata code<a class="headerlink" href="#step-run-r-or-stata-code" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">larsvilhuber/bitbucket-stata:latest</span></code></p></li>
+<li><p><strong>Size</strong>: <code class="docutils literal notranslate"><span class="pre">8x</span></code> (8x resources - maximum available)</p></li>
+<li><p>Downloads deposit</p></li>
+<li><p>Executes replication code</p></li>
+<li><p>Commits outputs</p></li>
+<li><p>Pushes results</p></li>
+</ul>
+<p><strong>Use Case</strong>: Large, resource-intensive replications requiring maximum compute.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="merge-report">
+<h3>5. <code class="docutils literal notranslate"><span class="pre">2-merge-report</span></code><a class="headerlink" href="#merge-report" title="Link to this heading">#</a></h3>
+<p><strong>Purpose</strong>: Combine Part A and Part B of a split report.</p>
+<p><strong>Parameters</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">jiraticket</span></code> - JIRA ticket identifier</p></li>
+</ul>
+<p><strong>Pipeline Steps</strong>:</p>
+<ul class="simple">
+<li><p>Runs <code class="docutils literal notranslate"><span class="pre">50_merge-parts.sh</span></code></p></li>
+<li><p>Pushes merged report</p></li>
+</ul>
+<p><strong>Use Case</strong>: After separate completion of report sections.</p>
+</section>
+<hr class="docutils" />
+<section id="split-report">
+<h3>6. <code class="docutils literal notranslate"><span class="pre">3-split-report</span></code><a class="headerlink" href="#split-report" title="Link to this heading">#</a></h3>
+<p><strong>Purpose</strong>: Split <a class="reference external" href="http://REPLICATION.md">REPLICATION.md</a> into Part A and Part B.</p>
+<p><strong>Parameters</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">jiraticket</span></code> - JIRA ticket identifier</p></li>
+</ul>
+<p><strong>Pipeline Steps</strong>:</p>
+<ul class="simple">
+<li><p>Runs <code class="docutils literal notranslate"><span class="pre">51_split-parts.sh</span></code></p></li>
+<li><p>Pushes split reports</p></li>
+</ul>
+<p><strong>Use Case</strong>: When report needs to be worked on in sections.</p>
+</section>
+<hr class="docutils" />
+<section id="refresh-tools">
+<h3>7. <code class="docutils literal notranslate"><span class="pre">4-refresh-tools</span></code><a class="headerlink" href="#refresh-tools" title="Link to this heading">#</a></h3>
+<p><strong>Purpose</strong>: Update pipeline tools from master template.</p>
+<p><strong>Pipeline Steps</strong>:</p>
+<ul class="simple">
+<li><p>Downloads latest <code class="docutils literal notranslate"><span class="pre">update_tools.sh</span></code></p></li>
+<li><p>Executes update</p></li>
+<li><p>Pushes updated tools</p></li>
+</ul>
+<p><strong>Use Case</strong>: Keeping tools synchronized with template repository.</p>
+</section>
+<hr class="docutils" />
+<section id="rename-directory">
+<h3>8. <code class="docutils literal notranslate"><span class="pre">5-rename-directory</span></code><a class="headerlink" href="#rename-directory" title="Link to this heading">#</a></h3>
+<p><strong>Purpose</strong>: Rename a deposit directory in the repository.</p>
+<p><strong>Parameters</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">oldName</span></code> - Current directory name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">newName</span></code> - New directory name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jiraticket</span></code> - JIRA ticket identifier</p></li>
+</ul>
+<p><strong>Pipeline Steps</strong>:</p>
+<ul class="simple">
+<li><p>Runs <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mv</span> <span class="pre">$oldName</span> <span class="pre">$newName</span></code></p></li>
+<li><p>Commits with <code class="docutils literal notranslate"><span class="pre">[skip</span> <span class="pre">ci]</span></code> to avoid triggering pipelines</p></li>
+<li><p>Pushes changes</p></li>
+</ul>
+<p><strong>Use Case</strong>: Correcting directory names or reorganizing deposits.</p>
+</section>
+<hr class="docutils" />
+<section id="convert-eps-pdf">
+<h3>9. <code class="docutils literal notranslate"><span class="pre">6-convert-eps-pdf</span></code><a class="headerlink" href="#convert-eps-pdf" title="Link to this heading">#</a></h3>
+<p><strong>Purpose</strong>: Convert EPS and PDF graphics to PNG format.</p>
+<p><strong>Parameters</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code> - Directory containing graphics</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jiraticket</span></code> - JIRA ticket identifier</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProcessEPS</span></code> - Convert EPS files (default: yes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProcessPDF</span></code> - Convert PDF files (default: no)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DockerImg</span></code> - Docker image to use (default: dpokidov/imagemagick)</p></li>
+</ul>
+<p><strong>Pipeline Steps</strong>:</p>
+<ul class="simple">
+<li><p>Uses Docker-in-Docker (services: docker)</p></li>
+<li><p>Mounts current directory into container</p></li>
+<li><p>Runs <code class="docutils literal notranslate"><span class="pre">52_convert_eps_pdf.sh</span></code></p></li>
+<li><p>Commits converted files</p></li>
+<li><p>Pushes with <code class="docutils literal notranslate"><span class="pre">[skip</span> <span class="pre">ci]</span></code></p></li>
+</ul>
+<p><strong>Use Case</strong>: Converting graphics for better diff visualization or compatibility.</p>
+</section>
+<hr class="docutils" />
+<section id="download-box-manifest">
+<h3>10. <code class="docutils literal notranslate"><span class="pre">7-download-box-manifest</span></code><a class="headerlink" href="#download-box-manifest" title="Link to this heading">#</a></h3>
+<p><strong>Purpose</strong>: Download restricted data from Box and generate manifest files.</p>
+<p><strong>Parameters</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">jiraticket</span></code> - JIRA ticket identifier</p></li>
+</ul>
+<p><strong>Pipeline Steps</strong>:</p>
+<section id="step-download-box-and-create-manifests">
+<h4>Step: Download Box and create manifests<a class="headerlink" href="#step-download-box-and-create-manifests" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">python:3.12</span></code></p></li>
+<li><p><strong>Caches</strong>: pip packages</p></li>
+<li><p>Installs Python requirements</p></li>
+<li><p>Runs <code class="docutils literal notranslate"><span class="pre">download_box_private.py</span></code> to download restricted data from Box</p></li>
+<li><p>Executes <code class="docutils literal notranslate"><span class="pre">04_create_manifest.sh</span> <span class="pre">restricted</span></code> twice to generate checksums</p></li>
+<li><p>Force-adds all files in <code class="docutils literal notranslate"><span class="pre">generated/</span></code> directory</p></li>
+<li><p>Commits with <code class="docutils literal notranslate"><span class="pre">[skip</span> <span class="pre">ci]</span></code> to avoid triggering pipelines</p></li>
+<li><p>Pushes changes</p></li>
+</ul>
+<p><strong>Use Case</strong>: Downloading and documenting restricted data stored on Box for replication packages that include confidential data.</p>
+<p><strong>Note</strong>: Requires Box API credentials to be configured in the environment.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="x-run-python">
+<h3>11. <code class="docutils literal notranslate"><span class="pre">x-run-python</span></code><a class="headerlink" href="#x-run-python" title="Link to this heading">#</a></h3>
+<p><strong>Purpose</strong>: Execute custom Python scripts.</p>
+<p><strong>Parameters</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Script</span></code> - Script to run (default: <a class="reference external" href="http://run-python.sh">run-python.sh</a>)</p></li>
+</ul>
+<p><strong>Pipeline Steps</strong>:</p>
+<ul class="simple">
+<li><p><strong>Image</strong>: <code class="docutils literal notranslate"><span class="pre">python:3.11</span></code></p></li>
+<li><p>Executes specified script</p></li>
+<li><p>Runs post-run script if present</p></li>
+<li><p>Pushes results</p></li>
+</ul>
+<p><strong>Use Case</strong>: Custom Python processing tasks.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="docker-images">
+<h2>Docker Images<a class="headerlink" href="#docker-images" title="Link to this heading">#</a></h2>
+<p>The pipeline uses several specialized Docker images:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Image</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Used In</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">python:3.12</span></code></p></td>
+<td><p>Python analysis, downloads</p></td>
+<td><p>Download, Python scanner</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">larsvilhuber/bitbucket-stata:latest</span></code></p></td>
+<td><p>Stata scanning/execution</p></td>
+<td><p>Stata scanner, PII scanner, execution</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aeadataeditor/verification-r:latest</span></code></p></td>
+<td><p>R dependency checking</p></td>
+<td><p>R scanner</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">julia:latest</span></code></p></td>
+<td><p>Julia dependency checking</p></td>
+<td><p>Julia scanner</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">aldanial/cloc</span></code></p></td>
+<td><p>Line counting</p></td>
+<td><p>Line counter</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dpokidov/imagemagick</span></code></p></td>
+<td><p>Image conversion</p></td>
+<td><p>Graphics conversion</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="artifact-management">
+<h2>Artifact Management<a class="headerlink" href="#artifact-management" title="Link to this heading">#</a></h2>
+<p>Artifacts are files passed between pipeline steps:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">artifacts</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">generated/**</span><span class="w">   </span><span class="c1"># Analysis outputs</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cache/**</span><span class="w">       </span><span class="c1"># Downloaded deposits</span>
+</pre></div>
+</div>
+<p>Only specified steps preserve artifacts. This reduces storage and transfer time.</p>
+</section>
+<section id="caching">
+<h2>Caching<a class="headerlink" href="#caching" title="Link to this heading">#</a></h2>
+<p>The pipeline uses Bitbucket’s caching for pip packages:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">caches</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip</span>
+</pre></div>
+</div>
+<p>This speeds up subsequent runs by reusing downloaded Python packages.</p>
+</section>
+<section id="configuration-integration">
+<h2>Configuration Integration<a class="headerlink" href="#configuration-integration" title="Link to this heading">#</a></h2>
+<p>All pipelines read from <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.<span class="w"> </span>./tools/parse_yaml.sh
+<span class="nb">eval</span><span class="w"> </span><span class="k">$(</span>parse_yaml<span class="w"> </span>config.yml<span class="k">)</span>
+</pre></div>
+</div>
+<p>This allows parameters to be stored in the repository rather than entered manually.</p>
+</section>
+<section id="conditional-processing">
+<h2>Conditional Processing<a class="headerlink" href="#conditional-processing" title="Link to this heading">#</a></h2>
+<p>Scripts check environment variables to skip processing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SkipProcessing</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;yes&quot;</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ProcessStata</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;no&quot;</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+</pre></div>
+</div>
+<p>This provides fine-grained control over which analyses run.</p>
+</section>
+<section id="git-integration">
+<h2>Git Integration<a class="headerlink" href="#git-integration" title="Link to this heading">#</a></h2>
+<p>Most pipelines end with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+git<span class="w"> </span>push
+git<span class="w"> </span>push<span class="w"> </span>--tags<span class="w">  </span><span class="c1"># Some pipelines</span>
+</pre></div>
+</div>
+<p>Some use <code class="docutils literal notranslate"><span class="pre">[skip</span> <span class="pre">ci]</span></code> in commit messages to prevent recursive pipeline triggers:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;[skip ci] Rename </span><span class="nv">$oldName</span><span class="s2"> to </span><span class="nv">$newName</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="resource-sizing">
+<h2>Resource Sizing<a class="headerlink" href="#resource-sizing" title="Link to this heading">#</a></h2>
+<p>Bitbucket provides different resource tiers:</p>
+<ul class="simple">
+<li><p><strong>Default</strong>: 4GB RAM, 2 vCPU</p></li>
+<li><p><strong>2x</strong>: 8GB RAM, 4 vCPU (<code class="docutils literal notranslate"><span class="pre">size:</span> <span class="pre">2x</span></code>)</p></li>
+<li><p><strong>8x</strong>: 32GB RAM, 16 vCPU (<code class="docutils literal notranslate"><span class="pre">size:</span> <span class="pre">8x</span></code>)</p></li>
+</ul>
+<p>Larger sizes cost more build minutes but prevent timeouts on big deposits.</p>
+</section>
+<section id="parallel-vs-sequential">
+<h2>Parallel vs Sequential<a class="headerlink" href="#parallel-vs-sequential" title="Link to this heading">#</a></h2>
+<p><strong>Pipeline 1</strong> (<code class="docutils literal notranslate"><span class="pre">1-populate-from-icpsr</span></code>):</p>
+<ul class="simple">
+<li><p>Parallel processing of language scanners</p></li>
+<li><p>Faster completion</p></li>
+<li><p>More efficient use of build minutes</p></li>
+<li><p>Requires artifact passing</p></li>
+</ul>
+<p><strong>Pipeline w</strong> (<code class="docutils literal notranslate"><span class="pre">w-big-populate-from-icpsr</span></code>):</p>
+<ul class="simple">
+<li><p>Sequential processing</p></li>
+<li><p>Simpler (no artifact coordination)</p></li>
+<li><p>Better for large files</p></li>
+<li><p>Higher resource allocation</p></li>
+</ul>
+</section>
+<section id="yaml-anchors">
+<h2>YAML Anchors<a class="headerlink" href="#yaml-anchors" title="Link to this heading">#</a></h2>
+<p>The configuration uses YAML anchors for reusability:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">step</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;z-run-any-anchor</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run R or Stata code</span>
+<span class="w">    </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">...</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<p>Referenced later:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">step</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*z-run-any-anchor</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Stata code</span>
+<span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2x</span>
+</pre></div>
+</div>
+</section>
+<section id="environment-variables">
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Link to this heading">#</a></h2>
+<p>Available in pipelines:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$CI</span></code> - Set in CI environment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$openICPSRID</span></code> - From parameters or config</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$ZenodoID</span></code> - From parameters or config</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$W_DOCKER_USERNAME</span></code> - Docker Hub credentials (secured)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$W_DOCKER_PAT</span></code> - Docker Hub PAT (secured)</p></li>
+</ul>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Use Pipeline 1</strong> for standard deposits</p></li>
+<li><p><strong>Use Pipeline w</strong> for deposits &gt;1GB or with many files</p></li>
+<li><p><strong>Use Pipeline z-run-any-big</strong> for compute-intensive replications</p></li>
+<li><p><strong>Set ProcessX=”no”</strong> for languages not in deposit (faster)</p></li>
+<li><p><strong>Use SkipProcessing=”yes”</strong> to only download without analysis</p></li>
+<li><p><strong>Use [skip ci]</strong> commits to avoid recursive triggers</p></li>
+<li><p><strong>Check artifacts</strong> in Bitbucket UI if debugging</p></li>
+</ol>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Issue</p></th>
+<th class="head"><p>Solution</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Timeout during download</p></td>
+<td><p>Use <code class="docutils literal notranslate"><span class="pre">w-big-populate-from-icpsr</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Out of memory during analysis</p></td>
+<td><p>Use <code class="docutils literal notranslate"><span class="pre">w-big-populate-from-icpsr</span></code> or <code class="docutils literal notranslate"><span class="pre">z-run-any-big</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Parallel steps fail</p></td>
+<td><p>Check individual step logs in Bitbucket</p></td>
+</tr>
+<tr class="row-odd"><td><p>Artifacts not found</p></td>
+<td><p>Verify previous step completed successfully</p></td>
+</tr>
+<tr class="row-even"><td><p>Git push fails</p></td>
+<td><p>Check repository permissions and credentials</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="related-documentation">
+<h2>Related Documentation<a class="headerlink" href="#related-documentation" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#pipeline-overview.md"><span class="xref myst">Pipeline Overview</span></a></p></li>
+<li><p><a class="reference internal" href="#automation-scripts.md"><span class="xref myst">Automation Scripts Reference</span></a></p></li>
+<li><p><a class="reference internal" href="#download-tools.md"><span class="xref myst">Download Tools</span></a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="96-91-pipeline-overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bitbucket Pipeline Overview</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="98-00-sundry-correspondence.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Various templates for correspondence by AEA Data Editor team members</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose">Purpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-pipelines">Custom Pipelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#populate-from-icpsr">1. <code class="docutils literal notranslate"><span class="pre">1-populate-from-icpsr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-download">Step 1: Download</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-check-downloads">Step 2: Check downloads</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-parallel-processing">Step 3: Parallel Processing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-add-info-to-replication-md">Step 4: Add info to REPLICATION.md</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-commit-everything-back">Step 5: Commit everything back</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#w-big-populate-from-icpsr">2. <code class="docutils literal notranslate"><span class="pre">w-big-populate-from-icpsr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-download-and-commit">Step: Download and commit</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-run-stata">3. <code class="docutils literal notranslate"><span class="pre">z-run-stata</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-run-stata-code">Step: Run Stata code</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-run-any-big">4. <code class="docutils literal notranslate"><span class="pre">z-run-any-big</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-run-r-or-stata-code">Step: Run R or Stata code</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-report">5. <code class="docutils literal notranslate"><span class="pre">2-merge-report</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-report">6. <code class="docutils literal notranslate"><span class="pre">3-split-report</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#refresh-tools">7. <code class="docutils literal notranslate"><span class="pre">4-refresh-tools</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-directory">8. <code class="docutils literal notranslate"><span class="pre">5-rename-directory</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-eps-pdf">9. <code class="docutils literal notranslate"><span class="pre">6-convert-eps-pdf</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-box-manifest">10. <code class="docutils literal notranslate"><span class="pre">7-download-box-manifest</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-download-box-and-create-manifests">Step: Download Box and create manifests</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-run-python">11. <code class="docutils literal notranslate"><span class="pre">x-run-python</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-images">Docker Images</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#artifact-management">Artifact Management</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caching">Caching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-integration">Configuration Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-processing">Conditional Processing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-integration">Git Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resource-sizing">Resource Sizing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-vs-sequential">Parallel vs Sequential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yaml-anchors">YAML Anchors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-documentation">Related Documentation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lars Vilhuber, Dane Clunk, Michael Darisse, Sofia Encarnación, Julia Hewitt, Ilanith Nizard, Leonel Borja Plaza, Takshil Sachdev, Hyuk Son, Linda Wang, David Wasser, Meredith Welch
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2018-2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
