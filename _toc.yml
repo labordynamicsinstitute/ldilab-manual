@@ -138,6 +138,10 @@ parts:
       - file: 96-90-matlab_convert_mat2csv
       - file: 96-90-mk_tex_table
       - file: 96-90-sync-codeocean
+    - file: 96-91-00-pipeline-intro
+      sections:
+      - file: 96-91-pipeline-overview
+      - file: 96-92-bitbucket-pipelines
     - file: 98-00-sundry-correspondence
       sections:
       - file: 98-01-correspondence-legacy-updates
