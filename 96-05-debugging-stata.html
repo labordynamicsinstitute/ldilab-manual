@@ -578,7 +578,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ado-files-not-found">Ado files not found</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unknown-egen-function-wtmean">unknown egen function wtmean()</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unknown-egen-function">unknown egen function ….</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#struct-ms-vcvorthog-undefined">struct_ ms_vcvorthog undefined</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#struct-ms-vcvorthog-undefined-ivreghdfe">struct_ ms_vcvorthog undefined (<code class="docutils literal notranslate"><span class="pre">ivreghdfe</span></code>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#last-estimates-not-found-ivreghdfe-reghdfe">Last estimates not found (<code class="docutils literal notranslate"><span class="pre">ivreghdfe</span></code>,<code class="docutils literal notranslate"><span class="pre">reghdfe</span></code>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assert-msg-not-found-reghdfe"><code class="docutils literal notranslate"><span class="pre">assert_msg()</span> <span class="pre">not</span> <span class="pre">found</span></code> (<code class="docutils literal notranslate"><span class="pre">reghdfe</span></code>)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reg2hdfespatial-and-ols-spatial-hac"><code class="docutils literal notranslate"><span class="pre">reg2hdfespatial</span></code> and <code class="docutils literal notranslate"><span class="pre">ols_spatial_HAC</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-grc1leg">Installing grc1leg</a></li>
 </ul>
@@ -700,8 +702,8 @@ document.write(`
 <h4>unknown egen function ….<a class="headerlink" href="#unknown-egen-function" title="Link to this heading">#</a></h4>
 <p>Add package <code class="docutils literal notranslate"><span class="pre">egenmore</span></code> to the <code class="docutils literal notranslate"><span class="pre">config.do</span></code></p>
 </section>
-<section id="struct-ms-vcvorthog-undefined">
-<h4>struct_ ms_vcvorthog undefined<a class="headerlink" href="#struct-ms-vcvorthog-undefined" title="Link to this heading">#</a></h4>
+<section id="struct-ms-vcvorthog-undefined-ivreghdfe">
+<h4>struct_ ms_vcvorthog undefined (<code class="docutils literal notranslate"><span class="pre">ivreghdfe</span></code>)<a class="headerlink" href="#struct-ms-vcvorthog-undefined-ivreghdfe" title="Link to this heading">#</a></h4>
 <p>You may find this with <code class="docutils literal notranslate"><span class="pre">ivreg2</span></code> or <code class="docutils literal notranslate"><span class="pre">ivreghdfe</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">ms_vcvorthog</span> <span class="n">undefined</span>
 <span class="p">(</span><span class="mi">817</span> <span class="n">lines</span> <span class="n">skipped</span><span class="p">)</span>
@@ -714,6 +716,9 @@ document.write(`
 </pre></div>
 </div>
 <p>should fix any additional issues.</p>
+</section>
+<section id="last-estimates-not-found-ivreghdfe-reghdfe">
+<h4>Last estimates not found (<code class="docutils literal notranslate"><span class="pre">ivreghdfe</span></code>,<code class="docutils literal notranslate"><span class="pre">reghdfe</span></code>)<a class="headerlink" href="#last-estimates-not-found-ivreghdfe-reghdfe" title="Link to this heading">#</a></h4>
 <p>If you then get</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">last</span> <span class="n">estimates</span> <span class="ow">not</span> <span class="n">found</span>
 </pre></div>
@@ -738,9 +743,20 @@ document.write(`
 <span class="o">*</span> <span class="n">Finally</span><span class="p">,</span> <span class="n">install</span> <span class="n">this</span> <span class="n">package</span>
 <span class="n">cap</span> <span class="n">ado</span> <span class="n">uninstall</span> <span class="n">ivreghdfe</span>
 <span class="n">net</span> <span class="n">install</span> <span class="n">ivreghdfe</span><span class="p">,</span> <span class="n">from</span><span class="p">(</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sergiocorreia</span><span class="o">/</span><span class="n">ivreghdfe</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="p">)</span>
+
+<span class="o">*</span> <span class="n">Rebuild</span> <span class="n">mata</span> <span class="n">library</span> <span class="n">index</span>
+<span class="n">mata</span><span class="p">:</span> <span class="n">mata</span> <span class="n">mlib</span> <span class="n">index</span>
 </pre></div>
 </div>
 <p>This problem is <em>always</em> fixable, contact your Team lead if you run into persistent problems.</p>
+</section>
+<section id="assert-msg-not-found-reghdfe">
+<h4><code class="docutils literal notranslate"><span class="pre">assert_msg()</span> <span class="pre">not</span> <span class="pre">found</span></code> (<code class="docutils literal notranslate"><span class="pre">reghdfe</span></code>)<a class="headerlink" href="#assert-msg-not-found-reghdfe" title="Link to this heading">#</a></h4>
+<p>This seems to happen when an older version of <code class="docutils literal notranslate"><span class="pre">reghdfe</span></code> is run (i.e., with <code class="docutils literal notranslate"><span class="pre">version(3)</span></code> flag). One solution appears to be to</p>
+<ul class="simple">
+<li><p>install the latest version of <code class="docutils literal notranslate"><span class="pre">reghdfe</span></code> etc. from Github (see above)</p></li>
+<li><p>Add the command <code class="docutils literal notranslate"><span class="pre">ftools,</span> <span class="pre">compile</span></code> before the <code class="docutils literal notranslate"><span class="pre">mata:</span> <span class="pre">mata</span> <span class="pre">mlib</span> <span class="pre">index</span></code> line in the <code class="docutils literal notranslate"><span class="pre">config.do</span></code></p></li>
+</ul>
 </section>
 <section id="reg2hdfespatial-and-ols-spatial-hac">
 <h4><code class="docutils literal notranslate"><span class="pre">reg2hdfespatial</span></code> and <code class="docutils literal notranslate"><span class="pre">ols_spatial_HAC</span></code><a class="headerlink" href="#reg2hdfespatial-and-ols-spatial-hac" title="Link to this heading">#</a></h4>
@@ -1067,7 +1083,9 @@ Alternate</label><div class="sd-tab-content docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ado-files-not-found">Ado files not found</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unknown-egen-function-wtmean">unknown egen function wtmean()</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unknown-egen-function">unknown egen function ….</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#struct-ms-vcvorthog-undefined">struct_ ms_vcvorthog undefined</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#struct-ms-vcvorthog-undefined-ivreghdfe">struct_ ms_vcvorthog undefined (<code class="docutils literal notranslate"><span class="pre">ivreghdfe</span></code>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#last-estimates-not-found-ivreghdfe-reghdfe">Last estimates not found (<code class="docutils literal notranslate"><span class="pre">ivreghdfe</span></code>,<code class="docutils literal notranslate"><span class="pre">reghdfe</span></code>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assert-msg-not-found-reghdfe"><code class="docutils literal notranslate"><span class="pre">assert_msg()</span> <span class="pre">not</span> <span class="pre">found</span></code> (<code class="docutils literal notranslate"><span class="pre">reghdfe</span></code>)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reg2hdfespatial-and-ols-spatial-hac"><code class="docutils literal notranslate"><span class="pre">reg2hdfespatial</span></code> and <code class="docutils literal notranslate"><span class="pre">ols_spatial_HAC</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-grc1leg">Installing grc1leg</a></li>
 </ul>
