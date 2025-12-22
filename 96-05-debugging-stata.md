@@ -91,7 +91,7 @@ Add package `_gwtmean` to the `config.do`, or `ssc inst _gwtmean`
 
 Add package `egenmore` to the `config.do`
 
-#### struct_ ms_vcvorthog undefined
+#### struct_ ms_vcvorthog undefined (`ivreghdfe`)
 
 You may find this with `ivreg2` or `ivreghdfe`:
 
@@ -107,6 +107,8 @@ Solution: Ensure that you are using the `config.do` correctly, your `config.do` 
 mata: mata mlib index
 ```
 should fix any additional issues.
+
+#### Last estimates not found (`ivreghdfe`,`reghdfe`)
 
 If you then get 
 
@@ -136,9 +138,19 @@ ssc install ivreg2
 * Finally, install this package
 cap ado uninstall ivreghdfe
 net install ivreghdfe, from(https://raw.githubusercontent.com/sergiocorreia/ivreghdfe/master/src/)
+
+* Rebuild mata library index
+mata: mata mlib index
 ```
 
 This problem is *always* fixable, contact your Team lead if you run into persistent problems.
+
+#### `assert_msg() not found` (`reghdfe`)
+
+This seems to happen when an older version of `reghdfe` is run (i.e., with `version(3)` flag). One solution appears to be to 
+
+- install the latest version of `reghdfe` etc. from Github (see above)
+- Add the command `ftools, compile` before the `mata: mata mlib index` line in the `config.do`
 
 
 
