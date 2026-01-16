@@ -38,7 +38,8 @@ For **Part A**, you do NOT need the data, but you do need the working copy of th
 - [ ] From the JIRA issue, download and add Manuscript, Data and Code Availability Form (DCAF). 
     - Download from Jira issue attachments. The manuscript is often called `PDF_Proof.pdf`. 
 
-:::{warning}
+:::{admonition} Manuscript missing?
+:class: warning dropdown
 
 Occassionally, the email received from Manuscript Central will strip out the manuscript because it is too big. You will notice this because
 
@@ -141,6 +142,14 @@ As part of the [automated processing](running-populate-icpsr), the `REPLICATION.
 
 
 Now that you have pulled everything together, you will inspect the authors' README, and do a first analysis of the necessary data.
+
+:::{admonition} Where is the README?
+:class: info dropdown
+
+The README should have been pulled in when you did the `aeagit` or `git clone` command, and be in the `12345` folder corresponding to the openICPSR repository number.
+
+If it is not there, there is a chance that it is called something non-standard, and was excluded. Check against what you can see on openICPSR! If it is not there, contact your supervisor.
+:::
 
 
 The first section of the Replication report is titled "[General](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#general)". Here you want to verify how complete the README is. 
