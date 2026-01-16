@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
@@ -51,7 +51,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -636,8 +636,8 @@ CCSS</label><div class="sd-tab-content docutils">
 </ul>
 </li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<div class="warning dropdown admonition">
+<p class="admonition-title">Manuscript missing?</p>
 <p>Occassionally, the email received from Manuscript Central will strip out the manuscript because it is too big. You will notice this because</p>
 <ul class="simple">
 <li><p>There will be no <code class="docutils literal notranslate"><span class="pre">PDF_Proof.pdf</span></code> attached!</p></li>
@@ -749,6 +749,11 @@ BioHPC</label><div class="sd-tab-content docutils">
 <section id="verifying-completeness-of-the-readme">
 <h2>Verifying completeness of the README<a class="headerlink" href="#verifying-completeness-of-the-readme" title="Link to this heading">#</a></h2>
 <p>Now that you have pulled everything together, you will inspect the authors’ README, and do a first analysis of the necessary data.</p>
+<div class="info dropdown admonition">
+<p class="admonition-title">Where is the README?</p>
+<p>The README should have been pulled in when you did the <code class="docutils literal notranslate"><span class="pre">aeagit</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command, and be in the <code class="docutils literal notranslate"><span class="pre">12345</span></code> folder corresponding to the openICPSR repository number.</p>
+<p>If it is not there, there is a chance that it is called something non-standard, and was excluded. Check against what you can see on openICPSR! If it is not there, contact your supervisor.</p>
+</div>
 <p>The first section of the Replication report is titled “<a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md#general">General</a>”. Here you want to verify how complete the README is.</p>
 <ul class="simple">
 <li><p>Go through the entire README, and compare both to the <a class="reference external" href="https://social-science-data-editors.github.io/template_README/template-README.html">template README</a> and the sections in the <strong>General</strong> section.</p>
