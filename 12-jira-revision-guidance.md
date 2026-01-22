@@ -119,16 +119,50 @@ If you can't use the Bitbucket pipeline, defer this step to [later](revision-cod
 
 :::::
 
+### Check that both pipelines have run successfully
+
+The `Commit` tab of the Bitbucket repository should show at least two recent commits, one for updating the tools, and one for updating the openICPSR deposit, but typically more:
+
+![commits after pipelines](images/bitbucket-after-revision-pipelines.png)
+
+
 ### Prepare the working area 
 
 Similar to the original workflow, you will need to decide where you will run code and do other manipulations. If you are the original replicator, and this is YOUR revision, this will be the **same** computer where you originally did the verification. If not, refer to the [general guidance](Manual1) on how to choose and set up your working area.
 
-```{admonition} Please note:
+::::{admonition} Please note:
 
-If you are **returning** to the previous working area, be sure to run `git pull` in the working area before doing anything else!
+If you are **returning** to the previous working area, be sure to run the same basic setup as [initially](prepare-to-run-code)
 
-
+```bash
+git pull
+``` 
+```bash
+python tools/download_openicpsr-private.py 111234 
 ```
+```bash
+unzip -n 111234 -d 111234
+```
+
+in the working area before doing anything else!
+
+:::{admonition} ☠️ Danger Zone! ☠️ 
+:class: dropdown warning
+
+It sometimes happens that after the `git pull`, there are still data in the `111234` folder. If authors have updated data files with the same names, then the `unzip -n` will NOT replace them. If the three commands above are the FIRST thing you are doing after the running the Bitbucket pipelines, it should be **SAFE** to do the following:
+
+```bash
+rm -r 111234
+```
+```bash
+unzip 111234 -d 111234
+```
+
+This will delete ALL files in the `111234` folder, so be sure you have committed any changes you made before doing this, and never do this if you do not know what you are doing. 
+
+You should **NOT do** this if you read in the README that there are lots of data to manually download from elsewhere!
+
+::::
 
 ### Updating other materials
 
