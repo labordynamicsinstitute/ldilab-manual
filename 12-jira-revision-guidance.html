@@ -577,6 +577,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-progress">In Progress</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-pipeline-code">Updating pipeline code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-bitbucket-repository-with-latest-code-and-documents">Updating Bitbucket repository with latest code and documents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-that-both-pipelines-have-run-successfully">Check that both pipelines have run successfully</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-working-area">Prepare the working area</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-other-materials">Updating other materials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
@@ -707,12 +708,39 @@ Manually</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </section>
+<section id="check-that-both-pipelines-have-run-successfully">
+<h3>Check that both pipelines have run successfully<a class="headerlink" href="#check-that-both-pipelines-have-run-successfully" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Commit</span></code> tab of the Bitbucket repository should show at least two recent commits, one for updating the tools, and one for updating the openICPSR deposit, but typically more:</p>
+<p><img alt="commits after pipelines" src="_images/bitbucket-after-revision-pipelines.png" /></p>
+</section>
 <section id="prepare-the-working-area">
 <h3>Prepare the working area<a class="headerlink" href="#prepare-the-working-area" title="Link to this heading">#</a></h3>
 <p>Similar to the original workflow, you will need to decide where you will run code and do other manipulations. If you are the original replicator, and this is YOUR revision, this will be the <strong>same</strong> computer where you originally did the verification. If not, refer to the <a class="reference internal" href="11-05-preparing-to-run-code.html#manual1"><span class="std std-ref">general guidance</span></a> on how to choose and set up your working area.</p>
 <div class="admonition-please-note admonition">
 <p class="admonition-title">Please note:</p>
-<p>If you are <strong>returning</strong> to the previous working area, be sure to run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> in the working area before doing anything else!</p>
+<p>If you are <strong>returning</strong> to the previous working area, be sure to run the same basic setup as <a class="reference internal" href="11-05-preparing-to-run-code.html#prepare-to-run-code"><span class="std std-ref">initially</span></a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>tools/download_openicpsr-private.py<span class="w"> </span><span class="m">111234</span><span class="w"> </span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip<span class="w"> </span>-n<span class="w"> </span><span class="m">111234</span><span class="w"> </span>-d<span class="w"> </span><span class="m">111234</span>
+</pre></div>
+</div>
+<p>in the working area before doing anything else!</p>
+<div class="dropdown warning admonition">
+<p class="admonition-title">☠️ Danger Zone! ☠️</p>
+<p>It sometimes happens that after the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>, there are still data in the <code class="docutils literal notranslate"><span class="pre">111234</span></code> folder. If authors have updated data files with the same names, then the <code class="docutils literal notranslate"><span class="pre">unzip</span> <span class="pre">-n</span></code> will NOT replace them. If the three commands above are the FIRST thing you are doing after the running the Bitbucket pipelines, it should be <strong>SAFE</strong> to do the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-r<span class="w"> </span><span class="m">111234</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip<span class="w"> </span><span class="m">111234</span><span class="w"> </span>-d<span class="w"> </span><span class="m">111234</span>
+</pre></div>
+</div>
+<p>This will delete ALL files in the <code class="docutils literal notranslate"><span class="pre">111234</span></code> folder, so be sure you have committed any changes you made before doing this, and never do this if you do not know what you are doing.</p>
+<p>You should <strong>NOT do</strong> this if you read in the README that there are lots of data to manually download from elsewhere!</p>
+</div>
 </div>
 </section>
 <section id="updating-other-materials">
@@ -1027,6 +1055,7 @@ packages.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-progress">In Progress</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-pipeline-code">Updating pipeline code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-bitbucket-repository-with-latest-code-and-documents">Updating Bitbucket repository with latest code and documents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-that-both-pipelines-have-run-successfully">Check that both pipelines have run successfully</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-working-area">Prepare the working area</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-other-materials">Updating other materials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
