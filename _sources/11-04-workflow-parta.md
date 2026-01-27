@@ -211,6 +211,9 @@ When assessing the data, please take care to distinguish
 
 If the data are in openICPSR, you will now assess the deposit. The form in the template report should give enough guidance on what to check!
 
+## If the data are restricted-access
+
+If the data are restricted-access, you will still fill out this part. However, you should **not** attempt to request access to the data yourself. Contact your supervisor. See [Requesting Restricted-Access Data from Authors](correspondence-requesting-restricted-access) for details.
 
 ## Review the Part A report again
 
