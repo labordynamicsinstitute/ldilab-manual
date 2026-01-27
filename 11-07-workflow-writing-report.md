@@ -13,7 +13,8 @@ Move the Jira issue to "`Writing report`".
 
 :::{admonition} In order to do so:
 
-- Check that both sub-tasks (part A and part B) are marked as "`Done`".
+- Check that both sub-tasks (part A and part B) are marked as "`Done`". 
+- If there is a sub-task about *restricted data*, it must either indicate that data were received, or that data were deleted. However, do **NOT** delete restricted data yourself. 
 
 ::: 
 
