@@ -40,7 +40,7 @@ the **"Request-revisions-RR" message**.
 Use this template if the paper is in [`RR`] :
 
 ```
-Revisions requested. Details in the full report, which you will receive via ScholarOne
+Revisions requested. Details in the full report, which the manuscript's corresponding author will receive via ScholarOne
 or from the editor in charge of the paper.
 
 > [NOTE] Replication packages may be published as soon as all requested changes to the deposit have been made. Please process any requested changes as soon as possible.
@@ -49,7 +49,7 @@ or from the editor in charge of the paper.
 Use this template if the paper is in [`CA`] :
 
 ```
-Revisions requested. Details in the full report, which you will receive via ScholarOne
+Revisions requested. Details in the full report, which the manuscript's corresponding author will receive via ScholarOne
 in a few business days.
 
 > [NOTE] We may publish replication packages as soon as all requested changes
@@ -92,7 +92,7 @@ the **"Request-revisions-CA" message  when `Deposit in Progress`** is shown.
 ```
          
 ```
-Details in the full report, which you will receive via ScholarOne in a
+Details in the full report, which the manuscript's corresponding author will receive via ScholarOne in a
 few business days. Please provide your response to the items listed above
 via the openICPSR Project Communication log, specifying AEAREP-xxx.
 Other items in the report may need to be addressed via ScholarOne.
@@ -118,7 +118,7 @@ the **"Request-revisions-CA" message when `Submitted` is shown**.
 ```
 
 ```
-Details in the full report, which you will receive via ScholarOne in a
+Details in the full report, which the manuscript's corresponding author will receive via ScholarOne in a
 few business days. Please provide your response to the items listed above
 via the openICPSR Project Communication log, specifying AEAREP-xxx.
 Other items in the report may need to be addressed via ScholarOne.
