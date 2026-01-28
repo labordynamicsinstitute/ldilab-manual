@@ -19,12 +19,12 @@ If the `Bitbucket short name` is filled out, skip this section and go to [Collec
 
     - the repository name should be the name of the JIRA issue, in **lower case** (e.g., `aearep-123`)
     - Be sure that `aeaverification` is always the "owner" of the report on Bitbucket. 
-    - The Project should be the abbreviation of the journal (e.g. "JEP")
+    - The Project should be the `DEFAULT` project, unless you are explicitly asked to create it in a different one  (currently only "JEP" and "JEL")
     - Keep the other settings (in particular, keep this a **private** repository).
     - Click `Import Repository`
     - Keep this tab open!
 
-![](images/bitbucket_import_blank_2022.png)
+![](images/bitbucket_import_blank_2026.png)
 
 - We have now created a Bitbucket repo named something like `aearep-123` that has been populated with the latest version of the LDI replication template documents!
 
