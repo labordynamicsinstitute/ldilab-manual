@@ -150,7 +150,20 @@ Figure 5 as reproduced:
 
 - There is sample language for commonly encountered problems at the [sample-language-report.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md) link in the tall grey bar
 
+## Handling PDF Figures Properly
 
+If the generated output is a PDF and you observe discrepancies, **do not take screenshots of the PDFs and place them in the root directory**. Doing so causes confusion in the revision round.  
+
+### Correct Workflow for PDF Figures
+
+1. **Identify PDF output**: Locate the PDF figures produced by the replication code in the appropriate directory.
+
+2. **Run the conversion pipeline**: Use the `6-convert-eps-pdf` pipeline to convert PDFs to PNGs automatically.  
+   - When prompted for the path, **enter the relative path from the repo root, without quotes**.  
+   - The pipeline will generate PNGs in the **same directory** as the PDFs.
+
+3. **Update your local repo**: After the pipeline finishes, make sure to `git pull`
+4. **Reference PNGs in the report**: Use the generated PNGs where they exist in the replication directory; do not move them to the root directory. 
 
 :::{admonition} Advanced: Comparing TeX files on Bitbucket
 :class: dropdown
