@@ -64,7 +64,7 @@ You should now do the following:
 
 - Close the form after each issue, and open it again for the next one.
 
-- Navigate to the "PandP Docs" Google Drive folder [here](https://drive.google.com/drive/u/0/folders/1IC6CTBSezAwv2Dm6stnwINlbintUwtLG), locate the PDF with the Jira ticket of the case you are working on (PDF format: `Report-PandP-AEAREP-xxxx.pdf`), and download the file. This is the PDF version of the checklist form using the information you entered.
+- Navigate to the "PandP Docs" Google Drive folder [here](https://drive.google.com/drive/u/0/folders/1RiFDf6QgOLMyx5FUQXR1ACRdvITdCySz), locate the PDF with the Jira ticket of the case you are working on (PDF format: `Report-PandP-AEAREP-xxxx.pdf`), and download the file. This is the PDF version of the checklist form using the information you entered.
 
 In **Jira**:
 
