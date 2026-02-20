@@ -576,6 +576,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signs-that-this-case-is-a-revision">Signs that this case is a revision</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-this-is-not-a-revision">If this is not a revision</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-this-is-a-split-case">If this is a “split” case</a></li>
 </ul>
             </nav>
         </div>
@@ -589,10 +591,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="assigned">
 <span id="workflow-assigned"></span><h1>Assigned<a class="headerlink" href="#assigned" title="Link to this heading">#</a></h1>
-<p>When you are first assigned an issue, it will in the <code class="docutils literal notranslate"><span class="pre">Assigned</span></code> status. The first thing you must do is to either create a new repository (<code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">repository</span></code>) , or reference an existing repository (if the issue is a <a class="reference internal" href="12-jira-revision-guidance.html#aea-revision-reports-after-author-resubmission"><span class="std std-ref">revision</span></a>) in order to move to <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Progress</span></code>.</p>
-<ul class="simple">
-<li><p>This lets us know that you have started working on replication.</p></li>
-</ul>
+<p>When you are first assigned an issue, it will in the <code class="docutils literal notranslate"><span class="pre">Assigned</span></code> status.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The link to JIRA is <a class="reference external" href="https://aeadataeditors.atlassian.net/jira">https://aeadataeditors.atlassian.net/jira</a> (requires login).</p>
@@ -628,6 +627,29 @@ document.write(`
 <p>If a field on Jira is already filled out, <strong>do not edit it</strong>. The only exception is if software is missing from the <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">used</span></code> field.</p>
 </div>
 </section>
+</section>
+<section id="if-this-is-not-a-revision">
+<h2>If this is not a revision<a class="headerlink" href="#if-this-is-not-a-revision" title="Link to this heading">#</a></h2>
+<p>The next thing you must do, if this is <strong>not a revision</strong> is to either create a new repository (<a class="reference internal" href="11-02-workflow-create-repo.html#create-repo"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">repository</span></code></span></a>) in order to move to <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Progress</span></code>.</p>
+<ul class="simple">
+<li><p>This lets us know that you have started working on replication.</p></li>
+</ul>
+</section>
+<section id="if-this-is-a-split-case">
+<h2>If this is a “split” case<a class="headerlink" href="#if-this-is-a-split-case" title="Link to this heading">#</a></h2>
+<p>It will happen that the usual order (first Part A, then Part B) is not followed. This may happen if the reproducibility check was done automatically, by a third party, or for various other reasons.</p>
+<ul class="simple">
+<li><p>One person will be assigned the overall responsibility for the case. This is the person the case is <strong>Assigned</strong> to, and they take responsibility for tracking Parts A, B, and C, all the way through to submission for review.</p></li>
+<li><p>Usually (but not always), that same person will be assigned Part A.</p></li>
+<li><p>If Part B is assigned to a different person, then often the FIRST person to touch the case will have (<a class="reference internal" href="11-02-workflow-create-repo.html#create-repo"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">created</span> <span class="pre">a</span> <span class="pre">repository</span></code></span></a>).</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Whoever creates the repository first should leave a note in the comments, and be sure to fill out the <code class="docutils literal notranslate"><span class="pre">Bitbucket</span> <span class="pre">short</span> <span class="pre">name</span></code> field on Jira, so that the second person can find the repository and use it for their work.</p>
+</div>
+<ul class="simple">
+<li><p>The person who is assigned Part B, if not the primary assignee, <strong>should ALWAYS work in a branch</strong> of the repository (typically called <code class="docutils literal notranslate"><span class="pre">part-b</span></code>) and should not touch any of the documents usually used by Part A. See <a class="reference internal" href="11-05-preparing-to-run-code.html#prepare-to-run-code"><span class="std std-ref">notes in <strong>Preparing to Run Code</strong></span></a>.</p></li>
+</ul>
 </section>
 </section>
 
@@ -699,6 +721,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signs-that-this-case-is-a-revision">Signs that this case is a revision</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-this-is-not-a-revision">If this is not a revision</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-this-is-a-split-case">If this is a “split” case</a></li>
 </ul>
   </nav></div>
 

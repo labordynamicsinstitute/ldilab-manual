@@ -598,11 +598,19 @@ document.write(`
 <span id="prepare-to-run-code"></span><h1>Preparing to Run Code (Part B)<a class="headerlink" href="#preparing-to-run-code-part-b" title="Link to this heading">#</a></h1>
 <section id="signal-that-you-are-working-on-part-b">
 <h2>Signal that you are working on Part B<a class="headerlink" href="#signal-that-you-are-working-on-part-b" title="Link to this heading">#</a></h2>
-<p>To signal that you are starting to run the code, you will now transition the JIRA subtask to “<code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Progress</span></code>”.</p>
+<p>To signal that you are starting to run the code, you will now transition the JIRA <strong>subtask</strong> to “<code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Progress</span></code>”.</p>
 <p><img alt="Move to Part B to In Progress" src="_images/jira-in-progress-partb-1.png" /></p>
 <div class="dropdown admonition">
 <p class="admonition-title">If you are the replicator who was previously assigned Part A</p>
 <p>In this case, your working area is already prepared, and you can skip to <a class="reference internal" href="#get-the-data"><span class="std std-ref">Get the data</span></a>.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">If you are NOT the primary assignee of this case</p>
+<p>then you should do some additional steps to prepare your work:</p>
+<ul class="simple">
+<li><p>do not edit any of the files that relate to <a class="reference internal" href="11-04-workflow-parta.html#parta"><span class="std std-ref">Part A</span></a>. These are the responsibility of the Part A assignee.</p></li>
+<li><p><strong>do create a branch of the repository</strong>, called <code class="docutils literal notranslate"><span class="pre">partb</span></code>, and make all your commits to that branch. We describe how to do that further below.</p></li>
+</ul>
 </div>
 </section>
 <section id="prepare-your-working-area">
@@ -697,6 +705,22 @@ Github Codespaces (CS)</label><div class="sd-tab-content docutils">
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>If you do not see a folder like <code class="docutils literal notranslate"><span class="pre">123456</span></code> or <code class="docutils literal notranslate"><span class="pre">dropbox-xyz</span></code> in the repository, then the Bitbucket Pipeline likely did not work. You will then need to populate the code (and data) manually. You will do this AFTER downloading the data, in the next step.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">If you are ONLY doing Part B</p>
+<p>now is the time to create a branch for Part B.</p>
+<ul>
+<li><p>Create a branch called <code class="docutils literal notranslate"><span class="pre">partb</span></code> and switch to it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>partb
+</pre></div>
+</div>
+</li>
+<li><p>Push that branch to the remote repository, so that it is available for others to see and use.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>partb
+</pre></div>
+</div>
+</li>
+</ul>
 </div>
 </section>
 <section id="verify-that-you-can-actually-run-the-code">

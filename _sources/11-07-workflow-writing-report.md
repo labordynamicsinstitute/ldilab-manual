@@ -18,6 +18,27 @@ Move the Jira issue to "`Writing report`".
 
 ::: 
 
+
+
+::::{admonition} If you were NOT doing Part B
+:class: dropdown
+
+now is the time to merge the other replicator's branch. 
+
+- If not already alerted via a comment, create a "pull request".
+- Go to the `Git working location` (bottom right)
+- Navigate to `Pull requests` (left panel). 
+- If you see a pull request, verify that it is there to merge `partb` into `master`. 
+- If you do not see a pull request, create one:
+  - Click on `Create pull request`
+  - Select `partb` as the source branch, and `master` as the destination branch. 
+  - Then merge it. 
+
+Everything else from here on is as it normally would be, except you have to rely on the other replicator's notes in the `REPLICATION-PartB.md` file, and any comments they have left in the repository, to write your report.
+
+::::
+
+
 You should now be able to select "`Write report`" from the dropdown menu. A pop-up will appear, asking you to fill out the fields and confirm the transition. 
 
 ![Write report modal](images/jira-write-report-modal.png)

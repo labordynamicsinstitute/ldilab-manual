@@ -4,13 +4,24 @@
 
 ## Signal that you are working on Part B
 
-To signal that you are starting to run the code, you will now transition the JIRA subtask to "`In Progress`".
+To signal that you are starting to run the code, you will now transition the JIRA **subtask** to "`In Progress`".
 
 ![Move to Part B to In Progress](images/jira-in-progress-partb-1.png)
 
 ```{admonition} If you are the replicator who was previously assigned Part A
 :class: dropdown
 In this case, your working area is already prepared, and you can skip to [Get the data](get-the-data).
+
+```
+
+
+```{admonition} If you are NOT the primary assignee of this case
+:class: dropdown
+
+then you should do some additional steps to prepare your work:
+
+- do not edit any of the files that relate to [Part A](parta). These are the responsibility of the Part A assignee.
+- **do create a branch of the repository**, called `partb`, and make all your commits to that branch. We describe how to do that further below.
 
 ```
 
@@ -95,6 +106,23 @@ With the first step, you obtained a copy of the Bitbucket repository. You should
 ```{important}
 If you do not see a folder like `123456` or `dropbox-xyz` in the repository, then the Bitbucket Pipeline likely did not work. You will then need to populate the code (and data) manually. You will do this AFTER downloading the data, in the next step.
 ```
+
+
+::::{admonition} If you are ONLY doing Part B
+:class: dropdown
+
+now is the time to create a branch for Part B.
+
+- Create a branch called `partb` and switch to it. 
+  ```bash
+  git checkout -b partb
+  ```
+- Push that branch to the remote repository, so that it is available for others to see and use.
+  ```bash
+  git push -u origin partb
+  ```
+
+::::
 
 (partb-verify)=
 ## Verify that you can actually run the code
