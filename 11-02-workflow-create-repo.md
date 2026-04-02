@@ -8,6 +8,14 @@ In some instances, somebody else has already created a repository. Always check 
 If the `Bitbucket short name` is filled out, skip this section and go to [Collecting information](collecting-information)!
 ```
 
+:::{admonition} Advanced users
+:class: dropdown tip
+
+You can also use the `editor-scripts` toolbox to do this from the command line, see `aeagit-create`. 
+
+:::
+
+
 ## Creating a repository
 
 - [ ] start by [creating a repository using the import method](https://bitbucket.org/repo/import) 
@@ -79,6 +87,17 @@ You will now run what is called a *`Bitbucket Pipeline`*. Similar tools on other
 - First, in the repository you just created, navigate to the `Pipelines` tab
 
 ![](images/jira-find-pipelines.png)
+
+- Verify that somebody else is not already running a pipeline! 
+
+![](images/bitbucket-pipeline-running.png)
+
+:::{admonition} If yes ...
+:class: dropdown warning
+
+Skip this step, or wait until the pipeline has completed. Do not re-run the same pipeline twice as it can cause problems. Contact the person (via the Jira comments) who is running the pipeline.
+
+:::
 
 - Because this is new, you will see the "Run initial pipeline" page. Click on `Run initial pipeline`.
 
