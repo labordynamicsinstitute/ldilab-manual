@@ -28,9 +28,9 @@ where `DIRNAME` is defined as in the table above, and `NAME_OF_ZIP.zip` is whate
 
 We have a few scripts, some of which have not yet been integrated into the pipeline. All can be run from the command line instead of manually downloading the repository. All are in the `tools` directory of your issue-specific repository. If not, refresh the tools.
 
-- [**download_openicpsr-private.py**](help-download_openicpsr-private): For downloading from private openICPSR deposits (also integrated into the pipeline)
-- [**download_dv.py**](help-download_dv): For downloading from Dataverse repositories.
-- [**download_osf.sh**](help-download_osf): For downloading from OSF repositories.
-- [**download_worldbank.py**](help-download_worldbank): For downloading from World Bank Reproducibility Repository, including the public reproducibility report!
-- [**download_zenodo_public.sh**](help-download_zenodo_public): For downloading from public Zenodo repositories
-- [**download_zenodo_draft.py**](help-download_zenodo_draft): For downloading from private/draft Zenodo deposits (also integrated into the pipeline)
+- [**download_openicpsr-private.py**](https://github.com/AEADataEditor/replication-template/tree/master/docs/96-90-download_openicpsr-private.md): For downloading from private openICPSR deposits (also integrated into the pipeline)
+- [**download_dv.py**](https://github.com/AEADataEditor/replication-template/tree/master/docs/96-90-download_dv.md): For downloading from Dataverse repositories.
+- [**download_osf.sh**](https://github.com/AEADataEditor/replication-template/tree/master/docs/96-90-download_osf.md): For downloading from OSF repositories.
+- [**download_worldbank.py**](https://github.com/AEADataEditor/replication-template/tree/master/docs/96-90-download_worldbank.md): For downloading from World Bank Reproducibility Repository, including the public reproducibility report!
+- [**download_zenodo_public.sh**](https://github.com/AEADataEditor/replication-template/tree/master/docs/96-90-download_zenodo_public.md): For downloading from public Zenodo repositories
+- [**download_zenodo_draft.py**](https://github.com/AEADataEditor/replication-template/tree/master/docs/96-90-download_zenodo_draft.md): For downloading from private/draft Zenodo deposits (also integrated into the pipeline)
