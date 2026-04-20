@@ -3,7 +3,7 @@
 
 The [replication template](https://github.com/AEADataEditor/replication-template) provides a variety of scripts to assist with common tasks. These scripts are available in the `tools/` folder in each repository. 
 
-> Detailed documentation can be found at <https://github.com/AEADataEditor/replication-template/tree/master/docs>
+> Detailed documentation can be found at <https://aeadataeditor.github.io/replication-template/tools/>
 
 :::{note}
 
