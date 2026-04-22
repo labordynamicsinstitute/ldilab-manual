@@ -558,7 +558,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-versions-of-r">Specific versions of R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-packages-through-cran">R Packages Through CRAN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-packages-through-conda">R Packages through Conda</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors">Errors</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-not-available">Package not available</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mran-no-longer-available">MRAN no longer available</a></li>
@@ -592,12 +596,47 @@ document.write(`
 </section>
 <section id="installing-packages">
 <h2>Installing packages<a class="headerlink" href="#installing-packages" title="Link to this heading">#</a></h2>
+<section id="r-packages-through-cran">
+<h3>R Packages Through CRAN<a class="headerlink" href="#r-packages-through-cran" title="Link to this heading">#</a></h3>
 <p>R on Linux will usually install packages from CRAN, and compile from source. This may be feasible to circumvent by using <a class="reference external" href="https://packagemanager.posit.co/client/#/">Package Archives</a>, and defining the specific operating system you are using.</p>
 <div class="note admonition">
 <p class="admonition-title">BioHPC specific</p>
 <p>BioHPC uses <code class="docutils literal notranslate"><span class="pre">Rocky</span> <span class="pre">Linux</span> <span class="pre">9</span></code>.</p>
 </div>
 <p>This is the default for <code class="docutils literal notranslate"><span class="pre">rocker/</span></code> provided Docker images.</p>
+</section>
+<section id="r-packages-through-conda">
+<h3>R Packages through Conda<a class="headerlink" href="#r-packages-through-conda" title="Link to this heading">#</a></h3>
+<p>On BioHPC, installing packages through R can fail, with errors such as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="o">-----------------------------</span> <span class="n">ANTICONF</span> <span class="o">-------------------------------</span>
+<span class="n">Configuration</span> <span class="n">failed</span> <span class="n">to</span> <span class="n">find</span> <span class="n">libgit2</span> <span class="n">library</span><span class="o">.</span> <span class="n">Try</span> <span class="n">installing</span><span class="p">:</span>
+ <span class="o">*</span> <span class="n">brew</span><span class="p">:</span> <span class="n">libgit2</span> <span class="p">(</span><span class="n">MacOS</span><span class="p">)</span>
+ <span class="o">*</span> <span class="n">deb</span><span class="p">:</span> <span class="n">libgit2</span><span class="o">-</span><span class="n">dev</span> <span class="p">(</span><span class="n">Debian</span><span class="p">,</span> <span class="n">Ubuntu</span><span class="p">,</span> <span class="n">etc</span><span class="p">)</span>
+ <span class="o">*</span> <span class="n">rpm</span><span class="p">:</span> <span class="n">libgit2</span><span class="o">-</span><span class="n">devel</span> <span class="p">(</span><span class="n">Fedora</span><span class="p">,</span> <span class="n">CentOS</span><span class="p">,</span> <span class="n">RHEL</span><span class="p">)</span>
+<span class="n">If</span> <span class="n">libgit2</span> <span class="ow">is</span> <span class="n">already</span> <span class="n">installed</span><span class="p">,</span> <span class="n">check</span> <span class="n">that</span> <span class="s1">&#39;pkg-config&#39;</span> <span class="ow">is</span> <span class="ow">in</span> <span class="n">your</span>
+<span class="n">PATH</span> <span class="ow">and</span> <span class="n">PKG_CONFIG_PATH</span> <span class="n">contains</span> <span class="n">a</span> <span class="n">libgit2</span><span class="o">.</span><span class="n">pc</span> <span class="n">file</span><span class="o">.</span> <span class="n">If</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span>
+<span class="ow">is</span> <span class="n">unavailable</span> <span class="n">you</span> <span class="n">can</span> <span class="nb">set</span> <span class="n">INCLUDE_DIR</span> <span class="ow">and</span> <span class="n">LIB_DIR</span> <span class="n">manually</span> <span class="n">via</span><span class="p">:</span>
+<span class="n">R</span> <span class="n">CMD</span> <span class="n">INSTALL</span> <span class="o">--</span><span class="n">configure</span><span class="o">-</span><span class="nb">vars</span><span class="o">=</span><span class="s1">&#39;INCLUDE_DIR=... LIB_DIR=...&#39;</span>
+<span class="o">--------------------------</span> <span class="p">[</span><span class="n">ERROR</span> <span class="n">MESSAGE</span><span class="p">]</span> <span class="o">---------------------------</span>
+<span class="o">&lt;</span><span class="n">stdin</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span> <span class="n">fatal</span> <span class="n">error</span><span class="p">:</span> <span class="n">git2</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+<span class="n">compilation</span> <span class="n">terminated</span><span class="o">.</span>
+<span class="o">----------------------------------------------------------------------</span>
+</pre></div>
+</div>
+<p>This occurs since libraries on BioHPC are often installed in directories which R does not expect. To solve this, we use conda. Conda handles dependencies of both R packages and other libraries. See installation details [here][<a class="reference external" href="https://biohpc.cornell.edu/lab/userguide.aspx?a=software&amp;amp;i=574#c">https://biohpc.cornell.edu/lab/userguide.aspx?a=software&amp;i=574#c</a>]. To create a conda environment, run the command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span> <span class="n">r</span><span class="o">-</span><span class="n">base</span><span class="o">=&lt;</span><span class="n">version</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This creates a conda environment with the proper R version installed. After activating the environment, install R packages with the command</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="p">::</span><span class="n">r</span><span class="o">-</span><span class="n">tidyverse</span>
+</pre></div>
+</div>
+<p>R packages on conda often follow the format <code class="docutils literal notranslate"><span class="pre">r-&lt;package&gt;</span></code>. You can search for packages [here][<a class="reference external" href="https://anaconda.org/">https://anaconda.org/</a>].</p>
+<p>On Anaconda, R packages are often hosted by the R repository, and conda-forge. Packages from the R repository tend to be pickier about version compatibility than those from conda-forge.</p>
+</section>
 </section>
 <section id="errors">
 <h2>Errors<a class="headerlink" href="#errors" title="Link to this heading">#</a></h2>
@@ -692,7 +731,11 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-versions-of-r">Specific versions of R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-packages-through-cran">R Packages Through CRAN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-packages-through-conda">R Packages through Conda</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors">Errors</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-not-available">Package not available</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mran-no-longer-available">MRAN no longer available</a></li>

@@ -24,6 +24,8 @@ Use `module avail` to see which versions of R are available. Use `module load R/
 
 ## Installing packages
 
+### R Packages Through CRAN
+
 R on Linux will usually install packages from CRAN, and compile from source. This may be feasible to circumvent by using [Package Archives](https://packagemanager.posit.co/client/#/), and defining the specific operating system you are using.
 
 
@@ -36,6 +38,42 @@ BioHPC uses `Rocky Linux 9`.
 
 This is the default for `rocker/` provided Docker images.
 
+### R Packages through Conda
+
+On BioHPC, installing packages through R can fail, with errors such as 
+
+```
+
+----------------------------- ANTICONF -------------------------------
+Configuration failed to find libgit2 library. Try installing:
+ * brew: libgit2 (MacOS)
+ * deb: libgit2-dev (Debian, Ubuntu, etc)
+ * rpm: libgit2-devel (Fedora, CentOS, RHEL)
+If libgit2 is already installed, check that 'pkg-config' is in your
+PATH and PKG_CONFIG_PATH contains a libgit2.pc file. If pkg-config
+is unavailable you can set INCLUDE_DIR and LIB_DIR manually via:
+R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
+-------------------------- [ERROR MESSAGE] ---------------------------
+<stdin>:1:10: fatal error: git2.h: No such file or directory
+compilation terminated.
+----------------------------------------------------------------------
+```
+
+This occurs since libraries on BioHPC are often installed in directories which R does not expect. To solve this, we use conda. Conda handles dependencies of both R packages and other libraries. See installation details [here][https://biohpc.cornell.edu/lab/userguide.aspx?a=software&i=574#c]. To create a conda environment, run the command
+
+```
+conda env create --name <name> r-base=<version>
+```
+
+- This creates a conda environment with the proper R version installed. After activating the environment, install R packages with the command
+
+```
+conda install conda-forge::r-tidyverse
+```
+
+R packages on conda often follow the format `r-<package>`. You can search for packages [here][https://anaconda.org/]. 
+
+On Anaconda, R packages are often hosted by the R repository, and conda-forge. Packages from the R repository tend to be pickier about version compatibility than those from conda-forge.
 
 
 ## Errors
