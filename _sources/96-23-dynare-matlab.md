@@ -52,19 +52,22 @@ Your mileage will vary, ask for help if you need to do this and don't know how.
 - If running elsewhere, you should replace `docker1` with `docker` in the command below.
 
 ```bash
-dockerbin=docker1
 SERVER=something
-MATLAB_LICENSE=27000@SERVER.cornell.edu
+dockerbin=docker1
+MLM_LICENSE_FILE=${MLM_LICENSE_FILE:-27000@${SERVER}.cornell.edu}
 DYNARE=6.5-R2025b
 $dockerbin run --rm -it \
    -v $(pwd):/project \
    -w /project \
-   -e MLM_LICENSE_FILE=$MATLAB_LICENSE \
+   -e MLM_LICENSE_FILE=$MLM_LICENSE_FILE \
    --entrypoint /bin/bash \
    dynare/dynare:$DYNARE
 ```
 
 :::
+
+- You may need to put these lines into an `sbatch` file. See the `tools/sbatch-shell.sh` file for an example of how to do this (included in every repo).
+
 ::::
 
 :::::
