@@ -34,5 +34,9 @@ If you do not have `matlab` in your path, check with system admins. For BioHPC, 
 
 :::
 
+::: {tab-item} Docker
+
+You can run MATLAB in a Docker container. The most convenient way is to use the `dynare` containers, which are quite complete, even if you **do not use** Dynare. See [this page](dynare-matlab).
+
 ::::
 
