@@ -558,8 +558,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-dynare">Obtaining Dynare</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-matlab-to-recognize-dynare">Configuring MATLAB to recognize Dynare</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-dynare-matlab-in-docker">Running Dynare+MATLAB in Docker</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-matlab-to-recognize-dynare">Configuring MATLAB to recognize Dynare</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-info">Additional info</a></li>
 </ul>
 </li>
@@ -577,18 +576,61 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="running-dynare-from-matlab">
 <span id="dynare-matlab"></span><h1>Running Dynare from MATLAB<a class="headerlink" href="#running-dynare-from-matlab" title="Link to this heading">#</a></h1>
 <p>Dynare is often used as an extension from within MATLAB. Files are usually identified as <code class="docutils literal notranslate"><span class="pre">.mod</span></code>, though many other countries also use that extension.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Use the precise version of Dynare specified by the authors. If that version is not located on <code class="docutils literal notranslate"><span class="pre">L:\common</span></code> (CCSS Cloud) or <code class="docutils literal notranslate"><span class="pre">/home2/ecco_lv39/software</span></code> or as a Docker file, then talk to your supervisor.</p>
+</div>
 <section id="obtaining-dynare">
 <h2>Obtaining Dynare<a class="headerlink" href="#obtaining-dynare" title="Link to this heading">#</a></h2>
-<p>Dynare is available for download from <a class="reference external" href="https://www.dynare.org/download/">https://www.dynare.org/download/</a>.</p>
+<p>Dynare is available for download from <a class="reference external" href="https://www.dynare.org/download/">https://www.dynare.org/download/</a>. But pay attention to the details for the platform where you will run this!</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+CCSS Cloud</label><div class="sd-tab-content docutils">
 <div class="admonition-do-not-attempt-to-install-dynare-on-ccss-or-biohpc-computers admonition">
 <p class="admonition-title">Do not attempt to <strong>install</strong> Dynare on CCSS or BioHPC computers.</p>
 <p>However, it is not necessary to <em>install</em> Dynare, it is sufficient to unpack the ZIP files. Try the information below first:</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Use the precise version of Dynare specified by the authors. If that version is not located on <code class="docutils literal notranslate"><span class="pre">L:\common</span></code> (CCSS Cloud) or <code class="docutils literal notranslate"><span class="pre">/home2/ecco_lv39/software</span></code>, then talk to your supervisor.</p>
-</div>
 <p>If a specific version is mentioned and is not there, download it from the <a class="reference external" href="https://www.dynare.org/download/">Dynare website</a> - choose the <strong>ZIP</strong> version. Then unzip it to the <code class="docutils literal notranslate"><span class="pre">L:</span> <span class="pre">drive</span></code> (move it around if necessary so you get the same structure as in the example above, i.e. <code class="docutils literal notranslate"><span class="pre">L:\common\dynare\(SOME</span> <span class="pre">VERSION)\matlab</span></code>). Then include the <code class="docutils literal notranslate"><span class="pre">addpath</span></code> command as before.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+BioHPC</label><div class="sd-tab-content docutils">
+<p>The preferred way to run Dynare on BioHPC is through the use of Docker.</p>
+<div class="admonition-this-is-very-technical admonition">
+<p class="admonition-title">This is very technical!</p>
+<p>Your mileage will vary, ask for help if you need to do this and don’t know how.</p>
+</div>
+<ul class="simple">
+<li><p>Consult the <a class="reference external" href="https://biohpc.cornell.edu/lab/userguide.aspx?a=software">BioHPC Software page</a> to learn how to run Docker on BioHPC. See also <a class="reference internal" href="96-50-using-docker.html#docker-related-procedures"><span class="std std-ref">Docker-related procedures</span></a>.</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Simple command line</p>
+<ul class="simple">
+<li><p>Obtain the value of <code class="docutils literal notranslate"><span class="pre">SERVER</span></code> from your supervisor.</p></li>
+<li><p>Look up the full Docker tag from the <a class="reference external" href="https://hub.docker.com/r/dynare/dynare/tags">Dynare Docker Hub page</a> and set the <code class="docutils literal notranslate"><span class="pre">DYNARE</span></code> variable accordingly. Each Dynare version is paired with a specific version of MATLAB.</p>
+<ul>
+<li><p>You should use the precise version of Dynare that the authors used, or a very close one.</p></li>
+<li><p>Ideally, you should use the same or higher version of MATLAB, but that is much less sensitive.</p></li>
+</ul>
+</li>
+<li><p>If running elsewhere, you should replace <code class="docutils literal notranslate"><span class="pre">docker1</span></code> with <code class="docutils literal notranslate"><span class="pre">docker</span></code> in the command below.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">dockerbin</span><span class="o">=</span>docker1
+<span class="nv">SERVER</span><span class="o">=</span>something
+<span class="nv">MATLAB_LICENSE</span><span class="o">=</span><span class="m">27000</span>@SERVER.cornell.edu
+<span class="nv">DYNARE</span><span class="o">=</span><span class="m">6</span>.5-R2025b
+<span class="nv">$dockerbin</span><span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/project<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-w<span class="w"> </span>/project<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-e<span class="w"> </span><span class="nv">MLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$MATLAB_LICENSE</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--entrypoint<span class="w"> </span>/bin/bash<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>dynare/dynare:<span class="nv">$DYNARE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="configuring-matlab-to-recognize-dynare">
 <h2>Configuring MATLAB to recognize Dynare<a class="headerlink" href="#configuring-matlab-to-recognize-dynare" title="Link to this heading">#</a></h2>
@@ -632,31 +674,6 @@ document.write(`
 </pre></div>
 </div>
 <p>The Matlab program should now run, and call out to the Dynare software as needed.</p>
-</section>
-<section id="running-dynare-matlab-in-docker">
-<h2>Running Dynare+MATLAB in Docker<a class="headerlink" href="#running-dynare-matlab-in-docker" title="Link to this heading">#</a></h2>
-<div class="admonition-this-is-experimental admonition">
-<p class="admonition-title">This is experimental!</p>
-<p>Your mileage will vary</p>
-</div>
-<ul class="simple">
-<li><p>Consult the <a class="reference external" href="https://biohpc.cornell.edu/lab/userguide.aspx?a=software">BioHPC Software page</a> to learn how to run Docker on BioHPC. See also <a class="reference internal" href="96-50-using-docker.html#docker-related-procedures"><span class="std std-ref">Docker-related procedures</span></a>.</p></li>
-</ul>
-<div class="note admonition">
-<p class="admonition-title">Simple command line</p>
-<p>Obtain the value of <code class="docutils literal notranslate"><span class="pre">SERVER</span></code> from your supervisor.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">MATLAB_VERSION</span><span class="o">=</span>2021a
-<span class="nv">MATLAB_LICENSE</span><span class="o">=</span><span class="m">27000</span>@SERVER.cornell.edu
-<span class="nv">DYNARE</span><span class="o">=</span><span class="m">4</span>.6.4-2024-04-21
-docker1<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/project<span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>-w<span class="w"> </span>/project<span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>-e<span class="w"> </span><span class="nv">MLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$MATLAB_LICENSE</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>--entrypoint<span class="w"> </span>/bin/bash<span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>dynare/dynare:<span class="nv">$DYNARE_VERSION</span>
-</pre></div>
-</div>
-</div>
 <section id="additional-info">
 <h3>Additional info<a class="headerlink" href="#additional-info" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -732,8 +749,7 @@ docker1<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> <
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-dynare">Obtaining Dynare</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-matlab-to-recognize-dynare">Configuring MATLAB to recognize Dynare</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-dynare-matlab-in-docker">Running Dynare+MATLAB in Docker</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-matlab-to-recognize-dynare">Configuring MATLAB to recognize Dynare</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-info">Additional info</a></li>
 </ul>
 </li>
