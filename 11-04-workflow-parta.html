@@ -560,13 +560,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-report">Start the report</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-working-area">Prepare your working area</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-everything-together">Pull everything together</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-completeness-of-the-readme">Verifying completeness of the README</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-data-sources">List of Data Sources</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assess-the-openicpsr-deposit">Assess the openICPSR deposit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-the-data-are-restricted-access">If the data are restricted-access</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-the-part-a-report-again">Review the Part A report again</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-jira-fields">Completing JIRA fields</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next steps</a></li>
 </ul>
             </nav>
         </div>
@@ -600,6 +593,9 @@ document.write(`
 </section>
 <section id="pull-everything-together">
 <span id="parta-pull-together"></span><h2>Pull everything together<a class="headerlink" href="#pull-everything-together" title="Link to this heading">#</a></h2>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Changes in May 2026</p>
+<p>In May 2026, we started adding the manuscript and DCAF to the repository as part of the automated processing. You probably no longer need to manually add the manuscript and DCAF.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
@@ -615,40 +611,14 @@ CCSS</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Verify that the code is present, i.e., that the automated scripts run during the <a class="reference internal" href="11-02-workflow-create-repo.html#ingesting-author-materials"><span class="std std-ref">Code Ingest</span></a> worked. <strong>If they did not, you need to switch to the “Manual steps”!</strong></p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> From the JIRA issue, download and add Manuscript, Data and Code Availability Form (DCAF).</p>
-<ul class="simple">
-<li><p>Download from Jira issue attachments. The manuscript is often called <code class="docutils literal notranslate"><span class="pre">PDF_Proof.pdf</span></code>.</p></li>
-</ul>
-</li>
-</ul>
-<div class="warning dropdown admonition">
-<p class="admonition-title">Manuscript missing?</p>
-<p>Occassionally, the email received from Manuscript Central will strip out the manuscript because it is too big. You will notice this because</p>
-<ul class="simple">
-<li><p>There will be no <code class="docutils literal notranslate"><span class="pre">PDF_Proof.pdf</span></code> attached!</p></li>
-<li><p>There is text that “the application was unable to attach manuscript files to this email, because one or more of the files exceeded the allowable attachment size (6MB). **</p></li>
-</ul>
-<p>In this case, immediately contact the (assistant) Data Editor to obtain the correct manuscript! Do not use any other manuscript or working paper you might find online.</p>
-</div>
-<ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Add the manuscript, and any response by the authors (if a revision)</p>
-<ul class="simple">
-<li><p>Add them to the Git repo</p></li>
-</ul>
-</li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Be sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> it all to Bitbucket, with a meaningful commit message.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>PDF_Proof.pdf<span class="w"> </span>DataCodeAvailability.pdf
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;added manuscript and DCAF&quot;</span>
-git<span class="w"> </span>push
-</pre></div>
-</div>
-</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Verify that the code is present, i.e., that the automated scripts run during the <a class="reference internal" href="11-02-workflow-create-repo.html#ingesting-author-materials"><span class="std std-ref">Code Ingest</span></a> worked. Also check that the manuscript and DCAF were added. <strong>If they did not, you need to switch to the “Manual steps”!</strong></p></li>
 </ul>
 </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
-Manual steps</label><div class="sd-tab-content docutils">
+</div>
+</div>
+<div class="sd-tab-item docutils">
+<p class="sd-tab-label rubric">Manual steps</p>
+<div class="sd-tab-content docutils">
 <p>If the automated population of the author’s code directory did not work, you will need to manually download the replication package. Try to do this first using scripts.</p>
 <p><strong>Consult the notes on downloading from other repositories</strong></p>
 <p>See  <a class="reference internal" href="94-02-alternate-downloads.html#notes-on-downloading-other-repos"><span class="std std-ref">repository-specific guidelines</span></a> if the download is not from openICPSR.</p>
@@ -683,14 +653,40 @@ Manual steps</label><div class="sd-tab-content docutils">
 <li><p>On OSX, double-click. When asked, do not overwrite files.</p></li>
 <li><p>The individual files that are part of the replication package should now be in a subdirectory (e.g, <code class="docutils literal notranslate"><span class="pre">111234</span></code>, the openICPSR repository number).</p></li>
 <li><p>Perform a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">111234</span></code> should do the right thing.</p></li>
+<li><p>Commit it all:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Adding code manually&quot;</span>
+git<span class="w"> </span>push
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Adding the manuscript and DCAF</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> From the JIRA issue, download and add Manuscript, Data and Code Availability Form (DCAF).</p>
+<ul>
+<li><p>Download from Jira issue attachments. The manuscript is often called <code class="docutils literal notranslate"><span class="pre">PDF_Proof.pdf</span></code>.</p></li>
 </ul>
 </li>
+</ul>
+<div class="warning dropdown admonition">
+<p class="admonition-title">Manuscript missing?</p>
+<p>Occasionally, the email received from Manuscript Central will strip out the manuscript because it is too big. You will notice this because</p>
+<ul class="simple">
+<li><p>There will be no <code class="docutils literal notranslate"><span class="pre">PDF_Proof.pdf</span></code> attached!</p></li>
+<li><p>There is text that “the application was unable to attach manuscript files to this email, because one or more of the files exceeded the allowable attachment size (6MB). **</p></li>
+</ul>
+<p>In this case, immediately contact the (assistant) Data Editor to obtain the correct manuscript! Do not use any other manuscript or working paper you might find online.</p>
+</div>
+<ul class="contains-task-list">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Add the manuscript, and any response by the authors (if a revision)</p>
 <ul class="simple">
 <li><p>Add them to the Git repo</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>PDF_Proof.pdf<span class="w"> </span>DataCodeAvailability.pdf<span class="w"> </span><span class="m">111234</span>
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Adding manuscript, DCAF, and code&quot;</span>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Be sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> it all to Bitbucket, with a meaningful commit message.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>PDF_Proof.pdf<span class="w"> </span>DataCodeAvailability.pdf
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;added manuscript and DCAF&quot;</span>
 git<span class="w"> </span>push
 </pre></div>
 </div>
@@ -702,12 +698,14 @@ git<span class="w"> </span>push
 </li>
 </ul>
 </div>
-<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
-BioHPC</label><div class="sd-tab-content docutils">
+</div>
+<div class="sd-tab-item docutils">
+<p class="sd-tab-label rubric">BioHPC</p>
+<div class="sd-tab-content docutils">
 <p>It is not recommended to do this step on BioHPC.</p>
 </div>
 </div>
+<div class="docutils">
 <div class="dropdown admonition">
 <p class="admonition-title">Be sure to use the <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartA.md</span></code> for this section!</p>
 <p>As part of the <a class="reference internal" href="11-02-workflow-create-repo.html#running-populate-icpsr"><span class="std std-ref">automated processing</span></a>, the <code class="docutils literal notranslate"><span class="pre">REPLICATION.md</span></code> is split into two parts, <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartA.md</span></code> and <code class="docutils literal notranslate"><span class="pre">REPLICATION-PartB.md</span></code>. Somebody else may be working on Part B at the same time as you are working on Part A. Please be sure to use the correct file for your work.</p>
@@ -731,9 +729,7 @@ BioHPC</label><div class="sd-tab-content docutils">
 </ul>
 </li>
 </ul>
-</section>
-<section id="verifying-completeness-of-the-readme">
-<h2>Verifying completeness of the README<a class="headerlink" href="#verifying-completeness-of-the-readme" title="Link to this heading">#</a></h2>
+<h2 class="rubric" id="verifying-completeness-of-the-readme">Verifying completeness of the README</h2>
 <p>Now that you have pulled everything together, you will inspect the authors’ README, and do a first analysis of the necessary data.</p>
 <div class="info dropdown admonition">
 <p class="admonition-title">Where is the README?</p>
@@ -756,9 +752,7 @@ BioHPC</label><div class="sd-tab-content docutils">
 </ul>
 </li>
 </ul>
-</section>
-<section id="list-of-data-sources">
-<h2>List of Data Sources<a class="headerlink" href="#list-of-data-sources" title="Link to this heading">#</a></h2>
+<h2 class="rubric" id="list-of-data-sources">List of Data Sources</h2>
 <p>Now you will establish a <strong>list of data sources used</strong>.</p>
 <ul class="contains-task-list simple">
 <li><p>Please check the <strong>Data and Code Availability Form</strong>.</p>
@@ -813,17 +807,11 @@ BioHPC</label><div class="sd-tab-content docutils">
 <li><p>data that you are provided on the L-Drive, which is typically provided under an agreement with the authors, and cannot be redistributed.</p></li>
 </ul>
 </div>
-</section>
-<section id="assess-the-openicpsr-deposit">
-<h2>Assess the openICPSR deposit<a class="headerlink" href="#assess-the-openicpsr-deposit" title="Link to this heading">#</a></h2>
+<h2 class="rubric" id="assess-the-openicpsr-deposit">Assess the openICPSR deposit</h2>
 <p>If the data are in openICPSR, you will now assess the deposit. The form in the template report should give enough guidance on what to check!</p>
-</section>
-<section id="if-the-data-are-restricted-access">
-<h2>If the data are restricted-access<a class="headerlink" href="#if-the-data-are-restricted-access" title="Link to this heading">#</a></h2>
+<h2 class="rubric" id="if-the-data-are-restricted-access">If the data are restricted-access</h2>
 <p>If the data are restricted-access, you will still fill out this part. However, you should <strong>not</strong> attempt to request access to the data yourself. Contact your supervisor. See <a class="reference internal" href="98-03-correspondence-requesting-restricted-access-data.html#correspondence-requesting-restricted-access"><span class="std std-ref">Requesting Restricted-Access Data from Authors</span></a> for details.</p>
-</section>
-<section id="review-the-part-a-report-again">
-<h2>Review the Part A report again<a class="headerlink" href="#review-the-part-a-report-again" title="Link to this heading">#</a></h2>
+<h2 class="rubric" id="review-the-part-a-report-again">Review the Part A report again</h2>
 <p>At this stage, you go back and review the Part A report again. Identify any actions you think the author should make to bring the deposit into compliance with our requirements.</p>
 <ul class="simple">
 <li><p>There is sample language for commonly encountered problems in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">sample-language-report.md</a>, which is part of the replication package.</p>
@@ -840,9 +828,7 @@ git<span class="w"> </span>push
 </pre></div>
 </div>
 </div>
-</section>
-<section id="completing-jira-fields">
-<h2>Completing JIRA fields<a class="headerlink" href="#completing-jira-fields" title="Link to this heading">#</a></h2>
+<h2 class="rubric" id="completing-jira-fields">Completing JIRA fields</h2>
 <p>You are now ready to complete the subtask. In the transition screen, you will be asked to fill out the following fields:</p>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">DATA</span> <span class="pre">PROVENANCE</span></code> Where, specifically, are you accessing the data? Typically you can write here “<code class="docutils literal notranslate"><span class="pre">openICPSR</span></code>”,  but it may also be a user-provided URL or DOI, or a different source</p>
@@ -871,11 +857,10 @@ git<span class="w"> </span>push
 </li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">NUMBEROFDATASETS</span></code> How many datasets are used in the article (whether or not they are included in the replication package you downloaded)? This is meant to include datasets that you are asked to download, or that you were given access to via the “L:” drive, or “CRADC”, or some other secure mechanism.</p></li>
 </ul>
-</section>
-<section id="next-steps">
-<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
+<h2 class="rubric" id="next-steps">Next steps</h2>
 <p>You should now move the subtask to “<code class="docutils literal notranslate"><span class="pre">Preliminary</span> <span class="pre">Report</span> <span class="pre">Complete</span></code>” to signal that this part of the processing is done.</p>
 <p><img alt="Move to Completed" src="_images/jira-in-progress-parta.png" /></p>
+</div>
 </section>
 </section>
 
@@ -946,13 +931,6 @@ git<span class="w"> </span>push
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-report">Start the report</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-working-area">Prepare your working area</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-everything-together">Pull everything together</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-completeness-of-the-readme">Verifying completeness of the README</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-data-sources">List of Data Sources</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assess-the-openicpsr-deposit">Assess the openICPSR deposit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-the-data-are-restricted-access">If the data are restricted-access</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-the-part-a-report-again">Review the Part A report again</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-jira-fields">Completing JIRA fields</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next steps</a></li>
 </ul>
   </nav></div>
 

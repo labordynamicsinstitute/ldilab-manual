@@ -2,11 +2,20 @@
 # Creating a repository and running pipeline
 
 
-```{warning}
+::::{warning}
 In some instances, somebody else has already created a repository. Always check first if the `Bitbucket short name` is already filled out. If it is, **do not** run the pipeline scripts again. This can overwrite or destroy changes already made by someone working on the case.
 
 If the `Bitbucket short name` is filled out, skip this section and go to [Collecting information](collecting-information)!
-```
+
+
+:::{admonition} What this looks like in Jira
+:class: dropdown note
+
+If the scripts have executed, then the Jira ticket will have one or more of these entries:
+
+![](images/jira-pipeline-comments-creation.png)
+
+::::
 
 :::{admonition} Advanced users
 :class: dropdown tip
