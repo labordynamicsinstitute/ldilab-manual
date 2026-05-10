@@ -560,6 +560,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-m-program-is-using-a-software-extension-to-matlab-called-dynare">The .m program is using a software extension to MATLAB called “Dynare”</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mention-of-mex-programs-what-do-i-do">Mention of MEX programs, what do I do?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-complains-about-a-missing-toolbox">MATLAB complains about a missing Toolbox</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-uses-too-much-memory-or-too-many-cpu-cores-parpool">MATLAB uses too much memory or too many CPU cores (parpool)</a></li>
 </ul>
             </nav>
         </div>
@@ -588,6 +589,39 @@ document.write(`
 <section id="matlab-complains-about-a-missing-toolbox">
 <h2>MATLAB complains about a missing Toolbox<a class="headerlink" href="#matlab-complains-about-a-missing-toolbox" title="Link to this heading">#</a></h2>
 <p>Check that the Path includes said Toolbox, see <a class="reference external" href="https://it.mathworks.com/help/matlab/ref/pathtool.html">https://it.mathworks.com/help/matlab/ref/pathtool.html</a>. It may also be that we are not licensed to use that Toolbox. Make a note of the error in the replication report.</p>
+</section>
+<section id="matlab-uses-too-much-memory-or-too-many-cpu-cores-parpool">
+<h2>MATLAB uses too much memory or too many CPU cores (parpool)<a class="headerlink" href="#matlab-uses-too-much-memory-or-too-many-cpu-cores-parpool" title="Link to this heading">#</a></h2>
+<p>When running MATLAB on BioHPC (or other clusters), you will sometimes find that authors have hard-coded the number of CPU cores to use, or might ignore the amount of memory needed.</p>
+<p>Code might look like this:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%% Parallelizing code</span>
+
+<span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">NumWorkers</span><span class="w"> </span><span class="p">=</span><span class="mi">30</span><span class="p">;</span>
+<span class="n">parpool</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The following code might be helpful in making this somewhat easier to debug:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%% Parallelizing code dynamically</span>
+
+<span class="c">% 1. Get the CPU count from SLURM environment</span>
+<span class="c">% SLURM_CPUS_PER_TASK is set when you use --cpus-per-task</span>
+<span class="n">num_cpus</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">str2double</span><span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s">&#39;SLURM_CPUS_PER_TASK&#39;</span><span class="p">));</span>
+
+<span class="c">% 2. Fallback: If running locally or variable isn&#39;t set, default to 1 or a safe number</span>
+<span class="k">if</span><span class="w"> </span><span class="nb">isnan</span><span class="p">(</span><span class="n">num_cpus</span><span class="p">)</span>
+<span class="w">    </span><span class="n">num_cpus</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;SLURM variable not found. Defaulting to 1 worker.\n&#39;</span><span class="p">);</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Detected %d CPUs assigned by SLURM.\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">num_cpus</span><span class="p">);</span>
+<span class="k">end</span>
+
+<span class="c">% 3. Initialize the pool</span>
+<span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">NumWorkers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">num_cpus</span><span class="p">;</span>
+<span class="n">parpool</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">num_cpus</span><span class="p">);</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -658,6 +692,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-m-program-is-using-a-software-extension-to-matlab-called-dynare">The .m program is using a software extension to MATLAB called “Dynare”</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mention-of-mex-programs-what-do-i-do">Mention of MEX programs, what do I do?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-complains-about-a-missing-toolbox">MATLAB complains about a missing Toolbox</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-uses-too-much-memory-or-too-many-cpu-cores-parpool">MATLAB uses too much memory or too many CPU cores (parpool)</a></li>
 </ul>
   </nav></div>
 
