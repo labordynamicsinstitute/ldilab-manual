@@ -20,6 +20,10 @@ For **Part A**, you do NOT need the data, but you do need the working copy of th
 (parta-pull-together)=
 ## Pull everything together
 
+:::{admonition} Changes in May 2026
+:class: tip dropdown
+
+In May 2026, we started adding the manuscript and DCAF to the repository as part of the automated processing. You probably no longer need to manually add the manuscript and DCAF.
 
 :::::{tab-set}
 
@@ -34,30 +38,8 @@ For **Part A**, you do NOT need the data, but you do need the working copy of th
   ```bash
   aeagit xxx
   ```
-- [ ] Verify that the code is present, i.e., that the automated scripts run during the [Code Ingest](ingesting-author-materials) worked. **If they did not, you need to switch to the "Manual steps"!**
-- [ ] From the JIRA issue, download and add Manuscript, Data and Code Availability Form (DCAF). 
-    - Download from Jira issue attachments. The manuscript is often called `PDF_Proof.pdf`. 
+- [ ] Verify that the code is present, i.e., that the automated scripts run during the [Code Ingest](ingesting-author-materials) worked. Also check that the manuscript and DCAF were added. **If they did not, you need to switch to the "Manual steps"!**
 
-:::{admonition} Manuscript missing?
-:class: warning dropdown
-
-Occassionally, the email received from Manuscript Central will strip out the manuscript because it is too big. You will notice this because
-
-- There will be no `PDF_Proof.pdf` attached!
-- There is text that "the application was unable to attach manuscript files to this email, because one or more of the files exceeded the allowable attachment size (6MB). **
-
-In this case, immediately contact the (assistant) Data Editor to obtain the correct manuscript! Do not use any other manuscript or working paper you might find online.
-
-:::
-
-- [ ] Add the manuscript, and any response by the authors (if a revision)
-  - Add them to the Git repo 
-- [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
-  ```bash
-  git add PDF_Proof.pdf DataCodeAvailability.pdf
-  git commit -m "added manuscript and DCAF"
-  git push
-  ```
 ::::
 
 ::::{tab-item} Manual steps 
@@ -95,14 +77,39 @@ The local repository should now have the relevant LDI replication template mater
   - On OSX, double-click. When asked, do not overwrite files.
   - The individual files that are part of the replication package should now be in a subdirectory (e.g, `111234`, the openICPSR repository number). 
   - Perform a `git add`: `git add 111234` should do the right thing.
-- [ ] Add the manuscript, and any response by the authors (if a revision)
-  - Add them to the Git repo 
+  - Commit it all:
 
   ```bash
-  git add PDF_Proof.pdf DataCodeAvailability.pdf 111234
-  git commit -m "Adding manuscript, DCAF, and code"
+  git commit -m "Adding code manually"
   git push
   ```
+
+**Adding the manuscript and DCAF**
+
+- [ ] From the JIRA issue, download and add Manuscript, Data and Code Availability Form (DCAF). 
+    - Download from Jira issue attachments. The manuscript is often called `PDF_Proof.pdf`. 
+
+:::{admonition} Manuscript missing?
+:class: warning dropdown
+
+Occasionally, the email received from Manuscript Central will strip out the manuscript because it is too big. You will notice this because
+
+- There will be no `PDF_Proof.pdf` attached!
+- There is text that "the application was unable to attach manuscript files to this email, because one or more of the files exceeded the allowable attachment size (6MB). **
+
+In this case, immediately contact the (assistant) Data Editor to obtain the correct manuscript! Do not use any other manuscript or working paper you might find online.
+
+:::
+
+- [ ] Add the manuscript, and any response by the authors (if a revision)
+  - Add them to the Git repo 
+- [ ] Be sure to `git push` it all to Bitbucket, with a meaningful commit message. 
+  ```bash
+  git add PDF_Proof.pdf DataCodeAvailability.pdf
+  git commit -m "added manuscript and DCAF"
+  git push
+  ```
+
 - [ ] If the pipelines did not *split* the report, use the `3-split-report` pipeline before proceeding.
   - Then `git pull` to get all the changes!
 
