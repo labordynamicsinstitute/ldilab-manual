@@ -17,3 +17,40 @@ See [Using Dynare in MATLAB](dynare-matlab).
 ## MATLAB complains about a missing Toolbox
 
 Check that the Path includes said Toolbox, see <https://it.mathworks.com/help/matlab/ref/pathtool.html>. It may also be that we are not licensed to use that Toolbox. Make a note of the error in the replication report.
+
+## MATLAB uses too much memory or too many CPU cores (parpool)
+
+When running MATLAB on BioHPC (or other clusters), you will sometimes find that authors have hard-coded the number of CPU cores to use, or might ignore the amount of memory needed.
+
+Code might look like this:
+
+```matlab
+%% Parallelizing code
+
+c = parcluster;
+c.NumWorkers =30;
+parpool(30)
+```
+
+The following code might be helpful in making this somewhat easier to debug:
+
+```matlab
+%% Parallelizing code dynamically
+
+% 1. Get the CPU count from SLURM environment
+% SLURM_CPUS_PER_TASK is set when you use --cpus-per-task
+num_cpus = str2double(getenv('SLURM_CPUS_PER_TASK'));
+
+% 2. Fallback: If running locally or variable isn't set, default to 1 or a safe number
+if isnan(num_cpus)
+    num_cpus = 1; 
+    fprintf('SLURM variable not found. Defaulting to 1 worker.\n');
+else
+    fprintf('Detected %d CPUs assigned by SLURM.\n', num_cpus);
+end
+
+% 3. Initialize the pool
+c = parcluster;
+c.NumWorkers = num_cpus;
+parpool(c, num_cpus);
+```
