@@ -727,7 +727,17 @@ Zenodo</label><div class="sd-tab-content docutils">
 </div></blockquote>
 <p><img alt="failing pipeline file too big" src="_images/bitbucket-error-file-too-big.png" /></p>
 <p><strong>Solution</strong></p>
-<p>Investigate which files are being captured that are too big. The list of file endings that Git should ignore is kept in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/.gitignore"><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file</a>. Once you have figured out which files are causing the problem, you should exclude them:</p>
+<p>Investigate which files are being captured that are too big.</p>
+<p>You can see the list of large files in the Bitbucket pipeline logs. Find the line in the logs that reads <code class="docutils literal notranslate"><span class="pre">./automations/01_check_file_sizes.sh</span> <span class="pre">$projectID</span></code> and click on it to expand:</p>
+<p><img alt="File size check" src="_images/bitbucket-logs-files-too-big.png" /></p>
+<p>The list of file endings that Git should ignore is kept in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/.gitignore"><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file</a>. You can search through that file for any extensions listed in the above listing. Some files do not have extensions, though.</p>
+<p>Once you have figured out which files are causing the problem, you should exclude them.</p>
+<ul class="simple">
+<li><p>For instance, if it is a previously unlisted extension, list <code class="docutils literal notranslate"><span class="pre">*.extension</span></code> in the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p></li>
+<li><p>If it is an extension-less file, list the entire file (in the example above, you might list <code class="docutils literal notranslate"><span class="pre">trigram_10_10</span></code>).</p></li>
+<li><p>If it is a file with an extension you do want to generically keep (e.g., <code class="docutils literal notranslate"><span class="pre">*.pdf</span></code>), then listing the entire path to the file should also work (e.g., if there were a huge PDF, you could list <code class="docutils literal notranslate"><span class="pre">247052/10K/data/sample_edgar_index.pdf</span></code>)</p></li>
+</ul>
+<p>You should make those changes</p>
 <ul class="simple">
 <li><p>in your repository, by adding them into the repository-specific <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p></li>
 <li><p>in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/.gitignore">template <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file</a>, by suggesting an edit. Click on <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/.gitignore">this link</a>, then choose “<code class="docutils literal notranslate"><span class="pre">Edit</span></code>”, and add the extension to the file (you will need a Github account to create a pull request).</p></li>

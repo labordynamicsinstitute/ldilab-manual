@@ -172,7 +172,21 @@ Bitbucket might complain in the `Commit everything back` step that
 
 **Solution**
 
-Investigate which files are being captured that are too big. The list of file endings that Git should ignore is kept in the [`.gitignore` file](https://github.com/AEADataEditor/replication-template/blob/master/.gitignore). Once you have figured out which files are causing the problem, you should exclude them:
+Investigate which files are being captured that are too big. 
+
+You can see the list of large files in the Bitbucket pipeline logs. Find the line in the logs that reads `./automations/01_check_file_sizes.sh $projectID` and click on it to expand:
+
+![File size check](images/bitbucket-logs-files-too-big.png)
+
+The list of file endings that Git should ignore is kept in the [`.gitignore` file](https://github.com/AEADataEditor/replication-template/blob/master/.gitignore). You can search through that file for any extensions listed in the above listing. Some files do not have extensions, though.
+
+Once you have figured out which files are causing the problem, you should exclude them. 
+
+- For instance, if it is a previously unlisted extension, list `*.extension` in the `.gitignore` file. 
+- If it is an extension-less file, list the entire file (in the example above, you might list `trigram_10_10`). 
+- If it is a file with an extension you do want to generically keep (e.g., `*.pdf`), then listing the entire path to the file should also work (e.g., if there were a huge PDF, you could list `247052/10K/data/sample_edgar_index.pdf`)
+
+You should make those changes
 
 - in your repository, by adding them into the repository-specific `.gitignore`
 - in the [template `.gitignore` file](https://github.com/AEADataEditor/replication-template/blob/master/.gitignore), by suggesting an edit. Click on [this link](https://github.com/AEADataEditor/replication-template/blob/master/.gitignore), then choose "`Edit`", and add the extension to the file (you will need a Github account to create a pull request).
