@@ -803,7 +803,7 @@ Mac/Linux</label><div class="sd-tab-content docutils">
 <p>On Unix-style systems, the preferred way is to use the command line to run Stata code.</p>
 <div class="dropdown admonition">
 <p class="admonition-title"><strong>Mac-specific one-time setup</strong></p>
-<p>Open Stata on your Mac, go to the “Stata” tab at the top of your screen and click “<code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">Terminal</span> <span class="pre">Utility…</span></code>”</p>
+<p>Open Stata on your Mac, go to the “Stata” tab at the top of your screen and click “<code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">Terminal</span> <span class="pre">Utility…</span></code>” (will work only for Stata-SE and Stata-MP).</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title"><strong>BioHPC-specific setup</strong></p>
@@ -842,7 +842,7 @@ Windows Double-click</label><div class="sd-tab-content docutils">
 <p>Now click on the circled green triangle to run the do file.</p>
 <p>If double-clicking the do file does not open Stata, you may need to check the <code class="docutils literal notranslate"><span class="pre">Properties</span></code> tab. Right-click on the do file and select <code class="docutils literal notranslate"><span class="pre">Properties</span></code>. In the <code class="docutils literal notranslate"><span class="pre">General</span></code> tab, you may see an option to <code class="docutils literal notranslate"><span class="pre">Change</span></code> the default program that opens the do file. You may need to choose <code class="docutils literal notranslate"><span class="pre">Choose</span> <span class="pre">an</span> <span class="pre">app</span> <span class="pre">from</span> <span class="pre">your</span> <span class="pre">PC</span></code>:</p>
 <p><img alt="Choose app on your PC dialog" src="_images/windows11-set-default-app.png" /></p>
-<p>Then navigate to the Stata executable (e.g., <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Stata18\StataMP-64.exe</span></code>) and select it:</p>
+<p>Then navigate to the Stata executable (e.g., <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Stata18\StataMP-64.exe</span></code> or <code class="docutils literal notranslate"> <span class="pre">/c/Program\</span> <span class="pre">Files/StataNow19/StataMP-64.exe</span></code>) and select it:</p>
 <p><img alt="Select Stata executable" src="_images/windows11-set-stata18-app.png" /></p>
 <p>Then click <code class="docutils literal notranslate"><span class="pre">OK</span></code> and <code class="docutils literal notranslate"><span class="pre">Apply</span></code> to save the changes. Now double-clicking the do file should open it in Stata.</p>
 </div>
@@ -851,7 +851,11 @@ Windows Double-click</label><div class="sd-tab-content docutils">
 Windows terminal</label><div class="sd-tab-content docutils">
 <p>Instead of using the graphical “right-click” method, you can also use the command line in Windows. For <code class="docutils literal notranslate"><span class="pre">bash</span></code>, use</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">code</span>
- <span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">Program</span>\ <span class="n">Files</span><span class="o">/</span><span class="n">Stata18</span><span class="o">/</span><span class="n">StataMP</span><span class="o">-</span><span class="mf">64.</span><span class="n">exe</span> <span class="o">-</span><span class="n">b</span> <span class="n">master</span><span class="o">.</span><span class="n">do</span>
+<span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">Program</span>\ <span class="n">Files</span><span class="o">/</span><span class="n">StataNow19</span><span class="o">/</span><span class="n">StataMP</span><span class="o">-</span><span class="mf">64.</span><span class="n">exe</span> <span class="o">-</span><span class="n">b</span> <span class="n">master</span><span class="o">.</span><span class="n">do</span>
+</pre></div>
+</div>
+<p>If using a Bash file (<code class="docutils literal notranslate"><span class="pre">.sh</span></code>  or <code class="docutils literal notranslate"><span class="pre">.bash</span></code>), you may need to define the path in some environment variable, for example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">STATA_PATH</span><span class="o">=</span><span class="s2">&quot;/c/Program\ Files/StataNow19/StataMP-64.exe&quot;</span>
 </pre></div>
 </div>
 <p>For Powershell, use</p>

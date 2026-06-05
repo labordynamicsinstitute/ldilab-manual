@@ -257,7 +257,7 @@ On Unix-style systems, the preferred way is to use the command line to run Stata
 :::{admonition} **Mac-specific one-time setup**
 :class: dropdown
 
-Open Stata on your Mac, go to the "Stata" tab at the top of your screen and click "`Install Terminal Utility…`" 
+Open Stata on your Mac, go to the "Stata" tab at the top of your screen and click "`Install Terminal Utility…`" (will work only for Stata-SE and Stata-MP).
 
 :::
 
@@ -320,7 +320,7 @@ If double-clicking the do file does not open Stata, you may need to check the `P
 
 ![Choose app on your PC dialog](images/windows11-set-default-app.png)
 
-Then navigate to the Stata executable (e.g., `C:\Program Files\Stata18\StataMP-64.exe`) and select it:
+Then navigate to the Stata executable (e.g., `C:\Program Files\Stata18\StataMP-64.exe` or ` /c/Program\ Files/StataNow19/StataMP-64.exe`) and select it:
 
 ![Select Stata executable](images/windows11-set-stata18-app.png)
 
@@ -336,7 +336,13 @@ Instead of using the graphical "right-click" method, you can also use the comman
 
 ```
 cd /path/to/code
- /c/Program\ Files/Stata18/StataMP-64.exe -b master.do
+/c/Program\ Files/StataNow19/StataMP-64.exe -b master.do
+```
+
+If using a Bash file (`.sh`  or `.bash`), you may need to define the path in some environment variable, for example:
+
+```bash
+export STATA_PATH="/c/Program\ Files/StataNow19/StataMP-64.exe"
 ```
 
 For Powershell, use 
@@ -344,6 +350,7 @@ For Powershell, use
 ```
 & 'C:\Program Files\Stata18\StataMP-64.exe' -b master.do
 ```
+
 
 ::::
 :::::
