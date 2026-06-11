@@ -67,15 +67,9 @@ use the [https://client.wvd.microsoft.com/arm/webclient/](https://client.wvd.mic
 
 **Mapping Network Drives**
 
-- You should map the following network drive, following the CCSS storage/network-drive instructions linked above. Note that `L:` is the LDI-specific drive letter for this setup.
+- You should map the following network drive, following the CCSS storage/network-drive instructions linked above. However, use `L:`, not `Z:`. `L:` is the LDI-specific drive letter for this setup. 
   - `\\ccssilr.file.core.windows.net\lv39` to drive letter `L:` (you can call it "LDILab Drive")
-  - We will be using that drive letter often. On Cloud CCSS, `L:` replaces the `S:` drive from the CCSS classic nodes.
-    
-- When instructed, you may also need to map the old S-drive:
-  - `\\rschfs2x.ciserrsch.cornell.edu\share\LDIlab`
-  - Select “Connect using different credentials”
-    - CISER username: `ciserrsch\[netID]_RS` (where `[netid]` is replaced by... your NetID!)
-    - Check the box "Reconnect at login" 
+  - We will be using that drive letter often. 
 
 
 **Signing out or disconnecting**
