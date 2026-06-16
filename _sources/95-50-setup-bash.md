@@ -152,27 +152,21 @@ If you *do* have a `$HOME/bin` directory, you will need to manually adjust a few
 
 ::::{tab-set}
 
-:::{tab-item} Windows
+:::{tab-item} CCSS Cloud
 
-You may need
+You should have all software that is needed. If you need additional software, remember that you **cannot** install software yourself. Reach out to your supervisor before contacting the CCSS Cloud support team.
 
-- Python
-- Rsync
+:::
 
-On CCSS Cloud, Python should be installed. You may need to add `rsync` only if you are a LDI Lab Admin working with CodeOcean. Installation has only been tested on a laptop and may not work on CCSS Cloud.
+:::{tab-item} Other Windows
+
+You may need to install Python.
 
 Installing Python is best done using `winget`. From a **Powershell**, run these install commands:
 
 ```powershell
 winget install Python.Python.3.12
 ```
-
-If you need `rsync`, run the following in a Bash shell
-
-```bash
-setup-rsync.sh
-```
-
 
 :::
 
