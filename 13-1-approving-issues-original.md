@@ -30,7 +30,8 @@ If there is an overlapping `CA` case, the next steps depend on what updates the 
    - Verify/Insert relevant `[REQUIRED]` or `[SUGGESTED]` tag comments.
 1. Check the **Data checks section** for completion.
    - Check if the PII scan output is present in the repository (should have been done automatically by the Pipelines)
-   - Check if the Package scan output is present in the repository. (should have been done automatically by the Pipelines)
+   - Check if the Package scan output is present in the repository (should have been done automatically by the Pipelines)
+   - If these sections are not present in the report, retrieve them from the /generated folder.
    - Verify/Insert relevant `[REQUIRED]` or `[SUGGESTED]` tag comments.
 1. Check the **Code checks section** for completion.
    - Check if the completed Code check spreadsheet is present in the repository.
