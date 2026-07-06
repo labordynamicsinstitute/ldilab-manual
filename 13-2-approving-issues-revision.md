@@ -8,7 +8,7 @@ The checklist of items to review are roughly the same as above.  In addition:
 - In the **Summary Section:**
    - Create a new section "`### Previously`" that covers all the action items from the previous round.
    - Create a list of persisting issues that require attention. These should be added as action items to the usual section, in addition to any new items. 
-   - There is no need to distinguish new from persistent action items: the action item list should simply contain a complete and exhaustive (check)list of items that need to be done.
+   - There is no need to distinguish new from persistent action items: the action item list should simply contain a complete and exhaustive (check)list of items that need to be done. As in an original replication report, all persisting and new tags within the action item list should be either `[REQUIRED]` or `[SUGGESTED]`, not `[WE REQUESTED]` and `[WE SUGGESTED]` (as seen below).
 
 Example:
 
