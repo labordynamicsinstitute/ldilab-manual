@@ -611,7 +611,8 @@ document.write(`
 <li><p>Check the <strong>Data checks section</strong> for completion.</p>
 <ul class="simple">
 <li><p>Check if the PII scan output is present in the repository (should have been done automatically by the Pipelines)</p></li>
-<li><p>Check if the Package scan output is present in the repository. (should have been done automatically by the Pipelines)</p></li>
+<li><p>Check if the Package scan output is present in the repository (should have been done automatically by the Pipelines)</p></li>
+<li><p>If these sections are not present in the report, retrieve them from the <code class="docutils literal notranslate"><span class="pre">/generated</span></code> folder. If not present there, remove the placeholder tags.</p></li>
 <li><p>Verify/Insert relevant <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> or <code class="docutils literal notranslate"><span class="pre">[SUGGESTED]</span></code> tag comments.</p></li>
 </ul>
 </li>
@@ -634,9 +635,10 @@ document.write(`
 <li><p>Check the <strong>Computing Environment of the Replicator section</strong> for completeness. (It should not include the description of the replicator’s laptop unless it is clear that the replicator actually ran code on the laptop)</p></li>
 <li><p>Verify: Format the results in the <strong>Findings section</strong> into tables by utilizing the the Excel-to-Markdown Extension in Visual Studio.</p>
 <ul class="simple">
+<li><p>If any of the steps in the <strong>Replication Steps</strong> section involved bugs that were fixed, ensure that the <code class="docutils literal notranslate"><span class="pre">[REQUIRED]</span></code> tag about debugged code is added (often forgotten)</p></li>
 <li><p>Check if the output/log files have been pushed to the Bitbucket repository.</p></li>
 <li><p>If there are discrepancies between the replicated tables and figures and those of the manuscript, the report should contain images/screenshots to highlight the differences.</p></li>
-<li><p>If there are numerous tables and figures that exhibit discrepancies, these should be put into a .zip file.  This action should be noted in the <strong>Summary section</strong> as well as mentioned in a JIRA comment.</p></li>
+<li><p>(rare) If there are numerous (too many) tables and figures that exhibit discrepancies, these should be put into a .zip file.  This action should be noted in the <strong>Summary section</strong> as well as mentioned in a JIRA comment.</p></li>
 </ul>
 </li>
 <li><p>Ensure the classification of the replication fits the degree of reproducibility.</p></li>

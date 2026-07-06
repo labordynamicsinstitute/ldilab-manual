@@ -30,7 +30,8 @@ If there is an overlapping `CA` case, the next steps depend on what updates the 
    - Verify/Insert relevant `[REQUIRED]` or `[SUGGESTED]` tag comments.
 1. Check the **Data checks section** for completion.
    - Check if the PII scan output is present in the repository (should have been done automatically by the Pipelines)
-   - Check if the Package scan output is present in the repository. (should have been done automatically by the Pipelines)
+   - Check if the Package scan output is present in the repository (should have been done automatically by the Pipelines)
+   - If these sections are not present in the report, retrieve them from the `/generated` folder. If not present there, remove the placeholder tags. 
    - Verify/Insert relevant `[REQUIRED]` or `[SUGGESTED]` tag comments.
 1. Check the **Code checks section** for completion.
    - Check if the completed Code check spreadsheet is present in the repository.
@@ -44,9 +45,10 @@ If there is an overlapping `CA` case, the next steps depend on what updates the 
    - Verify/Insert relevant `[REQUIRED]` or `[SUGGESTED]` tag comments.
 1. Check the **Computing Environment of the Replicator section** for completeness. (It should not include the description of the replicator's laptop unless it is clear that the replicator actually ran code on the laptop)
 1. Verify: Format the results in the **Findings section** into tables by utilizing the the Excel-to-Markdown Extension in Visual Studio.
+   - If any of the steps in the **Replication Steps** section involved bugs that were fixed, ensure that the `[REQUIRED]` tag about debugged code is added (often forgotten)
    - Check if the output/log files have been pushed to the Bitbucket repository.
    - If there are discrepancies between the replicated tables and figures and those of the manuscript, the report should contain images/screenshots to highlight the differences.
-   - If there are numerous tables and figures that exhibit discrepancies, these should be put into a .zip file.  This action should be noted in the **Summary section** as well as mentioned in a JIRA comment.
+   - (rare) If there are numerous (too many) tables and figures that exhibit discrepancies, these should be put into a .zip file.  This action should be noted in the **Summary section** as well as mentioned in a JIRA comment.
 1. Ensure the classification of the replication fits the degree of reproducibility.
 1. Fill out the **Action Items** of the report.
    - These are separated into "Manuscript" and "openICPSR" (these sections are pre-existent in the template)
