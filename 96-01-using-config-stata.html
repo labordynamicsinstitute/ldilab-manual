@@ -626,6 +626,10 @@ document.write(`
 <section id="setting-directory-structure-information">
 <h3>Setting directory structure information<a class="headerlink" href="#setting-directory-structure-information" title="Link to this heading">#</a></h3>
 <p>The directory structure of the replication package and of the <code class="docutils literal notranslate"><span class="pre">main.do</span></code> within determines the location of  <code class="docutils literal notranslate"><span class="pre">config.do</span></code>. It also determins a few other parameters within the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>.</p>
+<div class="dropdown note admonition">
+<p class="admonition-title">If the replication package contains a <code class="docutils literal notranslate"><span class="pre">profile.do</span></code>…</p>
+<p>In some cases, replication packages might use a non-Stata master file to run Stata code. Sometimes (not always) they will specify a location for a <code class="docutils literal notranslate"><span class="pre">profile.do</span></code> file. When you see this, for all the considerations as to where to locate the <code class="docutils literal notranslate"><span class="pre">config.do</span></code>, replace <code class="docutils literal notranslate"><span class="pre">main.do</span></code> with <code class="docutils literal notranslate"><span class="pre">profile.do</span></code>.</p>
+</div>
 <div class="admonition-action-adjust-the-config-do admonition">
 <p class="admonition-title"><strong>[ACTION]</strong> Adjust the <code class="docutils literal notranslate"><span class="pre">config.do</span></code></p>
 <ul class="simple">
@@ -885,11 +889,15 @@ document.write(`
 </section>
 <section id="how-to-deploy-config-do">
 <h2>How to deploy <a class="reference external" href="http://config.do">config.do</a><a class="headerlink" href="#how-to-deploy-config-do" title="Link to this heading">#</a></h2>
+<div class="dropdown info admonition">
+<p class="admonition-title">If the replication package contains a <code class="docutils literal notranslate"><span class="pre">profile.do</span></code>…</p>
+<p>Reminder: wherever it says <code class="docutils literal notranslate"><span class="pre">main.do</span></code>, read: <code class="docutils literal notranslate"><span class="pre">profile.do</span></code>.</p>
+</div>
 <section id="copy-the-config-file-to-the-right-location">
 <h3>Copy the config file to the right location<a class="headerlink" href="#copy-the-config-file-to-the-right-location" title="Link to this heading">#</a></h3>
 <div class="admonition-action-copy-the-template-config-do-https-github-com-aeadataeditor-replication-template-blob-master-template-config-do-to-the-right-location admonition">
 <p class="admonition-title"><strong>[ACTION]</strong> Copy the  <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/template-config.do"><code class="docutils literal notranslate"><span class="pre">template-config.do</span></code></a> to the right location.</p>
-<p>You should copy it (using Windows actions, or command line) and paste it into the folder where the main file is located. Change the name from <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code> to <code class="docutils literal notranslate"><span class="pre">config.do</span></code></p>
+<p>You should copy it (using Windows actions, or command line) and paste it into the folder where the <code class="docutils literal notranslate"><span class="pre">main.do</span></code> file is located. Change the name from <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code> to <code class="docutils literal notranslate"><span class="pre">config.do</span></code></p>
 </div>
 <p>The template is called <code class="docutils literal notranslate"><span class="pre">template-config.do</span></code>. In order to use it, copy it into the openICPSR folder (e.g. , <code class="docutils literal notranslate"><span class="pre">111111</span></code>) next to the author’s main file, and rename it to <code class="docutils literal notranslate"><span class="pre">config.do</span></code>. If there is no <code class="docutils literal notranslate"><span class="pre">main.do</span></code> or similar, create one. See the <a class="reference internal" href="96-02-running-stata-code.html#running-code-in-stata"><span class="std std-ref">next section</span></a> for more details.</p>
 </section>
@@ -899,12 +907,6 @@ document.write(`
 <li><p>If there is a main dofile, you should put the following line at the beginning of the <code class="docutils literal notranslate"><span class="pre">main.do</span></code>:</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="n">config</span><span class="o">.</span><span class="n">do</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>You should also add to the end of the <code class="docutils literal notranslate"><span class="pre">main.do</span></code>:</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">log</span> <span class="n">close</span> <span class="n">_all</span>
 </pre></div>
 </div>
 <div class="admonition note">
