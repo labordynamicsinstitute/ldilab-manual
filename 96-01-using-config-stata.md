@@ -27,6 +27,12 @@ In the following text, the line numbers mentioned are approximate. We regularly 
 
 The directory structure of the replication package and of the `main.do` within determines the location of  `config.do`. It also determins a few other parameters within the `config.do`.
 
+:::{admonition} If the replication package contains a `profile.do`...
+:class: dropdown note
+
+In some cases, replication packages might use a non-Stata master file to run Stata code. Sometimes (not always) they will specify a location for a `profile.do` file. When you see this, for all the considerations as to where to locate the `config.do`, replace `main.do` with `profile.do`. 
+:::
+
 :::{admonition} **[ACTION]** Adjust the `config.do`
 
 - If the main .do file is directly placed in the root directory, set the parameter `scenario` to be `B` and save. 
@@ -296,12 +302,20 @@ if "`author_adopath'" != "" {             // The author adopath variable is fill
 
 ## How to deploy config.do
 
+
+:::{admonition} If the replication package contains a `profile.do`...
+:class: dropdown info
+
+Reminder: wherever it says `main.do`, read: `profile.do`. 
+
+:::
+
 ### Copy the config file to the right location
 
 
 :::{admonition} **[ACTION]** Copy the  [`template-config.do`](https://github.com/AEADataEditor/replication-template/blob/master/template-config.do) to the right location.
 
-You should copy it (using Windows actions, or command line) and paste it into the folder where the main file is located. Change the name from `template-config.do` to `config.do`
+You should copy it (using Windows actions, or command line) and paste it into the folder where the `main.do` file is located. Change the name from `template-config.do` to `config.do`
 
 ::: 
 
@@ -313,13 +327,6 @@ The template is called `template-config.do`. In order to use it, copy it into th
 
 ```
 include config.do
-```
-
-- You should also add to the end of the `main.do`:
-
-
-```
-log close _all
 ```
 
 :::{note}
