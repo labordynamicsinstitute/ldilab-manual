@@ -58,9 +58,10 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-        pip install pyppeteer
+        pip install playwright
+        playwright install --with-deps chromium
 
-    - name: Build the PDF (HTML-to-PDF via pyppeteer/Chromium)
+    - name: Build the PDF (HTML-to-PDF via playwright/Chromium)
       run: |
         jupyter-book build . --builder pdfhtml
       continue-on-error: true
