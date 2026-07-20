@@ -1,8 +1,10 @@
 name: deploy-book
 
-# Only run this when the master branch changes
 on:
   push:
+    branches:
+    - main
+  pull_request:
     branches:
     - main
     # If your git repository has the Jupyter Book within some-subfolder next to
@@ -12,14 +14,14 @@ on:
     # paths:
     # - some-subfolder/**
 
-# This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
-  deploy-book:
+  # Build the HTML book on every push and pull request, but only publish
+  # it in the separate deploy job below.
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
-    # Install dependencies
     - name: Set up Python 3.10
       uses: actions/setup-python@v4
       with:
@@ -30,12 +32,59 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    # Build the book
     - name: Build the book
       run: |
         jupyter-book build .
 
-    # Push the book's HTML to github-pages
+    - name: Upload built HTML
+      uses: actions/upload-artifact@v4
+      with:
+        name: book-html
+        path: ./_build/html
+
+  # Build a PDF of the book and upload it as a downloadable artifact.
+  # Not published anywhere yet - download it from the workflow run.
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        cache: 'pip' # caching pip dependencies
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install pyppeteer
+
+    - name: Build the PDF (HTML-to-PDF via pyppeteer/Chromium)
+      run: |
+        jupyter-book build . --builder pdfhtml
+      continue-on-error: true
+
+    - name: Upload built PDF
+      uses: actions/upload-artifact@v4
+      with:
+        name: book-pdf
+        path: ./_build/pdf
+        if-no-files-found: warn
+
+  # Push the book's HTML to github-pages. Only runs for pushes to main,
+  # so pull requests and other branches build without deploying.
+  deploy:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download built HTML
+      uses: actions/download-artifact@v4
+      with:
+        name: book-html
+        path: ./_build/html
+
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
