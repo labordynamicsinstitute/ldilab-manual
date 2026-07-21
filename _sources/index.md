@@ -22,6 +22,14 @@ Once trained, jump right to the **[AEA Jira Workflow](aea-jira-workflow-a-guide)
 
 For training purposes, we use a [set of slides](https://labordynamicsinstitute.github.io/replicability-training-presentation/). 
 
+## Printable version
+
+A printable version of this document is available [here {fas}`file-pdf`](https://labordynamicsinstitute.github.io/ldilab-manual/printable-version.pdf) .
+
+:::{warning}
+We discourage printing the full document, as it is over 250 pages long.
+:::
+
 
 ## Improving this document
 
