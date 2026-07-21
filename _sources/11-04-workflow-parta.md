@@ -25,19 +25,25 @@ For **Part A**, you do NOT need the data, but you do need the working copy of th
 
 In May 2026, we started adding the manuscript and DCAF to the repository as part of the automated processing. You probably no longer need to manually add the manuscript and DCAF.
 
+:::
+
 :::::{tab-set}
 
 ::::{tab-item} CCSS 
 
 
 - [ ] Clone the Bitbucket repository onto the CCSS server you are working on
-  ```
+
+```
   git clone https://yourname@bitbucket.org/aeaverification/aearep-xxx.git
-  ```
+```
+
 - [ ] Alternatively: If you have done the full [Bash setup](setup-bash), you can run
-  ```bash
-  aeagit xxx
-  ```
+
+```bash
+aeagit xxx
+```
+
 - [ ] Verify that the code is present, i.e., that the automated scripts run during the [Code Ingest](ingesting-author-materials) worked. Also check that the manuscript and DCAF were added. **If they did not, you need to switch to the "Manual steps"!**
 
 ::::
@@ -122,6 +128,7 @@ It is not recommended to do this step on BioHPC.
 ::::
 
 :::::
+
 
 
 :::{admonition} Be sure to use the `REPLICATION-PartA.md` for this section!
