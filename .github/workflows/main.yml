@@ -43,7 +43,8 @@ jobs:
         path: ./_build/html
 
   # Build a PDF of the book and upload it as a downloadable artifact.
-  # Not published anywhere yet - download it from the workflow run.
+  # On a push to main, the deploy job publishes it alongside the HTML
+  # as printable-version.pdf; on other runs it's only a workflow artifact.
   build-pdf:
     runs-on: ubuntu-latest
     steps:
@@ -64,6 +65,7 @@ jobs:
     - name: Build the PDF (HTML-to-PDF via playwright/Chromium)
       run: |
         jupyter-book build . --builder pdfhtml
+        mv _build/pdf/book.pdf _build/pdf/printable-version.pdf
       continue-on-error: true
 
     - name: Upload built PDF
@@ -73,10 +75,11 @@ jobs:
         path: ./_build/pdf
         if-no-files-found: warn
 
-  # Push the book's HTML to github-pages. Only runs for pushes to main,
-  # so pull requests and other branches build without deploying.
+  # Push the book's HTML (plus the printable PDF) to github-pages. Only
+  # runs for pushes to main, so pull requests and other branches build
+  # without deploying.
   deploy:
-    needs: build
+    needs: [build, build-pdf]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
@@ -84,6 +87,13 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: book-html
+        path: ./_build/html
+
+    - name: Download built PDF
+      uses: actions/download-artifact@v4
+      continue-on-error: true
+      with:
+        name: book-pdf
         path: ./_build/html
 
     - name: GitHub Pages action
