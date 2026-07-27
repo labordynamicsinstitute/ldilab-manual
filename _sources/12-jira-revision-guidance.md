@@ -305,7 +305,7 @@ In this stage, you will finalize the revision report.
       - Do not create **separate** `Previously` sections for Manuscript and openICPSR sections!
       - Below each item, include the same resolution you listed in the body of the report. 
     - New and any unresolved issues should be collected with their `- [REQUIRED]` and `- [SUGGESTED]` tags under the appropriate `### Action Items` sections. 
-      - If using the scripts, you can use the [`aeareq`](https://github.com/AEADataEditor/editor-scripts) as usual.
+      - If using the scripts, you can use the [`aea-parse-tags`](https://github.com/AEADataEditor/editor-scripts) as usual.
     
 
 #### Some notes

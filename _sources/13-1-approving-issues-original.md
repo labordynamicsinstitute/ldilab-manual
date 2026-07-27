@@ -53,11 +53,11 @@ If there is an overlapping `CA` case, the next steps depend on what updates the 
 1. Fill out the **Action Items** of the report.
    - These are separated into "Manuscript" and "openICPSR" (these sections are pre-existent in the template)
    - Use a script or manually copy-paste all of the `[REQUIRED]` tags to this list.
-      - [`aeareq`](https://github.com/AEADataEditor/editor-scripts) extracts the `[REQUIRED]` tags and places them at the top of the REPLICATION.md 
+      - [`aea-parse-tags`](https://github.com/AEADataEditor/editor-scripts) extracts the `[REQUIRED]` tags and places them at the top of the REPLICATION.md 
    - Split the action items according to where they can be addressed. Some may be addressable in both sections (for instance, correcting figures and tables, and/or data citations). Others belong only into the "Manuscript" part (IRB, RCT), others only into the "openICPSR" (anything related to code)
    - Order them by importance: `[REQUIRED]` items first, and within these, the most important at the top (correcting bugs, providing missing files).
    - `[SUGGESTED]`  items can be at the end of each section.
-      - [`aeareq`](https://github.com/AEADataEditor/editor-scripts) extracts the `[SUGGESTED]`  tags only if provided with the additional argument `sug`
+      - [`aea-parse-tags`](https://github.com/AEADataEditor/editor-scripts) extracts the `[SUGGESTED]`  tags only if provided with the additional argument `sug`
 1. Fill out the **Summary section** of the report.
    - Start with a thank you, and a positive note: Highlight the merits of the replication i.e. how many figures/tables were replicated, if data citations were properly completed, etc. 
    - Add a template line with the proposed resolution. These are at the top of the [sample-language-report.md](https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md).
