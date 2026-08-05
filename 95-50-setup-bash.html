@@ -327,7 +327,10 @@
 <li class="toctree-l2"><a class="reference internal" href="97-02-openicpsr-authentication.html">openICPSR Authentication</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="96-90-00-useful-scripts.html">Various helpful scripts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-90-00-useful-scripts.html">Various helpful scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-90-01-editor-scripts.html">Installing AEA editor scripts</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="96-91-00-pipeline-intro.html">Automation Explainer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="96-91-pipeline-overview.html">Bitbucket Pipeline Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-92-bitbucket-pipelines.html">Bitbucket Pipelines Configuration</a></li>
@@ -566,11 +569,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-it-works">Verifying it works</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-some-convenience-scripts">Configure some convenience scripts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-not-yet-have-a-home-bin-directory">If you do not yet have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-already-have-a-home-bin-directory">If you already have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-some-convenience-scripts">Configure some convenience scripts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software-dependencies">Other software dependencies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-python-defaults">Configuring Python defaults</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problems">Problems</a></li>
@@ -700,34 +699,7 @@ document.write(`
 </section>
 <section id="configure-some-convenience-scripts">
 <h2>Configure some convenience scripts<a class="headerlink" href="#configure-some-convenience-scripts" title="Link to this heading">#</a></h2>
-<p>We have a bunch of scripts, some of which can make your life easier. See <a class="github reference external" href="https://github.com/AEADataEditor/editor-scripts">AEADataEditor/editor-scripts</a>. You can make these available to your Bash shell by running the following command:</p>
-<section id="if-you-do-not-yet-have-a-home-bin-directory">
-<h3>If you do not yet have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory<a class="headerlink" href="#if-you-do-not-yet-have-a-home-bin-directory" title="Link to this heading">#</a></h3>
-<p>Check first if you already have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span><span class="nv">$HOME</span>/bin
-</pre></div>
-</div>
-<p>If that yields an error, then you don’t have one. So run the next part:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AEADataEditor/editor-scripts<span class="w"> </span><span class="nv">$HOME</span>/bin
-<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/bin
-./install.sh<span class="w"> </span><span class="c1"># installs some Python scripts</span>
-</pre></div>
-</div>
-<p>You should now have access to the various scripts, such as <code class="docutils literal notranslate"><span class="pre">aeagit</span></code> (a bash script) and <code class="docutils literal notranslate"><span class="pre">aea-parse-tags</span></code> (a Python script).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The scripts are actively updated frequently. To update the scripts, run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/bin
-git<span class="w"> </span>pull
-./install.sh<span class="w"> </span><span class="c1"># will re-install and update Python scripts</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="if-you-already-have-a-home-bin-directory">
-<h3>If you already have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory<a class="headerlink" href="#if-you-already-have-a-home-bin-directory" title="Link to this heading">#</a></h3>
-<p>If you <em>do</em> have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory, you will need to manually adjust a few more things. Contact your supervisor.</p>
-</section>
+<p>We have a bunch of scripts, some of which can make your life easier. See the <a class="reference internal" href="96-90-00-useful-scripts.html#helpful-scripts"><span class="std std-ref">Useful scripts</span></a> page.</p>
 </section>
 <section id="other-software-dependencies">
 <h2>Other software dependencies<a class="headerlink" href="#other-software-dependencies" title="Link to this heading">#</a></h2>
@@ -932,11 +904,7 @@ git<span class="w"> </span>pull
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-it-works">Verifying it works</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-some-convenience-scripts">Configure some convenience scripts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-do-not-yet-have-a-home-bin-directory">If you do not yet have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-already-have-a-home-bin-directory">If you already have a <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code> directory</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-some-convenience-scripts">Configure some convenience scripts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software-dependencies">Other software dependencies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-python-defaults">Configuring Python defaults</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problems">Problems</a></li>

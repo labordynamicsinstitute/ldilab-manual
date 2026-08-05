@@ -121,45 +121,7 @@ clear
 
 ## Configure some convenience scripts
 
-We have a bunch of scripts, some of which can make your life easier. See [https://github.com/AEADataEditor/editor-scripts](https://github.com/AEADataEditor/editor-scripts). You can make these available to your Bash shell by running the following command:
-
-### If you do not yet have a `$HOME/bin` directory
-
-Check first if you already have a `$HOME/bin` directory:
-
-```bash
-ls -l $HOME/bin
-```
-
-If that yields an error, then you don't have one. So run the next part:
-
-```bash
-git clone https://github.com/AEADataEditor/editor-scripts $HOME/bin
-cd $HOME/bin
-./install.sh # installs some Python scripts
-```
-
-You should now have access to the various scripts, such as `aeagit` (a bash script) and `aea-parse-tags` (a Python script).
-
-:::{note}
-
-The scripts are actively updated frequently. To update the scripts, run
-
-```bash
-cd $HOME/bin
-git pull
-./install.sh # will re-install and update Python scripts
-```
-
-:::
-
-### If you already have a `$HOME/bin` directory
-
-If you *do* have a `$HOME/bin` directory, you will need to manually adjust a few more things. Contact your supervisor.
-
-
-
-
+We have a bunch of scripts, some of which can make your life easier. See the [Useful scripts](helpful-scripts) page.
 
 ## Other software dependencies
 
