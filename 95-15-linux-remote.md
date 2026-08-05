@@ -14,7 +14,7 @@ We have access to various Linux clusters:
 Run this ONCE the first time you ever access any Linux servers:
 
 ```
-echo "umask 007" >> $HOME/.bash_profile
+echo "umask 007" >> $HOME/.bashrc
 ```
 
 Then do the usual [Bash setup](setup-bash). That should work on nearly any Linux server.
