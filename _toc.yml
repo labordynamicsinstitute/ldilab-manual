@@ -124,6 +124,8 @@ parts:
       - file: 97-01-Bitbucket-authentication
       - file: 97-02-openicpsr-authentication
     - file: 96-90-00-useful-scripts
+      sections:
+      - file: 96-90-01-editor-scripts
     - file: 96-91-00-pipeline-intro
       sections:
       - file: 96-91-pipeline-overview
