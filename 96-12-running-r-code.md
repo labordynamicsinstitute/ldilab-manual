@@ -21,7 +21,7 @@ See [Instructions for BioHPC](r-on-biohpc) for running R code generally on Linux
 A `main.R` file is a R script that will call, in the correct sequence, all the programs necessary to construct analysis datasets, do all computations, and produce figures and tables. If a `main.R` file exists, it should be mentioned in the README. In most cases, running a single `main.R` file is sufficient to complete the reproduction. In general, a main script does not need to be a .R file. However, we will focus on cases where all work done in R is reduced to executing a single .R file.
 
 ```{note}
-If there is no `main.R` file, you should create one. See [previous section](using-config-r).
+If there is no `main.R` file, you should create one from `template-main.R`. See [previous section](using-config-r).
 ```
 
 
@@ -155,7 +155,7 @@ For instance, the following code leverages the Rstudio API to figure out the loc
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 ```
 
-If using the  [`config.R`](using-config-r) setup, this can be easily replaced with 
+If using the  [`template-main.R`](using-config-r) setup, this can be easily replaced with 
 
 ```R
 setwd(rootdir)
