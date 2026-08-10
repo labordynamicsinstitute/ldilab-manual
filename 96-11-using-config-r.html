@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Using config.R in R &#8212; Training Manual For Reproducibility Verification</title>
+    <title>Using template-main.R in R &#8212; Training Manual For Reproducibility Verification</title>
   
   
   
@@ -260,7 +260,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="96-10-using-R.html">R-related procedures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Using config.R in R</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Using template-main.R in R</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-12-running-r-code.html">Running Code in R</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-14-r-on-biohpc.html">Running R on Linux systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-15-r-from-other.html">Running R from other software</a></li>
@@ -551,7 +551,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Using config.R in R</h1>
+    <h1>Using template-main.R in R</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -562,23 +562,23 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-have-to-install-programs">Why do we have to install programs?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-template-config-r">Explaining template-config.R</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-drive-l-drive">S-drive, L-drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-paths-for-log-files-libraries-and-other-things">Directory paths for log files, libraries, and other things</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-template-main-r">Explaining template-main.R</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-packages">Step 1: Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidential-data-location">Confidential data location</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-script-order">Step 3: Script order</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-make-sure-this-script-carries-over">Step 4: Make sure this script carries over</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-root-directory">Base (root) directory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation-source">Package installation source</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Installing packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information">System information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directories-to-create">Directories to create</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-r">How to use config.R</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-the-config-file">Rename the config file.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-r-or-create-main-r">Include config.R or create main.R</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-there-is-a-main-file">If there is a main file…</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-there-is-no-main-file">If there is NO main file…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-template-main-r-does-for-you-automatically">What template-main.R does for you automatically</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-management-with-renv">Package management with renv</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation-source-posit-package-manager">Package installation source (Posit Package Manager)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information-and-the-final-snapshot">System information and the final snapshot</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-template-main-r">How to use template-main.R</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-the-file">Rename the file</a></li>
 </ul>
 </li>
 </ul>
@@ -592,12 +592,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="using-config-r-in-r">
-<span id="using-config-r"></span><h1>Using config.R in R<a class="headerlink" href="#using-config-r-in-r" title="Link to this heading">#</a></h1>
-<p>In “Verification” stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of R. We provide <code class="docutils literal notranslate"><span class="pre">template-config.R</span></code> in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template">template repository</a> you clone which addresses these problems. In this section, we will walk you through how to update the <code class="docutils literal notranslate"><span class="pre">config.R</span></code>, in the <a class="reference internal" href="96-12-running-r-code.html#running-code-in-r"><span class="std std-ref">next section</span></a> how to run R in a way that generates log files automatically.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="using-template-main-r-in-r">
+<span id="using-config-r"></span><h1>Using template-main.R in R<a class="headerlink" href="#using-template-main-r-in-r" title="Link to this heading">#</a></h1>
+<p>In “Verification” stage, we ask you to keep a log of what you do. Moreover, authors often use packages that are not default programs of R, and increasingly use <code class="docutils literal notranslate"><span class="pre">renv</span></code> to pin package versions. We provide <code class="docutils literal notranslate"><span class="pre">template-main.R</span></code> in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template">template repository</a> you clone which addresses these problems. In contrast to the Stata <code class="docutils literal notranslate"><span class="pre">config.do</span></code> file, this file both configures the environment <strong>and</strong> runs the author’s code (a “main” file). In this section, we will walk you through how to set up <code class="docutils literal notranslate"><span class="pre">template-main.R</span></code>; in the <a class="reference internal" href="96-12-running-r-code.html#running-code-in-r"><span class="std std-ref">next section</span></a>, how to run it in a way that generates log files automatically.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If the author use <code class="docutils literal notranslate"><span class="pre">renv</span></code>, or <code class="docutils literal notranslate"><span class="pre">groundhog</span></code>, or other package management systems, you should NOT use <code class="docutils literal notranslate"><span class="pre">config.R</span></code>. Instead, follow the author’s instructions for setting up the environment, and proceed to <a class="reference internal" href="96-12-running-r-code.html#running-code-in-r"><span class="std std-ref">running code in R</span></a>.</p>
+<p>If the authors use <code class="docutils literal notranslate"><span class="pre">groundhog</span></code> or another package management system that is not <code class="docutils literal notranslate"><span class="pre">renv</span></code>, you should NOT use <code class="docutils literal notranslate"><span class="pre">template-main.R</span></code>. Instead, follow the author’s instructions for setting up the environment, and proceed to <a class="reference internal" href="96-12-running-r-code.html#running-code-in-r"><span class="std std-ref">running code in R</span></a>.</p>
+<p>If the authors use <code class="docutils literal notranslate"><span class="pre">renv</span></code>, you should still use <code class="docutils literal notranslate"><span class="pre">template-main.R</span></code>. It  detects and restores an author-provided <code class="docutils literal notranslate"><span class="pre">renv.lock</span></code> automatically (see <a class="reference internal" href="#template-main-renv"><span class="std std-ref">below</span></a>).</p>
 </div>
 <section id="why-do-we-have-to-install-programs">
 <h2>Why do we have to install programs?<a class="headerlink" href="#why-do-we-have-to-install-programs" title="Link to this heading">#</a></h2>
@@ -606,34 +607,36 @@ document.write(`
 <li><p>We differ in installation process from many others in the sense that, we want to install programs in a specified directory that is NOT a system directory.</p>
 <ul>
 <li><p>This is to ensure that the set of packages used by replication package is complete. A complete replication package should be stand-alone, regardless of packages installed elsewhere in the machine that program is run on.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">template-main.R</span></code> achieves this using <code class="docutils literal notranslate"><span class="pre">renv</span></code>, which creates and manages a project-local package library automatically — you do not need to configure this yourself.</p></li>
 </ul>
 </li>
 </ul>
 </section>
-<section id="explaining-template-config-r">
-<h2>Explaining template-config.R<a class="headerlink" href="#explaining-template-config-r" title="Link to this heading">#</a></h2>
-<p>Start by copying the <code class="docutils literal notranslate"><span class="pre">template-config.R</span></code> into the authors’ code directory.</p>
-<section id="installing-packages">
-<h3>Installing packages<a class="headerlink" href="#installing-packages" title="Link to this heading">#</a></h3>
-<p>Any libraries identified by the authors should be listed here, unless the authors already provide a setup program, or lines that install these packages.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">global</span><span class="o">.</span><span class="n">libraries</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;foreign&quot;</span><span class="p">,</span><span class="s2">&quot;devtools&quot;</span><span class="p">,</span><span class="s2">&quot;rprojroot&quot;</span><span class="p">)</span>
+<section id="explaining-template-main-r">
+<h2>Explaining template-main.R<a class="headerlink" href="#explaining-template-main-r" title="Link to this heading">#</a></h2>
+<p>Start by copying <code class="docutils literal notranslate"><span class="pre">template-main.R</span></code> into the authors’ code directory, renaming it to <code class="docutils literal notranslate"><span class="pre">main.R</span></code>. The top of the file has a few things to configure. Everything below a clearly identified line normally does not need to change.</p>
+<section id="step-1-packages">
+<h3>Step 1: Packages<a class="headerlink" href="#step-1-packages" title="Link to this heading">#</a></h3>
+<p>Any libraries identified by the authors as needing manual installation (i.e. that the author’s own code does not already install) should be listed here, in double-quotes, comma-separated.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">readme</span><span class="o">.</span><span class="n">libraries</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">()</span> <span class="c1"># ex: c(&quot;paletteer&quot;, &quot;viridis&quot;)</span>
 </pre></div>
 </div>
 <p>For instance, if the authors say you need <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> and <code class="docutils literal notranslate"><span class="pre">nonsenseR</span></code>, then add them to this line (and remember to keep case exactly as the authors provide it, so <code class="docutils literal notranslate"><span class="pre">nonsenser</span></code> is not the same as <code class="docutils literal notranslate"><span class="pre">nonsenseR</span></code>).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">global</span><span class="o">.</span><span class="n">libraries</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;foreign&quot;</span><span class="p">,</span><span class="s2">&quot;devtools&quot;</span><span class="p">,</span><span class="s2">&quot;rprojroot&quot;</span><span class="p">,</span><span class="s2">&quot;ggplot2&quot;</span><span class="p">,</span><span class="s2">&quot;nonsenseR&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">readme</span><span class="o">.</span><span class="n">libraries</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;ggplot2&quot;</span><span class="p">,</span><span class="s2">&quot;nonsenseR&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>These packages will be installed into the project’s <code class="docutils literal notranslate"><span class="pre">renv</span></code> library, so they are picked up correctly by <code class="docutils literal notranslate"><span class="pre">renv::snapshot()</span></code> at the end of the run.</p>
 </section>
-<section id="s-drive-l-drive">
-<h3>S-drive, L-drive<a class="headerlink" href="#s-drive-l-drive" title="Link to this heading">#</a></h3>
+<section id="confidential-data-location">
+<h3>Confidential data location<a class="headerlink" href="#confidential-data-location" title="Link to this heading">#</a></h3>
 <p>In some cases, authors provide us privately with data that is not part of the public replication package (the part on openICPSR is generally public). We put this on the L-drive, or what used to be called the S-drive. Put the location of that here, if any:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">-</span><span class="n">drive</span> <span class="o">&lt;-</span> <span class="s2">&quot;L:/Workspace/aearep-9999-implicit-nda&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sdrive</span> <span class="o">&lt;-</span> <span class="s2">&quot;L:/Workspace/aearep-9999-implicit-nda&quot;</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are working on Windows (e.g. CCSS-Cloud) then you would need to use <code class="docutils literal notranslate"><span class="pre">/</span></code> or <code class="docutils literal notranslate"><span class="pre">\\</span></code> to write filepaths or use the file.path() function. So, for example, the above would become:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">-</span><span class="n">drive</span> <span class="o">&lt;-</span> <span class="s2">&quot;L:</span><span class="se">\\</span><span class="s2">Workspace</span><span class="se">\\</span><span class="s2">aearep-9999-implicit-nda&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sdrive</span> <span class="o">&lt;-</span> <span class="s2">&quot;L:</span><span class="se">\\</span><span class="s2">Workspace</span><span class="se">\\</span><span class="s2">aearep-9999-implicit-nda&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -641,21 +644,38 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># original author reference</span>
 <span class="c1"># ols.data &lt;- readRDS(&quot;data/confidential/analysis.Rds&quot;)</span>
 <span class="c1"># you change it to</span>
-<span class="n">ols</span><span class="o">.</span><span class="n">data</span> <span class="o">&lt;-</span> <span class="n">readRDS</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">drive</span><span class="p">,</span><span class="s2">&quot;data/confidential/analysis.Rds&quot;</span><span class="p">))</span>
+<span class="n">ols</span><span class="o">.</span><span class="n">data</span> <span class="o">&lt;-</span> <span class="n">readRDS</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">sdrive</span><span class="p">,</span><span class="s2">&quot;data/confidential/analysis.Rds&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
-<section id="directory-paths-for-log-files-libraries-and-other-things">
-<h3>Directory paths for log files, libraries, and other things<a class="headerlink" href="#directory-paths-for-log-files-libraries-and-other-things" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">config.R</span></code> creates a subdirectory for log files, but does not automatically create the log file (in contrast to Stata). Here, you should add any additional directories that your debugging identifies as being necessary. Do write any path names with <code class="docutils literal notranslate"><span class="pre">/</span></code>, not <code class="docutils literal notranslate"><span class="pre">\</span></code>, and leave the directory names already listed untouched.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span><span class="o">.</span><span class="n">paths</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;logs&quot;</span><span class="p">,</span><span class="s2">&quot;libraries&quot;</span><span class="p">)</span>
+<section id="step-3-script-order">
+<h3>Step 3: Script order<a class="headerlink" href="#step-3-script-order" title="Link to this heading">#</a></h3>
+<p>Add all author R scripts to <code class="docutils literal notranslate"><span class="pre">author.programs</span></code>, in the order specified in the README. If the author provides a main or master file, likely only that file needs to be added:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">author</span><span class="o">.</span><span class="n">programs</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span>
+  <span class="s2">&quot;code/pull_race_from_name.R&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<p>For instance, if the authors state that output should be written to “outputs”, you can add</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span><span class="o">.</span><span class="n">paths</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;logs&quot;</span><span class="p">,</span><span class="s2">&quot;libraries&quot;</span><span class="p">,</span><span class="s2">&quot;outputs&quot;</span><span class="p">)</span>
+<p>or, for multiple scripts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">author</span><span class="o">.</span><span class="n">programs</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span>
+  <span class="s2">&quot;code/01_data.R&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;code/02_analysis.R&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;code/03_figures.R&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">config.R</span></code> will create these directories if they do not exist, later on.</p>
+</section>
+<section id="step-4-make-sure-this-script-carries-over">
+<h3>Step 4: Make sure this script carries over<a class="headerlink" href="#step-4-make-sure-this-script-carries-over" title="Link to this heading">#</a></h3>
+<p>Check any author scripts you’re adding to <code class="docutils literal notranslate"><span class="pre">author.programs</span></code> for lines like <code class="docutils literal notranslate"><span class="pre">rm(list</span> <span class="pre">=</span> <span class="pre">ls(all</span> <span class="pre">=</span> <span class="pre">TRUE))</span></code>. Because <code class="docutils literal notranslate"><span class="pre">source()</span></code> runs in the calling (global) environment, such a line would clear everything <code class="docutils literal notranslate"><span class="pre">template-main.R</span></code> just set up — including <code class="docutils literal notranslate"><span class="pre">rootdir</span></code> — partway through the run.</p>
+<div class="admonition-caution admonition">
+<p class="admonition-title">Caution:</p>
+<p>Comment these lines out in the author’s scripts:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># rm(list = ls(all = TRUE))</span>
+<span class="kc">...</span><span class="w"> </span><span class="p">(</span><span class="n">rest</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">code</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="base-root-directory">
 <span id="base-root-directory-r"></span><h3>Base (root) directory<a class="headerlink" href="#base-root-directory" title="Link to this heading">#</a></h3>
@@ -679,7 +699,7 @@ document.write(`
 </pre></div>
 </div>
 <p>In this case, the base directory is <code class="docutils literal notranslate"><span class="pre">aearep-9999/123456/</span></code>.</p>
-<p>You do not actually need to hard-code this in the <code class="docutils literal notranslate"><span class="pre">config.R</span></code> file. We will use a package called <code class="docutils literal notranslate"><span class="pre">here</span></code>, which can detect this automatically, <strong>if</strong> some files are present:</p>
+<p>You do not actually need to hard-code this in <code class="docutils literal notranslate"><span class="pre">template-main.R</span></code>. We will use a package called <code class="docutils literal notranslate"><span class="pre">here</span></code>, which can detect this automatically, <strong>if</strong> some files are present:</p>
 <ul class="simple">
 <li><p>The author has a <code class="docutils literal notranslate"><span class="pre">rproj</span></code> file - it will take that as the base directory.</p></li>
 <li><p>The (hidden) file <code class="docutils literal notranslate"><span class="pre">.here</span></code> is present - it will take the directory that contains that as the base directory.</p></li>
@@ -706,76 +726,54 @@ git<span class="w"> </span>add<span class="w"> </span>.here
 </div>
 </div>
 </section>
-<section id="package-installation-source">
-<h3>Package installation source<a class="headerlink" href="#package-installation-source" title="Link to this heading">#</a></h3>
-<p>As mentioned earlier, there are multiple sources for the R libraries. We generally use the Posit Package Manager (PPM), which provides a snapshot functionality. We pick a date that is close to the date you run this, check whether it is a weekday (because for some reason, PPM does not take snaphshots on weekends), and then configure R to look there for packages. This is both faster and more reliable - mostly. It can sometimes fail.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">posit</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;-</span> <span class="n">Sys</span><span class="o">.</span><span class="n">Date</span><span class="p">()</span> <span class="o">-</span> <span class="mi">31</span>
-<span class="c1"># posit.date &lt;- &quot;2020-01-01&quot; # uncomment and set manually if the above does not work</span>
+<section id="directories-to-create">
+<h3>Directories to create<a class="headerlink" href="#directories-to-create" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">template-main.R</span></code> creates a <code class="docutils literal notranslate"><span class="pre">logs</span></code> subdirectory by default, but does not automatically create any other output directories the author’s code may expect. Add any additional directories that your debugging identifies as being necessary. Do write any path names with <code class="docutils literal notranslate"><span class="pre">/</span></code>, not <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span><span class="o">.</span><span class="n">paths</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;logs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If you have to re-run this multiple times, and add on packages, this might get out of sync with the first time you ran it, so you might adjust the <code class="docutils literal notranslate"><span class="pre">posit.data</span></code> manually.</p>
-</section>
-<section id="id1">
-<h3>Installing packages<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>If the author’s code does not provide install commands, you will need to add any missing packages to a <a class="reference external" href="https://github.com/AEADataEditor/replication-template-development/blob/development/template-config.R#L30">particular location</a> in the <code class="docutils literal notranslate"><span class="pre">config.R</span></code>:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># global.libraries &lt;- c(&quot;devtools&quot;,&quot;rprojroot&quot;)</span>
-<span class="c1"># For example, you can add on two additional ones:</span>
-<span class="n">global.libraries</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;devtools&quot;</span><span class="p">,</span><span class="s">&quot;rprojroot&quot;</span><span class="p">,</span><span class="s">&quot;readxl&quot;</span><span class="p">,</span><span class="s">&quot;ggplot2&quot;</span><span class="p">)</span>
+<p>For instance, if the authors state that output should be written to “outputs”, you can add</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span><span class="o">.</span><span class="n">paths</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;logs&quot;</span><span class="p">,</span><span class="s2">&quot;outputs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This will then install the libraries locally.</p>
-</section>
-<section id="system-information">
-<h3>System information<a class="headerlink" href="#system-information" title="Link to this heading">#</a></h3>
-<p>We require system information as part of the replication package. This is because some commands are sensitive to the OS, R version, machine type, etc. We use the <code class="docutils literal notranslate"><span class="pre">sessionInfo()</span></code> command to get this information.</p>
+<p><code class="docutils literal notranslate"><span class="pre">template-main.R</span></code> will create these directories if they do not exist.</p>
 </section>
 </section>
-<section id="how-to-use-config-r">
-<h2>How to use config.R<a class="headerlink" href="#how-to-use-config-r" title="Link to this heading">#</a></h2>
-<section id="rename-the-config-file">
-<h3>Rename the config file.<a class="headerlink" href="#rename-the-config-file" title="Link to this heading">#</a></h3>
-<p>The template is called <code class="docutils literal notranslate"><span class="pre">template-config.R</span></code>. In order to use it, rename it to <code class="docutils literal notranslate"><span class="pre">config.R</span></code> and move it into the right folder. If there is a <strong>main</strong> file created by the author, put it next to that. If there is NOT a <strong>main</strong> file, put it into the folder that the author says to run the code from.</p>
-<blockquote>
-<div><p><strong>[ACTION]</strong> Check the README or the repository and determine if a master R file was provided.</p>
-</div></blockquote>
-</section>
-<section id="include-config-r-or-create-main-r">
-<h3>Include config.R or create main.R<a class="headerlink" href="#include-config-r-or-create-main-r" title="Link to this heading">#</a></h3>
-<section id="if-there-is-a-main-file">
-<h4>If there is a main file…<a class="headerlink" href="#if-there-is-a-main-file" title="Link to this heading">#</a></h4>
-<p>If there is a main file (say <code class="docutils literal notranslate"><span class="pre">main.R</span></code>), you should put the following line at the beginning of the <code class="docutils literal notranslate"><span class="pre">main.R</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span><span class="p">(</span><span class="s2">&quot;config.R&quot;</span><span class="p">,</span> <span class="n">echo</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition-caution admonition">
-<p class="admonition-title">Caution:</p>
-<p>If there are lines such as <code class="docutils literal notranslate"><span class="pre">rm(list=ls())</span></code> at the start of the <code class="docutils literal notranslate"><span class="pre">main.R</span></code>, you should put the <code class="docutils literal notranslate"><span class="pre">source()</span></code> statement AFTERWARDS (otherwise all the information in the config.R would get cleared):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span><span class="p">(</span><span class="nb">list</span><span class="o">=</span><span class="n">ls</span><span class="p">())</span>
-<span class="n">source</span><span class="p">(</span><span class="s2">&quot;config.R&quot;</span><span class="p">,</span> <span class="n">echo</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p><img alt="Insert source() after any clearing code" src="_images/Using_Config.R.png" /></p>
-</section>
-<section id="if-there-is-no-main-file">
-<h4>If there is NO main file…<a class="headerlink" href="#if-there-is-no-main-file" title="Link to this heading">#</a></h4>
+<section id="what-template-main-r-does-for-you-automatically">
+<h2>What template-main.R does for you automatically<a class="headerlink" href="#what-template-main-r-does-for-you-automatically" title="Link to this heading">#</a></h2>
+<p>Everything below the ASCII-art divider in <code class="docutils literal notranslate"><span class="pre">template-main.R</span></code> runs without edits. It is useful to understand what it does, in case something goes wrong.</p>
+<section id="package-management-with-renv">
+<span id="template-main-renv"></span><h3>Package management with renv<a class="headerlink" href="#package-management-with-renv" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">template-main.R</span></code> now manages packages with <a class="reference external" href="https://rstudio.github.io/renv/"><code class="docutils literal notranslate"><span class="pre">renv</span></code></a> automatically:</p>
 <ul class="simple">
-<li><p>If there is no main file, rename <code class="docutils literal notranslate"><span class="pre">config.R</span></code> to <code class="docutils literal notranslate"><span class="pre">main.R</span></code>, and add the authors’ code files to the end:</p></li>
+<li><p>It searches up to one directory level up and one level down from <code class="docutils literal notranslate"><span class="pre">rootdir</span></code> for an author-provided <code class="docutils literal notranslate"><span class="pre">renv.lock</span></code> file.</p></li>
+<li><p>If one is found, it runs <code class="docutils literal notranslate"><span class="pre">renv::restore()</span></code> against that lockfile, so the exact package versions the author used are installed into a project-local library.</p></li>
+<li><p>If none is found, it initializes a blank, project-local <code class="docutils literal notranslate"><span class="pre">renv</span></code> project instead, so packages you add via <code class="docutils literal notranslate"><span class="pre">readme.libraries</span></code> are still isolated from the rest of the machine.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span><span class="p">(</span><span class="s2">&quot;01_data.R&quot;</span><span class="p">,</span> <span class="n">echo</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
-<span class="n">source</span><span class="p">(</span><span class="s2">&quot;02_analysis.R&quot;</span><span class="p">,</span> <span class="n">echo</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
-<span class="n">source</span><span class="p">(</span><span class="s2">&quot;03_figures.R&quot;</span><span class="p">,</span> <span class="n">echo</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition-caution admonition">
-<p class="admonition-title">Caution:</p>
-<p>If there are lines such as <code class="docutils literal notranslate"><span class="pre">rm(ls())</span></code> in the various files provided by the author, you should comment them out:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># rm(ls())</span>
-<span class="kc">...</span><span class="w"> </span><span class="p">(</span><span class="n">rest</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">code</span><span class="p">)</span>
-</pre></div>
-</div>
+<p>This means you no longer need to special-case authors who use <code class="docutils literal notranslate"><span class="pre">renv</span></code> — the same <code class="docutils literal notranslate"><span class="pre">template-main.R</span></code> handles both cases. (Authors using <code class="docutils literal notranslate"><span class="pre">groundhog</span></code> or another non-<code class="docutils literal notranslate"><span class="pre">renv</span></code> system are still out of scope; see the warning at the top of this page.)</p>
+</section>
+<section id="package-installation-source-posit-package-manager">
+<h3>Package installation source (Posit Package Manager)<a class="headerlink" href="#package-installation-source-posit-package-manager" title="Link to this heading">#</a></h3>
+<p>For packages that are not already pinned by an author’s <code class="docutils literal notranslate"><span class="pre">renv.lock</span></code>, we use the Posit Package Manager (PPM), which provides date-based snapshots. <code class="docutils literal notranslate"><span class="pre">template-main.R</span></code> picks a date about a month in the past, adjusts it off weekends (PPM does not snapshot then). The first time it runs, it writes that date to <code class="docutils literal notranslate"><span class="pre">logs/posit_date.txt</span></code>. Every subsequent run of the same replication package reuses that stored date, so re-running after adding packages stays consistent with the first run.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the stored date is causing problems, delete <code class="docutils literal notranslate"><span class="pre">logs/posit_date.txt</span></code> to regenerate it, or set <code class="docutils literal notranslate"><span class="pre">posit.date</span></code> manually in the script.</p>
 </div>
 </section>
+<section id="system-information-and-the-final-snapshot">
+<h3>System information and the final snapshot<a class="headerlink" href="#system-information-and-the-final-snapshot" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">template-main.R</span></code> records <code class="docutils literal notranslate"><span class="pre">Sys.info()</span></code>, <code class="docutils literal notranslate"><span class="pre">R.version</span></code>, and <code class="docutils literal notranslate"><span class="pre">sessionInfo()</span></code> as part of the log. After the author’s programs have been sourced, it  writes a <code class="docutils literal notranslate"><span class="pre">renv.lock.replicator_snapshot</span></code> file, capturing the exact packages used during the run — without overwriting the author’s original <code class="docutils literal notranslate"><span class="pre">renv.lock</span></code>, if any.</p>
+</section>
+</section>
+<section id="how-to-use-template-main-r">
+<h2>How to use template-main.R<a class="headerlink" href="#how-to-use-template-main-r" title="Link to this heading">#</a></h2>
+<section id="rename-the-file">
+<h3>Rename the file<a class="headerlink" href="#rename-the-file" title="Link to this heading">#</a></h3>
+<p>The template is called <code class="docutils literal notranslate"><span class="pre">template-main.R</span></code>. Rename it to <code class="docutils literal notranslate"><span class="pre">main.R</span></code> and put it into the folder that the author says to run the code from (or next to an existing author main file, if one exists — see <a class="reference internal" href="#step-3-script-order"><span class="xref myst">Step 3</span></a> above for how to fold that into <code class="docutils literal notranslate"><span class="pre">author.programs</span></code>).</p>
+<blockquote>
+<div><p><strong>[ACTION]</strong> Check the README or the repository and determine what the authors’ code entry point(s) are, and list them in <code class="docutils literal notranslate"><span class="pre">author.programs</span></code> in the correct order.</p>
+</div></blockquote>
+<p>Once <code class="docutils literal notranslate"><span class="pre">readme.libraries</span></code>, <code class="docutils literal notranslate"><span class="pre">sdrive</span></code>, <code class="docutils literal notranslate"><span class="pre">author.programs</span></code>, and (if needed) <code class="docutils literal notranslate"><span class="pre">rootdir</span></code> and <code class="docutils literal notranslate"><span class="pre">create.paths</span></code> are set, <code class="docutils literal notranslate"><span class="pre">main.R</span></code> is ready to run — proceed to <a class="reference internal" href="96-12-running-r-code.html#running-code-in-r"><span class="std std-ref">running code in R</span></a>.</p>
 </section>
 </section>
 </section>
@@ -845,23 +843,23 @@ git<span class="w"> </span>add<span class="w"> </span>.here
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-have-to-install-programs">Why do we have to install programs?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-template-config-r">Explaining template-config.R</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-drive-l-drive">S-drive, L-drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-paths-for-log-files-libraries-and-other-things">Directory paths for log files, libraries, and other things</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-template-main-r">Explaining template-main.R</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-packages">Step 1: Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidential-data-location">Confidential data location</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-script-order">Step 3: Script order</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-make-sure-this-script-carries-over">Step 4: Make sure this script carries over</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-root-directory">Base (root) directory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation-source">Package installation source</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Installing packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information">System information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directories-to-create">Directories to create</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-config-r">How to use config.R</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-the-config-file">Rename the config file.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include-config-r-or-create-main-r">Include config.R or create main.R</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-there-is-a-main-file">If there is a main file…</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-there-is-no-main-file">If there is NO main file…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-template-main-r-does-for-you-automatically">What template-main.R does for you automatically</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-management-with-renv">Package management with renv</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation-source-posit-package-manager">Package installation source (Posit Package Manager)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-information-and-the-final-snapshot">System information and the final snapshot</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-template-main-r">How to use template-main.R</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-the-file">Rename the file</a></li>
 </ul>
 </li>
 </ul>

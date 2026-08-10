@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Running R on Linux systems" href="96-14-r-on-biohpc.html" />
-    <link rel="prev" title="Using config.R in R" href="96-11-using-config-r.html" />
+    <link rel="prev" title="Using template-main.R in R" href="96-11-using-config-r.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -260,7 +260,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="96-10-using-R.html">R-related procedures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="96-11-using-config-r.html">Using config.R in R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-11-using-config-r.html">Using template-main.R in R</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Running Code in R</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-14-r-on-biohpc.html">Running R on Linux systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="96-15-r-from-other.html">Running R from other software</a></li>
@@ -610,7 +610,7 @@ document.write(`
 <p>A <code class="docutils literal notranslate"><span class="pre">main.R</span></code> file is a R script that will call, in the correct sequence, all the programs necessary to construct analysis datasets, do all computations, and produce figures and tables. If a <code class="docutils literal notranslate"><span class="pre">main.R</span></code> file exists, it should be mentioned in the README. In most cases, running a single <code class="docutils literal notranslate"><span class="pre">main.R</span></code> file is sufficient to complete the reproduction. In general, a main script does not need to be a .R file. However, we will focus on cases where all work done in R is reduced to executing a single .R file.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If there is no <code class="docutils literal notranslate"><span class="pre">main.R</span></code> file, you should create one. See <a class="reference internal" href="96-11-using-config-r.html#using-config-r"><span class="std std-ref">previous section</span></a>.</p>
+<p>If there is no <code class="docutils literal notranslate"><span class="pre">main.R</span></code> file, you should create one from <code class="docutils literal notranslate"><span class="pre">template-main.R</span></code>. See <a class="reference internal" href="96-11-using-config-r.html#using-config-r"><span class="std std-ref">previous section</span></a>.</p>
 </div>
 </section>
 <section id="step-2-run-the-code">
@@ -718,7 +718,7 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">setwd</span><span class="p">(</span><span class="nf">dirname</span><span class="p">(</span><span class="n">rstudioapi</span><span class="o">::</span><span class="nf">getActiveDocumentContext</span><span class="p">()</span><span class="o">$</span><span class="n">path</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>If using the  <a class="reference internal" href="96-11-using-config-r.html#using-config-r"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">config.R</span></code></span></a> setup, this can be easily replaced with</p>
+<p>If using the  <a class="reference internal" href="96-11-using-config-r.html#using-config-r"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">template-main.R</span></code></span></a> setup, this can be easily replaced with</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">setwd</span><span class="p">(</span><span class="n">rootdir</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -793,7 +793,7 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Using config.R in R</p>
+        <p class="prev-next-title">Using template-main.R in R</p>
       </div>
     </a>
     <a class="right-next"
