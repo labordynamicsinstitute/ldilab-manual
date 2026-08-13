@@ -30,7 +30,7 @@ Is the current Jira issue an **original report** (first time we see the manuscri
     - Once you have entered the previous repository "stub" into the `Bitbucket short name` field, you can proceed to [`In Progress`](in-progress).
 
 ```{warning}
-If a field on Jira is already filled out, **do not edit it**. The only exception is if software is missing from the `Software used` field.
+If a field on Jira is already filled out, **do not edit it**. The only exception is the `Software used` checkbox field and the `Software used (other)` text field: the pipeline automatically checks/fills these in as it scans the deposit's code, so treat them as review-only, but add anything missing that the pipeline can't detect from code alone (e.g. Excel, ArcGIS, QGIS, Dynare, or any other GUI-only or non-code-file software).
 ```
 
 ## If this is not a revision

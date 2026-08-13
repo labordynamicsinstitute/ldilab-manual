@@ -1,3 +1,4 @@
+(checking-unassigned-tickets)=
 # Checking Unassigned Jira Tickets
 
 ## Setup
@@ -78,7 +79,16 @@ Now you need to open the draft replication deposit (typically, but not always on
 - Click on the `Replication Package URL`, which will open up a separate tab. 
 - Find the README in the deposit.
 - Click on the README (you can preview, probably do not need to download) and scan through to identify the software used
-- Go to the tab `Repl info` and add the software identified to the  `Software Used` field.
+- Go to the tab `Repl info` and check the software identified in the `Software used` field (Stata, MATLAB, R, Python, SAS, Julia, Excel, Fortran, Mathematica, Dynare, QGIS, ArcGIS). If software is used that isn't one of these checkboxes, type it into the `Software used (other)` text field instead.
+
+```{note}
+Once the deposit's code is pulled and scanned (during [Preparing to run code](prepare-to-run-code)), the pipeline automatically checks the boxes for anything it recognizes from the program files. This early pass from the README is just a first guess and will be refined automatically later — don't worry about being exhaustive here.
+```
+
+```{admonition} How to handle Excel
+:class: tip
+Only check `Excel` if it was used to **actively compute values or produce a chart/figure** as part of the analysis. If Excel is only used to store or view data (a `.xlsx`/`.xls` file with no formulas or macros driving the analysis), do not check it — that's a data format, not software used for the analysis.
+```
 
 ```{admonition} If there is no README...
 :class: dropdown
