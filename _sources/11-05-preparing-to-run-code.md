@@ -158,12 +158,16 @@ Now is a good time to understand the code in a bit more detail:
   - Use this to create a list of all Tables and Figures in the paper
   - You will use this to guide later to tabulate your findings!
 - [ ] Fill out the "**Code Description**" section of the `REPLICATION-PartB.md`
-  - Provide some information about the program files (are there 3 Stata files? Are there 5 Matlab programs?). You will use this information to fill out the `Software Used` (in the main task) later as well, but provide details here.
+  - Provide some information about the program files (are there 3 Stata files? Are there 5 Matlab programs?). Provide details here.
     - You can use the file "`generated/programs-list.txt` to help you here.
   - Did you have difficulty aligning the README with the files? Does the sequence suggested by the programs differ from what's written in the README? 
   - Are there files in the archive not explained in the README?
   - Copy-and-paste the *code-check.xlsx* into the code description part, listing the programs. Omit the "Reproduced?" Column in doing so. Use the [Excel-to-Markdown plugin](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table) for VSCode. 
     - This table will be pasted in under "Findings" again, with "Reproduced?" column, once code has been run.
+
+```{note} Software used field
+By this point, the `Software used` checkbox field on the main task should already be checked automatically from the program files the pipeline scanned. **Review it rather than filling it in from scratch** — correct anything wrong, and add anything the pipeline can't detect from code alone (GUI-only or data-analysis tools like Excel, ArcGIS, QGIS; or command languages without a distinct file extension, like Dynare) to the `Software used (other)` text field. See the Excel-handling note in [Checking Unassigned Tickets](checking-unassigned-tickets) — only check Excel if it actively computes values or produces a figure, not if it's just used to store data.
+```
 
 ## Verify that you can actually run the code
 

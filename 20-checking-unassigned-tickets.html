@@ -577,7 +577,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="checking-unassigned-jira-tickets">
-<h1>Checking Unassigned Jira Tickets<a class="headerlink" href="#checking-unassigned-jira-tickets" title="Link to this heading">#</a></h1>
+<span id="checking-unassigned-tickets"></span><h1>Checking Unassigned Jira Tickets<a class="headerlink" href="#checking-unassigned-jira-tickets" title="Link to this heading">#</a></h1>
 <section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <div class="dropdown admonition">
@@ -666,8 +666,16 @@ document.write(`
 <li><p>Click on the <code class="docutils literal notranslate"><span class="pre">Replication</span> <span class="pre">Package</span> <span class="pre">URL</span></code>, which will open up a separate tab.</p></li>
 <li><p>Find the README in the deposit.</p></li>
 <li><p>Click on the README (you can preview, probably do not need to download) and scan through to identify the software used</p></li>
-<li><p>Go to the tab <code class="docutils literal notranslate"><span class="pre">Repl</span> <span class="pre">info</span></code> and add the software identified to the  <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">Used</span></code> field.</p></li>
+<li><p>Go to the tab <code class="docutils literal notranslate"><span class="pre">Repl</span> <span class="pre">info</span></code> and check the software identified in the <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">used</span></code> field (Stata, MATLAB, R, Python, SAS, Julia, Excel, Fortran, Mathematica, Dynare, QGIS, ArcGIS). If software is used that isn’t one of these checkboxes, type it into the <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">used</span> <span class="pre">(other)</span></code> text field instead.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once the deposit’s code is pulled and scanned (during <a class="reference internal" href="11-05-preparing-to-run-code.html#prepare-to-run-code"><span class="std std-ref">Preparing to run code</span></a>), the pipeline automatically checks the boxes for anything it recognizes from the program files. This early pass from the README is just a first guess and will be refined automatically later — don’t worry about being exhaustive here.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">How to handle Excel</p>
+<p>Only check <code class="docutils literal notranslate"><span class="pre">Excel</span></code> if it was used to <strong>actively compute values or produce a chart/figure</strong> as part of the analysis. If Excel is only used to store or view data (a <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>/<code class="docutils literal notranslate"><span class="pre">.xls</span></code> file with no formulas or macros driving the analysis), do not check it — that’s a data format, not software used for the analysis.</p>
+</div>
 <div class="dropdown admonition">
 <p class="admonition-title">If there is no README…</p>
 <p>If there is no README, alert the Assistant Data Editor, who will create a <a class="reference external" href="https://aeadataeditor.github.io/LDI-Research-Aide/procedures/Writing-Short-Report/">short report</a> and send this case back to the authors.</p>

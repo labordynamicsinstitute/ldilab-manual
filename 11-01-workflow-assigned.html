@@ -613,7 +613,7 @@ document.write(`
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If a field on Jira is already filled out, <strong>do not edit it</strong>. The only exception is if software is missing from the <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">used</span></code> field.</p>
+<p>If a field on Jira is already filled out, <strong>do not edit it</strong>. The only exception is the <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">used</span></code> checkbox field and the <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">used</span> <span class="pre">(other)</span></code> text field: the pipeline automatically checks/fills these in as it scans the deposit’s code, so treat them as review-only, but add anything missing that the pipeline can’t detect from code alone (e.g. Excel, ArcGIS, QGIS, Dynare, or any other GUI-only or non-code-file software).</p>
 </div>
 </section>
 </section>
