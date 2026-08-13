@@ -101,3 +101,44 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_build/html
+
+  # Deploy a live per-PR preview to Cloudflare Pages, for pull requests
+  # opened from a branch of this repository (not a fork -- forks can't
+  # read deploy secrets). Posts (or updates) the preview link as a PR
+  # comment. See README-DEPLOYMENT.md for the one-time Cloudflare setup.
+  preview:
+    needs: build
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write     # only for the PR comment
+    steps:
+    - name: Download built HTML
+      uses: actions/download-artifact@v5
+      with:
+        name: book-html
+        path: ./_build/html
+
+    - name: Deploy PR preview
+      id: preview
+      uses: cloudflare/wrangler-action@v4
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        command: >-
+          pages deploy ./_build/html
+          --project-name=${{ github.event.repository.name }}
+          --branch=pr-${{ github.event.pull_request.number }}
+
+    - name: Publish preview link
+      if: steps.preview.outcome == 'success'
+      env:
+        GH_TOKEN: ${{ github.token }}
+        REPO: ${{ github.repository }}
+        PR: ${{ github.event.pull_request.number }}
+        URL: ${{ steps.preview.outputs.pages-deployment-alias-url }}
+      run: |
+        echo "📖 Preview: $URL" >> "$GITHUB_STEP_SUMMARY"
+        gh pr comment "$PR" --repo "$REPO" --edit-last --create-if-none \
+          --body "📖 **Preview:** $URL — commit \`${GITHUB_SHA:0:7}\`"
