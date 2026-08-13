@@ -20,10 +20,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     - name: Set up Python 3.10
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
         python-version: '3.10'
         cache: 'pip' # caching pip dependencies
@@ -37,7 +37,7 @@ jobs:
         jupyter-book build .
 
     - name: Upload built HTML
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: book-html
         path: ./_build/html
@@ -48,10 +48,10 @@ jobs:
   build-pdf:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     - name: Set up Python 3.10
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
         python-version: '3.10'
         cache: 'pip' # caching pip dependencies
@@ -69,7 +69,7 @@ jobs:
       continue-on-error: true
 
     - name: Upload built PDF
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: book-pdf
         path: ./_build/pdf
@@ -84,13 +84,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download built HTML
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v5
       with:
         name: book-html
         path: ./_build/html
 
     - name: Download built PDF
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v5
       continue-on-error: true
       with:
         name: book-pdf
