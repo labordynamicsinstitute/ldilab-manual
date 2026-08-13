@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Deployment &amp; PR previews &#8212; Training Manual For Reproducibility Verification</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css?v=668b42aa" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'README-DEPLOYMENT';</script>
+    <link rel="canonical" href="https://labordynamicsinstitute.github.io/ldilab-manual/README-DEPLOYMENT.html" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">This is not yet fully debugged - report any issues!</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="Training Manual For Reproducibility Verification - Home"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Training Manual For Reproducibility Verification - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-background.html">Background</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Preliminary Tasks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="02-01-pre-requisites.html">Pre-requisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="02-02-pre-training-tasks.html">Pre-training tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-03-toolkit.html">Toolkit</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="04-01-concepts.html">Basic Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-02-reproducible-practices.html">Reproducible practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-03-readme-template.html">The README template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-data-citations-and-das.html">Data citations and data availability statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-basic-flow.html">Generic data workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-basic-assessing-reproducibility.html">Assessing computational reproducibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-details-replication-report.html">A guided walk through the Replication Report</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">AEA-specific Jira Workflow</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="11-00-jira-workflow.html">AEA Jira workflow</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="11-01-workflow-assigned.html">Assigned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-02-workflow-create-repo.html">Creating a repository and running pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-03-workflow-in-progress.html">In Progress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-04-workflow-parta.html">Preparing Part A - Preliminary Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-05-preparing-to-run-code.html">Preparing to Run Code (Part B)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-06-running-code.html">Running Code (Part B)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-07-workflow-writing-report.html">Writing Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-08-report-completed.html">Report completed</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="12-jira-revision-guidance.html">AEA: Revision reports after author resubmission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00-meetings.html">AEA-related meetings</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced AEA-related tasks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20-checking-unassigned-tickets.html">Checking Unassigned Jira Tickets</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="13-approving-issues.html">AEA: Reviewing and (Pre-) Approving Reports</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="13-1-approving-issues-original.html">Original Replication Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13-2-approving-issues-revision.html">Revision Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13-3-approving-recommendations.html">Choosing a Recommendation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="30-jira-prepare-publication.html">AEA: Submitting information back to the Editorial Office and to authors</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="31-jira-openicpsr-setup.html">Basic setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="32-jira-submitting.html">Submitting to the JMS ScholarOne</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33-jira-delete-nda-data.html">Deleting restricted data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="34-openicpsr-preparing.html">Submitting deposit-related information via openICPSR</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="50-openicpsr-related-tasks.html">AEA: Interfacing with repositories</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="51-openicpsr-monitoring-pending.html">AEA: Monitoring Pending openICPSR Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="52-openicpsr-publishing-deposit.html">AEA: Publishing a deposit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="53-openicpsr-add-article-doi.html">Adding the article DOI to the openICPSR deposit metadata</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="40-Instructions-PandP-Checks.html">AEA: Instructions for Papers and Proceedings checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Running code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="96-00-running-code.html">Guidelines for running code</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-00-using-Stata.html">Stata-related procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-01-using-config-stata.html">Using config.do in STATA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-02-running-stata-code.html">Running Code in Stata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-03-stata-scan-packages.html">Using scan_packages.do</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-04-stata-on-linux.html">Stata on Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-05-debugging-stata.html">Debugging Stata</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-10-using-R.html">R-related procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-11-using-config-r.html">Using template-main.R in R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-12-running-r-code.html">Running Code in R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-14-r-on-biohpc.html">Running R on Linux systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-15-r-from-other.html">Running R from other software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-16-debugging-r.html">Debugging R</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-20-using-matlab.html">MATLAB-related procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-21-using-config-matlab.html">Adding <code class="docutils literal notranslate"><span class="pre">config.m</span></code> to MATLAB and path names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-22-running-matlab-code.html">Running MATLAB without the desktop GUI and with log file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-23-dynare-matlab.html">Running Dynare from MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-24-debugging-matlab.html">Debugging MATLAB-related problems</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="96-30-running-python-jupyter.html">Python-related procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="96-40-using-julia.html">Julia-related procedures</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-50-using-docker.html">Docker-related procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-51-docker-windows.html">Docker on Windows</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="96-70-using-mathematica.html">Mathematica-related procedures</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-80-sundry.html">Rare software</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-81-using-ox.html">Ox-related procedures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-82-installing-add-ons.html">Mosek</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sundry other guidance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="71-External-reproducibility-checks.html">External reproducibility checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="90-Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="91-setup-checklist.html">Setup Checklist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="92-Privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="93-Communication.html">Communication</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="60-tips-for-identifying-differences.html">Identifying differences between original manuscript and reproduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="61-screenshot-windows.html">Using screenshot and annotation tools on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="62-screenshot-macos.html">Using screenshot and annotation tools on macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="68-include-screenshots-in-report.html">Include Screenshots in the Report</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="94-00-downloading-data.html">Downloading Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="94-01-how-to-use-openICPSR-backend.html">Using pre-publication openICPSR Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="94-02-alternate-downloads.html">Alternate sources of data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="94-03-private-data.html">Accessing privately provided data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="94-05-globus-transfers.html">Globus Transfers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="94-04-Updating_Materials.html">Updating Replication Materials after Revisions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="95_Access_to_computers.html">Access to Computers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="95-10-windows-remote.html">Connecting to remote Windows servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-15-linux-remote.html">Connecting to remote Linux servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-20-codeocean.html">Reproducibility Checks in Codeocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-30-wholetale.html">Conducting reproducibility checks on WholeTale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-40-codespaces.html">Computing using Github Codespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-50-setup-bash.html">Setting up your Bash environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="95-60-general-setup.html">Additional setup instructions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="97-00-authentication.html">Authentication-related issues</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="97-01-Bitbucket-authentication.html">Bitbucket Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="97-02-openicpsr-authentication.html">openICPSR Authentication</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-90-00-useful-scripts.html">Various helpful scripts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-90-01-editor-scripts.html">Installing AEA editor scripts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="96-91-00-pipeline-intro.html">Automation Explainer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="96-91-pipeline-overview.html">Bitbucket Pipeline Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="96-92-bitbucket-pipelines.html">Bitbucket Pipelines Configuration</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="98-00-sundry-correspondence.html">Various templates for correspondence by AEA Data Editor team members</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="98-01-correspondence-legacy-updates.html">Preparing a Legacy Deposit for Updates by Authors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="98-02-correspondence-ipums-beta-request.html">IPUMS Beta API request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="98-03-correspondence-requesting-restricted-access-data.html">Requesting Restricted-Access Data from Authors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="98-04-correspondence-external-reproducibility-check.html">Request for External Reproducibility Check (general)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="98-05-clarification-privately-provided.html">Clarification regarding privately-provided restricted access files</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="99-tricky-stuff.html">Technical issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LDI-Replication-Lab-Code-of-Conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Video-etiquette.html">Videoconferencing Rules and Etiquette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99-References.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99-older-versions.html">Older versions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/edit/main/README-DEPLOYMENT.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/labordynamicsinstitute/ldilab-manual/issues/new?title=Issue%20on%20page%20%2FREADME-DEPLOYMENT.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/README-DEPLOYMENT.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Deployment & PR previews</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-time-cloudflare-pages-setup">One-time Cloudflare Pages setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#after-setup">After setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-the-repository-is-ever-renamed">If the repository is ever renamed</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="deployment-pr-previews">
+<h1>Deployment &amp; PR previews<a class="headerlink" href="#deployment-pr-previews" title="Link to this heading">#</a></h1>
+<p>This repo’s manual is built with Jupyter Book and published to <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>
+via <a class="reference download internal" download="" href="_downloads/90829e76e906f1c73140c7ded7e1b268/main.yml"><span class="xref download myst">.github/workflows/main.yml</span></a>. That workflow
+has four jobs:</p>
+<ul class="simple">
+<li><p><strong>build</strong> — always runs (push to <code class="docutils literal notranslate"><span class="pre">main</span></code>, pull requests). Builds the
+Jupyter Book HTML and uploads it as a workflow artifact named
+<code class="docutils literal notranslate"><span class="pre">book-html</span></code>.</p></li>
+<li><p><strong>build-pdf</strong> — always runs alongside <code class="docutils literal notranslate"><span class="pre">build</span></code>. Builds the printable PDF
+and uploads it as a workflow artifact named <code class="docutils literal notranslate"><span class="pre">book-pdf</span></code>.</p></li>
+<li><p><strong>deploy</strong> — runs only on pushes to <code class="docutils literal notranslate"><span class="pre">main</span></code>. Downloads <code class="docutils literal notranslate"><span class="pre">book-html</span></code> (and
+<code class="docutils literal notranslate"><span class="pre">book-pdf</span></code>, if it built successfully) and pushes them to the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>
+branch, which serves the live site.</p></li>
+<li><p><strong>preview</strong> — runs on pull requests opened from a branch of this
+repository (not a fork). Downloads the <code class="docutils literal notranslate"><span class="pre">book-html</span></code> artifact and deploys
+it to <a class="reference external" href="https://pages.cloudflare.com/">Cloudflare Pages</a> as a per-PR
+preview, then posts (or updates) a comment on the PR with the preview
+link.</p></li>
+</ul>
+<p>Forked PRs never run the <code class="docutils literal notranslate"><span class="pre">preview</span></code> job’s deploy step, since forks don’t have
+access to repository secrets — that’s a GitHub Actions security boundary,
+not a bug.</p>
+<p>The Cloudflare Pages <strong>project name is derived automatically</strong> from the
+GitHub repository name (<code class="docutils literal notranslate"><span class="pre">${{</span> <span class="pre">github.event.repository.name</span> <span class="pre">}}</span></code> in the
+workflow) — currently <code class="docutils literal notranslate"><span class="pre">ldilab-manual</span></code>. Nothing in the workflow needs
+editing if the repo is ever renamed; only the one-time Cloudflare project
+creation below needs to match.</p>
+<section id="one-time-cloudflare-pages-setup">
+<h2>One-time Cloudflare Pages setup<a class="headerlink" href="#one-time-cloudflare-pages-setup" title="Link to this heading">#</a></h2>
+<p>You need a Cloudflare account and an API token before the <code class="docutils literal notranslate"><span class="pre">preview</span></code> job can
+deploy anything.</p>
+<ol class="arabic">
+<li><p><strong>Create the Cloudflare API token.</strong>
+In the Cloudflare dashboard: <strong>My Profile → API Tokens → Create Token</strong>,
+using a custom token with <code class="docutils literal notranslate"><span class="pre">Account.Cloudflare</span> <span class="pre">Pages:</span> <span class="pre">Edit</span></code> permission.
+Copy the token value — it’s only shown once.</p></li>
+<li><p><strong>Find your Cloudflare Account ID.</strong>
+It’s shown on the right-hand sidebar of any zone/domain overview page in
+the Cloudflare dashboard, or via <code class="docutils literal notranslate"><span class="pre">wrangler</span> <span class="pre">whoami</span></code> if you have Wrangler
+installed locally.</p></li>
+<li><p><strong>Set both as GitHub Actions secrets on this repo</strong>, using the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI
+(run from the repo root, or add <code class="docutils literal notranslate"><span class="pre">--repo</span> <span class="pre">labordynamicsinstitute/ldilab-manual</span></code>
+from elsewhere):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_API_TOKEN<span class="w"> </span>--body<span class="w"> </span><span class="s2">&quot;&lt;paste the API token&gt;&quot;</span>
+gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_ACCOUNT_ID<span class="w"> </span>--body<span class="w"> </span><span class="s2">&quot;&lt;paste the account ID&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Or omit <code class="docutils literal notranslate"><span class="pre">--body</span></code> to be prompted / pipe the value in:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_API_TOKEN
+<span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;&lt;account id&gt;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_ACCOUNT_ID
+</pre></div>
+</div>
+<p>If you keep these values in 1Password, pipe them straight from the <code class="docutils literal notranslate"><span class="pre">op</span></code>
+CLI instead of copy-pasting. This assumes a <code class="docutils literal notranslate"><span class="pre">cloudflare.com</span></code> item with
+an “Account ID” field and a per-repo “API token: <code class="docutils literal notranslate"><span class="pre">&lt;repo&gt;</span></code>” field:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">REPO</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+op<span class="w"> </span>item<span class="w"> </span>get<span class="w"> </span><span class="s2">&quot;cloudflare.com&quot;</span><span class="w"> </span>--fields<span class="w"> </span><span class="s2">&quot;API token: </span><span class="nv">$REPO</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_API_TOKEN
+op<span class="w"> </span>item<span class="w"> </span>get<span class="w"> </span><span class="s2">&quot;cloudflare.com&quot;</span><span class="w"> </span>--fields<span class="w"> </span><span class="s2">&quot;Account ID&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_ACCOUNT_ID
+</pre></div>
+</div>
+</li>
+<li><p><strong>Create the Cloudflare Pages project.</strong> This must be done locally,
+before opening a preview PR — <code class="docutils literal notranslate"><span class="pre">wrangler</span> <span class="pre">pages</span> <span class="pre">deploy</span></code> in CI does not
+create the project on its own. Create it once with
+<a class="reference external" href="https://developers.cloudflare.com/workers/wrangler/">Wrangler</a>
+(requires Node.js), run from the repo root so the project name is
+picked up from the checkout directory rather than typed by hand, and
+set <code class="docutils literal notranslate"><span class="pre">main</span></code> as the production branch:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npx<span class="w"> </span>wrangler<span class="w"> </span>login
+npx<span class="w"> </span>wrangler<span class="w"> </span>pages<span class="w"> </span>project<span class="w"> </span>create<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>--production-branch<span class="w"> </span>main
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify the secrets are set:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>secret<span class="w"> </span>list
+</pre></div>
+</div>
+<p>You should see <code class="docutils literal notranslate"><span class="pre">CLOUDFLARE_API_TOKEN</span></code> and <code class="docutils literal notranslate"><span class="pre">CLOUDFLARE_ACCOUNT_ID</span></code> listed
+(values are never shown, only names and update times).</p>
+</li>
+</ol>
+</section>
+<section id="after-setup">
+<h2>After setup<a class="headerlink" href="#after-setup" title="Link to this heading">#</a></h2>
+<p>Once the secrets exist, every PR from a repo branch (not a fork) will get:</p>
+<ul class="simple">
+<li><p>A live preview at a Cloudflare Pages URL specific to that PR
+(<code class="docutils literal notranslate"><span class="pre">--branch=pr-&lt;PR</span> <span class="pre">number&gt;</span></code>), rebuilt on every push to the PR.</p></li>
+<li><p>A PR comment with the preview link, edited in place on each new commit
+rather than re-posted.</p></li>
+</ul>
+</section>
+<section id="if-the-repository-is-ever-renamed">
+<h2>If the repository is ever renamed<a class="headerlink" href="#if-the-repository-is-ever-renamed" title="Link to this heading">#</a></h2>
+<p>The Cloudflare Pages project name must be created to match the new
+repository name (Cloudflare project names can’t easily be renamed once
+created). If you rename this repo, create a new Cloudflare Pages project
+matching the new name (step 4 above) — the workflow itself needs no
+changes, since it reads the project name from GitHub at deploy time.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-time-cloudflare-pages-setup">One-time Cloudflare Pages setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#after-setup">After setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-the-repository-is-ever-renamed">If the repository is ever renamed</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lars Vilhuber, Dane Clunk, Michael Darisse, Sofia Encarnación, David Graham, Julia Hewitt, ilanith Nizard, Leonel Borja Plaza, Takshil Sachdev, Hyuk Son, Linda Wang, David Wasser, Meredith Welch
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2018-2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
