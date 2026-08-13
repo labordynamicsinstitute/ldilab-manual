@@ -564,6 +564,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signalling-where-you-are">Signalling where you are</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-merge-pipeline">Run the Merge Pipeline</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-steps">Standard steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-pdf-figures-properly">Handling PDF Figures Properly</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correct-workflow-for-pdf-figures">Correct Workflow for PDF Figures</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-up">Cleaning up</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-jira">On Jira</a></li>
 </ul>
@@ -732,6 +736,23 @@ Figure 5 as reproduced:
 <li><p>If there are <strong>too</strong> many differences, let us know immediately, we may then simply send back to the authors with the raw output, and let them address it.</p></li>
 <li><p>There is sample language for commonly encountered problems at the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/sample-language-report.md">sample-language-report.md</a> link in the tall grey bar</p></li>
 </ul>
+</section>
+<section id="handling-pdf-figures-properly">
+<h2>Handling PDF Figures Properly<a class="headerlink" href="#handling-pdf-figures-properly" title="Link to this heading">#</a></h2>
+<p>If the generated output is a PDF and you observe discrepancies, <strong>do not take screenshots of the PDFs and place them in the root directory</strong>. Doing so causes confusion in the revision round.</p>
+<section id="correct-workflow-for-pdf-figures">
+<h3>Correct Workflow for PDF Figures<a class="headerlink" href="#correct-workflow-for-pdf-figures" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Identify PDF output</strong>: Locate the PDF figures produced by the replication code in the appropriate directory.</p></li>
+<li><p><strong>Run the conversion pipeline</strong>: Use the <code class="docutils literal notranslate"><span class="pre">6-convert-eps-pdf</span></code> pipeline to convert PDFs to PNGs automatically.</p>
+<ul class="simple">
+<li><p>When prompted for the path, <strong>enter the relative path from the repo root, without quotes</strong>.</p></li>
+<li><p>The pipeline will generate PNGs in the <strong>same directory</strong> as the PDFs.</p></li>
+</ul>
+</li>
+<li><p><strong>Update your local repo</strong>: After the pipeline finishes, make sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></li>
+<li><p><strong>Reference PNGs in the report</strong>: Use the generated PNGs where they exist in the replication directory; do not move them to the root directory.</p></li>
+</ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Advanced: Comparing TeX files on Bitbucket</p>
 <p>If the authors provided LaTeX files as part of the replication package, you may be able to leverage Bitbucket or Git to compare them.</p>
@@ -767,6 +788,7 @@ Figure 5 as reproduced:
 </ul>
 <p><img alt="0 lines changes" src="_images/Bitbucket-diff-ignore-whitespace-summary.png" /></p>
 </div>
+</section>
 </section>
 <section id="cleaning-up">
 <h2>Cleaning up<a class="headerlink" href="#cleaning-up" title="Link to this heading">#</a></h2>
@@ -867,6 +889,10 @@ git<span class="w"> </span>push
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signalling-where-you-are">Signalling where you are</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-merge-pipeline">Run the Merge Pipeline</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-steps">Standard steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-pdf-figures-properly">Handling PDF Figures Properly</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correct-workflow-for-pdf-figures">Correct Workflow for PDF Figures</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-up">Cleaning up</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-jira">On Jira</a></li>
 </ul>
