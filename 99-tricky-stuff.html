@@ -590,7 +590,7 @@ document.write(`
 <li><p>First, be sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> all EPS files, then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> them, followed by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>.</p></li>
 <li><p>Go to the <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> tab in Bitbucket for your repository, and</p>
 <ul>
-<li><p>choose the <code class="docutils literal notranslate"><span class="pre">6-convert-eps-pdf</span></code> pipeline.</p></li>
+<li><p>choose the <a class="reference external" href="https://aeadataeditor.github.io/replication-template/automations/bitbucket-pipelines/#id-9-6-convert-eps-pdf"><code class="docutils literal notranslate"><span class="pre">6-convert-eps-pdf</span></code></a> pipeline.</p></li>
 <li><p>enter the <code class="docutils literal notranslate"><span class="pre">openICPSRID</span></code> that is being used (this field can also handle a deeper directory, such as <code class="docutils literal notranslate"><span class="pre">openICPSRID/replication_package</span></code>, but you will rarely need to use this).</p></li>
 <li><p>by default, the pipeline will only convert <code class="docutils literal notranslate"><span class="pre">.eps</span></code> to <code class="docutils literal notranslate"><span class="pre">.png</span></code>, but you can also select <code class="docutils literal notranslate"><span class="pre">yes</span></code> in the <code class="docutils literal notranslate"><span class="pre">ProcessPDF</span></code> field if you need PDF files.</p></li>
 </ul>
@@ -609,7 +609,7 @@ document.write(`
 <h3>If the commit has not been pushed yet<a class="headerlink" href="#if-the-commit-has-not-been-pushed-yet" title="Link to this heading">#</a></h3>
 <p>This works if you have only a single commit where this is an issue, i.e., your <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> shows something like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">master</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">ahead</span> <span class="n">of</span> <span class="s1">&#39;origin/master&#39;</span> <span class="n">by</span> <span class="mi">1</span> <span class="n">commit</span><span class="o">.</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">ahead</span> <span class="n">of</span> <span class="s1">'origin/master'</span> <span class="n">by</span> <span class="mi">1</span> <span class="n">commit</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>First, find the file:</p>
@@ -622,7 +622,7 @@ git<span class="w"> </span>show<span class="w"> </span>--pretty<span class="o">=
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>show<span class="w"> </span>--pretty<span class="o">=</span>format:<span class="w"> </span>--name-only<span class="w"> </span><span class="nv">$commit</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>file<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w">        </span>ls<span class="w"> </span>-l<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nk<span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w">    </span><span class="k">done</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>show<span class="w"> </span>--pretty<span class="o">=</span>format:<span class="w"> </span>--name-only<span class="w"> </span><span class="nv">$commit</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>file<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w">        </span>ls<span class="w"> </span>-l<span class="w"> </span><span class="s2">"</span><span class="nv">$file</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nk<span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w">    </span><span class="k">done</span>
 </pre></div>
 </div>
 <p>where the largest files should be at the bottom of that list.</p>
@@ -636,7 +636,7 @@ git<span class="w"> </span>commit<span class="w"> </span>--amend
 <h3>If there are more than 1 commits<a class="headerlink" href="#if-there-are-more-than-1-commits" title="Link to this heading">#</a></h3>
 <p>If your <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> shows</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">branch</span> <span class="n">master</span>
-<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">ahead</span> <span class="n">of</span> <span class="s1">&#39;origin/master&#39;</span> <span class="n">by</span> <span class="mi">2</span> <span class="n">commits</span><span class="o">.</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">ahead</span> <span class="n">of</span> <span class="s1">'origin/master'</span> <span class="n">by</span> <span class="mi">2</span> <span class="n">commits</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>(or more), you will need to rewrite the history. This is a bit more complicated, but it can be done. The following steps will rewrite the history of the last 3 commits.</p>
@@ -669,13 +669,13 @@ git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </sp
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the original cloned repository for aearep-xxxx</span>
 <span class="nv">xxxx</span><span class="o">=</span><span class="m">4406</span>
 git<span class="w"> </span>rm<span class="w"> </span>data/path/to/VERYLARGEFILE
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;Removing big files&#39;</span><span class="w"> </span>-a
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'Removing big files'</span><span class="w"> </span>-a
 git<span class="w"> </span>push
 <span class="nb">cd</span><span class="w"> </span>..
-<span class="c1"># The &quot;--bare&quot; is very important here!</span>
+<span class="c1"># The "--bare" is very important here!</span>
 git<span class="w"> </span>clone<span class="w"> </span>--bare<span class="w"> </span>git@bitbucket.org:aeaverification/aearep-<span class="si">${</span><span class="nv">xxxx</span><span class="si">}</span>.git
 <span class="c1"># remove all rds files</span>
-java<span class="w"> </span>-jar<span class="w"> </span>bfg-1.14.0.jar<span class="w"> </span>-D<span class="w"> </span><span class="s2">&quot;*.rds&quot;</span><span class="w"> </span>aearep-<span class="si">${</span><span class="nv">xxxx</span><span class="si">}</span>.git/
+java<span class="w"> </span>-jar<span class="w"> </span>bfg-1.14.0.jar<span class="w"> </span>-D<span class="w"> </span><span class="s2">"*.rds"</span><span class="w"> </span>aearep-<span class="si">${</span><span class="nv">xxxx</span><span class="si">}</span>.git/
 <span class="c1"># remove files based on size</span>
 java<span class="w"> </span>-jar<span class="w"> </span>bfg-1.14.0.jar<span class="w"> </span>--strip-blobs-bigger-than<span class="w"> </span>50M<span class="w"> </span>aearep-<span class="si">${</span><span class="nv">xxxx</span><span class="si">}</span>.git/
 <span class="c1"># The report will detail what was removed</span>

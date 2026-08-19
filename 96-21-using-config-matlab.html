@@ -567,7 +567,7 @@ document.write(`
 <span id="matlab-config"></span><h1>Adding <code class="docutils literal notranslate"><span class="pre">config.m</span></code> to MATLAB and path names<a class="headerlink" href="#adding-config-m-to-matlab-and-path-names" title="Link to this heading">#</a></h1>
 <p>When you replace hard-coded filepaths in Matlab, please do the following:</p>
 <p>Say the author has code like</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xlsread</span><span class="p">(</span><span class="s1">&#39;C:\Users\me\submission\AEJMacro\yesterday\data.xlsx&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xlsread</span><span class="p">(</span><span class="s1">'C:\Users\me\submission\AEJMacro\yesterday\data.xlsx'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You should do the following:</p>
@@ -580,7 +580,7 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Add</span> <span class="n">this</span> <span class="n">ONCE</span> <span class="n">at</span> <span class="n">the</span> <span class="n">top</span> <span class="n">of</span> <span class="n">the</span> <span class="n">program</span><span class="o">.</span> <span class="n">Do</span> <span class="n">NOT</span> <span class="n">repeat</span> <span class="n">it</span><span class="o">.</span>
 <span class="n">config</span>
 <span class="o">%</span> <span class="n">wherever</span> <span class="n">the</span> <span class="n">hard</span><span class="o">-</span><span class="n">coded</span> <span class="n">path</span> <span class="n">appears</span><span class="p">,</span> <span class="n">replace</span> <span class="k">with</span>
-<span class="n">xlsread</span><span class="p">(</span><span class="n">fullfile</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s1">&#39;data.xlsx&#39;</span><span class="p">)</span>
+<span class="n">xlsread</span><span class="p">(</span><span class="n">fullfile</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s1">'data.xlsx'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This works on any platform.</p>

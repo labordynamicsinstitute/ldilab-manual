@@ -644,7 +644,7 @@ Using the Pipeline</label><div class="sd-tab-content docutils">
 <p><img alt="select pipeline" src="_images/jira-select-pipeline.png" /></p>
 </div>
 <ul class="simple">
-<li><p>Choose “<code class="docutils literal notranslate"><span class="pre">2-merge-report</span></code>” (might change in the future), and hit <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</p></li>
+<li><p>Choose “<a class="reference external" href="https://aeadataeditor.github.io/replication-template/automations/bitbucket-pipelines/#id-5-2-merge-report"><code class="docutils literal notranslate"><span class="pre">2-merge-report</span></code></a>” (might change in the future), and hit <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</p></li>
 </ul>
 <p><img alt="select pipeline" src="_images/jira-run-pipeline-merge.png" /></p>
 <ul class="simple">
@@ -677,7 +677,7 @@ Manual Merge</label><div class="sd-tab-content docutils">
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>rm<span class="w"> </span>REPLICATION-PartA.md<span class="w"> </span>REPLICATION-PartB.md
 git<span class="w"> </span>add<span class="w"> </span>REPLICATION.md
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Merged parts A and B&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Merged parts A and B"</span>
 git<span class="w"> </span>push
 </pre></div>
 </div>
@@ -744,7 +744,7 @@ Figure 5 as reproduced:
 <h3>Correct Workflow for PDF Figures<a class="headerlink" href="#correct-workflow-for-pdf-figures" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Identify PDF output</strong>: Locate the PDF figures produced by the replication code in the appropriate directory.</p></li>
-<li><p><strong>Run the conversion pipeline</strong>: Use the <code class="docutils literal notranslate"><span class="pre">6-convert-eps-pdf</span></code> pipeline to convert PDFs to PNGs automatically.</p>
+<li><p><strong>Run the conversion pipeline</strong>: Use the <a class="reference external" href="https://aeadataeditor.github.io/replication-template/automations/bitbucket-pipelines/#id-9-6-convert-eps-pdf"><code class="docutils literal notranslate"><span class="pre">6-convert-eps-pdf</span></code></a> pipeline to convert PDFs to PNGs automatically.</p>
 <ul class="simple">
 <li><p>When prompted for the path, <strong>enter the relative path from the repo root, without quotes</strong>.</p></li>
 <li><p>The pipeline will generate PNGs in the <strong>same directory</strong> as the PDFs.</p></li>
@@ -800,7 +800,7 @@ Figure 5 as reproduced:
 <div class="warning admonition">
 <p class="admonition-title">Commit this part of the report to the Bitbucket repository.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>REPLICATION.md<span class="w"> </span>code-check.xlsx
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Completed writing report&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Completed writing report"</span>
 git<span class="w"> </span>push
 </pre></div>
 </div>

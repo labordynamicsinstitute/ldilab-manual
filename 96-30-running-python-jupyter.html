@@ -681,7 +681,7 @@ document.write(`
 <p>In general, Python code should not have hard-coded paths. Python programs are aware of their own location, and other directories should be relative to that. However, some authors may still follow (econ-specific) norms, and hard-code paths. Similar to our approach for <a class="reference internal" href="96-02-running-stata-code.html#stata-step4-modifying-paths"><span class="std std-ref">Stata</span></a>, <a class="reference internal" href="96-11-using-config-r.html#base-root-directory-r"><span class="std std-ref">R</span></a>, and MATLAB, you can use the <code class="docutils literal notranslate"><span class="pre">rootdir</span></code> principle to make the code more portable/dynamic.</p>
 <p>In that case, do the following:</p>
 <p>Say the author has code like</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xlsread</span><span class="p">(</span><span class="s1">&#39;C:\Users\me\submission\AEJMacro\yesterday\data.xlsx&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xlsread</span><span class="p">(</span><span class="s1">'C:\Users\me\submission\AEJMacro\yesterday\data.xlsx'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>At the top of the program, add the following lines:</p>
@@ -690,7 +690,7 @@ document.write(`
 </pre></div>
 </div>
 <p>Then, wherever the hard-coded path appears, replace it with:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xlsread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s1">&#39;data.xlsx&#39;</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xlsread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s1">'data.xlsx'</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Alternatively, if the author uses a change of working directory, then</p>
@@ -801,8 +801,8 @@ pip<span class="w"> </span>install<span class="w"> </span>nbconvert<span class="
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--ClearOutputPreprocessor.enabled<span class="o">=</span>True<span class="w"> </span>--to<span class="w"> </span>notebook<span class="w">  </span><span class="se">\</span>
-<span class="w">  </span>--inplace<span class="w"> </span>--execute<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NOTEBOOK</span><span class="s2">&quot;</span>
-jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>pdf<span class="w">   </span><span class="s2">&quot;</span><span class="nv">$NOTEBOOK</span><span class="s2">&quot;</span>
+<span class="w">  </span>--inplace<span class="w"> </span>--execute<span class="w"> </span><span class="s2">"</span><span class="nv">$NOTEBOOK</span><span class="s2">"</span>
+jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>pdf<span class="w">   </span><span class="s2">"</span><span class="nv">$NOTEBOOK</span><span class="s2">"</span>
 </pre></div>
 </div>
 <p>Alternatively, you can convert the notebook to a PDF more closely resembling the HTML view as follows. First, install additional packages:</p>
@@ -813,8 +813,8 @@ pip<span class="w"> </span>install<span class="w"> </span>pyppeteer
 <p>Then run this code:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--ClearOutputPreprocessor.enabled<span class="o">=</span>True<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--allow-errors<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--inplace<span class="w">  </span>--to<span class="w"> </span>notebook<span class="w"> </span>--execute<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NOTEBOOK</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Errors occurred while executing&quot;</span>
-jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>webpdf<span class="w"> </span>--allow-chromium-download<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NOTEBOOK</span><span class="s2">&quot;</span>
+<span class="w">  </span>--inplace<span class="w">  </span>--to<span class="w"> </span>notebook<span class="w"> </span>--execute<span class="w"> </span><span class="s2">"</span><span class="nv">$NOTEBOOK</span><span class="s2">"</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Errors occurred while executing"</span>
+jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>webpdf<span class="w"> </span>--allow-chromium-download<span class="w"> </span><span class="s2">"</span><span class="nv">$NOTEBOOK</span><span class="s2">"</span>
 </pre></div>
 </div>
 </div>

@@ -9,7 +9,7 @@ Since October 2024, we have a pipeline script that can help you.
 
 - First, be sure to `git add` all EPS files, then `git commit` them, followed by `git push`.
 - Go to the `Pipeline` tab in Bitbucket for your repository, and 
-	- choose the `6-convert-eps-pdf` pipeline. 
+	- choose the [`6-convert-eps-pdf`](https://aeadataeditor.github.io/replication-template/automations/bitbucket-pipelines/#id-9-6-convert-eps-pdf) pipeline. 
 	- enter the `openICPSRID` that is being used (this field can also handle a deeper directory, such as `openICPSRID/replication_package`, but you will rarely need to use this).
 	- by default, the pipeline will only convert `.eps` to `.png`, but you can also select `yes` in the `ProcessPDF` field if you need PDF files.
 

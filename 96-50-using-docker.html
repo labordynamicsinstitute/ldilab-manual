@@ -674,7 +674,7 @@ DOCKER_BUILDKIT=1 docker1 build   -t ${MYIMG}:$TAG $(pwd)/
 <li><p>Change the directory to your Docker folder and build the image <code class="docutils literal notranslate"><span class="pre">./build.sh</span></code>. Check completion by <code class="docutils literal notranslate"><span class="pre">docker1</span> <span class="pre">images</span></code>.</p></li>
 <li><p>Once the image is built, go to the directory where you want to run your container. Type</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker1<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>:/project<span class="w"> </span>-w<span class="w"> </span>/project<span class="w"> </span>biohpc_lv39/aearep-###:TAG
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker1<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">"</span>:/project<span class="w"> </span>-w<span class="w"> </span>/project<span class="w"> </span>biohpc_lv39/aearep-###:TAG
 </pre></div>
 </div>
 <p>(modify repository number and TAG as needed).</p>

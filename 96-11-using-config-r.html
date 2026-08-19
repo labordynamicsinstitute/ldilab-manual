@@ -618,11 +618,11 @@ document.write(`
 <section id="step-1-packages">
 <h3>Step 1: Packages<a class="headerlink" href="#step-1-packages" title="Link to this heading">#</a></h3>
 <p>Any libraries identified by the authors as needing manual installation (i.e. that the author’s own code does not already install) should be listed here, in double-quotes, comma-separated.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">readme</span><span class="o">.</span><span class="n">libraries</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">()</span> <span class="c1"># ex: c(&quot;paletteer&quot;, &quot;viridis&quot;)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">readme</span><span class="o">.</span><span class="n">libraries</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">()</span> <span class="c1"># ex: c("paletteer", "viridis")</span>
 </pre></div>
 </div>
 <p>For instance, if the authors say you need <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> and <code class="docutils literal notranslate"><span class="pre">nonsenseR</span></code>, then add them to this line (and remember to keep case exactly as the authors provide it, so <code class="docutils literal notranslate"><span class="pre">nonsenser</span></code> is not the same as <code class="docutils literal notranslate"><span class="pre">nonsenseR</span></code>).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">readme</span><span class="o">.</span><span class="n">libraries</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;ggplot2&quot;</span><span class="p">,</span><span class="s2">&quot;nonsenseR&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">readme</span><span class="o">.</span><span class="n">libraries</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">"ggplot2"</span><span class="p">,</span><span class="s2">"nonsenseR"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>These packages will be installed into the project’s <code class="docutils literal notranslate"><span class="pre">renv</span></code> library, so they are picked up correctly by <code class="docutils literal notranslate"><span class="pre">renv::snapshot()</span></code> at the end of the run.</p>
@@ -630,21 +630,21 @@ document.write(`
 <section id="confidential-data-location">
 <h3>Confidential data location<a class="headerlink" href="#confidential-data-location" title="Link to this heading">#</a></h3>
 <p>In some cases, authors provide us privately with data that is not part of the public replication package (the part on openICPSR is generally public). We put this on the L-drive, or what used to be called the S-drive. Put the location of that here, if any:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sdrive</span> <span class="o">&lt;-</span> <span class="s2">&quot;L:/Workspace/aearep-9999-implicit-nda&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sdrive</span> <span class="o">&lt;-</span> <span class="s2">"L:/Workspace/aearep-9999-implicit-nda"</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are working on Windows (e.g. CCSS-Cloud) then you would need to use <code class="docutils literal notranslate"><span class="pre">/</span></code> or <code class="docutils literal notranslate"><span class="pre">\\</span></code> to write filepaths or use the file.path() function. So, for example, the above would become:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sdrive</span> <span class="o">&lt;-</span> <span class="s2">&quot;L:</span><span class="se">\\</span><span class="s2">Workspace</span><span class="se">\\</span><span class="s2">aearep-9999-implicit-nda&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sdrive</span> <span class="o">&lt;-</span> <span class="s2">"L:</span><span class="se">\\</span><span class="s2">Workspace</span><span class="se">\\</span><span class="s2">aearep-9999-implicit-nda"</span>
 </pre></div>
 </div>
 </div>
 <p>Wherever the author later references the confidential data, you can insert this placeholder, for instance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># original author reference</span>
-<span class="c1"># ols.data &lt;- readRDS(&quot;data/confidential/analysis.Rds&quot;)</span>
+<span class="c1"># ols.data &lt;- readRDS("data/confidential/analysis.Rds")</span>
 <span class="c1"># you change it to</span>
-<span class="n">ols</span><span class="o">.</span><span class="n">data</span> <span class="o">&lt;-</span> <span class="n">readRDS</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">sdrive</span><span class="p">,</span><span class="s2">&quot;data/confidential/analysis.Rds&quot;</span><span class="p">))</span>
+<span class="n">ols</span><span class="o">.</span><span class="n">data</span> <span class="o">&lt;-</span> <span class="n">readRDS</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">sdrive</span><span class="p">,</span><span class="s2">"data/confidential/analysis.Rds"</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
@@ -652,15 +652,15 @@ document.write(`
 <h3>Step 3: Script order<a class="headerlink" href="#step-3-script-order" title="Link to this heading">#</a></h3>
 <p>Add all author R scripts to <code class="docutils literal notranslate"><span class="pre">author.programs</span></code>, in the order specified in the README. If the author provides a main or master file, likely only that file needs to be added:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">author</span><span class="o">.</span><span class="n">programs</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span>
-  <span class="s2">&quot;code/pull_race_from_name.R&quot;</span>
+  <span class="s2">"code/pull_race_from_name.R"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 <p>or, for multiple scripts:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">author</span><span class="o">.</span><span class="n">programs</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span>
-  <span class="s2">&quot;code/01_data.R&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;code/02_analysis.R&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;code/03_figures.R&quot;</span>
+  <span class="s2">"code/01_data.R"</span><span class="p">,</span>
+  <span class="s2">"code/02_analysis.R"</span><span class="p">,</span>
+  <span class="s2">"code/03_figures.R"</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -721,7 +721,7 @@ git<span class="w"> </span>add<span class="w"> </span>.here
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If for some reason that does not work, simply override the automatic detection, by setting the <code class="docutils literal notranslate"><span class="pre">rootdir</span></code> manually, using <code class="docutils literal notranslate"><span class="pre">/</span></code> or <code class="docutils literal notranslate"><span class="pre">\\</span></code> as appropriate for your OS:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rootdir</span> <span class="o">&lt;-</span> <span class="s2">&quot;C:/user/Workspace/aearep-9999/123456/Replication-package&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rootdir</span> <span class="o">&lt;-</span> <span class="s2">"C:/user/Workspace/aearep-9999/123456/Replication-package"</span>
 </pre></div>
 </div>
 </div>
@@ -729,11 +729,11 @@ git<span class="w"> </span>add<span class="w"> </span>.here
 <section id="directories-to-create">
 <h3>Directories to create<a class="headerlink" href="#directories-to-create" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">template-main.R</span></code> creates a <code class="docutils literal notranslate"><span class="pre">logs</span></code> subdirectory by default, but does not automatically create any other output directories the author’s code may expect. Add any additional directories that your debugging identifies as being necessary. Do write any path names with <code class="docutils literal notranslate"><span class="pre">/</span></code>, not <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span><span class="o">.</span><span class="n">paths</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;logs&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span><span class="o">.</span><span class="n">paths</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">"logs"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>For instance, if the authors state that output should be written to “outputs”, you can add</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span><span class="o">.</span><span class="n">paths</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;logs&quot;</span><span class="p">,</span><span class="s2">&quot;outputs&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span><span class="o">.</span><span class="n">paths</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">"logs"</span><span class="p">,</span><span class="s2">"outputs"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">template-main.R</span></code> will create these directories if they do not exist.</p>

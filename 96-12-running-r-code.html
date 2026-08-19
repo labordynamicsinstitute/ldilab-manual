@@ -707,7 +707,7 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
 <section id="main-r-and-rprofile-are-not-in-the-same-directory">
 <h3><code class="docutils literal notranslate"><span class="pre">main.R</span></code> and <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> are not in the same directory<a class="headerlink" href="#main-r-and-rprofile-are-not-in-the-same-directory" title="Link to this heading">#</a></h3>
 <p>If the <code class="docutils literal notranslate"><span class="pre">main.R</span></code> file is not in the root directory (i.e., the same directory as the <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> file), then you need to use a workaround. Call the <code class="docutils literal notranslate"><span class="pre">main.R</span></code> file from a wrapper script in the root directory, or using the source command directly:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>R<span class="w">  </span>--no-restore<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;source(&quot;scripts/main.R&quot;)&#39;</span><span class="w"> </span>main.<span class="k">$(</span>date<span class="w"> </span>+%F_%H-%M-%S<span class="k">)</span>.Rout
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>R<span class="w">  </span>--no-restore<span class="w"> </span>-e<span class="w"> </span><span class="s1">'source("scripts/main.R")'</span><span class="w"> </span>main.<span class="k">$(</span>date<span class="w"> </span>+%F_%H-%M-%S<span class="k">)</span>.Rout
 </pre></div>
 </div>
 </section>
@@ -723,7 +723,7 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">setwd</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s">&quot;code&quot;</span><span class="p">)</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">setwd</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s">"code"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>(if the file in question is in a subdirectory of the rootdir)</p>
@@ -735,7 +735,7 @@ BioHPC RStudio Server</label><div class="sd-tab-content docutils">
 <li><p>the required <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> file is missing (it is hidden from view in the file browser, but it must be there).</p></li>
 </ul>
 <p>Solution: create a minimal <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> file in the root directory with the following content:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">source</span><span class="p">(</span><span class="s">&quot;renv/activate.R&quot;</span><span class="p">)</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">source</span><span class="p">(</span><span class="s">"renv/activate.R"</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">

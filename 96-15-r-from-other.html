@@ -585,9 +585,9 @@ document.write(`
 <section id="an-example">
 <h2>An example<a class="headerlink" href="#an-example" title="Link to this heading">#</a></h2>
 <p>Stata code calls out to R. This may be done in the following way (partial code)</p>
-<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> r_path <span class="s">&quot;/something/here&quot;</span> <span class="c1">//Set path to R program (Adjust this to your local R installation path)</span>
-<span class="k">cd</span> <span class="s">&quot;</span><span class="vg">$do_path</span><span class="s">&quot;</span>
-<span class="k">shell</span> <span class="s">&quot;</span><span class="vg">${r_path}</span><span class="s">/R&quot;</span> <span class="o">--</span>vanilla <span class="o">&lt;</span><span class="s">&quot;</span><span class="vg">$do_path</span><span class="s">/Figure1.R&quot;</span> 
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> r_path <span class="s">"/something/here"</span> <span class="c1">//Set path to R program (Adjust this to your local R installation path)</span>
+<span class="k">cd</span> <span class="s">"</span><span class="vg">$do_path</span><span class="s">"</span>
+<span class="k">shell</span> <span class="s">"</span><span class="vg">${r_path}</span><span class="s">/R"</span> <span class="o">--</span>vanilla <span class="o">&lt;</span><span class="s">"</span><span class="vg">$do_path</span><span class="s">/Figure1.R"</span> 
 </pre></div>
 </div>
 <p>You need to figure out the path to R on your system.</p>
@@ -612,9 +612,9 @@ Windows</label><div class="sd-tab-content docutils">
 <li><p><code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\R\R-4.4.1\bin\x64\R.exe</span></code></p></li>
 </ul>
 <p>So the above would then be (note the forward slashes, not backslashes)</p>
-<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> r_path <span class="s">&quot;C:/Program Files/R/R-4.4.1/bin/x64&quot;</span> <span class="c1">//Set path to R program (Adjust this to your local R installation path)</span>
-<span class="k">cd</span> <span class="s">&quot;</span><span class="vg">$do_path</span><span class="s">&quot;</span>
-<span class="k">shell</span> <span class="s">&quot;</span><span class="vg">${r_path}</span><span class="s">/R&quot;</span> <span class="o">--</span>vanilla <span class="o">&lt;</span><span class="s">&quot;</span><span class="vg">$do_path</span><span class="s">/Figure1.R&quot;</span> 
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> r_path <span class="s">"C:/Program Files/R/R-4.4.1/bin/x64"</span> <span class="c1">//Set path to R program (Adjust this to your local R installation path)</span>
+<span class="k">cd</span> <span class="s">"</span><span class="vg">$do_path</span><span class="s">"</span>
+<span class="k">shell</span> <span class="s">"</span><span class="vg">${r_path}</span><span class="s">/R"</span> <span class="o">--</span>vanilla <span class="o">&lt;</span><span class="s">"</span><span class="vg">$do_path</span><span class="s">/Figure1.R"</span> 
 </pre></div>
 </div>
 </div>
@@ -626,9 +626,9 @@ macOS</label><div class="sd-tab-content docutils">
 <li><p><code class="docutils literal notranslate"><span class="pre">/Library/Frameworks/R.framework/Resources/bin/R</span></code></p></li>
 </ul>
 <p>So the above would then be</p>
-<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> r_path <span class="s">&quot;/Library/Frameworks/R.framework/Resources/bin&quot;</span> <span class="c1">//Set path to R program (Adjust this to your local R installation path)</span>
-<span class="k">cd</span> <span class="s">&quot;</span><span class="vg">$do_path</span><span class="s">&quot;</span>
-<span class="k">shell</span> <span class="s">&quot;</span><span class="vg">${r_path}</span><span class="s">/R&quot;</span> <span class="o">--</span>vanilla <span class="o">&lt;</span><span class="s">&quot;</span><span class="vg">$do_path</span><span class="s">/Figure1.R&quot;</span> 
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> r_path <span class="s">"/Library/Frameworks/R.framework/Resources/bin"</span> <span class="c1">//Set path to R program (Adjust this to your local R installation path)</span>
+<span class="k">cd</span> <span class="s">"</span><span class="vg">$do_path</span><span class="s">"</span>
+<span class="k">shell</span> <span class="s">"</span><span class="vg">${r_path}</span><span class="s">/R"</span> <span class="o">--</span>vanilla <span class="o">&lt;</span><span class="s">"</span><span class="vg">$do_path</span><span class="s">/Figure1.R"</span> 
 </pre></div>
 </div>
 </div>
@@ -640,9 +640,9 @@ Linux</label><div class="sd-tab-content docutils">
 <li><p><code class="docutils literal notranslate"><span class="pre">/programs/R-4.4.2/bin/R</span></code></p></li>
 </ul>
 <p>So the above would then be</p>
-<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> r_path <span class="s">&quot;/programs/R-4.4.2/bin&quot;</span> <span class="c1">//Set path to R program (Adjust this to your local R installation path)</span>
-<span class="k">cd</span> <span class="s">&quot;</span><span class="vg">$do_path</span><span class="s">&quot;</span>
-<span class="k">shell</span> <span class="s">&quot;</span><span class="vg">${r_path}</span><span class="s">/R&quot;</span> <span class="o">--</span>vanilla <span class="o">&lt;</span><span class="s">&quot;</span><span class="vg">$do_path</span><span class="s">/Figure1.R&quot;</span> 
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> r_path <span class="s">"/programs/R-4.4.2/bin"</span> <span class="c1">//Set path to R program (Adjust this to your local R installation path)</span>
+<span class="k">cd</span> <span class="s">"</span><span class="vg">$do_path</span><span class="s">"</span>
+<span class="k">shell</span> <span class="s">"</span><span class="vg">${r_path}</span><span class="s">/R"</span> <span class="o">--</span>vanilla <span class="o">&lt;</span><span class="s">"</span><span class="vg">$do_path</span><span class="s">/Figure1.R"</span> 
 </pre></div>
 </div>
 </div>

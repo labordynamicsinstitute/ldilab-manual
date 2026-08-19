@@ -605,7 +605,7 @@ document.write(`
 <section id="first-time-setup">
 <h2>First-time setup<a class="headerlink" href="#first-time-setup" title="Link to this heading">#</a></h2>
 <p>Run this ONCE the first time you ever access any Linux servers:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo &quot;umask 007&quot; &gt;&gt; $HOME/.bashrc
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo "umask 007" &gt;&gt; $HOME/.bashrc
 </pre></div>
 </div>
 <p>Then do the usual <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">Bash setup</span></a>. That should work on nearly any Linux server.</p>
@@ -732,8 +732,8 @@ NBER servers</label><div class="sd-tab-content docutils">
 <span class="c1">#SBATCH --time=00:00:30</span>
 <span class="c1">#</span>
 <span class="c1"># Email?</span>
-<span class="c1"># Probably do not need &quot;--mail-user=youremail@cornell.edu&quot;</span>
-<span class="c1"># Just add your email to the file &quot;$HOME/.forward&quot;</span>
+<span class="c1"># Probably do not need "--mail-user=youremail@cornell.edu"</span>
+<span class="c1"># Just add your email to the file "$HOME/.forward"</span>
 <span class="c1"># </span>
 <span class="c1">#SBATCH --mail-type=ALL</span>
 <span class="c1">#</span>
@@ -743,10 +743,10 @@ NBER servers</label><div class="sd-tab-content docutils">
 <span class="c1">#</span>
 /usr/local/stata16/stata-mp<span class="w"> </span>-b<span class="w"> </span>main.do
 <span class="c1">#</span>
-<span class="c1">## Matlab - will run &quot;main.m&quot;, output to &quot;main.log&quot;</span>
+<span class="c1">## Matlab - will run "main.m", output to "main.log"</span>
 <span class="c1">## Assumes you have done the setup at https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html#one-time-setup</span>
 <span class="c1"># module load matlab/2023a</span>
-<span class="c1"># matlab -nodisplay -r &quot;addpath(genpath(&#39;.&#39;)); main&quot; -logfile main.$(date +%F_%H-%M-%S).log</span>
+<span class="c1"># matlab -nodisplay -r "addpath(genpath('.')); main" -logfile main.$(date +%F_%H-%M-%S).log</span>
 <span class="c1">#</span>
 <span class="c1"># R example - caution with version and parallel processing</span>
 module<span class="w"> </span>load<span class="w"> </span>R/4.4.2
@@ -865,7 +865,7 @@ Windows (laptop only)</label><div class="sd-tab-content docutils">
 </div>
 <p>The next steps are common to all operating systems.</p>
 <p>You will want to create a key, then transfer it to the Linux server. The following commands should do this (should work on both Powershell and Bash):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;For BioHPC&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"For BioHPC"</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ed25519</span></code> is the encryption type, “For BioHPC” is an arbitrary comment for your own tracking of keys. When prompted, you should add a passphrase.</p>
@@ -917,7 +917,7 @@ Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 <section id="utilizing-aliases">
 <h3>Utilizing Aliases<a class="headerlink" href="#utilizing-aliases" title="Link to this heading">#</a></h3>
 <p>Workflows on Linux Systems can be simplified by using bash aliases. The example below can exist on your personal machine</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span><span class="w"> </span><span class="nv">biohpc</span><span class="o">=</span><span class="s1">&#39;ssh &lt;netid&gt;@cbsulogin.biohpc.cornell.edu&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span><span class="w"> </span><span class="nv">biohpc</span><span class="o">=</span><span class="s1">'ssh &lt;netid&gt;@cbsulogin.biohpc.cornell.edu'</span>
 </pre></div>
 </div>
 <p>Adding this to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> enables you to type <code class="docutils literal notranslate"><span class="pre">bihopc</span></code> in your terminal, and an ssh connection is opened.</p>
@@ -925,7 +925,7 @@ Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 <section id="using-linux-system-info-sh">
 <h3>Using <code class="docutils literal notranslate"><span class="pre">linux-system-info.sh</span></code><a class="headerlink" href="#using-linux-system-info-sh" title="Link to this heading">#</a></h3>
 <p>Part of replicating packages is capturing as much information as we can. You will see in the replication report that we must specify the amount of compute our replication used, under <code class="docutils literal notranslate"><span class="pre">Computing</span> <span class="pre">Environment</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">Replicator</span></code>. This can be captured by adding the following line to your SBATCH script.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Linux System Info:&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Linux System Info:"</span>
 &lt;package&gt;/tools/linux-system-info.sh
 </pre></div>
 </div>

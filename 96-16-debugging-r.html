@@ -601,7 +601,7 @@ document.write(`
 <section id="solution">
 <h3>Solution:<a class="headerlink" href="#solution" title="Link to this heading">#</a></h3>
 <p>Run the following in an R console (or the console in Rstudio):</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">dir.create</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_LIBS_USER&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">recursive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">  </span><span class="c1"># create personal library</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">dir.create</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">"R_LIBS_USER"</span><span class="p">),</span><span class="w"> </span><span class="n">recursive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">  </span><span class="c1"># create personal library</span>
 </pre></div>
 </div>
 <p>Then restart R, and try the install again.</p>
@@ -620,17 +620,17 @@ document.write(`
 <h2>Pathnames<a class="headerlink" href="#pathnames" title="Link to this heading">#</a></h2>
 <p>Use <strong>single</strong> forward slashes everywhere (<a class="reference external" href="http://www.dummies.com/programming/r/how-to-work-with-files-and-folders-in-r/">source</a>):</p>
 <p>For a Windows path that would read <code class="docutils literal notranslate"><span class="pre">F:\\rschfs1x\userRS\F-J\XXXX_RS\Documents\Workspace\app.20160004</span></code>, use</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">lest</span><span class="o">&lt;-</span><span class="nf">read.dta</span><span class="p">(</span><span class="s">&quot;F:/rschfs1x/userRS/F-J/XXXX_RS/Documents/Workspace/app.20160004/ddd_long.dta&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">lest</span><span class="o">&lt;-</span><span class="nf">read.dta</span><span class="p">(</span><span class="s">"F:/rschfs1x/userRS/F-J/XXXX_RS/Documents/Workspace/app.20160004/ddd_long.dta"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Even better, use the <code class="docutils literal notranslate"><span class="pre">file.path()</span></code> function:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">rootdir</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;F:/rschfs1x/userRS/F-J/XXXX_RS/Documents/Workspace/app.20160004&quot;</span>
-<span class="n">lest</span><span class="w">    </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.dta</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s">&quot;ddd_long.dta&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">rootdir</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">"F:/rschfs1x/userRS/F-J/XXXX_RS/Documents/Workspace/app.20160004"</span>
+<span class="n">lest</span><span class="w">    </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.dta</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s">"ddd_long.dta"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Even better better, use the <code class="docutils literal notranslate"><span class="pre">here()</span></code> function used in the <code class="docutils literal notranslate"><span class="pre">config.R</span></code> (see notes in the file on how to create the <code class="docutils literal notranslate"><span class="pre">.here</span></code> file).</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">rootdir</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">here</span><span class="p">()</span>
-<span class="n">lest</span><span class="w">    </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.dta</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s">&quot;ddd_long.dta&quot;</span><span class="p">)</span>
+<span class="n">lest</span><span class="w">    </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.dta</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="n">rootdir</span><span class="p">,</span><span class="s">"ddd_long.dta"</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -638,9 +638,9 @@ document.write(`
 <h2>Package Dependency - if you want to use an earlier version of a package<a class="headerlink" href="#package-dependency-if-you-want-to-use-an-earlier-version-of-a-package" title="Link to this heading">#</a></h2>
 <p>The trick is to use the COPY of the CRAN repository at <strike>Microsoft, called the MRAN.</strike> Posit/Rstudio, called the “<a class="reference external" href="https://packagemanager.posit.co/">Posit Package Manager</a>”.</p>
 <p>At the top of any R code  add the following lines:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ppm</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;-</span> <span class="s2">&quot;2019-09-01&quot;</span>
-<span class="n">ppm</span><span class="o">.</span><span class="n">url</span>  <span class="o">&lt;-</span> <span class="s2">&quot;https://packagemanager.posit.co/cran/&quot;</span>
-<span class="n">options</span><span class="p">(</span><span class="n">repos</span><span class="o">=</span><span class="n">paste0</span><span class="p">(</span><span class="n">ppm</span><span class="o">.</span><span class="n">url</span><span class="p">,</span><span class="n">mran</span><span class="o">.</span><span class="n">date</span><span class="p">,</span><span class="s2">&quot;/&quot;</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ppm</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;-</span> <span class="s2">"2019-09-01"</span>
+<span class="n">ppm</span><span class="o">.</span><span class="n">url</span>  <span class="o">&lt;-</span> <span class="s2">"https://packagemanager.posit.co/cran/"</span>
+<span class="n">options</span><span class="p">(</span><span class="n">repos</span><span class="o">=</span><span class="n">paste0</span><span class="p">(</span><span class="n">ppm</span><span class="o">.</span><span class="n">url</span><span class="p">,</span><span class="n">mran</span><span class="o">.</span><span class="n">date</span><span class="p">,</span><span class="s2">"/"</span><span class="p">))</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -654,9 +654,9 @@ document.write(`
 <section id="special-note-for-biohpc">
 <h3>Special note for BioHPC<a class="headerlink" href="#special-note-for-biohpc" title="Link to this heading">#</a></h3>
 <p>On BioHPC, which runs a Linux version called “Rocky 9.0”, you should use the following instead:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ppm</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;-</span> <span class="s2">&quot;2019-09-01&quot;</span>
-<span class="n">ppm</span><span class="o">.</span><span class="n">url</span>  <span class="o">&lt;-</span> <span class="s2">&quot;https://packagemanager.posit.co/cran/__linux__/rhel9/&quot;</span>
-<span class="n">options</span><span class="p">(</span><span class="n">repos</span><span class="o">=</span><span class="n">paste0</span><span class="p">(</span><span class="n">ppm</span><span class="o">.</span><span class="n">url</span><span class="p">,</span><span class="n">ppm</span><span class="o">.</span><span class="n">date</span><span class="p">,</span><span class="s2">&quot;/&quot;</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ppm</span><span class="o">.</span><span class="n">date</span> <span class="o">&lt;-</span> <span class="s2">"2019-09-01"</span>
+<span class="n">ppm</span><span class="o">.</span><span class="n">url</span>  <span class="o">&lt;-</span> <span class="s2">"https://packagemanager.posit.co/cran/__linux__/rhel9/"</span>
+<span class="n">options</span><span class="p">(</span><span class="n">repos</span><span class="o">=</span><span class="n">paste0</span><span class="p">(</span><span class="n">ppm</span><span class="o">.</span><span class="n">url</span><span class="p">,</span><span class="n">ppm</span><span class="o">.</span><span class="n">date</span><span class="p">,</span><span class="s2">"/"</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>This will (hopefully) install pre-compiled packages, rather than trying to compile every package from source, which is a LOT faster.</p>
@@ -665,10 +665,10 @@ document.write(`
 <section id="trying-to-use-cran-without-setting-a-mirror">
 <h2><code class="docutils literal notranslate"><span class="pre">trying</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">CRAN</span> <span class="pre">without</span> <span class="pre">setting</span> <span class="pre">a</span> <span class="pre">mirror</span></code><a class="headerlink" href="#trying-to-use-cran-without-setting-a-mirror" title="Link to this heading">#</a></h2>
 <p>For example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">&quot;reshape2&quot;</span><span class="p">)</span>
-<span class="n">Installing</span> <span class="n">package</span> <span class="n">into</span> <span class="s1">&#39;C:/Users/Mbrown_RS/AppData/Local/R/win-library/4.2&#39;</span>
-<span class="p">(</span><span class="k">as</span> <span class="s1">&#39;lib&#39;</span> <span class="ow">is</span> <span class="n">unspecified</span><span class="p">)</span>
-<span class="n">Error</span> <span class="ow">in</span> <span class="n">contrib</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="n">repos</span><span class="p">,</span> <span class="s2">&quot;source&quot;</span><span class="p">)</span> <span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">"reshape2"</span><span class="p">)</span>
+<span class="n">Installing</span> <span class="n">package</span> <span class="n">into</span> <span class="s1">'C:/Users/Mbrown_RS/AppData/Local/R/win-library/4.2'</span>
+<span class="p">(</span><span class="k">as</span> <span class="s1">'lib'</span> <span class="ow">is</span> <span class="n">unspecified</span><span class="p">)</span>
+<span class="n">Error</span> <span class="ow">in</span> <span class="n">contrib</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="n">repos</span><span class="p">,</span> <span class="s2">"source"</span><span class="p">)</span> <span class="p">:</span>
   <span class="n">trying</span> <span class="n">to</span> <span class="n">use</span> <span class="n">CRAN</span> <span class="n">without</span> <span class="n">setting</span> <span class="n">a</span> <span class="n">mirror</span>
 </pre></div>
 </div>
@@ -677,16 +677,16 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>Even better, this is already configured  in the <code class="docutils literal notranslate"><span class="pre">config.R</span></code> - use it!</p>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;# set the default repository</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">'# set the default repository</span>
 <span class="s1">local({</span>
-<span class="s1">  r &lt;- getOption(&quot;repos&quot;)</span>
-<span class="s1">  r[&quot;CRAN&quot;] &lt;- &quot;https://cran.rstudio.com/&quot;</span>
+<span class="s1">  r &lt;- getOption("repos")</span>
+<span class="s1">  r["CRAN"] &lt;- "https://cran.rstudio.com/"</span>
 <span class="s1">  options(repos = r)</span>
 <span class="s1">})</span>
 <span class="s1"># create the local library if it does not exist</span>
-<span class="s1">if ( !file.exists(Sys.getenv(&quot;R_LIBS_USER&quot;) ) ) {</span>
-<span class="s1">   dir.create(Sys.getenv(&quot;R_LIBS_USER&quot;),recursive=TRUE)</span>
-<span class="s1">} &#39;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$HOME</span>/.Rprofile
+<span class="s1">if ( !file.exists(Sys.getenv("R_LIBS_USER") ) ) {</span>
+<span class="s1">   dir.create(Sys.getenv("R_LIBS_USER"),recursive=TRUE)</span>
+<span class="s1">} '</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$HOME</span>/.Rprofile
 </pre></div>
 </div>
 <p>but see about the correct setting for <code class="docutils literal notranslate"><span class="pre">r[&quot;CRAN&quot;]</span></code> <a class="reference internal" href="#package-dependency---if-you-want-to-use-an-earlier-version-of-a-package"><span class="xref myst">here</span></a></p>
@@ -700,13 +700,13 @@ document.write(`
 </pre></div>
 </div>
 <p>You can then install any package, though an excellent choice are <code class="docutils literal notranslate"><span class="pre">here</span></code> and <code class="docutils literal notranslate"><span class="pre">renv</span></code>:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;here&quot;</span><span class="p">,</span><span class="s">&quot;renv&quot;</span><span class="p">))</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">"here"</span><span class="p">,</span><span class="s">"renv"</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>You will then be prompted to create a personal library, because the system library is not writable:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;here&quot;</span><span class="p">,</span><span class="s">&quot;renv&quot;</span><span class="p">))</span>
-<span class="n">Warning</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;here&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;renv&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">:</span>
-<span class="w">  </span><span class="s">&#39;lib = &quot;/usr/lib64/R/library&quot;&#39;</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">writable</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">"here"</span><span class="p">,</span><span class="s">"renv"</span><span class="p">))</span>
+<span class="n">Warning</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">"here"</span><span class="p">,</span><span class="w"> </span><span class="s">"renv"</span><span class="p">))</span><span class="w"> </span><span class="o">:</span>
+<span class="w">  </span><span class="s">'lib = "/usr/lib64/R/library"'</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">writable</span>
 <span class="n">Would</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">like</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">personal</span><span class="w"> </span><span class="n">library</span><span class="w"> </span><span class="n">instead</span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">yes</span><span class="o">/</span><span class="n">No</span><span class="o">/</span><span class="n">cancel</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -736,24 +736,24 @@ to install packages into? (yes/No/cancel)
 <p>Below you will find details of a rJava error and how it was resolved.</p>
 <section id="rjava-installation-error">
 <h3>rJava Installation Error<a class="headerlink" href="#rjava-installation-error" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span><span class="p">:</span> <span class="n">Error</span> <span class="n">installing</span> <span class="n">package</span> <span class="s1">&#39;rJava&#39;</span><span class="p">:</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span><span class="p">:</span> <span class="n">Error</span> <span class="n">installing</span> <span class="n">package</span> <span class="s1">'rJava'</span><span class="p">:</span> 
 <span class="o">=================================</span>
-<span class="o">*</span> <span class="n">installing</span> <span class="o">*</span><span class="n">source</span><span class="o">*</span> <span class="n">package</span> <span class="s1">&#39;rJava&#39;</span> <span class="o">...</span>
-<span class="o">**</span> <span class="n">package</span> <span class="s1">&#39;rJava&#39;</span> <span class="n">successfully</span> <span class="n">unpacked</span> <span class="ow">and</span> <span class="n">MD5</span> <span class="n">sums</span> <span class="n">checked</span>
+<span class="o">*</span> <span class="n">installing</span> <span class="o">*</span><span class="n">source</span><span class="o">*</span> <span class="n">package</span> <span class="s1">'rJava'</span> <span class="o">...</span>
+<span class="o">**</span> <span class="n">package</span> <span class="s1">'rJava'</span> <span class="n">successfully</span> <span class="n">unpacked</span> <span class="ow">and</span> <span class="n">MD5</span> <span class="n">sums</span> <span class="n">checked</span>
 <span class="o">**</span> <span class="n">using</span> <span class="n">staged</span> <span class="n">installation</span>
 <span class="n">Generate</span> <span class="n">Windows</span><span class="o">-</span><span class="n">specific</span> <span class="n">files</span> <span class="p">(</span><span class="n">src</span><span class="o">/</span><span class="n">jvm</span><span class="o">-</span><span class="n">w32</span><span class="p">)</span> <span class="o">...</span>
-<span class="n">make</span><span class="p">:</span> <span class="n">Entering</span> <span class="n">directory</span> <span class="s1">&#39;/c/.../Temp/RtmpUVjaDY/renv-package-new-13b84f6a7cd0/rJava/src/jvm-w32&#39;</span>
+<span class="n">make</span><span class="p">:</span> <span class="n">Entering</span> <span class="n">directory</span> <span class="s1">'/c/.../Temp/RtmpUVjaDY/renv-package-new-13b84f6a7cd0/rJava/src/jvm-w32'</span>
 <span class="n">dlltool</span> <span class="o">--</span><span class="k">as</span> <span class="k">as</span>  <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="k">def</span><span class="w"> </span><span class="nf">jvm64</span><span class="o">.</span><span class="k">def</span><span class="w"> </span><span class="o">--</span><span class="n">kill</span><span class="o">-</span><span class="n">at</span> <span class="o">--</span><span class="n">dllname</span> <span class="n">jvm</span><span class="o">.</span><span class="n">dll</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">lib</span> <span class="n">libjvm</span><span class="o">.</span><span class="n">dll</span><span class="o">.</span><span class="n">a</span>
 <span class="n">gcc</span>  <span class="o">-</span><span class="n">O2</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">findjava</span><span class="o">.</span><span class="n">o</span> <span class="n">findjava</span><span class="o">.</span><span class="n">c</span>
 <span class="n">gcc</span>  <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">o</span> <span class="n">findjava</span><span class="o">.</span><span class="n">exe</span> <span class="n">findjava</span><span class="o">.</span><span class="n">o</span>
-<span class="n">make</span><span class="p">:</span> <span class="n">Leaving</span> <span class="n">directory</span> <span class="s1">&#39;/c.../Temp/RtmpUVjaDY/renv-package-new-13b84f6a7cd0/rJava/src/jvm-w32&#39;</span>
+<span class="n">make</span><span class="p">:</span> <span class="n">Leaving</span> <span class="n">directory</span> <span class="s1">'/c.../Temp/RtmpUVjaDY/renv-package-new-13b84f6a7cd0/rJava/src/jvm-w32'</span>
 <span class="n">Find</span> <span class="n">Java</span><span class="o">...</span>
-<span class="n">ERROR</span><span class="o">*&gt;</span> <span class="n">JavaSoft</span>\<span class="p">{</span><span class="n">JRE</span><span class="o">|</span><span class="n">JDK</span><span class="p">}</span> <span class="n">can</span><span class="s1">&#39;t open registry keys.</span>
+<span class="n">ERROR</span><span class="o">*&gt;</span> <span class="n">JavaSoft</span>\<span class="p">{</span><span class="n">JRE</span><span class="o">|</span><span class="n">JDK</span><span class="p">}</span> <span class="n">can</span><span class="s1">'t open registry keys.</span>
 <span class="n">ERROR</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">find</span> <span class="n">Java</span> <span class="n">Development</span> <span class="n">Kit</span><span class="o">.</span>
   <span class="n">Please</span> <span class="nb">set</span> <span class="n">JAVA_HOME</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">its</span> <span class="n">location</span> <span class="n">manually</span>
-<span class="n">ERROR</span><span class="p">:</span> <span class="n">configuration</span> <span class="n">failed</span> <span class="k">for</span> <span class="n">package</span> <span class="s1">&#39;rJava&#39;</span>
-<span class="o">*</span> <span class="n">removing</span> <span class="s1">&#39;L:/Workspace/aearep-XXXX/123456/renv/library/windows/R-4.4/x86_64-w64-mingw32/.renv/1/rJava&#39;</span>
-<span class="n">install</span> <span class="n">of</span> <span class="n">package</span> <span class="s1">&#39;rJava&#39;</span> <span class="n">failed</span> <span class="p">[</span><span class="n">error</span> <span class="n">code</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">ERROR</span><span class="p">:</span> <span class="n">configuration</span> <span class="n">failed</span> <span class="k">for</span> <span class="n">package</span> <span class="s1">'rJava'</span>
+<span class="o">*</span> <span class="n">removing</span> <span class="s1">'L:/Workspace/aearep-XXXX/123456/renv/library/windows/R-4.4/x86_64-w64-mingw32/.renv/1/rJava'</span>
+<span class="n">install</span> <span class="n">of</span> <span class="n">package</span> <span class="s1">'rJava'</span> <span class="n">failed</span> <span class="p">[</span><span class="n">error</span> <span class="n">code</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -761,14 +761,14 @@ to install packages into? (yes/No/cancel)
 <h3>Potential Resolutions<a class="headerlink" href="#potential-resolutions" title="Link to this heading">#</a></h3>
 <p>The resolutions specified here are only suitable for Windows systems like CCSS-Cloud. For Linux, we will create documentation as we encounter and resolve errors.</p>
 <p>First, confirm whether azulJava files are present in the locations specified in the examples below. They won’t be on all systems. If you find the files then, at the beginning of the R script, place the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sys</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="n">JAVA_HOME</span><span class="o">=</span><span class="s1">&#39;L:</span><span class="se">\\</span><span class="s1">common</span><span class="se">\\</span><span class="s1">azulJava</span><span class="se">\\</span><span class="s1">jdk</span><span class="se">\\</span><span class="s1">jre&#39;</span><span class="p">)</span>
-<span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">&quot;rJava&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sys</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="n">JAVA_HOME</span><span class="o">=</span><span class="s1">'L:</span><span class="se">\\</span><span class="s1">common</span><span class="se">\\</span><span class="s1">azulJava</span><span class="se">\\</span><span class="s1">jdk</span><span class="se">\\</span><span class="s1">jre'</span><span class="p">)</span>
+<span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">"rJava"</span><span class="p">)</span>
 <span class="n">library</span><span class="p">(</span><span class="n">rJava</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If that doesn’t work, try:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sys</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="n">JAVA_HOME</span> <span class="o">=</span> <span class="s2">&quot;L:/common/azulJava/jdk&quot;</span><span class="p">)</span>
-<span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">&quot;rJava&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sys</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="n">JAVA_HOME</span> <span class="o">=</span> <span class="s2">"L:/common/azulJava/jdk"</span><span class="p">)</span>
+<span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">"rJava"</span><span class="p">)</span>
 <span class="n">library</span><span class="p">(</span><span class="n">rJava</span><span class="p">)</span>
 </pre></div>
 </div>

@@ -78,7 +78,7 @@ Be sure to have committed and pushed **all** changes to the repository before ru
 
 :::
 
-- Choose "`2-merge-report`" (might change in the future), and hit `Run`.
+- Choose "[`2-merge-report`](https://aeadataeditor.github.io/replication-template/automations/bitbucket-pipelines/#id-5-2-merge-report)" (might change in the future), and hit `Run`.
 
 ![select pipeline](images/jira-run-pipeline-merge.png)
 
@@ -179,7 +179,7 @@ If the generated output is a PDF and you observe discrepancies, **do not take sc
 
 1. **Identify PDF output**: Locate the PDF figures produced by the replication code in the appropriate directory.
 
-2. **Run the conversion pipeline**: Use the `6-convert-eps-pdf` pipeline to convert PDFs to PNGs automatically.  
+2. **Run the conversion pipeline**: Use the [`6-convert-eps-pdf`](https://aeadataeditor.github.io/replication-template/automations/bitbucket-pipelines/#id-9-6-convert-eps-pdf) pipeline to convert PDFs to PNGs automatically.  
    - When prompted for the path, **enter the relative path from the repo root, without quotes**.  
    - The pipeline will generate PNGs in the **same directory** as the PDFs.
 

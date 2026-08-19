@@ -634,11 +634,11 @@ Example: <code class="docutils literal notranslate"><span class="pre">Stata(16)<
 <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&quot;D:\Dropbox\Data</span> <span class="pre">for</span> <span class="pre">paper\x.dta&quot;</span></code> becomes <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&quot;$data/x.dta&quot;</span></code>.</p></li>
 <li><p>Modify the standard <code class="docutils literal notranslate"><span class="pre">config.do</span></code> as follows:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">local</span><span class="w"> </span>scenario<span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="w">                      </span>//<span class="w"> </span>line<span class="w"> </span><span class="m">35</span>
-global<span class="w"> </span>logdir<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">rootdir</span><span class="si">}</span><span class="s2">/results/logs&quot;</span><span class="w"> </span>//<span class="w"> </span>line<span class="w"> </span><span class="m">59</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">local</span><span class="w"> </span>scenario<span class="w"> </span><span class="s2">"A"</span><span class="w">                      </span>//<span class="w"> </span>line<span class="w"> </span><span class="m">35</span>
+global<span class="w"> </span>logdir<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">rootdir</span><span class="si">}</span><span class="s2">/results/logs"</span><span class="w"> </span>//<span class="w"> </span>line<span class="w"> </span><span class="m">59</span>
 //<span class="w"> </span>....<span class="w"> </span>go<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>very<span class="w"> </span>end<span class="w"> </span>
-global<span class="w"> </span>data<span class="w">    </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">rootdir</span><span class="si">}</span><span class="s2">/data</span>
-<span class="s2">global results &quot;</span><span class="si">${</span><span class="nv">rootdir</span><span class="si">}</span>/results
+global<span class="w"> </span>data<span class="w">    </span><span class="s2">"</span><span class="si">${</span><span class="nv">rootdir</span><span class="si">}</span><span class="s2">/data</span>
+<span class="s2">global results "</span><span class="si">${</span><span class="nv">rootdir</span><span class="si">}</span>/results
 </pre></div>
 </div>
 <p>Occasionally, other changes are also necessary, for instance, creating new directories.</p>
@@ -654,8 +654,8 @@ global<span class="w"> </span>data<span class="w">    </span><span class="s2">&q
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span> <span class="o">-</span><span class="n">ex</span>
 
-<span class="c1"># This is the master script for the capsule. When you click &quot;Reproducible Run&quot;, the code in this file will execute.</span>
-<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="n">master</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
+<span class="c1"># This is the master script for the capsule. When you click "Reproducible Run", the code in this file will execute.</span>
+<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="n">master</span><span class="o">.</span><span class="n">do</span> <span class="s2">"$@"</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -664,11 +664,11 @@ global<span class="w"> </span>data<span class="w">    </span><span class="s2">&q
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span> <span class="o">-</span><span class="n">ex</span>
 
-<span class="c1"># This is the master script for the capsule. When you click &quot;Reproducible Run&quot;, the code in this file will execute.</span>
-<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">01</span><span class="n">_step1</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
-<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">02</span><span class="n">_step2</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
-<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">03</span><span class="n">_step3</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
-<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">04</span><span class="n">_step4</span><span class="o">.</span><span class="n">do</span> <span class="s2">&quot;$@&quot;</span>
+<span class="c1"># This is the master script for the capsule. When you click "Reproducible Run", the code in this file will execute.</span>
+<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">01</span><span class="n">_step1</span><span class="o">.</span><span class="n">do</span> <span class="s2">"$@"</span>
+<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">02</span><span class="n">_step2</span><span class="o">.</span><span class="n">do</span> <span class="s2">"$@"</span>
+<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">03</span><span class="n">_step3</span><span class="o">.</span><span class="n">do</span> <span class="s2">"$@"</span>
+<span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">q</span> <span class="n">do</span> <span class="mi">04</span><span class="n">_step4</span><span class="o">.</span><span class="n">do</span> <span class="s2">"$@"</span>
 </pre></div>
 </div>
 </li>

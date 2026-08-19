@@ -619,21 +619,21 @@ installed locally.</p></li>
 <li><p><strong>Set both as GitHub Actions secrets on this repo</strong>, using the <code class="docutils literal notranslate"><span class="pre">gh</span></code> CLI
 (run from the repo root, or add <code class="docutils literal notranslate"><span class="pre">--repo</span> <span class="pre">labordynamicsinstitute/ldilab-manual</span></code>
 from elsewhere):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_API_TOKEN<span class="w"> </span>--body<span class="w"> </span><span class="s2">&quot;&lt;paste the API token&gt;&quot;</span>
-gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_ACCOUNT_ID<span class="w"> </span>--body<span class="w"> </span><span class="s2">&quot;&lt;paste the account ID&gt;&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_API_TOKEN<span class="w"> </span>--body<span class="w"> </span><span class="s2">"&lt;paste the API token&gt;"</span>
+gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_ACCOUNT_ID<span class="w"> </span>--body<span class="w"> </span><span class="s2">"&lt;paste the account ID&gt;"</span>
 </pre></div>
 </div>
 <p>Or omit <code class="docutils literal notranslate"><span class="pre">--body</span></code> to be prompted / pipe the value in:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_API_TOKEN
-<span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;&lt;account id&gt;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_ACCOUNT_ID
+<span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"&lt;account id&gt;"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_ACCOUNT_ID
 </pre></div>
 </div>
 <p>If you keep these values in 1Password, pipe them straight from the <code class="docutils literal notranslate"><span class="pre">op</span></code>
 CLI instead of copy-pasting. This assumes a <code class="docutils literal notranslate"><span class="pre">cloudflare.com</span></code> item with
 an “Account ID” field and a per-repo “API token: <code class="docutils literal notranslate"><span class="pre">&lt;repo&gt;</span></code>” field:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">REPO</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
-op<span class="w"> </span>item<span class="w"> </span>get<span class="w"> </span><span class="s2">&quot;cloudflare.com&quot;</span><span class="w"> </span>--fields<span class="w"> </span><span class="s2">&quot;API token: </span><span class="nv">$REPO</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_API_TOKEN
-op<span class="w"> </span>item<span class="w"> </span>get<span class="w"> </span><span class="s2">&quot;cloudflare.com&quot;</span><span class="w"> </span>--fields<span class="w"> </span><span class="s2">&quot;Account ID&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_ACCOUNT_ID
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">REPO</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">"</span><span class="k">)</span><span class="s2">"</span>
+op<span class="w"> </span>item<span class="w"> </span>get<span class="w"> </span><span class="s2">"cloudflare.com"</span><span class="w"> </span>--fields<span class="w"> </span><span class="s2">"API token: </span><span class="nv">$REPO</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_API_TOKEN
+op<span class="w"> </span>item<span class="w"> </span>get<span class="w"> </span><span class="s2">"cloudflare.com"</span><span class="w"> </span>--fields<span class="w"> </span><span class="s2">"Account ID"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CLOUDFLARE_ACCOUNT_ID
 </pre></div>
 </div>
 </li>
@@ -645,7 +645,7 @@ create the project on its own. Create it once with
 picked up from the checkout directory rather than typed by hand, and
 set <code class="docutils literal notranslate"><span class="pre">main</span></code> as the production branch:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npx<span class="w"> </span>wrangler<span class="w"> </span>login
-npx<span class="w"> </span>wrangler<span class="w"> </span>pages<span class="w"> </span>project<span class="w"> </span>create<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>--production-branch<span class="w"> </span>main
+npx<span class="w"> </span>wrangler<span class="w"> </span>pages<span class="w"> </span>project<span class="w"> </span>create<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">"</span><span class="k">)</span><span class="s2">"</span><span class="w"> </span>--production-branch<span class="w"> </span>main
 </pre></div>
 </div>
 </li>
