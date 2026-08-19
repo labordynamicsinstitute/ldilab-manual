@@ -127,7 +127,7 @@ This is where the information about the size of the deposit matters! Choose the 
 :::{admonition} If the deposit is less than 3 GB...
 :class: dropdown tip
 
-- Choose "`1-populate from ICPSR`" (might change in the future), and fill in the ID for the relevant source of the replication package (here: openICPSR ID = `123456`), and hit `Run`.
+- Choose "[`1-populate-from-icpsr`](https://aeadataeditor.github.io/replication-template/automations/bitbucket-pipelines/#id-1-1-populate-from-icpsr)" (might change in the future), and fill in the ID for the relevant source of the replication package (here: openICPSR ID = `123456`), and hit `Run`.
 
 
 ![select pipeline](images/jira-run-pipeline-icpsr.png)
@@ -140,7 +140,7 @@ However, closely monitor the pipeline output - it might still fail because the r
 :::{admonition} If the deposit is more than 3 GB...
 :class: dropdown tip
 
-- Choose "`w-big populate from ICPSR`" (might change in the future), and fill in the ID for the relevant source of the replication package (here: openICPSR ID = `123456`), and hit `Run`.
+- Choose "[`w-big-populate-from-icpsr`](https://aeadataeditor.github.io/replication-template/automations/bitbucket-pipelines/#id-2-w-big-populate-from-icpsr)" (might change in the future), and fill in the ID for the relevant source of the replication package (here: openICPSR ID = `123456`), and hit `Run`.
 
 
 ![select pipeline](images/jira-run-pipeline-icpsr-big.png)

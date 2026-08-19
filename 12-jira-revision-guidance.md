@@ -57,7 +57,7 @@ If you do not see pipelines run in the past, you will need to [do this manually 
 
 ![select pipeline](images/jira-select-pipeline.png)
 
-- Choose "`refresh-tools`". Hit "Run".
+- Choose "[`4-refresh-tools`](https://aeadataeditor.github.io/replication-template/automations/bitbucket-pipelines/#id-7-4-refresh-tools)". Hit "Run".
 
 ![select pipeline](images/jira-run-pipeline-updatetools.png)
 
@@ -83,7 +83,7 @@ It will update the code in place. You don't have to do anything except wait! Onc
 :class: warning dropdown
 
 ... then you will need to rename the directory containing the author code in the repository. 
-This is conveniently done using the `5-rename-directory` pipeline:
+This is conveniently done using the [`5-rename-directory`](https://aeadataeditor.github.io/replication-template/automations/bitbucket-pipelines/#id-8-5-rename-directory) pipeline:
 
 ![select rename pipeline](images/jira-run-pipeline-rename.png)
 

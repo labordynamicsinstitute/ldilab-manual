@@ -116,7 +116,7 @@ In this case, immediately contact the (assistant) Data Editor to obtain the corr
   git push
   ```
 
-- [ ] If the pipelines did not *split* the report, use the `3-split-report` pipeline before proceeding.
+- [ ] If the pipelines did not *split* the report, use the [`3-split-report`](https://aeadataeditor.github.io/replication-template/automations/bitbucket-pipelines/#id-6-3-split-report) pipeline before proceeding.
   - Then `git pull` to get all the changes!
 
 ::::
