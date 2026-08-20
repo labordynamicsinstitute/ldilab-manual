@@ -67,7 +67,7 @@ use the [https://client.wvd.microsoft.com/arm/webclient/](https://client.wvd.mic
 
 **Mapping Network Drives**
 
-- You should map the following network drive, following the CCSS storage/network-drive instructions linked above, using drive letter `Z:`. `Z:` is the LDI-specific drive letter for this setup. 
+- You should map the following network drive, following the CCSS storage/network-drive instructions linked above, using drive letter `Z:`.
   - `\\ccssilr.file.core.windows.net\lv39` to drive letter `Z:` (you can call it "LDILab Drive")
   - We will be using that drive letter often. 
 
