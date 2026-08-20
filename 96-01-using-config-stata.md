@@ -147,7 +147,7 @@ local ssc_packages "estout ivreg2"
 `config.do` creates a subdirectory and saves log files in the subdirectory. Let's say the current working directory path is the following, since Jira issue number is `AEAREP-9999` and openICPSR case number is `111111`
 
 ```
-L:/Workspace/aearep-9999/111111
+Z:/Workspace/aearep-9999/111111
 ```
 
 

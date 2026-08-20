@@ -35,7 +35,7 @@ You should move the Jira issue to the `Delete NDA Data` status by choosing `Dele
 
 ## Delete the data
 
-- [ ] CCSS-Cloud: Delete the data from the L-Drive.
+- [ ] CCSS-Cloud: Delete the data from the Z-Drive.
 - [ ] If some processing occurred on BioHPC: Confirm deletion with the RA, or delete the entire `aearep-xxxx` folder.
 - [ ] Box: Follow instructions at [LDI Research Aide guide](https://aeadataeditor.github.io/LDI-Research-Aide/procedures/Requesting_Restricted_Access_Data/#once-case-is-done)
 

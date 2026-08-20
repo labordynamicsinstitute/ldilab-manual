@@ -185,7 +185,7 @@ This is known to work on  CISER (CCSS-Classic).
 Needs an update
 :::
 
-If using the default "Jupyter" link in the Start Menu, the working directory won't be right. Assuming that you have set your Workspace to `L:\Documents\Workspace`, the following will create a Jupyter Notebook in the right location (thanks to Louis Liu for creating this Howto)
+If using the default "Jupyter" link in the Start Menu, the working directory won't be right. Assuming that you have set your Workspace to `Z:\Documents\Workspace`, the following will create a Jupyter Notebook in the right location (thanks to Louis Liu for creating this Howto)
 
 #### Search "anaconda prompt" from the start menu. right click on the app when it appears and pin it to the taskbar.
 

@@ -30,7 +30,7 @@ Pay attention to the precise access instructions, as they may be substantially d
 
 :::{admonition} Please be sure to do this:
 
-- use the L drive for all "Workspace" folders (i.e., the clone of the Bitbucket repository)
+- use the Z drive for all "Workspace" folders (i.e., the clone of the Bitbucket repository)
 - use the D drive for those that are large and need fast storage (but be aware that D drive is also wiped)
 -  **ALWAYS**  `git commit` and `git push`  all changes before you logout, every time you log out.
 
@@ -67,8 +67,8 @@ use the [https://client.wvd.microsoft.com/arm/webclient/](https://client.wvd.mic
 
 **Mapping Network Drives**
 
-- You should map the following network drive, following the CCSS storage/network-drive instructions linked above. However, use `L:`, not `Z:`. `L:` is the LDI-specific drive letter for this setup. 
-  - `\\ccssilr.file.core.windows.net\lv39` to drive letter `L:` (you can call it "LDILab Drive")
+- You should map the following network drive, following the CCSS storage/network-drive instructions linked above, using drive letter `Z:`. `Z:` is the LDI-specific drive letter for this setup. 
+  - `\\ccssilr.file.core.windows.net\lv39` to drive letter `Z:` (you can call it "LDILab Drive")
   - We will be using that drive letter often. 
 
 
@@ -102,7 +102,7 @@ CCSS has removed their login instructions at this time!
 
 :::{admonition} Please be sure to do this:
 
-- use the L drive for all "Workspace" folders (i.e., the clone of the Bitbucket repository)
+- use the Z drive for all "Workspace" folders (i.e., the clone of the Bitbucket repository)
 
 :::
 
@@ -157,11 +157,11 @@ Continue log in using the password you created in step 3.
 
 **Mapping Network Drives**
 
-Network drives are already mapped in RedCloud. To access the shared "L-Drive", follow these steps:
+Network drives are already mapped in RedCloud. To access the shared "Z-Drive", follow these steps:
 
 1. Open File Explorer
 2. Click ‘This PC’
-3.	Underneath ‘Devices and Drives’ you will see the L: drive titled ‘lv39’
+3.	Underneath ‘Devices and Drives’ you will see the Z: drive titled ‘lv39’
 
 ![RedCloudL](images/RedCloudLdrive.png)
 
