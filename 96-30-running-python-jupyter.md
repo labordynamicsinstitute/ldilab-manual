@@ -176,35 +176,6 @@ If the authors provide a list of packages, the easiest way is to create a simple
 ::::
 
 
-### Using Anaconda Package manager
-
-This is known to work on  CISER (CCSS-Classic).
-
-:::{admonition}  This may not be the way it works on CCSS-Cloud. 
-:class: dropdown
-Needs an update
-:::
-
-If using the default "Jupyter" link in the Start Menu, the working directory won't be right. Assuming that you have set your Workspace to `Z:\Documents\Workspace`, the following will create a Jupyter Notebook in the right location (thanks to Louis Liu for creating this Howto)
-
-#### Search "anaconda prompt" from the start menu. right click on the app when it appears and pin it to the taskbar.
-
-![Step 1](images/Jupyter_howto_step1.png)
-
-#### Right click on anaconda prompt in the taskbar (looks like a black window, similar to command line or terminal). Right click on "anaconda powershell prompt" in the tasks menu that pops up, and then properties.
-
-![Step 2](images/Jupyter_howto_step2.png)
-
-#### In the properties window, go to the shortcut tab and change the "Start in:" field to U:\Documents\Workspace or whichever directory you keep your bitbucket repos in. Click apply.
-
-![Step 3](images/Jupyter_howto_step3.png)
-
-#### Next, click on the anaconda prompt shortcut in the taskbar. When anaconda prompt opens, enter the command "`Jupyter notebook`"
-
-![Step 4](images/Jupyter_howto_step4.png)
-
-
-
 ## Running Jupyter Notebooks
 
 ### Interactively
