@@ -24,7 +24,7 @@ Look for the Globus icon on the desktop:
 - Ensure that it contains at least the following entry:
 
 ```
-L:\
+Z:\
 ```
 
 ## Transferring files

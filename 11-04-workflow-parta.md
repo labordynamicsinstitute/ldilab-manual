@@ -218,7 +218,7 @@ When assessing the data, please take care to distinguish
 
 - data that is part of the openICPSR deposit
 - data that the README tells you to download or otherwise access
-- data that you are provided on the L-Drive, which is typically provided under an agreement with the authors, and cannot be redistributed.
+- data that you are provided on the Z-Drive, which is typically provided under an agreement with the authors, and cannot be redistributed.
 ```
 
 ## Assess the openICPSR deposit
@@ -274,7 +274,7 @@ You can now proceed to change the status to `Preliminary Report complete`. You w
     - `Redistribution not authorized`: Often, even if data are not confidential, not proprietary, etc., there may be redistribution restrictions. An example are some IPUMS data, as well as many others.
     - `Other download site provided`: When data can be downloaded elsewhere, possibly due to `licenses` or `application process`. In other cases, even if they could be provided, they may already be archived elsewhere, and are not included here. 
     - `Not found`: This should be checked when data cannot be found as per the instructions by the author. This is rarely a final finding for pre-publication verification.
-  - [ ] `NUMBEROFDATASETS` How many datasets are used in the article (whether or not they are included in the replication package you downloaded)? This is meant to include datasets that you are asked to download, or that you were given access to via the "L:" drive, or "CRADC", or some other secure mechanism.
+  - [ ] `NUMBEROFDATASETS` How many datasets are used in the article (whether or not they are included in the replication package you downloaded)? This is meant to include datasets that you are asked to download, or that you were given access to via the "Z:" drive, or "CRADC", or some other secure mechanism.
 
 
 ## Next steps

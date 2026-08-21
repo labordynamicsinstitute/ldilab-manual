@@ -40,10 +40,10 @@ These packages will be installed into the project's `renv` library, so they are 
 
 ### Confidential data location
 
-In some cases, authors provide us privately with data that is not part of the public replication package (the part on openICPSR is generally public). We put this on the L-drive, or what used to be called the S-drive. Put the location of that here, if any:
+In some cases, authors provide us privately with data that is not part of the public replication package (the part on openICPSR is generally public). We put this on the Z-drive, or what used to be called the S-drive. Put the location of that here, if any:
 
 ```
-sdrive <- "L:/Workspace/aearep-9999-implicit-nda"
+sdrive <- "Z:/Workspace/aearep-9999-implicit-nda"
 ```
 
 :::{note}
@@ -51,7 +51,7 @@ sdrive <- "L:/Workspace/aearep-9999-implicit-nda"
 If you are working on Windows (e.g. CCSS-Cloud) then you would need to use `/` or `\\` to write filepaths or use the file.path() function. So, for example, the above would become:
 
 ```
-sdrive <- "L:\\Workspace\\aearep-9999-implicit-nda"
+sdrive <- "Z:\\Workspace\\aearep-9999-implicit-nda"
 ```
 
 :::
