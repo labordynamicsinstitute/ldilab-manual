@@ -391,8 +391,8 @@ Use a terminal, and set the `STATATMP` variable before launching Stata. In all e
 ```bash
 export STATATMP="/c/Users/$USERNAME/statatmp"
 mkdir "$STATATMP"
-cd "/l/workspace/aearep-5697/203501/Data and do-files"
-"/c/Program Files/Stata18/StataMP-64.exe" -b master.do
+cd "/z/workspace/aearep-5697/203501/Data and do-files"
+"/c/Program Files/Stata19Now/StataMP-64.exe" -b master.do
 ```
 
 ::::
