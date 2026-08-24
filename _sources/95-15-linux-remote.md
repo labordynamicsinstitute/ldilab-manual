@@ -9,18 +9,6 @@ We have access to various Linux clusters:
 
 
 
-## First-time setup
-
-Run this ONCE the first time you ever access any Linux servers:
-
-```
-echo "umask 007" >> $HOME/.bashrc
-```
-
-Then do the usual [Bash setup](setup-bash). That should work on nearly any Linux server.
-
-
-
 ::::{tab-set}
 
 :::{tab-item} BioHPC
@@ -90,6 +78,20 @@ For more information, see [VSCode Remote Development using SSH](https://code.vis
 A tutorial video (thanks to Lars' former RA Ilona Khimey) is available at [Cornell Video-on-demand](https://vod.video.cornell.edu/media/BioHPC+Walkthrough+%28Mac%29/1_x2tmxhk9).
 ```
 
+
+
+## First-time setup
+
+Run this ONCE the first time you ever access any Linux servers:
+
+```
+echo "umask 007" >> $HOME/.bashrc
+```
+
+Then do the usual [Bash setup](setup-bash). That should work on nearly any Linux server.
+
+
+
 ## Where to run code
 
 
@@ -119,26 +121,27 @@ For instructions on how to setup and run code see [ECCO Notes](https://labordyna
 
 ## Running Code
 
-Running code on Biohpc is not as simple as opening the Stata GUI. Instead, you submit jobs through the SLURM scheduler. A detailed walkthrough can be seen [here](https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/sbatch.html). 
+Running code on Biohpc is not as simple as opening the Stata GUI. Instead, you submit jobs through the **SLURM scheduler**. A detailed walkthrough can be seen [here](https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/sbatch.html). Start with [Quick start](https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html).
 
 ### Modules
 
-[details on running modules]
+Software needs to be configured in order to be available to you. This is done through the `module` command. See the [ECCO Notes on modules](https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/software.html#custommodules) for details.
 
 ### SBATCH
 
-To submit a job to the server, you create a script with a header. Below is an example from the [tools folder in the replication template](https://github.com/AEADataEditor/replication-template/blob/master/tools/sbatch-shell.sh).
+To submit a job to the server, you create a script with a header. Below is an example from the [tools folder in the replication template](https://github.com/AEADataEditor/replication-template/blob/master/tools/sbatch-shell.sh), see [its documentation](https://aeadataeditor.github.io/replication-template/tools/repository/sbatch-shell/).
 
 ::::{tip}
-:class: dropdown
+:class: 
 
-You can use the template by copying it into the authors working space, e.g.,
+Use the template by copying it into the authors working space, e.g.,
 
 ```bash
 cp tools/sbatch-shell.sh 12345/path/to/code/sbatch.sh
 ```
 
-Then customize it to fit your needs.
+Then customize it to fit your needs. The code below is a simple example, the one in `tools/` is regularly updated with new features. 
+
 ::::
 
 ```bash
@@ -149,7 +152,7 @@ Then customize it to fit your needs.
 # Memory
 #SBATCH --mem=32G
 #
-# Request one node:
+# Request one node (GENERALLY THIS SHOULD BE SUFFICIENT)
 #SBATCH --nodes=1
 #
 # Specify number of tasks for use case (example):
@@ -198,7 +201,7 @@ squeue -u <netid>
 ```
 
 
-### Interactivly
+### Interactively
 
 Sometimes, it can be helpful to run code interactively, rather than through SBATCH, on the BioHPC shell. Details [here](https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html#interactive-shell). 
 
@@ -218,7 +221,7 @@ The instructions from the manual [Deposit Download Instructions](https://labordy
 
 ### From Another Source
 
-The following page [Obtaining Data on Biohpc](https://labordynamicsinstitute.github.io/ecco-notes/docs/transfer.html) has extensive instructions on how to get data onto Biohpc from other sources. When obtaining data on your personal laptop is easy, then using WinSCP will be straightforward. 
+The following page [Obtaining Data on Biohpc](https://labordynamicsinstitute.github.io/ecco-notes/docs/transfer.html) has extensive instructions on how to get data onto Biohpc from other sources. If obtaining data on your personal laptop is easy, then using WinSCP will be straightforward. 
 
 
 ## Additional setup and tips-and-tricks
@@ -399,13 +402,13 @@ Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 
 ### Utilizing Aliases
 
-Workflows on Linux Systems can be simplified by using bash aliases. The example below can exist on your personal machine
+Workflows on Linux Systems can be simplified by using bash aliases. The example below can exist on your **personal machine**
 
 ```bash
 alias biohpc='ssh <netid>@cbsulogin.biohpc.cornell.edu'
 ```
 
-Adding this to your `~/.bashrc` enables you to type `bihopc` in your terminal, and an ssh connection is opened.
+Adding this to your `~/.bashrc` enables you to type `biohpc` in your terminal, and an ssh connection is opened.
 
 ### Using `linux-system-info.sh`
 
@@ -418,7 +421,3 @@ echo "Linux System Info:"
 
 This will output the computing resources in the SLURM output file.
 
-
-```{tip}
-Additional tips-and-tricks can be found on the [LDIlab wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes). These are focused on the BioHPC cluster, but may work on other servers as well. 
-```

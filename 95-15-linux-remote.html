@@ -561,13 +561,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-linux-nodes-with-vscode">Accessing Linux nodes with VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-run-code">Where to run code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-code">Running Code</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modules">Modules</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sbatch">SBATCH</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivly">Interactivly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactively">Interactively</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-data-on-biohpc">Obtaining Data on Biohpc</a><ul class="nav section-nav flex-column">
@@ -602,13 +602,6 @@ document.write(`
 <li><p>Occassionally NBER linux servers</p></li>
 <li><p>Others, as provided by authors</p></li>
 </ul>
-<section id="first-time-setup">
-<h2>First-time setup<a class="headerlink" href="#first-time-setup" title="Link to this heading">#</a></h2>
-<p>Run this ONCE the first time you ever access any Linux servers:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo "umask 007" &gt;&gt; $HOME/.bashrc
-</pre></div>
-</div>
-<p>Then do the usual <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">Bash setup</span></a>. That should work on nearly any Linux server.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
@@ -636,7 +629,6 @@ NBER servers</label><div class="sd-tab-content docutils">
 <p>Access for us is primarily via SSH. See <a class="reference internal" href="#linux-vscode"><span class="std std-ref">Access via VSCode</span></a> for a more user-friendly way to use SSH to access the server.</p>
 </div>
 </div>
-</section>
 <section id="accessing-linux-nodes-with-vscode">
 <span id="linux-vscode"></span><h2>Accessing Linux nodes with VSCode<a class="headerlink" href="#accessing-linux-nodes-with-vscode" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -672,6 +664,14 @@ NBER servers</label><div class="sd-tab-content docutils">
 <p>A tutorial video (thanks to Lars’ former RA Ilona Khimey) is available at <a class="reference external" href="https://vod.video.cornell.edu/media/BioHPC+Walkthrough+%28Mac%29/1_x2tmxhk9">Cornell Video-on-demand</a>.</p>
 </div>
 </section>
+<section id="first-time-setup">
+<h2>First-time setup<a class="headerlink" href="#first-time-setup" title="Link to this heading">#</a></h2>
+<p>Run this ONCE the first time you ever access any Linux servers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo "umask 007" &gt;&gt; $HOME/.bashrc
+</pre></div>
+</div>
+<p>Then do the usual <a class="reference internal" href="95-50-setup-bash.html#setup-bash"><span class="std std-ref">Bash setup</span></a>. That should work on nearly any Linux server.</p>
+</section>
 <section id="where-to-run-code">
 <h2>Where to run code<a class="headerlink" href="#where-to-run-code" title="Link to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
@@ -696,21 +696,21 @@ NBER servers</label><div class="sd-tab-content docutils">
 </section>
 <section id="running-code">
 <h2>Running Code<a class="headerlink" href="#running-code" title="Link to this heading">#</a></h2>
-<p>Running code on Biohpc is not as simple as opening the Stata GUI. Instead, you submit jobs through the SLURM scheduler. A detailed walkthrough can be seen <a class="reference external" href="https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/sbatch.html">here</a>.</p>
+<p>Running code on Biohpc is not as simple as opening the Stata GUI. Instead, you submit jobs through the <strong>SLURM scheduler</strong>. A detailed walkthrough can be seen <a class="reference external" href="https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/sbatch.html">here</a>. Start with <a class="reference external" href="https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html">Quick start</a>.</p>
 <section id="modules">
 <h3>Modules<a class="headerlink" href="#modules" title="Link to this heading">#</a></h3>
-<p>[details on running modules]</p>
+<p>Software needs to be configured in order to be available to you. This is done through the <code class="docutils literal notranslate"><span class="pre">module</span></code> command. See the <a class="reference external" href="https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/software.html#custommodules">ECCO Notes on modules</a> for details.</p>
 </section>
 <section id="sbatch">
 <h3>SBATCH<a class="headerlink" href="#sbatch" title="Link to this heading">#</a></h3>
-<p>To submit a job to the server, you create a script with a header. Below is an example from the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/tools/sbatch-shell.sh">tools folder in the replication template</a>.</p>
-<div class="dropdown admonition tip">
+<p>To submit a job to the server, you create a script with a header. Below is an example from the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/tools/sbatch-shell.sh">tools folder in the replication template</a>, see <a class="reference external" href="https://aeadataeditor.github.io/replication-template/tools/repository/sbatch-shell/">its documentation</a>.</p>
+<div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can use the template by copying it into the authors working space, e.g.,</p>
+<p>Use the template by copying it into the authors working space, e.g.,</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>tools/sbatch-shell.sh<span class="w"> </span><span class="m">12345</span>/path/to/code/sbatch.sh
 </pre></div>
 </div>
-<p>Then customize it to fit your needs.</p>
+<p>Then customize it to fit your needs. The code below is a simple example, the one in <code class="docutils literal notranslate"><span class="pre">tools/</span></code> is regularly updated with new features.</p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1"># Job name:</span>
@@ -719,7 +719,7 @@ NBER servers</label><div class="sd-tab-content docutils">
 <span class="c1"># Memory</span>
 <span class="c1">#SBATCH --mem=32G</span>
 <span class="c1">#</span>
-<span class="c1"># Request one node:</span>
+<span class="c1"># Request one node (GENERALLY THIS SHOULD BE SUFFICIENT)</span>
 <span class="c1">#SBATCH --nodes=1</span>
 <span class="c1">#</span>
 <span class="c1"># Specify number of tasks for use case (example):</span>
@@ -763,8 +763,8 @@ R<span class="w"> </span>CMD<span class="w"> </span>BATCH<span class="w"> </span
 </pre></div>
 </div>
 </section>
-<section id="interactivly">
-<h3>Interactivly<a class="headerlink" href="#interactivly" title="Link to this heading">#</a></h3>
+<section id="interactively">
+<h3>Interactively<a class="headerlink" href="#interactively" title="Link to this heading">#</a></h3>
 <p>Sometimes, it can be helpful to run code interactively, rather than through SBATCH, on the BioHPC shell. Details <a class="reference external" href="https://labordynamicsinstitute.github.io/ecco-notes/docs/biohpc/slurm-quick-start.html#interactive-shell">here</a>.</p>
 <p>The most important idea is not to run code on the login node of BioHPC. You must transfer over to a computing node, using</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun<span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-l
@@ -781,7 +781,7 @@ R<span class="w"> </span>CMD<span class="w"> </span>BATCH<span class="w"> </span
 </section>
 <section id="from-another-source">
 <h3>From Another Source<a class="headerlink" href="#from-another-source" title="Link to this heading">#</a></h3>
-<p>The following page <a class="reference external" href="https://labordynamicsinstitute.github.io/ecco-notes/docs/transfer.html">Obtaining Data on Biohpc</a> has extensive instructions on how to get data onto Biohpc from other sources. When obtaining data on your personal laptop is easy, then using WinSCP will be straightforward.</p>
+<p>The following page <a class="reference external" href="https://labordynamicsinstitute.github.io/ecco-notes/docs/transfer.html">Obtaining Data on Biohpc</a> has extensive instructions on how to get data onto Biohpc from other sources. If obtaining data on your personal laptop is easy, then using WinSCP will be straightforward.</p>
 </section>
 </section>
 <section id="additional-setup-and-tips-and-tricks">
@@ -916,11 +916,11 @@ Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 </section>
 <section id="utilizing-aliases">
 <h3>Utilizing Aliases<a class="headerlink" href="#utilizing-aliases" title="Link to this heading">#</a></h3>
-<p>Workflows on Linux Systems can be simplified by using bash aliases. The example below can exist on your personal machine</p>
+<p>Workflows on Linux Systems can be simplified by using bash aliases. The example below can exist on your <strong>personal machine</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span><span class="w"> </span><span class="nv">biohpc</span><span class="o">=</span><span class="s1">'ssh &lt;netid&gt;@cbsulogin.biohpc.cornell.edu'</span>
 </pre></div>
 </div>
-<p>Adding this to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> enables you to type <code class="docutils literal notranslate"><span class="pre">bihopc</span></code> in your terminal, and an ssh connection is opened.</p>
+<p>Adding this to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> enables you to type <code class="docutils literal notranslate"><span class="pre">biohpc</span></code> in your terminal, and an ssh connection is opened.</p>
 </section>
 <section id="using-linux-system-info-sh">
 <h3>Using <code class="docutils literal notranslate"><span class="pre">linux-system-info.sh</span></code><a class="headerlink" href="#using-linux-system-info-sh" title="Link to this heading">#</a></h3>
@@ -930,10 +930,6 @@ Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
 </pre></div>
 </div>
 <p>This will output the computing resources in the SLURM output file.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Additional tips-and-tricks can be found on the <a class="reference external" href="https://github.com/labordynamicsinstitute/replicability-training/wiki/Getting-access-to-BioHPC-Linux-nodes">LDIlab wiki</a>. These are focused on the BioHPC cluster, but may work on other servers as well.</p>
-</div>
 </section>
 </section>
 </section>
@@ -1002,13 +998,13 @@ Enter passphrase for key `C:\Users\netid\.ssh\id_ed15559.pub`:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-linux-nodes-with-vscode">Accessing Linux nodes with VSCode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-run-code">Where to run code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-code">Running Code</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modules">Modules</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sbatch">SBATCH</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactivly">Interactivly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactively">Interactively</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-data-on-biohpc">Obtaining Data on Biohpc</a><ul class="nav section-nav flex-column">

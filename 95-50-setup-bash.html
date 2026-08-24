@@ -618,7 +618,7 @@ document.write(`
 </div>
 </aside>
 <ul class="simple">
-<li><p>copy the above exactly as shown. There is a “dot” before the word “<code class="docutils literal notranslate"><span class="pre">bashrc</span></code>”.</p></li>
+<li><p>copy the above exactly as shown. There is a “dot” before the word “<code class="docutils literal notranslate"><span class="pre">bashrc</span></code>”. You should be able to mouse-over and choose the copy-icon to the right!</p></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -629,17 +629,62 @@ document.write(`
 </div>
 <p>You should now have a (new) VS Code window, either empty or with some pre-written script. If there is content, place your cursor at the very end of the edit window (you may need to scroll down).</p>
 <p>Now, copy-paste the following code into the VS Code window. We will edit the values with the appropriate replacements. Keep all the line breaks, quotes, and spaces (or absence thereof) as shown!</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># env for ICPSR</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ICPSR_EMAIL</span><span class="o">=</span>mylogin@cornell.edu
-<span class="nb">export</span><span class="w"> </span><span class="nv">ICPSR_PASS</span><span class="o">=</span><span class="s1">'supersecretpwd'</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add $HOME/bin to path</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+
+<span class="c1"># add Python exec to path. May need to be adjusted for future Python upgrades</span>
+<span class="nv">PYTHONVERSION</span><span class="o">=</span><span class="m">314</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$HOME</span><span class="s2">/AppData/Roaming/Python/Python</span><span class="nv">$PYTHONVERSION</span><span class="s2">/Scripts"</span>
+
+<span class="c1"># env for ICPSR</span>
+<span class="nv">ICPSR_EMAIL</span><span class="o">=</span>mylogin@cornell.edu
+<span class="nv">ICPSR_PASS</span><span class="o">=</span><span class="s1">'supersecretpwd'</span>
 <span class="c1"># env for Bitbucket</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">P_BITBUCKET_PAT</span><span class="o">=</span><span class="s1">'supersecretPAT'</span><span class="w"> </span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">P_BITBUCKET_USERNAME</span><span class="o">=</span>bitbucketusername
+<span class="nv">P_BITBUCKET_PAT</span><span class="o">=</span><span class="s1">'supersecretPAT'</span><span class="w"> </span>
+<span class="nv">P_BITBUCKET_USERNAME</span><span class="o">=</span>bitbucketusername
+<span class="c1"># export them all</span>
+<span class="nb">export</span><span class="w"> </span>ICPSR_EMAIL<span class="w"> </span>ICPSR_PASS<span class="w"> </span>P_BITBUCKET_PAT<span class="w"> </span>P_BITBUCKET_USERNAME
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The use of single-quotes for the password ensures that special characters are correctly preserved.</p>
+</div>
+<div class="dropdown note admonition">
+<p class="admonition-title">Advanced setup</p>
+<p>If you are using more than just these few passwords, a more advanced setup  is suggested.</p>
+<ul class="simple">
+<li><p>You should probably be using a Password Manager to store your passwords. However, there are few password managers that are cross-platform and available on all of our used platforms.</p></li>
+<li><p>Splitting the setup above into a separate file (e.g., <code class="docutils literal notranslate"><span class="pre">$HOME/.envvars</span></code>) and sourcing it from the main <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file is a good idea, and several of our <a class="reference internal" href="96-90-00-useful-scripts.html#helpful-scripts"><span class="std std-ref">Python scripts</span></a> search for that. To leverage that, instead of the above lines added to the <code class="docutils literal notranslate"><span class="pre">$HOME/.bashrc</span></code>, do the following:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for env vars</span>
+<span class="c1"># Add $HOME/bin to path</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+
+<span class="c1"># add Python exec to path. May need to be adjusted for future Python upgrades</span>
+<span class="nv">PYTHONVERSION</span><span class="o">=</span><span class="m">314</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$HOME</span><span class="s2">/AppData/Roaming/Python/Python</span><span class="nv">$PYTHONVERSION</span><span class="s2">/Scripts"</span>
+
+<span class="c1"># Check for env vars</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$HOME</span>/.envvars<span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">        </span>.<span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.envvars"</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>and then create a new file <code class="docutils literal notranslate"><span class="pre">$HOME/.envvars</span></code> with the following content:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># other secret</span>
+<span class="nv">SERVICE_API</span><span class="o">=</span><span class="s1">'supersecretAPI'</span>
+<span class="c1"># env for ICPSR</span>
+<span class="nv">ICPSR_EMAIL</span><span class="o">=</span>mylogin@cornell.edu
+<span class="nv">ICPSR_PASS</span><span class="o">=</span><span class="s1">'supersecretpwd'</span>
+<span class="c1"># env for Bitbucket</span>
+<span class="nv">P_BITBUCKET_PAT</span><span class="o">=</span><span class="s1">'supersecretPAT'</span><span class="w"> </span>
+<span class="nv">P_BITBUCKET_USERNAME</span><span class="o">=</span>bitbucketusername
+<span class="c1"># export them all. Add new ones to this list. Edit to remove unused ones.</span>
+<span class="nb">export</span><span class="w"> </span>ICPSR_EMAIL<span class="w"> </span>ICPSR_PASS<span class="w"> </span>P_BITBUCKET_PAT<span class="w"> </span>P_BITBUCKET_USERNAME<span class="w"> </span>SERVICE_API
+</pre></div>
+</div>
 </div>
 </section>
 <section id="get-the-bitbucket-pat">
@@ -742,7 +787,7 @@ Windows</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>Change the working directory to one of your recent cases, say <code class="docutils literal notranslate"><span class="pre">xxxx</span></code>:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/l/workspace/aearep-xxxx
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/z/workspace/aearep-xxxx
 </pre></div>
 </div>
 <p>then</p>
@@ -780,7 +825,7 @@ Windows</label><div class="sd-tab-content docutils">
 <span class="n">lv39</span><span class="nd">@RS</span><span class="o">-</span><span class="n">CCSSlv39</span><span class="o">-</span><span class="mi">16</span> <span class="n">MINGW64</span> <span class="o">~</span>
 </pre></div>
 </div>
-<p>Now, go back to the repository directory (e.g., <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/l/Workspace/aearep-xxxx</span></code>) and re-run the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> command from above.</p>
+<p>Now, go back to the repository directory (e.g., <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/z/Workspace/aearep-xxxx</span></code>) and re-run the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> command from above.</p>
 </div>
 <input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-7">
@@ -806,12 +851,7 @@ Linux</label><div class="sd-tab-content docutils">
 <p>Sometimes, updates are made.</p>
 <section id="scripts">
 <h3>Scripts<a class="headerlink" href="#scripts" title="Link to this heading">#</a></h3>
-<p>If you installed them in <code class="docutils literal notranslate"><span class="pre">$HOME/bin</span></code>, then simply run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/bin
-git<span class="w"> </span>pull
-</pre></div>
-</div>
-<p>Adjust if you installed them somewhere else.</p>
+<p>See <a class="reference internal" href="#editor-scripts#updating-the-scripts"><span class="xref myst">Updating scripts</span></a> for instructions on how to update the scripts.</p>
 </section>
 <section id="python-dependencies">
 <h3>Python dependencies<a class="headerlink" href="#python-dependencies" title="Link to this heading">#</a></h3>
@@ -826,7 +866,7 @@ git<span class="w"> </span>pull
 <h2>Optional customizations<a class="headerlink" href="#optional-customizations" title="Link to this heading">#</a></h2>
 <section id="windows-add-git-bash-to-the-windows-terminal">
 <h3>Windows: Add Git Bash to the Windows Terminal<a class="headerlink" href="#windows-add-git-bash-to-the-windows-terminal" title="Link to this heading">#</a></h3>
-<p>It can be convenient to add the Git Bash to the Windows Terminal application that is present in Windows 10 and higher (better fonts, etc.).</p>
+<p>It can be convenient to add the Git Bash to the Windows Terminal application that is present in Windows 10 and higher (better fonts, etc.). This should be automatic, but if not:</p>
 <p>Follow instructions at <a class="reference external" href="https://www.commandlinewizardry.com/post/how-to-add-git-bash-to-windows-terminal">https://www.commandlinewizardry.com/post/how-to-add-git-bash-to-windows-terminal</a> to do so.</p>
 </section>
 </section>

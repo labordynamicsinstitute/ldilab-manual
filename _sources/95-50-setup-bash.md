@@ -24,7 +24,7 @@ If this does not work (you get an error), you may need to install the `code` com
 ````
 
 
-- copy the above exactly as shown. There is a "dot" before the word "`bashrc`".
+- copy the above exactly as shown. There is a "dot" before the word "`bashrc`". You should be able to mouse-over and choose the copy-icon to the right!
 
 :::{warning}
 
@@ -38,17 +38,67 @@ You should now have a (new) VS Code window, either empty or with some pre-writte
 Now, copy-paste the following code into the VS Code window. We will edit the values with the appropriate replacements. Keep all the line breaks, quotes, and spaces (or absence thereof) as shown!
 
 ```bash
+# Add $HOME/bin to path
+export PATH="$HOME/bin:$PATH"
+
+# add Python exec to path. May need to be adjusted for future Python upgrades
+PYTHONVERSION=314
+export PATH="$PATH:$HOME/AppData/Roaming/Python/Python$PYTHONVERSION/Scripts"
+
 # env for ICPSR
-export ICPSR_EMAIL=mylogin@cornell.edu
-export ICPSR_PASS='supersecretpwd'
+ICPSR_EMAIL=mylogin@cornell.edu
+ICPSR_PASS='supersecretpwd'
 # env for Bitbucket
-export P_BITBUCKET_PAT='supersecretPAT' 
-export P_BITBUCKET_USERNAME=bitbucketusername
+P_BITBUCKET_PAT='supersecretPAT' 
+P_BITBUCKET_USERNAME=bitbucketusername
+# export them all
+export ICPSR_EMAIL ICPSR_PASS P_BITBUCKET_PAT P_BITBUCKET_USERNAME
 ```
 
 :::{note}
 
 The use of single-quotes for the password ensures that special characters are correctly preserved.
+
+:::
+
+:::{admonition} Advanced setup
+:class: dropdown note
+
+If you are using more than just these few passwords, a more advanced setup  is suggested. 
+
+- You should probably be using a Password Manager to store your passwords. However, there are few password managers that are cross-platform and available on all of our used platforms. 
+- Splitting the setup above into a separate file (e.g., `$HOME/.envvars`) and sourcing it from the main `.bashrc` file is a good idea, and several of our [Python scripts](helpful-scripts) search for that. To leverage that, instead of the above lines added to the `$HOME/.bashrc`, do the following:
+
+```bash
+# Check for env vars
+# Add $HOME/bin to path
+export PATH="$HOME/bin:$PATH"
+
+# add Python exec to path. May need to be adjusted for future Python upgrades
+PYTHONVERSION=314
+export PATH="$PATH:$HOME/AppData/Roaming/Python/Python$PYTHONVERSION/Scripts"
+
+# Check for env vars
+if [ -f $HOME/.envvars ]
+then
+        . "$HOME/.envvars"
+fi
+```
+
+and then create a new file `$HOME/.envvars` with the following content:
+
+```bash
+# other secret
+SERVICE_API='supersecretAPI'
+# env for ICPSR
+ICPSR_EMAIL=mylogin@cornell.edu
+ICPSR_PASS='supersecretpwd'
+# env for Bitbucket
+P_BITBUCKET_PAT='supersecretPAT' 
+P_BITBUCKET_USERNAME=bitbucketusername
+# export them all. Add new ones to this list. Edit to remove unused ones.
+export ICPSR_EMAIL ICPSR_PASS P_BITBUCKET_PAT P_BITBUCKET_USERNAME SERVICE_API
+```
 
 :::
 
@@ -176,7 +226,7 @@ When running in Bash, this should work:
 - Change the working directory to one of your recent cases, say `xxxx`:
 
 ```bash
-cd /l/workspace/aearep-xxxx
+cd /z/workspace/aearep-xxxx
 ```
 
 then
@@ -228,7 +278,7 @@ You will be prompted for an admin password, which you should say "No" to. The co
 lv39@RS-CCSSlv39-16 MINGW64 ~
 ```
 
-Now, go back to the repository directory (e.g., `cd /l/Workspace/aearep-xxxx`) and re-run the `python -m pip install -r requirements.txt` command from above.
+Now, go back to the repository directory (e.g., `cd /z/Workspace/aearep-xxxx`) and re-run the `python -m pip install -r requirements.txt` command from above.
 
 :::
 
@@ -261,14 +311,7 @@ Sometimes, updates are made.
 
 ### Scripts
 
-If you installed them in `$HOME/bin`, then simply run
-
-```bash
-cd $HOME/bin
-git pull
-```
-
-Adjust if you installed them somewhere else.
+See [Updating scripts](editor-scripts#updating-the-scripts) for instructions on how to update the scripts.
 
 ### Python dependencies
 
@@ -284,7 +327,7 @@ at any time.
 
 ### Windows: Add Git Bash to the Windows Terminal
 
-It can be convenient to add the Git Bash to the Windows Terminal application that is present in Windows 10 and higher (better fonts, etc.).
+It can be convenient to add the Git Bash to the Windows Terminal application that is present in Windows 10 and higher (better fonts, etc.). This should be automatic, but if not:
 
 Follow instructions at [https://www.commandlinewizardry.com/post/how-to-add-git-bash-to-windows-terminal](https://www.commandlinewizardry.com/post/how-to-add-git-bash-to-windows-terminal) to do so.
 
