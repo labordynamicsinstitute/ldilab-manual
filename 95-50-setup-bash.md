@@ -169,6 +169,42 @@ clear
 
 :::
 
+## One-time setup on  some systems
+
+::::{tab-set}
+
+:::{tab-item} CCSS Cloud
+
+::::{admonition} As of August 2026:
+:class: warning
+
+Two one-time action items:
+
+1. In Git Bash, type
+
+```bash
+git config --global --add safe.directory '%(prefix)///ccssilr.file.core.windows.net/lv39/*'
+```
+
+to avoid pesky warnings about ownership in the common workarea on the network drive.
+
+2. To set a global variable, common to everybody, and necessary for the ICPSR download script, type
+
+```bash
+cmd //c lv39_ICPSR_Token.bat
+```
+
+You may need to start a new Git bash shell afterwards for it to take effect.
+
+
+:::
+:::{tab-item} Linux
+
+See [Linux remote system setup]((linux-remote) for any special notes.
+
+:::
+::::
+
 ## Configure some convenience scripts
 
 We have a bunch of scripts, some of which can make your life easier. See the [Useful scripts](helpful-scripts) page.
