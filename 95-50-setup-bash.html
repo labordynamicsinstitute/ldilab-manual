@@ -569,6 +569,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-it-works">Verifying it works</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-time-setup-on-some-systems">One-time setup on  some systems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-some-convenience-scripts">Configure some convenience scripts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software-dependencies">Other software dependencies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-python-defaults">Configuring Python defaults</a><ul class="nav section-nav flex-column">
@@ -742,6 +743,38 @@ document.write(`
 </div>
 </section>
 </section>
+<section id="one-time-setup-on-some-systems">
+<h2>One-time setup on  some systems<a class="headerlink" href="#one-time-setup-on-some-systems" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+CCSS Cloud</label><div class="sd-tab-content docutils">
+<div class="warning admonition">
+<p class="admonition-title">As of August 2026:</p>
+<p>Two one-time action items:</p>
+<ol class="arabic simple">
+<li><p>In Git Bash, type</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--add<span class="w"> </span>safe.directory<span class="w"> </span><span class="s1">'%(prefix)///ccssilr.file.core.windows.net/lv39/*'</span>
+</pre></div>
+</div>
+<p>to avoid pesky warnings about ownership in the common workarea on the network drive.</p>
+<ol class="arabic simple" start="2">
+<li><p>To set a global variable, common to everybody, and necessary for the ICPSR download script, type</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmd<span class="w"> </span>//c<span class="w"> </span>lv39_ICPSR_Token.bat
+</pre></div>
+</div>
+<p>You may need to start a new Git bash shell afterwards for it to take effect.</p>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Linux</label><div class="sd-tab-content docutils">
+<p>See [Linux remote system setup]((linux-remote) for any special notes.</p>
+</div>
+</div>
+</section>
 <section id="configure-some-convenience-scripts">
 <h2>Configure some convenience scripts<a class="headerlink" href="#configure-some-convenience-scripts" title="Link to this heading">#</a></h2>
 <p>We have a bunch of scripts, some of which can make your life easier. See the <a class="reference internal" href="96-90-00-useful-scripts.html#helpful-scripts"><span class="std std-ref">Useful scripts</span></a> page.</p>
@@ -749,13 +782,13 @@ document.write(`
 <section id="other-software-dependencies">
 <h2>Other software dependencies<a class="headerlink" href="#other-software-dependencies" title="Link to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
 CCSS Cloud</label><div class="sd-tab-content docutils">
 <p>You should have all software that is needed. If you need additional software, remember that you <strong>cannot</strong> install software yourself. Reach out to your supervisor before contacting the CCSS Cloud support team.</p>
 </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
 Other Windows</label><div class="sd-tab-content docutils">
 <p>You may need to install Python.</p>
 <p>Installing Python is best done using <code class="docutils literal notranslate"><span class="pre">winget</span></code>. From a <strong>Powershell</strong>, run these install commands:</p>
@@ -763,13 +796,13 @@ Other Windows</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
 MacOS</label><div class="sd-tab-content docutils">
 <p>Both Python and rsync should be installed. If you need a newer version of Python 3.x, check the internet…</p>
 </div>
-<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
 Linux</label><div class="sd-tab-content docutils">
 <p>Both Python and rsync should be installed. If not, check your version of package manager. You mean need to reference <code class="docutils literal notranslate"><span class="pre">python3</span></code> because the default Python might be <code class="docutils literal notranslate"><span class="pre">python2</span></code>, which won’t work.</p>
 </div>
@@ -780,8 +813,8 @@ Linux</label><div class="sd-tab-content docutils">
 <p>The last step you do once you have cloned your first repository (this can be run from within <strong>any</strong> recently cloned repository).</p>
 <p>If you are on a machine that has Python installed, run the following command (if it fails with <code class="docutils literal notranslate"><span class="pre">python3</span></code>, replace with <code class="docutils literal notranslate"><span class="pre">python</span></code>). You should do this once, from any recently cloned Bitbucket repository (which will contain a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file). You do NOT have to do it every time!</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
 Windows</label><div class="sd-tab-content docutils">
 <p>When running in Bash, this should work:</p>
 <ul class="simple">
@@ -795,8 +828,8 @@ Windows</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-5">
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
 Linux/macOS</label><div class="sd-tab-content docutils">
 <p>While the use of <code class="docutils literal notranslate"><span class="pre">python</span></code> might work, using <code class="docutils literal notranslate"><span class="pre">python3</span></code> is more robust:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
@@ -807,8 +840,8 @@ Linux/macOS</label><div class="sd-tab-content docutils">
 <section id="problems">
 <h3>Problems<a class="headerlink" href="#problems" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-6">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
 Windows</label><div class="sd-tab-content docutils">
 <p><strong>Permission errors on CCSS Cloud</strong></p>
 <p>If you get an error about permissions on CCSS Cloud, such as the following or similar:</p>
@@ -827,8 +860,8 @@ Windows</label><div class="sd-tab-content docutils">
 </div>
 <p>Now, go back to the repository directory (e.g., <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/z/Workspace/aearep-xxxx</span></code>) and re-run the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> command from above.</p>
 </div>
-<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-7">
+<input id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
 Linux</label><div class="sd-tab-content docutils">
 <p>Newer versions of Ubuntu disallow the “global” installation of packages, even with the <code class="docutils literal notranslate"><span class="pre">--user</span></code> flag. You may need to create a virtual environment in your home directory first, and activate it every time you log on.</p>
 <p><strong>Creating the virtual environment:</strong></p>
@@ -944,6 +977,7 @@ Linux</label><div class="sd-tab-content docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-it-works">Verifying it works</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-time-setup-on-some-systems">One-time setup on  some systems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-some-convenience-scripts">Configure some convenience scripts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software-dependencies">Other software dependencies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-python-defaults">Configuring Python defaults</a><ul class="nav section-nav flex-column">
