@@ -205,7 +205,7 @@ ERROR*> JavaSoft\{JRE|JDK} can't open registry keys.
 ERROR: cannot find Java Development Kit.
   Please set JAVA_HOME to specify its location manually
 ERROR: configuration failed for package 'rJava'
-* removing 'L:/Workspace/aearep-XXXX/123456/renv/library/windows/R-4.4/x86_64-w64-mingw32/.renv/1/rJava'
+* removing 'Z:/Workspace/aearep-XXXX/123456/renv/library/windows/R-4.4/x86_64-w64-mingw32/.renv/1/rJava'
 install of package 'rJava' failed [error code 1]
 ```
 
@@ -216,7 +216,7 @@ The resolutions specified here are only suitable for Windows systems like CCSS-C
 First, confirm whether azulJava files are present in the locations specified in the examples below. They won't be on all systems. If you find the files then, at the beginning of the R script, place the following:
 
 ```
-Sys.setenv(JAVA_HOME='L:\\common\\azulJava\\jdk\\jre')
+Sys.setenv(JAVA_HOME='Z:\\common\\azulJava\\jdk\\jre')
 install.packages("rJava")
 library(rJava)
 ```
@@ -224,7 +224,7 @@ library(rJava)
 If that doesn't work, try:
 
 ```
-Sys.setenv(JAVA_HOME = "L:/common/azulJava/jdk")
+Sys.setenv(JAVA_HOME = "Z:/common/azulJava/jdk")
 install.packages("rJava")
 library(rJava)
 ```

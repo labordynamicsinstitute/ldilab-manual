@@ -214,7 +214,7 @@ When getting the data, please take care to distinguish
 
 - data that is part of the openICPSR deposit
 - data that the README tells you to download or otherwise access
-- data that you are provided on the L-Drive, which is typically provided under an agreement with the authors, and cannot be redistributed.
+- data that you are provided on the Z-Drive, which is typically provided under an agreement with the authors, and cannot be redistributed.
 
 
 Here, we will describe the most likely first step: getting the data from openICPSR. Any data you download should also be stored on this computer. We do not explicitly describe this here. **CCSS** is the most likely place where you do this, but double-check with your supervisor.
@@ -243,7 +243,7 @@ In all cases, you should obtain the data from the deposit, and otherwise follow 
 :::{tab-item} CCSS
 
 - [ ] Access the CCSS environment: [shortcut to Cloud](https://client.wvd.microsoft.com/arm/webclient/v2/index.html), for other access, see [Appendix](windows-remote).
-- [ ] In some cases, you may be asked to use (restricted) data on the S: drive or L: drive. Follow instructions as you receive them.
+- [ ] In some cases, you may be asked to use (restricted) data on the S: drive or Z: drive. Follow instructions as you receive them.
 - [ ] Download the openICPSR data (if available). 
   - Try to do this first using scripts. See [the details in the appendix](using-pre-pub-openicpsr). 
     ```bash
