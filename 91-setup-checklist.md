@@ -11,7 +11,27 @@
 - [x] Atlassian account
     - Bitbucket for access to the [internal Git repos](https://bitbucket.org/aeaverification/)
     - Jira account for the [internal issue tracker](https://aeadataeditors.atlassian.net/)
-- [x] Email is used for the mailing list [ldi-lab-l@cornell.edu](mailto:ldi-lab-l@cornell.edu) 
+
+:::{admonition} Not receiving the Bitbucket or Jira invitation? Check your Atlassian account settings.
+:class: warning dropdown
+
+If you already have an Atlassian account, you may not receive the invitation to the Bitbucket workspace or to Jira if **Product Invitations** is turned off in your Atlassian account settings. 
+
+**Actions**
+
+- You have to turn the setting back on 
+
+1. Go to your [Atlassian account settings](https://id.atlassian.com/manage-profile/emails) (Account settings > Email preferences).
+2. Under **Product Surveys and Invitations**, make sure **Product Invitations** is checked.
+
+
+![Atlassian account settings showing Product Invitations turned on](images/jira-add-invitation.png)
+
+- Then: Ask the Data Editor's staff to re-send the invitation.
+
+:::
+
+- [x] Email is used for the mailing list [ldi-lab-l@lists.cornell.edu](mailto:ldi-lab-l@lists.cornell.edu) 
 
 ## Software to install on your laptop
 
