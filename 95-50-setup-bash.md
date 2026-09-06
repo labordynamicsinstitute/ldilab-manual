@@ -191,7 +191,7 @@ to avoid pesky warnings about ownership in the common workarea on the network dr
 2. To set a global variable, common to everybody, and necessary for the ICPSR download script, type
 
 ```bash
-cmd //c lv39_ICPSR_Token.bat
+cmd //c "/z/lv39_ICPSR_Token.bat"
 ```
 
 You may need to start a new Git bash shell afterwards for it to take effect.
