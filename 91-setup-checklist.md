@@ -21,13 +21,16 @@ If you already have an Atlassian account, you may not receive the invitation to 
 
 - You have to turn the setting back on 
 
-1. Go to your [Atlassian account settings](https://id.atlassian.com/manage-profile/emails) (Account settings > Email preferences).
-2. Under **Product Surveys and Invitations**, make sure **Product Invitations** is checked.
-
+1. Go to [id.atlassian.com](http://id.atlassian.com/), and sign in with your email address.
+2. Click your avatar in the top-right corner and select **Account settings** via the dropdown menu.
+3. Navigate to the **Email** tab > click the link to the **email preferences center**.
+4. In the **Product Surveys and Invitations** center, make sure **Product Invitations** is checked.
 
 ![Atlassian account settings showing Product Invitations turned on](images/jira-add-invitation.png)
 
 - Then: Ask the Data Editor's staff to re-send the invitation.
+
+For additional guidance, see Atlassian's [troubleshooting guide](https://support.atlassian.com/bitbucket-cloud/kb/troubleshooting-not-receiving-bitbucket-cloud-workspace-invitations/).
 
 :::
 
