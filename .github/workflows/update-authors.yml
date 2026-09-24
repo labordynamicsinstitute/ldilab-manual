@@ -1,0 +1,50 @@
+name: update-authors
+
+# When a pull request is merged into main, regenerate the author list
+# (_config.yml and index.md) from the repository's contributors and commit
+# the result. See scripts/update_authors.py and scripts/authors.csv.
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  update-authors:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write          # push the updated author list
+      actions: write           # re-run deploy-book (pushes by GITHUB_TOKEN don't trigger it)
+    steps:
+    - uses: actions/checkout@v5
+      with:
+        ref: main
+
+    - name: Regenerate author list
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+        PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+      run: |
+        python3 scripts/update_authors.py ${PR_AUTHOR:+--add "$PR_AUTHOR"}
+
+    - name: Commit and push if changed
+      id: commit
+      run: |
+        if git diff --quiet; then
+          echo "Author list unchanged."
+          exit 0
+        fi
+        git config user.name "github-actions[bot]"
+        git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+        git commit -am "Update author list [skip ci]"
+        git push
+        echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+    - name: Rebuild and deploy the book
+      if: steps.commit.outputs.pushed == 'true'
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: gh workflow run main.yml --ref main --repo "$GITHUB_REPOSITORY"
