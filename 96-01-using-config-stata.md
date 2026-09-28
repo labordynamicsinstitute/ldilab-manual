@@ -147,11 +147,11 @@ local ssc_packages "estout ivreg2"
 `config.do` creates a subdirectory and saves log files in the subdirectory. Let's say the current working directory path is the following, since Jira issue number is `AEAREP-9999` and openICPSR case number is `111111`
 
 ```
-L:/Workspace/aearep-9999/111111
+Z:/Workspace/aearep-9999/111111
 ```
 
 
-- line 97, `global logdir "${rootdir}/logs"` sets the following directory as a directory for log files: `U:/Workspace/aearep-9999/111111/logs`. Note that it will automatically use the `$rootdir` created earlier based on your choice of scenario.
+- line 97, `global logdir "${rootdir}/logs"` sets the following directory as a directory for log files: `Z:/Workspace/aearep-9999/111111/logs`. Note that it will automatically use the `$rootdir` created earlier based on your choice of scenario.
 
 ```
 global logdir "${rootdir}/logs"
