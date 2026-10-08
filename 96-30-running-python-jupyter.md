@@ -32,10 +32,6 @@ Here's `venv` version in a nutshell ([full guide](https://packaging.python.org/e
 
 
 
-- Ensure `venv` exists:
-```
-pip3 install pyenv
-```
 - Create a new environment
 ```
 python3 -m venv /path/to/new/virtual/environment
@@ -45,19 +41,35 @@ or if using relative paths
 python3 -m venv env
 ```
 
+
+:::{admonition} If `venv` is not available...
+:class: dropdown
+
+The native `venv` module is included with Python 3.3 and later, and should always be there. Older instructions mentioning `pyenv`  or `virtualenv` should be ignored. Contact your supervisor.
+
+:::
+
 which will create `/path/to/new/virtual/environment` or (relative to your current working directory) `env`. That directory will now contain all of your project-related Python packages.
 
 To activate:
+
+
+
+::::{tab-set}
+
+:::{tab-item}  Linux and Mac
+
 ```
 source env/bin/activate
 ```
-
-On Windows Bash (depends on install)
+:::
+:::{tab-item}  Windows bash
 
 ```
-python -m venv env
 source env/Scripts/activate
 ```
+:::
+::::
 
 To deactivate:
 ```
