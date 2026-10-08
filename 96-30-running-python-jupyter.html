@@ -617,12 +617,6 @@ document.write(`
 <h3>Native Python <code class="docutils literal notranslate"><span class="pre">venv</span></code><a class="headerlink" href="#native-python-venv" title="Link to this heading">#</a></h3>
 <p>Here’s <code class="docutils literal notranslate"><span class="pre">venv</span></code> version in a nutshell (<a class="reference external" href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">full guide</a>). Open up a shell.</p>
 <ul class="simple">
-<li><p>Ensure <code class="docutils literal notranslate"><span class="pre">venv</span></code> exists:</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">pyenv</span>
-</pre></div>
-</div>
-<ul class="simple">
 <li><p>Create a new environment</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">virtual</span><span class="o">/</span><span class="n">environment</span>
@@ -632,15 +626,27 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">env</span>
 </pre></div>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">If <code class="docutils literal notranslate"><span class="pre">venv</span></code> is not available…</p>
+<p>The native <code class="docutils literal notranslate"><span class="pre">venv</span></code> module is included with Python 3.3 and later, and should always be there. Older instructions mentioning <code class="docutils literal notranslate"><span class="pre">pyenv</span></code>  or <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> should be ignored. Contact your supervisor.</p>
+</div>
 <p>which will create <code class="docutils literal notranslate"><span class="pre">/path/to/new/virtual/environment</span></code> or (relative to your current working directory) <code class="docutils literal notranslate"><span class="pre">env</span></code>. That directory will now contain all of your project-related Python packages.</p>
 <p>To activate:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Linux and Mac</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
 </pre></div>
 </div>
-<p>On Windows Bash (depends on install)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">env</span>
-<span class="n">source</span> <span class="n">env</span><span class="o">/</span><span class="n">Scripts</span><span class="o">/</span><span class="n">activate</span>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Windows bash</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">env</span><span class="o">/</span><span class="n">Scripts</span><span class="o">/</span><span class="n">activate</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>To deactivate:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deactivate</span>
@@ -704,24 +710,24 @@ document.write(`
 <h2>Installing packages<a class="headerlink" href="#installing-packages" title="Link to this heading">#</a></h2>
 <p>Sometimes, authors will list the packages they used. There are a few options:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
 <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file</label><div class="sd-tab-content docutils">
 <p>If the authors provide a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file, you can install all the packages at once. From an appropriate terminal, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
 <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file</label><div class="sd-tab-content docutils">
 <p>If the authors provide an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file, they used Conda as the Python system manager. From an appropriate terminal, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
 List of packages</label><div class="sd-tab-content docutils">
 <p>If the authors provide a list of packages, the easiest way is to create a simple <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file with a text editor (e.g., VS Code), then proceed as with the first option.</p>
 </div>
@@ -757,8 +763,8 @@ List of packages</label><div class="sd-tab-content docutils">
 <section id="interactively">
 <h3>Interactively<a class="headerlink" href="#interactively" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
 Conda</label><div class="sd-tab-content docutils">
 <p>In order to run Jupyter notebooks that you started from the Conda prompt, do the following, once you have opened the Jupyter Notebook or Jupyter Lab interface:</p>
 <ul class="simple">
@@ -769,8 +775,8 @@ Conda</label><div class="sd-tab-content docutils">
 <li><p>Save the notebook: <code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Checkpoint</span></code></p></li>
 </ul>
 </div>
-<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
 VS Code</label><div class="sd-tab-content docutils">
 <p>If you are using VS Code, open the notebook in VS Code. You should get options to choose a kernel. If prompted to create an environment, do so.</p>
 <p><img alt="VS Code top menu" src="_images/vscode-ipynb.png" /></p>
@@ -788,8 +794,8 @@ VS Code</label><div class="sd-tab-content docutils">
 <h3>From the command line<a class="headerlink" href="#from-the-command-line" title="Link to this heading">#</a></h3>
 <p>You should also be able to do the following from the command line:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-5">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
 Linux/macOS</label><div class="sd-tab-content docutils">
 <p>If you have a LaTeX installation, you can convert the notebook to a PDF using the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># requires a latex installation</span>
@@ -818,8 +824,8 @@ jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class=
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-6">
+<input id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
 Windows</label><div class="sd-tab-content docutils">
 <p>Not sure yet. Needs augmentation.</p>
 </div>
