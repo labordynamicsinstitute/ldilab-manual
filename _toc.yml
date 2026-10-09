@@ -92,6 +92,8 @@ parts:
   - caption: Sundry other guidance
     chapters:
     - file: 71-External-reproducibility-checks
+      sections:
+      - file: 72-Producing-external-reproducibility-checks
   - caption: Appendix
     chapters:
     - file: 90-Glossary
