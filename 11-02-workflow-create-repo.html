@@ -732,6 +732,8 @@ Zenodo</label><div class="sd-tab-content docutils">
 <blockquote>
 <div><p>remote: Your push has been blocked because it includes at least one file that is 100 MB or larger.</p>
 </div></blockquote>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
 <p><img alt="failing pipeline file too big" src="_images/bitbucket-error-file-too-big.png" /></p>
 <p><strong>Solution</strong></p>
 <p>Investigate which files are being captured that are too big.</p>
@@ -749,28 +751,39 @@ Zenodo</label><div class="sd-tab-content docutils">
 <li><p>in your repository, by adding them into the repository-specific <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p></li>
 <li><p>in the <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/.gitignore">template <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file</a>, by suggesting an edit. Click on <a class="reference external" href="https://github.com/AEADataEditor/replication-template/blob/master/.gitignore">this link</a>, then choose “<code class="docutils literal notranslate"><span class="pre">Edit</span></code>”, and add the extension to the file (you will need a Github account to create a pull request).</p></li>
 </ul>
+</div>
 </section>
 <section id="memory-or-cpu-usage-to-high">
 <h4>Memory or CPU usage to high<a class="headerlink" href="#memory-or-cpu-usage-to-high" title="Link to this heading">#</a></h4>
 <p><img alt="failing pipeline in Stata" src="_images/jira-fail-pipeline-stata.png" /></p>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
 <p>If your pipeline fails in the Stata step, click on the failed step, and scroll to the error message. If you see this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">automations</span><span class="o">/</span><span class="mi">10</span><span class="n">_run_stata_scanner</span><span class="o">.</span><span class="n">sh</span><span class="p">:</span> <span class="n">line</span> <span class="mi">64</span><span class="p">:</span>   <span class="mi">122</span> <span class="n">Killed</span>                  <span class="n">stata</span><span class="o">-</span><span class="n">mp</span> <span class="o">-</span><span class="n">b</span> <span class="n">do</span> <span class="o">../</span><span class="n">PII_stata_scan</span><span class="o">.</span><span class="n">do</span>
 </pre></div>
 </div>
 <p>It is likely that the PII scan failed because the in-memory dataset is too large (too much memory was run, and the pipeline was killed). Try running the pipeline again with the “<code class="docutils literal notranslate"><span class="pre">w-big</span> <span class="pre">populate</span> <span class="pre">from</span> <span class="pre">ICPSR</span></code>” (see above).</p>
+</div>
 </section>
 <section id="cannot-stat-zip">
 <h4><code class="docutils literal notranslate"><span class="pre">Cannot</span> <span class="pre">stat</span> <span class="pre">zip</span></code><a class="headerlink" href="#cannot-stat-zip" title="Link to this heading">#</a></h4>
 <p><img alt="cannot stat zip" src="_images/jira-pipeline-error-zip.png" /></p>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
 <p>This is an indication of an earlier error, typically forgotten variables. To check, click on the <code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">setup</span></code>, and check the <code class="docutils literal notranslate"><span class="pre">Pipeline</span> <span class="pre">variables</span></code>. If it looks like this:</p>
 <p><img alt="pipeline variables" src="_images/jira-pipeline-error-variables.png" /></p>
 <p>then you forgot to specify the <code class="docutils literal notranslate"><span class="pre">openICPSRID</span></code> variable. Rerun the pipeline with the correct variable entered. It should look like this:</p>
 <p><img alt="pipeline corrected" src="_images/jira-pipeline-error-variables-corrected.png" /></p>
+</div>
 </section>
 <section id="zip-file-is-too-big">
 <h4>ZIP file is too big<a class="headerlink" href="#zip-file-is-too-big" title="Link to this heading">#</a></h4>
-<p>When the ZIP file downloaded from the repository is too big, parts of the pipeline will run, but ultimately, the full pipeline may fail.</p>
-<p>To diagnose this part,</p>
+<p>When the ZIP file downloaded from the repository is too big, the first check is if it succeeded. If this fails, the pipeline will stop.</p>
+<p><img alt="ZIP file too big" src="_images/bitbucket-error-deposit-too-big-1.png" /></p>
+<p>The pipeline output itself will also provide some guidance:</p>
+<p><img alt="ZIP file too big" src="_images/bitbucket-error-deposit-too-big-2.png" /></p>
+<div class="note dropdown admonition">
+<p class="admonition-title">You can also diagnose this a bit more (optional)</p>
 <ul class="simple">
 <li><p>Go back to the list of Pipeline runs</p></li>
 <li><p>Click on the failed run</p></li>
@@ -794,7 +807,8 @@ Compressed<span class="w"> </span>files<span class="w"> </span><span class="k">f
 Compressed<span class="w"> </span>artifact<span class="w"> </span>size<span class="w"> </span>is<span class="w"> </span><span class="m">39</span>.6<span class="w"> </span>MiB<span class="w"> </span>over<span class="w"> </span>the<span class="w"> </span><span class="m">1</span><span class="w"> </span>GiB<span class="w"> </span>upload<span class="w"> </span>limit,<span class="w"> </span>so<span class="w"> </span>the<span class="w"> </span>artifact<span class="w"> </span>will<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>uploaded.
 </pre></div>
 </div>
-<p>If this is the case, try again with the “<code class="docutils literal notranslate"><span class="pre">w-big</span> <span class="pre">populate</span> <span class="pre">from</span> <span class="pre">ICPSR</span></code>” pipeline, which will not try to upload the ZIP file, but will still run the other steps.</p>
+</div>
+<p>If this is the case, try again with the “<code class="docutils literal notranslate"><span class="pre">w-big</span> <span class="pre">populate</span> <span class="pre">from</span> <span class="pre">ICPSR</span></code>”.</p>
 </section>
 <section id="download-failed">
 <h4>Download failed<a class="headerlink" href="#download-failed" title="Link to this heading">#</a></h4>

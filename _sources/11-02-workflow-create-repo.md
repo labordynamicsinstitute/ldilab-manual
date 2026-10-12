@@ -168,6 +168,9 @@ Bitbucket might complain in the `Commit everything back` step that
 
 > remote: Your push has been blocked because it includes at least one file that is 100 MB or larger.
 
+::::{note}
+:class: dropdown 
+
 ![failing pipeline file too big](images/bitbucket-error-file-too-big.png)
 
 **Solution**
@@ -191,9 +194,15 @@ You should make those changes
 - in your repository, by adding them into the repository-specific `.gitignore`
 - in the [template `.gitignore` file](https://github.com/AEADataEditor/replication-template/blob/master/.gitignore), by suggesting an edit. Click on [this link](https://github.com/AEADataEditor/replication-template/blob/master/.gitignore), then choose "`Edit`", and add the extension to the file (you will need a Github account to create a pull request).
 
+::::
+
 #### Memory or CPU usage to high
 
 ![failing pipeline in Stata](images/jira-fail-pipeline-stata.png)
+
+
+::::{note}
+:class: dropdown 
 
 If your pipeline fails in the Stata step, click on the failed step, and scroll to the error message. If you see this:
 
@@ -202,10 +211,14 @@ If your pipeline fails in the Stata step, click on the failed step, and scroll t
 ```
 
 It is likely that the PII scan failed because the in-memory dataset is too large (too much memory was run, and the pipeline was killed). Try running the pipeline again with the "`w-big populate from ICPSR`" (see above).
+::::
 
 #### `Cannot stat zip`
 
 ![cannot stat zip](images/jira-pipeline-error-zip.png)
+
+::::{note}
+:class: dropdown 
 
 This is an indication of an earlier error, typically forgotten variables. To check, click on the `Build setup`, and check the `Pipeline variables`. If it looks like this:
 
@@ -214,12 +227,21 @@ This is an indication of an earlier error, typically forgotten variables. To che
 then you forgot to specify the `openICPSRID` variable. Rerun the pipeline with the correct variable entered. It should look like this:
 
 ![pipeline corrected](images/jira-pipeline-error-variables-corrected.png)
+::::
 
 #### ZIP file is too big
 
-When the ZIP file downloaded from the repository is too big, parts of the pipeline will run, but ultimately, the full pipeline may fail.
+When the ZIP file downloaded from the repository is too big, the first check is if it succeeded. If this fails, the pipeline will stop.
 
-To diagnose this part, 
+![ZIP file too big](images/bitbucket-error-deposit-too-big-1.png)
+
+The pipeline output itself will also provide some guidance:
+
+![ZIP file too big](images/bitbucket-error-deposit-too-big-2.png)
+
+
+:::::{admonition} You can also diagnose this a bit more (optional)
+:class: note dropdown
 
 - Go back to the list of Pipeline runs
 - Click on the failed run
@@ -243,8 +265,9 @@ Artifact pattern cache/** matched 1 files with a total size of 1 GiB
 Compressed files for artifact "cache/**" matching pattern cache/** to 1 GiB in 47 seconds
 Compressed artifact size is 39.6 MiB over the 1 GiB upload limit, so the artifact will not be uploaded.
 ```
+:::::
 
-If this is the case, try again with the "`w-big populate from ICPSR`" pipeline, which will not try to upload the ZIP file, but will still run the other steps.
+If this is the case, try again with the "`w-big populate from ICPSR`".
 
 #### Download failed
 
