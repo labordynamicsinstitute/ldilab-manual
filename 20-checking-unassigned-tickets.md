@@ -111,7 +111,7 @@ Check if the case is a Revision by going to the Other Links tab and clicking the
 - Update the bitbucket short name with the repository name of the previous cases.
 - Check if the older Jira ticket had restricted access data (i.e. Working location of restricted data was filled out). If yes:
     - Link Issue, select type "relates to" and add the aearep-xxx for the subtask "Request Restricted Access Data for AEAREP-nnn"
-    - Fill out Working location of restricted data with the same L drive path
+    - Fill out Working location of restricted data with the same Z drive path
     - Fill out Agreement Signed to match the older Jira ticket
 
 ## Non-standard unassigned cases

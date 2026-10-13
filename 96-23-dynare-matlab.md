@@ -5,7 +5,7 @@ Dynare is often used as an extension from within MATLAB. Files are usually ident
 
 :::{warning} 
 
-Use the precise version of Dynare specified by the authors. If that version is not located on `L:\common` (CCSS Cloud) or `/home2/ecco_lv39/software` or as a Docker file, then talk to your supervisor.
+Use the precise version of Dynare specified by the authors. If that version is not located on `Z:\common` (CCSS Cloud) or `/home2/ecco_lv39/software` or as a Docker file, then talk to your supervisor.
 
 :::
 
@@ -25,7 +25,7 @@ However, it is not necessary to *install* Dynare, it is sufficient to unpack the
 :::
 
 
-If a specific version is mentioned and is not there, download it from the [Dynare website](https://www.dynare.org/download/) - choose the **ZIP** version. Then unzip it to the `L: drive` (move it around if necessary so you get the same structure as in the example above, i.e. `L:\common\dynare\(SOME VERSION)\matlab`). Then include the `addpath` command as before.
+If a specific version is mentioned and is not there, download it from the [Dynare website](https://www.dynare.org/download/) - choose the **ZIP** version. Then unzip it to the `Z: drive` (move it around if necessary so you get the same structure as in the example above, i.e. `Z:\common\dynare\(SOME VERSION)\matlab`). Then include the `addpath` command as before.
 
 ::::
 
@@ -85,8 +85,8 @@ $dockerbin run --rm -it \
 % The following are possible Dynare settings. Uncomment the one you need.
 
 % dynarepath = "/Applications/Dynare/4.6.1/matlab"
-% dynarepath = "L:\LDILab\dynare\dynare-4.5.7\matlab"
-%dynarepath = "L:\common\dynare-4.5.7\matlab"
+% dynarepath = "Z:\LDILab\dynare\dynare-4.5.7\matlab"
+%dynarepath = "Z:\common\dynare-4.5.7\matlab"
 
 % 
 % Then uncomment the following line:
@@ -94,7 +94,7 @@ $dockerbin run --rm -it \
 %addpath(genpath(dynarepath))
 ```
 
-- You will want the path for the system you are working on. If CCSS Cloud, use the `L:` path. If on BioHPC, you will need to add a path like `/home2/ecco_lv39/software/dynare-x.y.z`.
+- You will want the path for the system you are working on. If CCSS Cloud, use the `Z:` path. If on BioHPC, you will need to add a path like `/home2/ecco_lv39/software/dynare-x.y.z`.
 - Then uncomment the `addpath()` statement at the end.
 
 Your modified `config.m` should look somewhat like this:
@@ -105,9 +105,9 @@ Your modified `config.m` should look somewhat like this:
 % The following are possible Dynare settings. Uncomment the one you need.
 
 % dynarepath = "/Applications/Dynare/4.6.1/matlab"
-% dynarepath = "L:\LDILab\dynare\dynare-4.5.7\matlab"
+% dynarepath = "Z:\LDILab\dynare\dynare-4.5.7\matlab"
 
-dynarepath = "L:\common\dynare-4.5.7\matlab"
+dynarepath = "Z:\common\dynare-4.5.7\matlab"
 
 % 
 % Then uncomment the following line:
