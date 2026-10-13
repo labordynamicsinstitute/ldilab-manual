@@ -221,3 +221,18 @@ The template is called `template-main.R`. Rename it to `main.R` and put it into 
 > **[ACTION]** Check the README or the repository and determine what the authors' code entry point(s) are, and list them in `author.programs` in the correct order.
 
 Once `readme.libraries`, `sdrive`, `author.programs`, and (if needed) `rootdir` and `create.paths` are set, `main.R` is ready to run — proceed to [running code in R](running-code-in-r).
+
+## FAQ
+
+### Should `main.R` be located in the root directory or the directory containing the author's code?
+
+Copying `main.R` into the code directory resulted in a pathname error when the master script code was run: 
+```
+ Error in eval(ei, envir) : 
+  Run code/00_master.R from the ReplicationPackage folder (the folder containing code/ and data/).
+Current working directory: Z:/Workspace/aearep-10077/251530/code
+Calls: source -> withVisible -> eval -> eval
+```
+In this case, the master script wasn't able to proceed because it was sourced after `main.R` had set the working directory to the code directory. As stated in the error message, `00_master.R` must be sourced from the directory containing both code/ and data/ for the code to work.
+
+When `main.R` was moved to the root directory, the error was resolved and the master script could proceed.
